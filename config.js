@@ -3,7 +3,7 @@
 // Der «anon public»-Schlüssel ist für den Einsatz im Browser gedacht und darf öffentlich sein.
 // Den «service_role»-Schlüssel darfst du hier NIE eintragen.
 window.APP_CONFIG = {
-  SUPABASE_URL: 'https://hshchitgcweewnantxbs.supabase.co/rest/v1/',
+  SUPABASE_URL: 'https://hshchitgcweewnantxbs.supabase.co',
   SUPABASE_ANON_KEY: 'sb_publishable_ohykf3XmZGt86oykIe2Ujw_m9U-km8k',
 
   // Name des Vereins auf der Anmeldeseite
