@@ -1,0 +1,21 @@
+// Konfiguration der App.
+// Die Werte findest du in Supabase unter «Project Settings» → «API».
+// Der «anon public»-Schlüssel ist für den Einsatz im Browser gedacht und darf öffentlich sein.
+// Den «service_role»-Schlüssel darfst du hier NIE eintragen.
+window.APP_CONFIG = {
+  SUPABASE_URL: 'https://DEIN-PROJEKT.supabase.co',
+  SUPABASE_ANON_KEY: 'DEIN-ANON-PUBLIC-KEY',
+
+  // Name des Vereins auf der Anmeldeseite
+  CLUB_NAME: 'Training',
+
+  // true = bei der Registrierung wird ein Vereinscode verlangt (empfohlen)
+  CLUB_CODE_REQUIRED: true,
+
+  // Dauer eines Events in Minuten für den Kalendereintrag (Events haben keine Endzeit)
+  EVENT_DURATION_MIN: 120
+
+  // Optional: Domain für die intern verwendeten Login-Adressen.
+  // Nur ändern, wenn Supabase die Standard-Domain ablehnt.
+  // EMAIL_DOMAIN: 'phone-login.app'
+};
