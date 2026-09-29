@@ -23,16 +23,30 @@
   ];
   var wdName = function (v) { return WEEKDAYS.filter(function (w) { return w.v === v; })[0].n; };
 
+  // Akzeptiert 079 123 45 67, +41 79 123 45 67, 0041 79 …; Leerschläge werden ignoriert.
+  // Intern gespeichert wird immer das internationale Format (+41791234567).
   function normPhone(raw) {
-    var d = String(raw).replace(/[^\d+]/g, '');
+    var d = String(raw).replace(/\(0\)/g, '').replace(/[^\d+]/g, '');
     if (d.indexOf('00') === 0) d = '+' + d.slice(2);
     else if (d.indexOf('0') === 0) d = '+41' + d.slice(1);
     else if (d.indexOf('+') !== 0) d = '+' + d;
     return /^\+\d{9,15}$/.test(d) ? d : null;
   }
+  // Anzeige: Schweizer Nummern immer als 079 123 45 67
   function fmtPhone(p) {
-    if (/^\+41\d{9}$/.test(p)) return '+41 ' + p.slice(3, 5) + ' ' + p.slice(5, 8) + ' ' + p.slice(8, 10) + ' ' + p.slice(10);
+    if (/^\+41\d{9}$/.test(p)) return '0' + p.slice(3, 5) + ' ' + p.slice(5, 8) + ' ' + p.slice(8, 10) + ' ' + p.slice(10);
     return p;
+  }
+  // Formatierung während der Eingabe im Feld
+  function formatPhoneTyping(raw) {
+    var v = String(raw).replace(/\(0\)/g, '').replace(/[^\d+]/g, '');
+    if (v.indexOf('+41') === 0) v = '0' + v.slice(3);
+    else if (v.indexOf('0041') === 0) v = '0' + v.slice(4);
+    if (v.charAt(0) === '0' && v.charAt(1) !== '0') {
+      var d = v.replace(/\D/g, '').slice(0, 10);
+      return [d.slice(0, 3), d.slice(3, 6), d.slice(6, 8), d.slice(8, 10)].filter(Boolean).join(' ');
+    }
+    return v;
   }
   function defaultPin(p) { return String(p).replace(/\D/g, '').slice(-6); }
   function phoneToEmail(p) { return p.replace('+', '') + '@' + (cfg.EMAIL_DOMAIN || 'phone-login.app'); }
@@ -43,7 +57,7 @@
       step: 'loading', mode: 'login', tab: 'trainings', phone: '', err: '', info: '',
       session: null, me: null, members: [],
       rules: [], extras: [], overrides: {}, cancelled: {}, events: [],
-      tr: {}, ev: {}, open: {}, edit: null, busy: false, sec: {}, showMore: false
+      tr: {}, ev: {}, open: {}, edit: null, busy: false, sec: {}, add: {}, showMore: false
     };
   }
   var S = freshState();
@@ -243,15 +257,15 @@
 
   function viewTrainings() {
     var list = getTrainings();
-    var n = cfg.TRAININGS_VISIBLE || 12;
+    var n = cfg.TRAININGS_VISIBLE || 20;
     var first = list.slice(0, n), rest = list.slice(n);
-    var html = '<div class="top"><div><h1>' + esc(prefix()) + '-Trainings</h1><p>Kommende Termine</p></div></div>';
+    var html = '<div class="top"><div><h1>' + esc(prefix()) + '-Trainings</h1><p>Die nächsten ' + n + ' Termine</p></div></div>';
     if (!list.length) {
       return html + '<div class="empty"><p><b>Noch keine Trainings geplant.</b></p><p>' + (S.me.isAdmin ? 'Lege im Bereich «Verwalten» einen Trainingstag fest.' : 'Die Admins legen die Trainingstage fest.') + '</p></div>';
     }
     html += monthList(first, cardHtml);
     if (rest.length) {
-      html += '<button class="morebtn" data-act="more-tr" aria-expanded="' + S.showMore + '"><span>Weitere Trainings (' + rest.length + ')</span>' + ICON.chev + '</button>';
+      html += '<button class="morebtn" data-act="more-tr" aria-expanded="' + S.showMore + '"><span>Weitere Termine (' + rest.length + ')</span>' + ICON.chev + '</button>';
       if (S.showMore) html += monthList(rest, cardHtml);
     }
     return html;
@@ -293,7 +307,7 @@
 
   function viewEvents() {
     var list = getEvents();
-    var html = '<div class="top"><div><h1>' + esc(prefix()) + '-Events</h1><p>Anlässe im Verein</p></div></div>';
+    var html = '<div class="top"><div><h1>' + esc(prefix()) + '-Events</h1><p>Folgende Vereinsanlässe sind geplant</p></div></div>';
     if (!list.length) {
       return html + '<div class="empty"><p><b>Aktuell sind keine Events geplant.</b></p><p>' + (S.me.isAdmin ? 'Lege im Bereich «Verwalten» einen Event an.' : 'Die Admins legen neue Events an.') + '</p></div>';
     }
@@ -331,20 +345,44 @@
     '</article>';
   }
 
-  function accordion(id, title, count, body) {
-    var open = !!S.sec[id];
-    return '<section class="panel acc"><button class="acchead" data-act="sec" data-id="' + id + '" aria-expanded="' + open + '">' +
+  function accordion(id, title, count, body, canAdd) {
+    var open = !!S.sec[id], adding = !!S.add[id];
+    return '<section class="panel acc"><div class="acchead">' +
+      '<button class="acctoggle" data-act="sec" data-id="' + id + '" aria-expanded="' + open + '">' +
       '<span class="t">' + title + (count != null ? ' <span class="cnt">(' + count + ')</span>' : '') + '</span>' + ICON.chev + '</button>' +
-      (open ? '<div class="accbody">' + body + '</div>' : '') + '</section>';
+      (canAdd ? '<button class="plusbtn" data-act="add-toggle" data-id="' + id + '" aria-pressed="' + adding + '" aria-label="' + (adding ? 'Erfassung schliessen' : 'Neu erfassen') + '" title="' + (adding ? 'Erfassung schliessen' : 'Neu erfassen') + '"><span>+</span></button>' : '') +
+      '</div>' + (open ? '<div class="accbody">' + body + '</div>' : '') + '</section>';
+  }
+
+  // Zeile (oder Bearbeiten-Formular) für einen einzelnen Trainingstermin
+  function trRow(t) {
+    var off = !!S.cancelled[t.key];
+    if (S.edit === 'tr:' + t.key) {
+      var body = (t.extraId ? fld('Bezeichnung', inTitle(t.title)) : '') + grid(fld('Datum', inDate(t.iso)), fld('Uhrzeit', inTime(t.time))) + fld('Ort', inPlace(t.place));
+      var reset = S.overrides[t.key] ? '<button class="btn ghost inline" type="button" data-act="reset-tr" data-key="' + esc(t.key) + '">Zurücksetzen</button>' : '';
+      return editRow('edit-tr', t.key, body, t.extraId ? '' : 'Gilt nur für diesen Termin. Die Antworten der Mitglieder bleiben erhalten.', reset);
+    }
+    return '<li><div class="l"><b>' + esc(fmt(t.date, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })) + ', ' + esc(t.time) + '</b>' +
+      '<span>' + esc(t.title) + ', ' + esc(t.place) + (t.changed ? ' · geändert' : '') + (off ? ' · abgesagt' : '') + '</span></div>' +
+      '<div class="btnrow"><button class="mini" data-act="edit" data-target="tr:' + esc(t.key) + '">Bearbeiten</button>' +
+      '<button class="mini" data-act="cancel" data-key="' + esc(t.key) + '">' + (off ? 'Reaktivieren' : 'Absagen') + '</button>' +
+      (t.extraId ? '<button class="mini del" data-act="del-extra" data-id="' + t.extraId + '">Löschen</button>' : '') + '</div></li>';
   }
 
   function viewAdmin() {
-    var list = getTrainings();
-    var today = iso(new Date());
+    var all = getTrainings();
+    var series = all.filter(function (t) { return !t.extraId; });
+    var extras = all.filter(function (t) { return !!t.extraId; });
     var html = '<div class="top"><div><h1>Verwalten</h1><p>Nur für Admins sichtbar</p></div></div>';
+    var b;
 
-    /* Montag Trainings (wiederkehrend) */
-    var b = '<p>Diese Tage wiederholen sich jede Woche. Änderungen gelten für alle kommenden Termine.</p>';
+    /* Montag Trainings */
+    b = '<p>Standard-Trainings pro Woche</p>';
+    if (S.add.rules) {
+      b += '<form class="addform" data-form="rule">' + grid(fld('Wochentag', '<select class="input" name="wd">' + wdOptions(1) + '</select>'), fld('Uhrzeit', inTime('19:00'))) +
+        fld('Ort', inPlace('', 'z. B. Turnhalle Schulhaus Nord')) +
+        '<button class="btn" type="submit">Trainingstag hinzufügen</button></form>';
+    }
     b += S.rules.length ? '<ul class="list">' + S.rules.map(function (r) {
       if (S.edit === 'rule:' + r.id) {
         return editRow('edit-rule', r.id, grid(fld('Wochentag', '<select class="input" name="wd">' + wdOptions(r.wd) + '</select>'), fld('Uhrzeit', inTime(r.time))) + fld('Ort', inPlace(r.place)));
@@ -352,41 +390,31 @@
       return '<li><div class="l"><b>' + wdName(r.wd) + ', ' + esc(r.time) + ' Uhr</b><span>' + esc(r.place) + '</span></div>' +
         '<div class="btnrow"><button class="mini" data-act="edit" data-target="rule:' + r.id + '">Bearbeiten</button>' +
         '<button class="mini del" data-act="del-rule" data-id="' + r.id + '">Entfernen</button></div></li>';
-    }).join('') + '</ul>' : '<p class="muted">Noch kein fester Trainingstag. Füge unten einen hinzu.</p>';
-    b += '<form class="addbox" data-form="rule">' + grid(fld('Wochentag', '<select class="input" name="wd">' + wdOptions(1) + '</select>'), fld('Uhrzeit', inTime('19:00'))) +
-      fld('Ort', inPlace('', 'z. B. Turnhalle Schulhaus Nord')) +
-      '<button class="btn" type="submit">Trainingstag hinzufügen</button></form>';
-    html += accordion('rules', 'Montag Trainings', S.rules.length, b);
+    }).join('') + '</ul>' : '<p class="muted">Noch kein fester Trainingstag. Tippe auf «+», um einen zu erfassen.</p>';
+    html += accordion('rules', 'Montag Trainings', S.rules.length, b, true);
 
-    /* Spezial-Trainings */
-    var nExtra = S.extras.filter(function (x) { return x.date >= today; }).length;
-    b = '<p>Für Sondertermine wie Turniere oder Zusatztrainings. Es gibt keine Obergrenze. Bearbeiten, absagen oder löschen kannst du sie unter «Kommende Trainings».</p>' +
-      '<form data-form="extra">' + fld('Bezeichnung', inTitle('Zusatztraining')) +
+    /* Weitere Trainings (zusätzliche Termine) */
+    b = '<p>Folgende zusätzliche Trainings sind geplant</p>';
+    b += extras.length ? '<ul class="list scroll" data-sc="extras">' + extras.map(trRow).join('') + '</ul>' : '<p class="muted">Keine zusätzlichen Trainings geplant.</p>';
+    b += '<form class="addbox" data-form="extra">' + fld('Bezeichnung', inTitle('Zusatztraining')) +
       grid(fld('Datum', '<input class="input" type="date" name="date" required>'), fld('Uhrzeit', inTime('18:00'))) +
       fld('Ort', inPlace('', 'z. B. Sportanlage Süd')) +
-      '<button class="btn" type="submit">Spezial-Training hinzufügen</button></form>';
-    html += accordion('extra', 'Spezial-Trainings', nExtra, b);
+      '<button class="btn" type="submit">Weiteres Training hinzufügen</button></form>';
+    html += accordion('extra', 'Weitere Trainings', extras.length, b);
 
-    /* Kommende Trainings */
-    b = '<p>Einzelne Termine ändern, absagen oder löschen, z. B. bei Hallenschliessung.</p>';
-    b += list.length ? '<ul class="list scroll" data-sc="upcoming">' + list.map(function (t) {
-      var off = !!S.cancelled[t.key];
-      if (S.edit === 'tr:' + t.key) {
-        var body = (t.extraId ? fld('Bezeichnung', inTitle(t.title)) : '') + grid(fld('Datum', inDate(t.iso)), fld('Uhrzeit', inTime(t.time))) + fld('Ort', inPlace(t.place));
-        var reset = S.overrides[t.key] ? '<button class="btn ghost inline" type="button" data-act="reset-tr" data-key="' + esc(t.key) + '">Zurücksetzen</button>' : '';
-        return editRow('edit-tr', t.key, body, t.extraId ? '' : 'Gilt nur für diesen Termin. Die Antworten der Mitglieder bleiben erhalten.', reset);
-      }
-      return '<li><div class="l"><b>' + esc(fmt(t.date, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })) + ', ' + esc(t.time) + '</b>' +
-        '<span>' + esc(t.title) + ', ' + esc(t.place) + (t.changed ? ' · geändert' : '') + (off ? ' · abgesagt' : '') + '</span></div>' +
-        '<div class="btnrow"><button class="mini" data-act="edit" data-target="tr:' + esc(t.key) + '">Bearbeiten</button>' +
-        '<button class="mini" data-act="cancel" data-key="' + esc(t.key) + '">' + (off ? 'Reaktivieren' : 'Absagen') + '</button>' +
-        (t.extraId ? '<button class="mini del" data-act="del-extra" data-id="' + t.extraId + '">Löschen</button>' : '') + '</div></li>';
-    }).join('') + '</ul>' : '<p class="muted">Keine kommenden Trainings.</p>';
-    html += accordion('upcoming', 'Kommende Trainings', list.length, b);
+    /* Kommende Trainings (Termine der Serie) */
+    b = series.length ? '<ul class="list scroll" data-sc="upcoming">' + series.map(trRow).join('') + '</ul>' : '<p class="muted">Keine kommenden Trainings.</p>';
+    html += accordion('upcoming', 'Kommende Trainings', series.length, b);
 
     /* Events */
     var evs = getEvents();
-    b = '<p>Anlässe, bei denen Mitglieder allein oder zu zweit zusagen können. Es gibt keine Obergrenze.</p>';
+    b = '<p>Folgende Vereinsanlässe sind geplant</p>';
+    if (S.add.events) {
+      b += '<form class="addform" data-form="event">' + fld('Bezeichnung', inTitle('', 'z. B. Fondue-Plausch')) +
+        grid(fld('Datum', '<input class="input" type="date" name="date" required>'), fld('Uhrzeit', inTime('18:00'))) +
+        fld('Ort', inPlace('', 'z. B. Vereinshaus')) +
+        '<button class="btn" type="submit">Event hinzufügen</button></form>';
+    }
     b += evs.length ? '<ul class="list scroll" data-sc="events">' + evs.map(function (e) {
       if (S.edit === 'ev:' + e.id) {
         return editRow('edit-ev', e.id, fld('Bezeichnung', inTitle(e.title)) + grid(fld('Datum', inDate(e.date)), fld('Uhrzeit', inTime(e.time))) + fld('Ort', inPlace(e.place)));
@@ -395,30 +423,28 @@
         '<div class="btnrow"><button class="mini" data-act="edit" data-target="ev:' + e.id + '">Bearbeiten</button>' +
         '<button class="mini" data-act="cancel-ev" data-id="' + e.id + '">' + (e.cancelled ? 'Reaktivieren' : 'Absagen') + '</button>' +
         '<button class="mini del" data-act="del-ev" data-id="' + e.id + '">Löschen</button></div></li>';
-    }).join('') + '</ul>' : '<p class="muted">Noch keine Events. Lege unten den ersten an.</p>';
-    b += '<form class="addbox" data-form="event">' + fld('Bezeichnung', inTitle('', 'z. B. Fondue-Plausch')) +
-      grid(fld('Datum', '<input class="input" type="date" name="date" required>'), fld('Uhrzeit', inTime('18:00'))) +
-      fld('Ort', inPlace('', 'z. B. Vereinshaus')) +
-      '<button class="btn" type="submit">Event hinzufügen</button></form>';
-    html += accordion('events', 'Events', evs.length, b);
+    }).join('') + '</ul>' : '<p class="muted">Noch keine Events. Tippe auf «+», um den ersten zu erfassen.</p>';
+    html += accordion('events', 'Events', evs.length, b, true);
 
     /* Mitglieder */
-    b = '<p>Tippe auf den Stern, um ein Mitglied zum Admin zu machen oder die Rechte zu entziehen. Der Standard-PIN sind die letzten 6 Ziffern der Handynummer.</p>' +
-      '<ul class="list scroll" data-sc="members">' + S.members.map(function (m) {
-        var self = m.id === S.me.id;
-        var label = self ? 'Du bist Admin. Du kannst dir die Rechte nicht selbst entziehen.' : (m.isAdmin ? 'Admin-Rechte entziehen: ' : 'Zum Admin machen: ') + m.name;
-        return '<li><div class="l"><b>' + esc(m.name) + '</b><span>' + esc(fmtPhone(m.phone)) + (m.isAdmin ? ' · Admin' : '') + '</span></div>' +
-          '<div class="btnrow">' +
-          '<button class="starbtn" data-act="set-admin" data-id="' + m.id + '" data-val="' + (m.isAdmin ? '0' : '1') + '" aria-pressed="' + m.isAdmin + '" aria-label="' + esc(label) + '" title="' + esc(label) + '"' + (self ? ' disabled' : '') + '>' + ICON.star + '</button>' +
-          (self ? '' : '<button class="mini" data-act="reset-pin" data-id="' + m.id + '">PIN zurücksetzen</button><button class="mini del" data-act="remove-member" data-id="' + m.id + '">Entfernen</button>') +
-          '</div></li>';
-      }).join('') + '</ul>' +
-      '<form class="addbox" data-form="member"><h3 style="margin-bottom:10px">Mitglied hinzufügen</h3>' +
-      fld('Vor- und Nachname', '<input class="input" name="name" autocomplete="off" required>') +
-      fld('Handynummer', '<input class="input" name="phone" type="tel" inputmode="tel" autocomplete="off" placeholder="079 123 45 67" required>') +
-      '<p class="small muted" style="margin:-4px 0 12px">Das Mitglied meldet sich nur mit der Handynummer an. Der PIN sind die letzten 6 Ziffern.</p>' +
-      '<button class="btn" type="submit">Mitglied hinzufügen</button></form>';
-    html += accordion('members', 'Mitglieder', S.members.length, b);
+    b = '<p>Tippe auf den Stern, um ein Mitglied zum Admin zu machen oder die Rechte zu entziehen. Der Standard-PIN sind die letzten 6 Ziffern der Handynummer.</p>';
+    if (S.add.members) {
+      b += '<form class="addform" data-form="member"><h3 style="margin-bottom:10px">Mitglied hinzufügen</h3>' +
+        fld('Vor- und Nachname', '<input class="input" name="name" autocomplete="off" required>') +
+        fld('Handynummer', '<input class="input" name="phone" type="tel" inputmode="tel" autocomplete="off" placeholder="079 123 45 67" required>') +
+        '<p class="small muted" style="margin:-4px 0 12px">Das Mitglied meldet sich nur mit der Handynummer an. Der PIN sind die letzten 6 Ziffern.</p>' +
+        '<button class="btn" type="submit">Mitglied hinzufügen</button></form>';
+    }
+    b += '<ul class="list scroll" data-sc="members">' + S.members.map(function (m) {
+      var self = m.id === S.me.id;
+      var label = self ? 'Du bist Admin. Du kannst dir die Rechte nicht selbst entziehen.' : (m.isAdmin ? 'Admin-Rechte entziehen: ' : 'Zum Admin machen: ') + m.name;
+      return '<li><div class="l"><b>' + esc(m.name) + '</b><span>' + esc(fmtPhone(m.phone)) + (m.isAdmin ? ' · Admin' : '') + '</span></div>' +
+        '<div class="btnrow">' +
+        '<button class="starbtn" data-act="set-admin" data-id="' + m.id + '" data-val="' + (m.isAdmin ? '0' : '1') + '" aria-pressed="' + m.isAdmin + '" aria-label="' + esc(label) + '" title="' + esc(label) + '"' + (self ? ' disabled' : '') + '>' + ICON.star + '</button>' +
+        (self ? '' : '<button class="mini" data-act="reset-pin" data-id="' + m.id + '">PIN zurücksetzen</button><button class="mini del" data-act="remove-member" data-id="' + m.id + '">Entfernen</button>') +
+        '</div></li>';
+    }).join('') + '</ul>';
+    html += accordion('members', 'Mitglieder', S.members.length, b, true);
     return html;
   }
 
@@ -640,10 +666,18 @@
     if (act_ === 'who') { S.open[D.key] = !S.open[D.key]; render(); return; }
     if (act_ === 'who-ev') { S.open['ev:' + D.id] = !S.open['ev:' + D.id]; render(); return; }
     if (act_ === 'sec') { S.sec[D.id] = !S.sec[D.id]; render(); return; }
+    if (act_ === 'add-toggle') {
+      S.add[D.id] = !S.add[D.id];
+      if (S.add[D.id]) S.sec[D.id] = true;
+      render();
+      var af = document.querySelector('.addform');
+      if (S.add[D.id] && af) af.scrollIntoView({ block: 'nearest' });
+      return;
+    }
     if (act_ === 'more-tr') { S.showMore = !S.showMore; render(); return; }
     if (act_ === 'edit') {
       S.edit = D.target;
-      S.sec[D.target.indexOf('rule:') === 0 ? 'rules' : D.target.indexOf('ev:') === 0 ? 'events' : 'upcoming'] = true;
+      S.sec[D.target.indexOf('rule:') === 0 ? 'rules' : D.target.indexOf('ev:') === 0 ? 'events' : D.target.indexOf('tr:x#') === 0 ? 'extra' : 'upcoming'] = true;
       render();
       var ef = document.querySelector('.editform');
       if (ef) ef.scrollIntoView({ block: 'nearest' });
@@ -756,7 +790,7 @@
       S.busy = true;
       var added = await addMember(g('name'), g('phone'));
       S.busy = false;
-      if (added) { var mf = document.querySelector('[data-form="member"]'); if (mf) mf.reset(); }
+      if (added) { S.add.members = false; render(); }
       return;
     }
     if (kind === 'rule') {
@@ -779,7 +813,22 @@
       ok = await act(function () { return sb.from('events').update({ title: g('title'), event_date: g('date'), start_time: g('time'), place: g('place') }).eq('id', id); }, 'Event geändert');
       if (ok) S.edit = null;
     }
-    if (ok) { render(); if (/^(rule|extra|event)$/.test(kind)) { var nf = document.querySelector('[data-form="' + kind + '"]'); if (nf) nf.reset(); } }
+    if (ok && kind === 'rule') S.add.rules = false;
+    if (ok && kind === 'event') S.add.events = false;
+    if (ok) { render(); if (/^(extra)$/.test(kind)) { var nf = document.querySelector('[data-form="' + kind + '"]'); if (nf) nf.reset(); } }
+  });
+
+  document.addEventListener('input', function (e) {
+    var t = e.target;
+    if (!t || t.name !== 'phone' || !t.closest('[data-form="auth"],[data-form="member"]')) return;
+    var pos = t.selectionStart, atEnd = pos === t.value.length;
+    var before = t.value.slice(0, pos).replace(/\D/g, '').length;
+    var f = formatPhoneTyping(t.value);
+    if (f === t.value) return;
+    t.value = f;
+    if (atEnd) pos = f.length;
+    else { var c = 0; pos = 0; while (pos < f.length && c < before) { if (/\d/.test(f.charAt(pos))) c++; pos++; } }
+    try { t.setSelectionRange(pos, pos); } catch (x) { /* ignorieren */ }
   });
 
   /* ---------- Installation & Start ---------- */

@@ -272,3 +272,17 @@
   .morebtn .chev { transition: transform .2s; }
   .morebtn[aria-expanded="true"] .chev { transform: rotate(180deg); }
   @media (prefers-reduced-motion: reduce) { .acchead .chev, .morebtn .chev { transition: none; } }
+
+  /* Kopfzeile der einklappbaren Bereiche mit «+» */
+  .acchead { width: 100%; display: flex; align-items: center; justify-content: flex-start; gap: 10px; padding: 0; border: 0; background: none; }
+  .acctoggle { flex: 1; min-width: 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; background: none; border: 0; padding: 0; text-align: left; color: inherit; }
+  .acctoggle .t { font-family: var(--font-head); font-weight: 700; font-size: 1.6rem; line-height: 1.05; letter-spacing: .01em; }
+  .acctoggle .cnt { color: var(--muted); font-weight: 600; font-size: 1.2rem; }
+  .acctoggle .chev { flex: 0 0 auto; width: 18px; height: 18px; transition: transform .2s; }
+  .acctoggle[aria-expanded="true"] .chev { transform: rotate(180deg); }
+  .plusbtn { flex: 0 0 auto; width: 40px; height: 40px; border-radius: 10px; border: 1.5px solid var(--line); background: transparent; color: var(--ink); padding: 0; display: inline-flex; align-items: center; justify-content: center; }
+  .plusbtn span { font-size: 1.7rem; line-height: 1; font-weight: 600; transition: transform .2s; }
+  .plusbtn[aria-pressed="true"] { background: var(--ink); color: var(--onink); border-color: var(--ink); }
+  .plusbtn[aria-pressed="true"] span { transform: rotate(45deg); }
+  .addform { border-bottom: 1px solid var(--line); padding-bottom: 14px; margin-bottom: 8px; }
+  @media (prefers-reduced-motion: reduce) { .acctoggle .chev, .plusbtn span { transition: none; } }
