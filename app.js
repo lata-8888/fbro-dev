@@ -43,7 +43,7 @@
       step: 'loading', mode: 'login', tab: 'trainings', phone: '', err: '', info: '',
       session: null, me: null, members: [],
       rules: [], extras: [], overrides: {}, cancelled: {}, events: [],
-      tr: {}, ev: {}, open: {}, edit: null, busy: false
+      tr: {}, ev: {}, open: {}, edit: null, busy: false, sec: {}, showMore: false
     };
   }
   var S = freshState();
@@ -75,21 +75,24 @@
   }
 
   /* ---------- Trainings berechnen ---------- */
+  function prefix() { return cfg.CLUB_SHORT || 'FBRO'; }
+
+  // Alle künftigen Termine: Serien-Termine für die nächsten 12 Monate, Spezial-Trainings ohne Zeitgrenze
   function getTrainings() {
     var now = new Date();
     var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     var todayIso = iso(today);
     var nowT = pad(now.getHours()) + ':' + pad(now.getMinutes());
-    var last = new Date(today.getFullYear(), today.getMonth() + 4, 0);
-    var lastIso = iso(last);
+    var months = cfg.TRAININGS_HORIZON_MONTHS || 12;
+    var last = new Date(today.getFullYear(), today.getMonth() + months + 1, 0);
     var span = Math.round((last - today) / 864e5);
     var list = [];
     var add = function (t) {
       var ov = S.overrides[t.key];
       if (ov) { t.iso = ov.date; t.time = ov.time; t.place = ov.place; t.changed = true; }
       t.date = parseIso(t.iso);
-      if (t.iso < todayIso || t.iso > lastIso) return;
-      if (t.iso === todayIso && t.time < nowT) return;
+      if (t.iso < todayIso) return;                       // vergangene Termine ausblenden
+      if (t.iso === todayIso && t.time < nowT) return;    // heute bereits begonnene ebenfalls
       list.push(t);
     };
     for (var i = 0; i <= span; i++) {
@@ -107,8 +110,10 @@
   }
 
   function getEvents() {
-    var today = iso(new Date());
-    return S.events.filter(function (e) { return e.date >= today; })
+    var now = new Date();
+    var todayIso = iso(now);
+    var nowT = pad(now.getHours()) + ':' + pad(now.getMinutes());
+    return S.events.filter(function (e) { return e.date > todayIso || (e.date === todayIso && e.time >= nowT); })
       .sort(function (a, b) { return (a.date + a.time) < (b.date + b.time) ? -1 : 1; });
   }
 
@@ -226,18 +231,29 @@
       '</div>';
   }
 
+  function monthList(items, cardFn) {
+    var html = '', last = '';
+    items.forEach(function (t) {
+      var label = fmt(t.date, { month: 'long', year: 'numeric' });
+      if (label !== last) { html += '<div class="week">' + esc(label) + '</div>'; last = label; }
+      html += cardFn(t);
+    });
+    return html;
+  }
+
   function viewTrainings() {
     var list = getTrainings();
-    var html = '<div class="top"><div><h1>Trainings</h1><p>Die nächsten drei Monate</p></div></div>';
+    var n = cfg.TRAININGS_VISIBLE || 12;
+    var first = list.slice(0, n), rest = list.slice(n);
+    var html = '<div class="top"><div><h1>' + esc(prefix()) + '-Trainings</h1><p>Kommende Termine</p></div></div>';
     if (!list.length) {
       return html + '<div class="empty"><p><b>Noch keine Trainings geplant.</b></p><p>' + (S.me.isAdmin ? 'Lege im Bereich «Verwalten» einen Trainingstag fest.' : 'Die Admins legen die Trainingstage fest.') + '</p></div>';
     }
-    var last = '';
-    list.forEach(function (t) {
-      var label = fmt(t.date, { month: 'long', year: 'numeric' });
-      if (label !== last) { html += '<div class="week">' + esc(label) + '</div>'; last = label; }
-      html += cardHtml(t);
-    });
+    html += monthList(first, cardHtml);
+    if (rest.length) {
+      html += '<button class="morebtn" data-act="more-tr" aria-expanded="' + S.showMore + '"><span>Weitere Trainings (' + rest.length + ')</span>' + ICON.chev + '</button>';
+      if (S.showMore) html += monthList(rest, cardHtml);
+    }
     return html;
   }
 
@@ -277,16 +293,11 @@
 
   function viewEvents() {
     var list = getEvents();
-    var html = '<div class="top"><div><h1>Events</h1><p>Anlässe im Verein</p></div></div>';
+    var html = '<div class="top"><div><h1>' + esc(prefix()) + '-Events</h1><p>Anlässe im Verein</p></div></div>';
     if (!list.length) {
       return html + '<div class="empty"><p><b>Aktuell sind keine Events geplant.</b></p><p>' + (S.me.isAdmin ? 'Lege im Bereich «Verwalten» einen Event an.' : 'Die Admins legen neue Events an.') + '</p></div>';
     }
-    var last = '';
-    list.forEach(function (e) {
-      var label = fmt(parseIso(e.date), { month: 'long', year: 'numeric' });
-      if (label !== last) { html += '<div class="week">' + esc(label) + '</div>'; last = label; }
-      html += eventCardHtml(e);
-    });
+    html += monthList(list.map(function (e) { return { e: e, date: parseIso(e.date) }; }), function (w) { return eventCardHtml(w.e); });
     return html;
   }
 
@@ -320,71 +331,94 @@
     '</article>';
   }
 
+  function accordion(id, title, count, body) {
+    var open = !!S.sec[id];
+    return '<section class="panel acc"><button class="acchead" data-act="sec" data-id="' + id + '" aria-expanded="' + open + '">' +
+      '<span class="t">' + title + (count != null ? ' <span class="cnt">(' + count + ')</span>' : '') + '</span>' + ICON.chev + '</button>' +
+      (open ? '<div class="accbody">' + body + '</div>' : '') + '</section>';
+  }
+
   function viewAdmin() {
     var list = getTrainings();
+    var today = iso(new Date());
     var html = '<div class="top"><div><h1>Verwalten</h1><p>Nur für Admins sichtbar</p></div></div>';
 
-    html += '<section class="panel"><h2>Wiederkehrende Trainings</h2><p>Diese Tage wiederholen sich jede Woche. Änderungen gelten für alle kommenden Termine.</p>';
-    html += S.rules.length ? '<ul class="list">' + S.rules.map(function (r) {
+    /* Montag Trainings (wiederkehrend) */
+    var b = '<p>Diese Tage wiederholen sich jede Woche. Änderungen gelten für alle kommenden Termine.</p>';
+    b += S.rules.length ? '<ul class="list">' + S.rules.map(function (r) {
       if (S.edit === 'rule:' + r.id) {
         return editRow('edit-rule', r.id, grid(fld('Wochentag', '<select class="input" name="wd">' + wdOptions(r.wd) + '</select>'), fld('Uhrzeit', inTime(r.time))) + fld('Ort', inPlace(r.place)));
       }
       return '<li><div class="l"><b>' + wdName(r.wd) + ', ' + esc(r.time) + ' Uhr</b><span>' + esc(r.place) + '</span></div>' +
         '<div class="btnrow"><button class="mini" data-act="edit" data-target="rule:' + r.id + '">Bearbeiten</button>' +
         '<button class="mini del" data-act="del-rule" data-id="' + r.id + '">Entfernen</button></div></li>';
-    }).join('') + '</ul>' : '<p class="muted" style="margin-bottom:14px">Noch kein fester Trainingstag. Füge unten einen hinzu.</p>';
-    html += '<form class="addbox" data-form="rule">' + grid(fld('Wochentag', '<select class="input" name="wd">' + wdOptions(1) + '</select>'), fld('Uhrzeit', inTime('19:00'))) +
+    }).join('') + '</ul>' : '<p class="muted">Noch kein fester Trainingstag. Füge unten einen hinzu.</p>';
+    b += '<form class="addbox" data-form="rule">' + grid(fld('Wochentag', '<select class="input" name="wd">' + wdOptions(1) + '</select>'), fld('Uhrzeit', inTime('19:00'))) +
       fld('Ort', inPlace('', 'z. B. Turnhalle Schulhaus Nord')) +
-      '<button class="btn" type="submit">Trainingstag hinzufügen</button></form></section>';
+      '<button class="btn" type="submit">Trainingstag hinzufügen</button></form>';
+    html += accordion('rules', 'Montag Trainings', S.rules.length, b);
 
-    html += '<section class="panel"><h2>Einzelnes Training</h2><p>Für Sondertermine wie Turniere oder Zusatztrainings.</p>' +
+    /* Spezial-Trainings */
+    var nExtra = S.extras.filter(function (x) { return x.date >= today; }).length;
+    b = '<p>Für Sondertermine wie Turniere oder Zusatztrainings. Es gibt keine Obergrenze. Bearbeiten, absagen oder löschen kannst du sie unter «Kommende Trainings».</p>' +
       '<form data-form="extra">' + fld('Bezeichnung', inTitle('Zusatztraining')) +
       grid(fld('Datum', '<input class="input" type="date" name="date" required>'), fld('Uhrzeit', inTime('18:00'))) +
       fld('Ort', inPlace('', 'z. B. Sportanlage Süd')) +
-      '<button class="btn" type="submit">Training hinzufügen</button></form></section>';
+      '<button class="btn" type="submit">Spezial-Training hinzufügen</button></form>';
+    html += accordion('extra', 'Spezial-Trainings', nExtra, b);
 
-    html += '<section class="panel"><h2>Kommende Trainings</h2><p>Einzelne Termine ändern, absagen oder löschen, z. B. bei Hallenschliessung.</p>';
-    html += list.length ? '<ul class="list scroll">' + list.map(function (t) {
+    /* Kommende Trainings */
+    b = '<p>Einzelne Termine ändern, absagen oder löschen, z. B. bei Hallenschliessung.</p>';
+    b += list.length ? '<ul class="list scroll" data-sc="upcoming">' + list.map(function (t) {
       var off = !!S.cancelled[t.key];
       if (S.edit === 'tr:' + t.key) {
         var body = (t.extraId ? fld('Bezeichnung', inTitle(t.title)) : '') + grid(fld('Datum', inDate(t.iso)), fld('Uhrzeit', inTime(t.time))) + fld('Ort', inPlace(t.place));
         var reset = S.overrides[t.key] ? '<button class="btn ghost inline" type="button" data-act="reset-tr" data-key="' + esc(t.key) + '">Zurücksetzen</button>' : '';
         return editRow('edit-tr', t.key, body, t.extraId ? '' : 'Gilt nur für diesen Termin. Die Antworten der Mitglieder bleiben erhalten.', reset);
       }
-      return '<li><div class="l"><b>' + esc(fmt(t.date, { weekday: 'short', day: 'numeric', month: 'short' })) + ', ' + esc(t.time) + '</b>' +
+      return '<li><div class="l"><b>' + esc(fmt(t.date, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })) + ', ' + esc(t.time) + '</b>' +
         '<span>' + esc(t.title) + ', ' + esc(t.place) + (t.changed ? ' · geändert' : '') + (off ? ' · abgesagt' : '') + '</span></div>' +
         '<div class="btnrow"><button class="mini" data-act="edit" data-target="tr:' + esc(t.key) + '">Bearbeiten</button>' +
         '<button class="mini" data-act="cancel" data-key="' + esc(t.key) + '">' + (off ? 'Reaktivieren' : 'Absagen') + '</button>' +
         (t.extraId ? '<button class="mini del" data-act="del-extra" data-id="' + t.extraId + '">Löschen</button>' : '') + '</div></li>';
-    }).join('') + '</ul>' : '<p class="muted">Keine Trainings in den nächsten Monaten.</p>';
-    html += '</section>';
+    }).join('') + '</ul>' : '<p class="muted">Keine kommenden Trainings.</p>';
+    html += accordion('upcoming', 'Kommende Trainings', list.length, b);
 
+    /* Events */
     var evs = getEvents();
-    html += '<section class="panel"><h2>Events</h2><p>Anlässe, bei denen Mitglieder allein oder zu zweit zusagen können.</p>';
-    html += evs.length ? '<ul class="list">' + evs.map(function (e) {
+    b = '<p>Anlässe, bei denen Mitglieder allein oder zu zweit zusagen können. Es gibt keine Obergrenze.</p>';
+    b += evs.length ? '<ul class="list scroll" data-sc="events">' + evs.map(function (e) {
       if (S.edit === 'ev:' + e.id) {
         return editRow('edit-ev', e.id, fld('Bezeichnung', inTitle(e.title)) + grid(fld('Datum', inDate(e.date)), fld('Uhrzeit', inTime(e.time))) + fld('Ort', inPlace(e.place)));
       }
-      return '<li><div class="l"><b>' + esc(e.title) + '</b><span>' + esc(fmt(parseIso(e.date), { weekday: 'short', day: 'numeric', month: 'short' })) + ', ' + esc(e.time) + ', ' + esc(e.place) + (e.cancelled ? ' · abgesagt' : '') + '</span></div>' +
+      return '<li><div class="l"><b>' + esc(e.title) + '</b><span>' + esc(fmt(parseIso(e.date), { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })) + ', ' + esc(e.time) + ', ' + esc(e.place) + (e.cancelled ? ' · abgesagt' : '') + '</span></div>' +
         '<div class="btnrow"><button class="mini" data-act="edit" data-target="ev:' + e.id + '">Bearbeiten</button>' +
         '<button class="mini" data-act="cancel-ev" data-id="' + e.id + '">' + (e.cancelled ? 'Reaktivieren' : 'Absagen') + '</button>' +
         '<button class="mini del" data-act="del-ev" data-id="' + e.id + '">Löschen</button></div></li>';
-    }).join('') + '</ul>' : '<p class="muted" style="margin-bottom:14px">Noch keine Events. Lege unten den ersten an.</p>';
-    html += '<form class="addbox" data-form="event">' + fld('Bezeichnung', inTitle('', 'z. B. Fondue-Plausch')) +
+    }).join('') + '</ul>' : '<p class="muted">Noch keine Events. Lege unten den ersten an.</p>';
+    b += '<form class="addbox" data-form="event">' + fld('Bezeichnung', inTitle('', 'z. B. Fondue-Plausch')) +
       grid(fld('Datum', '<input class="input" type="date" name="date" required>'), fld('Uhrzeit', inTime('18:00'))) +
       fld('Ort', inPlace('', 'z. B. Vereinshaus')) +
-      '<button class="btn" type="submit">Event hinzufügen</button></form></section>';
+      '<button class="btn" type="submit">Event hinzufügen</button></form>';
+    html += accordion('events', 'Events', evs.length, b);
 
-    html += '<section class="panel"><h2>Mitglieder (' + S.members.length + ')</h2><p>Tippe auf den Stern, um ein Mitglied zum Admin zu machen oder die Rechte zu entziehen. Mit «PIN zurücksetzen» gilt wieder der Standard-PIN.</p><ul class="list">' +
-      S.members.map(function (m) {
+    /* Mitglieder */
+    b = '<p>Tippe auf den Stern, um ein Mitglied zum Admin zu machen oder die Rechte zu entziehen. Der Standard-PIN sind die letzten 6 Ziffern der Handynummer.</p>' +
+      '<ul class="list scroll" data-sc="members">' + S.members.map(function (m) {
         var self = m.id === S.me.id;
         var label = self ? 'Du bist Admin. Du kannst dir die Rechte nicht selbst entziehen.' : (m.isAdmin ? 'Admin-Rechte entziehen: ' : 'Zum Admin machen: ') + m.name;
         return '<li><div class="l"><b>' + esc(m.name) + '</b><span>' + esc(fmtPhone(m.phone)) + (m.isAdmin ? ' · Admin' : '') + '</span></div>' +
           '<div class="btnrow">' +
           '<button class="starbtn" data-act="set-admin" data-id="' + m.id + '" data-val="' + (m.isAdmin ? '0' : '1') + '" aria-pressed="' + m.isAdmin + '" aria-label="' + esc(label) + '" title="' + esc(label) + '"' + (self ? ' disabled' : '') + '>' + ICON.star + '</button>' +
-          (self ? '' : '<button class="mini" data-act="reset-pin" data-id="' + m.id + '">PIN zurücksetzen</button>') +
+          (self ? '' : '<button class="mini" data-act="reset-pin" data-id="' + m.id + '">PIN zurücksetzen</button><button class="mini del" data-act="remove-member" data-id="' + m.id + '">Entfernen</button>') +
           '</div></li>';
-      }).join('') + '</ul></section>';
+      }).join('') + '</ul>' +
+      '<form class="addbox" data-form="member"><h3 style="margin-bottom:10px">Mitglied hinzufügen</h3>' +
+      fld('Vor- und Nachname', '<input class="input" name="name" autocomplete="off" required>') +
+      fld('Handynummer', '<input class="input" name="phone" type="tel" inputmode="tel" autocomplete="off" placeholder="079 123 45 67" required>') +
+      '<p class="small muted" style="margin:-4px 0 12px">Das Mitglied meldet sich nur mit der Handynummer an. Der PIN sind die letzten 6 Ziffern.</p>' +
+      '<button class="btn" type="submit">Mitglied hinzufügen</button></form>';
+    html += accordion('members', 'Mitglieder', S.members.length, b);
     return html;
   }
 
@@ -424,8 +458,8 @@
   function render() {
     var app = document.getElementById('app');
     var y = window.scrollY;
-    var ls = document.querySelector('.list.scroll');
-    var lt = ls ? ls.scrollTop : 0;
+    var lts = {};
+    document.querySelectorAll('.list.scroll').forEach(function (x) { lts[x.dataset.sc] = x.scrollTop; });
     if (S.step === 'setup') app.innerHTML = viewSetup();
     else if (S.step === 'loading') app.innerHTML = '<div class="login"><p class="muted">Lade …</p></div>';
     else if (S.step === 'login') app.innerHTML = viewLogin();
@@ -435,8 +469,7 @@
     }
     renderNav();
     window.scrollTo(0, y);
-    var ls2 = document.querySelector('.list.scroll');
-    if (ls2) ls2.scrollTop = lt;
+    document.querySelectorAll('.list.scroll').forEach(function (x) { if (lts[x.dataset.sc]) x.scrollTop = lts[x.dataset.sc]; });
   }
 
   // Aktualisiert im Hintergrund, ohne eine laufende Eingabe zu stören
@@ -465,7 +498,7 @@
       return true;
     } catch (e) {
       console.error(e);
-      toast('Das hat nicht geklappt. Bitte versuche es erneut.');
+      toast('Das hat nicht geklappt' + (e && e.message ? ': ' + String(e.message).slice(0, 100) : '') + '.');
       return false;
     } finally {
       try { await loadAll(); render(); } catch (e2) { console.error(e2); }
@@ -486,6 +519,33 @@
       store[keyVal][S.me.id] = val;
       render();
       await act(function () { return sb.from(table).upsert(row); }, msg);
+    }
+  }
+
+  async function addMember(name, phoneRaw) {
+    var phone = normPhone(phoneRaw);
+    if (!phone) { toast('Bitte gib eine gültige Handynummer ein, z. B. 079 123 45 67.'); return false; }
+    if (S.members.some(function (m) { return m.phone === phone; })) { toast('Diese Nummer ist schon registriert.'); return false; }
+    try {
+      var code = await sb.rpc('get_club_code');
+      if (code.error) throw code.error;
+      // Eigener, kurzlebiger Client: die Sitzung des Admins bleibt unverändert
+      var tmp = window.supabase.createClient(cfg.SUPABASE_URL, cfg.SUPABASE_ANON_KEY, {
+        auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false }
+      });
+      var r = await tmp.auth.signUp({
+        email: phoneToEmail(phone), password: defaultPin(phone),
+        options: { data: { name: name, phone: phone, club_code: code.data || '' } }
+      });
+      if (r.error) throw r.error;
+      toast(name + ' wurde hinzugefügt.');
+      return true;
+    } catch (e) {
+      console.error(e);
+      toast('Hinzufügen nicht möglich: ' + (/already/i.test(String(e.message)) ? 'Diese Nummer ist schon registriert.' : String(e.message || 'Unbekannter Fehler').slice(0, 100)));
+      return false;
+    } finally {
+      try { await loadAll(); render(); } catch (e2) { console.error(e2); }
     }
   }
 
@@ -579,8 +639,12 @@
     if (act_ === 'tab') { S.tab = D.tab; S.edit = null; render(); window.scrollTo(0, 0); return; }
     if (act_ === 'who') { S.open[D.key] = !S.open[D.key]; render(); return; }
     if (act_ === 'who-ev') { S.open['ev:' + D.id] = !S.open['ev:' + D.id]; render(); return; }
+    if (act_ === 'sec') { S.sec[D.id] = !S.sec[D.id]; render(); return; }
+    if (act_ === 'more-tr') { S.showMore = !S.showMore; render(); return; }
     if (act_ === 'edit') {
-      S.edit = D.target; render();
+      S.edit = D.target;
+      S.sec[D.target.indexOf('rule:') === 0 ? 'rules' : D.target.indexOf('ev:') === 0 ? 'events' : 'upcoming'] = true;
+      render();
       var ef = document.querySelector('.editform');
       if (ef) ef.scrollIntoView({ block: 'nearest' });
       return;
@@ -649,6 +713,11 @@
       if (!confirm('PIN von ' + (who ? who.name : 'diesem Mitglied') + ' auf die letzten 6 Ziffern der Handynummer zurücksetzen?')) return;
       return act(function () { return sb.rpc('reset_pin', { target: D.id }); }, 'PIN zurückgesetzt');
     }
+    if (act_ === 'remove-member') {
+      var rm = S.members.filter(function (m) { return m.id === D.id; })[0];
+      if (!confirm((rm ? rm.name : 'Dieses Mitglied') + ' entfernen? Das Konto und alle Antworten werden gelöscht.')) return;
+      return act(function () { return sb.rpc('remove_member', { target: D.id }); }, 'Mitglied entfernt');
+    }
     if (act_ === 'set-admin') {
       return act(function () { return sb.rpc('set_admin', { target: D.id, make_admin: D.val === '1' }); }, D.val === '1' ? 'Admin-Rechte vergeben' : 'Admin-Rechte entzogen');
     }
@@ -683,6 +752,13 @@
     }
     if (!S.me.isAdmin) return;
 
+    if (kind === 'member') {
+      S.busy = true;
+      var added = await addMember(g('name'), g('phone'));
+      S.busy = false;
+      if (added) { var mf = document.querySelector('[data-form="member"]'); if (mf) mf.reset(); }
+      return;
+    }
     if (kind === 'rule') {
       ok = await act(function () { return sb.from('training_rules').insert({ weekday: Number(g('wd')), start_time: g('time'), place: g('place') }); }, 'Trainingstag hinzugefügt');
     } else if (kind === 'extra') {

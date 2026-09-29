@@ -257,3 +257,18 @@
   .starbtn[disabled] { cursor: default; opacity: .85; }
 
   .calbtn { display: inline-flex; align-items: center; gap: 6px; background: none; border: 0; padding: 8px 0 2px; font-size: .85rem; font-weight: 600; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-align: left; }
+
+  /* Einklappbare Bereiche */
+  .acchead { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; background: none; border: 0; padding: 0; text-align: left; color: inherit; }
+  .acchead .t { font-family: var(--font-head); font-weight: 700; font-size: 1.6rem; line-height: 1.05; letter-spacing: .01em; }
+  .acchead .cnt { color: var(--muted); font-weight: 600; font-size: 1.2rem; }
+  .acchead .chev { flex: 0 0 auto; width: 18px; height: 18px; transition: transform .2s; }
+  .acchead[aria-expanded="true"] .chev { transform: rotate(180deg); }
+  .accbody { margin-top: 14px; }
+  .accbody > p { color: var(--muted); margin-bottom: 14px; font-size: .95rem; }
+  .accbody h3 { font-size: 1.3rem; }
+  /* Weitere Trainings */
+  .morebtn { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 18px 0 6px; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); font-weight: 600; font-size: 1rem; }
+  .morebtn .chev { transition: transform .2s; }
+  .morebtn[aria-expanded="true"] .chev { transform: rotate(180deg); }
+  @media (prefers-reduced-motion: reduce) { .acchead .chev, .morebtn .chev { transition: none; } }
