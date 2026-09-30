@@ -11,6 +11,7 @@
     --open: #CDD2CA;
     --onink: #FFFFFF;
     --focus: #2B6BE4;
+    --crown: #307CC0;
     --font-head: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
     --font-body: "Barlow", "Helvetica Neue", Arial, sans-serif;
     box-sizing: border-box;
@@ -19,6 +20,7 @@
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
+      --crown: #5B9BD5;
       --bg: #0F1626;
       --surface: #182238;
       --ink: #EEF1F6;
@@ -34,6 +36,7 @@
     }
   }
   :root[data-theme="dark"] {
+    --crown: #5B9BD5;
     --bg: #0F1626;
     --surface: #182238;
     --ink: #EEF1F6;
@@ -308,13 +311,16 @@
   /* Rollen-Symbole: Krone (Mitglied/Gast), Stern (Admin), Weinglas (Event-Manager) */
   .rolebtn { width: 40px; height: 40px; flex: 0 0 auto; border-radius: 10px; border: 1.5px solid var(--line); background: transparent; color: var(--muted); padding: 0; display: inline-flex; align-items: center; justify-content: center; }
   .rolebtn svg { width: 24px; height: 24px; fill: none; }
-  .rolebtn.on.crown { color: var(--onink); background: var(--ink); border-color: var(--ink); }
+  .rolebtn.crown { color: var(--crown); border-color: color-mix(in srgb, var(--crown) 45%, var(--line)); }
+  .rolebtn.on.crown { color: #fff; background: var(--crown); border-color: var(--crown); }
   .rolebtn.on.crown svg { fill: currentColor; }
   .rolebtn.on.star { color: #E0A100; border-color: #E0A100; }
-  .rolebtn.on.star svg { fill: #E0A100; }
-  .rolebtn.on.glass { color: #B0345B; border-color: #B0345B; }
+  .rolebtn.on.star svg { fill: color-mix(in srgb, #E0A100 30%, transparent); stroke-width: 2.2; }
+  .rolebtn.star .hole { fill: none; }
+  .rolebtn.on.star .hole { fill: var(--surface); }
+  .rolebtn.on.glass { color: var(--crown); border-color: var(--crown); }
   .rolebtn.glass .liq { fill: none; }
-  .rolebtn.on.glass .liq { fill: #B0345B; }
+  .rolebtn.on.glass .liq { fill: var(--crown); }
   .rolebtn[disabled] { cursor: default; opacity: .85; }
   .rolerow { display: flex; align-items: center; gap: 12px; padding: 6px 0; font-weight: 500; }
 
@@ -323,7 +329,9 @@
   .accbody > p.infotext { margin: 0 0 14px; padding: 10px 12px; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; color: var(--muted); font-size: .92rem; }
 
   /* Symbol-Knöpfe: PIN zurücksetzen (Zahlenblock) und Entfernen (Abfalleimer) */
-  .rolebtn.iconbtn { color: var(--ink); }
+  .rolebtn.iconbtn { color: var(--crown); border-color: color-mix(in srgb, var(--crown) 45%, var(--line)); }
+  .rolebtn.iconbtn:not(.danger) svg { fill: currentColor; }
+  .rolebtn.iconbtn.pin { color: var(--yes); border-color: color-mix(in srgb, var(--yes) 45%, var(--line)); }
   .rolebtn.iconbtn svg { width: 22px; height: 22px; }
   .rolebtn.iconbtn.danger { color: var(--no); border-color: color-mix(in srgb, var(--no) 45%, var(--line)); }
 
@@ -335,3 +343,6 @@
   .dlgbtns { display: flex; justify-content: flex-end; gap: 10px; flex-wrap: wrap; }
   .dlgbtns .btn { min-width: 110px; }
   .btn.dangerbtn { background: var(--no); color: #fff; }
+
+  /* Mitgliederliste: Symbole rechtsbündig, damit die Krone immer ganz rechts steht */
+  [data-sc="members"] .btnrow { margin-left: auto; justify-content: flex-end; }

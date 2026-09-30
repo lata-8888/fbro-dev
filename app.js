@@ -51,7 +51,7 @@
       phPlaceExtra: 'z. B. Sportanlage Süd', addExtra: 'Weiteres Training hinzufügen', upcomingEmpty: 'Keine kommenden Trainings.',
       phEventTitle: 'z. B. Fondue-Plausch', phEventPlace: 'z. B. Vereinshaus', addEvent: 'Event hinzufügen',
       eventsEmpty: 'Noch keine Events. Tippe auf «+», um den ersten zu erfassen.',
-      membersIntro: 'Krone: Mitglied oder Gast (leere Krone). Stern: Admin. Glas: Event-Manager. Diese Rollen können nur Admins ändern. Gäste sehen nur Trainings und Profil, keine Events. Der Standard-PIN sind die letzten 6 Ziffern der Handynummer.',
+      membersIntro: 'Krone: Mitglied oder Gast (leere Krone). Zahnrad: Admin. Glas: Event-Manager. Diese Rollen können nur Admins ändern. Gäste sehen nur Trainings und Profil, keine Events. Der Standard-PIN sind die letzten 6 Ziffern der Handynummer.',
       memberAdd: 'Mitglied hinzufügen', fullName: 'Vor- und Nachname', phone: 'Handynummer',
       memberAddNote: 'Das Mitglied meldet sich nur mit der Handynummer an. Der PIN sind die letzten 6 Ziffern.',
       selfAdmin: 'Du bist Admin. Du kannst dir die Rechte nicht selbst entziehen.', revokeAdmin: 'Admin-Rechte entziehen: {name}', makeAdmin: 'Zum Admin machen: {name}',
@@ -122,7 +122,7 @@
       phPlaceExtra: 'p. ex. centre sportif Sud', addExtra: 'Ajouter un entraînement', upcomingEmpty: 'Aucun entraînement à venir.',
       phEventTitle: 'p. ex. soirée fondue', phEventPlace: 'p. ex. maison du club', addEvent: 'Ajouter un événement',
       eventsEmpty: 'Aucun événement pour l’instant. Touche « + » pour créer le premier.',
-      membersIntro: 'Couronne : membre ou invité (couronne vide). Étoile : admin. Verre : responsable des événements. Seuls les admins peuvent modifier ces rôles. Les invités ne voient que les entraînements et le profil, pas les événements. Le PIN par défaut correspond aux 6 derniers chiffres du numéro de mobile.',
+      membersIntro: 'Couronne : membre ou invité (couronne vide). Roue dentée : admin. Verre : responsable des événements. Seuls les admins peuvent modifier ces rôles. Les invités ne voient que les entraînements et le profil, pas les événements. Le PIN par défaut correspond aux 6 derniers chiffres du numéro de mobile.',
       memberAdd: 'Ajouter un membre', fullName: 'Prénom et nom', phone: 'Numéro de mobile',
       memberAddNote: 'Le membre se connecte uniquement avec son numéro de mobile. Le PIN correspond aux 6 derniers chiffres.',
       selfAdmin: 'Tu es admin. Tu ne peux pas te retirer tes droits toi-même.', revokeAdmin: 'Retirer les droits d’admin : {name}', makeAdmin: 'Nommer admin : {name}',
@@ -193,7 +193,7 @@
       phPlaceExtra: 'e.g. South sports ground', addExtra: 'Add another training', upcomingEmpty: 'No upcoming trainings.',
       phEventTitle: 'e.g. Fondue evening', phEventPlace: 'e.g. Club house', addEvent: 'Add event',
       eventsEmpty: 'No events yet. Tap “+” to add the first one.',
-      membersIntro: 'Crown: member or guest (empty crown). Star: admin. Glass: event manager. Only admins can change these roles. Guests see only the trainings and the profile, no events. The default PIN is the last 6 digits of the mobile number.',
+      membersIntro: 'Crown: member or guest (empty crown). Gear: admin. Glass: event manager. Only admins can change these roles. Guests see only the trainings and the profile, no events. The default PIN is the last 6 digits of the mobile number.',
       memberAdd: 'Add member', fullName: 'First and last name', phone: 'Mobile number',
       memberAddNote: 'The member signs in with the mobile number only. The PIN is the last 6 digits.',
       selfAdmin: 'You are an admin. You cannot remove your own rights.', revokeAdmin: 'Remove admin rights: {name}', makeAdmin: 'Make admin: {name}',
@@ -264,7 +264,7 @@
       phPlaceExtra: 'ad es. impianto sportivo Sud', addExtra: 'Aggiungi allenamento', upcomingEmpty: 'Nessun allenamento in arrivo.',
       phEventTitle: 'ad es. serata fonduta', phEventPlace: 'ad es. sede del club', addEvent: 'Aggiungi evento',
       eventsEmpty: 'Ancora nessun evento. Tocca «+» per crearne uno.',
-      membersIntro: 'Corona: socio od ospite (corona vuota). Stella: admin. Bicchiere: responsabile eventi. Solo gli admin possono modificare questi ruoli. Gli ospiti vedono solo gli allenamenti e il profilo, non gli eventi. Il PIN predefinito corrisponde alle ultime 6 cifre del numero di cellulare.',
+      membersIntro: 'Corona: socio od ospite (corona vuota). Ingranaggio: admin. Bicchiere: responsabile eventi. Solo gli admin possono modificare questi ruoli. Gli ospiti vedono solo gli allenamenti e il profilo, non gli eventi. Il PIN predefinito corrisponde alle ultime 6 cifre del numero di cellulare.',
       memberAdd: 'Aggiungi socio', fullName: 'Nome e cognome', phone: 'Numero di cellulare',
       memberAddNote: 'Il socio accede solo con il numero di cellulare. Il PIN corrisponde alle ultime 6 cifre.',
       selfAdmin: 'Sei admin. Non puoi revocarti i diritti da solo.', revokeAdmin: 'Revoca i diritti di admin: {name}', makeAdmin: 'Rendi admin: {name}',
@@ -335,7 +335,7 @@
       phPlaceExtra: 'z. B. Sportaalag Süd', addExtra: 'Es wiiters Training hinzuefüege', upcomingEmpty: 'Kei kommendi Trainings.',
       phEventTitle: 'z. B. Fondue-Plausch', phEventPlace: 'z. B. Vereinshuus', addEvent: 'Event hinzuefüege',
       eventsEmpty: 'No kei Events. Tipp uf «+», zum de erscht z erfasse.',
-      membersIntro: 'Chrone: Mitglied oder Gascht (leeri Chrone). Stärn: Admin. Glas: Event-Manager. Die Rolle chönd nur Admins ändere. Gäscht gsehnd nur d Trainings und s Profil, kei Events. De Standard-PIN sind di letschte 6 Ziffere vo de Handynummere.',
+      membersIntro: 'Chrone: Mitglied oder Gascht (leeri Chrone). Zahnrad: Admin. Glas: Event-Manager. Die Rolle chönd nur Admins ändere. Gäscht gsehnd nur d Trainings und s Profil, kei Events. De Standard-PIN sind di letschte 6 Ziffere vo de Handynummere.',
       memberAdd: 'Mitglied hinzuefüege', fullName: 'Vor- und Nachname', phone: 'Handynummere',
       memberAddNote: 'S Mitglied meldet sich nur mit de Handynummere aa. De PIN sind di letschte 6 Ziffere.',
       selfAdmin: 'Du bisch Admin. Du chasch dir d Rächt nöd säber entzieh.', revokeAdmin: 'Admin-Rächt entzieh: {name}', makeAdmin: 'Zum Admin mache: {name}',
@@ -406,7 +406,7 @@
       phPlaceExtra: 'напр. спортивний комплекс «Південь»', addExtra: 'Додати тренування', upcomingEmpty: 'Найближчих тренувань немає.',
       phEventTitle: 'напр. вечір фондю', phEventPlace: 'напр. клубний будинок', addEvent: 'Додати подію',
       eventsEmpty: 'Подій ще немає. Натисніть «+», щоб додати першу.',
-      membersIntro: 'Корона: член клубу або гість (порожня корона). Зірочка: адміністратор. Келих: менеджер подій. Змінювати ці ролі можуть лише адміністратори. Гості бачать лише тренування та профіль, без подій. PIN за замовчуванням — останні 6 цифр номера мобільного.',
+      membersIntro: 'Корона: член клубу або гість (порожня корона). Шестерня: адміністратор. Келих: менеджер подій. Змінювати ці ролі можуть лише адміністратори. Гості бачать лише тренування та профіль, без подій. PIN за замовчуванням — останні 6 цифр номера мобільного.',
       memberAdd: 'Додати учасника', fullName: 'Ім’я та прізвище', phone: 'Номер мобільного',
       memberAddNote: 'Учасник входить лише за номером мобільного. PIN — останні 6 цифр.',
       selfAdmin: 'Ви адміністратор. Ви не можете забрати права в себе самі.', revokeAdmin: 'Забрати права адміністратора: {name}', makeAdmin: 'Призначити адміністратором: {name}',
@@ -477,7 +477,7 @@
       phPlaceExtra: 'z. B. Sportanlage Süd', addExtra: 'A weiters Training dazuadoa', upcomingEmpty: 'Koane kemmandn Trainings.',
       phEventTitle: 'z. B. Fondue-Abend', phEventPlace: 'z. B. Vereinsheim', addEvent: 'Event dazuadoa',
       eventsEmpty: 'No koane Events. Tipp auf «+», um den erstn z erfassn.',
-      membersIntro: 'Kron: Mitglied oder Gast (leere Kron). Stern: Admin. Glas: Event-Manager. De Rolln kinna bloß Admins ändern. Gäst sehn bloß de Trainings und des Profil, koane Events. Da Standard-PIN san de letztn 6 Ziffern vo da Handynummer.',
+      membersIntro: 'Kron: Mitglied oder Gast (leere Kron). Zahnradl: Admin. Glas: Event-Manager. De Rolln kinna bloß Admins ändern. Gäst sehn bloß de Trainings und des Profil, koane Events. Da Standard-PIN san de letztn 6 Ziffern vo da Handynummer.',
       memberAdd: 'Mitglied dazuadoa', fullName: 'Vor- und Nachname', phone: 'Handynummer',
       memberAddNote: 'Des Mitglied meldt se bloß mit da Handynummer o. Da PIN san de letztn 6 Ziffern.',
       selfAdmin: 'Du bist Admin. Du konnst da d Rechte ned söiba entziehn.', revokeAdmin: 'Admin-Rechte entziehn: {name}', makeAdmin: 'Zum Admin macha: {name}',
@@ -548,7 +548,7 @@
       phPlaceExtra: 'např. sportovní areál Jih', addExtra: 'Přidat trénink', upcomingEmpty: 'Žádné nadcházející tréninky.',
       phEventTitle: 'např. fondue večer', phEventPlace: 'např. klubovna', addEvent: 'Přidat akci',
       eventsEmpty: 'Zatím žádné akce. Klepni na «+» a přidej první.',
-      membersIntro: 'Koruna: člen nebo host (prázdná koruna). Hvězdička: správce. Sklenice: správce akcí. Tyto role mohou měnit jen správci. Hosté vidí jen tréninky a profil, žádné akce. Výchozí PIN tvoří posledních 6 číslic čísla mobilu.',
+      membersIntro: 'Koruna: člen nebo host (prázdná koruna). Ozubené kolo: správce. Sklenice: správce akcí. Tyto role mohou měnit jen správci. Hosté vidí jen tréninky a profil, žádné akce. Výchozí PIN tvoří posledních 6 číslic čísla mobilu.',
       memberAdd: 'Přidat člena', fullName: 'Jméno a příjmení', phone: 'Číslo mobilu',
       memberAddNote: 'Člen se přihlašuje pouze číslem mobilu. PIN tvoří posledních 6 číslic.',
       selfAdmin: 'Jsi správce. Sám sobě práva odebrat nemůžeš.', revokeAdmin: 'Odebrat práva správce: {name}', makeAdmin: 'Udělat správcem: {name}',
@@ -619,7 +619,7 @@
       phPlaceExtra: 'bijv. sportpark Zuid', addExtra: 'Training toevoegen', upcomingEmpty: 'Geen komende trainingen.',
       phEventTitle: 'bijv. fonduavond', phEventPlace: 'bijv. clubhuis', addEvent: 'Evenement toevoegen',
       eventsEmpty: 'Nog geen evenementen. Tik op «+» om het eerste toe te voegen.',
-      membersIntro: 'Kroon: lid of gast (lege kroon). Ster: beheerder. Glas: evenementmanager. Alleen beheerders kunnen deze rollen wijzigen. Gasten zien alleen de trainingen en het profiel, geen evenementen. De standaard-PIN zijn de laatste 6 cijfers van het mobiele nummer.',
+      membersIntro: 'Kroon: lid of gast (lege kroon). Tandwiel: beheerder. Glas: evenementmanager. Alleen beheerders kunnen deze rollen wijzigen. Gasten zien alleen de trainingen en het profiel, geen evenementen. De standaard-PIN zijn de laatste 6 cijfers van het mobiele nummer.',
       memberAdd: 'Lid toevoegen', fullName: 'Voor- en achternaam', phone: 'Mobiel nummer',
       memberAddNote: 'Het lid logt alleen in met het mobiele nummer. De PIN zijn de laatste 6 cijfers.',
       selfAdmin: 'Je bent beheerder. Je kunt je eigen rechten niet intrekken.', revokeAdmin: 'Beheerdersrechten intrekken: {name}', makeAdmin: 'Beheerder maken: {name}',
@@ -827,6 +827,7 @@
   /* ---------- Icons ---------- */
   var ICON = {
     info: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01"/><path d="M11 12h1v4h1"/></svg>',
+    gear: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 4.3c.4-1.8 2.9-1.8 3.4 0a1.7 1.7 0 0 0 2.6 1.1c1.5-.9 3.3.8 2.4 2.4a1.7 1.7 0 0 0 1 2.5c1.8.4 1.8 2.9 0 3.4a1.7 1.7 0 0 0-1 2.6c.9 1.5-.8 3.3-2.4 2.4a1.7 1.7 0 0 0-2.6 1c-.4 1.8-2.9 1.8-3.4 0a1.7 1.7 0 0 0-2.6-1c-1.5.9-3.3-.8-2.4-2.4a1.7 1.7 0 0 0-1-2.6c-1.8-.4-1.8-2.9 0-3.4a1.7 1.7 0 0 0 1-2.5c-.9-1.6.8-3.3 2.4-2.4c1 .6 2.3 0 2.6-1.1z"/><circle class="hole" cx="12" cy="12" r="3"/></svg>',
     crown: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6l4 6l5-4l-2 10H5L3 8l5 4z"/><circle cx="12" cy="4" r="1"/><circle cx="3" cy="6" r="1"/><circle cx="21" cy="6" r="1"/></svg>',
     glass: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="liq" d="M6.3 10.6a5 5 0 0 1 5.7-.6a5 5 0 0 0 5.7.6c-.4 2.6-2.8 4.4-5.7 4.4s-5.3-1.8-5.7-4.4z" stroke="none"/><path d="M8 21h8"/><path d="M12 15v6"/><path d="M17 3l1 7c0 3-2.7 5-6 5s-6-2-6-5l1-7z"/><path d="M6.2 10a5 5 0 0 1 5.8 0a5 5 0 0 0 5.8 0"/></svg>',
     dialpad: '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><circle cx="6" cy="4" r="1.8"/><circle cx="12" cy="4" r="1.8"/><circle cx="18" cy="4" r="1.8"/><circle cx="6" cy="10" r="1.8"/><circle cx="12" cy="10" r="1.8"/><circle cx="18" cy="10" r="1.8"/><circle cx="6" cy="16" r="1.8"/><circle cx="12" cy="16" r="1.8"/><circle cx="18" cy="16" r="1.8"/><circle cx="12" cy="21.5" r="1.8"/></svg>',
@@ -1150,12 +1151,12 @@
       };
       return '<li><div class="l"><b>' + esc(m.name) + '</b><span>' + esc(fmtPhone(m.phone)) + '</span></div>' +
         '<div class="btnrow">' +
-        roleBtn('crown', 'set-guest', member ? '1' : '0', member, crownLabel, ICON.crown, self) +
-        (member ? roleBtn('star', 'set-admin', m.isAdmin ? '0' : '1', m.isAdmin, starLabel, ICON.star, self) : '') +
+        (member ? roleBtn('star', 'set-admin', m.isAdmin ? '0' : '1', m.isAdmin, starLabel, ICON.gear, self) : '') +
         (member ? roleBtn('glass', 'set-em', m.isEventManager ? '0' : '1', m.isEventManager, glassLabel, ICON.glass, false) : '') +
         (self ? '' :
-          '<button class="rolebtn iconbtn" data-act="reset-pin" data-id="' + m.id + '" aria-label="' + esc(L('resetPin') + ': ' + m.name) + '" title="' + esc(L('resetPin') + ': ' + m.name) + '">' + ICON.dialpad + '</button>' +
+          '<button class="rolebtn iconbtn pin" data-act="reset-pin" data-id="' + m.id + '" aria-label="' + esc(L('resetPin') + ': ' + m.name) + '" title="' + esc(L('resetPin') + ': ' + m.name) + '">' + ICON.dialpad + '</button>' +
           '<button class="rolebtn iconbtn danger" data-act="remove-member" data-id="' + m.id + '" aria-label="' + esc(L('remove') + ': ' + m.name) + '" title="' + esc(L('remove') + ': ' + m.name) + '">' + ICON.trash + '</button>') +
+        roleBtn('crown', 'set-guest', member ? '1' : '0', member, crownLabel, ICON.crown, self) +
         '</div></li>';
     }).join('') + '</ul>';
     if (isAdm) html += accordion('members', L('secMembers'), S.members.length, b, true, L('membersIntro'));
@@ -1175,7 +1176,7 @@
       '<div class="profile-row"><span class="muted">' + L('phone') + '</span><b>' + esc(fmtPhone(S.me.phone)) + '</b></div></section>' +
       '<section class="panel"><h2>' + L('rolesTitle') + '</h2>' +
         '<div class="rolerow"><span class="rolebtn crown' + (S.me.isGuest ? '' : ' on') + '">' + ICON.crown + '</span><span>' + L(S.me.isGuest ? 'guestTag' : 'memberTag') + '</span></div>' +
-        (S.me.isAdmin ? '<div class="rolerow"><span class="rolebtn star on">' + ICON.star + '</span><span>' + L('adminTag') + '</span></div>' : '') +
+        (S.me.isAdmin ? '<div class="rolerow"><span class="rolebtn star on">' + ICON.gear + '</span><span>' + L('adminTag') + '</span></div>' : '') +
         (S.me.isEventManager ? '<div class="rolerow"><span class="rolebtn glass on">' + ICON.glass + '</span><span>' + L('emTag') + '</span></div>' : '') +
         (S.me.isGuest ? '<p class="small muted" style="margin:10px 0 0">' + L('guestInfo') + '</p>' : '') +
       '</section>' +
