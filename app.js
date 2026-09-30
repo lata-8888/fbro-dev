@@ -51,7 +51,7 @@
       phPlaceExtra: 'z. B. Sportanlage Süd', addExtra: 'Weiteres Training hinzufügen', upcomingEmpty: 'Keine kommenden Trainings.',
       phEventTitle: 'z. B. Fondue-Plausch', phEventPlace: 'z. B. Vereinshaus', addEvent: 'Event hinzufügen',
       eventsEmpty: 'Noch keine Events. Tippe auf «+», um den ersten zu erfassen.',
-      membersIntro: 'Krone: Mitglied oder Gast (leere Krone). Zahnrad: Admin. Glas: Event-Manager. Diese Rollen können nur Admins ändern. Gäste sehen nur Trainings und Profil, keine Events. Der Standard-PIN sind die letzten 6 Ziffern der Handynummer.',
+      membersIntro: 'Tippe bei einer Person auf die drei Punkte, um Rollen, PIN, Name oder Handynummer zu ändern oder sie zu löschen. Zahnrad = Admin, Glas = Event-Manager. Gäste sehen nur Trainings und ihr Profil.',
       memberAdd: 'Mitglied hinzufügen', fullName: 'Vor- und Nachname', phone: 'Handynummer',
       memberAddNote: 'Das Mitglied meldet sich nur mit der Handynummer an. Der PIN sind die letzten 6 Ziffern.',
       selfAdmin: 'Du bist Admin. Du kannst dir die Rechte nicht selbst entziehen.', revokeAdmin: 'Admin-Rechte entziehen: {name}', makeAdmin: 'Zum Admin machen: {name}',
@@ -95,7 +95,8 @@
       memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zum Event-Manager machen: {name}', revokeEm: 'Event-Manager-Rechte entziehen: {name}', emGranted: 'Als Event-Manager festgelegt', emRevoked: 'Event-Manager-Rechte entzogen', confirmGuestLoses: '{name} hat Admin- oder Event-Manager-Rechte. Als Gast festlegen entzieht diese Rechte. Fortfahren?', selfMember: 'Du bist Mitglied. Du kannst dich nicht selbst zum Gast machen.', rolesTitle: 'Rollen', emSub: 'Hier verwaltest du die Events.',
       infoShow: 'Erklärung anzeigen', infoHide: 'Erklärung ausblenden',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäste', ccOthers: 'Andere', ccEmpty: 'Noch keine Anlässe erfasst.', ccNoDays: 'Noch keine Tage erfasst.', ccSummary: '{s} Schichten · {r} Rollen', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Anlass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktionen', ccAddEvent: 'Anlass hinzufügen', ccAddDay: 'Tag hinzufügen', ccAddShift: 'Schicht hinzufügen', ccAddRole: 'Rolle hinzufügen', ccChange: 'Ändern', ccCopy: 'Kopieren', ccClose: 'Schliessen', ccNameOpt: 'Name (optional)', ccStart: 'Start', ccEnd: 'Ende', ccActive: 'Aktiv', ccPersons: 'Verantwortliche', ccSearch: 'Namen suchen', ccOtherPerson: 'Andere Person (nicht in der App)', ccAdd: 'Hinzufügen', ccDidYouMean: 'Meinst du {name}?', ccNobody: 'Noch niemand', ccConfirmDel: '«{name}» löschen? Alles, was darunter erfasst ist, wird ebenfalls gelöscht.', ccConfirmDelRole: '«{name}» löschen?', ccCopyEventNote: 'Die Kopie ist zuerst inaktiv. Alle Tage werden um 52 Wochen verschoben, damit die Wochentage gleich bleiben.', ccCopyDayNote: 'Schichten und Rollen werden mit den Verantwortlichen kopiert.', ccSaved: 'Gespeichert', ccCopied: 'Kopiert', ccDeleted: 'Gelöscht', ccNotInApp: '{name} ist noch nicht in der App. Mit der Handynummer kannst du die Person als Gast hinzufügen.', ccAsGuest: 'Als Gast hinzufügen', ccNeedName: 'Gib einen Namen ein.', ccSetup: 'Für C&C muss das Datenbank-Schema aktualisiert werden (supabase/schema.sql).', ccCopySuffix: 'Kopie'
+      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäste', ccOthers: 'Andere', ccEmpty: 'Noch keine Anlässe erfasst.', ccNoDays: 'Noch keine Tage erfasst.', ccSummary: '{s} Schichten · {r} Rollen', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Anlass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktionen', ccAddEvent: 'Anlass hinzufügen', ccAddDay: 'Tag hinzufügen', ccAddShift: 'Schicht hinzufügen', ccAddRole: 'Rolle hinzufügen', ccChange: 'Ändern', ccCopy: 'Kopieren', ccClose: 'Schliessen', ccNameOpt: 'Name (optional)', ccStart: 'Start', ccEnd: 'Ende', ccActive: 'Aktiv', ccPersons: 'Verantwortliche', ccSearch: 'Namen suchen', ccOtherPerson: 'Andere Person (nicht in der App)', ccAdd: 'Hinzufügen', ccDidYouMean: 'Meinst du {name}?', ccNobody: 'Noch niemand', ccConfirmDel: '«{name}» löschen? Alles, was darunter erfasst ist, wird ebenfalls gelöscht.', ccConfirmDelRole: '«{name}» löschen?', ccCopyEventNote: 'Die Kopie ist zuerst inaktiv. Alle Tage werden um 52 Wochen verschoben, damit die Wochentage gleich bleiben.', ccCopyDayNote: 'Schichten und Rollen werden mit den Verantwortlichen kopiert.', ccSaved: 'Gespeichert', ccCopied: 'Kopiert', ccDeleted: 'Gelöscht', ccNotInApp: '{name} ist noch nicht in der App. Mit der Handynummer kannst du die Person als Gast hinzufügen.', ccAsGuest: 'Als Gast hinzufügen', ccNeedName: 'Gib einen Namen ein.', ccSetup: 'Für C&C muss das Datenbank-Schema aktualisiert werden (supabase/schema.sql).', ccCopySuffix: 'Kopie',
+      mMakeAdmin: 'Zum Admin machen', mRevokeAdmin: 'Admin-Rechte entziehen', mMakeEm: 'Zum Event-Manager machen', mRevokeEm: 'Event-Manager-Rechte entziehen', mMakeGuest: 'Zum Gast machen', mMakeMember: 'Zum Mitglied machen', mEdit: 'Name und Handynummer ändern', mEditNote: 'Bei einer neuen Handynummer gilt wieder der Standard-PIN: die letzten 6 Ziffern der neuen Nummer.', mSaved: 'Gespeichert', mDelete: 'Mitglied löschen', mPhoneTaken: 'Diese Handynummer gehört bereits einer anderen Person.'
     },
 
     fr: {
@@ -123,7 +124,7 @@
       phPlaceExtra: 'p. ex. centre sportif Sud', addExtra: 'Ajouter un entraînement', upcomingEmpty: 'Aucun entraînement à venir.',
       phEventTitle: 'p. ex. soirée fondue', phEventPlace: 'p. ex. maison du club', addEvent: 'Ajouter un événement',
       eventsEmpty: 'Aucun événement pour l’instant. Touche « + » pour créer le premier.',
-      membersIntro: 'Couronne : membre ou invité (couronne vide). Roue dentée : admin. Verre : responsable des événements. Seuls les admins peuvent modifier ces rôles. Les invités ne voient que les entraînements et le profil, pas les événements. Le PIN par défaut correspond aux 6 derniers chiffres du numéro de mobile.',
+      membersIntro: 'Touche les trois points d’une personne pour modifier ses rôles, son PIN, son nom ou son numéro, ou pour la supprimer. Roue dentée = admin, verre = responsable des événements. Les invités ne voient que les entraînements et leur profil.',
       memberAdd: 'Ajouter un membre', fullName: 'Prénom et nom', phone: 'Numéro de mobile',
       memberAddNote: 'Le membre se connecte uniquement avec son numéro de mobile. Le PIN correspond aux 6 derniers chiffres.',
       selfAdmin: 'Tu es admin. Tu ne peux pas te retirer tes droits toi-même.', revokeAdmin: 'Retirer les droits d’admin : {name}', makeAdmin: 'Nommer admin : {name}',
@@ -167,7 +168,8 @@
       memberTag: 'Membre', emTag: 'Responsable des événements', makeEm: 'Nommer responsable des événements : {name}', revokeEm: 'Retirer les droits de responsable des événements : {name}', emGranted: 'Défini comme responsable des événements', emRevoked: 'Droits de responsable des événements retirés', confirmGuestLoses: '{name} a des droits d’admin ou de responsable des événements. Le définir comme invité les retire. Continuer ?', selfMember: 'Tu es membre. Tu ne peux pas te définir toi-même comme invité.', rolesTitle: 'Rôles', emSub: 'Ici, tu gères les événements.',
       infoShow: 'Afficher l’explication', infoHide: 'Masquer l’explication',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Membres', ccGuests: 'Invités', ccOthers: 'Autres', ccEmpty: 'Aucune manifestation pour l’instant.', ccNoDays: 'Aucun jour pour l’instant.', ccSummary: '{s} créneaux · {r} rôles', ccLvlAll: 'Chränzli et Chilbi', ccLvlEvent: 'Manifestation', ccLvlDay: 'Jour', ccLvlShift: 'Créneau', ccLvlRole: 'Rôle', ccActions: 'Actions', ccAddEvent: 'Ajouter une manifestation', ccAddDay: 'Ajouter un jour', ccAddShift: 'Ajouter un créneau', ccAddRole: 'Ajouter un rôle', ccChange: 'Modifier', ccCopy: 'Copier', ccClose: 'Fermer', ccNameOpt: 'Nom (facultatif)', ccStart: 'Début', ccEnd: 'Fin', ccActive: 'Actif', ccPersons: 'Responsables', ccSearch: 'Rechercher un nom', ccOtherPerson: 'Autre personne (pas dans l’application)', ccAdd: 'Ajouter', ccDidYouMean: 'Tu veux dire {name} ?', ccNobody: 'Personne pour l’instant', ccConfirmDel: 'Supprimer « {name} » ? Tout ce qui y est rattaché sera aussi supprimé.', ccConfirmDelRole: 'Supprimer « {name} » ?', ccCopyEventNote: 'La copie est d’abord inactive. Tous les jours sont décalés de 52 semaines pour garder les mêmes jours de la semaine.', ccCopyDayNote: 'Les créneaux et rôles sont copiés avec les responsables.', ccSaved: 'Enregistré', ccCopied: 'Copié', ccDeleted: 'Supprimé', ccNotInApp: '{name} n’est pas encore dans l’application. Avec son numéro de mobile, tu peux l’ajouter comme invité.', ccAsGuest: 'Ajouter comme invité', ccNeedName: 'Saisis un nom.', ccSetup: 'Pour C&C, le schéma de la base de données doit être mis à jour (supabase/schema.sql).', ccCopySuffix: 'copie'
+      navCC: 'C&C', ccMembers: 'Membres', ccGuests: 'Invités', ccOthers: 'Autres', ccEmpty: 'Aucune manifestation pour l’instant.', ccNoDays: 'Aucun jour pour l’instant.', ccSummary: '{s} créneaux · {r} rôles', ccLvlAll: 'Chränzli et Chilbi', ccLvlEvent: 'Manifestation', ccLvlDay: 'Jour', ccLvlShift: 'Créneau', ccLvlRole: 'Rôle', ccActions: 'Actions', ccAddEvent: 'Ajouter une manifestation', ccAddDay: 'Ajouter un jour', ccAddShift: 'Ajouter un créneau', ccAddRole: 'Ajouter un rôle', ccChange: 'Modifier', ccCopy: 'Copier', ccClose: 'Fermer', ccNameOpt: 'Nom (facultatif)', ccStart: 'Début', ccEnd: 'Fin', ccActive: 'Actif', ccPersons: 'Responsables', ccSearch: 'Rechercher un nom', ccOtherPerson: 'Autre personne (pas dans l’application)', ccAdd: 'Ajouter', ccDidYouMean: 'Tu veux dire {name} ?', ccNobody: 'Personne pour l’instant', ccConfirmDel: 'Supprimer « {name} » ? Tout ce qui y est rattaché sera aussi supprimé.', ccConfirmDelRole: 'Supprimer « {name} » ?', ccCopyEventNote: 'La copie est d’abord inactive. Tous les jours sont décalés de 52 semaines pour garder les mêmes jours de la semaine.', ccCopyDayNote: 'Les créneaux et rôles sont copiés avec les responsables.', ccSaved: 'Enregistré', ccCopied: 'Copié', ccDeleted: 'Supprimé', ccNotInApp: '{name} n’est pas encore dans l’application. Avec son numéro de mobile, tu peux l’ajouter comme invité.', ccAsGuest: 'Ajouter comme invité', ccNeedName: 'Saisis un nom.', ccSetup: 'Pour C&C, le schéma de la base de données doit être mis à jour (supabase/schema.sql).', ccCopySuffix: 'copie',
+      mMakeAdmin: 'Nommer admin', mRevokeAdmin: 'Retirer les droits d’admin', mMakeEm: 'Nommer responsable des événements', mRevokeEm: 'Retirer les droits de responsable des événements', mMakeGuest: 'Définir comme invité', mMakeMember: 'Définir comme membre', mEdit: 'Modifier le nom et le numéro de mobile', mEditNote: 'Avec un nouveau numéro, le PIN par défaut s’applique à nouveau : les 6 derniers chiffres du nouveau numéro.', mSaved: 'Enregistré', mDelete: 'Supprimer le membre', mPhoneTaken: 'Ce numéro de mobile appartient déjà à une autre personne.'
     },
 
     en: {
@@ -195,7 +197,7 @@
       phPlaceExtra: 'e.g. South sports ground', addExtra: 'Add another training', upcomingEmpty: 'No upcoming trainings.',
       phEventTitle: 'e.g. Fondue evening', phEventPlace: 'e.g. Club house', addEvent: 'Add event',
       eventsEmpty: 'No events yet. Tap “+” to add the first one.',
-      membersIntro: 'Crown: member or guest (empty crown). Gear: admin. Glass: event manager. Only admins can change these roles. Guests see only the trainings and the profile, no events. The default PIN is the last 6 digits of the mobile number.',
+      membersIntro: 'Tap the three dots next to a person to change roles, PIN, name or mobile number, or to delete them. Gear = admin, glass = event manager. Guests only see trainings and their profile.',
       memberAdd: 'Add member', fullName: 'First and last name', phone: 'Mobile number',
       memberAddNote: 'The member signs in with the mobile number only. The PIN is the last 6 digits.',
       selfAdmin: 'You are an admin. You cannot remove your own rights.', revokeAdmin: 'Remove admin rights: {name}', makeAdmin: 'Make admin: {name}',
@@ -239,7 +241,8 @@
       memberTag: 'Member', emTag: 'Event manager', makeEm: 'Make event manager: {name}', revokeEm: 'Remove event manager rights: {name}', emGranted: 'Set as event manager', emRevoked: 'Event manager rights removed', confirmGuestLoses: '{name} has admin or event manager rights. Setting as guest removes these rights. Continue?', selfMember: 'You are a member. You cannot set yourself as a guest.', rolesTitle: 'Roles', emSub: 'Here you manage the events.',
       infoShow: 'Show explanation', infoHide: 'Hide explanation',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Members', ccGuests: 'Guests', ccOthers: 'Others', ccEmpty: 'No occasions yet.', ccNoDays: 'No days yet.', ccSummary: '{s} shifts · {r} roles', ccLvlAll: 'Chränzli and Chilbi', ccLvlEvent: 'Occasion', ccLvlDay: 'Day', ccLvlShift: 'Shift', ccLvlRole: 'Role', ccActions: 'Actions', ccAddEvent: 'Add occasion', ccAddDay: 'Add day', ccAddShift: 'Add shift', ccAddRole: 'Add role', ccChange: 'Edit', ccCopy: 'Copy', ccClose: 'Close', ccNameOpt: 'Name (optional)', ccStart: 'Start', ccEnd: 'End', ccActive: 'Active', ccPersons: 'Responsible', ccSearch: 'Search names', ccOtherPerson: 'Other person (not in the app)', ccAdd: 'Add', ccDidYouMean: 'Did you mean {name}?', ccNobody: 'Nobody yet', ccConfirmDel: 'Delete “{name}”? Everything under it will be deleted too.', ccConfirmDelRole: 'Delete “{name}”?', ccCopyEventNote: 'The copy starts inactive. All days move by 52 weeks so the weekdays stay the same.', ccCopyDayNote: 'Shifts and roles are copied with the people responsible.', ccSaved: 'Saved', ccCopied: 'Copied', ccDeleted: 'Deleted', ccNotInApp: '{name} is not in the app yet. With a mobile number you can add them as a guest.', ccAsGuest: 'Add as guest', ccNeedName: 'Enter a name.', ccSetup: 'C&C needs an updated database schema (supabase/schema.sql).', ccCopySuffix: 'copy'
+      navCC: 'C&C', ccMembers: 'Members', ccGuests: 'Guests', ccOthers: 'Others', ccEmpty: 'No occasions yet.', ccNoDays: 'No days yet.', ccSummary: '{s} shifts · {r} roles', ccLvlAll: 'Chränzli and Chilbi', ccLvlEvent: 'Occasion', ccLvlDay: 'Day', ccLvlShift: 'Shift', ccLvlRole: 'Role', ccActions: 'Actions', ccAddEvent: 'Add occasion', ccAddDay: 'Add day', ccAddShift: 'Add shift', ccAddRole: 'Add role', ccChange: 'Edit', ccCopy: 'Copy', ccClose: 'Close', ccNameOpt: 'Name (optional)', ccStart: 'Start', ccEnd: 'End', ccActive: 'Active', ccPersons: 'Responsible', ccSearch: 'Search names', ccOtherPerson: 'Other person (not in the app)', ccAdd: 'Add', ccDidYouMean: 'Did you mean {name}?', ccNobody: 'Nobody yet', ccConfirmDel: 'Delete “{name}”? Everything under it will be deleted too.', ccConfirmDelRole: 'Delete “{name}”?', ccCopyEventNote: 'The copy starts inactive. All days move by 52 weeks so the weekdays stay the same.', ccCopyDayNote: 'Shifts and roles are copied with the people responsible.', ccSaved: 'Saved', ccCopied: 'Copied', ccDeleted: 'Deleted', ccNotInApp: '{name} is not in the app yet. With a mobile number you can add them as a guest.', ccAsGuest: 'Add as guest', ccNeedName: 'Enter a name.', ccSetup: 'C&C needs an updated database schema (supabase/schema.sql).', ccCopySuffix: 'copy',
+      mMakeAdmin: 'Make admin', mRevokeAdmin: 'Remove admin rights', mMakeEm: 'Make event manager', mRevokeEm: 'Remove event manager rights', mMakeGuest: 'Set as guest', mMakeMember: 'Set as member', mEdit: 'Change name and mobile number', mEditNote: 'With a new number the default PIN applies again: the last 6 digits of the new number.', mSaved: 'Saved', mDelete: 'Delete member', mPhoneTaken: 'This mobile number already belongs to someone else.'
     },
 
     it: {
@@ -267,7 +270,7 @@
       phPlaceExtra: 'ad es. impianto sportivo Sud', addExtra: 'Aggiungi allenamento', upcomingEmpty: 'Nessun allenamento in arrivo.',
       phEventTitle: 'ad es. serata fonduta', phEventPlace: 'ad es. sede del club', addEvent: 'Aggiungi evento',
       eventsEmpty: 'Ancora nessun evento. Tocca «+» per crearne uno.',
-      membersIntro: 'Corona: socio od ospite (corona vuota). Ingranaggio: admin. Bicchiere: responsabile eventi. Solo gli admin possono modificare questi ruoli. Gli ospiti vedono solo gli allenamenti e il profilo, non gli eventi. Il PIN predefinito corrisponde alle ultime 6 cifre del numero di cellulare.',
+      membersIntro: 'Tocca i tre puntini accanto a una persona per modificare ruoli, PIN, nome o numero di cellulare, oppure per eliminarla. Ingranaggio = admin, bicchiere = responsabile eventi. Gli ospiti vedono solo gli allenamenti e il loro profilo.',
       memberAdd: 'Aggiungi socio', fullName: 'Nome e cognome', phone: 'Numero di cellulare',
       memberAddNote: 'Il socio accede solo con il numero di cellulare. Il PIN corrisponde alle ultime 6 cifre.',
       selfAdmin: 'Sei admin. Non puoi revocarti i diritti da solo.', revokeAdmin: 'Revoca i diritti di admin: {name}', makeAdmin: 'Rendi admin: {name}',
@@ -311,7 +314,8 @@
       memberTag: 'Socio', emTag: 'Responsabile eventi', makeEm: 'Nomina responsabile eventi: {name}', revokeEm: 'Revoca i diritti di responsabile eventi: {name}', emGranted: 'Impostato come responsabile eventi', emRevoked: 'Diritti di responsabile eventi revocati', confirmGuestLoses: '{name} ha i diritti di admin o di responsabile eventi. Impostarlo come ospite li revoca. Continuare?', selfMember: 'Sei socio. Non puoi impostarti da solo come ospite.', rolesTitle: 'Ruoli', emSub: 'Qui gestisci gli eventi.',
       infoShow: 'Mostra la spiegazione', infoHide: 'Nascondi la spiegazione',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Soci', ccGuests: 'Ospiti', ccOthers: 'Altri', ccEmpty: 'Ancora nessuna manifestazione.', ccNoDays: 'Ancora nessun giorno.', ccSummary: '{s} turni · {r} ruoli', ccLvlAll: 'Chränzli e Chilbi', ccLvlEvent: 'Manifestazione', ccLvlDay: 'Giorno', ccLvlShift: 'Turno', ccLvlRole: 'Ruolo', ccActions: 'Azioni', ccAddEvent: 'Aggiungi manifestazione', ccAddDay: 'Aggiungi giorno', ccAddShift: 'Aggiungi turno', ccAddRole: 'Aggiungi ruolo', ccChange: 'Modifica', ccCopy: 'Copia', ccClose: 'Chiudi', ccNameOpt: 'Nome (facoltativo)', ccStart: 'Inizio', ccEnd: 'Fine', ccActive: 'Attivo', ccPersons: 'Responsabili', ccSearch: 'Cerca nomi', ccOtherPerson: 'Altra persona (non nell’app)', ccAdd: 'Aggiungi', ccDidYouMean: 'Intendi {name}?', ccNobody: 'Ancora nessuno', ccConfirmDel: 'Eliminare «{name}»? Verrà eliminato anche tutto ciò che contiene.', ccConfirmDelRole: 'Eliminare «{name}»?', ccCopyEventNote: 'La copia è inizialmente inattiva. Tutti i giorni vengono spostati di 52 settimane, così i giorni della settimana restano uguali.', ccCopyDayNote: 'Turni e ruoli vengono copiati con i responsabili.', ccSaved: 'Salvato', ccCopied: 'Copiato', ccDeleted: 'Eliminato', ccNotInApp: '{name} non è ancora nell’app. Con il numero di cellulare puoi aggiungere la persona come ospite.', ccAsGuest: 'Aggiungi come ospite', ccNeedName: 'Inserisci un nome.', ccSetup: 'Per C&C lo schema del database deve essere aggiornato (supabase/schema.sql).', ccCopySuffix: 'copia'
+      navCC: 'C&C', ccMembers: 'Soci', ccGuests: 'Ospiti', ccOthers: 'Altri', ccEmpty: 'Ancora nessuna manifestazione.', ccNoDays: 'Ancora nessun giorno.', ccSummary: '{s} turni · {r} ruoli', ccLvlAll: 'Chränzli e Chilbi', ccLvlEvent: 'Manifestazione', ccLvlDay: 'Giorno', ccLvlShift: 'Turno', ccLvlRole: 'Ruolo', ccActions: 'Azioni', ccAddEvent: 'Aggiungi manifestazione', ccAddDay: 'Aggiungi giorno', ccAddShift: 'Aggiungi turno', ccAddRole: 'Aggiungi ruolo', ccChange: 'Modifica', ccCopy: 'Copia', ccClose: 'Chiudi', ccNameOpt: 'Nome (facoltativo)', ccStart: 'Inizio', ccEnd: 'Fine', ccActive: 'Attivo', ccPersons: 'Responsabili', ccSearch: 'Cerca nomi', ccOtherPerson: 'Altra persona (non nell’app)', ccAdd: 'Aggiungi', ccDidYouMean: 'Intendi {name}?', ccNobody: 'Ancora nessuno', ccConfirmDel: 'Eliminare «{name}»? Verrà eliminato anche tutto ciò che contiene.', ccConfirmDelRole: 'Eliminare «{name}»?', ccCopyEventNote: 'La copia è inizialmente inattiva. Tutti i giorni vengono spostati di 52 settimane, così i giorni della settimana restano uguali.', ccCopyDayNote: 'Turni e ruoli vengono copiati con i responsabili.', ccSaved: 'Salvato', ccCopied: 'Copiato', ccDeleted: 'Eliminato', ccNotInApp: '{name} non è ancora nell’app. Con il numero di cellulare puoi aggiungere la persona come ospite.', ccAsGuest: 'Aggiungi come ospite', ccNeedName: 'Inserisci un nome.', ccSetup: 'Per C&C lo schema del database deve essere aggiornato (supabase/schema.sql).', ccCopySuffix: 'copia',
+      mMakeAdmin: 'Rendi admin', mRevokeAdmin: 'Revoca i diritti di admin', mMakeEm: 'Nomina responsabile eventi', mRevokeEm: 'Revoca i diritti di responsabile eventi', mMakeGuest: 'Imposta come ospite', mMakeMember: 'Imposta come socio', mEdit: 'Modifica nome e numero di cellulare', mEditNote: 'Con un nuovo numero vale di nuovo il PIN predefinito: le ultime 6 cifre del nuovo numero.', mSaved: 'Salvato', mDelete: 'Elimina socio', mPhoneTaken: 'Questo numero di cellulare appartiene già a un’altra persona.'
     },
 
     gsw: {
@@ -339,7 +343,7 @@
       phPlaceExtra: 'z. B. Sportaalag Süd', addExtra: 'Es wiiters Training hinzuefüege', upcomingEmpty: 'Kei kommendi Trainings.',
       phEventTitle: 'z. B. Fondue-Plausch', phEventPlace: 'z. B. Vereinshuus', addEvent: 'Event hinzuefüege',
       eventsEmpty: 'No kei Events. Tipp uf «+», zum de erscht z erfasse.',
-      membersIntro: 'Chrone: Mitglied oder Gascht (leeri Chrone). Zahnrad: Admin. Glas: Event-Manager. Die Rolle chönd nur Admins ändere. Gäscht gsehnd nur d Trainings und s Profil, kei Events. De Standard-PIN sind di letschte 6 Ziffere vo de Handynummere.',
+      membersIntro: 'Tipp bi enere Person uf di drei Pünkt, zum Rolle, PIN, Name oder Handynummere z ändere oder si z lösche. Zahnrad = Admin, Glas = Event-Manager. Gäscht gsehnd nur d Trainings und ihres Profil.',
       memberAdd: 'Mitglied hinzuefüege', fullName: 'Vor- und Nachname', phone: 'Handynummere',
       memberAddNote: 'S Mitglied meldet sich nur mit de Handynummere aa. De PIN sind di letschte 6 Ziffere.',
       selfAdmin: 'Du bisch Admin. Du chasch dir d Rächt nöd säber entzieh.', revokeAdmin: 'Admin-Rächt entzieh: {name}', makeAdmin: 'Zum Admin mache: {name}',
@@ -383,7 +387,8 @@
       memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zum Event-Manager mache: {name}', revokeEm: 'Event-Manager-Rächt entzieh: {name}', emGranted: 'Als Event-Manager festgleit', emRevoked: 'Event-Manager-Rächt entzoge', confirmGuestLoses: '{name} hät Admin- oder Event-Manager-Rächt. Als Gascht festlege entzieht die Rächt. Wiiter?', selfMember: 'Du bisch Mitglied. Du chasch di nöd säber zum Gascht mache.', rolesTitle: 'Rolle', emSub: 'Do verwaltisch du d Events.',
       infoShow: 'Erklärig aazeige', infoHide: 'Erklärig verstecke',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäscht', ccOthers: 'Anderi', ccEmpty: 'No kei Aalässe erfasst.', ccNoDays: 'No kei Täg erfasst.', ccSummary: '{s} Schichte · {r} Rolle', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Aalass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktione', ccAddEvent: 'Aalass hinzuefüege', ccAddDay: 'Tag hinzuefüege', ccAddShift: 'Schicht hinzuefüege', ccAddRole: 'Rolle hinzuefüege', ccChange: 'Ändere', ccCopy: 'Kopiere', ccClose: 'Schliesse', ccNameOpt: 'Name (freiwillig)', ccStart: 'Start', ccEnd: 'Änd', ccActive: 'Aktiv', ccPersons: 'Verantwortlichi', ccSearch: 'Näme sueche', ccOtherPerson: 'Anderi Person (nöd i de App)', ccAdd: 'Hinzuefüege', ccDidYouMean: 'Meinsch {name}?', ccNobody: 'No niemer', ccConfirmDel: '«{name}» lösche? Alles, wo drunder erfasst isch, wird au glöscht.', ccConfirmDelRole: '«{name}» lösche?', ccCopyEventNote: 'D Kopie isch zerscht inaktiv. Alli Täg wärded um 52 Wuche verschobe, damit d Wuchetäg glich bliibed.', ccCopyDayNote: 'Schichte und Rolle wärded mit de Verantwortliche kopiert.', ccSaved: 'Gspeicheret', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} isch no nöd i de App. Mit de Handynummere chasch d Person als Gascht hinzuefüege.', ccAsGuest: 'Als Gascht hinzuefüege', ccNeedName: 'Gib en Name ii.', ccSetup: 'Für C&C muess s Datebank-Schema aktualisiert wärde (supabase/schema.sql).', ccCopySuffix: 'Kopie'
+      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäscht', ccOthers: 'Anderi', ccEmpty: 'No kei Aalässe erfasst.', ccNoDays: 'No kei Täg erfasst.', ccSummary: '{s} Schichte · {r} Rolle', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Aalass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktione', ccAddEvent: 'Aalass hinzuefüege', ccAddDay: 'Tag hinzuefüege', ccAddShift: 'Schicht hinzuefüege', ccAddRole: 'Rolle hinzuefüege', ccChange: 'Ändere', ccCopy: 'Kopiere', ccClose: 'Schliesse', ccNameOpt: 'Name (freiwillig)', ccStart: 'Start', ccEnd: 'Änd', ccActive: 'Aktiv', ccPersons: 'Verantwortlichi', ccSearch: 'Näme sueche', ccOtherPerson: 'Anderi Person (nöd i de App)', ccAdd: 'Hinzuefüege', ccDidYouMean: 'Meinsch {name}?', ccNobody: 'No niemer', ccConfirmDel: '«{name}» lösche? Alles, wo drunder erfasst isch, wird au glöscht.', ccConfirmDelRole: '«{name}» lösche?', ccCopyEventNote: 'D Kopie isch zerscht inaktiv. Alli Täg wärded um 52 Wuche verschobe, damit d Wuchetäg glich bliibed.', ccCopyDayNote: 'Schichte und Rolle wärded mit de Verantwortliche kopiert.', ccSaved: 'Gspeicheret', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} isch no nöd i de App. Mit de Handynummere chasch d Person als Gascht hinzuefüege.', ccAsGuest: 'Als Gascht hinzuefüege', ccNeedName: 'Gib en Name ii.', ccSetup: 'Für C&C muess s Datebank-Schema aktualisiert wärde (supabase/schema.sql).', ccCopySuffix: 'Kopie',
+      mMakeAdmin: 'Zum Admin mache', mRevokeAdmin: 'Admin-Rächt entzieh', mMakeEm: 'Zum Event-Manager mache', mRevokeEm: 'Event-Manager-Rächt entzieh', mMakeGuest: 'Zum Gascht mache', mMakeMember: 'Zum Mitglied mache', mEdit: 'Name und Handynummere ändere', mEditNote: 'Mit enere neue Handynummere gilt wieder de Standard-PIN: di letschte 6 Ziffere vo de neue Nummere.', mSaved: 'Gspeicheret', mDelete: 'Mitglied lösche', mPhoneTaken: 'Die Handynummere ghört scho öpper anderem.'
     },
 
     apz: {
@@ -411,7 +416,7 @@
       phPlaceExtra: 'z. B. Sportaalag Süd', addExtra: 'Es wiiters Training hinzuefüege', upcomingEmpty: 'Kei kommendi Trainings.',
       phEventTitle: 'z. B. Fondue-Plausch', phEventPlace: 'z. B. Vereinshuus', addEvent: 'Event hinzuefüege',
       eventsEmpty: 'No kei Events. Tipp uf «+», zom de erscht z erfasse.',
-      membersIntro: 'Chrone: Mitglied oder Gascht (leeri Chrone). Zahnrad: Admin. Glas: Event-Manager. Die Rolle chönd nur Admins ändere. Gäscht gsehnd nur d Trainings ond s Profil, kei Events. De Standard-PIN sönd di letschte 6 Ziffere vo de Handynummere.',
+      membersIntro: 'Tipp bi enere Person uf di drei Pünkt, zom Rolle, PIN, Name oder Handynummere z ändere oder si z lösche. Zahnrad = Admin, Glas = Event-Manager. Gäscht gsehnd nur d Trainings ond ihres Profil.',
       memberAdd: 'Mitglied hinzuefüege', fullName: 'Vor- ond Nachname', phone: 'Handynummere',
       memberAddNote: 'S Mitglied meldet sich nur mit de Handynummere aa. De PIN sönd di letschte 6 Ziffere.',
       selfAdmin: 'Du bisch Admin. Du chasch dir d Rächt nüd säber entzieh.', revokeAdmin: 'Admin-Rächt entzieh: {name}', makeAdmin: 'Zom Admin mache: {name}',
@@ -455,7 +460,8 @@
       memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zom Event-Manager mache: {name}', revokeEm: 'Event-Manager-Rächt entzieh: {name}', emGranted: 'Als Event-Manager festgleit', emRevoked: 'Event-Manager-Rächt entzoge', confirmGuestLoses: '{name} het Admin- oder Event-Manager-Rächt. Als Gascht festlege entzieht die Rächt. Wiiter?', selfMember: 'Du bisch Mitglied. Du chasch di nüd säber zom Gascht mache.', rolesTitle: 'Rolle', emSub: 'Do verwaltisch du d Events.',
       infoShow: 'Erklärig aazeige', infoHide: 'Erklärig verstecke',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäscht', ccOthers: 'Anderi', ccEmpty: 'No kei Aalässe erfasst.', ccNoDays: 'No kei Täg erfasst.', ccSummary: '{s} Schichte · {r} Rolle', ccLvlAll: 'Chränzli ond Chilbi', ccLvlEvent: 'Aalass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktione', ccAddEvent: 'Aalass hinzuefüege', ccAddDay: 'Tag hinzuefüege', ccAddShift: 'Schicht hinzuefüege', ccAddRole: 'Rolle hinzuefüege', ccChange: 'Ändere', ccCopy: 'Kopiere', ccClose: 'Schliesse', ccNameOpt: 'Name (freiwillig)', ccStart: 'Start', ccEnd: 'Änd', ccActive: 'Aktiv', ccPersons: 'Verantwortlichi', ccSearch: 'Näme sueche', ccOtherPerson: 'Anderi Person (nüd i de App)', ccAdd: 'Hinzuefüege', ccDidYouMean: 'Meinsch {name}?', ccNobody: 'No niemer', ccConfirmDel: '«{name}» lösche? Alles, wo drunder erfasst isch, wird au glöscht.', ccConfirmDelRole: '«{name}» lösche?', ccCopyEventNote: 'D Kopie isch zerscht inaktiv. Alli Täg werded um 52 Woche verschobe, damit d Wochetäg glich bliibed.', ccCopyDayNote: 'Schichte ond Rolle werded mit de Verantwortliche kopiert.', ccSaved: 'Gspeicheret', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} isch no nüd i de App. Mit de Handynummere chasch d Person als Gascht hinzuefüege.', ccAsGuest: 'Als Gascht hinzuefüege', ccNeedName: 'Gib en Name ii.', ccSetup: 'Für C&C muess s Datebank-Schema aktualisiert werde (supabase/schema.sql).', ccCopySuffix: 'Kopie'
+      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäscht', ccOthers: 'Anderi', ccEmpty: 'No kei Aalässe erfasst.', ccNoDays: 'No kei Täg erfasst.', ccSummary: '{s} Schichte · {r} Rolle', ccLvlAll: 'Chränzli ond Chilbi', ccLvlEvent: 'Aalass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktione', ccAddEvent: 'Aalass hinzuefüege', ccAddDay: 'Tag hinzuefüege', ccAddShift: 'Schicht hinzuefüege', ccAddRole: 'Rolle hinzuefüege', ccChange: 'Ändere', ccCopy: 'Kopiere', ccClose: 'Schliesse', ccNameOpt: 'Name (freiwillig)', ccStart: 'Start', ccEnd: 'Änd', ccActive: 'Aktiv', ccPersons: 'Verantwortlichi', ccSearch: 'Näme sueche', ccOtherPerson: 'Anderi Person (nüd i de App)', ccAdd: 'Hinzuefüege', ccDidYouMean: 'Meinsch {name}?', ccNobody: 'No niemer', ccConfirmDel: '«{name}» lösche? Alles, wo drunder erfasst isch, wird au glöscht.', ccConfirmDelRole: '«{name}» lösche?', ccCopyEventNote: 'D Kopie isch zerscht inaktiv. Alli Täg werded um 52 Woche verschobe, damit d Wochetäg glich bliibed.', ccCopyDayNote: 'Schichte ond Rolle werded mit de Verantwortliche kopiert.', ccSaved: 'Gspeicheret', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} isch no nüd i de App. Mit de Handynummere chasch d Person als Gascht hinzuefüege.', ccAsGuest: 'Als Gascht hinzuefüege', ccNeedName: 'Gib en Name ii.', ccSetup: 'Für C&C muess s Datebank-Schema aktualisiert werde (supabase/schema.sql).', ccCopySuffix: 'Kopie',
+      mMakeAdmin: 'Zom Admin mache', mRevokeAdmin: 'Admin-Rächt entzieh', mMakeEm: 'Zom Event-Manager mache', mRevokeEm: 'Event-Manager-Rächt entzieh', mMakeGuest: 'Zom Gascht mache', mMakeMember: 'Zom Mitglied mache', mEdit: 'Name ond Handynummere ändere', mEditNote: 'Mit enere neue Handynummere gilt wieder de Standard-PIN: di letschte 6 Ziffere vo de neue Nummere.', mSaved: 'Gspeicheret', mDelete: 'Mitglied lösche', mPhoneTaken: 'Die Handynummere ghört scho öpper anderem.'
     },
 
     uk: {
@@ -483,7 +489,7 @@
       phPlaceExtra: 'напр. спортивний комплекс «Південь»', addExtra: 'Додати тренування', upcomingEmpty: 'Найближчих тренувань немає.',
       phEventTitle: 'напр. вечір фондю', phEventPlace: 'напр. клубний будинок', addEvent: 'Додати подію',
       eventsEmpty: 'Подій ще немає. Натисніть «+», щоб додати першу.',
-      membersIntro: 'Корона: член клубу або гість (порожня корона). Шестерня: адміністратор. Келих: менеджер подій. Змінювати ці ролі можуть лише адміністратори. Гості бачать лише тренування та профіль, без подій. PIN за замовчуванням — останні 6 цифр номера мобільного.',
+      membersIntro: 'Натисніть три крапки біля людини, щоб змінити ролі, PIN, ім’я чи номер або видалити її. Шестерня = адміністратор, келих = менеджер подій. Гості бачать лише тренування та свій профіль.',
       memberAdd: 'Додати учасника', fullName: 'Ім’я та прізвище', phone: 'Номер мобільного',
       memberAddNote: 'Учасник входить лише за номером мобільного. PIN — останні 6 цифр.',
       selfAdmin: 'Ви адміністратор. Ви не можете забрати права в себе самі.', revokeAdmin: 'Забрати права адміністратора: {name}', makeAdmin: 'Призначити адміністратором: {name}',
@@ -527,7 +533,8 @@
       memberTag: 'Член клубу', emTag: 'Менеджер подій', makeEm: 'Призначити менеджером подій: {name}', revokeEm: 'Забрати права менеджера подій: {name}', emGranted: 'Призначено менеджером подій', emRevoked: 'Права менеджера подій забрано', confirmGuestLoses: '{name} має права адміністратора або менеджера подій. Призначення гостем забирає ці права. Продовжити?', selfMember: 'Ви член клубу. Ви не можете призначити себе гостем.', rolesTitle: 'Ролі', emSub: 'Тут ви керуєте подіями.',
       infoShow: 'Показати пояснення', infoHide: 'Сховати пояснення',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Члени клубу', ccGuests: 'Гості', ccOthers: 'Інші', ccEmpty: 'Заходів ще немає.', ccNoDays: 'Днів ще немає.', ccSummary: 'Змін: {s} · ролей: {r}', ccLvlAll: 'Chränzli і Chilbi', ccLvlEvent: 'Захід', ccLvlDay: 'День', ccLvlShift: 'Зміна', ccLvlRole: 'Роль', ccActions: 'Дії', ccAddEvent: 'Додати захід', ccAddDay: 'Додати день', ccAddShift: 'Додати зміну', ccAddRole: 'Додати роль', ccChange: 'Змінити', ccCopy: 'Копіювати', ccClose: 'Закрити', ccNameOpt: 'Назва (необов’язково)', ccStart: 'Початок', ccEnd: 'Кінець', ccActive: 'Активний', ccPersons: 'Відповідальні', ccSearch: 'Пошук імен', ccOtherPerson: 'Інша особа (не в застосунку)', ccAdd: 'Додати', ccDidYouMean: 'Можливо, {name}?', ccNobody: 'Ще нікого', ccConfirmDel: 'Видалити «{name}»? Усе, що в ньому, також буде видалено.', ccConfirmDelRole: 'Видалити «{name}»?', ccCopyEventNote: 'Копія спочатку неактивна. Усі дні зсуваються на 52 тижні, щоб дні тижня збігалися.', ccCopyDayNote: 'Зміни й ролі копіюються разом із відповідальними.', ccSaved: 'Збережено', ccCopied: 'Скопійовано', ccDeleted: 'Видалено', ccNotInApp: '{name} ще немає в застосунку. За номером мобільного можна додати цю особу як гостя.', ccAsGuest: 'Додати як гостя', ccNeedName: 'Введіть ім’я.', ccSetup: 'Для C&C потрібно оновити схему бази даних (supabase/schema.sql).', ccCopySuffix: 'копія'
+      navCC: 'C&C', ccMembers: 'Члени клубу', ccGuests: 'Гості', ccOthers: 'Інші', ccEmpty: 'Заходів ще немає.', ccNoDays: 'Днів ще немає.', ccSummary: 'Змін: {s} · ролей: {r}', ccLvlAll: 'Chränzli і Chilbi', ccLvlEvent: 'Захід', ccLvlDay: 'День', ccLvlShift: 'Зміна', ccLvlRole: 'Роль', ccActions: 'Дії', ccAddEvent: 'Додати захід', ccAddDay: 'Додати день', ccAddShift: 'Додати зміну', ccAddRole: 'Додати роль', ccChange: 'Змінити', ccCopy: 'Копіювати', ccClose: 'Закрити', ccNameOpt: 'Назва (необов’язково)', ccStart: 'Початок', ccEnd: 'Кінець', ccActive: 'Активний', ccPersons: 'Відповідальні', ccSearch: 'Пошук імен', ccOtherPerson: 'Інша особа (не в застосунку)', ccAdd: 'Додати', ccDidYouMean: 'Можливо, {name}?', ccNobody: 'Ще нікого', ccConfirmDel: 'Видалити «{name}»? Усе, що в ньому, також буде видалено.', ccConfirmDelRole: 'Видалити «{name}»?', ccCopyEventNote: 'Копія спочатку неактивна. Усі дні зсуваються на 52 тижні, щоб дні тижня збігалися.', ccCopyDayNote: 'Зміни й ролі копіюються разом із відповідальними.', ccSaved: 'Збережено', ccCopied: 'Скопійовано', ccDeleted: 'Видалено', ccNotInApp: '{name} ще немає в застосунку. За номером мобільного можна додати цю особу як гостя.', ccAsGuest: 'Додати як гостя', ccNeedName: 'Введіть ім’я.', ccSetup: 'Для C&C потрібно оновити схему бази даних (supabase/schema.sql).', ccCopySuffix: 'копія',
+      mMakeAdmin: 'Призначити адміністратором', mRevokeAdmin: 'Забрати права адміністратора', mMakeEm: 'Призначити менеджером подій', mRevokeEm: 'Забрати права менеджера подій', mMakeGuest: 'Зробити гостем', mMakeMember: 'Зробити членом клубу', mEdit: 'Змінити ім’я та номер мобільного', mEditNote: 'З новим номером знову діє PIN за замовчуванням: останні 6 цифр нового номера.', mSaved: 'Збережено', mDelete: 'Видалити учасника', mPhoneTaken: 'Цей номер мобільного вже належить іншій особі.'
     },
 
     bar: {
@@ -555,7 +562,7 @@
       phPlaceExtra: 'z. B. Sportanlage Süd', addExtra: 'A weiters Training dazuadoa', upcomingEmpty: 'Koane kemmandn Trainings.',
       phEventTitle: 'z. B. Fondue-Abend', phEventPlace: 'z. B. Vereinsheim', addEvent: 'Event dazuadoa',
       eventsEmpty: 'No koane Events. Tipp auf «+», um den erstn z erfassn.',
-      membersIntro: 'Kron: Mitglied oder Gast (leere Kron). Zahnradl: Admin. Glas: Event-Manager. De Rolln kinna bloß Admins ändern. Gäst sehn bloß de Trainings und des Profil, koane Events. Da Standard-PIN san de letztn 6 Ziffern vo da Handynummer.',
+      membersIntro: 'Tipp bei ana Person auf de drei Punkt, um Rolln, PIN, Nama oder Handynummer z ändern oder sie z löschn. Zahnradl = Admin, Glas = Event-Manager. Gäst sehn bloß de Trainings und eana Profil.',
       memberAdd: 'Mitglied dazuadoa', fullName: 'Vor- und Nachname', phone: 'Handynummer',
       memberAddNote: 'Des Mitglied meldt se bloß mit da Handynummer o. Da PIN san de letztn 6 Ziffern.',
       selfAdmin: 'Du bist Admin. Du konnst da d Rechte ned söiba entziehn.', revokeAdmin: 'Admin-Rechte entziehn: {name}', makeAdmin: 'Zum Admin macha: {name}',
@@ -599,7 +606,8 @@
       memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zum Event-Manager macha: {name}', revokeEm: 'Event-Manager-Rechte entziehn: {name}', emGranted: 'Als Event-Manager festgelegt', emRevoked: 'Event-Manager-Rechte entzogn', confirmGuestLoses: '{name} hod Admin- oder Event-Manager-Rechte. Als Gast festlegn entzieht de Rechte. Weiter?', selfMember: 'Du bist Mitglied. Du konnst di ned söiba zum Gast macha.', rolesTitle: 'Rollen', emSub: 'Do verwoitst du de Events.',
       infoShow: 'Erklärung anzoagn', infoHide: 'Erklärung wegdoa',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäst', ccOthers: 'Andere', ccEmpty: 'No koane Veranstoitungen.', ccNoDays: 'No koane Tog.', ccSummary: '{s} Schichtn · {r} Rolln', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Veranstoitung', ccLvlDay: 'Tog', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktionen', ccAddEvent: 'Veranstoitung dazuadoa', ccAddDay: 'Tog dazuadoa', ccAddShift: 'Schicht dazuadoa', ccAddRole: 'Rolle dazuadoa', ccChange: 'Ändern', ccCopy: 'Kopiern', ccClose: 'Zumachn', ccNameOpt: 'Nama (freiwillig)', ccStart: 'Ofang', ccEnd: 'End', ccActive: 'Aktiv', ccPersons: 'Verantwortliche', ccSearch: 'Nama suacha', ccOtherPerson: 'Andere Person (ned in da App)', ccAdd: 'Dazuadoa', ccDidYouMean: 'Moanst du {name}?', ccNobody: 'No koana', ccConfirmDel: '«{name}» löschn? Ois, wos drunter erfasst is, werd aa glöscht.', ccConfirmDelRole: '«{name}» löschn?', ccCopyEventNote: 'De Kopie is zerst inaktiv. Olle Tog wern um 52 Wochn verschobn, damit de Wochentog gleich bleibn.', ccCopyDayNote: 'Schichtn und Rolln wern mit de Verantwortlichn kopiert.', ccSaved: 'Gspeichert', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} is no ned in da App. Mit da Handynummer konnst de Person ois Gast dazuadoa.', ccAsGuest: 'Ois Gast dazuadoa', ccNeedName: 'Gib an Nama ei.', ccSetup: 'Für C&C muass s Datenbank-Schema aktualisiert wern (supabase/schema.sql).', ccCopySuffix: 'Kopie'
+      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäst', ccOthers: 'Andere', ccEmpty: 'No koane Veranstoitungen.', ccNoDays: 'No koane Tog.', ccSummary: '{s} Schichtn · {r} Rolln', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Veranstoitung', ccLvlDay: 'Tog', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktionen', ccAddEvent: 'Veranstoitung dazuadoa', ccAddDay: 'Tog dazuadoa', ccAddShift: 'Schicht dazuadoa', ccAddRole: 'Rolle dazuadoa', ccChange: 'Ändern', ccCopy: 'Kopiern', ccClose: 'Zumachn', ccNameOpt: 'Nama (freiwillig)', ccStart: 'Ofang', ccEnd: 'End', ccActive: 'Aktiv', ccPersons: 'Verantwortliche', ccSearch: 'Nama suacha', ccOtherPerson: 'Andere Person (ned in da App)', ccAdd: 'Dazuadoa', ccDidYouMean: 'Moanst du {name}?', ccNobody: 'No koana', ccConfirmDel: '«{name}» löschn? Ois, wos drunter erfasst is, werd aa glöscht.', ccConfirmDelRole: '«{name}» löschn?', ccCopyEventNote: 'De Kopie is zerst inaktiv. Olle Tog wern um 52 Wochn verschobn, damit de Wochentog gleich bleibn.', ccCopyDayNote: 'Schichtn und Rolln wern mit de Verantwortlichn kopiert.', ccSaved: 'Gspeichert', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} is no ned in da App. Mit da Handynummer konnst de Person ois Gast dazuadoa.', ccAsGuest: 'Ois Gast dazuadoa', ccNeedName: 'Gib an Nama ei.', ccSetup: 'Für C&C muass s Datenbank-Schema aktualisiert wern (supabase/schema.sql).', ccCopySuffix: 'Kopie',
+      mMakeAdmin: 'Zum Admin macha', mRevokeAdmin: 'Admin-Rechte entziehn', mMakeEm: 'Zum Event-Manager macha', mRevokeEm: 'Event-Manager-Rechte entziehn', mMakeGuest: 'Zum Gast macha', mMakeMember: 'Zum Mitglied macha', mEdit: 'Nama und Handynummer ändern', mEditNote: 'Mit ana neia Handynummer gilt wieda da Standard-PIN: de letztn 6 Ziffern vo da neia Nummer.', mSaved: 'Gspeichert', mDelete: 'Mitglied löschn', mPhoneTaken: 'De Handynummer ghört scho wem andern.'
     },
 
     cs: {
@@ -627,7 +635,7 @@
       phPlaceExtra: 'např. sportovní areál Jih', addExtra: 'Přidat trénink', upcomingEmpty: 'Žádné nadcházející tréninky.',
       phEventTitle: 'např. fondue večer', phEventPlace: 'např. klubovna', addEvent: 'Přidat akci',
       eventsEmpty: 'Zatím žádné akce. Klepni na «+» a přidej první.',
-      membersIntro: 'Koruna: člen nebo host (prázdná koruna). Ozubené kolo: správce. Sklenice: správce akcí. Tyto role mohou měnit jen správci. Hosté vidí jen tréninky a profil, žádné akce. Výchozí PIN tvoří posledních 6 číslic čísla mobilu.',
+      membersIntro: 'Klepnutím na tři tečky u osoby změníš role, PIN, jméno nebo číslo mobilu, případně ji smažeš. Ozubené kolo = správce, sklenice = správce akcí. Hosté vidí jen tréninky a svůj profil.',
       memberAdd: 'Přidat člena', fullName: 'Jméno a příjmení', phone: 'Číslo mobilu',
       memberAddNote: 'Člen se přihlašuje pouze číslem mobilu. PIN tvoří posledních 6 číslic.',
       selfAdmin: 'Jsi správce. Sám sobě práva odebrat nemůžeš.', revokeAdmin: 'Odebrat práva správce: {name}', makeAdmin: 'Udělat správcem: {name}',
@@ -671,7 +679,8 @@
       memberTag: 'Člen', emTag: 'Správce akcí', makeEm: 'Udělat správcem akcí: {name}', revokeEm: 'Odebrat práva správce akcí: {name}', emGranted: 'Nastaveno jako správce akcí', emRevoked: 'Práva správce akcí odebrána', confirmGuestLoses: '{name} má práva správce nebo správce akcí. Nastavení jako host tato práva odebere. Pokračovat?', selfMember: 'Jsi člen. Sám sebe hostem udělat nemůžeš.', rolesTitle: 'Role', emSub: 'Tady spravuješ akce.',
       infoShow: 'Zobrazit vysvětlení', infoHide: 'Skrýt vysvětlení',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Členové', ccGuests: 'Hosté', ccOthers: 'Ostatní', ccEmpty: 'Zatím žádné akce.', ccNoDays: 'Zatím žádné dny.', ccSummary: 'Směny: {s} · role: {r}', ccLvlAll: 'Chränzli a Chilbi', ccLvlEvent: 'Akce', ccLvlDay: 'Den', ccLvlShift: 'Směna', ccLvlRole: 'Role', ccActions: 'Možnosti', ccAddEvent: 'Přidat akci', ccAddDay: 'Přidat den', ccAddShift: 'Přidat směnu', ccAddRole: 'Přidat roli', ccChange: 'Upravit', ccCopy: 'Kopírovat', ccClose: 'Zavřít', ccNameOpt: 'Název (nepovinné)', ccStart: 'Začátek', ccEnd: 'Konec', ccActive: 'Aktivní', ccPersons: 'Odpovědné osoby', ccSearch: 'Hledat jména', ccOtherPerson: 'Jiná osoba (není v aplikaci)', ccAdd: 'Přidat', ccDidYouMean: 'Myslíš {name}?', ccNobody: 'Zatím nikdo', ccConfirmDel: 'Smazat «{name}»? Smaže se i vše, co je pod tím.', ccConfirmDelRole: 'Smazat «{name}»?', ccCopyEventNote: 'Kopie je nejprve neaktivní. Všechny dny se posunou o 52 týdnů, aby dny v týdnu zůstaly stejné.', ccCopyDayNote: 'Směny a role se kopírují i s odpovědnými osobami.', ccSaved: 'Uloženo', ccCopied: 'Zkopírováno', ccDeleted: 'Smazáno', ccNotInApp: '{name} zatím v aplikaci není. S číslem mobilu ji můžeš přidat jako hosta.', ccAsGuest: 'Přidat jako hosta', ccNeedName: 'Zadej jméno.', ccSetup: 'Pro C&C je potřeba aktualizovat schéma databáze (supabase/schema.sql).', ccCopySuffix: 'kopie'
+      navCC: 'C&C', ccMembers: 'Členové', ccGuests: 'Hosté', ccOthers: 'Ostatní', ccEmpty: 'Zatím žádné akce.', ccNoDays: 'Zatím žádné dny.', ccSummary: 'Směny: {s} · role: {r}', ccLvlAll: 'Chränzli a Chilbi', ccLvlEvent: 'Akce', ccLvlDay: 'Den', ccLvlShift: 'Směna', ccLvlRole: 'Role', ccActions: 'Možnosti', ccAddEvent: 'Přidat akci', ccAddDay: 'Přidat den', ccAddShift: 'Přidat směnu', ccAddRole: 'Přidat roli', ccChange: 'Upravit', ccCopy: 'Kopírovat', ccClose: 'Zavřít', ccNameOpt: 'Název (nepovinné)', ccStart: 'Začátek', ccEnd: 'Konec', ccActive: 'Aktivní', ccPersons: 'Odpovědné osoby', ccSearch: 'Hledat jména', ccOtherPerson: 'Jiná osoba (není v aplikaci)', ccAdd: 'Přidat', ccDidYouMean: 'Myslíš {name}?', ccNobody: 'Zatím nikdo', ccConfirmDel: 'Smazat «{name}»? Smaže se i vše, co je pod tím.', ccConfirmDelRole: 'Smazat «{name}»?', ccCopyEventNote: 'Kopie je nejprve neaktivní. Všechny dny se posunou o 52 týdnů, aby dny v týdnu zůstaly stejné.', ccCopyDayNote: 'Směny a role se kopírují i s odpovědnými osobami.', ccSaved: 'Uloženo', ccCopied: 'Zkopírováno', ccDeleted: 'Smazáno', ccNotInApp: '{name} zatím v aplikaci není. S číslem mobilu ji můžeš přidat jako hosta.', ccAsGuest: 'Přidat jako hosta', ccNeedName: 'Zadej jméno.', ccSetup: 'Pro C&C je potřeba aktualizovat schéma databáze (supabase/schema.sql).', ccCopySuffix: 'kopie',
+      mMakeAdmin: 'Udělat správcem', mRevokeAdmin: 'Odebrat práva správce', mMakeEm: 'Udělat správcem akcí', mRevokeEm: 'Odebrat práva správce akcí', mMakeGuest: 'Nastavit jako hosta', mMakeMember: 'Nastavit jako člena', mEdit: 'Změnit jméno a číslo mobilu', mEditNote: 'S novým číslem opět platí výchozí PIN: posledních 6 číslic nového čísla.', mSaved: 'Uloženo', mDelete: 'Smazat člena', mPhoneTaken: 'Toto číslo mobilu už patří jiné osobě.'
     },
 
     nl: {
@@ -699,7 +708,7 @@
       phPlaceExtra: 'bijv. sportpark Zuid', addExtra: 'Training toevoegen', upcomingEmpty: 'Geen komende trainingen.',
       phEventTitle: 'bijv. fonduavond', phEventPlace: 'bijv. clubhuis', addEvent: 'Evenement toevoegen',
       eventsEmpty: 'Nog geen evenementen. Tik op «+» om het eerste toe te voegen.',
-      membersIntro: 'Kroon: lid of gast (lege kroon). Tandwiel: beheerder. Glas: evenementmanager. Alleen beheerders kunnen deze rollen wijzigen. Gasten zien alleen de trainingen en het profiel, geen evenementen. De standaard-PIN zijn de laatste 6 cijfers van het mobiele nummer.',
+      membersIntro: 'Tik op de drie puntjes bij een persoon om rollen, PIN, naam of mobiel nummer te wijzigen of de persoon te verwijderen. Tandwiel = beheerder, glas = evenementmanager. Gasten zien alleen de trainingen en hun profiel.',
       memberAdd: 'Lid toevoegen', fullName: 'Voor- en achternaam', phone: 'Mobiel nummer',
       memberAddNote: 'Het lid logt alleen in met het mobiele nummer. De PIN zijn de laatste 6 cijfers.',
       selfAdmin: 'Je bent beheerder. Je kunt je eigen rechten niet intrekken.', revokeAdmin: 'Beheerdersrechten intrekken: {name}', makeAdmin: 'Beheerder maken: {name}',
@@ -743,7 +752,8 @@
       memberTag: 'Lid', emTag: 'Evenementmanager', makeEm: 'Evenementmanager maken: {name}', revokeEm: 'Rechten van evenementmanager intrekken: {name}', emGranted: 'Als evenementmanager ingesteld', emRevoked: 'Rechten van evenementmanager ingetrokken', confirmGuestLoses: '{name} heeft beheerders- of evenementmanagerrechten. Als gast instellen trekt deze rechten in. Doorgaan?', selfMember: 'Je bent lid. Je kunt jezelf niet tot gast maken.', rolesTitle: 'Rollen', emSub: 'Hier beheer je de evenementen.',
       infoShow: 'Uitleg tonen', infoHide: 'Uitleg verbergen',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Leden', ccGuests: 'Gasten', ccOthers: 'Anderen', ccEmpty: 'Nog geen evenementen.', ccNoDays: 'Nog geen dagen.', ccSummary: '{s} diensten · {r} rollen', ccLvlAll: 'Chränzli en Chilbi', ccLvlEvent: 'Evenement', ccLvlDay: 'Dag', ccLvlShift: 'Dienst', ccLvlRole: 'Rol', ccActions: 'Acties', ccAddEvent: 'Evenement toevoegen', ccAddDay: 'Dag toevoegen', ccAddShift: 'Dienst toevoegen', ccAddRole: 'Rol toevoegen', ccChange: 'Wijzigen', ccCopy: 'Kopiëren', ccClose: 'Sluiten', ccNameOpt: 'Naam (optioneel)', ccStart: 'Begin', ccEnd: 'Einde', ccActive: 'Actief', ccPersons: 'Verantwoordelijken', ccSearch: 'Namen zoeken', ccOtherPerson: 'Andere persoon (niet in de app)', ccAdd: 'Toevoegen', ccDidYouMean: 'Bedoel je {name}?', ccNobody: 'Nog niemand', ccConfirmDel: '«{name}» verwijderen? Alles wat eronder valt, wordt ook verwijderd.', ccConfirmDelRole: '«{name}» verwijderen?', ccCopyEventNote: 'De kopie is eerst inactief. Alle dagen worden 52 weken verschoven, zodat de weekdagen gelijk blijven.', ccCopyDayNote: 'Diensten en rollen worden met de verantwoordelijken gekopieerd.', ccSaved: 'Opgeslagen', ccCopied: 'Gekopieerd', ccDeleted: 'Verwijderd', ccNotInApp: '{name} staat nog niet in de app. Met een mobiel nummer kun je deze persoon als gast toevoegen.', ccAsGuest: 'Als gast toevoegen', ccNeedName: 'Vul een naam in.', ccSetup: 'Voor C&C moet het databaseschema worden bijgewerkt (supabase/schema.sql).', ccCopySuffix: 'kopie'
+      navCC: 'C&C', ccMembers: 'Leden', ccGuests: 'Gasten', ccOthers: 'Anderen', ccEmpty: 'Nog geen evenementen.', ccNoDays: 'Nog geen dagen.', ccSummary: '{s} diensten · {r} rollen', ccLvlAll: 'Chränzli en Chilbi', ccLvlEvent: 'Evenement', ccLvlDay: 'Dag', ccLvlShift: 'Dienst', ccLvlRole: 'Rol', ccActions: 'Acties', ccAddEvent: 'Evenement toevoegen', ccAddDay: 'Dag toevoegen', ccAddShift: 'Dienst toevoegen', ccAddRole: 'Rol toevoegen', ccChange: 'Wijzigen', ccCopy: 'Kopiëren', ccClose: 'Sluiten', ccNameOpt: 'Naam (optioneel)', ccStart: 'Begin', ccEnd: 'Einde', ccActive: 'Actief', ccPersons: 'Verantwoordelijken', ccSearch: 'Namen zoeken', ccOtherPerson: 'Andere persoon (niet in de app)', ccAdd: 'Toevoegen', ccDidYouMean: 'Bedoel je {name}?', ccNobody: 'Nog niemand', ccConfirmDel: '«{name}» verwijderen? Alles wat eronder valt, wordt ook verwijderd.', ccConfirmDelRole: '«{name}» verwijderen?', ccCopyEventNote: 'De kopie is eerst inactief. Alle dagen worden 52 weken verschoven, zodat de weekdagen gelijk blijven.', ccCopyDayNote: 'Diensten en rollen worden met de verantwoordelijken gekopieerd.', ccSaved: 'Opgeslagen', ccCopied: 'Gekopieerd', ccDeleted: 'Verwijderd', ccNotInApp: '{name} staat nog niet in de app. Met een mobiel nummer kun je deze persoon als gast toevoegen.', ccAsGuest: 'Als gast toevoegen', ccNeedName: 'Vul een naam in.', ccSetup: 'Voor C&C moet het databaseschema worden bijgewerkt (supabase/schema.sql).', ccCopySuffix: 'kopie',
+      mMakeAdmin: 'Beheerder maken', mRevokeAdmin: 'Beheerdersrechten intrekken', mMakeEm: 'Evenementmanager maken', mRevokeEm: 'Rechten van evenementmanager intrekken', mMakeGuest: 'Als gast instellen', mMakeMember: 'Als lid instellen', mEdit: 'Naam en mobiel nummer wijzigen', mEditNote: 'Met een nieuw nummer geldt weer de standaard-PIN: de laatste 6 cijfers van het nieuwe nummer.', mSaved: 'Opgeslagen', mDelete: 'Lid verwijderen', mPhoneTaken: 'Dit mobiele nummer hoort al bij iemand anders.'
     }
   };
 
@@ -1245,26 +1255,24 @@
         '<label class="check"><input type="checkbox" name="guest" value="1"><span>' + L('guestCheck') + '</span></label>' +
         '<button class="btn" type="submit">' + L('memberAdd') + '</button></form>';
     }
-    b += '<ul class="list scroll" data-sc="members">' + S.members.map(function (m) {
+    var mbRow = function (m) {
       var self = m.id === S.me.id;
-      var member = !m.isGuest;
-      // Krone: gefüllt = Mitglied, leer = Gast
-      var crownLabel = self ? L('selfMember') : L(member ? 'makeGuest' : 'revokeGuest', { name: m.name });
-      var starLabel = self ? L('selfAdmin') : L(m.isAdmin ? 'revokeAdmin' : 'makeAdmin', { name: m.name });
-      var glassLabel = L(m.isEventManager ? 'revokeEm' : 'makeEm', { name: m.name });
-      var roleBtn = function (cls, act, val, on, label, icon, disabled) {
-        return '<button class="rolebtn ' + cls + (on ? ' on' : '') + '" data-act="' + act + '" data-id="' + m.id + '" data-val="' + val + '" aria-pressed="' + on + '" aria-label="' + esc(label) + '" title="' + esc(label) + '"' + (disabled ? ' disabled' : '') + '>' + icon + '</button>';
-      };
-      return '<li><div class="l"><b>' + esc(m.name) + '</b><span>' + esc(fmtPhone(m.phone)) + '</span></div>' +
-        '<div class="btnrow">' +
-        (member ? roleBtn('star', 'set-admin', m.isAdmin ? '0' : '1', m.isAdmin, starLabel, ICON.gear, self) : '') +
-        (member ? roleBtn('glass', 'set-em', m.isEventManager ? '0' : '1', m.isEventManager, glassLabel, ICON.glass, false) : '') +
-        (self ? '' :
-          '<button class="rolebtn iconbtn pin" data-act="reset-pin" data-id="' + m.id + '" aria-label="' + esc(L('resetPin') + ': ' + m.name) + '" title="' + esc(L('resetPin') + ': ' + m.name) + '">' + ICON.dialpad + '</button>' +
-          '<button class="rolebtn iconbtn danger" data-act="remove-member" data-id="' + m.id + '" aria-label="' + esc(L('remove') + ': ' + m.name) + '" title="' + esc(L('remove') + ': ' + m.name) + '">' + ICON.trash + '</button>') +
-        roleBtn('crown', 'set-guest', member ? '1' : '0', member, crownLabel, ICON.crown, self) +
-        '</div></li>';
-    }).join('') + '</ul>';
+      return '<li class="mbrow"><div class="l"><b>' + esc(m.name) + (self ? ' <span class="mbyou">' + L('you') + '</span>' : '') + '</b><span>' + esc(fmtPhone(m.phone)) + '</span></div>' +
+        '<span class="mbicons">' +
+          (m.isAdmin ? '<span class="mbic adm" title="' + esc(L('adminTag')) + '" aria-label="' + esc(L('adminTag')) + '">' + ICON.gear + '</span>' : '') +
+          (m.isEventManager ? '<span class="mbic em" title="' + esc(L('emTag')) + '" aria-label="' + esc(L('emTag')) + '">' + ICON.glass + '</span>' : '') +
+        '</span>' +
+        '<button class="ccdots" data-act="mb-menu" data-id="' + esc(m.id) + '" aria-label="' + esc(L('ccActions') + ': ' + m.name) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button></li>';
+    };
+    var mbGroup = function (key, label, list, guest) {
+      var open = S.sec[key] !== false;
+      return '<div class="mbgrp"><button class="mbgh" data-act="mb-grp" data-id="' + key + '" aria-expanded="' + open + '">' +
+        '<span class="mbcrown' + (guest ? ' g' : '') + '">' + ICON.crown + '</span><span>' + label + ' <span class="cnt">(' + list.length + ')</span></span>' +
+        '<span class="sp"></span><span class="ccfold' + (open ? ' open' : '') + '">' + ICON.chev + '</span></button>' +
+        (open ? (list.length ? '<ul class="list">' + list.map(mbRow).join('') + '</ul>' : '<p class="ccsum" style="padding:6px 0 10px">' + L('nobody') + '</p>') : '') + '</div>';
+    };
+    b += mbGroup('mg-m', L('ccMembers'), S.members.filter(function (m) { return !m.isGuest; }), false) +
+         mbGroup('mg-g', L('ccGuests'), S.members.filter(function (m) { return m.isGuest; }), true);
     if (isAdm) html += accordion('members', L('secMembers'), S.members.length, b, true, L('membersIntro'));
     return html;
   }
@@ -1779,6 +1787,64 @@
     return ok;
   }
 
+  /* ---------- Aktionsfenster Mitglied (Verwaltung) ---------- */
+  var mbSheet = null;
+  function mbKey(e) { if (e.key === 'Escape' && !document.getElementById('dlg')) { e.preventDefault(); mbClose(); } }
+  function mbClose() {
+    var el = document.getElementById('mbsheet');
+    if (el) el.remove();
+    mbSheet = null;
+    document.removeEventListener('keydown', mbKey, true);
+  }
+  function mbOpen(id, mode) { mbSheet = { id: id, mode: mode || 'menu' }; mbDraw(); }
+  function mbBtn(act, id, val, icon, label, cls) {
+    return '<button type="button" class="ccact' + (cls ? ' ' + cls : '') + '" data-act="' + act + '" data-id="' + esc(id) + '"' + (val !== '' ? ' data-val="' + val + '"' : '') + '>' + icon + '<span>' + label + '</span></button>';
+  }
+  function mbDraw() {
+    var m = mbSheet ? ccMember(mbSheet.id) : null;
+    if (!m) { mbClose(); return; }
+    var self = m.id === S.me.id, member = !m.isGuest, body;
+    if (mbSheet.mode === 'menu') {
+      body = '<p class="cck">' + L(member ? 'memberTag' : 'guestTag') + ' · ' + esc(fmtPhone(m.phone)) + '</p><h3>' + esc(m.name) + '</h3>' +
+        (member && !self ? mbBtn('set-admin', m.id, m.isAdmin ? '0' : '1', ICON.gear, L(m.isAdmin ? 'mRevokeAdmin' : 'mMakeAdmin')) : '') +
+        (member ? mbBtn('set-em', m.id, m.isEventManager ? '0' : '1', ICON.glass, L(m.isEventManager ? 'mRevokeEm' : 'mMakeEm')) : '') +
+        (!self ? mbBtn('set-guest', m.id, member ? '1' : '0', ICON.crown, L(member ? 'mMakeGuest' : 'mMakeMember')) : '') +
+        (!self ? mbBtn('reset-pin', m.id, '', ICON.dialpad, L('resetPin')) : '') +
+        '<button type="button" class="ccact" data-mb="edit">' + ICON.pencil + '<span>' + L('mEdit') + '</span></button>' +
+        (!self ? mbBtn('remove-member', m.id, '', ICON.trash, L('mDelete'), 'del') : '') +
+        '<button type="button" class="ccact close" data-mb="close">' + L('ccClose') + '</button>';
+    } else {
+      body = '<p class="cck">' + L('mEdit') + '</p><h3>' + esc(m.name) + '</h3>' +
+        '<form data-form="member-edit" data-id="' + esc(m.id) + '" novalidate>' +
+        fld(L('fullName'), '<input class="input" name="name" value="' + esc(m.name) + '" autocomplete="off" required>') +
+        fld(L('phone'), '<input class="input" name="phone" type="tel" inputmode="tel" autocomplete="off" value="' + esc(fmtPhone(m.phone)) + '" required>') +
+        '<p class="ccnote">' + L('mEditNote') + '</p>' +
+        '<div class="dlgbtns"><button type="button" class="btn ghost inline" data-mb="close">' + L('dismiss') + '</button><button type="submit" class="btn inline">' + L('save') + '</button></div></form>';
+    }
+    var wrap = document.getElementById('mbsheet');
+    if (!wrap) {
+      wrap = document.createElement('div');
+      wrap.id = 'mbsheet';
+      wrap.className = 'ccsheet';
+      wrap.addEventListener('click', function (e) {
+        if (e.target === wrap) { mbClose(); return; }
+        var b = e.target.closest('[data-mb]');
+        if (b) {
+          if (b.dataset.mb === 'edit') { mbSheet.mode = 'edit'; mbDraw(); }
+          else mbClose();
+          return;
+        }
+        // Aktionen mit data-act laufen über den allgemeinen Klick-Handler weiter; das Fenster schliesst sich vorher
+        if (e.target.closest('[data-act]')) mbClose();
+      });
+      document.body.appendChild(wrap);
+      document.addEventListener('keydown', mbKey, true);
+    }
+    wrap.innerHTML = '<div class="ccsheetcard" role="dialog" aria-modal="true" aria-label="' + esc(m.name) + '">' + body + '</div>';
+    var first = wrap.querySelector('form .input') || wrap.querySelector('button');
+    if (first) { try { first.focus({ preventScroll: true }); } catch (x) { first.focus(); } }
+  }
+
   /* ---------- Bestätigungsdialog ---------- */
   // Zeigt eine Rückfrage mit «Abbrechen» und «OK». Liefert true, wenn mit OK bestätigt wurde.
   function askConfirm(title, message, danger) {
@@ -2001,6 +2067,8 @@
     if (act_ === 'mode') { S.mode = S.mode === 'login' ? 'register' : 'login'; S.err = ''; render(); return; }
     if (act_ === 'tab') { S.tab = D.tab; S.edit = null; render(); window.scrollTo(0, 0); return; }
     if (act_ === 'who') { S.open[D.key] = !S.open[D.key]; render(); return; }
+    if (act_ === 'mb-menu') { if (S.me && S.me.isAdmin) mbOpen(D.id); return; }
+    if (act_ === 'mb-grp') { S.sec[D.id] = S.sec[D.id] === false; render(); return; }
     if (act_ === 'cc-addevent') { if (canCC()) ccOpen('root', null, 'add'); return; }
     if (act_ === 'cc-fold') { S.ccFold[D.id] = !ccIsFolded(D.id); render(); return; }
     if (act_ === 'cc-menu') { if (canCC()) ccOpen(D.lvl, D.id || null, 'menu'); return; }
@@ -2037,6 +2105,7 @@
     }
     if (act_ === 'logout') {
       ccCloseSheet();
+      mbClose();
       try { await sb.auth.signOut(); } catch (err) { console.error(err); }
       if (channel) { try { sb.removeChannel(channel); } catch (err2) { /* ignorieren */ } channel = null; }
       S = freshState(); S.step = 'login'; render(); window.scrollTo(0, 0);
@@ -2139,6 +2208,23 @@
     }
     if (!S.me.isAdmin && !(S.me.isEventManager && (kind === 'event' || kind === 'edit-ev'))) return;
 
+    if (kind === 'member-edit') {
+      var nph = normPhone(g('phone'));
+      if (!g('name')) { toast(L('ccNeedName')); return; }
+      if (!nph) { toast(L('phoneInvalid')); return; }
+      S.busy = true;
+      var ur = await sb.rpc('admin_update_member', { target: form.dataset.id, new_name: g('name'), new_phone: nph });
+      S.busy = false;
+      if (ur.error) {
+        console.error(ur.error);
+        toast(/PHONE_TAKEN|duplicate|unique/i.test(ur.error.message || '') ? L('mPhoneTaken') : L('errFailed') + ': ' + String(ur.error.message || '').slice(0, 100));
+        return;
+      }
+      mbClose();
+      toast(L('mSaved'));
+      try { await loadAll(); render(); } catch (x) { console.error(x); }
+      return;
+    }
     if (kind === 'member') {
       S.busy = true;
       var added = await addMember(g('name'), g('phone'), !!f.get('guest'));
@@ -2173,7 +2259,7 @@
 
   document.addEventListener('input', function (e) {
     var t = e.target;
-    if (!t || t.name !== 'phone' || !t.closest('[data-form="auth"],[data-form="member"],[data-ccform="guest"]')) return;
+    if (!t || t.name !== 'phone' || !t.closest('[data-form="auth"],[data-form="member"],[data-ccform="guest"],[data-form="member-edit"]')) return;
     var pos = t.selectionStart, atEnd = pos === t.value.length;
     var before = t.value.slice(0, pos).replace(/\D/g, '').length;
     var f = formatPhoneTyping(t.value);

@@ -420,3 +420,26 @@
   .ccsn { min-width: 0; overflow-wrap: anywhere; }
   .ccfold-day { width: 30px; height: 30px; color: var(--muted); }
   .ccfold-day .chev { width: 16px; height: 16px; }
+
+  /* Verwaltung: Mitglieder und Gäste gruppiert, Aktionen hinter den drei Punkten */
+  .mbgrp { margin-bottom: 6px; }
+  .mbgh { display: flex; align-items: center; gap: 8px; width: 100%; background: none; border: 0; border-bottom: 1px solid var(--line); padding: 10px 0 8px; font-weight: 600; font-size: 1.02rem; color: var(--ink); text-align: left; }
+  .mbgh .cnt { color: var(--muted); font-weight: 500; }
+  .mbgh .sp { flex: 1; }
+  .mbgh .ccfold { width: 28px; height: 28px; }
+  .mbcrown { display: inline-flex; width: 26px; height: 26px; border-radius: 8px; align-items: center; justify-content: center; background: var(--crown); color: #fff; flex: 0 0 auto; }
+  .mbcrown svg { width: 17px; height: 17px; fill: currentColor; }
+  .mbcrown.g { background: var(--surface); color: var(--crown); border: 1.5px solid color-mix(in srgb, var(--crown) 50%, var(--line)); }
+  .mbcrown.g svg { fill: none; }
+  .list li.mbrow { flex-wrap: nowrap; gap: 8px; }
+  .mbrow .l { flex: 1 1 auto; min-width: 0; }
+  .mbrow .l b { overflow-wrap: anywhere; }
+  .mbyou { color: var(--muted); font-weight: 400; font-size: .85rem; }
+  .mbicons { display: inline-flex; gap: 4px; flex: 0 0 auto; }
+  .mbic { display: inline-flex; width: 26px; height: 26px; align-items: center; justify-content: center; }
+  .mbic svg { width: 20px; height: 20px; fill: none; }
+  .mbic.adm { color: #E0A100; }
+  .mbic.adm svg { fill: color-mix(in srgb, #E0A100 30%, transparent); }
+  .mbic.em { color: var(--crown); }
+  .mbic.em .liq { fill: var(--crown); }
+  .ccact .liq { fill: none; }

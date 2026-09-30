@@ -1,6 +1,6 @@
 // Service Worker: hält die App-Dateien bereit, damit die App schnell startet.
 // Daten kommen immer live aus Supabase (diese Anfragen werden nicht zwischengespeichert).
-const CACHE = 'training-v24';
+const CACHE = 'training-v25';
 const SHELL = ['./', 'index.html', 'styles.css', 'app.js', 'config.js', 'manifest.webmanifest', 'apple-touch-icon.png', 'icon-192.png', 'icons/favicon-48.png'];
 
 self.addEventListener('install', (e) => {
