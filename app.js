@@ -94,7 +94,8 @@
       guestCheck: 'Als Gast hinzufügen (sieht nur Trainings und Profil)', guestInfo: 'Du hast Gast-Zugang. Du siehst die Trainings und dein Profil.',
       memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zum Event-Manager machen: {name}', revokeEm: 'Event-Manager-Rechte entziehen: {name}', emGranted: 'Als Event-Manager festgelegt', emRevoked: 'Event-Manager-Rechte entzogen', confirmGuestLoses: '{name} hat Admin- oder Event-Manager-Rechte. Als Gast festlegen entzieht diese Rechte. Fortfahren?', selfMember: 'Du bist Mitglied. Du kannst dich nicht selbst zum Gast machen.', rolesTitle: 'Rollen', emSub: 'Hier verwaltest du die Events.',
       infoShow: 'Erklärung anzeigen', infoHide: 'Erklärung ausblenden',
-      ok: 'OK'
+      ok: 'OK',
+      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäste', ccOthers: 'Andere', ccEmpty: 'Noch keine Anlässe erfasst. Tippe oben rechts auf die drei Punkte, um einen Anlass anzulegen.', ccNoDays: 'Noch keine Tage erfasst.', ccSummary: '{s} Schichten · {r} Rollen', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Anlass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktionen', ccAddEvent: 'Anlass hinzufügen', ccAddDay: 'Tag hinzufügen', ccAddShift: 'Schicht hinzufügen', ccAddRole: 'Rolle hinzufügen', ccChange: 'Ändern', ccCopy: 'Kopieren', ccClose: 'Schliessen', ccNameOpt: 'Name (optional)', ccStart: 'Start', ccEnd: 'Ende', ccActive: 'Aktiv', ccPersons: 'Verantwortliche', ccSearch: 'Namen suchen', ccOtherPerson: 'Andere Person (nicht in der App)', ccAdd: 'Hinzufügen', ccDidYouMean: 'Meinst du {name}?', ccNobody: 'Noch niemand', ccConfirmDel: '«{name}» löschen? Alles, was darunter erfasst ist, wird ebenfalls gelöscht.', ccConfirmDelRole: '«{name}» löschen?', ccCopyEventNote: 'Die Kopie ist zuerst inaktiv. Alle Tage werden um 52 Wochen verschoben, damit die Wochentage gleich bleiben.', ccCopyDayNote: 'Schichten und Rollen werden mit den Verantwortlichen kopiert.', ccSaved: 'Gespeichert', ccCopied: 'Kopiert', ccDeleted: 'Gelöscht', ccNotInApp: '{name} ist noch nicht in der App. Mit der Handynummer kannst du die Person als Gast hinzufügen.', ccAsGuest: 'Als Gast hinzufügen', ccNeedName: 'Gib einen Namen ein.', ccSetup: 'Für C&C muss das Datenbank-Schema aktualisiert werden (supabase/schema.sql).', ccCopySuffix: 'Kopie'
     },
 
     fr: {
@@ -165,7 +166,8 @@
       guestCheck: 'Ajouter comme invité (ne voit que les entraînements et le profil)', guestInfo: 'Tu as un accès invité. Tu vois les entraînements et ton profil.',
       memberTag: 'Membre', emTag: 'Responsable des événements', makeEm: 'Nommer responsable des événements : {name}', revokeEm: 'Retirer les droits de responsable des événements : {name}', emGranted: 'Défini comme responsable des événements', emRevoked: 'Droits de responsable des événements retirés', confirmGuestLoses: '{name} a des droits d’admin ou de responsable des événements. Le définir comme invité les retire. Continuer ?', selfMember: 'Tu es membre. Tu ne peux pas te définir toi-même comme invité.', rolesTitle: 'Rôles', emSub: 'Ici, tu gères les événements.',
       infoShow: 'Afficher l’explication', infoHide: 'Masquer l’explication',
-      ok: 'OK'
+      ok: 'OK',
+      navCC: 'C&C', ccMembers: 'Membres', ccGuests: 'Invités', ccOthers: 'Autres', ccEmpty: 'Aucune manifestation pour l’instant. Touche les trois points en haut à droite pour en créer une.', ccNoDays: 'Aucun jour pour l’instant.', ccSummary: '{s} créneaux · {r} rôles', ccLvlAll: 'Chränzli et Chilbi', ccLvlEvent: 'Manifestation', ccLvlDay: 'Jour', ccLvlShift: 'Créneau', ccLvlRole: 'Rôle', ccActions: 'Actions', ccAddEvent: 'Ajouter une manifestation', ccAddDay: 'Ajouter un jour', ccAddShift: 'Ajouter un créneau', ccAddRole: 'Ajouter un rôle', ccChange: 'Modifier', ccCopy: 'Copier', ccClose: 'Fermer', ccNameOpt: 'Nom (facultatif)', ccStart: 'Début', ccEnd: 'Fin', ccActive: 'Actif', ccPersons: 'Responsables', ccSearch: 'Rechercher un nom', ccOtherPerson: 'Autre personne (pas dans l’application)', ccAdd: 'Ajouter', ccDidYouMean: 'Tu veux dire {name} ?', ccNobody: 'Personne pour l’instant', ccConfirmDel: 'Supprimer « {name} » ? Tout ce qui y est rattaché sera aussi supprimé.', ccConfirmDelRole: 'Supprimer « {name} » ?', ccCopyEventNote: 'La copie est d’abord inactive. Tous les jours sont décalés de 52 semaines pour garder les mêmes jours de la semaine.', ccCopyDayNote: 'Les créneaux et rôles sont copiés avec les responsables.', ccSaved: 'Enregistré', ccCopied: 'Copié', ccDeleted: 'Supprimé', ccNotInApp: '{name} n’est pas encore dans l’application. Avec son numéro de mobile, tu peux l’ajouter comme invité.', ccAsGuest: 'Ajouter comme invité', ccNeedName: 'Saisis un nom.', ccSetup: 'Pour C&C, le schéma de la base de données doit être mis à jour (supabase/schema.sql).', ccCopySuffix: 'copie'
     },
 
     en: {
@@ -236,7 +238,8 @@
       guestCheck: 'Add as guest (sees only trainings and profile)', guestInfo: 'You have guest access. You can see the trainings and your profile.',
       memberTag: 'Member', emTag: 'Event manager', makeEm: 'Make event manager: {name}', revokeEm: 'Remove event manager rights: {name}', emGranted: 'Set as event manager', emRevoked: 'Event manager rights removed', confirmGuestLoses: '{name} has admin or event manager rights. Setting as guest removes these rights. Continue?', selfMember: 'You are a member. You cannot set yourself as a guest.', rolesTitle: 'Roles', emSub: 'Here you manage the events.',
       infoShow: 'Show explanation', infoHide: 'Hide explanation',
-      ok: 'OK'
+      ok: 'OK',
+      navCC: 'C&C', ccMembers: 'Members', ccGuests: 'Guests', ccOthers: 'Others', ccEmpty: 'No occasions yet. Tap the three dots at the top right to create one.', ccNoDays: 'No days yet.', ccSummary: '{s} shifts · {r} roles', ccLvlAll: 'Chränzli and Chilbi', ccLvlEvent: 'Occasion', ccLvlDay: 'Day', ccLvlShift: 'Shift', ccLvlRole: 'Role', ccActions: 'Actions', ccAddEvent: 'Add occasion', ccAddDay: 'Add day', ccAddShift: 'Add shift', ccAddRole: 'Add role', ccChange: 'Edit', ccCopy: 'Copy', ccClose: 'Close', ccNameOpt: 'Name (optional)', ccStart: 'Start', ccEnd: 'End', ccActive: 'Active', ccPersons: 'Responsible', ccSearch: 'Search names', ccOtherPerson: 'Other person (not in the app)', ccAdd: 'Add', ccDidYouMean: 'Did you mean {name}?', ccNobody: 'Nobody yet', ccConfirmDel: 'Delete “{name}”? Everything under it will be deleted too.', ccConfirmDelRole: 'Delete “{name}”?', ccCopyEventNote: 'The copy starts inactive. All days move by 52 weeks so the weekdays stay the same.', ccCopyDayNote: 'Shifts and roles are copied with the people responsible.', ccSaved: 'Saved', ccCopied: 'Copied', ccDeleted: 'Deleted', ccNotInApp: '{name} is not in the app yet. With a mobile number you can add them as a guest.', ccAsGuest: 'Add as guest', ccNeedName: 'Enter a name.', ccSetup: 'C&C needs an updated database schema (supabase/schema.sql).', ccCopySuffix: 'copy'
     },
 
     it: {
@@ -307,7 +310,8 @@
       guestCheck: 'Aggiungi come ospite (vede solo allenamenti e profilo)', guestInfo: 'Hai un accesso come ospite. Vedi gli allenamenti e il tuo profilo.',
       memberTag: 'Socio', emTag: 'Responsabile eventi', makeEm: 'Nomina responsabile eventi: {name}', revokeEm: 'Revoca i diritti di responsabile eventi: {name}', emGranted: 'Impostato come responsabile eventi', emRevoked: 'Diritti di responsabile eventi revocati', confirmGuestLoses: '{name} ha i diritti di admin o di responsabile eventi. Impostarlo come ospite li revoca. Continuare?', selfMember: 'Sei socio. Non puoi impostarti da solo come ospite.', rolesTitle: 'Ruoli', emSub: 'Qui gestisci gli eventi.',
       infoShow: 'Mostra la spiegazione', infoHide: 'Nascondi la spiegazione',
-      ok: 'OK'
+      ok: 'OK',
+      navCC: 'C&C', ccMembers: 'Soci', ccGuests: 'Ospiti', ccOthers: 'Altri', ccEmpty: 'Ancora nessuna manifestazione. Tocca i tre puntini in alto a destra per crearne una.', ccNoDays: 'Ancora nessun giorno.', ccSummary: '{s} turni · {r} ruoli', ccLvlAll: 'Chränzli e Chilbi', ccLvlEvent: 'Manifestazione', ccLvlDay: 'Giorno', ccLvlShift: 'Turno', ccLvlRole: 'Ruolo', ccActions: 'Azioni', ccAddEvent: 'Aggiungi manifestazione', ccAddDay: 'Aggiungi giorno', ccAddShift: 'Aggiungi turno', ccAddRole: 'Aggiungi ruolo', ccChange: 'Modifica', ccCopy: 'Copia', ccClose: 'Chiudi', ccNameOpt: 'Nome (facoltativo)', ccStart: 'Inizio', ccEnd: 'Fine', ccActive: 'Attivo', ccPersons: 'Responsabili', ccSearch: 'Cerca nomi', ccOtherPerson: 'Altra persona (non nell’app)', ccAdd: 'Aggiungi', ccDidYouMean: 'Intendi {name}?', ccNobody: 'Ancora nessuno', ccConfirmDel: 'Eliminare «{name}»? Verrà eliminato anche tutto ciò che contiene.', ccConfirmDelRole: 'Eliminare «{name}»?', ccCopyEventNote: 'La copia è inizialmente inattiva. Tutti i giorni vengono spostati di 52 settimane, così i giorni della settimana restano uguali.', ccCopyDayNote: 'Turni e ruoli vengono copiati con i responsabili.', ccSaved: 'Salvato', ccCopied: 'Copiato', ccDeleted: 'Eliminato', ccNotInApp: '{name} non è ancora nell’app. Con il numero di cellulare puoi aggiungere la persona come ospite.', ccAsGuest: 'Aggiungi come ospite', ccNeedName: 'Inserisci un nome.', ccSetup: 'Per C&C lo schema del database deve essere aggiornato (supabase/schema.sql).', ccCopySuffix: 'copia'
     },
 
     gsw: {
@@ -378,7 +382,8 @@
       guestCheck: 'Als Gascht hinzuefüege (gseht nur Trainings und Profil)', guestInfo: 'Du hesch en Gascht-Zuegang. Du gsehsch d Trainings und dis Profil.',
       memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zum Event-Manager mache: {name}', revokeEm: 'Event-Manager-Rächt entzieh: {name}', emGranted: 'Als Event-Manager festgleit', emRevoked: 'Event-Manager-Rächt entzoge', confirmGuestLoses: '{name} hät Admin- oder Event-Manager-Rächt. Als Gascht festlege entzieht die Rächt. Wiiter?', selfMember: 'Du bisch Mitglied. Du chasch di nöd säber zum Gascht mache.', rolesTitle: 'Rolle', emSub: 'Do verwaltisch du d Events.',
       infoShow: 'Erklärig aazeige', infoHide: 'Erklärig verstecke',
-      ok: 'OK'
+      ok: 'OK',
+      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäscht', ccOthers: 'Anderi', ccEmpty: 'No kei Aalässe erfasst. Tipp obe rächts uf di drei Pünkt, zum en Aalass aazlege.', ccNoDays: 'No kei Täg erfasst.', ccSummary: '{s} Schichte · {r} Rolle', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Aalass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktione', ccAddEvent: 'Aalass hinzuefüege', ccAddDay: 'Tag hinzuefüege', ccAddShift: 'Schicht hinzuefüege', ccAddRole: 'Rolle hinzuefüege', ccChange: 'Ändere', ccCopy: 'Kopiere', ccClose: 'Schliesse', ccNameOpt: 'Name (freiwillig)', ccStart: 'Start', ccEnd: 'Änd', ccActive: 'Aktiv', ccPersons: 'Verantwortlichi', ccSearch: 'Näme sueche', ccOtherPerson: 'Anderi Person (nöd i de App)', ccAdd: 'Hinzuefüege', ccDidYouMean: 'Meinsch {name}?', ccNobody: 'No niemer', ccConfirmDel: '«{name}» lösche? Alles, wo drunder erfasst isch, wird au glöscht.', ccConfirmDelRole: '«{name}» lösche?', ccCopyEventNote: 'D Kopie isch zerscht inaktiv. Alli Täg wärded um 52 Wuche verschobe, damit d Wuchetäg glich bliibed.', ccCopyDayNote: 'Schichte und Rolle wärded mit de Verantwortliche kopiert.', ccSaved: 'Gspeicheret', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} isch no nöd i de App. Mit de Handynummere chasch d Person als Gascht hinzuefüege.', ccAsGuest: 'Als Gascht hinzuefüege', ccNeedName: 'Gib en Name ii.', ccSetup: 'Für C&C muess s Datebank-Schema aktualisiert wärde (supabase/schema.sql).', ccCopySuffix: 'Kopie'
     },
 
     uk: {
@@ -449,7 +454,8 @@
       guestCheck: 'Додати як гостя (бачить лише тренування та профіль)', guestInfo: 'У вас гостьовий доступ. Ви бачите тренування та свій профіль.',
       memberTag: 'Член клубу', emTag: 'Менеджер подій', makeEm: 'Призначити менеджером подій: {name}', revokeEm: 'Забрати права менеджера подій: {name}', emGranted: 'Призначено менеджером подій', emRevoked: 'Права менеджера подій забрано', confirmGuestLoses: '{name} має права адміністратора або менеджера подій. Призначення гостем забирає ці права. Продовжити?', selfMember: 'Ви член клубу. Ви не можете призначити себе гостем.', rolesTitle: 'Ролі', emSub: 'Тут ви керуєте подіями.',
       infoShow: 'Показати пояснення', infoHide: 'Сховати пояснення',
-      ok: 'OK'
+      ok: 'OK',
+      navCC: 'C&C', ccMembers: 'Члени клубу', ccGuests: 'Гості', ccOthers: 'Інші', ccEmpty: 'Заходів ще немає. Натисніть три крапки вгорі праворуч, щоб створити захід.', ccNoDays: 'Днів ще немає.', ccSummary: 'Змін: {s} · ролей: {r}', ccLvlAll: 'Chränzli і Chilbi', ccLvlEvent: 'Захід', ccLvlDay: 'День', ccLvlShift: 'Зміна', ccLvlRole: 'Роль', ccActions: 'Дії', ccAddEvent: 'Додати захід', ccAddDay: 'Додати день', ccAddShift: 'Додати зміну', ccAddRole: 'Додати роль', ccChange: 'Змінити', ccCopy: 'Копіювати', ccClose: 'Закрити', ccNameOpt: 'Назва (необов’язково)', ccStart: 'Початок', ccEnd: 'Кінець', ccActive: 'Активний', ccPersons: 'Відповідальні', ccSearch: 'Пошук імен', ccOtherPerson: 'Інша особа (не в застосунку)', ccAdd: 'Додати', ccDidYouMean: 'Можливо, {name}?', ccNobody: 'Ще нікого', ccConfirmDel: 'Видалити «{name}»? Усе, що в ньому, також буде видалено.', ccConfirmDelRole: 'Видалити «{name}»?', ccCopyEventNote: 'Копія спочатку неактивна. Усі дні зсуваються на 52 тижні, щоб дні тижня збігалися.', ccCopyDayNote: 'Зміни й ролі копіюються разом із відповідальними.', ccSaved: 'Збережено', ccCopied: 'Скопійовано', ccDeleted: 'Видалено', ccNotInApp: '{name} ще немає в застосунку. За номером мобільного можна додати цю особу як гостя.', ccAsGuest: 'Додати як гостя', ccNeedName: 'Введіть ім’я.', ccSetup: 'Для C&C потрібно оновити схему бази даних (supabase/schema.sql).', ccCopySuffix: 'копія'
     },
 
     bar: {
@@ -520,7 +526,8 @@
       guestCheck: 'Als Gast dazuadoa (sicht bloß Trainings und Profil)', guestInfo: 'Du hast an Gast-Zugang. Du siehst de Trainings und dei Profil.',
       memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zum Event-Manager macha: {name}', revokeEm: 'Event-Manager-Rechte entziehn: {name}', emGranted: 'Als Event-Manager festgelegt', emRevoked: 'Event-Manager-Rechte entzogn', confirmGuestLoses: '{name} hod Admin- oder Event-Manager-Rechte. Als Gast festlegn entzieht de Rechte. Weiter?', selfMember: 'Du bist Mitglied. Du konnst di ned söiba zum Gast macha.', rolesTitle: 'Rollen', emSub: 'Do verwoitst du de Events.',
       infoShow: 'Erklärung anzoagn', infoHide: 'Erklärung wegdoa',
-      ok: 'OK'
+      ok: 'OK',
+      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäst', ccOthers: 'Andere', ccEmpty: 'No koane Veranstoitungen. Tipp obn rechts auf de drei Punkt, um oane ozlegn.', ccNoDays: 'No koane Tog.', ccSummary: '{s} Schichtn · {r} Rolln', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Veranstoitung', ccLvlDay: 'Tog', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktionen', ccAddEvent: 'Veranstoitung dazuadoa', ccAddDay: 'Tog dazuadoa', ccAddShift: 'Schicht dazuadoa', ccAddRole: 'Rolle dazuadoa', ccChange: 'Ändern', ccCopy: 'Kopiern', ccClose: 'Zumachn', ccNameOpt: 'Nama (freiwillig)', ccStart: 'Ofang', ccEnd: 'End', ccActive: 'Aktiv', ccPersons: 'Verantwortliche', ccSearch: 'Nama suacha', ccOtherPerson: 'Andere Person (ned in da App)', ccAdd: 'Dazuadoa', ccDidYouMean: 'Moanst du {name}?', ccNobody: 'No koana', ccConfirmDel: '«{name}» löschn? Ois, wos drunter erfasst is, werd aa glöscht.', ccConfirmDelRole: '«{name}» löschn?', ccCopyEventNote: 'De Kopie is zerst inaktiv. Olle Tog wern um 52 Wochn verschobn, damit de Wochentog gleich bleibn.', ccCopyDayNote: 'Schichtn und Rolln wern mit de Verantwortlichn kopiert.', ccSaved: 'Gspeichert', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} is no ned in da App. Mit da Handynummer konnst de Person ois Gast dazuadoa.', ccAsGuest: 'Ois Gast dazuadoa', ccNeedName: 'Gib an Nama ei.', ccSetup: 'Für C&C muass s Datenbank-Schema aktualisiert wern (supabase/schema.sql).', ccCopySuffix: 'Kopie'
     },
 
     cs: {
@@ -591,7 +598,8 @@
       guestCheck: 'Přidat jako hosta (vidí jen tréninky a profil)', guestInfo: 'Máš přístup jako host. Vidíš tréninky a svůj profil.',
       memberTag: 'Člen', emTag: 'Správce akcí', makeEm: 'Udělat správcem akcí: {name}', revokeEm: 'Odebrat práva správce akcí: {name}', emGranted: 'Nastaveno jako správce akcí', emRevoked: 'Práva správce akcí odebrána', confirmGuestLoses: '{name} má práva správce nebo správce akcí. Nastavení jako host tato práva odebere. Pokračovat?', selfMember: 'Jsi člen. Sám sebe hostem udělat nemůžeš.', rolesTitle: 'Role', emSub: 'Tady spravuješ akce.',
       infoShow: 'Zobrazit vysvětlení', infoHide: 'Skrýt vysvětlení',
-      ok: 'OK'
+      ok: 'OK',
+      navCC: 'C&C', ccMembers: 'Členové', ccGuests: 'Hosté', ccOthers: 'Ostatní', ccEmpty: 'Zatím žádné akce. Klepni na tři tečky vpravo nahoře a vytvoř první.', ccNoDays: 'Zatím žádné dny.', ccSummary: 'Směny: {s} · role: {r}', ccLvlAll: 'Chränzli a Chilbi', ccLvlEvent: 'Akce', ccLvlDay: 'Den', ccLvlShift: 'Směna', ccLvlRole: 'Role', ccActions: 'Možnosti', ccAddEvent: 'Přidat akci', ccAddDay: 'Přidat den', ccAddShift: 'Přidat směnu', ccAddRole: 'Přidat roli', ccChange: 'Upravit', ccCopy: 'Kopírovat', ccClose: 'Zavřít', ccNameOpt: 'Název (nepovinné)', ccStart: 'Začátek', ccEnd: 'Konec', ccActive: 'Aktivní', ccPersons: 'Odpovědné osoby', ccSearch: 'Hledat jména', ccOtherPerson: 'Jiná osoba (není v aplikaci)', ccAdd: 'Přidat', ccDidYouMean: 'Myslíš {name}?', ccNobody: 'Zatím nikdo', ccConfirmDel: 'Smazat «{name}»? Smaže se i vše, co je pod tím.', ccConfirmDelRole: 'Smazat «{name}»?', ccCopyEventNote: 'Kopie je nejprve neaktivní. Všechny dny se posunou o 52 týdnů, aby dny v týdnu zůstaly stejné.', ccCopyDayNote: 'Směny a role se kopírují i s odpovědnými osobami.', ccSaved: 'Uloženo', ccCopied: 'Zkopírováno', ccDeleted: 'Smazáno', ccNotInApp: '{name} zatím v aplikaci není. S číslem mobilu ji můžeš přidat jako hosta.', ccAsGuest: 'Přidat jako hosta', ccNeedName: 'Zadej jméno.', ccSetup: 'Pro C&C je potřeba aktualizovat schéma databáze (supabase/schema.sql).', ccCopySuffix: 'kopie'
     },
 
     nl: {
@@ -662,7 +670,8 @@
       guestCheck: 'Als gast toevoegen (ziet alleen trainingen en profiel)', guestInfo: 'Je hebt gasttoegang. Je ziet de trainingen en je profiel.',
       memberTag: 'Lid', emTag: 'Evenementmanager', makeEm: 'Evenementmanager maken: {name}', revokeEm: 'Rechten van evenementmanager intrekken: {name}', emGranted: 'Als evenementmanager ingesteld', emRevoked: 'Rechten van evenementmanager ingetrokken', confirmGuestLoses: '{name} heeft beheerders- of evenementmanagerrechten. Als gast instellen trekt deze rechten in. Doorgaan?', selfMember: 'Je bent lid. Je kunt jezelf niet tot gast maken.', rolesTitle: 'Rollen', emSub: 'Hier beheer je de evenementen.',
       infoShow: 'Uitleg tonen', infoHide: 'Uitleg verbergen',
-      ok: 'OK'
+      ok: 'OK',
+      navCC: 'C&C', ccMembers: 'Leden', ccGuests: 'Gasten', ccOthers: 'Anderen', ccEmpty: 'Nog geen evenementen. Tik rechtsboven op de drie puntjes om er een aan te maken.', ccNoDays: 'Nog geen dagen.', ccSummary: '{s} diensten · {r} rollen', ccLvlAll: 'Chränzli en Chilbi', ccLvlEvent: 'Evenement', ccLvlDay: 'Dag', ccLvlShift: 'Dienst', ccLvlRole: 'Rol', ccActions: 'Acties', ccAddEvent: 'Evenement toevoegen', ccAddDay: 'Dag toevoegen', ccAddShift: 'Dienst toevoegen', ccAddRole: 'Rol toevoegen', ccChange: 'Wijzigen', ccCopy: 'Kopiëren', ccClose: 'Sluiten', ccNameOpt: 'Naam (optioneel)', ccStart: 'Begin', ccEnd: 'Einde', ccActive: 'Actief', ccPersons: 'Verantwoordelijken', ccSearch: 'Namen zoeken', ccOtherPerson: 'Andere persoon (niet in de app)', ccAdd: 'Toevoegen', ccDidYouMean: 'Bedoel je {name}?', ccNobody: 'Nog niemand', ccConfirmDel: '«{name}» verwijderen? Alles wat eronder valt, wordt ook verwijderd.', ccConfirmDelRole: '«{name}» verwijderen?', ccCopyEventNote: 'De kopie is eerst inactief. Alle dagen worden 52 weken verschoven, zodat de weekdagen gelijk blijven.', ccCopyDayNote: 'Diensten en rollen worden met de verantwoordelijken gekopieerd.', ccSaved: 'Opgeslagen', ccCopied: 'Gekopieerd', ccDeleted: 'Verwijderd', ccNotInApp: '{name} staat nog niet in de app. Met een mobiel nummer kun je deze persoon als gast toevoegen.', ccAsGuest: 'Als gast toevoegen', ccNeedName: 'Vul een naam in.', ccSetup: 'Voor C&C moet het databaseschema worden bijgewerkt (supabase/schema.sql).', ccCopySuffix: 'kopie'
     }
   };
 
@@ -750,7 +759,8 @@
       step: 'loading', mode: 'login', tab: 'trainings', phone: '', err: '', info: '',
       session: null, me: null, members: [],
       rules: [], extras: [], overrides: {}, cancelled: {}, events: [],
-      tr: {}, ev: {}, open: {}, edit: null, busy: false, sec: {}, add: {}, info: {}, showMore: false
+      tr: {}, ev: {}, open: {}, edit: null, busy: false, sec: {}, add: {}, info: {}, showMore: false,
+      cc: { events: [], days: [], shifts: [], roles: [] }, ccErr: false, ccFold: {}, ccLegend: false
     };
   }
   var S = freshState();
@@ -779,6 +789,20 @@
     S.ev = {};
     d[7].forEach(function (r) { (S.ev[r.event_id] = S.ev[r.event_id] || {})[r.user_id] = r.status; });
     if (S.session) S.me = S.members.filter(function (m) { return m.id === S.session.user.id; })[0] || null;
+
+    // C&C separat laden: ein fehlendes Schema soll den Rest der App nicht blockieren
+    S.cc = { events: [], days: [], shifts: [], roles: [] };
+    S.ccErr = false;
+    if (canCC()) {
+      var cr = await Promise.all(['cc_events', 'cc_days', 'cc_shifts', 'cc_roles'].map(function (t) { return sb.from(t).select('*'); }));
+      if (cr.some(function (r) { return r.error; })) S.ccErr = true;
+      else {
+        S.cc.events = cr[0].data || [];
+        S.cc.days = cr[1].data || [];
+        S.cc.shifts = (cr[2].data || []).map(function (x) { x.start_time = hhmm(x.start_time); x.end_time = hhmm(x.end_time); return x; });
+        S.cc.roles = cr[3].data || [];
+      }
+    }
   }
 
   /* ---------- Trainings berechnen ---------- */
@@ -828,6 +852,11 @@
   var ICON = {
     info: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01"/><path d="M11 12h1v4h1"/></svg>',
     gear: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 4.3c.4-1.8 2.9-1.8 3.4 0a1.7 1.7 0 0 0 2.6 1.1c1.5-.9 3.3.8 2.4 2.4a1.7 1.7 0 0 0 1 2.5c1.8.4 1.8 2.9 0 3.4a1.7 1.7 0 0 0-1 2.6c.9 1.5-.8 3.3-2.4 2.4a1.7 1.7 0 0 0-2.6 1c-.4 1.8-2.9 1.8-3.4 0a1.7 1.7 0 0 0-2.6-1c-1.5.9-3.3-.8-2.4-2.4a1.7 1.7 0 0 0-1-2.6c-1.8-.4-1.8-2.9 0-3.4a1.7 1.7 0 0 0 1-2.5c-.9-1.6.8-3.3 2.4-2.4c1 .6 2.3 0 2.6-1.1z"/><circle class="hole" cx="12" cy="12" r="3"/></svg>',
+    pencil: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L18.5 9.5a2.8 2.8 0 0 0-4-4L4 16v4"/><path d="M13.5 6.5l4 4"/></svg>',
+    copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>',
+    plus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>',
+    dots: '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/></svg>',
+    clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>',
     crown: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6l4 6l5-4l-2 10H5L3 8l5 4z"/><circle cx="12" cy="4" r="1"/><circle cx="3" cy="6" r="1"/><circle cx="21" cy="6" r="1"/></svg>',
     glass: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="liq" d="M6.3 10.6a5 5 0 0 1 5.7-.6a5 5 0 0 0 5.7.6c-.4 2.6-2.8 4.4-5.7 4.4s-5.3-1.8-5.7-4.4z" stroke="none"/><path d="M8 21h8"/><path d="M12 15v6"/><path d="M17 3l1 7c0 3-2.7 5-6 5s-6-2-6-5l1-7z"/><path d="M6.2 10a5 5 0 0 1 5.8 0a5 5 0 0 0 5.8 0"/></svg>',
     dialpad: '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><circle cx="6" cy="4" r="1.8"/><circle cx="12" cy="4" r="1.8"/><circle cx="18" cy="4" r="1.8"/><circle cx="6" cy="10" r="1.8"/><circle cx="12" cy="10" r="1.8"/><circle cx="18" cy="10" r="1.8"/><circle cx="6" cy="16" r="1.8"/><circle cx="12" cy="16" r="1.8"/><circle cx="18" cy="16" r="1.8"/><circle cx="12" cy="21.5" r="1.8"/></svg>',
@@ -1197,7 +1226,8 @@
     nav.hidden = false;
     var tabs = [{ id: 'trainings', label: L('navTrainings'), icon: ICON.cal }];
     if (!S.me.isGuest) tabs.push({ id: 'events', label: L('navEvents'), icon: ICON.star });
-    if (S.me.isAdmin || S.me.isEventManager) tabs.push({ id: 'admin', label: L('navAdmin'), icon: ICON.cog });
+    if (canCC()) tabs.push({ id: 'cc', label: L('navCC'), icon: ICON.glass });
+    if (S.me.isAdmin || S.me.isEventManager) tabs.push({ id: 'admin', label: L('navAdmin'), icon: ICON.gear });
     tabs.push({ id: 'profile', label: L('navProfile'), icon: ICON.user });
     nav.innerHTML = '<div class="in">' + tabs.map(function (t) {
       return '<button class="tab" data-act="tab" data-tab="' + t.id + '"' + (S.tab === t.id ? ' aria-current="page"' : '') + '>' + t.icon + '<span>' + t.label + '</span></button>';
@@ -1215,7 +1245,8 @@
     else {
       if (S.tab === 'admin' && !(S.me.isAdmin || S.me.isEventManager)) S.tab = 'trainings';
       if (S.tab === 'events' && S.me.isGuest) S.tab = 'trainings';
-      app.innerHTML = S.tab === 'admin' ? viewAdmin() : S.tab === 'events' ? viewEvents() : S.tab === 'profile' ? viewProfile() : viewTrainings();
+      if (S.tab === 'cc' && !canCC()) S.tab = 'trainings';
+      app.innerHTML = S.tab === 'cc' ? viewCC() : S.tab === 'admin' ? viewAdmin() : S.tab === 'events' ? viewEvents() : S.tab === 'profile' ? viewProfile() : viewTrainings();
     }
     renderNav();
     window.scrollTo(0, y);
@@ -1237,6 +1268,439 @@
     el.classList.add('show');
     clearTimeout(toastTimer);
     toastTimer = setTimeout(function () { el.classList.remove('show'); }, 2200);
+  }
+
+  /* ---------- C&C: Chränzli und Chilbi ---------- */
+  // Anlass > Tag > Schicht > Rolle. Sichtbar für Admins und Event-Manager.
+  function canCC() { return !!(S.me && (S.me.isAdmin || S.me.isEventManager)); }
+  function ccNorm(n) { return String(n || '').normalize('NFC').toLowerCase().replace(/\s+/g, ' ').trim(); }
+  function ccMap() { var m = {}; S.members.forEach(function (p) { m[ccNorm(p.name)] = p; }); return m; }
+  function ccMember(id) { return S.members.filter(function (x) { return x.id === id; })[0] || null; }
+
+  // Person auflösen: über die ID oder den Namen einem Mitglied/Gast zuordnen, sonst «Andere»
+  function ccResolve(pe, map) {
+    var p = pe.id ? ccMember(pe.id) : null;
+    if (!p && pe.name) p = map[ccNorm(pe.name)] || null;
+    if (p) return { name: p.name, kind: p.isGuest ? 'g' : 'm', id: p.id };
+    return { name: pe.name || '?', kind: 'x', id: null };
+  }
+  function ccKindLabel(k) { return k === 'm' ? L('ccMembers') : k === 'g' ? L('ccGuests') : L('ccOthers'); }
+  function ccChip(pe, map) {
+    var r = ccResolve(pe, map);
+    var tap = r.kind === 'x' && S.me.isAdmin;   // Admins können «Andere» als Gast übernehmen
+    var inner = (r.kind === 'x' ? '' : ICON.crown) + esc(r.name);
+    var title = esc(r.name + ' · ' + ccKindLabel(r.kind));
+    return tap
+      ? '<button type="button" class="ccp cc-x" data-act="cc-guest" data-name="' + esc(r.name) + '" title="' + title + '">' + inner + '</button>'
+      : '<span class="ccp cc-' + r.kind + '" title="' + title + '">' + inner + '</span>';
+  }
+  function ccDate(isoDay) {
+    var d = parseIso(isoDay);
+    return fmt(d, { weekday: 'short' }).replace(/\.$/, '') + ' ' + pad(d.getDate()) + '.' + pad(d.getMonth() + 1) + '.' + d.getFullYear();
+  }
+  function ccOvernight(s) { return s.end_time <= s.start_time; }
+  function ccEndKey(s) { return (ccOvernight(s) ? '1' : '0') + s.end_time; }   // Ende am Folgetag kommt nach allen Enden am selben Tag
+  function ccTimePlain(s) { return s.start_time + ' – ' + s.end_time; }
+  function ccTime(s) { return esc(ccTimePlain(s)) + (ccOvernight(s) ? ' <span class="ccplus">+1</span>' : ''); }
+  function ccAddDays(isoDay, n) { var d = parseIso(isoDay); d.setDate(d.getDate() + n); return iso(d); }
+  function ccByCreated(a, b) { return String(a.created_at || '') < String(b.created_at || '') ? -1 : String(a.created_at || '') > String(b.created_at || '') ? 1 : 0; }
+
+  function ccTree() {
+    var C = S.cc;
+    return C.events.slice().sort(ccByCreated).map(function (e) {
+      var days = C.days.filter(function (d) { return d.event_id === e.id; })
+        .sort(function (a, b) { return a.day < b.day ? -1 : a.day > b.day ? 1 : ccByCreated(a, b); })
+        .map(function (d) {
+          var shifts = C.shifts.filter(function (s) { return s.day_id === d.id; })
+            .sort(function (a, b) { var ea = ccEndKey(a), eb = ccEndKey(b); return a.start_time < b.start_time ? -1 : a.start_time > b.start_time ? 1 : (ea < eb ? -1 : ea > eb ? 1 : ccByCreated(a, b)); })
+            .map(function (s) {
+              return { s: s, roles: C.roles.filter(function (r) { return r.shift_id === s.id; }).sort(function (a, b) { return (a.sort - b.sort) || ccByCreated(a, b); }) };
+            });
+          return { d: d, shifts: shifts };
+        });
+      return { e: e, days: days };
+    });
+  }
+  function ccIsFolded(id) {
+    if (S.ccFold[id] != null) return S.ccFold[id];
+    var e = S.cc.events.filter(function (x) { return x.id === id; })[0];
+    return e ? !e.active : false;   // inaktive Anlässe starten eingeklappt
+  }
+  function ccDots(lvl, id, label) {
+    return '<button class="ccdots" data-act="cc-menu" data-lvl="' + lvl + '"' + (id ? ' data-id="' + esc(id) + '"' : '') +
+      ' aria-label="' + esc(L('ccActions') + (label ? ': ' + label : '')) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>';
+  }
+
+  function viewCC() {
+    var map = ccMap();
+    var html = '<div class="cctop">' +
+      '<button class="ccinfo' + (S.ccLegend ? ' on' : '') + '" data-act="cc-legend" aria-pressed="' + S.ccLegend + '" aria-label="' + (S.ccLegend ? L('infoHide') : L('infoShow')) + '" title="' + (S.ccLegend ? L('infoHide') : L('infoShow')) + '">' + ICON.info + '</button>' +
+      ccDots('root', '', L('ccLvlAll')) + '</div>';
+    if (S.ccLegend) {
+      html += '<div class="cclegend"><span class="ccp cc-m">' + ICON.crown + L('ccMembers') + '</span><span class="ccp cc-g">' + ICON.crown + L('ccGuests') + '</span><span class="ccp cc-x">' + L('ccOthers') + '</span></div>';
+    }
+    if (S.ccErr) return html + '<div class="empty"><p>' + L('ccSetup') + '</p></div>';
+    var tree = ccTree();
+    if (!tree.length) return html + '<div class="empty"><p>' + L('ccEmpty') + '</p></div>';
+    tree.forEach(function (E) {
+      var e = E.e, folded = ccIsFolded(e.id);
+      html += '<section class="ccel' + (e.active ? '' : ' ccoff') + '"><div class="cceh">' +
+        '<input type="checkbox" class="ccck" data-ccactive="' + esc(e.id) + '"' + (e.active ? ' checked' : '') + ' aria-label="' + esc(e.name + ': ' + L('ccActive')) + '" title="' + esc(L('ccActive')) + '">' +
+        '<button class="cct" data-act="cc-fold" data-id="' + esc(e.id) + '" aria-expanded="' + !folded + '">' + esc(e.name) + '</button>' +
+        ccDots('event', e.id, e.name) + '</div>';
+      if (!folded) {
+        html += '<div class="ccbody">';
+        if (!E.days.length) html += '<p class="ccsum" style="padding-top:10px">' + L('ccNoDays') + '</p>';
+        E.days.forEach(function (D) {
+          var d = D.d, df = !!S.ccFold[d.id];
+          var nRoles = D.shifts.reduce(function (n, x) { return n + x.roles.length; }, 0);
+          var dayLabel = ccDate(d.day) + (d.name ? ' – ' + d.name : '');
+          html += '<div class="ccday"><div class="ccdh">' +
+            '<button class="ccdt" data-act="cc-fold" data-id="' + esc(d.id) + '" aria-expanded="' + !df + '"><b>' + esc(ccDate(d.day)) + '</b>' + (d.name ? ' <span class="ccdn">' + esc(d.name) + '</span>' : '') + '</button>' +
+            ccDots('day', d.id, dayLabel) + '</div>';
+          if (df) {
+            html += '<div class="ccsum">' + L('ccSummary', { s: D.shifts.length, r: nRoles }) + '</div>';
+          } else {
+            D.shifts.forEach(function (Sh) {
+              var s = Sh.s;
+              html += '<div class="ccsh"><div class="ccshh">' + ICON.clock + '<span>' + ccTime(s) + '</span>' +
+                (s.name ? '<span class="ccsn">' + esc(s.name) + '</span>' : '') + '<span class="sp"></span>' +
+                ccDots('shift', s.id, ccTimePlain(s)) + '</div>';
+              Sh.roles.forEach(function (r) {
+                var ps = Array.isArray(r.persons) ? r.persons : [];
+                html += '<div class="ccro"><span class="ccrn">' + esc(r.name) + '</span><span class="ccps">' +
+                  (ps.length ? ps.map(function (p) { return ccChip(p, map); }).join('') : '<span class="ccsum">' + L('ccNobody') + '</span>') +
+                  '</span>' + ccDots('role', r.id, r.name) + '</div>';
+              });
+              html += '</div>';
+            });
+          }
+          html += '</div>';
+        });
+        html += '</div>';
+      }
+      html += '</section>';
+    });
+    return html;
+  }
+
+  /* ---------- C&C: Aktionsfenster ---------- */
+  var ccSheet = null;   // { lvl, id, mode, persons, name }
+  var CC_TABLE = { event: 'cc_events', day: 'cc_days', shift: 'cc_shifts', role: 'cc_roles' };
+  var CC_SUB = { root: 'event', event: 'day', day: 'shift', shift: 'role' };
+  var CC_LVL = { root: 'ccLvlAll', event: 'ccLvlEvent', day: 'ccLvlDay', shift: 'ccLvlShift', role: 'ccLvlRole' };
+  var CC_ADD = { event: 'ccAddEvent', day: 'ccAddDay', shift: 'ccAddShift', role: 'ccAddRole' };
+  var CC_LIST = { event: 'events', day: 'days', shift: 'shifts', role: 'roles' };
+
+  function ccObj(lvl, id) {
+    var list = CC_LIST[lvl] ? S.cc[CC_LIST[lvl]] : null;
+    return list ? list.filter(function (x) { return x.id === id; })[0] || null : null;
+  }
+  function ccTitle(lvl, o) {
+    if (lvl === 'root') return L('ccLvlAll');
+    if (!o) return '';
+    if (lvl === 'event') return o.name;
+    if (lvl === 'day') return ccDate(o.day) + (o.name ? ' – ' + o.name : '');
+    if (lvl === 'shift') return ccTimePlain(o) + (ccOvernight(o) ? ' (+1)' : '') + (o.name ? ' – ' + o.name : '');
+    return o.name;
+  }
+  function ccOpen(lvl, id, mode, extra) {
+    ccSheet = { lvl: lvl, id: id || null, mode: mode || 'menu' };
+    if (extra) for (var k in extra) ccSheet[k] = extra[k];
+    ccDrawSheet();
+  }
+  function ccKey(e) { if (e.key === 'Escape' && !document.getElementById('dlg')) { e.preventDefault(); ccCloseSheet(); } }
+  function ccCloseSheet() {
+    var el = document.getElementById('ccsheet');
+    if (el) el.remove();
+    ccSheet = null;
+    document.removeEventListener('keydown', ccKey, true);
+  }
+  function ccActBtn(a, icon, label, cls) {
+    return '<button type="button" class="ccact' + (cls ? ' ' + cls : '') + '" data-cca="' + a + '">' + icon + '<span>' + label + '</span></button>';
+  }
+  function ccBtns(saveLabel) {
+    return '<p class="err" data-ccerr hidden></p><div class="dlgbtns">' +
+      '<button type="button" class="btn ghost inline" data-cca="close">' + L('dismiss') + '</button>' +
+      '<button type="submit" class="btn inline">' + (saveLabel || L('save')) + '</button></div>';
+  }
+
+  function ccForm(kind, o, isNew) {
+    var h = '<p class="cck">' + L(CC_LVL[kind]) + '</p><h3>' + esc(isNew ? L(CC_ADD[kind]) : ccTitle(kind, o)) + '</h3>' +
+      '<form data-ccform="' + kind + '" novalidate>';
+    if (kind === 'event') {
+      h += fld(L('nameLabel'), '<input class="input" name="name" value="' + esc(o ? o.name : '') + '" placeholder="Chilbi 2028" required>') +
+        '<label class="check"><input type="checkbox" name="active"' + (!o || o.active ? ' checked' : '') + '><span>' + L('ccActive') + '</span></label>';
+    } else if (kind === 'day') {
+      h += grid(fld(L('date'), '<input class="input" type="date" name="date" value="' + esc(o ? o.day : '') + '" required>'),
+                fld(L('ccNameOpt'), '<input class="input" name="name" value="' + esc(o && o.name ? o.name : '') + '" placeholder="Premiere">'));
+    } else if (kind === 'shift') {
+      h += grid(fld(L('ccStart'), '<input class="input" type="time" name="start" value="' + esc(o ? o.start_time : '') + '" required>'),
+                fld(L('ccEnd'), '<input class="input" type="time" name="end" value="' + esc(o ? o.end_time : '') + '" required>')) +
+        fld(L('ccNameOpt'), '<input class="input" name="name" value="' + esc(o && o.name ? o.name : '') + '" placeholder="Abendschicht">');
+    } else if (kind === 'role') {
+      h += fld(L('nameLabel'), '<input class="input" name="name" value="' + esc(o ? o.name : '') + '" placeholder="Bar" required>') +
+        '<span class="cclabel">' + L('ccPersons') + '</span><div class="ccsel" id="ccsel"></div>' +
+        '<input class="input" name="q" placeholder="' + esc(L('ccSearch')) + '" autocomplete="off">' +
+        '<div class="ccplist" id="ccplist"></div>' +
+        '<span class="cclabel">' + L('ccOtherPerson') + '</span>' +
+        '<div class="ccother"><input class="input" name="other" autocomplete="off"><button type="button" class="btn ghost inline" data-cca="other">' + L('ccAdd') + '</button></div>' +
+        '<div class="ccsug" id="ccsug"></div><div style="height:14px"></div>';
+    }
+    return h + ccBtns() + '</form>';
+  }
+  function ccCopyForm(lvl, o) {
+    var h = '<p class="cck">' + L(CC_LVL[lvl]) + '</p><h3>' + L('ccCopy') + ': ' + esc(ccTitle(lvl, o)) + '</h3><form data-ccform="copy-' + lvl + '" novalidate>';
+    if (lvl === 'event') {
+      var nn = /\b(19|20)\d{2}\b/.test(o.name) ? o.name.replace(/\b((19|20)\d{2})\b/, function (y) { return String(Number(y) + 1); }) : o.name + ' (' + L('ccCopySuffix') + ')';
+      h += fld(L('nameLabel'), '<input class="input" name="name" value="' + esc(nn) + '" required>') + '<p class="ccnote">' + L('ccCopyEventNote') + '</p>';
+    } else {
+      h += grid(fld(L('date'), '<input class="input" type="date" name="date" value="' + esc(ccAddDays(o.day, 1)) + '" required>'),
+                fld(L('ccNameOpt'), '<input class="input" name="name" value="' + esc(o.name || '') + '">')) + '<p class="ccnote">' + L('ccCopyDayNote') + '</p>';
+    }
+    return h + ccBtns(L('ccCopy')) + '</form>';
+  }
+  function ccGuestForm(name) {
+    return '<p class="cck">' + L('ccOthers') + '</p><h3>' + esc(name) + '</h3><p class="ccnote" style="margin-top:0">' + L('ccNotInApp', { name: name }) + '</p>' +
+      '<form data-ccform="guest" novalidate>' +
+      fld(L('fullName'), '<input class="input" name="name" value="' + esc(name) + '" required>') +
+      fld(L('phone'), '<input class="input" name="phone" type="tel" inputmode="tel" autocomplete="off" placeholder="079 123 45 67" required>') +
+      ccBtns(L('ccAsGuest')) + '</form>';
+  }
+
+  function ccDrawSheet() {
+    var st = ccSheet;
+    if (!st) return;
+    var o = st.lvl === 'root' || st.lvl === 'guest' ? null : ccObj(st.lvl, st.id);
+    if (st.lvl !== 'root' && st.lvl !== 'guest' && !o) { ccCloseSheet(); return; }   // inzwischen gelöscht
+    var body;
+    if (st.mode === 'menu') {
+      var sub = CC_SUB[st.lvl];
+      body = '<p class="cck">' + L(CC_LVL[st.lvl]) + '</p><h3>' + esc(ccTitle(st.lvl, o)) + '</h3>' +
+        (st.lvl !== 'root' ? ccActBtn('edit', ICON.pencil, L('ccChange')) + ccActBtn('copy', ICON.copy, L('ccCopy')) : '') +
+        (sub ? ccActBtn('add', ICON.plus, L(CC_ADD[sub])) : '') +
+        (st.lvl !== 'root' ? ccActBtn('del', ICON.trash, L('del'), 'del') : '') +
+        '<button type="button" class="ccact close" data-cca="close">' + L('ccClose') + '</button>';
+    } else if (st.mode === 'edit') body = ccForm(st.lvl, o, false);
+    else if (st.mode === 'add') body = ccForm(CC_SUB[st.lvl], null, true);
+    else if (st.mode === 'copy') body = ccCopyForm(st.lvl, o);
+    else body = ccGuestForm(st.name || '');
+
+    var wrap = document.getElementById('ccsheet');
+    if (!wrap) {
+      wrap = document.createElement('div');
+      wrap.id = 'ccsheet';
+      wrap.className = 'ccsheet';
+      wrap.addEventListener('click', ccSheetClick);
+      wrap.addEventListener('submit', ccSheetSubmit);
+      wrap.addEventListener('input', ccSheetInput);
+      wrap.addEventListener('change', ccSheetChange);
+      document.body.appendChild(wrap);
+      document.addEventListener('keydown', ccKey, true);
+    }
+    wrap.innerHTML = '<div class="ccsheetcard" role="dialog" aria-modal="true" aria-label="' + esc(L(CC_LVL[st.lvl] || 'ccOthers')) + '">' + body + '</div>';
+    if (st.mode === 'edit' && st.lvl === 'role' || st.mode === 'add' && CC_SUB[st.lvl] === 'role') { ccDrawSel(); ccDrawList(); }
+    var first = wrap.querySelector('form .input');
+    if (first) { try { first.focus({ preventScroll: true }); } catch (e) { first.focus(); } }
+    else { var b = wrap.querySelector('button'); if (b) b.focus(); }
+  }
+
+  /* Personen-Auswahl in einer Rolle */
+  function ccChosenIds() {
+    var map = ccMap();
+    return ccSheet.persons.map(function (p) { return ccResolve(p, map).id; }).filter(Boolean);
+  }
+  function ccDrawSel() {
+    var box = document.getElementById('ccsel');
+    if (!box) return;
+    var map = ccMap();
+    box.innerHTML = ccSheet.persons.length ? ccSheet.persons.map(function (p, i) {
+      var r = ccResolve(p, map);
+      return '<span class="ccp cc-' + r.kind + '">' + (r.kind === 'x' ? '' : ICON.crown) + esc(r.name) +
+        '<button type="button" class="ccx" data-cca="rm" data-i="' + i + '" aria-label="' + esc(L('remove') + ': ' + r.name) + '">×</button></span>';
+    }).join('') : '<span class="ccsum">' + L('ccNobody') + '</span>';
+  }
+  function ccDrawList() {
+    var box = document.getElementById('ccplist');
+    if (!box) return;
+    var q = ccNorm(ccSheet.q || '');
+    var chosen = ccChosenIds();
+    var list = S.members.filter(function (m) { return !q || ccNorm(m.name).indexOf(q) > -1; });
+    box.innerHTML = list.length ? list.map(function (m) {
+      var k = m.isGuest ? 'g' : 'm';
+      return '<label class="ccpick"><span class="ccp cc-' + k + '">' + ICON.crown + esc(m.name) + '</span>' +
+        '<input type="checkbox" data-ccpick="' + esc(m.id) + '"' + (chosen.indexOf(m.id) > -1 ? ' checked' : '') + ' aria-label="' + esc(m.name) + '"></label>';
+    }).join('') : '<p class="ccsum" style="padding:10px 12px;margin:0">' + L('nobody') + '</p>';
+  }
+  // Ähnliche Namen finden, z. B. «Dani» und «Daniel Oetterli» oder «Ruedi» und «Ruedi Bachmann»
+  function ccSimilar(a, b) {
+    var x = ccNorm(a).split(' '), y = ccNorm(b).split(' ');
+    if (!x[0] || ccNorm(a) === ccNorm(b)) return false;
+    if (x.length > 1 && y.length > 1 && x[x.length - 1] === y[y.length - 1]) return x[0].slice(0, 3) === y[0].slice(0, 3);
+    if (x.length === 1) return y[0] === x[0];
+    return false;
+  }
+  function ccDrawSug(val) {
+    var box = document.getElementById('ccsug');
+    if (!box) return;
+    var v = String(val || '').trim();
+    var hits = v.length < 2 ? [] : S.members.filter(function (m) { return ccSimilar(v, m.name); }).slice(0, 3);
+    box.innerHTML = hits.map(function (m) {
+      return '<div>' + esc(L('ccDidYouMean', { name: m.name })) + '<button type="button" class="btn ghost inline" data-cca="usesug" data-id="' + esc(m.id) + '">' + L('ccAdd') + '</button></div>';
+    }).join('');
+  }
+  function ccAddPerson(pe) {
+    var map = ccMap(), r = ccResolve(pe, map);
+    var dup = ccSheet.persons.some(function (p) { var q = ccResolve(p, map); return r.id ? q.id === r.id : ccNorm(q.name) === ccNorm(r.name); });
+    if (!dup) ccSheet.persons.push(r.id ? { id: r.id, name: r.name } : { name: r.name });
+  }
+
+  function ccSheetInput(e) {
+    var t = e.target;
+    if (t.name === 'q') { ccSheet.q = t.value; ccDrawList(); }
+    else if (t.name === 'other') ccDrawSug(t.value);
+  }
+  function ccSheetChange(e) {
+    var t = e.target;
+    if (!t.dataset || !t.dataset.ccpick) return;
+    var id = t.dataset.ccpick, m = ccMember(id), map = ccMap();
+    if (t.checked && m) ccAddPerson({ id: id, name: m.name });
+    else ccSheet.persons = ccSheet.persons.filter(function (p) { return ccResolve(p, map).id !== id; });
+    ccDrawSel();
+  }
+  async function ccSheetClick(e) {
+    var wrap = document.getElementById('ccsheet');
+    if (e.target === wrap) { ccCloseSheet(); return; }
+    var b = e.target.closest('[data-cca]');
+    if (!b) return;
+    var a = b.dataset.cca, st = ccSheet;
+    if (!st) return;
+    var o = ccObj(st.lvl, st.id);
+    if (a === 'close') { ccCloseSheet(); return; }
+    if (a === 'edit') {
+      st.mode = 'edit';
+      if (st.lvl === 'role') { st.persons = (o.persons || []).map(function (p) { return { id: p.id, name: p.name }; }); st.q = ''; }
+      ccDrawSheet(); return;
+    }
+    if (a === 'add') {
+      st.mode = 'add';
+      if (CC_SUB[st.lvl] === 'role') { st.persons = []; st.q = ''; }
+      ccDrawSheet(); return;
+    }
+    if (a === 'copy') {
+      if (st.lvl === 'event' || st.lvl === 'day') { st.mode = 'copy'; ccDrawSheet(); return; }
+      ccCloseSheet();
+      if (st.lvl === 'shift') return act(function () { return ccCopyShift(o, o.day_id); }, L('ccCopied'));
+      return act(function () { return ccInsertRoles([o], o.shift_id, ccNextSort(o.shift_id)); }, L('ccCopied'));
+    }
+    if (a === 'del') {
+      var title = ccTitle(st.lvl, o), table = CC_TABLE[st.lvl], id = o.id;
+      ccCloseSheet();
+      if (!(await askConfirm(L('del'), L(st.lvl === 'role' ? 'ccConfirmDelRole' : 'ccConfirmDel', { name: title }), true))) return;
+      return act(function () { return sb.from(table).delete().eq('id', id); }, L('ccDeleted'));
+    }
+    if (a === 'rm') { st.persons.splice(Number(b.dataset.i), 1); ccDrawSel(); ccDrawList(); return; }
+    if (a === 'usesug') {
+      var m = ccMember(b.dataset.id);
+      if (m) ccAddPerson({ id: m.id, name: m.name });
+      var oi = wrap.querySelector('input[name="other"]'); if (oi) oi.value = '';
+      ccDrawSug(''); ccDrawSel(); ccDrawList(); return;
+    }
+    if (a === 'other') {
+      var inp = wrap.querySelector('input[name="other"]');
+      var v = inp ? inp.value.trim() : '';
+      if (!v) { ccErr(L('ccNeedName')); if (inp) inp.focus(); return; }
+      ccErr('');
+      ccAddPerson({ name: v });
+      inp.value = ''; ccDrawSug(''); ccDrawSel(); ccDrawList(); inp.focus();
+    }
+  }
+  function ccErr(msg) {
+    var el = document.querySelector('#ccsheet [data-ccerr]');
+    if (!el) return;
+    el.textContent = msg; el.hidden = !msg;
+  }
+
+  /* ---------- C&C: Speichern und Kopieren ---------- */
+  function ccNextSort(shiftId) {
+    return S.cc.roles.filter(function (r) { return r.shift_id === shiftId; }).reduce(function (n, r) { return Math.max(n, r.sort || 0); }, -1) + 1;
+  }
+  async function ccIns(table, row) {
+    var r = await sb.from(table).insert(row).select('id').single();
+    if (r.error) throw r.error;
+    return r.data.id;
+  }
+  async function ccInsertRoles(roles, toShift, startSort) {
+    if (!roles.length) return;
+    var r = await sb.from('cc_roles').insert(roles.map(function (x, i) {
+      return { shift_id: toShift, name: x.name, persons: x.persons || [], sort: startSort == null ? (x.sort || 0) : startSort + i };
+    }));
+    if (r.error) throw r.error;
+  }
+  async function ccCopyShift(s, toDay) {
+    var id = await ccIns('cc_shifts', { day_id: toDay, start_time: s.start_time, end_time: s.end_time, name: s.name || null });
+    await ccInsertRoles(S.cc.roles.filter(function (r) { return r.shift_id === s.id; }), id, null);
+  }
+  async function ccCopyDay(d, toEvent, newDate, newName) {
+    var id = await ccIns('cc_days', { event_id: toEvent, day: newDate, name: newName || null });
+    var shifts = S.cc.shifts.filter(function (s) { return s.day_id === d.id; });
+    for (var i = 0; i < shifts.length; i++) await ccCopyShift(shifts[i], id);
+  }
+  async function ccCopyEvent(e, newName) {
+    var id = await ccIns('cc_events', { name: newName, active: false });
+    var days = S.cc.days.filter(function (d) { return d.event_id === e.id; });
+    // 52 Wochen = 364 Tage: der Wochentag bleibt gleich
+    for (var i = 0; i < days.length; i++) await ccCopyDay(days[i], id, ccAddDays(days[i].day, 364), days[i].name);
+  }
+
+  async function ccSheetSubmit(e) {
+    e.preventDefault();
+    var f = e.target, st = ccSheet;
+    if (!st || !f.dataset.ccform) return;
+    var kind = f.dataset.ccform;
+    var fd = new FormData(f);
+    var g = function (k) { return String(fd.get(k) || '').trim(); };
+    var o = ccObj(st.lvl, st.id);
+    var isNew = st.mode === 'add';
+    var ok = false;
+
+    if (kind === 'guest') {
+      if (!g('name')) { ccErr(L('ccNeedName')); return; }
+      if (!normPhone(g('phone'))) { ccErr(L('phoneInvalid')); return; }
+      S.busy = true;
+      ok = await addMember(g('name'), g('phone'), true);
+      S.busy = false;
+      if (ok) ccCloseSheet();
+      return;
+    }
+    if ((kind === 'event' || kind === 'role' || kind === 'copy-event') && !g('name')) { ccErr(L('ccNeedName')); return; }
+    if ((kind === 'day' || kind === 'copy-day') && !g('date')) { ccErr(L('date') + '?'); return; }
+    if (kind === 'shift' && (!g('start') || !g('end'))) { ccErr(L('time') + '?'); return; }
+    ccCloseSheet();
+
+    if (kind === 'event') {
+      var ev = { name: g('name'), active: !!fd.get('active') };
+      ok = await act(function () { return isNew ? sb.from('cc_events').insert(ev) : sb.from('cc_events').update(ev).eq('id', o.id); }, L('ccSaved'));
+    } else if (kind === 'day') {
+      var dy = { day: g('date'), name: g('name') || null };
+      if (isNew) dy.event_id = st.id;
+      ok = await act(function () { return isNew ? sb.from('cc_days').insert(dy) : sb.from('cc_days').update(dy).eq('id', o.id); }, L('ccSaved'));
+    } else if (kind === 'shift') {
+      var sh = { start_time: g('start'), end_time: g('end'), name: g('name') || null };
+      if (isNew) sh.day_id = st.id;
+      ok = await act(function () { return isNew ? sb.from('cc_shifts').insert(sh) : sb.from('cc_shifts').update(sh).eq('id', o.id); }, L('ccSaved'));
+    } else if (kind === 'role') {
+      var ro = { name: g('name'), persons: st.persons || [] };
+      if (isNew) { ro.shift_id = st.id; ro.sort = ccNextSort(st.id); }
+      ok = await act(function () { return isNew ? sb.from('cc_roles').insert(ro) : sb.from('cc_roles').update(ro).eq('id', o.id); }, L('ccSaved'));
+    } else if (kind === 'copy-event') {
+      var nm = g('name');
+      ok = await act(function () { return ccCopyEvent(o, nm); }, L('ccCopied'));
+    } else if (kind === 'copy-day') {
+      var nd = g('date'), nn = g('name');
+      ok = await act(function () { return ccCopyDay(o, o.event_id, nd, nn); }, L('ccCopied'));
+    }
+    return ok;
   }
 
   /* ---------- Bestätigungsdialog ---------- */
@@ -1418,6 +1882,15 @@
     try { sb.from('profiles').update({ language: lang }).eq('id', S.me.id).then(function () {}, function () {}); } catch (e) { /* ignorieren */ }
   }
   document.addEventListener('change', function (e) {
+    var cb = e.target;
+    if (cb && cb.dataset && cb.dataset.ccactive) {
+      var cid = cb.dataset.ccactive, on = cb.checked;
+      delete S.ccFold[cid];
+      act(function () { return sb.from('cc_events').update({ active: on }).eq('id', cid); }, L('ccSaved'));
+      return;
+    }
+  });
+  document.addEventListener('change', function (e) {
     var el = e.target;
     if (!el || !el.hasAttribute || !el.hasAttribute('data-lang')) return;
     setLang(el.value);
@@ -1431,7 +1904,7 @@
     clearTimeout(reloadTimer);
     reloadTimer = setTimeout(async function () {
       if (S.step !== 'app') return;
-      try { await loadAll(); softRender(); } catch (e) { console.error(e); }
+      try { await loadAll(); softRender(); if (ccSheet && ccSheet.mode === 'menu') ccDrawSheet(); } catch (e) { console.error(e); }
     }, 400);
   }
   function subscribe() {
@@ -1452,6 +1925,10 @@
     if (act_ === 'mode') { S.mode = S.mode === 'login' ? 'register' : 'login'; S.err = ''; render(); return; }
     if (act_ === 'tab') { S.tab = D.tab; S.edit = null; render(); window.scrollTo(0, 0); return; }
     if (act_ === 'who') { S.open[D.key] = !S.open[D.key]; render(); return; }
+    if (act_ === 'cc-legend') { S.ccLegend = !S.ccLegend; render(); return; }
+    if (act_ === 'cc-fold') { S.ccFold[D.id] = !ccIsFolded(D.id); render(); return; }
+    if (act_ === 'cc-menu') { if (canCC()) ccOpen(D.lvl, D.id || null, 'menu'); return; }
+    if (act_ === 'cc-guest') { if (S.me && S.me.isAdmin) ccOpen('guest', null, 'guest', { name: D.name }); return; }
     if (act_ === 'who-ev') { S.open['ev:' + D.id] = !S.open['ev:' + D.id]; render(); return; }
     if (act_ === 'sec') { S.sec[D.id] = !S.sec[D.id]; render(); return; }
     if (act_ === 'info-toggle') {
@@ -1483,6 +1960,7 @@
       return;
     }
     if (act_ === 'logout') {
+      ccCloseSheet();
       try { await sb.auth.signOut(); } catch (err) { console.error(err); }
       if (channel) { try { sb.removeChannel(channel); } catch (err2) { /* ignorieren */ } channel = null; }
       S = freshState(); S.step = 'login'; render(); window.scrollTo(0, 0);
@@ -1619,7 +2097,7 @@
 
   document.addEventListener('input', function (e) {
     var t = e.target;
-    if (!t || t.name !== 'phone' || !t.closest('[data-form="auth"],[data-form="member"]')) return;
+    if (!t || t.name !== 'phone' || !t.closest('[data-form="auth"],[data-form="member"],[data-ccform="guest"]')) return;
     var pos = t.selectionStart, atEnd = pos === t.value.length;
     var before = t.value.slice(0, pos).replace(/\D/g, '').length;
     var f = formatPhoneTyping(t.value);
