@@ -27,8 +27,14 @@ alter table public.profiles drop constraint if exists profiles_language_check;
 alter table public.profiles add constraint profiles_language_check
   check (language is null or language in ('de', 'fr', 'en', 'it', 'gsw', 'uk', 'bar', 'cs', 'nl'));
 
--- Gäste sehen nur Trainings und ihr Profil, keine Events
+-- Rollen: Gast (sieht nur Trainings und Profil), Admin (Stern), Event-Manager (Weinglas)
+-- Gast = false bedeutet Mitglied (Krone). Admin und Event-Manager können nur Mitglieder sein.
 alter table public.profiles add column if not exists is_guest boolean not null default false;
+alter table public.profiles add column if not exists is_event_manager boolean not null default false;
+update public.profiles set is_admin = false, is_event_manager = false where is_guest;
+alter table public.profiles drop constraint if exists profiles_roles_check;
+alter table public.profiles add constraint profiles_roles_check
+  check (not (is_guest and (is_admin or is_event_manager)));
 
 -- ---------- Trainings ----------
 create table if not exists public.training_rules (
@@ -99,7 +105,14 @@ as $$
   select coalesce((select is_guest from public.profiles where id = auth.uid()), false)
 $$;
 
--- Admin-Rechte vergeben oder entziehen (nur für Admins). Wer Admin wird, ist kein Gast mehr.
+create or replace function public.is_event_manager()
+returns boolean
+language sql stable security definer set search_path = public
+as $$
+  select coalesce((select is_event_manager from public.profiles where id = auth.uid()), false)
+$$;
+
+-- Admin-Rechte vergeben oder entziehen (nur für Admins). Nur Mitglieder können Admin sein.
 create or replace function public.set_admin(target uuid, make_admin boolean)
 returns void
 language plpgsql security definer set search_path = public
@@ -111,14 +124,14 @@ begin
   if target = auth.uid() and not make_admin then
     raise exception 'Du kannst dir die Admin-Rechte nicht selbst entziehen';
   end if;
-  update public.profiles
-     set is_admin = make_admin,
-         is_guest = case when make_admin then false else is_guest end
-   where id = target;
+  if make_admin and exists (select 1 from public.profiles where id = target and is_guest) then
+    raise exception 'Gäste können nicht Admin sein. Mache die Person zuerst zum Mitglied.';
+  end if;
+  update public.profiles set is_admin = make_admin where id = target;
 end;
 $$;
 
--- Gast-Status vergeben oder entziehen (nur für Admins). Ein Gast ist kein Admin.
+-- Zwischen Gast und Mitglied wechseln (nur für Admins). Wer Gast wird, verliert Admin- und Event-Manager-Rechte.
 create or replace function public.set_guest(target uuid, make_guest boolean)
 returns void
 language plpgsql security definer set search_path = public
@@ -132,8 +145,25 @@ begin
   end if;
   update public.profiles
      set is_guest = make_guest,
-         is_admin = case when make_guest then false else is_admin end
+         is_admin = case when make_guest then false else is_admin end,
+         is_event_manager = case when make_guest then false else is_event_manager end
    where id = target;
+end;
+$$;
+
+-- Event-Manager-Rechte vergeben oder entziehen (nur für Admins, nur für Mitglieder)
+create or replace function public.set_event_manager(target uuid, make_manager boolean)
+returns void
+language plpgsql security definer set search_path = public
+as $$
+begin
+  if not public.is_admin() then
+    raise exception 'Nur Admins dürfen Event-Manager festlegen';
+  end if;
+  if make_manager and exists (select 1 from public.profiles where id = target and is_guest) then
+    raise exception 'Gäste können nicht Event-Manager sein. Mache die Person zuerst zum Mitglied.';
+  end if;
+  update public.profiles set is_event_manager = make_manager where id = target;
 end;
 $$;
 
@@ -193,6 +223,8 @@ $$;
 revoke execute on function public.set_admin(uuid, boolean) from public, anon;
 revoke execute on function public.set_guest(uuid, boolean) from public, anon;
 grant  execute on function public.set_guest(uuid, boolean) to authenticated;
+revoke execute on function public.set_event_manager(uuid, boolean) from public, anon;
+grant  execute on function public.set_event_manager(uuid, boolean) to authenticated;
 revoke execute on function public.get_club_code()          from public, anon;
 revoke execute on function public.remove_member(uuid)      from public, anon;
 grant  execute on function public.get_club_code()          to authenticated;
@@ -286,13 +318,16 @@ begin
   end loop;
 end $$;
 
--- Events: alle ausser Gästen lesen, nur Admins ändern
+-- Events: alle ausser Gästen lesen, Admins und Event-Manager ändern
 drop policy if exists "events_select" on public.events;
 create policy "events_select" on public.events
   for select to authenticated using (not public.is_guest());
 drop policy if exists "events_admin_write" on public.events;
-create policy "events_admin_write" on public.events
-  for all to authenticated using (public.is_admin()) with check (public.is_admin());
+drop policy if exists "events_manage_write" on public.events;
+create policy "events_manage_write" on public.events
+  for all to authenticated
+  using (public.is_admin() or public.is_event_manager())
+  with check (public.is_admin() or public.is_event_manager());
 
 -- Antworten auf Events: Gäste sehen und ändern nichts, alle anderen ändern nur die eigenen
 drop policy if exists "event_responses_select" on public.event_responses;

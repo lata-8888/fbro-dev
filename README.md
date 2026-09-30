@@ -97,7 +97,7 @@ Auf dem Startbildschirm erscheint das FBRO-Wappen mit dem Namen «FBRO». Auf de
 ## Aufbau der App (Stand jetzt)
 - **FBRO-Trainings:** Die nächsten 20 Termine stehen direkt sichtbar da, nach Monaten gruppiert. Alle weiteren Termine (bis 12 Monate im Voraus) sind unter «Weitere Termine» eingeklappt. Vergangene Termine erscheinen nicht mehr. Die Anzahl änderst du in `config.js` bei `TRAININGS_VISIBLE`.
 - **FBRO-Events:** Alle kommenden Events, nach Monaten gruppiert. Es gibt keine Obergrenze. Der Kurzname «FBRO» steht in `config.js` bei `CLUB_SHORT`.
-- **Verwalten:** Die Bereiche «Montag Trainings», «Weitere Trainings», «Kommende Trainings», «Events» und «Mitglieder» sind einklappbar und anfangs zu.
+- **Verwalten:** Die Bereiche «Montag Trainings», «Weitere Trainings», «Kommende Trainings», «Events» und «Mitglieder» sind einklappbar und anfangs zu. Die Erklärungstexte sind ebenfalls verborgen. Sie erscheinen erst, wenn du in der Kopfzeile des Bereichs auf das **Info-Symbol** tippst. Es steht links neben dem «+». Nochmals tippen blendet den Text wieder aus.
   - Bei «Montag Trainings», «Events» und «Mitglieder» steht neben dem Bereichsnamen ein **«+»**. Erst nach dem Tippen darauf erscheint das Erfassungsformular. Nach dem Speichern schliesst es sich wieder.
   - «Weitere Trainings» enthält die zusätzlichen Termine (Turniere, Zusatztrainings) mit Liste und Formular. «Kommende Trainings» zeigt die Termine der Montag-Serie, die du einzeln ändern oder absagen kannst.
   - Weitere Trainings und Events sind nicht begrenzt (getestet mit über 150 Einträgen).
@@ -105,14 +105,24 @@ Auf dem Startbildschirm erscheint das FBRO-Wappen mit dem Namen «FBRO». Auf de
 - **Mitglieder hinzufügen:** Name und Handynummer eingeben. Das Mitglied meldet sich danach nur mit der Handynummer an, der PIN sind die letzten 6 Ziffern. Einen Vereinscode braucht es dafür nicht.
 - **Mitglied entfernen:** Der Knopf «Entfernen» löscht das Konto samt Antworten. Das lässt sich nicht rückgängig machen.
 
-**Update einer bestehenden Installation:** Ersetze `app.js`, `styles.css` und `sw.js`. Deine `config.js` kannst du behalten. Falls darin `TRAININGS_VISIBLE: 12` steht, ändere den Wert auf 20. Führe zusätzlich `supabase/schema.sql` im SQL Editor erneut aus. Sie fügt die Spalte für die Sprache und die Gast-Rolle hinzu und erlaubt alle neun Sprachen. Ohne diesen Schritt funktioniert der Knopf «Gast» nicht. Ohne diesen Schritt funktioniert die Sprachauswahl nur auf dem jeweiligen Gerät und wird nicht im Profil gespeichert.
+**Update einer bestehenden Installation:** Ersetze `app.js`, `styles.css` und `sw.js`. Deine `config.js` kannst du behalten. Falls darin `TRAININGS_VISIBLE: 12` steht, ändere den Wert auf 20. Führe zusätzlich `supabase/schema.sql` im SQL Editor erneut aus. Sie fügt die Spalten für Sprache, Gast und Event-Manager hinzu und erlaubt alle neun Sprachen. Ohne diesen Schritt funktionieren Krone und Weinglas nicht. Ohne diesen Schritt funktioniert die Sprachauswahl nur auf dem jeweiligen Gerät und wird nicht im Profil gespeichert.
 
-## Rollen: Mitglied, Admin und Gast
-- **Mitglied:** sieht Trainings, Events und das eigene Profil und kann sich für alles ein- und austragen.
-- **Admin:** darf zusätzlich alles unter «Verwalten» ändern. Den Stern neben einem Namen tippen macht die Person zum Admin.
-- **Gast:** sieht nur die **Trainings** und das eigene **Profil**, keine Events und keinen Bereich «Verwalten». Gäste können sich bei Trainings weiterhin ein- und austragen. Admins legen einen Gast in «Verwalten → Mitglieder» mit dem Knopf **«Gast»** fest. Beim Hinzufügen eines neuen Mitglieds gibt es dafür die Option «Als Gast hinzufügen».
-- **Zusammenspiel:** Ein Admin ist nie Gast. Wer zum Admin gemacht wird, verliert den Gast-Status, und wer zum Gast gemacht wird, verliert die Admin-Rechte. Die eigenen Rechte kann man sich nicht selbst entziehen und sich auch nicht selbst zum Gast machen.
-- **Schutz in der Datenbank:** Die Sperre der Events gilt nicht nur in der App. Supabase liefert Gästen Events und die Antworten darauf gar nicht erst aus.
+## Rollen und Symbole
+Unter «Verwalten → Mitglieder» hat jede Person Rollen-Knöpfe. **Nur Admins** können sie ändern.
+
+| Symbol | Rolle | Bedeutung |
+|---|---|---|
+| **Krone gefüllt** | Mitglied | sieht Trainings, Events und das eigene Profil und kann sich für alles ein- und austragen |
+| **Krone leer** | Gast | sieht nur die Trainings und das eigene Profil, keine Events und kein «Verwalten». Gäste können sich bei Trainings weiterhin ein- und austragen |
+| **Stern** | Admin | darf alles unter «Verwalten» ändern (Trainings, Events, Mitglieder, Rollen). Nur Mitglieder können Admin sein |
+| **Weinglas** | Event-Manager | darf Events erfassen, ändern, absagen und löschen. Im Bereich «Verwalten» sieht er nur den Abschnitt «Events». Nur Mitglieder können Event-Manager sein |
+
+- **Krone antippen:** wechselt zwischen Mitglied und Gast. Stern und Weinglas erscheinen nur bei Mitgliedern.
+- **Wer Gast wird, verliert Admin- und Event-Manager-Rechte.** Die App fragt vorher nach.
+- **Sicherung:** Die eigenen Krone und der eigene Stern sind gesperrt, damit es immer mindestens einen Admin gibt und niemand sich selbst aussperrt. Das eigene Weinglas lässt sich ändern.
+- **Neue Mitglieder:** Beim Hinzufügen gibt es die Option «Als Gast hinzufügen».
+- **Profil:** Im eigenen Profil stehen die Rollen unter «Rollen» mit Symbol und Text.
+- **Schutz in der Datenbank:** Alle Regeln gelten nicht nur in der App. Supabase liefert Gästen keine Events und Antworten darauf aus. Event-Manager dürfen nur Events ändern. Alles andere darf nur ein Admin.
 
 ## Sprachen
 Die App gibt es auf **Deutsch, Französisch, Englisch, Italienisch, Züridütsch, Ukrainisch, Boarisch (Bayerisch), Tschechisch und Niederländisch**.

@@ -51,7 +51,7 @@
       phPlaceExtra: 'z. B. Sportanlage Süd', addExtra: 'Weiteres Training hinzufügen', upcomingEmpty: 'Keine kommenden Trainings.',
       phEventTitle: 'z. B. Fondue-Plausch', phEventPlace: 'z. B. Vereinshaus', addEvent: 'Event hinzufügen',
       eventsEmpty: 'Noch keine Events. Tippe auf «+», um den ersten zu erfassen.',
-      membersIntro: 'Tippe auf den Stern, um ein Mitglied zum Admin zu machen oder die Rechte zu entziehen. Mit «Gast» sieht die Person nur die Trainings und das Profil, aber keine Events. Der Standard-PIN sind die letzten 6 Ziffern der Handynummer.',
+      membersIntro: 'Krone: Mitglied oder Gast (leere Krone). Stern: Admin. Weinglas: Event-Manager. Diese Rollen können nur Admins ändern. Gäste sehen nur Trainings und Profil, keine Events. Der Standard-PIN sind die letzten 6 Ziffern der Handynummer.',
       memberAdd: 'Mitglied hinzufügen', fullName: 'Vor- und Nachname', phone: 'Handynummer',
       memberAddNote: 'Das Mitglied meldet sich nur mit der Handynummer an. Der PIN sind die letzten 6 Ziffern.',
       selfAdmin: 'Du bist Admin. Du kannst dir die Rechte nicht selbst entziehen.', revokeAdmin: 'Admin-Rechte entziehen: {name}', makeAdmin: 'Zum Admin machen: {name}',
@@ -91,7 +91,9 @@
       ruleAdded: 'Trainingstag hinzugefügt', extraAdded: 'Training hinzugefügt', eventAdded: 'Event hinzugefügt',
       ruleChanged: 'Trainingstag geändert', trChanged: 'Training geändert', eventChanged: 'Event geändert', langSaved: 'Sprache gespeichert',
       guestTag: 'Gast', makeGuest: 'Als Gast festlegen: {name}', revokeGuest: 'Gast-Status entfernen: {name}', guestGranted: 'Als Gast festgelegt', guestRevoked: 'Gast-Status entfernt',
-      guestCheck: 'Als Gast hinzufügen (sieht nur Trainings und Profil)', guestInfo: 'Du hast Gast-Zugang. Du siehst die Trainings und dein Profil.'
+      guestCheck: 'Als Gast hinzufügen (sieht nur Trainings und Profil)', guestInfo: 'Du hast Gast-Zugang. Du siehst die Trainings und dein Profil.',
+      memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zum Event-Manager machen: {name}', revokeEm: 'Event-Manager-Rechte entziehen: {name}', emGranted: 'Als Event-Manager festgelegt', emRevoked: 'Event-Manager-Rechte entzogen', confirmGuestLoses: '{name} hat Admin- oder Event-Manager-Rechte. Als Gast festlegen entzieht diese Rechte. Fortfahren?', selfMember: 'Du bist Mitglied. Du kannst dich nicht selbst zum Gast machen.', rolesTitle: 'Rollen', emSub: 'Hier verwaltest du die Events.',
+      infoShow: 'Erklärung anzeigen', infoHide: 'Erklärung ausblenden'
     },
 
     fr: {
@@ -119,7 +121,7 @@
       phPlaceExtra: 'p. ex. centre sportif Sud', addExtra: 'Ajouter un entraînement', upcomingEmpty: 'Aucun entraînement à venir.',
       phEventTitle: 'p. ex. soirée fondue', phEventPlace: 'p. ex. maison du club', addEvent: 'Ajouter un événement',
       eventsEmpty: 'Aucun événement pour l’instant. Touche « + » pour créer le premier.',
-      membersIntro: 'Touche l’étoile pour faire d’un membre un admin ou lui retirer ses droits. Avec « Invité », la personne ne voit que les entraînements et le profil, mais pas les événements. Le PIN par défaut correspond aux 6 derniers chiffres du numéro de mobile.',
+      membersIntro: 'Couronne : membre ou invité (couronne vide). Étoile : admin. Verre à vin : responsable des événements. Seuls les admins peuvent modifier ces rôles. Les invités ne voient que les entraînements et le profil, pas les événements. Le PIN par défaut correspond aux 6 derniers chiffres du numéro de mobile.',
       memberAdd: 'Ajouter un membre', fullName: 'Prénom et nom', phone: 'Numéro de mobile',
       memberAddNote: 'Le membre se connecte uniquement avec son numéro de mobile. Le PIN correspond aux 6 derniers chiffres.',
       selfAdmin: 'Tu es admin. Tu ne peux pas te retirer tes droits toi-même.', revokeAdmin: 'Retirer les droits d’admin : {name}', makeAdmin: 'Nommer admin : {name}',
@@ -159,7 +161,9 @@
       ruleAdded: 'Jour d’entraînement ajouté', extraAdded: 'Entraînement ajouté', eventAdded: 'Événement ajouté',
       ruleChanged: 'Jour d’entraînement modifié', trChanged: 'Entraînement modifié', eventChanged: 'Événement modifié', langSaved: 'Langue enregistrée',
       guestTag: 'Invité', makeGuest: 'Définir comme invité : {name}', revokeGuest: 'Retirer le statut d’invité : {name}', guestGranted: 'Défini comme invité', guestRevoked: 'Statut d’invité retiré',
-      guestCheck: 'Ajouter comme invité (ne voit que les entraînements et le profil)', guestInfo: 'Tu as un accès invité. Tu vois les entraînements et ton profil.'
+      guestCheck: 'Ajouter comme invité (ne voit que les entraînements et le profil)', guestInfo: 'Tu as un accès invité. Tu vois les entraînements et ton profil.',
+      memberTag: 'Membre', emTag: 'Responsable des événements', makeEm: 'Nommer responsable des événements : {name}', revokeEm: 'Retirer les droits de responsable des événements : {name}', emGranted: 'Défini comme responsable des événements', emRevoked: 'Droits de responsable des événements retirés', confirmGuestLoses: '{name} a des droits d’admin ou de responsable des événements. Le définir comme invité les retire. Continuer ?', selfMember: 'Tu es membre. Tu ne peux pas te définir toi-même comme invité.', rolesTitle: 'Rôles', emSub: 'Ici, tu gères les événements.',
+      infoShow: 'Afficher l’explication', infoHide: 'Masquer l’explication'
     },
 
     en: {
@@ -187,7 +191,7 @@
       phPlaceExtra: 'e.g. South sports ground', addExtra: 'Add another training', upcomingEmpty: 'No upcoming trainings.',
       phEventTitle: 'e.g. Fondue evening', phEventPlace: 'e.g. Club house', addEvent: 'Add event',
       eventsEmpty: 'No events yet. Tap “+” to add the first one.',
-      membersIntro: 'Tap the star to make a member an admin or to remove their rights. With “Guest”, the person sees only the trainings and the profile, but no events. The default PIN is the last 6 digits of the mobile number.',
+      membersIntro: 'Crown: member or guest (empty crown). Star: admin. Wine glass: event manager. Only admins can change these roles. Guests see only the trainings and the profile, no events. The default PIN is the last 6 digits of the mobile number.',
       memberAdd: 'Add member', fullName: 'First and last name', phone: 'Mobile number',
       memberAddNote: 'The member signs in with the mobile number only. The PIN is the last 6 digits.',
       selfAdmin: 'You are an admin. You cannot remove your own rights.', revokeAdmin: 'Remove admin rights: {name}', makeAdmin: 'Make admin: {name}',
@@ -227,7 +231,9 @@
       ruleAdded: 'Training day added', extraAdded: 'Training added', eventAdded: 'Event added',
       ruleChanged: 'Training day changed', trChanged: 'Training changed', eventChanged: 'Event changed', langSaved: 'Language saved',
       guestTag: 'Guest', makeGuest: 'Set as guest: {name}', revokeGuest: 'Remove guest status: {name}', guestGranted: 'Set as guest', guestRevoked: 'Guest status removed',
-      guestCheck: 'Add as guest (sees only trainings and profile)', guestInfo: 'You have guest access. You can see the trainings and your profile.'
+      guestCheck: 'Add as guest (sees only trainings and profile)', guestInfo: 'You have guest access. You can see the trainings and your profile.',
+      memberTag: 'Member', emTag: 'Event manager', makeEm: 'Make event manager: {name}', revokeEm: 'Remove event manager rights: {name}', emGranted: 'Set as event manager', emRevoked: 'Event manager rights removed', confirmGuestLoses: '{name} has admin or event manager rights. Setting as guest removes these rights. Continue?', selfMember: 'You are a member. You cannot set yourself as a guest.', rolesTitle: 'Roles', emSub: 'Here you manage the events.',
+      infoShow: 'Show explanation', infoHide: 'Hide explanation'
     },
 
     it: {
@@ -255,7 +261,7 @@
       phPlaceExtra: 'ad es. impianto sportivo Sud', addExtra: 'Aggiungi allenamento', upcomingEmpty: 'Nessun allenamento in arrivo.',
       phEventTitle: 'ad es. serata fonduta', phEventPlace: 'ad es. sede del club', addEvent: 'Aggiungi evento',
       eventsEmpty: 'Ancora nessun evento. Tocca «+» per crearne uno.',
-      membersIntro: 'Tocca la stella per rendere un socio admin o per revocargli i diritti. Con «Ospite» la persona vede solo gli allenamenti e il profilo, ma non gli eventi. Il PIN predefinito corrisponde alle ultime 6 cifre del numero di cellulare.',
+      membersIntro: 'Corona: socio od ospite (corona vuota). Stella: admin. Calice: responsabile eventi. Solo gli admin possono modificare questi ruoli. Gli ospiti vedono solo gli allenamenti e il profilo, non gli eventi. Il PIN predefinito corrisponde alle ultime 6 cifre del numero di cellulare.',
       memberAdd: 'Aggiungi socio', fullName: 'Nome e cognome', phone: 'Numero di cellulare',
       memberAddNote: 'Il socio accede solo con il numero di cellulare. Il PIN corrisponde alle ultime 6 cifre.',
       selfAdmin: 'Sei admin. Non puoi revocarti i diritti da solo.', revokeAdmin: 'Revoca i diritti di admin: {name}', makeAdmin: 'Rendi admin: {name}',
@@ -295,7 +301,9 @@
       ruleAdded: 'Giorno di allenamento aggiunto', extraAdded: 'Allenamento aggiunto', eventAdded: 'Evento aggiunto',
       ruleChanged: 'Giorno di allenamento modificato', trChanged: 'Allenamento modificato', eventChanged: 'Evento modificato', langSaved: 'Lingua salvata',
       guestTag: 'Ospite', makeGuest: 'Imposta come ospite: {name}', revokeGuest: 'Rimuovi lo stato di ospite: {name}', guestGranted: 'Impostato come ospite', guestRevoked: 'Stato di ospite rimosso',
-      guestCheck: 'Aggiungi come ospite (vede solo allenamenti e profilo)', guestInfo: 'Hai un accesso come ospite. Vedi gli allenamenti e il tuo profilo.'
+      guestCheck: 'Aggiungi come ospite (vede solo allenamenti e profilo)', guestInfo: 'Hai un accesso come ospite. Vedi gli allenamenti e il tuo profilo.',
+      memberTag: 'Socio', emTag: 'Responsabile eventi', makeEm: 'Nomina responsabile eventi: {name}', revokeEm: 'Revoca i diritti di responsabile eventi: {name}', emGranted: 'Impostato come responsabile eventi', emRevoked: 'Diritti di responsabile eventi revocati', confirmGuestLoses: '{name} ha i diritti di admin o di responsabile eventi. Impostarlo come ospite li revoca. Continuare?', selfMember: 'Sei socio. Non puoi impostarti da solo come ospite.', rolesTitle: 'Ruoli', emSub: 'Qui gestisci gli eventi.',
+      infoShow: 'Mostra la spiegazione', infoHide: 'Nascondi la spiegazione'
     },
 
     gsw: {
@@ -323,7 +331,7 @@
       phPlaceExtra: 'z. B. Sportaalag Süd', addExtra: 'Es wiiters Training hinzuefüege', upcomingEmpty: 'Kei kommendi Trainings.',
       phEventTitle: 'z. B. Fondue-Plausch', phEventPlace: 'z. B. Vereinshuus', addEvent: 'Event hinzuefüege',
       eventsEmpty: 'No kei Events. Tipp uf «+», zum de erscht z erfasse.',
-      membersIntro: 'Tipp uf de Stärn, zum es Mitglied zum Admin z mache oder d Rächt z entzieh. Mit «Gascht» gseht d Person nur d Trainings und s Profil, aber kei Events. De Standard-PIN sind di letschte 6 Ziffere vo de Handynummere.',
+      membersIntro: 'Chrone: Mitglied oder Gascht (leeri Chrone). Stärn: Admin. Wiiglas: Event-Manager. Die Rolle chönd nur Admins ändere. Gäscht gsehnd nur d Trainings und s Profil, kei Events. De Standard-PIN sind di letschte 6 Ziffere vo de Handynummere.',
       memberAdd: 'Mitglied hinzuefüege', fullName: 'Vor- und Nachname', phone: 'Handynummere',
       memberAddNote: 'S Mitglied meldet sich nur mit de Handynummere aa. De PIN sind di letschte 6 Ziffere.',
       selfAdmin: 'Du bisch Admin. Du chasch dir d Rächt nöd säber entzieh.', revokeAdmin: 'Admin-Rächt entzieh: {name}', makeAdmin: 'Zum Admin mache: {name}',
@@ -363,7 +371,9 @@
       ruleAdded: 'Trainingstag hinzuegfüegt', extraAdded: 'Training hinzuegfüegt', eventAdded: 'Event hinzuegfüegt',
       ruleChanged: 'Trainingstag gänderet', trChanged: 'Training gänderet', eventChanged: 'Event gänderet', langSaved: 'Sprach gspeicheret',
       guestTag: 'Gascht', makeGuest: 'Als Gascht festlege: {name}', revokeGuest: 'Gascht-Status entferne: {name}', guestGranted: 'Als Gascht festgleit', guestRevoked: 'Gascht-Status entfernt',
-      guestCheck: 'Als Gascht hinzuefüege (gseht nur Trainings und Profil)', guestInfo: 'Du hesch en Gascht-Zuegang. Du gsehsch d Trainings und dis Profil.'
+      guestCheck: 'Als Gascht hinzuefüege (gseht nur Trainings und Profil)', guestInfo: 'Du hesch en Gascht-Zuegang. Du gsehsch d Trainings und dis Profil.',
+      memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zum Event-Manager mache: {name}', revokeEm: 'Event-Manager-Rächt entzieh: {name}', emGranted: 'Als Event-Manager festgleit', emRevoked: 'Event-Manager-Rächt entzoge', confirmGuestLoses: '{name} hät Admin- oder Event-Manager-Rächt. Als Gascht festlege entzieht die Rächt. Wiiter?', selfMember: 'Du bisch Mitglied. Du chasch di nöd säber zum Gascht mache.', rolesTitle: 'Rolle', emSub: 'Do verwaltisch du d Events.',
+      infoShow: 'Erklärig aazeige', infoHide: 'Erklärig verstecke'
     },
 
     uk: {
@@ -391,7 +401,7 @@
       phPlaceExtra: 'напр. спортивний комплекс «Південь»', addExtra: 'Додати тренування', upcomingEmpty: 'Найближчих тренувань немає.',
       phEventTitle: 'напр. вечір фондю', phEventPlace: 'напр. клубний будинок', addEvent: 'Додати подію',
       eventsEmpty: 'Подій ще немає. Натисніть «+», щоб додати першу.',
-      membersIntro: 'Натисніть на зірочку, щоб зробити учасника адміністратором або забрати права. Зі статусом «Гість» людина бачить лише тренування та профіль, але не події. PIN за замовчуванням — останні 6 цифр номера мобільного.',
+      membersIntro: 'Корона: член клубу або гість (порожня корона). Зірочка: адміністратор. Келих: менеджер подій. Змінювати ці ролі можуть лише адміністратори. Гості бачать лише тренування та профіль, без подій. PIN за замовчуванням — останні 6 цифр номера мобільного.',
       memberAdd: 'Додати учасника', fullName: 'Ім’я та прізвище', phone: 'Номер мобільного',
       memberAddNote: 'Учасник входить лише за номером мобільного. PIN — останні 6 цифр.',
       selfAdmin: 'Ви адміністратор. Ви не можете забрати права в себе самі.', revokeAdmin: 'Забрати права адміністратора: {name}', makeAdmin: 'Призначити адміністратором: {name}',
@@ -431,7 +441,9 @@
       ruleAdded: 'День тренування додано', extraAdded: 'Тренування додано', eventAdded: 'Подію додано',
       ruleChanged: 'День тренування змінено', trChanged: 'Тренування змінено', eventChanged: 'Подію змінено', langSaved: 'Мову збережено',
       guestTag: 'Гість', makeGuest: 'Призначити гостем: {name}', revokeGuest: 'Забрати статус гостя: {name}', guestGranted: 'Призначено гостем', guestRevoked: 'Статус гостя знято',
-      guestCheck: 'Додати як гостя (бачить лише тренування та профіль)', guestInfo: 'У вас гостьовий доступ. Ви бачите тренування та свій профіль.'
+      guestCheck: 'Додати як гостя (бачить лише тренування та профіль)', guestInfo: 'У вас гостьовий доступ. Ви бачите тренування та свій профіль.',
+      memberTag: 'Член клубу', emTag: 'Менеджер подій', makeEm: 'Призначити менеджером подій: {name}', revokeEm: 'Забрати права менеджера подій: {name}', emGranted: 'Призначено менеджером подій', emRevoked: 'Права менеджера подій забрано', confirmGuestLoses: '{name} має права адміністратора або менеджера подій. Призначення гостем забирає ці права. Продовжити?', selfMember: 'Ви член клубу. Ви не можете призначити себе гостем.', rolesTitle: 'Ролі', emSub: 'Тут ви керуєте подіями.',
+      infoShow: 'Показати пояснення', infoHide: 'Сховати пояснення'
     },
 
     bar: {
@@ -459,7 +471,7 @@
       phPlaceExtra: 'z. B. Sportanlage Süd', addExtra: 'A weiters Training dazuadoa', upcomingEmpty: 'Koane kemmandn Trainings.',
       phEventTitle: 'z. B. Fondue-Abend', phEventPlace: 'z. B. Vereinsheim', addEvent: 'Event dazuadoa',
       eventsEmpty: 'No koane Events. Tipp auf «+», um den erstn z erfassn.',
-      membersIntro: 'Tipp auf den Stern, um a Mitglied zum Admin z macha oder d Rechte z entziehn. Mit «Gast» sicht de Person bloß de Trainings und des Profil, owa koane Events. Da Standard-PIN san de letztn 6 Ziffern vo da Handynummer.',
+      membersIntro: 'Kron: Mitglied oder Gast (leere Kron). Stern: Admin. Weiglas: Event-Manager. De Rolln kinna bloß Admins ändern. Gäst sehn bloß de Trainings und des Profil, koane Events. Da Standard-PIN san de letztn 6 Ziffern vo da Handynummer.',
       memberAdd: 'Mitglied dazuadoa', fullName: 'Vor- und Nachname', phone: 'Handynummer',
       memberAddNote: 'Des Mitglied meldt se bloß mit da Handynummer o. Da PIN san de letztn 6 Ziffern.',
       selfAdmin: 'Du bist Admin. Du konnst da d Rechte ned söiba entziehn.', revokeAdmin: 'Admin-Rechte entziehn: {name}', makeAdmin: 'Zum Admin macha: {name}',
@@ -499,7 +511,9 @@
       ruleAdded: 'Trainingstag dazuakemma', extraAdded: 'Training dazuakemma', eventAdded: 'Event dazuakemma',
       ruleChanged: 'Trainingstag gändert', trChanged: 'Training gändert', eventChanged: 'Event gändert', langSaved: 'Sprach gspeichert',
       guestTag: 'Gast', makeGuest: 'Als Gast festlegn: {name}', revokeGuest: 'Gast-Status entfernen: {name}', guestGranted: 'Als Gast festgelegt', guestRevoked: 'Gast-Status entfernt',
-      guestCheck: 'Als Gast dazuadoa (sicht bloß Trainings und Profil)', guestInfo: 'Du hast an Gast-Zugang. Du siehst de Trainings und dei Profil.'
+      guestCheck: 'Als Gast dazuadoa (sicht bloß Trainings und Profil)', guestInfo: 'Du hast an Gast-Zugang. Du siehst de Trainings und dei Profil.',
+      memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zum Event-Manager macha: {name}', revokeEm: 'Event-Manager-Rechte entziehn: {name}', emGranted: 'Als Event-Manager festgelegt', emRevoked: 'Event-Manager-Rechte entzogn', confirmGuestLoses: '{name} hod Admin- oder Event-Manager-Rechte. Als Gast festlegn entzieht de Rechte. Weiter?', selfMember: 'Du bist Mitglied. Du konnst di ned söiba zum Gast macha.', rolesTitle: 'Rollen', emSub: 'Do verwoitst du de Events.',
+      infoShow: 'Erklärung anzoagn', infoHide: 'Erklärung wegdoa'
     },
 
     cs: {
@@ -527,7 +541,7 @@
       phPlaceExtra: 'např. sportovní areál Jih', addExtra: 'Přidat trénink', upcomingEmpty: 'Žádné nadcházející tréninky.',
       phEventTitle: 'např. fondue večer', phEventPlace: 'např. klubovna', addEvent: 'Přidat akci',
       eventsEmpty: 'Zatím žádné akce. Klepni na «+» a přidej první.',
-      membersIntro: 'Klepnutím na hvězdičku udělíš členovi práva správce nebo je odebereš. Se statusem «Host» osoba vidí jen tréninky a profil, ale ne akce. Výchozí PIN tvoří posledních 6 číslic čísla mobilu.',
+      membersIntro: 'Koruna: člen nebo host (prázdná koruna). Hvězdička: správce. Sklenice na víno: správce akcí. Tyto role mohou měnit jen správci. Hosté vidí jen tréninky a profil, žádné akce. Výchozí PIN tvoří posledních 6 číslic čísla mobilu.',
       memberAdd: 'Přidat člena', fullName: 'Jméno a příjmení', phone: 'Číslo mobilu',
       memberAddNote: 'Člen se přihlašuje pouze číslem mobilu. PIN tvoří posledních 6 číslic.',
       selfAdmin: 'Jsi správce. Sám sobě práva odebrat nemůžeš.', revokeAdmin: 'Odebrat práva správce: {name}', makeAdmin: 'Udělat správcem: {name}',
@@ -567,7 +581,9 @@
       ruleAdded: 'Tréninkový den přidán', extraAdded: 'Trénink přidán', eventAdded: 'Akce přidána',
       ruleChanged: 'Tréninkový den změněn', trChanged: 'Trénink změněn', eventChanged: 'Akce změněna', langSaved: 'Jazyk uložen',
       guestTag: 'Host', makeGuest: 'Nastavit jako hosta: {name}', revokeGuest: 'Odebrat status hosta: {name}', guestGranted: 'Nastaveno jako host', guestRevoked: 'Status hosta odebrán',
-      guestCheck: 'Přidat jako hosta (vidí jen tréninky a profil)', guestInfo: 'Máš přístup jako host. Vidíš tréninky a svůj profil.'
+      guestCheck: 'Přidat jako hosta (vidí jen tréninky a profil)', guestInfo: 'Máš přístup jako host. Vidíš tréninky a svůj profil.',
+      memberTag: 'Člen', emTag: 'Správce akcí', makeEm: 'Udělat správcem akcí: {name}', revokeEm: 'Odebrat práva správce akcí: {name}', emGranted: 'Nastaveno jako správce akcí', emRevoked: 'Práva správce akcí odebrána', confirmGuestLoses: '{name} má práva správce nebo správce akcí. Nastavení jako host tato práva odebere. Pokračovat?', selfMember: 'Jsi člen. Sám sebe hostem udělat nemůžeš.', rolesTitle: 'Role', emSub: 'Tady spravuješ akce.',
+      infoShow: 'Zobrazit vysvětlení', infoHide: 'Skrýt vysvětlení'
     },
 
     nl: {
@@ -595,7 +611,7 @@
       phPlaceExtra: 'bijv. sportpark Zuid', addExtra: 'Training toevoegen', upcomingEmpty: 'Geen komende trainingen.',
       phEventTitle: 'bijv. fonduavond', phEventPlace: 'bijv. clubhuis', addEvent: 'Evenement toevoegen',
       eventsEmpty: 'Nog geen evenementen. Tik op «+» om het eerste toe te voegen.',
-      membersIntro: 'Tik op de ster om een lid beheerder te maken of de rechten in te trekken. Met «Gast» ziet de persoon alleen de trainingen en het profiel, maar geen evenementen. De standaard-PIN zijn de laatste 6 cijfers van het mobiele nummer.',
+      membersIntro: 'Kroon: lid of gast (lege kroon). Ster: beheerder. Wijnglas: evenementmanager. Alleen beheerders kunnen deze rollen wijzigen. Gasten zien alleen de trainingen en het profiel, geen evenementen. De standaard-PIN zijn de laatste 6 cijfers van het mobiele nummer.',
       memberAdd: 'Lid toevoegen', fullName: 'Voor- en achternaam', phone: 'Mobiel nummer',
       memberAddNote: 'Het lid logt alleen in met het mobiele nummer. De PIN zijn de laatste 6 cijfers.',
       selfAdmin: 'Je bent beheerder. Je kunt je eigen rechten niet intrekken.', revokeAdmin: 'Beheerdersrechten intrekken: {name}', makeAdmin: 'Beheerder maken: {name}',
@@ -635,7 +651,9 @@
       ruleAdded: 'Trainingsdag toegevoegd', extraAdded: 'Training toegevoegd', eventAdded: 'Evenement toegevoegd',
       ruleChanged: 'Trainingsdag gewijzigd', trChanged: 'Training gewijzigd', eventChanged: 'Evenement gewijzigd', langSaved: 'Taal opgeslagen',
       guestTag: 'Gast', makeGuest: 'Als gast instellen: {name}', revokeGuest: 'Gaststatus intrekken: {name}', guestGranted: 'Als gast ingesteld', guestRevoked: 'Gaststatus ingetrokken',
-      guestCheck: 'Als gast toevoegen (ziet alleen trainingen en profiel)', guestInfo: 'Je hebt gasttoegang. Je ziet de trainingen en je profiel.'
+      guestCheck: 'Als gast toevoegen (ziet alleen trainingen en profiel)', guestInfo: 'Je hebt gasttoegang. Je ziet de trainingen en je profiel.',
+      memberTag: 'Lid', emTag: 'Evenementmanager', makeEm: 'Evenementmanager maken: {name}', revokeEm: 'Rechten van evenementmanager intrekken: {name}', emGranted: 'Als evenementmanager ingesteld', emRevoked: 'Rechten van evenementmanager ingetrokken', confirmGuestLoses: '{name} heeft beheerders- of evenementmanagerrechten. Als gast instellen trekt deze rechten in. Doorgaan?', selfMember: 'Je bent lid. Je kunt jezelf niet tot gast maken.', rolesTitle: 'Rollen', emSub: 'Hier beheer je de evenementen.',
+      infoShow: 'Uitleg tonen', infoHide: 'Uitleg verbergen'
     }
   };
 
@@ -723,7 +741,7 @@
       step: 'loading', mode: 'login', tab: 'trainings', phone: '', err: '', info: '',
       session: null, me: null, members: [],
       rules: [], extras: [], overrides: {}, cancelled: {}, events: [],
-      tr: {}, ev: {}, open: {}, edit: null, busy: false, sec: {}, add: {}, showMore: false
+      tr: {}, ev: {}, open: {}, edit: null, busy: false, sec: {}, add: {}, info: {}, showMore: false
     };
   }
   var S = freshState();
@@ -737,7 +755,7 @@
     if (bad) throw bad.error;
     var d = res.map(function (r) { return r.data || []; });
 
-    S.members = d[0].map(function (r) { return { id: r.id, name: r.name, phone: r.phone, isAdmin: r.is_admin, isGuest: r.is_guest === true, language: r.language || null }; })
+    S.members = d[0].map(function (r) { return { id: r.id, name: r.name, phone: r.phone, isAdmin: r.is_admin, isGuest: r.is_guest === true, isEventManager: r.is_event_manager === true, language: r.language || null }; })
       .sort(function (a, b) { return a.name.localeCompare(b.name, 'de'); });
     S.rules = d[1].map(function (r) { return { id: r.id, wd: r.weekday, time: hhmm(r.start_time), place: r.place }; })
       .sort(function (a, b) { return ((a.wd + 6) % 7) - ((b.wd + 6) % 7) || (a.time < b.time ? -1 : 1); });
@@ -799,6 +817,9 @@
 
   /* ---------- Icons ---------- */
   var ICON = {
+    info: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01"/><path d="M11 12h1v4h1"/></svg>',
+    crown: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6l4 6l5-4l-2 10H5L3 8l5 4z"/><circle cx="12" cy="4" r="1"/><circle cx="3" cy="6" r="1"/><circle cx="21" cy="6" r="1"/></svg>',
+    glass: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3h8l-.5 5.5a3.5 3.5 0 0 1-7 0z"/><path d="M12 12v8"/><path d="M8.5 21h7"/></svg>',
     one: '<svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M5 21c0-4 3-6 7-6s7 2 7 6"/></svg>',
     two: '<svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="3.5"/><circle cx="17" cy="9" r="3"/><path d="M2 20c0-3.5 2.5-5.5 6-5.5s6 2 6 5.5M15 15c3.5 0 7 1.5 7 5"/></svg>',
     star: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>',
@@ -1009,16 +1030,18 @@
     '</article>';
   }
 
-  function accordion(id, title, count, body, canAdd) {
-    var open = !!S.sec[id], adding = !!S.add[id];
+  function accordion(id, title, count, body, canAdd, info) {
+    var open = !!S.sec[id], adding = !!S.add[id], showInfo = !!S.info[id];
     var addLabel = adding ? L('addClose') : L('addNew');
-    // Reihenfolge: Titel links, danach «+» (falls vorhanden), ganz rechts der Pfeil zum Ein-/Ausklappen
+    var infoLabel = showInfo ? L('infoHide') : L('infoShow');
+    // Reihenfolge: Titel links, dann Info-Symbol, «+» (falls vorhanden) und ganz rechts der Pfeil zum Ein-/Ausklappen
     return '<section class="panel acc"><div class="acchead">' +
       '<button class="acctoggle" data-act="sec" data-id="' + id + '" aria-expanded="' + open + '">' +
       '<span class="t">' + title + (count != null ? ' <span class="cnt">(' + count + ')</span>' : '') + '</span></button>' +
+      (info ? '<button class="plusbtn infobtn" data-act="info-toggle" data-id="' + id + '" aria-pressed="' + showInfo + '" aria-label="' + infoLabel + '" title="' + infoLabel + '">' + ICON.info + '</button>' : '') +
       (canAdd ? '<button class="plusbtn" data-act="add-toggle" data-id="' + id + '" aria-pressed="' + adding + '" aria-label="' + addLabel + '" title="' + addLabel + '"><span>+</span></button>' : '') +
       '<button class="accchev' + (open ? ' open' : '') + '" data-act="sec" data-id="' + id + '" aria-hidden="true" tabindex="-1">' + ICON.chev + '</button>' +
-      '</div>' + (open ? '<div class="accbody">' + body + '</div>' : '') + '</section>';
+      '</div>' + (open ? '<div class="accbody">' + (info && showInfo ? '<p class="infotext">' + info + '</p>' : '') + body + '</div>' : '') + '</section>';
   }
 
   // Zeile (oder Bearbeiten-Formular) für einen einzelnen Trainingstermin
@@ -1040,11 +1063,12 @@
     var all = getTrainings();
     var series = all.filter(function (t) { return !t.extraId; });
     var extras = all.filter(function (t) { return !!t.extraId; });
-    var html = '<div class="top"><div><h1>' + L('adminTitle') + '</h1><p>' + L('adminSub') + '</p></div></div>';
+    var isAdm = S.me.isAdmin;
+    var html = '<div class="top"><div><h1>' + L('adminTitle') + '</h1><p>' + L(isAdm ? 'adminSub' : 'emSub') + '</p></div></div>';
     var b;
 
     /* Montag Trainings */
-    b = '<p>' + L('rulesIntro') + '</p>';
+    b = '';
     if (S.add.rules) {
       b += '<form class="addform" data-form="rule">' + grid(fld(L('weekday'), '<select class="input" name="wd">' + wdOptions(1) + '</select>'), fld(L('time'), inTime('19:00'))) +
         fld(L('place'), inPlace('', L('phPlaceTraining'))) +
@@ -1058,24 +1082,24 @@
         '<div class="btnrow"><button class="mini" data-act="edit" data-target="rule:' + r.id + '">' + L('edit') + '</button>' +
         '<button class="mini del" data-act="del-rule" data-id="' + r.id + '">' + L('remove') + '</button></div></li>';
     }).join('') + '</ul>' : '<p class="muted">' + L('rulesEmpty') + '</p>';
-    html += accordion('rules', L('secRules'), S.rules.length, b, true);
+    if (isAdm) html += accordion('rules', L('secRules'), S.rules.length, b, true, L('rulesIntro'));
 
     /* Weitere Trainings (zusätzliche Termine) */
-    b = '<p>' + L('extraIntro') + '</p>';
+    b = '';
     b += extras.length ? '<ul class="list scroll" data-sc="extras">' + extras.map(trRow).join('') + '</ul>' : '<p class="muted">' + L('extraEmpty') + '</p>';
     b += '<form class="addbox" data-form="extra">' + fld(L('label'), inTitle(L('extraDefaultTitle'))) +
       grid(fld(L('date'), '<input class="input" type="date" name="date" required>'), fld(L('time'), inTime('18:00'))) +
       fld(L('place'), inPlace('', L('phPlaceExtra'))) +
       '<button class="btn" type="submit">' + L('addExtra') + '</button></form>';
-    html += accordion('extra', L('secExtra'), extras.length, b);
+    if (isAdm) html += accordion('extra', L('secExtra'), extras.length, b, false, L('extraIntro'));
 
     /* Kommende Trainings (Termine der Serie) */
     b = series.length ? '<ul class="list scroll" data-sc="upcoming">' + series.map(trRow).join('') + '</ul>' : '<p class="muted">' + L('upcomingEmpty') + '</p>';
-    html += accordion('upcoming', L('secUpcoming'), series.length, b);
+    if (isAdm) html += accordion('upcoming', L('secUpcoming'), series.length, b);
 
     /* Events */
     var evs = getEvents();
-    b = '<p>' + L('subEvents') + '</p>';
+    b = '';
     if (S.add.events) {
       b += '<form class="addform" data-form="event">' + fld(L('label'), inTitle('', L('phEventTitle'))) +
         grid(fld(L('date'), '<input class="input" type="date" name="date" required>'), fld(L('time'), inTime('18:00'))) +
@@ -1091,10 +1115,10 @@
         '<button class="mini" data-act="cancel-ev" data-id="' + e.id + '">' + (e.cancelled ? L('reactivate') : L('cancel')) + '</button>' +
         '<button class="mini del" data-act="del-ev" data-id="' + e.id + '">' + L('del') + '</button></div></li>';
     }).join('') + '</ul>' : '<p class="muted">' + L('eventsEmpty') + '</p>';
-    html += accordion('events', L('secEvents'), evs.length, b, true);
+    html += accordion('events', L('secEvents'), evs.length, b, true, L('subEvents'));
 
     /* Mitglieder */
-    b = '<p>' + L('membersIntro') + '</p>';
+    b = '';
     if (S.add.members) {
       b += '<form class="addform" data-form="member"><h3 style="margin-bottom:10px">' + L('memberAdd') + '</h3>' +
         fld(L('fullName'), '<input class="input" name="name" autocomplete="off" required>') +
@@ -1105,14 +1129,23 @@
     }
     b += '<ul class="list scroll" data-sc="members">' + S.members.map(function (m) {
       var self = m.id === S.me.id;
-      var label = self ? L('selfAdmin') : L(m.isAdmin ? 'revokeAdmin' : 'makeAdmin', { name: m.name });
-      return '<li><div class="l"><b>' + esc(m.name) + '</b><span>' + esc(fmtPhone(m.phone)) + (m.isAdmin ? ' · ' + L('adminTag') : '') + (m.isGuest ? ' · ' + L('guestTag') : '') + '</span></div>' +
+      var member = !m.isGuest;
+      // Krone: gefüllt = Mitglied, leer = Gast
+      var crownLabel = self ? L('selfMember') : L(member ? 'makeGuest' : 'revokeGuest', { name: m.name });
+      var starLabel = self ? L('selfAdmin') : L(m.isAdmin ? 'revokeAdmin' : 'makeAdmin', { name: m.name });
+      var glassLabel = L(m.isEventManager ? 'revokeEm' : 'makeEm', { name: m.name });
+      var roleBtn = function (cls, act, val, on, label, icon, disabled) {
+        return '<button class="rolebtn ' + cls + (on ? ' on' : '') + '" data-act="' + act + '" data-id="' + m.id + '" data-val="' + val + '" aria-pressed="' + on + '" aria-label="' + esc(label) + '" title="' + esc(label) + '"' + (disabled ? ' disabled' : '') + '>' + icon + '</button>';
+      };
+      return '<li><div class="l"><b>' + esc(m.name) + '</b><span>' + esc(fmtPhone(m.phone)) + '</span></div>' +
         '<div class="btnrow">' +
-        '<button class="starbtn" data-act="set-admin" data-id="' + m.id + '" data-val="' + (m.isAdmin ? '0' : '1') + '" aria-pressed="' + m.isAdmin + '" aria-label="' + esc(label) + '" title="' + esc(label) + '"' + (self ? ' disabled' : '') + '>' + ICON.star + '</button>' +
-        (self ? '' : '<button class="mini guestbtn" data-act="set-guest" data-id="' + m.id + '" data-val="' + (m.isGuest ? '0' : '1') + '" aria-pressed="' + m.isGuest + '" title="' + esc(L(m.isGuest ? 'revokeGuest' : 'makeGuest', { name: m.name })) + '" aria-label="' + esc(L(m.isGuest ? 'revokeGuest' : 'makeGuest', { name: m.name })) + '">' + L('guestTag') + '</button><button class="mini" data-act="reset-pin" data-id="' + m.id + '">' + L('resetPin') + '</button><button class="mini del" data-act="remove-member" data-id="' + m.id + '">' + L('remove') + '</button>') +
+        roleBtn('crown', 'set-guest', member ? '1' : '0', member, crownLabel, ICON.crown, self) +
+        (member ? roleBtn('star', 'set-admin', m.isAdmin ? '0' : '1', m.isAdmin, starLabel, ICON.star, self) : '') +
+        (member ? roleBtn('glass', 'set-em', m.isEventManager ? '0' : '1', m.isEventManager, glassLabel, ICON.glass, false) : '') +
+        (self ? '' : '<button class="mini" data-act="reset-pin" data-id="' + m.id + '">' + L('resetPin') + '</button><button class="mini del" data-act="remove-member" data-id="' + m.id + '">' + L('remove') + '</button>') +
         '</div></li>';
     }).join('') + '</ul>';
-    html += accordion('members', L('secMembers'), S.members.length, b, true);
+    if (isAdm) html += accordion('members', L('secMembers'), S.members.length, b, true, L('membersIntro'));
     return html;
   }
 
@@ -1125,9 +1158,14 @@
       else if (iosHint) install = '<section class="panel"><h2>' + L('installTitle') + '</h2><p>' + L('installIos') + '</p></section>';
     }
     return '<div class="top"><div><h1>' + L('profileTitle') + '</h1></div></div>' +
-      '<section class="panel"><div class="profile-row"><span class="muted">' + L('nameLabel') + '</span><b>' + esc(S.me.name) + (S.me.isAdmin ? '<span class="badge">' + L('adminTag') + '</span>' : '') + (S.me.isGuest ? '<span class="badge guest">' + L('guestTag') + '</span>' : '') + '</b></div>' +
+      '<section class="panel"><div class="profile-row"><span class="muted">' + L('nameLabel') + '</span><b>' + esc(S.me.name) + '</b></div>' +
       '<div class="profile-row"><span class="muted">' + L('phone') + '</span><b>' + esc(fmtPhone(S.me.phone)) + '</b></div></section>' +
-      (S.me.isGuest ? '<section class="panel"><p style="margin:0">' + L('guestInfo') + '</p></section>' : '') +
+      '<section class="panel"><h2>' + L('rolesTitle') + '</h2>' +
+        '<div class="rolerow"><span class="rolebtn crown' + (S.me.isGuest ? '' : ' on') + '">' + ICON.crown + '</span><span>' + L(S.me.isGuest ? 'guestTag' : 'memberTag') + '</span></div>' +
+        (S.me.isAdmin ? '<div class="rolerow"><span class="rolebtn star on">' + ICON.star + '</span><span>' + L('adminTag') + '</span></div>' : '') +
+        (S.me.isEventManager ? '<div class="rolerow"><span class="rolebtn glass on">' + ICON.glass + '</span><span>' + L('emTag') + '</span></div>' : '') +
+        (S.me.isGuest ? '<p class="small muted" style="margin:10px 0 0">' + L('guestInfo') + '</p>' : '') +
+      '</section>' +
       '<section class="panel"><h2>' + L('language') + '</h2><p>' + L('languageHint') + '</p>' + langSelect() + '</section>' +
       install +
       '<section class="panel"><h2>' + L('nameChange') + '</h2><form data-form="name">' + fld(L('fullName'), '<input class="input" name="name" value="' + esc(S.me.name) + '" required>') +
@@ -1145,7 +1183,7 @@
     nav.hidden = false;
     var tabs = [{ id: 'trainings', label: L('navTrainings'), icon: ICON.cal }];
     if (!S.me.isGuest) tabs.push({ id: 'events', label: L('navEvents'), icon: ICON.star });
-    if (S.me.isAdmin) tabs.push({ id: 'admin', label: L('navAdmin'), icon: ICON.cog });
+    if (S.me.isAdmin || S.me.isEventManager) tabs.push({ id: 'admin', label: L('navAdmin'), icon: ICON.cog });
     tabs.push({ id: 'profile', label: L('navProfile'), icon: ICON.user });
     nav.innerHTML = '<div class="in">' + tabs.map(function (t) {
       return '<button class="tab" data-act="tab" data-tab="' + t.id + '"' + (S.tab === t.id ? ' aria-current="page"' : '') + '>' + t.icon + '<span>' + t.label + '</span></button>';
@@ -1161,7 +1199,7 @@
     else if (S.step === 'loading') app.innerHTML = '<div class="login"><p class="muted">' + L('loading') + '</p></div>';
     else if (S.step === 'login') app.innerHTML = viewLogin();
     else {
-      if (S.tab === 'admin' && !S.me.isAdmin) S.tab = 'trainings';
+      if (S.tab === 'admin' && !(S.me.isAdmin || S.me.isEventManager)) S.tab = 'trainings';
       if (S.tab === 'events' && S.me.isGuest) S.tab = 'trainings';
       app.innerHTML = S.tab === 'admin' ? viewAdmin() : S.tab === 'events' ? viewEvents() : S.tab === 'profile' ? viewProfile() : viewTrainings();
     }
@@ -1357,6 +1395,12 @@
     if (act_ === 'who') { S.open[D.key] = !S.open[D.key]; render(); return; }
     if (act_ === 'who-ev') { S.open['ev:' + D.id] = !S.open['ev:' + D.id]; render(); return; }
     if (act_ === 'sec') { S.sec[D.id] = !S.sec[D.id]; render(); return; }
+    if (act_ === 'info-toggle') {
+      S.info[D.id] = !S.info[D.id];
+      if (S.info[D.id]) S.sec[D.id] = true;
+      render();
+      return;
+    }
     if (act_ === 'add-toggle') {
       S.add[D.id] = !S.add[D.id];
       if (S.add[D.id]) S.sec[D.id] = true;
@@ -1403,6 +1447,19 @@
       return;
     }
 
+    /* Event-Aktionen: Admins und Event-Manager */
+    if (S.me && (S.me.isAdmin || S.me.isEventManager)) {
+      if (act_ === 'del-ev') {
+        if (!confirm(L('confirmDelEvent'))) return;
+        return act(function () { return sb.from('events').delete().eq('id', D.id); }, L('eventDeleted'));
+      }
+      if (act_ === 'cancel-ev') {
+        var evx = S.events.filter(function (x) { return x.id === D.id; })[0];
+        if (!evx) return;
+        return act(function () { return sb.from('events').update({ cancelled: !evx.cancelled }).eq('id', D.id); }, evx.cancelled ? L('evReactivated') : L('evCancelledMsg'));
+      }
+    }
+
     /* Admin-Aktionen */
     if (!S.me || !S.me.isAdmin) return;
     if (act_ === 'del-rule') {
@@ -1412,22 +1469,6 @@
     if (act_ === 'del-extra') {
       if (!confirm(L('confirmDelExtra'))) return;
       return act(function () { return sb.from('training_extras').delete().eq('id', D.id); }, L('extraDeleted'));
-    }
-    if (act_ === 'del-ev') {
-      if (!confirm(L('confirmDelEvent'))) return;
-      return act(function () { return sb.from('events').delete().eq('id', D.id); }, L('eventDeleted'));
-    }
-    if (act_ === 'cancel') {
-      var isOff = !!S.cancelled[D.key];
-      return act(function () {
-        return isOff ? sb.from('training_cancellations').delete().eq('training_key', D.key)
-                     : sb.from('training_cancellations').upsert({ training_key: D.key });
-      }, isOff ? L('trReactivated') : L('trCancelledMsg'));
-    }
-    if (act_ === 'cancel-ev') {
-      var ev = S.events.filter(function (x) { return x.id === D.id; })[0];
-      if (!ev) return;
-      return act(function () { return sb.from('events').update({ cancelled: !ev.cancelled }).eq('id', D.id); }, ev.cancelled ? L('evReactivated') : L('evCancelledMsg'));
     }
     if (act_ === 'reset-tr') {
       S.edit = null;
@@ -1444,7 +1485,12 @@
       return act(function () { return sb.rpc('remove_member', { target: D.id }); }, L('memberRemoved'));
     }
     if (act_ === 'set-guest') {
+      var tg = S.members.filter(function (m) { return m.id === D.id; })[0];
+      if (D.val === '1' && tg && (tg.isAdmin || tg.isEventManager) && !confirm(L('confirmGuestLoses', { name: tg.name }))) return;
       return act(function () { return sb.rpc('set_guest', { target: D.id, make_guest: D.val === '1' }); }, D.val === '1' ? L('guestGranted') : L('guestRevoked'));
+    }
+    if (act_ === 'set-em') {
+      return act(function () { return sb.rpc('set_event_manager', { target: D.id, make_manager: D.val === '1' }); }, D.val === '1' ? L('emGranted') : L('emRevoked'));
     }
     if (act_ === 'set-admin') {
       return act(function () { return sb.rpc('set_admin', { target: D.id, make_admin: D.val === '1' }); }, D.val === '1' ? L('adminGranted') : L('adminRevoked'));
@@ -1478,7 +1524,7 @@
       } catch (err) { console.error(err); toast(L('pinChangeFail')); }
       return;
     }
-    if (!S.me.isAdmin) return;
+    if (!S.me.isAdmin && !(S.me.isEventManager && (kind === 'event' || kind === 'edit-ev'))) return;
 
     if (kind === 'member') {
       S.busy = true;

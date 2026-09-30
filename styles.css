@@ -304,3 +304,19 @@
   .accchev .chev { width: 18px; height: 18px; transition: transform .2s; }
   .accchev.open .chev { transform: rotate(180deg); }
   @media (prefers-reduced-motion: reduce) { .accchev .chev { transition: none; } }
+
+  /* Rollen-Symbole: Krone (Mitglied/Gast), Stern (Admin), Weinglas (Event-Manager) */
+  .rolebtn { width: 40px; height: 40px; flex: 0 0 auto; border-radius: 10px; border: 1.5px solid var(--line); background: transparent; color: var(--muted); padding: 0; display: inline-flex; align-items: center; justify-content: center; }
+  .rolebtn svg { width: 24px; height: 24px; fill: none; }
+  .rolebtn.on.crown { color: var(--onink); background: var(--ink); border-color: var(--ink); }
+  .rolebtn.on.crown svg { fill: currentColor; }
+  .rolebtn.on.star { color: #E0A100; border-color: #E0A100; }
+  .rolebtn.on.star svg { fill: #E0A100; }
+  .rolebtn.on.glass { color: #B0345B; border-color: #B0345B; }
+  .rolebtn.on.glass svg path:first-child { fill: #B0345B; }
+  .rolebtn[disabled] { cursor: default; opacity: .85; }
+  .rolerow { display: flex; align-items: center; gap: 12px; padding: 6px 0; font-weight: 500; }
+
+  /* Info-Symbol in der Kopfzeile: Erklärungstext nur auf Wunsch */
+  .infobtn svg { width: 22px; height: 22px; }
+  .accbody > p.infotext { margin: 0 0 14px; padding: 10px 12px; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; color: var(--muted); font-size: .92rem; }
