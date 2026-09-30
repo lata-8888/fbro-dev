@@ -13,7 +13,7 @@ Mitglieder registrieren sich mit Handynummer (ohne SMS) und tragen sich für Tra
 | `index.html`, `styles.css`, `app.js` | die App |
 | `config.js` | **hier trägst du die Supabase-Werte ein** |
 | `supabase/schema.sql` | Tabellen und Zugriffsregeln für die Datenbank |
-| `manifest.webmanifest`, `sw.js`, `icons/` | machen die App installierbar |
+| `manifest.webmanifest`, `sw.js`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, `icon-maskable-512.png` | machen die App installierbar (Symbol und Name auf dem Startbildschirm). Der Ordner `icons/` enthält nur noch das kleine Browser-Symbol und Kopien des Logos. |
 | `.github/workflows/pages.yml` | veröffentlicht die App automatisch auf GitHub Pages |
 
 ## Einrichtung in 6 Schritten
@@ -77,10 +77,51 @@ Jede weitere Änderung an den Dateien wird automatisch veröffentlicht.
 
 ## App auf dem Handy installieren
 Link (oder QR-Code) an die Mitglieder verteilen, z. B. per WhatsApp.
-- **iPhone:** in Safari öffnen, unten auf **Teilen** tippen, dann **Zum Home-Bildschirm**.
+- **iPhone:** in **Safari** öffnen (nicht in Chrome oder in einer anderen App), unten auf **Teilen** tippen, dann **Zum Home-Bildschirm**. Der Name lautet «FBRO».
 - **Android:** in Chrome öffnen, im Menü **App installieren** wählen. Alternativ zeigt die App unter «Profil» einen Installations-Knopf.
 
-Als Vereinsname und Symbol erscheinen die Angaben aus `manifest.webmanifest` und `icons/`. Beides kannst du anpassen.
+Auf dem Startbildschirm erscheint das FBRO-Wappen mit dem Namen «FBRO». Auf dem iPhone kommt das Symbol aus `apple-touch-icon.png`, auf Android aus `icon-192.png`, `icon-512.png` und `icon-maskable-512.png`. Der Name kommt aus `index.html` (iPhone) beziehungsweise `manifest.webmanifest` (Android). Wer die App schon vor dem Logo-Update installiert hat, muss das Symbol einmal entfernen und die App neu zum Startbildschirm hinzufügen. Daten gehen dabei nicht verloren.
+
+**Auf Android erscheint ein Buchstabe oder ein falsches Symbol statt des Wappens?**
+1. Öffne im Chrome von Android `https://DEIN-NAME.github.io/REPOSITORY/icon-512.png` und `.../manifest.webmanifest`. Das Wappen muss erscheinen, und das Manifest muss als Text mit «FBRO» erscheinen. Bei «404» fehlt die Datei auf GitHub. Lade `icon-192.png`, `icon-512.png`, `icon-maskable-512.png` und `manifest.webmanifest` direkt ins Hauptverzeichnis des Repositorys hoch.
+2. Chrome speichert das Symbol beim Installieren. Entferne die alte App vom Startbildschirm (lange drücken, «Deinstallieren» beziehungsweise «Entfernen») und installiere sie neu über das Chrome-Menü. Eine bereits installierte App aktualisiert ihr Symbol oft erst nach ein bis zwei Tagen von selbst.
+3. Falls die Veröffentlichung über «GitHub Actions» läuft, ersetze auch `.github/workflows/pages.yml`. Einfacher ist es, unter Settings → Pages **«Deploy from a branch»** (Branch `main`, Ordner `/ (root)`) zu wählen. Dann wird alles veröffentlicht, was im Hauptverzeichnis liegt, und die Datei `.github/workflows/pages.yml` wird nicht mehr gebraucht.
+
+**Auf dem iPhone erscheint eine schwarze Kachel mit «T» statt des Wappens?** Dann konnte das iPhone die Bilddatei nicht laden. Das passiert, wenn die Datei auf GitHub fehlt oder die Seite noch die alte Version zeigt.
+1. Öffne in Safari `https://DEIN-NAME.github.io/REPOSITORY/apple-touch-icon.png`. Es muss das Wappen auf weissem Grund erscheinen. Bei «404» fehlt die Datei auf GitHub. Lade `apple-touch-icon.png` (liegt im Hauptordner des ZIP) direkt in das Repository hoch, ins Hauptverzeichnis neben `index.html`.
+2. Prüfe, dass `index.html` neu ist: In der Datei muss `apple-touch-icon.png?v=3` stehen.
+3. Wenn unter Settings → Pages «GitHub Actions» gewählt ist, ersetze auch `.github/workflows/pages.yml`, damit die neue Datei veröffentlicht wird. Bei «Deploy from a branch» ist das nicht nötig.
+4. Warte, bis die Veröffentlichung fertig ist (Reiter Actions: grüner Haken), und entferne das alte Symbol vom Home-Bildschirm.
+5. Öffne die App in einem **privaten Tab** von Safari und lege das Symbol dort neu an. So holt das iPhone alles frisch und nimmt nichts aus dem Zwischenspeicher.
+
+## Aufbau der App (Stand jetzt)
+- **FBRO-Trainings:** Die nächsten 20 Termine stehen direkt sichtbar da, nach Monaten gruppiert. Alle weiteren Termine (bis 12 Monate im Voraus) sind unter «Weitere Termine» eingeklappt. Vergangene Termine erscheinen nicht mehr. Die Anzahl änderst du in `config.js` bei `TRAININGS_VISIBLE`.
+- **FBRO-Events:** Alle kommenden Events, nach Monaten gruppiert. Es gibt keine Obergrenze. Der Kurzname «FBRO» steht in `config.js` bei `CLUB_SHORT`.
+- **Verwalten:** Die Bereiche «Montag Trainings», «Weitere Trainings», «Kommende Trainings», «Events» und «Mitglieder» sind einklappbar und anfangs zu.
+  - Bei «Montag Trainings», «Events» und «Mitglieder» steht neben dem Bereichsnamen ein **«+»**. Erst nach dem Tippen darauf erscheint das Erfassungsformular. Nach dem Speichern schliesst es sich wieder.
+  - «Weitere Trainings» enthält die zusätzlichen Termine (Turniere, Zusatztrainings) mit Liste und Formular. «Kommende Trainings» zeigt die Termine der Montag-Serie, die du einzeln ändern oder absagen kannst.
+  - Weitere Trainings und Events sind nicht begrenzt (getestet mit über 150 Einträgen).
+- **Handynummern:** Eingegeben werden dürfen `079 123 45 67`, `+41 79 123 45 67` oder `0041 79 …`. Leerschläge spielen keine Rolle. Im Feld und in allen Listen erscheint die Nummer im Schweizer Format `079 123 45 67`. Gespeichert wird intern das internationale Format.
+- **Mitglieder hinzufügen:** Name und Handynummer eingeben. Das Mitglied meldet sich danach nur mit der Handynummer an, der PIN sind die letzten 6 Ziffern. Einen Vereinscode braucht es dafür nicht.
+- **Mitglied entfernen:** Der Knopf «Entfernen» löscht das Konto samt Antworten. Das lässt sich nicht rückgängig machen.
+
+**Update einer bestehenden Installation:** Ersetze `app.js`, `styles.css` und `sw.js`. Deine `config.js` kannst du behalten. Falls darin `TRAININGS_VISIBLE: 12` steht, ändere den Wert auf 20. Führe zusätzlich `supabase/schema.sql` im SQL Editor erneut aus. Sie fügt die Spalte für die Sprache und die Gast-Rolle hinzu und erlaubt alle neun Sprachen. Ohne diesen Schritt funktioniert der Knopf «Gast» nicht. Ohne diesen Schritt funktioniert die Sprachauswahl nur auf dem jeweiligen Gerät und wird nicht im Profil gespeichert.
+
+## Rollen: Mitglied, Admin und Gast
+- **Mitglied:** sieht Trainings, Events und das eigene Profil und kann sich für alles ein- und austragen.
+- **Admin:** darf zusätzlich alles unter «Verwalten» ändern. Den Stern neben einem Namen tippen macht die Person zum Admin.
+- **Gast:** sieht nur die **Trainings** und das eigene **Profil**, keine Events und keinen Bereich «Verwalten». Gäste können sich bei Trainings weiterhin ein- und austragen. Admins legen einen Gast in «Verwalten → Mitglieder» mit dem Knopf **«Gast»** fest. Beim Hinzufügen eines neuen Mitglieds gibt es dafür die Option «Als Gast hinzufügen».
+- **Zusammenspiel:** Ein Admin ist nie Gast. Wer zum Admin gemacht wird, verliert den Gast-Status, und wer zum Gast gemacht wird, verliert die Admin-Rechte. Die eigenen Rechte kann man sich nicht selbst entziehen und sich auch nicht selbst zum Gast machen.
+- **Schutz in der Datenbank:** Die Sperre der Events gilt nicht nur in der App. Supabase liefert Gästen Events und die Antworten darauf gar nicht erst aus.
+
+## Sprachen
+Die App gibt es auf **Deutsch, Französisch, Englisch, Italienisch, Züridütsch, Ukrainisch, Boarisch (Bayerisch), Tschechisch und Niederländisch**.
+- **Auswahl:** Jede Person wählt ihre Sprache im Profil unter «Sprache». Auf der Anmeldeseite steht oben rechts ebenfalls eine Auswahl, damit man sich schon vor dem ersten Login in der eigenen Sprache zurechtfindet.
+- **Speicherung:** Die Sprache wird im Profil bei Supabase gespeichert und gilt deshalb auf allen Geräten. Beim ersten Login wird die Sprache des Handys übernommen (Deutsch, Französisch, Englisch, Italienisch, Ukrainisch, Tschechisch oder Niederländisch, sonst Deutsch). Züridütsch und Boarisch muss man selbst wählen.
+- **Datum:** Wochentage und Monate erscheinen in der gewählten Sprache. Bei Züridütsch («Mäntig», «Septämber») und Boarisch («Mondog», «Septemba») sind sie von Hand hinterlegt.
+- **Texte ändern:** Alle Texte stehen am Anfang von `app.js` im Abschnitt «Sprachen (Übersetzungen)», pro Sprache ein Block mit denselben Schlüsseln. Dort kannst du Formulierungen anpassen. Die Übersetzungen sind maschinell erstellt und sollten von Muttersprachlern gegengelesen werden, besonders Züridütsch, Boarisch, Ukrainisch und Tschechisch. Für Mundarten gibt es keine einheitliche Schreibweise. Verwendet wurde eine Zürcher beziehungsweise eine allgemein bairische Schreibweise.
+- **Neue Sprache:** Einen weiteren Block im Wörterbuch ergänzen und die Sprache in den Listen `LANGS`, `LANG_NAMES`, `LANG_LOCALE` und `LANG_HTML` eintragen (bei Mundarten ohne Intl-Sprache zusätzlich in `CUSTOM_DATES`). In `supabase/schema.sql` muss die Sprache ausserdem im `check`-Befehl bei `profiles_language_check` und im Trigger `handle_new_user` stehen. Danach das Schema erneut ausführen.
+- **Nicht übersetzt:** Bezeichnungen, die Admins selbst erfassen (Titel, Ort von Trainings und Events), und die Namen der Mitglieder.
 
 ## Termin im Handy-Kalender speichern
 Bei jedem Event gibt es den Knopf **Im Kalender speichern**. Die App erstellt eine Kalenderdatei (.ics) mit Titel, Ort, Datum, Uhrzeit und einer Erinnerung eine Stunde vorher.
