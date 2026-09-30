@@ -286,3 +286,14 @@
   .plusbtn[aria-pressed="true"] span { transform: rotate(45deg); }
   .addform { border-bottom: 1px solid var(--line); padding-bottom: 14px; margin-bottom: 8px; }
   @media (prefers-reduced-motion: reduce) { .acctoggle .chev, .plusbtn span { transition: none; } }
+
+  /* Sprachauswahl */
+  .langbar { display: flex; justify-content: flex-end; margin-bottom: 18px; }
+  .langsel { width: auto; min-width: 11rem; padding: 9px 12px; font-size: .95rem; }
+  .panel .langsel { width: 100%; font-size: 1.05rem; }
+
+  /* Gäste */
+  .badge.guest { background: var(--bg); color: var(--muted); border: 1px solid var(--line); }
+  .mini.guestbtn[aria-pressed="true"] { background: var(--ink); color: var(--onink); border-color: var(--ink); }
+  .check { display: flex; align-items: flex-start; gap: 10px; margin: 0 0 14px; font-size: .95rem; cursor: pointer; }
+  .check input { width: 22px; height: 22px; margin-top: 1px; flex: 0 0 auto; accent-color: var(--yes); }
