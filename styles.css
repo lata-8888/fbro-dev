@@ -313,10 +313,25 @@
   .rolebtn.on.star { color: #E0A100; border-color: #E0A100; }
   .rolebtn.on.star svg { fill: #E0A100; }
   .rolebtn.on.glass { color: #B0345B; border-color: #B0345B; }
-  .rolebtn.on.glass svg path:first-child { fill: #B0345B; }
+  .rolebtn.glass .liq { fill: none; }
+  .rolebtn.on.glass .liq { fill: #B0345B; }
   .rolebtn[disabled] { cursor: default; opacity: .85; }
   .rolerow { display: flex; align-items: center; gap: 12px; padding: 6px 0; font-weight: 500; }
 
   /* Info-Symbol in der Kopfzeile: Erklärungstext nur auf Wunsch */
   .infobtn svg { width: 22px; height: 22px; }
   .accbody > p.infotext { margin: 0 0 14px; padding: 10px 12px; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; color: var(--muted); font-size: .92rem; }
+
+  /* Symbol-Knöpfe: PIN zurücksetzen (Zahlenblock) und Entfernen (Abfalleimer) */
+  .rolebtn.iconbtn { color: var(--ink); }
+  .rolebtn.iconbtn svg { width: 22px; height: 22px; }
+  .rolebtn.iconbtn.danger { color: var(--no); border-color: color-mix(in srgb, var(--no) 45%, var(--line)); }
+
+  /* Bestätigungsdialog */
+  .dlg { position: fixed; inset: 0; z-index: 50; background: rgba(15, 22, 38, .55); display: flex; align-items: center; justify-content: center; padding: 20px; padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px)); }
+  .dlgcard { width: 100%; max-width: 400px; background: var(--surface); color: var(--ink); border-radius: 16px; padding: 20px; border: 1px solid var(--line); }
+  .dlgcard h3 { font-size: 1.45rem; margin: 0 0 8px; }
+  .dlgcard p { margin: 0 0 18px; color: var(--muted); }
+  .dlgbtns { display: flex; justify-content: flex-end; gap: 10px; flex-wrap: wrap; }
+  .dlgbtns .btn { min-width: 110px; }
+  .btn.dangerbtn { background: var(--no); color: #fff; }
