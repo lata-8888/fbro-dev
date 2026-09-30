@@ -20,10 +20,10 @@
   var wdName = function (v) { return L('wd' + v); };
 
   /* ---------- Sprachen (Übersetzungen) ---------- */
-  var LANGS = ['de', 'fr', 'en', 'it', 'gsw', 'uk', 'bar', 'cs', 'nl'];
-  var LANG_NAMES = { de: 'Deutsch', fr: 'Français', en: 'English', it: 'Italiano', gsw: 'Züridütsch', uk: 'Українська', bar: 'Boarisch', cs: 'Čeština', nl: 'Nederlands' };
+  var LANGS = ['de', 'fr', 'en', 'it', 'gsw', 'apz', 'uk', 'bar', 'cs', 'nl'];
+  var LANG_NAMES = { de: 'Deutsch', fr: 'Français', en: 'English', it: 'Italiano', gsw: 'Züridütsch', apz: 'Appezöllerisch', uk: 'Українська', bar: 'Boarisch', cs: 'Čeština', nl: 'Nederlands' };
   var LANG_LOCALE = { de: 'de-CH', fr: 'fr-CH', en: 'en-GB', it: 'it-CH', uk: 'uk-UA', cs: 'cs-CZ', nl: 'nl-NL' };
-  var LANG_HTML = { de: 'de-CH', fr: 'fr-CH', en: 'en', it: 'it-CH', gsw: 'gsw', uk: 'uk', bar: 'bar', cs: 'cs', nl: 'nl' };
+  var LANG_HTML = { de: 'de-CH', fr: 'fr-CH', en: 'en', it: 'it-CH', gsw: 'gsw', apz: 'gsw', uk: 'uk', bar: 'bar', cs: 'cs', nl: 'nl' };
 
   var DICT = {
     de: {
@@ -386,6 +386,78 @@
       navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäscht', ccOthers: 'Anderi', ccEmpty: 'No kei Aalässe erfasst.', ccNoDays: 'No kei Täg erfasst.', ccSummary: '{s} Schichte · {r} Rolle', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Aalass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktione', ccAddEvent: 'Aalass hinzuefüege', ccAddDay: 'Tag hinzuefüege', ccAddShift: 'Schicht hinzuefüege', ccAddRole: 'Rolle hinzuefüege', ccChange: 'Ändere', ccCopy: 'Kopiere', ccClose: 'Schliesse', ccNameOpt: 'Name (freiwillig)', ccStart: 'Start', ccEnd: 'Änd', ccActive: 'Aktiv', ccPersons: 'Verantwortlichi', ccSearch: 'Näme sueche', ccOtherPerson: 'Anderi Person (nöd i de App)', ccAdd: 'Hinzuefüege', ccDidYouMean: 'Meinsch {name}?', ccNobody: 'No niemer', ccConfirmDel: '«{name}» lösche? Alles, wo drunder erfasst isch, wird au glöscht.', ccConfirmDelRole: '«{name}» lösche?', ccCopyEventNote: 'D Kopie isch zerscht inaktiv. Alli Täg wärded um 52 Wuche verschobe, damit d Wuchetäg glich bliibed.', ccCopyDayNote: 'Schichte und Rolle wärded mit de Verantwortliche kopiert.', ccSaved: 'Gspeicheret', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} isch no nöd i de App. Mit de Handynummere chasch d Person als Gascht hinzuefüege.', ccAsGuest: 'Als Gascht hinzuefüege', ccNeedName: 'Gib en Name ii.', ccSetup: 'Für C&C muess s Datebank-Schema aktualisiert wärde (supabase/schema.sql).', ccCopySuffix: 'Kopie'
     },
 
+    apz: {
+      wd0: 'Sonntig', wd1: 'Mäntig', wd2: 'Zischtig', wd3: 'Mittwoch', wd4: 'Donnschtig', wd5: 'Friitig', wd6: 'Samschtig',
+      navTrainings: 'Trainings', navEvents: 'Events', navAdmin: 'Verwalte', navProfile: 'Profil',
+      titleTrainings: '{club}-Trainings', titleEvents: '{club}-Events',
+      subTrainings: 'Di nächschte {n} Termin', subEvents: 'Die Vereinsaalässe sönd planet', moreDates: 'Wiitere Termin ({n})',
+      emptyTrTitle: 'Es sönd no kei Trainings planet.', emptyTrAdmin: 'Leg im Bereich «Verwalte» en Trainingstag fescht.', emptyTrMember: 'D Admins leged d Trainingstäg fescht.',
+      emptyEvTitle: 'Im Momänt sönd kei Events planet.', emptyEvAdmin: 'Leg im Bereich «Verwalte» en Event aa.', emptyEvMember: 'D Admins leged neui Events aa.',
+      trainingWord: 'Training', trCancelled: 'Training abgsait', yes: 'Debii', no: 'Nüd debii', participants: 'Teilnehmer',
+      ariaTr: '{yes} Teilnehmer, {no} nüd debii. Teilnehmerlischte {action}', ariaEv: '{n} Teilnehmer. Teilnehmerlischte {action}',
+      listOpen: 'ufmache', listClose: 'zuemache',
+      hYes: 'Debii ({n})', hNo: 'Nüd debii ({n})', hOpen: 'No kei Antwort ({n})', hSolo: 'Elei debii ({n})', hDuo: 'Zu zwöit debii ({n} Mitglieder, {p} Persone)',
+      nobody: 'Niemer', you: '(du)', cancelledTag: 'Abgsait', cancelledLow: 'abgsait', changedLow: 'gänderet',
+      timePlace: '{time} Uhr, {place}', atTime: '{time} Uhr', calAdd: 'Im Kaländer spichere', solo: 'Elei', duo: 'Zu zwöit',
+      secRules: 'Mäntig-Trainings', secExtra: 'Wiitere Trainings', secUpcoming: 'Kommendi Trainings', secEvents: 'Events', secMembers: 'Mitglieder',
+      addNew: 'Neu erfasse', addClose: 'Erfassig zuemache',
+      adminTitle: 'Verwalte', adminSub: 'Nur für Admins sichtbar', rulesIntro: 'Standard-Trainings pro Woche',
+      weekday: 'Wochetag', time: 'Uhrziit', place: 'Ort', date: 'Datum', label: 'Bezeichnig',
+      phPlaceTraining: 'z. B. Turnhalle Schuelhuus Nord', addRule: 'Trainingstag hinzuefüege',
+      edit: 'Bearbeite', remove: 'Entferne', cancel: 'Absäge', reactivate: 'Reaktivierä', del: 'Lösche', save: 'Spichere', dismiss: 'Abbräche', reset: 'Zruggsetze',
+      editNote: 'Gilt nur für dä Termin. D Antworte vo de Mitglieder bliibed erhalte.',
+      rulesEmpty: 'No kein fester Trainingstag. Tipp uf «+», zom eine z erfasse.',
+      extraIntro: 'Die zuesätzliche Trainings sönd planet', extraEmpty: 'Kei zuesätzlichi Trainings planet.', extraDefaultTitle: 'Zuesatztraining',
+      phPlaceExtra: 'z. B. Sportaalag Süd', addExtra: 'Es wiiters Training hinzuefüege', upcomingEmpty: 'Kei kommendi Trainings.',
+      phEventTitle: 'z. B. Fondue-Plausch', phEventPlace: 'z. B. Vereinshuus', addEvent: 'Event hinzuefüege',
+      eventsEmpty: 'No kei Events. Tipp uf «+», zom de erscht z erfasse.',
+      membersIntro: 'Chrone: Mitglied oder Gascht (leeri Chrone). Zahnrad: Admin. Glas: Event-Manager. Die Rolle chönd nur Admins ändere. Gäscht gsehnd nur d Trainings ond s Profil, kei Events. De Standard-PIN sönd di letschte 6 Ziffere vo de Handynummere.',
+      memberAdd: 'Mitglied hinzuefüege', fullName: 'Vor- ond Nachname', phone: 'Handynummere',
+      memberAddNote: 'S Mitglied meldet sich nur mit de Handynummere aa. De PIN sönd di letschte 6 Ziffere.',
+      selfAdmin: 'Du bisch Admin. Du chasch dir d Rächt nüd säber entzieh.', revokeAdmin: 'Admin-Rächt entzieh: {name}', makeAdmin: 'Zom Admin mache: {name}',
+      adminTag: 'Admin', resetPin: 'PIN zruggsetze',
+      profileTitle: 'Profil', nameLabel: 'Name',
+      installTitle: 'App installiere', installHint: 'Leg d App uf dä Startbildschirm, denn öffnet si sich im Vollbild.', installBtn: 'Uf em Startbildschirm spichere',
+      installIos: 'Tipp z underscht i Safari uf «Teile» ond denn uf «Zom Home-Bildschirm». Danach öffnet sich d App im Vollbild.',
+      nameChange: 'Name ändere', nameSave: 'Name spichere',
+      pinChange: 'PIN ändere', pinIntro: 'Standardmässig sönd es di letschte 6 Ziffere vo dinere Handynummere. Wenn du de PIN änderisch, muesch en bim Aamälde igäh.',
+      pinNew: 'Neue PIN (6 Ziffere)', pinSave: 'PIN spichere', pinDefault: 'Uf Standard-PIN zruggsetze', logout: 'Abmälde',
+      language: 'Sprach', languageHint: 'Wähl d Sprach, i dere du d App bruuche wottsch.',
+      loginSub: 'Teilnahm',
+      loginLeadReg: 'Erstell dis Konto mit Name, Handynummere ond Vereinscode. Din PIN sönd di letschte 6 Ziffere vo dinere Handynummere.',
+      loginLead: 'Mäld di mit dinere Handynummere aa.', pinOptional: 'PIN (nur nötig, wenn du en gänderet hesch)', clubCode: 'Vereinscode',
+      register: 'Konto erstelle', signIn: 'Aamälde', haveAccount: 'I ha scho es Konto', firstTime: 'Zom erschte Mal da? Konto erstelle',
+      setupTitle: 'Iirichtig nötig', setupLead: 'D App isch no nüd mit Supabase verbunde.',
+      setupStep1: 'Öffne d Datei <code>config.js</code>.', setupStep2: 'Träg <code>SUPABASE_URL</code> ond <code>SUPABASE_ANON_KEY</code> us dim Supabase-Projekt ii.',
+      setupStep3: 'Lad d Site neu.', setupNote: 'D genau Aaleitig staht i de Datei README.md.',
+      loading: 'Am Lade …',
+      errFailed: 'Das het nüd klappt', respWithdrawn: 'Antwort zruggzoge', youIn: 'Du bisch debii', youOut: 'Du bisch nüd debii', youSolo: 'Du chunsch elei', youDuo: 'Du chunsch zu zwöit',
+      phoneInvalid: 'Bitte gib e gültigi Handynummere ii, z. B. 079 123 45 67.', alreadyReg: 'Die Nummere isch scho registriert.',
+      memberAdded: '{name} isch hinzuegfüegt worde.', addFailed: 'Hinzuefüege nüd möglich: {reason}', unknownError: 'Unbekannte Fähler',
+      authInvalid: 'Handynummere oder PIN stimmt nüd. Wenn du din PIN gänderet hesch, träg en im Fäld PIN ii.',
+      authAlready: 'Die Nummere isch scho registriert. Bitte mäld di aa.', authCode: 'Registrierig nüd möglich. Bitte prüef de Vereinscode.',
+      authRate: 'Zviel Versüech. Bitte wart en Momänt.', authPin: 'De PIN muess us 6 Ziffere bestah.', authFail: 'Aamäldig fählgschlage. Bitte probier s nomal.',
+      pinExact: 'De PIN muess us gnau 6 Ziffere bestah.', confirmEmailOff: 'Bitte schalt i Supabase «Confirm email» ab (gsehsch README).',
+      loadFail: 'D Date hend nüd chöne glade werde. Isch s Datebank-Schema uusgfüehrt worde?',
+      calFile: 'Öffne d Datei «{name}», zom de Termin im Kaländer z spichere.', calFail: 'De Kaländereintrag het nüd chöne erstellt werde.',
+      pinResetOk: 'PIN uf Standard zruggsetzt', pinResetFail: 'De PIN het nüd chöne zruggsetzt werde.',
+      confirmDelRule: 'Dä Trainingstag entferne? Alli kommende Termin vo dere Serie verschwindet.', ruleRemoved: 'Trainingstag entfernt',
+      confirmDelExtra: 'Das Training lösche?', extraDeleted: 'Training glöscht',
+      confirmDelEvent: 'Dä Event lösche? Au alli Antworte werded glöscht.', eventDeleted: 'Event glöscht',
+      trReactivated: 'Training wieder aktiv', trCancelledMsg: 'Training abgsait', evReactivated: 'Event wieder aktiv', evCancelledMsg: 'Event abgsait',
+      changeReset: 'Änderig zruggsetzt', confirmResetPin: 'De PIN vo {name} uf di letschte 6 Ziffere vo de Handynummere zruggsetze?', thisMemberDat: 'däm Mitglied',
+      pinReset: 'PIN zruggsetzt', confirmRemove: '{name} entferne? S Konto ond alli Antworte werded glöscht.', thisMember: 'Das Mitglied', memberRemoved: 'Mitglied entfernt',
+      adminGranted: 'Admin-Rächt vergäh', adminRevoked: 'Admin-Rächt entzoge', nameSaved: 'Name gspeicheret', pinChanged: 'PIN gänderet', pinChangeFail: 'De PIN het nüd chöne gänderet werde.',
+      ruleAdded: 'Trainingstag hinzuegfüegt', extraAdded: 'Training hinzuegfüegt', eventAdded: 'Event hinzuegfüegt',
+      ruleChanged: 'Trainingstag gänderet', trChanged: 'Training gänderet', eventChanged: 'Event gänderet', langSaved: 'Sprach gspeicheret',
+      guestTag: 'Gascht', makeGuest: 'Als Gascht festlege: {name}', revokeGuest: 'Gascht-Status entferne: {name}', guestGranted: 'Als Gascht festgleit', guestRevoked: 'Gascht-Status entfernt',
+      guestCheck: 'Als Gascht hinzuefüege (gseht nur Trainings ond Profil)', guestInfo: 'Du hesch en Gascht-Zuegang. Du gsehsch d Trainings ond dis Profil.',
+      memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zom Event-Manager mache: {name}', revokeEm: 'Event-Manager-Rächt entzieh: {name}', emGranted: 'Als Event-Manager festgleit', emRevoked: 'Event-Manager-Rächt entzoge', confirmGuestLoses: '{name} het Admin- oder Event-Manager-Rächt. Als Gascht festlege entzieht die Rächt. Wiiter?', selfMember: 'Du bisch Mitglied. Du chasch di nüd säber zom Gascht mache.', rolesTitle: 'Rolle', emSub: 'Do verwaltisch du d Events.',
+      infoShow: 'Erklärig aazeige', infoHide: 'Erklärig verstecke',
+      ok: 'OK',
+      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäscht', ccOthers: 'Anderi', ccEmpty: 'No kei Aalässe erfasst.', ccNoDays: 'No kei Täg erfasst.', ccSummary: '{s} Schichte · {r} Rolle', ccLvlAll: 'Chränzli ond Chilbi', ccLvlEvent: 'Aalass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktione', ccAddEvent: 'Aalass hinzuefüege', ccAddDay: 'Tag hinzuefüege', ccAddShift: 'Schicht hinzuefüege', ccAddRole: 'Rolle hinzuefüege', ccChange: 'Ändere', ccCopy: 'Kopiere', ccClose: 'Schliesse', ccNameOpt: 'Name (freiwillig)', ccStart: 'Start', ccEnd: 'Änd', ccActive: 'Aktiv', ccPersons: 'Verantwortlichi', ccSearch: 'Näme sueche', ccOtherPerson: 'Anderi Person (nüd i de App)', ccAdd: 'Hinzuefüege', ccDidYouMean: 'Meinsch {name}?', ccNobody: 'No niemer', ccConfirmDel: '«{name}» lösche? Alles, wo drunder erfasst isch, wird au glöscht.', ccConfirmDelRole: '«{name}» lösche?', ccCopyEventNote: 'D Kopie isch zerscht inaktiv. Alli Täg werded um 52 Woche verschobe, damit d Wochetäg glich bliibed.', ccCopyDayNote: 'Schichte ond Rolle werded mit de Verantwortliche kopiert.', ccSaved: 'Gspeicheret', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} isch no nüd i de App. Mit de Handynummere chasch d Person als Gascht hinzuefüege.', ccAsGuest: 'Als Gascht hinzuefüege', ccNeedName: 'Gib en Name ii.', ccSetup: 'Für C&C muess s Datebank-Schema aktualisiert werde (supabase/schema.sql).', ccCopySuffix: 'Kopie'
+    },
+
     uk: {
       wd0: 'Неділя', wd1: 'Понеділок', wd2: 'Вівторок', wd3: 'Середа', wd4: 'Четвер', wd5: 'П’ятниця', wd6: 'Субота',
       navTrainings: 'Тренування', navEvents: 'Події', navAdmin: 'Керування', navProfile: 'Профіль',
@@ -703,6 +775,11 @@
   var CUSTOM_DATES = {
     gsw: {
       days: ['Su', 'Mä', 'Zi', 'Mi', 'Du', 'Fr', 'Sa'],
+      months: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'Auguscht', 'Septämber', 'Oktober', 'Novämber', 'Dezämber'],
+      short: ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']
+    },
+    apz: {
+      days: ['So', 'Mä', 'Zi', 'Mi', 'Do', 'Fr', 'Sa'],
       months: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'Auguscht', 'Septämber', 'Oktober', 'Novämber', 'Dezämber'],
       short: ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']
     },
@@ -1353,7 +1430,8 @@
           var dayLabel = ccDate(d.day) + (d.name ? ' – ' + d.name : '');
           html += '<div class="ccday"><div class="ccdh">' +
             '<button class="ccdt" data-act="cc-fold" data-id="' + esc(d.id) + '" aria-expanded="' + !df + '"><b>' + esc(ccDate(d.day)) + '</b>' + (d.name ? ' <span class="ccdn">' + esc(d.name) + '</span>' : '') + '</button>' +
-            ccDots('day', d.id, dayLabel) + '</div>';
+            ccDots('day', d.id, dayLabel) +
+            '<button class="ccfold ccfold-day' + (df ? '' : ' open') + '" data-act="cc-fold" data-id="' + esc(d.id) + '" aria-expanded="' + !df + '" aria-label="' + esc(dayLabel) + '">' + ICON.chev + '</button></div>';
           if (df) {
             html += '<div class="ccsum">' + L('ccSummary', { s: D.shifts.length, r: nRoles }) + '</div>';
           } else {

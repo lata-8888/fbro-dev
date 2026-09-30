@@ -418,3 +418,5 @@
   @media (prefers-reduced-motion: reduce) { .ccfold .chev { transition: none; } }
   .cctm { white-space: nowrap; flex: 0 0 auto; }
   .ccsn { min-width: 0; overflow-wrap: anywhere; }
+  .ccfold-day { width: 30px; height: 30px; color: var(--muted); }
+  .ccfold-day .chev { width: 16px; height: 16px; }
