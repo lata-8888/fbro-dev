@@ -297,3 +297,10 @@
   .mini.guestbtn[aria-pressed="true"] { background: var(--ink); color: var(--onink); border-color: var(--ink); }
   .check { display: flex; align-items: flex-start; gap: 10px; margin: 0 0 14px; font-size: .95rem; cursor: pointer; }
   .check input { width: 22px; height: 22px; margin-top: 1px; flex: 0 0 auto; accent-color: var(--yes); }
+
+  /* Kopfzeile: Titel links, «+» daneben, Ein-/Ausklapp-Pfeil ganz rechts */
+  .acctoggle { justify-content: flex-start; }
+  .accchev { flex: 0 0 auto; width: 36px; height: 40px; background: none; border: 0; padding: 0; display: inline-flex; align-items: center; justify-content: center; color: inherit; }
+  .accchev .chev { width: 18px; height: 18px; transition: transform .2s; }
+  .accchev.open .chev { transform: rotate(180deg); }
+  @media (prefers-reduced-motion: reduce) { .accchev .chev { transition: none; } }

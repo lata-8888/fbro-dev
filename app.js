@@ -1011,10 +1011,13 @@
 
   function accordion(id, title, count, body, canAdd) {
     var open = !!S.sec[id], adding = !!S.add[id];
+    var addLabel = adding ? L('addClose') : L('addNew');
+    // Reihenfolge: Titel links, danach «+» (falls vorhanden), ganz rechts der Pfeil zum Ein-/Ausklappen
     return '<section class="panel acc"><div class="acchead">' +
       '<button class="acctoggle" data-act="sec" data-id="' + id + '" aria-expanded="' + open + '">' +
-      '<span class="t">' + title + (count != null ? ' <span class="cnt">(' + count + ')</span>' : '') + '</span>' + ICON.chev + '</button>' +
-      (canAdd ? '<button class="plusbtn" data-act="add-toggle" data-id="' + id + '" aria-pressed="' + adding + '" aria-label="' + (adding ? L('addClose') : L('addNew')) + '" title="' + (adding ? L('addClose') : L('addNew')) + '"><span>+</span></button>' : '') +
+      '<span class="t">' + title + (count != null ? ' <span class="cnt">(' + count + ')</span>' : '') + '</span></button>' +
+      (canAdd ? '<button class="plusbtn" data-act="add-toggle" data-id="' + id + '" aria-pressed="' + adding + '" aria-label="' + addLabel + '" title="' + addLabel + '"><span>+</span></button>' : '') +
+      '<button class="accchev' + (open ? ' open' : '') + '" data-act="sec" data-id="' + id + '" aria-hidden="true" tabindex="-1">' + ICON.chev + '</button>' +
       '</div>' + (open ? '<div class="accbody">' + body + '</div>' : '') + '</section>';
   }
 
