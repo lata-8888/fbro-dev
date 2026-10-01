@@ -29,7 +29,7 @@
     de: {
       wd0: 'Sonntag', wd1: 'Montag', wd2: 'Dienstag', wd3: 'Mittwoch', wd4: 'Donnerstag', wd5: 'Freitag', wd6: 'Samstag',
       navTrainings: 'Trainings', navEvents: 'Events', navAdmin: 'Admin', navProfile: 'Profil',
-      titleTrainings: 'FBRO Trainingsplan', titleEvents: 'FBRO Vereinsanlässe',
+      titleTrainings: 'Trainingsplan', titleEvents: 'Vereinsanlässe',
       subTrainings: 'Die nächsten {n} Termine', subEvents: 'Folgende Vereinsanlässe sind geplant', moreDates: 'Weitere Termine ({n})',
       emptyTrTitle: 'Noch keine Trainings geplant.', emptyTrAdmin: 'Lege im Bereich «Verwalten» einen Trainingstag fest.', emptyTrMember: 'Die Admins legen die Trainingstage fest.',
       emptyEvTitle: 'Aktuell sind keine Events geplant.', emptyEvAdmin: 'Lege im Bereich «Verwalten» einen Event an.', emptyEvMember: 'Die Admins legen neue Events an.',
@@ -39,9 +39,9 @@
       hYes: 'Dabei ({n})', hNo: 'Nicht dabei ({n})', hOpen: 'Noch keine Antwort ({n})', hSolo: 'Allein dabei ({n})', hDuo: 'Zu zweit dabei ({n} Mitglieder, {p} Personen)',
       nobody: 'Niemand', you: '(du)', cancelledTag: 'Abgesagt', cancelledLow: 'abgesagt', changedLow: 'geändert',
       timePlace: '{time} Uhr, {place}', atTime: '{time} Uhr', calAdd: 'Im Kalender speichern', solo: 'Allein', duo: 'Zu zweit',
-      secRules: 'Standard Training Setup', secExtra: 'Extra Training Setup', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Events', secMembers: 'Gruppen',
+      secRules: 'Standard Training', secExtra: 'Extra Training', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Events', secMembers: 'Gruppen',
       addNew: 'Neu erfassen', addClose: 'Erfassung schliessen',
-      adminTitle: 'FBRO Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'FBRO Jass-Masters', adminSub: 'Nur für Admins sichtbar', rulesIntro: 'Standard-Trainings pro Woche',
+      adminTitle: 'Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'Jass-Masters', adminSub: 'Nur für Admins sichtbar', rulesIntro: 'Standard-Trainings pro Woche',
       weekday: 'Wochentag', time: 'Uhrzeit', place: 'Ort', date: 'Datum', label: 'Bezeichnung',
       phPlaceTraining: 'z. B. Turnhalle Schulhaus Nord', addRule: 'Trainingstag hinzufügen',
       edit: 'Bearbeiten', remove: 'Entfernen', cancel: 'Absagen', reactivate: 'Reaktivieren', del: 'Löschen', save: 'Speichern', dismiss: 'Abbrechen', reset: 'Zurücksetzen',
@@ -92,19 +92,19 @@
       ruleChanged: 'Trainingstag geändert', trChanged: 'Training geändert', eventChanged: 'Event geändert', langSaved: 'Sprache gespeichert',
       guestTag: 'Gast', makeGuest: 'Als Gast festlegen: {name}', revokeGuest: 'Gast-Status entfernen: {name}', guestGranted: 'Als Gast festgelegt', guestRevoked: 'Gast-Status entfernt',
       guestCheck: 'Als Gast hinzufügen (sieht nur Trainings und Profil)', guestInfo: 'Du hast Gast-Zugang. Du siehst die Trainings und dein Profil.',
-      memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zum Event-Manager machen: {name}', revokeEm: 'Event-Manager-Rechte entziehen: {name}', emGranted: 'Als Event-Manager festgelegt', emRevoked: 'Event-Manager-Rechte entzogen', confirmGuestLoses: '{name} hat Admin-, Event-Manager- oder Jass-Master-Rechte. Als Gast festlegen entzieht diese Rechte. Fortfahren?', selfMember: 'Du bist Mitglied. Du kannst dich nicht selbst zum Gast machen.', rolesTitle: 'Rollen', emSub: 'Hier verwaltest du die Events.',
+      memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zum Event-Manager machen: {name}', revokeEm: 'Event-Manager-Rechte entziehen: {name}', emGranted: 'Als Event-Manager festgelegt', emRevoked: 'Event-Manager-Rechte entzogen', confirmGuestLoses: '{name} hat Admin-, Chilbi Manager-, Chränzli Manager- oder Jass Manager-Rechte. Als Gast festlegen entzieht diese Rechte. Fortfahren?', selfMember: 'Du bist Mitglied. Du kannst dich nicht selbst zum Gast machen.', rolesTitle: 'Rollen', emSub: 'Hier verwaltest du die Events.',
       infoShow: 'Erklärung anzeigen', infoHide: 'Erklärung ausblenden',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäste', ccOthers: 'Andere', ccEmpty: 'Noch keine Anlässe erfasst.', ccNoDays: 'Noch keine Tage erfasst.', ccSummary: '{s} Schichten · {r} Rollen', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Anlass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktionen', ccAddEvent: 'Anlass hinzufügen', ccAddDay: 'Tag hinzufügen', ccAddShift: 'Schicht hinzufügen', ccAddRole: 'Rolle hinzufügen', ccChange: 'Ändern', ccCopy: 'Kopieren', ccClose: 'Schliessen', ccNameOpt: 'Name (optional)', ccStart: 'Start', ccEnd: 'Ende', ccActive: 'Aktiv', ccPersons: 'Verantwortliche', ccSearch: 'Namen suchen', ccOtherPerson: 'Andere Person (nicht in der App)', ccAdd: 'Hinzufügen', ccDidYouMean: 'Meinst du {name}?', ccNobody: 'Noch niemand', ccConfirmDel: '«{name}» löschen? Alles, was darunter erfasst ist, wird ebenfalls gelöscht.', ccConfirmDelRole: '«{name}» löschen?', ccCopyEventNote: 'Die Kopie ist zuerst inaktiv. Alle Tage werden um 52 Wochen verschoben, damit die Wochentage gleich bleiben.', ccCopyDayNote: 'Schichten und Rollen werden mit den Verantwortlichen kopiert.', ccSaved: 'Gespeichert', ccCopied: 'Kopiert', ccDeleted: 'Gelöscht', ccNotInApp: '{name} ist noch nicht in der App. Mit der Handynummer kannst du die Person als Gast hinzufügen.', ccAsGuest: 'Als Gast hinzufügen', ccNeedName: 'Gib einen Namen ein.', ccSetup: 'Für C&C muss das Datenbank-Schema aktualisiert werden (supabase/schema.sql).', ccCopySuffix: 'Kopie',
+      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäste', ccOthers: 'Andere', ccEmpty: 'Noch keine Anlässe erfasst.', ccNoDays: 'Noch keine Tage erfasst.', ccSummary: '{s} Schichten · {r} Rollen', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Anlass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktionen', ccAddEvent: 'Anlass hinzufügen', ccAddDay: 'Tag hinzufügen', ccAddShift: 'Schicht hinzufügen', ccAddRole: 'Rolle hinzufügen', ccChange: 'Ändern', ccCopy: 'Kopieren', ccClose: 'Schliessen', ccNameOpt: 'Name (optional)', ccStart: 'Start', ccEnd: 'Ende', ccActive: 'Aktiv', ccPersons: 'Verantwortliche', ccSearch: 'Namen suchen', ccOtherPerson: 'Andere Person (nicht in der App)', ccAdd: 'Hinzufügen', ccDidYouMean: 'Meinst du {name}?', ccNobody: 'Noch niemand', ccConfirmDel: '«{name}» löschen? Alles, was darunter erfasst ist, wird ebenfalls gelöscht.', ccConfirmDelRole: '«{name}» löschen?', ccCopyEventNote: 'Die Kopie ist zuerst inaktiv. Alle Tage werden um 52 Wochen verschoben, damit die Wochentage gleich bleiben.', ccCopyDayNote: 'Schichten und Rollen werden mit den Verantwortlichen kopiert.', ccSaved: 'Gespeichert', ccCopied: 'Kopiert', ccDeleted: 'Gelöscht', ccNotInApp: '{name} ist noch nicht in der App. Mit der Handynummer kannst du die Person als Gast hinzufügen.', ccAsGuest: 'Als Gast hinzufügen', ccNeedName: 'Gib einen Namen ein.', ccSetup: 'Für C&C muss das Datenbank-Schema aktualisiert werden (supabase/schema.sql).', ccCopySuffix: 'Kopie', ccPrint: 'PDF teilen', ccPdfBuilding: 'PDF wird erstellt…', ccPdfFailed: 'PDF konnte nicht erstellt werden.',
       mMakeAdmin: 'Zum Admin machen', mRevokeAdmin: 'Admin-Rechte entziehen', mMakeEm: 'Zum Event-Manager machen', mRevokeEm: 'Event-Manager-Rechte entziehen', mMakeGuest: 'Zum Gast machen', mMakeMember: 'Zum Mitglied machen', mEdit: 'Name und Handynummer ändern', mEditNote: 'Bei einer neuen Handynummer gilt wieder der Standard-PIN: die letzten 6 Ziffern der neuen Nummer.', mSaved: 'Gespeichert', mDelete: 'Mitglied löschen', mPhoneTaken: 'Diese Handynummer gehört bereits einer anderen Person.',
-      navJass: 'Jass', jsParticipants: 'Teilnehmer', jsSchedule: 'Spielplan', jsRanking: 'Tagesrangliste', jsRound: 'Runde {n}', jsTable: 'Tisch {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Spieler {n}', jsFree: 'frei', jsEmpty: 'Noch kein Jassmasters erfasst.', jsNoDays: 'Noch kein Datum erfasst.', jsAddSeries: 'Jassmasters hinzufügen', jsAddDay: 'Datum hinzufügen', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jasstag', jsPick: 'Spieler {n} wählen', jsClear: 'Platz freigeben', jsAlready: 'bereits Spieler {n}', jsPoints: 'Punkte', jsGames: '{n} Spiele', jsGame: '{n} Spiel', jsNoPoints: 'Noch keine Punkte erfasst.', jsHint: 'Trage die Punkte beim Siegerteam ein. Das andere Team erhält sie automatisch negativ.', jsSetup: 'Für Jass muss das Datenbank-Schema aktualisiert werden (supabase/schema.sql).',
-      jmTag: 'Jass-Master', mMakeJm: 'Zum Jass-Master machen', mRevokeJm: 'Jass-Master-Rechte entziehen', jmGranted: 'Als Jass-Master festgelegt', jmRevoked: 'Jass-Master-Rechte entzogen', jsUpcoming: 'Anstehende Jassmaster', jsPast: 'Vergangene Jassmaster'
+      navJass: 'Jass', jsParticipants: 'Teilnehmer', jsSchedule: 'Spielplan', jsRanking: 'Tagesrangliste', jsRound: 'Runde {n}', jsTable: 'Tisch {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Spieler {n}', jsFree: 'frei', jsEmpty: 'Noch kein Jassmasters erfasst.', jsNoDays: 'Noch kein Datum erfasst.', jsAddSeries: 'Jassmasters hinzufügen', jsAddDay: 'Datum hinzufügen', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jasstag', jsPick: 'Spieler {n} wählen', jsClear: 'Platz freigeben', jsAlready: 'bereits Spieler {n}', jsPoints: 'Punkte', jsGames: '{n} Spiele', jsPtsAbbr: 'Pkt.', jsGame: '{n} Spiel', jsNoPoints: 'Noch keine Punkte erfasst.', jsHint: 'Trage die Punkte beim Siegerteam ein. Das andere Team erhält sie automatisch negativ.', jsSetup: 'Für Jass muss das Datenbank-Schema aktualisiert werden (supabase/schema.sql).',
+      jmTag: 'Jass Manager', mMakeJm: 'Zum Jass Manager machen', mRevokeJm: 'Jass Manager-Rechte entziehen', jmGranted: 'Als Jass Manager festgelegt', jmRevoked: 'Jass Manager-Rechte entzogen', cmTag: 'Chilbi Manager', crmTag: 'Chränzli Manager', mMakeCm: 'Zum Chilbi Manager machen', mRevokeCm: 'Chilbi Manager-Rechte entziehen', mMakeCrm: 'Zum Chränzli Manager machen', mRevokeCrm: 'Chränzli Manager-Rechte entziehen', cmGranted: 'Als Chilbi Manager festgelegt', cmRevoked: 'Chilbi Manager-Rechte entzogen', crmGranted: 'Als Chränzli Manager festgelegt', crmRevoked: 'Chränzli Manager-Rechte entzogen', grpActive: 'Aktivmitglieder', grpPassive: 'Passivmitglieder', mMakePassive: 'Zum Passivmitglied machen', mMakeActive: 'Zum Aktivmitglied machen', passiveSet: 'Als Passivmitglied festgelegt', activeSet: 'Als Aktivmitglied festgelegt', jsUpcoming: 'Anstehende Jassmaster', jsPast: 'Vergangene Jassmaster'
     },
 
     fr: {
       wd0: 'Dimanche', wd1: 'Lundi', wd2: 'Mardi', wd3: 'Mercredi', wd4: 'Jeudi', wd5: 'Vendredi', wd6: 'Samedi',
       navTrainings: 'Entraînements', navEvents: 'Événements', navAdmin: 'Admin', navProfile: 'Profil',
-      titleTrainings: 'FBRO Trainingsplan', titleEvents: 'FBRO Vereinsanlässe',
+      titleTrainings: 'Trainingsplan', titleEvents: 'Vereinsanlässe',
       subTrainings: 'Les {n} prochaines séances', subEvents: 'Voici les événements du club prévus', moreDates: 'Autres dates ({n})',
       emptyTrTitle: 'Aucun entraînement prévu pour le moment.', emptyTrAdmin: 'Définis un jour d’entraînement dans la section « Gérer ».', emptyTrMember: 'Les admins définissent les jours d’entraînement.',
       emptyEvTitle: 'Aucun événement prévu actuellement.', emptyEvAdmin: 'Crée un événement dans la section « Gérer ».', emptyEvMember: 'Les admins créent les nouveaux événements.',
@@ -114,9 +114,9 @@
       hYes: 'Présents ({n})', hNo: 'Absents ({n})', hOpen: 'Pas encore de réponse ({n})', hSolo: 'Seul(e) ({n})', hDuo: 'À deux ({n} membres, {p} personnes)',
       nobody: 'Personne', you: '(toi)', cancelledTag: 'Annulé', cancelledLow: 'annulé', changedLow: 'modifié',
       timePlace: '{time}, {place}', atTime: '{time}', calAdd: 'Ajouter au calendrier', solo: 'Seul(e)', duo: 'À deux',
-      secRules: 'Standard Training Setup', secExtra: 'Extra Training Setup', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Événements', secMembers: 'Gruppen',
+      secRules: 'Standard Training', secExtra: 'Extra Training', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Événements', secMembers: 'Gruppen',
       addNew: 'Ajouter', addClose: 'Fermer le formulaire',
-      adminTitle: 'FBRO Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'FBRO Jass-Masters', adminSub: 'Visible uniquement pour les admins', rulesIntro: 'Entraînements standard par semaine',
+      adminTitle: 'Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'Jass-Masters', adminSub: 'Visible uniquement pour les admins', rulesIntro: 'Entraînements standard par semaine',
       weekday: 'Jour de la semaine', time: 'Heure', place: 'Lieu', date: 'Date', label: 'Désignation',
       phPlaceTraining: 'p. ex. salle de gym de l’école Nord', addRule: 'Ajouter un jour d’entraînement',
       edit: 'Modifier', remove: 'Retirer', cancel: 'Annuler', reactivate: 'Réactiver', del: 'Supprimer', save: 'Enregistrer', dismiss: 'Fermer', reset: 'Réinitialiser',
@@ -167,19 +167,19 @@
       ruleChanged: 'Jour d’entraînement modifié', trChanged: 'Entraînement modifié', eventChanged: 'Événement modifié', langSaved: 'Langue enregistrée',
       guestTag: 'Invité', makeGuest: 'Définir comme invité : {name}', revokeGuest: 'Retirer le statut d’invité : {name}', guestGranted: 'Défini comme invité', guestRevoked: 'Statut d’invité retiré',
       guestCheck: 'Ajouter comme invité (ne voit que les entraînements et le profil)', guestInfo: 'Tu as un accès invité. Tu vois les entraînements et ton profil.',
-      memberTag: 'Membre', emTag: 'Responsable des événements', makeEm: 'Nommer responsable des événements : {name}', revokeEm: 'Retirer les droits de responsable des événements : {name}', emGranted: 'Défini comme responsable des événements', emRevoked: 'Droits de responsable des événements retirés', confirmGuestLoses: '{name} a des droits d’admin, de responsable des événements ou de maître du jass. Le définir comme invité les retire. Continuer ?', selfMember: 'Tu es membre. Tu ne peux pas te définir toi-même comme invité.', rolesTitle: 'Rôles', emSub: 'Ici, tu gères les événements.',
+      memberTag: 'Membre', emTag: 'Responsable des événements', makeEm: 'Nommer responsable des événements : {name}', revokeEm: 'Retirer les droits de responsable des événements : {name}', emGranted: 'Défini comme responsable des événements', emRevoked: 'Droits de responsable des événements retirés', confirmGuestLoses: '{name} hat Admin-, Chilbi Manager-, Chränzli Manager- oder Jass Manager-Rechte. Als Gast festlegen entzieht diese Rechte. Fortfahren?', selfMember: 'Tu es membre. Tu ne peux pas te définir toi-même comme invité.', rolesTitle: 'Rôles', emSub: 'Ici, tu gères les événements.',
       infoShow: 'Afficher l’explication', infoHide: 'Masquer l’explication',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Membres', ccGuests: 'Invités', ccOthers: 'Autres', ccEmpty: 'Aucune manifestation pour l’instant.', ccNoDays: 'Aucun jour pour l’instant.', ccSummary: '{s} créneaux · {r} rôles', ccLvlAll: 'Chränzli et Chilbi', ccLvlEvent: 'Manifestation', ccLvlDay: 'Jour', ccLvlShift: 'Créneau', ccLvlRole: 'Rôle', ccActions: 'Actions', ccAddEvent: 'Ajouter une manifestation', ccAddDay: 'Ajouter un jour', ccAddShift: 'Ajouter un créneau', ccAddRole: 'Ajouter un rôle', ccChange: 'Modifier', ccCopy: 'Copier', ccClose: 'Fermer', ccNameOpt: 'Nom (facultatif)', ccStart: 'Début', ccEnd: 'Fin', ccActive: 'Actif', ccPersons: 'Responsables', ccSearch: 'Rechercher un nom', ccOtherPerson: 'Autre personne (pas dans l’application)', ccAdd: 'Ajouter', ccDidYouMean: 'Tu veux dire {name} ?', ccNobody: 'Personne pour l’instant', ccConfirmDel: 'Supprimer « {name} » ? Tout ce qui y est rattaché sera aussi supprimé.', ccConfirmDelRole: 'Supprimer « {name} » ?', ccCopyEventNote: 'La copie est d’abord inactive. Tous les jours sont décalés de 52 semaines pour garder les mêmes jours de la semaine.', ccCopyDayNote: 'Les créneaux et rôles sont copiés avec les responsables.', ccSaved: 'Enregistré', ccCopied: 'Copié', ccDeleted: 'Supprimé', ccNotInApp: '{name} n’est pas encore dans l’application. Avec son numéro de mobile, tu peux l’ajouter comme invité.', ccAsGuest: 'Ajouter comme invité', ccNeedName: 'Saisis un nom.', ccSetup: 'Pour C&C, le schéma de la base de données doit être mis à jour (supabase/schema.sql).', ccCopySuffix: 'copie',
+      navCC: 'C&C', ccMembers: 'Membres', ccGuests: 'Invités', ccOthers: 'Autres', ccEmpty: 'Aucune manifestation pour l’instant.', ccNoDays: 'Aucun jour pour l’instant.', ccSummary: '{s} créneaux · {r} rôles', ccLvlAll: 'Chränzli et Chilbi', ccLvlEvent: 'Manifestation', ccLvlDay: 'Jour', ccLvlShift: 'Créneau', ccLvlRole: 'Rôle', ccActions: 'Actions', ccAddEvent: 'Ajouter une manifestation', ccAddDay: 'Ajouter un jour', ccAddShift: 'Ajouter un créneau', ccAddRole: 'Ajouter un rôle', ccChange: 'Modifier', ccCopy: 'Copier', ccClose: 'Fermer', ccNameOpt: 'Nom (facultatif)', ccStart: 'Début', ccEnd: 'Fin', ccActive: 'Actif', ccPersons: 'Responsables', ccSearch: 'Rechercher un nom', ccOtherPerson: 'Autre personne (pas dans l’application)', ccAdd: 'Ajouter', ccDidYouMean: 'Tu veux dire {name} ?', ccNobody: 'Personne pour l’instant', ccConfirmDel: 'Supprimer « {name} » ? Tout ce qui y est rattaché sera aussi supprimé.', ccConfirmDelRole: 'Supprimer « {name} » ?', ccCopyEventNote: 'La copie est d’abord inactive. Tous les jours sont décalés de 52 semaines pour garder les mêmes jours de la semaine.', ccCopyDayNote: 'Les créneaux et rôles sont copiés avec les responsables.', ccSaved: 'Enregistré', ccCopied: 'Copié', ccDeleted: 'Supprimé', ccNotInApp: '{name} n’est pas encore dans l’application. Avec son numéro de mobile, tu peux l’ajouter comme invité.', ccAsGuest: 'Ajouter comme invité', ccNeedName: 'Saisis un nom.', ccSetup: 'Pour C&C, le schéma de la base de données doit être mis à jour (supabase/schema.sql).', ccCopySuffix: 'copie', ccPrint: 'PDF teilen', ccPdfBuilding: 'PDF wird erstellt…', ccPdfFailed: 'PDF konnte nicht erstellt werden.',
       mMakeAdmin: 'Nommer admin', mRevokeAdmin: 'Retirer les droits d’admin', mMakeEm: 'Nommer responsable des événements', mRevokeEm: 'Retirer les droits de responsable des événements', mMakeGuest: 'Définir comme invité', mMakeMember: 'Définir comme membre', mEdit: 'Modifier le nom et le numéro de mobile', mEditNote: 'Avec un nouveau numéro, le PIN par défaut s’applique à nouveau : les 6 derniers chiffres du nouveau numéro.', mSaved: 'Enregistré', mDelete: 'Supprimer le membre', mPhoneTaken: 'Ce numéro de mobile appartient déjà à une autre personne.',
-      navJass: 'Jass', jsParticipants: 'Participants', jsSchedule: 'Programme des parties', jsRanking: 'Classement du jour', jsRound: 'Manche {n}', jsTable: 'Table {t}', jsTeam1: 'Équipe I', jsTeam2: 'Équipe II', jsPlayer: 'Joueur {n}', jsFree: 'libre', jsEmpty: 'Aucun Jassmasters pour l’instant.', jsNoDays: 'Aucune date pour l’instant.', jsAddSeries: 'Ajouter un Jassmasters', jsAddDay: 'Ajouter une date', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Journée de jass', jsPick: 'Choisir le joueur {n}', jsClear: 'Libérer la place', jsAlready: 'déjà joueur {n}', jsPoints: 'Points', jsGames: '{n} parties', jsGame: '{n} partie', jsNoPoints: 'Aucun point saisi pour l’instant.', jsHint: 'Saisis les points pour l’équipe gagnante. L’autre équipe les reçoit automatiquement en négatif.', jsSetup: 'Pour le jass, le schéma de la base de données doit être mis à jour (supabase/schema.sql).',
-      jmTag: 'Maître du jass', mMakeJm: 'Nommer maître du jass', mRevokeJm: 'Retirer les droits de maître du jass', jmGranted: 'Défini comme maître du jass', jmRevoked: 'Droits de maître du jass retirés', jsUpcoming: 'Jassmasters à venir', jsPast: 'Jassmasters passés'
+      navJass: 'Jass', jsParticipants: 'Participants', jsSchedule: 'Programme des parties', jsRanking: 'Classement du jour', jsRound: 'Manche {n}', jsTable: 'Table {t}', jsTeam1: 'Équipe I', jsTeam2: 'Équipe II', jsPlayer: 'Joueur {n}', jsFree: 'libre', jsEmpty: 'Aucun Jassmasters pour l’instant.', jsNoDays: 'Aucune date pour l’instant.', jsAddSeries: 'Ajouter un Jassmasters', jsAddDay: 'Ajouter une date', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Journée de jass', jsPick: 'Choisir le joueur {n}', jsClear: 'Libérer la place', jsAlready: 'déjà joueur {n}', jsPoints: 'Points', jsGames: '{n} parties', jsPtsAbbr: 'pts', jsGame: '{n} partie', jsNoPoints: 'Aucun point saisi pour l’instant.', jsHint: 'Saisis les points pour l’équipe gagnante. L’autre équipe les reçoit automatiquement en négatif.', jsSetup: 'Pour le jass, le schéma de la base de données doit être mis à jour (supabase/schema.sql).',
+      jmTag: 'Jass Manager', mMakeJm: 'Zum Jass Manager machen', mRevokeJm: 'Jass Manager-Rechte entziehen', jmGranted: 'Als Jass Manager festgelegt', jmRevoked: 'Jass Manager-Rechte entzogen', cmTag: 'Chilbi Manager', crmTag: 'Chränzli Manager', mMakeCm: 'Zum Chilbi Manager machen', mRevokeCm: 'Chilbi Manager-Rechte entziehen', mMakeCrm: 'Zum Chränzli Manager machen', mRevokeCrm: 'Chränzli Manager-Rechte entziehen', cmGranted: 'Als Chilbi Manager festgelegt', cmRevoked: 'Chilbi Manager-Rechte entzogen', crmGranted: 'Als Chränzli Manager festgelegt', crmRevoked: 'Chränzli Manager-Rechte entzogen', grpActive: 'Aktivmitglieder', grpPassive: 'Passivmitglieder', mMakePassive: 'Zum Passivmitglied machen', mMakeActive: 'Zum Aktivmitglied machen', passiveSet: 'Als Passivmitglied festgelegt', activeSet: 'Als Aktivmitglied festgelegt', jsUpcoming: 'Jassmasters à venir', jsPast: 'Jassmasters passés'
     },
 
     en: {
       wd0: 'Sunday', wd1: 'Monday', wd2: 'Tuesday', wd3: 'Wednesday', wd4: 'Thursday', wd5: 'Friday', wd6: 'Saturday',
       navTrainings: 'Trainings', navEvents: 'Events', navAdmin: 'Admin', navProfile: 'Profile',
-      titleTrainings: 'FBRO Trainingsplan', titleEvents: 'FBRO Vereinsanlässe',
+      titleTrainings: 'Trainingsplan', titleEvents: 'Vereinsanlässe',
       subTrainings: 'The next {n} sessions', subEvents: 'The following club events are planned', moreDates: 'More dates ({n})',
       emptyTrTitle: 'No trainings planned yet.', emptyTrAdmin: 'Set a training day in the “Manage” section.', emptyTrMember: 'The admins set the training days.',
       emptyEvTitle: 'No events planned at the moment.', emptyEvAdmin: 'Create an event in the “Manage” section.', emptyEvMember: 'The admins create new events.',
@@ -189,9 +189,9 @@
       hYes: 'Attending ({n})', hNo: 'Not attending ({n})', hOpen: 'No reply yet ({n})', hSolo: 'Attending alone ({n})', hDuo: 'Attending as a pair ({n} members, {p} people)',
       nobody: 'Nobody', you: '(you)', cancelledTag: 'Cancelled', cancelledLow: 'cancelled', changedLow: 'changed',
       timePlace: '{time}, {place}', atTime: '{time}', calAdd: 'Add to calendar', solo: 'Alone', duo: 'As a pair',
-      secRules: 'Standard Training Setup', secExtra: 'Extra Training Setup', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Events', secMembers: 'Gruppen',
+      secRules: 'Standard Training', secExtra: 'Extra Training', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Events', secMembers: 'Gruppen',
       addNew: 'Add new', addClose: 'Close form',
-      adminTitle: 'FBRO Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'FBRO Jass-Masters', adminSub: 'Visible to admins only', rulesIntro: 'Standard trainings per week',
+      adminTitle: 'Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'Jass-Masters', adminSub: 'Visible to admins only', rulesIntro: 'Standard trainings per week',
       weekday: 'Weekday', time: 'Time', place: 'Place', date: 'Date', label: 'Title',
       phPlaceTraining: 'e.g. North School gym', addRule: 'Add training day',
       edit: 'Edit', remove: 'Remove', cancel: 'Cancel', reactivate: 'Reactivate', del: 'Delete', save: 'Save', dismiss: 'Discard', reset: 'Reset',
@@ -242,19 +242,19 @@
       ruleChanged: 'Training day changed', trChanged: 'Training changed', eventChanged: 'Event changed', langSaved: 'Language saved',
       guestTag: 'Guest', makeGuest: 'Set as guest: {name}', revokeGuest: 'Remove guest status: {name}', guestGranted: 'Set as guest', guestRevoked: 'Guest status removed',
       guestCheck: 'Add as guest (sees only trainings and profile)', guestInfo: 'You have guest access. You can see the trainings and your profile.',
-      memberTag: 'Member', emTag: 'Event manager', makeEm: 'Make event manager: {name}', revokeEm: 'Remove event manager rights: {name}', emGranted: 'Set as event manager', emRevoked: 'Event manager rights removed', confirmGuestLoses: '{name} has admin, event manager or jass master rights. Setting as guest removes these rights. Continue?', selfMember: 'You are a member. You cannot set yourself as a guest.', rolesTitle: 'Roles', emSub: 'Here you manage the events.',
+      memberTag: 'Member', emTag: 'Event manager', makeEm: 'Make event manager: {name}', revokeEm: 'Remove event manager rights: {name}', emGranted: 'Set as event manager', emRevoked: 'Event manager rights removed', confirmGuestLoses: '{name} hat Admin-, Chilbi Manager-, Chränzli Manager- oder Jass Manager-Rechte. Als Gast festlegen entzieht diese Rechte. Fortfahren?', selfMember: 'You are a member. You cannot set yourself as a guest.', rolesTitle: 'Roles', emSub: 'Here you manage the events.',
       infoShow: 'Show explanation', infoHide: 'Hide explanation',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Members', ccGuests: 'Guests', ccOthers: 'Others', ccEmpty: 'No occasions yet.', ccNoDays: 'No days yet.', ccSummary: '{s} shifts · {r} roles', ccLvlAll: 'Chränzli and Chilbi', ccLvlEvent: 'Occasion', ccLvlDay: 'Day', ccLvlShift: 'Shift', ccLvlRole: 'Role', ccActions: 'Actions', ccAddEvent: 'Add occasion', ccAddDay: 'Add day', ccAddShift: 'Add shift', ccAddRole: 'Add role', ccChange: 'Edit', ccCopy: 'Copy', ccClose: 'Close', ccNameOpt: 'Name (optional)', ccStart: 'Start', ccEnd: 'End', ccActive: 'Active', ccPersons: 'Responsible', ccSearch: 'Search names', ccOtherPerson: 'Other person (not in the app)', ccAdd: 'Add', ccDidYouMean: 'Did you mean {name}?', ccNobody: 'Nobody yet', ccConfirmDel: 'Delete “{name}”? Everything under it will be deleted too.', ccConfirmDelRole: 'Delete “{name}”?', ccCopyEventNote: 'The copy starts inactive. All days move by 52 weeks so the weekdays stay the same.', ccCopyDayNote: 'Shifts and roles are copied with the people responsible.', ccSaved: 'Saved', ccCopied: 'Copied', ccDeleted: 'Deleted', ccNotInApp: '{name} is not in the app yet. With a mobile number you can add them as a guest.', ccAsGuest: 'Add as guest', ccNeedName: 'Enter a name.', ccSetup: 'C&C needs an updated database schema (supabase/schema.sql).', ccCopySuffix: 'copy',
+      navCC: 'C&C', ccMembers: 'Members', ccGuests: 'Guests', ccOthers: 'Others', ccEmpty: 'No occasions yet.', ccNoDays: 'No days yet.', ccSummary: '{s} shifts · {r} roles', ccLvlAll: 'Chränzli and Chilbi', ccLvlEvent: 'Occasion', ccLvlDay: 'Day', ccLvlShift: 'Shift', ccLvlRole: 'Role', ccActions: 'Actions', ccAddEvent: 'Add occasion', ccAddDay: 'Add day', ccAddShift: 'Add shift', ccAddRole: 'Add role', ccChange: 'Edit', ccCopy: 'Copy', ccClose: 'Close', ccNameOpt: 'Name (optional)', ccStart: 'Start', ccEnd: 'End', ccActive: 'Active', ccPersons: 'Responsible', ccSearch: 'Search names', ccOtherPerson: 'Other person (not in the app)', ccAdd: 'Add', ccDidYouMean: 'Did you mean {name}?', ccNobody: 'Nobody yet', ccConfirmDel: 'Delete “{name}”? Everything under it will be deleted too.', ccConfirmDelRole: 'Delete “{name}”?', ccCopyEventNote: 'The copy starts inactive. All days move by 52 weeks so the weekdays stay the same.', ccCopyDayNote: 'Shifts and roles are copied with the people responsible.', ccSaved: 'Saved', ccCopied: 'Copied', ccDeleted: 'Deleted', ccNotInApp: '{name} is not in the app yet. With a mobile number you can add them as a guest.', ccAsGuest: 'Add as guest', ccNeedName: 'Enter a name.', ccSetup: 'C&C needs an updated database schema (supabase/schema.sql).', ccCopySuffix: 'copy', ccPrint: 'PDF teilen', ccPdfBuilding: 'PDF wird erstellt…', ccPdfFailed: 'PDF konnte nicht erstellt werden.',
       mMakeAdmin: 'Make admin', mRevokeAdmin: 'Remove admin rights', mMakeEm: 'Make event manager', mRevokeEm: 'Remove event manager rights', mMakeGuest: 'Set as guest', mMakeMember: 'Set as member', mEdit: 'Change name and mobile number', mEditNote: 'With a new number the default PIN applies again: the last 6 digits of the new number.', mSaved: 'Saved', mDelete: 'Delete member', mPhoneTaken: 'This mobile number already belongs to someone else.',
-      navJass: 'Jass', jsParticipants: 'Players', jsSchedule: 'Schedule', jsRanking: 'Daily ranking', jsRound: 'Round {n}', jsTable: 'Table {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Player {n}', jsFree: 'open', jsEmpty: 'No Jassmasters yet.', jsNoDays: 'No date yet.', jsAddSeries: 'Add Jassmasters', jsAddDay: 'Add date', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jass day', jsPick: 'Choose player {n}', jsClear: 'Clear seat', jsAlready: 'already player {n}', jsPoints: 'Points', jsGames: '{n} games', jsGame: '{n} game', jsNoPoints: 'No points entered yet.', jsHint: 'Enter the points for the winning team. The other team automatically gets them as negative points.', jsSetup: 'Jass needs an updated database schema (supabase/schema.sql).',
-      jmTag: 'Jass master', mMakeJm: 'Make jass master', mRevokeJm: 'Remove jass master rights', jmGranted: 'Set as jass master', jmRevoked: 'Jass master rights removed', jsUpcoming: 'Upcoming Jassmasters', jsPast: 'Past Jassmasters'
+      navJass: 'Jass', jsParticipants: 'Players', jsSchedule: 'Schedule', jsRanking: 'Daily ranking', jsRound: 'Round {n}', jsTable: 'Table {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Player {n}', jsFree: 'open', jsEmpty: 'No Jassmasters yet.', jsNoDays: 'No date yet.', jsAddSeries: 'Add Jassmasters', jsAddDay: 'Add date', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jass day', jsPick: 'Choose player {n}', jsClear: 'Clear seat', jsAlready: 'already player {n}', jsPoints: 'Points', jsGames: '{n} games', jsPtsAbbr: 'pts', jsGame: '{n} game', jsNoPoints: 'No points entered yet.', jsHint: 'Enter the points for the winning team. The other team automatically gets them as negative points.', jsSetup: 'Jass needs an updated database schema (supabase/schema.sql).',
+      jmTag: 'Jass Manager', mMakeJm: 'Zum Jass Manager machen', mRevokeJm: 'Jass Manager-Rechte entziehen', jmGranted: 'Als Jass Manager festgelegt', jmRevoked: 'Jass Manager-Rechte entzogen', cmTag: 'Chilbi Manager', crmTag: 'Chränzli Manager', mMakeCm: 'Zum Chilbi Manager machen', mRevokeCm: 'Chilbi Manager-Rechte entziehen', mMakeCrm: 'Zum Chränzli Manager machen', mRevokeCrm: 'Chränzli Manager-Rechte entziehen', cmGranted: 'Als Chilbi Manager festgelegt', cmRevoked: 'Chilbi Manager-Rechte entzogen', crmGranted: 'Als Chränzli Manager festgelegt', crmRevoked: 'Chränzli Manager-Rechte entzogen', grpActive: 'Aktivmitglieder', grpPassive: 'Passivmitglieder', mMakePassive: 'Zum Passivmitglied machen', mMakeActive: 'Zum Aktivmitglied machen', passiveSet: 'Als Passivmitglied festgelegt', activeSet: 'Als Aktivmitglied festgelegt', jsUpcoming: 'Upcoming Jassmasters', jsPast: 'Past Jassmasters'
     },
 
     it: {
       wd0: 'Domenica', wd1: 'Lunedì', wd2: 'Martedì', wd3: 'Mercoledì', wd4: 'Giovedì', wd5: 'Venerdì', wd6: 'Sabato',
       navTrainings: 'Allenamenti', navEvents: 'Eventi', navAdmin: 'Admin', navProfile: 'Profilo',
-      titleTrainings: 'FBRO Trainingsplan', titleEvents: 'FBRO Vereinsanlässe',
+      titleTrainings: 'Trainingsplan', titleEvents: 'Vereinsanlässe',
       subTrainings: 'I prossimi {n} appuntamenti', subEvents: 'Sono previsti i seguenti eventi del club', moreDates: 'Altri appuntamenti ({n})',
       emptyTrTitle: 'Nessun allenamento in programma.', emptyTrAdmin: 'Definisci un giorno di allenamento nella sezione «Gestione».', emptyTrMember: 'Gli admin definiscono i giorni di allenamento.',
       emptyEvTitle: 'Al momento non ci sono eventi in programma.', emptyEvAdmin: 'Crea un evento nella sezione «Gestione».', emptyEvMember: 'Gli admin creano i nuovi eventi.',
@@ -264,9 +264,9 @@
       hYes: 'Presenti ({n})', hNo: 'Assenti ({n})', hOpen: 'Ancora nessuna risposta ({n})', hSolo: 'Da solo/a ({n})', hDuo: 'In due ({n} soci, {p} persone)',
       nobody: 'Nessuno', you: '(tu)', cancelledTag: 'Annullato', cancelledLow: 'annullato', changedLow: 'modificato',
       timePlace: 'ore {time}, {place}', atTime: 'ore {time}', calAdd: 'Aggiungi al calendario', solo: 'Da solo/a', duo: 'In due',
-      secRules: 'Standard Training Setup', secExtra: 'Extra Training Setup', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Eventi', secMembers: 'Gruppen',
+      secRules: 'Standard Training', secExtra: 'Extra Training', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Eventi', secMembers: 'Gruppen',
       addNew: 'Aggiungi', addClose: 'Chiudi il modulo',
-      adminTitle: 'FBRO Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'FBRO Jass-Masters', adminSub: 'Visibile solo agli admin', rulesIntro: 'Allenamenti standard settimanali',
+      adminTitle: 'Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'Jass-Masters', adminSub: 'Visibile solo agli admin', rulesIntro: 'Allenamenti standard settimanali',
       weekday: 'Giorno della settimana', time: 'Ora', place: 'Luogo', date: 'Data', label: 'Denominazione',
       phPlaceTraining: 'ad es. palestra scuola Nord', addRule: 'Aggiungi giorno di allenamento',
       edit: 'Modifica', remove: 'Rimuovi', cancel: 'Annulla', reactivate: 'Riattiva', del: 'Elimina', save: 'Salva', dismiss: 'Chiudi', reset: 'Ripristina',
@@ -317,19 +317,19 @@
       ruleChanged: 'Giorno di allenamento modificato', trChanged: 'Allenamento modificato', eventChanged: 'Evento modificato', langSaved: 'Lingua salvata',
       guestTag: 'Ospite', makeGuest: 'Imposta come ospite: {name}', revokeGuest: 'Rimuovi lo stato di ospite: {name}', guestGranted: 'Impostato come ospite', guestRevoked: 'Stato di ospite rimosso',
       guestCheck: 'Aggiungi come ospite (vede solo allenamenti e profilo)', guestInfo: 'Hai un accesso come ospite. Vedi gli allenamenti e il tuo profilo.',
-      memberTag: 'Socio', emTag: 'Responsabile eventi', makeEm: 'Nomina responsabile eventi: {name}', revokeEm: 'Revoca i diritti di responsabile eventi: {name}', emGranted: 'Impostato come responsabile eventi', emRevoked: 'Diritti di responsabile eventi revocati', confirmGuestLoses: '{name} ha i diritti di admin, responsabile eventi o jass master. Impostarlo come ospite li revoca. Continuare?', selfMember: 'Sei socio. Non puoi impostarti da solo come ospite.', rolesTitle: 'Ruoli', emSub: 'Qui gestisci gli eventi.',
+      memberTag: 'Socio', emTag: 'Responsabile eventi', makeEm: 'Nomina responsabile eventi: {name}', revokeEm: 'Revoca i diritti di responsabile eventi: {name}', emGranted: 'Impostato come responsabile eventi', emRevoked: 'Diritti di responsabile eventi revocati', confirmGuestLoses: '{name} hat Admin-, Chilbi Manager-, Chränzli Manager- oder Jass Manager-Rechte. Als Gast festlegen entzieht diese Rechte. Fortfahren?', selfMember: 'Sei socio. Non puoi impostarti da solo come ospite.', rolesTitle: 'Ruoli', emSub: 'Qui gestisci gli eventi.',
       infoShow: 'Mostra la spiegazione', infoHide: 'Nascondi la spiegazione',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Soci', ccGuests: 'Ospiti', ccOthers: 'Altri', ccEmpty: 'Ancora nessuna manifestazione.', ccNoDays: 'Ancora nessun giorno.', ccSummary: '{s} turni · {r} ruoli', ccLvlAll: 'Chränzli e Chilbi', ccLvlEvent: 'Manifestazione', ccLvlDay: 'Giorno', ccLvlShift: 'Turno', ccLvlRole: 'Ruolo', ccActions: 'Azioni', ccAddEvent: 'Aggiungi manifestazione', ccAddDay: 'Aggiungi giorno', ccAddShift: 'Aggiungi turno', ccAddRole: 'Aggiungi ruolo', ccChange: 'Modifica', ccCopy: 'Copia', ccClose: 'Chiudi', ccNameOpt: 'Nome (facoltativo)', ccStart: 'Inizio', ccEnd: 'Fine', ccActive: 'Attivo', ccPersons: 'Responsabili', ccSearch: 'Cerca nomi', ccOtherPerson: 'Altra persona (non nell’app)', ccAdd: 'Aggiungi', ccDidYouMean: 'Intendi {name}?', ccNobody: 'Ancora nessuno', ccConfirmDel: 'Eliminare «{name}»? Verrà eliminato anche tutto ciò che contiene.', ccConfirmDelRole: 'Eliminare «{name}»?', ccCopyEventNote: 'La copia è inizialmente inattiva. Tutti i giorni vengono spostati di 52 settimane, così i giorni della settimana restano uguali.', ccCopyDayNote: 'Turni e ruoli vengono copiati con i responsabili.', ccSaved: 'Salvato', ccCopied: 'Copiato', ccDeleted: 'Eliminato', ccNotInApp: '{name} non è ancora nell’app. Con il numero di cellulare puoi aggiungere la persona come ospite.', ccAsGuest: 'Aggiungi come ospite', ccNeedName: 'Inserisci un nome.', ccSetup: 'Per C&C lo schema del database deve essere aggiornato (supabase/schema.sql).', ccCopySuffix: 'copia',
+      navCC: 'C&C', ccMembers: 'Soci', ccGuests: 'Ospiti', ccOthers: 'Altri', ccEmpty: 'Ancora nessuna manifestazione.', ccNoDays: 'Ancora nessun giorno.', ccSummary: '{s} turni · {r} ruoli', ccLvlAll: 'Chränzli e Chilbi', ccLvlEvent: 'Manifestazione', ccLvlDay: 'Giorno', ccLvlShift: 'Turno', ccLvlRole: 'Ruolo', ccActions: 'Azioni', ccAddEvent: 'Aggiungi manifestazione', ccAddDay: 'Aggiungi giorno', ccAddShift: 'Aggiungi turno', ccAddRole: 'Aggiungi ruolo', ccChange: 'Modifica', ccCopy: 'Copia', ccClose: 'Chiudi', ccNameOpt: 'Nome (facoltativo)', ccStart: 'Inizio', ccEnd: 'Fine', ccActive: 'Attivo', ccPersons: 'Responsabili', ccSearch: 'Cerca nomi', ccOtherPerson: 'Altra persona (non nell’app)', ccAdd: 'Aggiungi', ccDidYouMean: 'Intendi {name}?', ccNobody: 'Ancora nessuno', ccConfirmDel: 'Eliminare «{name}»? Verrà eliminato anche tutto ciò che contiene.', ccConfirmDelRole: 'Eliminare «{name}»?', ccCopyEventNote: 'La copia è inizialmente inattiva. Tutti i giorni vengono spostati di 52 settimane, così i giorni della settimana restano uguali.', ccCopyDayNote: 'Turni e ruoli vengono copiati con i responsabili.', ccSaved: 'Salvato', ccCopied: 'Copiato', ccDeleted: 'Eliminato', ccNotInApp: '{name} non è ancora nell’app. Con il numero di cellulare puoi aggiungere la persona come ospite.', ccAsGuest: 'Aggiungi come ospite', ccNeedName: 'Inserisci un nome.', ccSetup: 'Per C&C lo schema del database deve essere aggiornato (supabase/schema.sql).', ccCopySuffix: 'copia', ccPrint: 'PDF teilen', ccPdfBuilding: 'PDF wird erstellt…', ccPdfFailed: 'PDF konnte nicht erstellt werden.',
       mMakeAdmin: 'Rendi admin', mRevokeAdmin: 'Revoca i diritti di admin', mMakeEm: 'Nomina responsabile eventi', mRevokeEm: 'Revoca i diritti di responsabile eventi', mMakeGuest: 'Imposta come ospite', mMakeMember: 'Imposta come socio', mEdit: 'Modifica nome e numero di cellulare', mEditNote: 'Con un nuovo numero vale di nuovo il PIN predefinito: le ultime 6 cifre del nuovo numero.', mSaved: 'Salvato', mDelete: 'Elimina socio', mPhoneTaken: 'Questo numero di cellulare appartiene già a un’altra persona.',
-      navJass: 'Jass', jsParticipants: 'Partecipanti', jsSchedule: 'Calendario delle partite', jsRanking: 'Classifica del giorno', jsRound: 'Turno {n}', jsTable: 'Tavolo {t}', jsTeam1: 'Squadra I', jsTeam2: 'Squadra II', jsPlayer: 'Giocatore {n}', jsFree: 'libero', jsEmpty: 'Ancora nessun Jassmasters.', jsNoDays: 'Ancora nessuna data.', jsAddSeries: 'Aggiungi Jassmasters', jsAddDay: 'Aggiungi data', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Giornata di jass', jsPick: 'Scegli il giocatore {n}', jsClear: 'Libera il posto', jsAlready: 'già giocatore {n}', jsPoints: 'Punti', jsGames: '{n} partite', jsGame: '{n} partita', jsNoPoints: 'Ancora nessun punto inserito.', jsHint: 'Inserisci i punti per la squadra vincente. L’altra squadra li riceve automaticamente in negativo.', jsSetup: 'Per il jass lo schema del database deve essere aggiornato (supabase/schema.sql).',
-      jmTag: 'Jass master', mMakeJm: 'Nomina jass master', mRevokeJm: 'Revoca i diritti di jass master', jmGranted: 'Impostato come jass master', jmRevoked: 'Diritti di jass master revocati', jsUpcoming: 'Jassmasters in programma', jsPast: 'Jassmasters passati'
+      navJass: 'Jass', jsParticipants: 'Partecipanti', jsSchedule: 'Calendario delle partite', jsRanking: 'Classifica del giorno', jsRound: 'Turno {n}', jsTable: 'Tavolo {t}', jsTeam1: 'Squadra I', jsTeam2: 'Squadra II', jsPlayer: 'Giocatore {n}', jsFree: 'libero', jsEmpty: 'Ancora nessun Jassmasters.', jsNoDays: 'Ancora nessuna data.', jsAddSeries: 'Aggiungi Jassmasters', jsAddDay: 'Aggiungi data', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Giornata di jass', jsPick: 'Scegli il giocatore {n}', jsClear: 'Libera il posto', jsAlready: 'già giocatore {n}', jsPoints: 'Punti', jsGames: '{n} partite', jsPtsAbbr: 'pt', jsGame: '{n} partita', jsNoPoints: 'Ancora nessun punto inserito.', jsHint: 'Inserisci i punti per la squadra vincente. L’altra squadra li riceve automaticamente in negativo.', jsSetup: 'Per il jass lo schema del database deve essere aggiornato (supabase/schema.sql).',
+      jmTag: 'Jass Manager', mMakeJm: 'Zum Jass Manager machen', mRevokeJm: 'Jass Manager-Rechte entziehen', jmGranted: 'Als Jass Manager festgelegt', jmRevoked: 'Jass Manager-Rechte entzogen', cmTag: 'Chilbi Manager', crmTag: 'Chränzli Manager', mMakeCm: 'Zum Chilbi Manager machen', mRevokeCm: 'Chilbi Manager-Rechte entziehen', mMakeCrm: 'Zum Chränzli Manager machen', mRevokeCrm: 'Chränzli Manager-Rechte entziehen', cmGranted: 'Als Chilbi Manager festgelegt', cmRevoked: 'Chilbi Manager-Rechte entzogen', crmGranted: 'Als Chränzli Manager festgelegt', crmRevoked: 'Chränzli Manager-Rechte entzogen', grpActive: 'Aktivmitglieder', grpPassive: 'Passivmitglieder', mMakePassive: 'Zum Passivmitglied machen', mMakeActive: 'Zum Aktivmitglied machen', passiveSet: 'Als Passivmitglied festgelegt', activeSet: 'Als Aktivmitglied festgelegt', jsUpcoming: 'Jassmasters in programma', jsPast: 'Jassmasters passati'
     },
 
     gsw: {
       wd0: 'Sunntig', wd1: 'Mäntig', wd2: 'Ziischtig', wd3: 'Mittwuch', wd4: 'Dunnschtig', wd5: 'Fritig', wd6: 'Samschtig',
       navTrainings: 'Trainings', navEvents: 'Events', navAdmin: 'Admin', navProfile: 'Profil',
-      titleTrainings: 'FBRO Trainingsplan', titleEvents: 'FBRO Vereinsanlässe',
+      titleTrainings: 'Trainingsplan', titleEvents: 'Vereinsanlässe',
       subTrainings: 'Di nächschte {n} Termin', subEvents: 'Die Vereinsaalässe sind planet', moreDates: 'Wiitere Termin ({n})',
       emptyTrTitle: 'Es sind no kei Trainings planet.', emptyTrAdmin: 'Leg im Bereich «Verwalte» en Trainingstag fescht.', emptyTrMember: 'D Admins leged d Trainingstäg fescht.',
       emptyEvTitle: 'Im Momänt sind kei Events planet.', emptyEvAdmin: 'Leg im Bereich «Verwalte» en Event aa.', emptyEvMember: 'D Admins leged neui Events aa.',
@@ -339,9 +339,9 @@
       hYes: 'Debii ({n})', hNo: 'Nöd debii ({n})', hOpen: 'No kei Antwort ({n})', hSolo: 'Elei debii ({n})', hDuo: 'Zu zwöit debii ({n} Mitglieder, {p} Persone)',
       nobody: 'Niemer', you: '(du)', cancelledTag: 'Abgsait', cancelledLow: 'abgsait', changedLow: 'gänderet',
       timePlace: '{time} Uhr, {place}', atTime: '{time} Uhr', calAdd: 'Im Kaländer spichere', solo: 'Elei', duo: 'Zu zwöit',
-      secRules: 'Standard Training Setup', secExtra: 'Extra Training Setup', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Events', secMembers: 'Gruppen',
+      secRules: 'Standard Training', secExtra: 'Extra Training', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Events', secMembers: 'Gruppen',
       addNew: 'Neu erfasse', addClose: 'Erfassig zuemache',
-      adminTitle: 'FBRO Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'FBRO Jass-Masters', adminSub: 'Nur für Admins sichtbar', rulesIntro: 'Standard-Trainings pro Wuche',
+      adminTitle: 'Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'Jass-Masters', adminSub: 'Nur für Admins sichtbar', rulesIntro: 'Standard-Trainings pro Wuche',
       weekday: 'Wuchetag', time: 'Uhrziit', place: 'Ort', date: 'Datum', label: 'Bezeichnig',
       phPlaceTraining: 'z. B. Turnhalle Schuelhuus Nord', addRule: 'Trainingstag hinzuefüege',
       edit: 'Bearbeite', remove: 'Entferne', cancel: 'Absäge', reactivate: 'Reaktivierä', del: 'Lösche', save: 'Spichere', dismiss: 'Abbräche', reset: 'Zruggsetze',
@@ -392,19 +392,19 @@
       ruleChanged: 'Trainingstag gänderet', trChanged: 'Training gänderet', eventChanged: 'Event gänderet', langSaved: 'Sprach gspeicheret',
       guestTag: 'Gascht', makeGuest: 'Als Gascht festlege: {name}', revokeGuest: 'Gascht-Status entferne: {name}', guestGranted: 'Als Gascht festgleit', guestRevoked: 'Gascht-Status entfernt',
       guestCheck: 'Als Gascht hinzuefüege (gseht nur Trainings und Profil)', guestInfo: 'Du hesch en Gascht-Zuegang. Du gsehsch d Trainings und dis Profil.',
-      memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zum Event-Manager mache: {name}', revokeEm: 'Event-Manager-Rächt entzieh: {name}', emGranted: 'Als Event-Manager festgleit', emRevoked: 'Event-Manager-Rächt entzoge', confirmGuestLoses: '{name} hät Admin-, Event-Manager- oder Jass-Master-Rächt. Als Gascht festlege entzieht die Rächt. Wiiter?', selfMember: 'Du bisch Mitglied. Du chasch di nöd säber zum Gascht mache.', rolesTitle: 'Rolle', emSub: 'Do verwaltisch du d Events.',
+      memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zum Event-Manager mache: {name}', revokeEm: 'Event-Manager-Rächt entzieh: {name}', emGranted: 'Als Event-Manager festgleit', emRevoked: 'Event-Manager-Rächt entzoge', confirmGuestLoses: '{name} hat Admin-, Chilbi Manager-, Chränzli Manager- oder Jass Manager-Rechte. Als Gast festlegen entzieht diese Rechte. Fortfahren?', selfMember: 'Du bisch Mitglied. Du chasch di nöd säber zum Gascht mache.', rolesTitle: 'Rolle', emSub: 'Do verwaltisch du d Events.',
       infoShow: 'Erklärig aazeige', infoHide: 'Erklärig verstecke',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäscht', ccOthers: 'Anderi', ccEmpty: 'No kei Aalässe erfasst.', ccNoDays: 'No kei Täg erfasst.', ccSummary: '{s} Schichte · {r} Rolle', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Aalass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktione', ccAddEvent: 'Aalass hinzuefüege', ccAddDay: 'Tag hinzuefüege', ccAddShift: 'Schicht hinzuefüege', ccAddRole: 'Rolle hinzuefüege', ccChange: 'Ändere', ccCopy: 'Kopiere', ccClose: 'Schliesse', ccNameOpt: 'Name (freiwillig)', ccStart: 'Start', ccEnd: 'Änd', ccActive: 'Aktiv', ccPersons: 'Verantwortlichi', ccSearch: 'Näme sueche', ccOtherPerson: 'Anderi Person (nöd i de App)', ccAdd: 'Hinzuefüege', ccDidYouMean: 'Meinsch {name}?', ccNobody: 'No niemer', ccConfirmDel: '«{name}» lösche? Alles, wo drunder erfasst isch, wird au glöscht.', ccConfirmDelRole: '«{name}» lösche?', ccCopyEventNote: 'D Kopie isch zerscht inaktiv. Alli Täg wärded um 52 Wuche verschobe, damit d Wuchetäg glich bliibed.', ccCopyDayNote: 'Schichte und Rolle wärded mit de Verantwortliche kopiert.', ccSaved: 'Gspeicheret', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} isch no nöd i de App. Mit de Handynummere chasch d Person als Gascht hinzuefüege.', ccAsGuest: 'Als Gascht hinzuefüege', ccNeedName: 'Gib en Name ii.', ccSetup: 'Für C&C muess s Datebank-Schema aktualisiert wärde (supabase/schema.sql).', ccCopySuffix: 'Kopie',
+      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäscht', ccOthers: 'Anderi', ccEmpty: 'No kei Aalässe erfasst.', ccNoDays: 'No kei Täg erfasst.', ccSummary: '{s} Schichte · {r} Rolle', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Aalass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktione', ccAddEvent: 'Aalass hinzuefüege', ccAddDay: 'Tag hinzuefüege', ccAddShift: 'Schicht hinzuefüege', ccAddRole: 'Rolle hinzuefüege', ccChange: 'Ändere', ccCopy: 'Kopiere', ccClose: 'Schliesse', ccNameOpt: 'Name (freiwillig)', ccStart: 'Start', ccEnd: 'Änd', ccActive: 'Aktiv', ccPersons: 'Verantwortlichi', ccSearch: 'Näme sueche', ccOtherPerson: 'Anderi Person (nöd i de App)', ccAdd: 'Hinzuefüege', ccDidYouMean: 'Meinsch {name}?', ccNobody: 'No niemer', ccConfirmDel: '«{name}» lösche? Alles, wo drunder erfasst isch, wird au glöscht.', ccConfirmDelRole: '«{name}» lösche?', ccCopyEventNote: 'D Kopie isch zerscht inaktiv. Alli Täg wärded um 52 Wuche verschobe, damit d Wuchetäg glich bliibed.', ccCopyDayNote: 'Schichte und Rolle wärded mit de Verantwortliche kopiert.', ccSaved: 'Gspeicheret', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} isch no nöd i de App. Mit de Handynummere chasch d Person als Gascht hinzuefüege.', ccAsGuest: 'Als Gascht hinzuefüege', ccNeedName: 'Gib en Name ii.', ccSetup: 'Für C&C muess s Datebank-Schema aktualisiert wärde (supabase/schema.sql).', ccCopySuffix: 'Kopie', ccPrint: 'PDF teilen', ccPdfBuilding: 'PDF wird erstellt…', ccPdfFailed: 'PDF konnte nicht erstellt werden.',
       mMakeAdmin: 'Zum Admin mache', mRevokeAdmin: 'Admin-Rächt entzieh', mMakeEm: 'Zum Event-Manager mache', mRevokeEm: 'Event-Manager-Rächt entzieh', mMakeGuest: 'Zum Gascht mache', mMakeMember: 'Zum Mitglied mache', mEdit: 'Name und Handynummere ändere', mEditNote: 'Mit enere neue Handynummere gilt wieder de Standard-PIN: di letschte 6 Ziffere vo de neue Nummere.', mSaved: 'Gspeicheret', mDelete: 'Mitglied lösche', mPhoneTaken: 'Die Handynummere ghört scho öpper anderem.',
-      navJass: 'Jass', jsParticipants: 'Teilnehmer', jsSchedule: 'Spielplan', jsRanking: 'Tagesrangliste', jsRound: 'Rundi {n}', jsTable: 'Tisch {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Spieler {n}', jsFree: 'frei', jsEmpty: 'No kei Jassmasters erfasst.', jsNoDays: 'No kei Datum erfasst.', jsAddSeries: 'Jassmasters hinzuefüege', jsAddDay: 'Datum hinzuefüege', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jasstag', jsPick: 'Spieler {n} uswähle', jsClear: 'Platz freigäh', jsAlready: 'scho Spieler {n}', jsPoints: 'Pünkt', jsGames: '{n} Spiel', jsGame: '{n} Spiel', jsNoPoints: 'No kei Pünkt erfasst.', jsHint: 'Träg d Pünkt bim Siegerteam ii. S ander Team überchunnt si automatisch negativ.', jsSetup: 'Für Jass muess s Datebank-Schema aktualisiert wärde (supabase/schema.sql).',
-      jmTag: 'Jass-Master', mMakeJm: 'Zum Jass-Master mache', mRevokeJm: 'Jass-Master-Rächt entzieh', jmGranted: 'Als Jass-Master festgleit', jmRevoked: 'Jass-Master-Rächt entzoge', jsUpcoming: 'Aastaahndi Jassmasters', jsPast: 'Vergangeni Jassmasters'
+      navJass: 'Jass', jsParticipants: 'Teilnehmer', jsSchedule: 'Spielplan', jsRanking: 'Tagesrangliste', jsRound: 'Rundi {n}', jsTable: 'Tisch {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Spieler {n}', jsFree: 'frei', jsEmpty: 'No kei Jassmasters erfasst.', jsNoDays: 'No kei Datum erfasst.', jsAddSeries: 'Jassmasters hinzuefüege', jsAddDay: 'Datum hinzuefüege', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jasstag', jsPick: 'Spieler {n} uswähle', jsClear: 'Platz freigäh', jsAlready: 'scho Spieler {n}', jsPoints: 'Pünkt', jsGames: '{n} Spiel', jsPtsAbbr: 'Pkt.', jsGame: '{n} Spiel', jsNoPoints: 'No kei Pünkt erfasst.', jsHint: 'Träg d Pünkt bim Siegerteam ii. S ander Team überchunnt si automatisch negativ.', jsSetup: 'Für Jass muess s Datebank-Schema aktualisiert wärde (supabase/schema.sql).',
+      jmTag: 'Jass Manager', mMakeJm: 'Zum Jass Manager machen', mRevokeJm: 'Jass Manager-Rechte entziehen', jmGranted: 'Als Jass Manager festgelegt', jmRevoked: 'Jass Manager-Rechte entzogen', cmTag: 'Chilbi Manager', crmTag: 'Chränzli Manager', mMakeCm: 'Zum Chilbi Manager machen', mRevokeCm: 'Chilbi Manager-Rechte entziehen', mMakeCrm: 'Zum Chränzli Manager machen', mRevokeCrm: 'Chränzli Manager-Rechte entziehen', cmGranted: 'Als Chilbi Manager festgelegt', cmRevoked: 'Chilbi Manager-Rechte entzogen', crmGranted: 'Als Chränzli Manager festgelegt', crmRevoked: 'Chränzli Manager-Rechte entzogen', grpActive: 'Aktivmitglieder', grpPassive: 'Passivmitglieder', mMakePassive: 'Zum Passivmitglied machen', mMakeActive: 'Zum Aktivmitglied machen', passiveSet: 'Als Passivmitglied festgelegt', activeSet: 'Als Aktivmitglied festgelegt', jsUpcoming: 'Aastaahndi Jassmasters', jsPast: 'Vergangeni Jassmasters'
     },
 
     apz: {
       wd0: 'Sonntig', wd1: 'Mäntig', wd2: 'Zischtig', wd3: 'Mittwoch', wd4: 'Donnschtig', wd5: 'Friitig', wd6: 'Samschtig',
       navTrainings: 'Trainings', navEvents: 'Events', navAdmin: 'Admin', navProfile: 'Profil',
-      titleTrainings: 'FBRO Trainingsplan', titleEvents: 'FBRO Vereinsanlässe',
+      titleTrainings: 'Trainingsplan', titleEvents: 'Vereinsanlässe',
       subTrainings: 'Di nächschte {n} Termin', subEvents: 'Die Vereinsaalässe sönd planet', moreDates: 'Wiitere Termin ({n})',
       emptyTrTitle: 'Es sönd no kei Trainings planet.', emptyTrAdmin: 'Leg im Bereich «Verwalte» en Trainingstag fescht.', emptyTrMember: 'D Admins leged d Trainingstäg fescht.',
       emptyEvTitle: 'Im Momänt sönd kei Events planet.', emptyEvAdmin: 'Leg im Bereich «Verwalte» en Event aa.', emptyEvMember: 'D Admins leged neui Events aa.',
@@ -414,9 +414,9 @@
       hYes: 'Debii ({n})', hNo: 'Nüd debii ({n})', hOpen: 'No kei Antwort ({n})', hSolo: 'Elei debii ({n})', hDuo: 'Zu zwöit debii ({n} Mitglieder, {p} Persone)',
       nobody: 'Niemer', you: '(du)', cancelledTag: 'Abgsait', cancelledLow: 'abgsait', changedLow: 'gänderet',
       timePlace: '{time} Uhr, {place}', atTime: '{time} Uhr', calAdd: 'Im Kaländer spichere', solo: 'Elei', duo: 'Zu zwöit',
-      secRules: 'Standard Training Setup', secExtra: 'Extra Training Setup', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Events', secMembers: 'Gruppen',
+      secRules: 'Standard Training', secExtra: 'Extra Training', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Events', secMembers: 'Gruppen',
       addNew: 'Neu erfasse', addClose: 'Erfassig zuemache',
-      adminTitle: 'FBRO Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'FBRO Jass-Masters', adminSub: 'Nur für Admins sichtbar', rulesIntro: 'Standard-Trainings pro Woche',
+      adminTitle: 'Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'Jass-Masters', adminSub: 'Nur für Admins sichtbar', rulesIntro: 'Standard-Trainings pro Woche',
       weekday: 'Wochetag', time: 'Uhrziit', place: 'Ort', date: 'Datum', label: 'Bezeichnig',
       phPlaceTraining: 'z. B. Turnhalle Schuelhuus Nord', addRule: 'Trainingstag hinzuefüege',
       edit: 'Bearbeite', remove: 'Entferne', cancel: 'Absäge', reactivate: 'Reaktivierä', del: 'Lösche', save: 'Spichere', dismiss: 'Abbräche', reset: 'Zruggsetze',
@@ -467,19 +467,19 @@
       ruleChanged: 'Trainingstag gänderet', trChanged: 'Training gänderet', eventChanged: 'Event gänderet', langSaved: 'Sprach gspeicheret',
       guestTag: 'Gascht', makeGuest: 'Als Gascht festlege: {name}', revokeGuest: 'Gascht-Status entferne: {name}', guestGranted: 'Als Gascht festgleit', guestRevoked: 'Gascht-Status entfernt',
       guestCheck: 'Als Gascht hinzuefüege (gseht nur Trainings ond Profil)', guestInfo: 'Du hesch en Gascht-Zuegang. Du gsehsch d Trainings ond dis Profil.',
-      memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zom Event-Manager mache: {name}', revokeEm: 'Event-Manager-Rächt entzieh: {name}', emGranted: 'Als Event-Manager festgleit', emRevoked: 'Event-Manager-Rächt entzoge', confirmGuestLoses: '{name} het Admin-, Event-Manager- oder Jass-Master-Rächt. Als Gascht festlege entzieht die Rächt. Wiiter?', selfMember: 'Du bisch Mitglied. Du chasch di nüd säber zom Gascht mache.', rolesTitle: 'Rolle', emSub: 'Do verwaltisch du d Events.',
+      memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zom Event-Manager mache: {name}', revokeEm: 'Event-Manager-Rächt entzieh: {name}', emGranted: 'Als Event-Manager festgleit', emRevoked: 'Event-Manager-Rächt entzoge', confirmGuestLoses: '{name} hat Admin-, Chilbi Manager-, Chränzli Manager- oder Jass Manager-Rechte. Als Gast festlegen entzieht diese Rechte. Fortfahren?', selfMember: 'Du bisch Mitglied. Du chasch di nüd säber zom Gascht mache.', rolesTitle: 'Rolle', emSub: 'Do verwaltisch du d Events.',
       infoShow: 'Erklärig aazeige', infoHide: 'Erklärig verstecke',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäscht', ccOthers: 'Anderi', ccEmpty: 'No kei Aalässe erfasst.', ccNoDays: 'No kei Täg erfasst.', ccSummary: '{s} Schichte · {r} Rolle', ccLvlAll: 'Chränzli ond Chilbi', ccLvlEvent: 'Aalass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktione', ccAddEvent: 'Aalass hinzuefüege', ccAddDay: 'Tag hinzuefüege', ccAddShift: 'Schicht hinzuefüege', ccAddRole: 'Rolle hinzuefüege', ccChange: 'Ändere', ccCopy: 'Kopiere', ccClose: 'Schliesse', ccNameOpt: 'Name (freiwillig)', ccStart: 'Start', ccEnd: 'Änd', ccActive: 'Aktiv', ccPersons: 'Verantwortlichi', ccSearch: 'Näme sueche', ccOtherPerson: 'Anderi Person (nüd i de App)', ccAdd: 'Hinzuefüege', ccDidYouMean: 'Meinsch {name}?', ccNobody: 'No niemer', ccConfirmDel: '«{name}» lösche? Alles, wo drunder erfasst isch, wird au glöscht.', ccConfirmDelRole: '«{name}» lösche?', ccCopyEventNote: 'D Kopie isch zerscht inaktiv. Alli Täg werded um 52 Woche verschobe, damit d Wochetäg glich bliibed.', ccCopyDayNote: 'Schichte ond Rolle werded mit de Verantwortliche kopiert.', ccSaved: 'Gspeicheret', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} isch no nüd i de App. Mit de Handynummere chasch d Person als Gascht hinzuefüege.', ccAsGuest: 'Als Gascht hinzuefüege', ccNeedName: 'Gib en Name ii.', ccSetup: 'Für C&C muess s Datebank-Schema aktualisiert werde (supabase/schema.sql).', ccCopySuffix: 'Kopie',
+      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäscht', ccOthers: 'Anderi', ccEmpty: 'No kei Aalässe erfasst.', ccNoDays: 'No kei Täg erfasst.', ccSummary: '{s} Schichte · {r} Rolle', ccLvlAll: 'Chränzli ond Chilbi', ccLvlEvent: 'Aalass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktione', ccAddEvent: 'Aalass hinzuefüege', ccAddDay: 'Tag hinzuefüege', ccAddShift: 'Schicht hinzuefüege', ccAddRole: 'Rolle hinzuefüege', ccChange: 'Ändere', ccCopy: 'Kopiere', ccClose: 'Schliesse', ccNameOpt: 'Name (freiwillig)', ccStart: 'Start', ccEnd: 'Änd', ccActive: 'Aktiv', ccPersons: 'Verantwortlichi', ccSearch: 'Näme sueche', ccOtherPerson: 'Anderi Person (nüd i de App)', ccAdd: 'Hinzuefüege', ccDidYouMean: 'Meinsch {name}?', ccNobody: 'No niemer', ccConfirmDel: '«{name}» lösche? Alles, wo drunder erfasst isch, wird au glöscht.', ccConfirmDelRole: '«{name}» lösche?', ccCopyEventNote: 'D Kopie isch zerscht inaktiv. Alli Täg werded um 52 Woche verschobe, damit d Wochetäg glich bliibed.', ccCopyDayNote: 'Schichte ond Rolle werded mit de Verantwortliche kopiert.', ccSaved: 'Gspeicheret', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} isch no nüd i de App. Mit de Handynummere chasch d Person als Gascht hinzuefüege.', ccAsGuest: 'Als Gascht hinzuefüege', ccNeedName: 'Gib en Name ii.', ccSetup: 'Für C&C muess s Datebank-Schema aktualisiert werde (supabase/schema.sql).', ccCopySuffix: 'Kopie', ccPrint: 'PDF teilen', ccPdfBuilding: 'PDF wird erstellt…', ccPdfFailed: 'PDF konnte nicht erstellt werden.',
       mMakeAdmin: 'Zom Admin mache', mRevokeAdmin: 'Admin-Rächt entzieh', mMakeEm: 'Zom Event-Manager mache', mRevokeEm: 'Event-Manager-Rächt entzieh', mMakeGuest: 'Zom Gascht mache', mMakeMember: 'Zom Mitglied mache', mEdit: 'Name ond Handynummere ändere', mEditNote: 'Mit enere neue Handynummere gilt wieder de Standard-PIN: di letschte 6 Ziffere vo de neue Nummere.', mSaved: 'Gspeicheret', mDelete: 'Mitglied lösche', mPhoneTaken: 'Die Handynummere ghört scho öpper anderem.',
-      navJass: 'Jass', jsParticipants: 'Teilnehmer', jsSchedule: 'Spielplan', jsRanking: 'Tagesrangliste', jsRound: 'Rundi {n}', jsTable: 'Tisch {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Spieler {n}', jsFree: 'frei', jsEmpty: 'No kei Jassmasters erfasst.', jsNoDays: 'No kei Datum erfasst.', jsAddSeries: 'Jassmasters hinzuefüege', jsAddDay: 'Datum hinzuefüege', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jasstag', jsPick: 'Spieler {n} uswähle', jsClear: 'Platz freigäh', jsAlready: 'scho Spieler {n}', jsPoints: 'Pünkt', jsGames: '{n} Spiel', jsGame: '{n} Spiel', jsNoPoints: 'No kei Pünkt erfasst.', jsHint: 'Träg d Pünkt bim Siegerteam ii. S ander Team überchunnt si automatisch negativ.', jsSetup: 'Für Jass muess s Datebank-Schema aktualisiert werde (supabase/schema.sql).',
-      jmTag: 'Jass-Master', mMakeJm: 'Zom Jass-Master mache', mRevokeJm: 'Jass-Master-Rächt entzieh', jmGranted: 'Als Jass-Master festgleit', jmRevoked: 'Jass-Master-Rächt entzoge', jsUpcoming: 'Aastaahndi Jassmasters', jsPast: 'Vergangeni Jassmasters'
+      navJass: 'Jass', jsParticipants: 'Teilnehmer', jsSchedule: 'Spielplan', jsRanking: 'Tagesrangliste', jsRound: 'Rundi {n}', jsTable: 'Tisch {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Spieler {n}', jsFree: 'frei', jsEmpty: 'No kei Jassmasters erfasst.', jsNoDays: 'No kei Datum erfasst.', jsAddSeries: 'Jassmasters hinzuefüege', jsAddDay: 'Datum hinzuefüege', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jasstag', jsPick: 'Spieler {n} uswähle', jsClear: 'Platz freigäh', jsAlready: 'scho Spieler {n}', jsPoints: 'Pünkt', jsGames: '{n} Spiel', jsPtsAbbr: 'Pkt.', jsGame: '{n} Spiel', jsNoPoints: 'No kei Pünkt erfasst.', jsHint: 'Träg d Pünkt bim Siegerteam ii. S ander Team überchunnt si automatisch negativ.', jsSetup: 'Für Jass muess s Datebank-Schema aktualisiert werde (supabase/schema.sql).',
+      jmTag: 'Jass Manager', mMakeJm: 'Zum Jass Manager machen', mRevokeJm: 'Jass Manager-Rechte entziehen', jmGranted: 'Als Jass Manager festgelegt', jmRevoked: 'Jass Manager-Rechte entzogen', cmTag: 'Chilbi Manager', crmTag: 'Chränzli Manager', mMakeCm: 'Zum Chilbi Manager machen', mRevokeCm: 'Chilbi Manager-Rechte entziehen', mMakeCrm: 'Zum Chränzli Manager machen', mRevokeCrm: 'Chränzli Manager-Rechte entziehen', cmGranted: 'Als Chilbi Manager festgelegt', cmRevoked: 'Chilbi Manager-Rechte entzogen', crmGranted: 'Als Chränzli Manager festgelegt', crmRevoked: 'Chränzli Manager-Rechte entzogen', grpActive: 'Aktivmitglieder', grpPassive: 'Passivmitglieder', mMakePassive: 'Zum Passivmitglied machen', mMakeActive: 'Zum Aktivmitglied machen', passiveSet: 'Als Passivmitglied festgelegt', activeSet: 'Als Aktivmitglied festgelegt', jsUpcoming: 'Aastaahndi Jassmasters', jsPast: 'Vergangeni Jassmasters'
     },
 
     uk: {
       wd0: 'Неділя', wd1: 'Понеділок', wd2: 'Вівторок', wd3: 'Середа', wd4: 'Четвер', wd5: 'П’ятниця', wd6: 'Субота',
       navTrainings: 'Тренування', navEvents: 'Події', navAdmin: 'Admin', navProfile: 'Профіль',
-      titleTrainings: 'FBRO Trainingsplan', titleEvents: 'FBRO Vereinsanlässe',
+      titleTrainings: 'Trainingsplan', titleEvents: 'Vereinsanlässe',
       subTrainings: 'Найближчі {n} занять', subEvents: 'Заплановані заходи клубу', moreDates: 'Інші дати ({n})',
       emptyTrTitle: 'Тренувань поки не заплановано.', emptyTrAdmin: 'Встановіть день тренування в розділі «Керування».', emptyTrMember: 'Дні тренувань визначають адміністратори.',
       emptyEvTitle: 'Наразі подій не заплановано.', emptyEvAdmin: 'Створіть подію в розділі «Керування».', emptyEvMember: 'Нові події створюють адміністратори.',
@@ -489,9 +489,9 @@
       hYes: 'Будуть ({n})', hNo: 'Не будуть ({n})', hOpen: 'Ще немає відповіді ({n})', hSolo: 'Самі ({n})', hDuo: 'Удвох ({n} учасників, {p} осіб)',
       nobody: 'Нікого', you: '(ви)', cancelledTag: 'Скасовано', cancelledLow: 'скасовано', changedLow: 'змінено',
       timePlace: '{time}, {place}', atTime: '{time}', calAdd: 'Додати до календаря', solo: 'Сам(а)', duo: 'Удвох',
-      secRules: 'Standard Training Setup', secExtra: 'Extra Training Setup', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Події', secMembers: 'Gruppen',
+      secRules: 'Standard Training', secExtra: 'Extra Training', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Події', secMembers: 'Gruppen',
       addNew: 'Додати', addClose: 'Закрити форму',
-      adminTitle: 'FBRO Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'FBRO Jass-Masters', adminSub: 'Видно лише адміністраторам', rulesIntro: 'Стандартні тренування щотижня',
+      adminTitle: 'Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'Jass-Masters', adminSub: 'Видно лише адміністраторам', rulesIntro: 'Стандартні тренування щотижня',
       weekday: 'День тижня', time: 'Час', place: 'Місце', date: 'Дата', label: 'Назва',
       phPlaceTraining: 'напр. спортзал школи «Північ»', addRule: 'Додати день тренування',
       edit: 'Редагувати', remove: 'Прибрати', cancel: 'Скасувати', reactivate: 'Відновити', del: 'Видалити', save: 'Зберегти', dismiss: 'Відміна', reset: 'Скинути',
@@ -542,19 +542,19 @@
       ruleChanged: 'День тренування змінено', trChanged: 'Тренування змінено', eventChanged: 'Подію змінено', langSaved: 'Мову збережено',
       guestTag: 'Гість', makeGuest: 'Призначити гостем: {name}', revokeGuest: 'Забрати статус гостя: {name}', guestGranted: 'Призначено гостем', guestRevoked: 'Статус гостя знято',
       guestCheck: 'Додати як гостя (бачить лише тренування та профіль)', guestInfo: 'У вас гостьовий доступ. Ви бачите тренування та свій профіль.',
-      memberTag: 'Член клубу', emTag: 'Менеджер подій', makeEm: 'Призначити менеджером подій: {name}', revokeEm: 'Забрати права менеджера подій: {name}', emGranted: 'Призначено менеджером подій', emRevoked: 'Права менеджера подій забрано', confirmGuestLoses: '{name} має права адміністратора, менеджера подій або джас-майстра. Призначення гостем забирає ці права. Продовжити?', selfMember: 'Ви член клубу. Ви не можете призначити себе гостем.', rolesTitle: 'Ролі', emSub: 'Тут ви керуєте подіями.',
+      memberTag: 'Член клубу', emTag: 'Менеджер подій', makeEm: 'Призначити менеджером подій: {name}', revokeEm: 'Забрати права менеджера подій: {name}', emGranted: 'Призначено менеджером подій', emRevoked: 'Права менеджера подій забрано', confirmGuestLoses: '{name} hat Admin-, Chilbi Manager-, Chränzli Manager- oder Jass Manager-Rechte. Als Gast festlegen entzieht diese Rechte. Fortfahren?', selfMember: 'Ви член клубу. Ви не можете призначити себе гостем.', rolesTitle: 'Ролі', emSub: 'Тут ви керуєте подіями.',
       infoShow: 'Показати пояснення', infoHide: 'Сховати пояснення',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Члени клубу', ccGuests: 'Гості', ccOthers: 'Інші', ccEmpty: 'Заходів ще немає.', ccNoDays: 'Днів ще немає.', ccSummary: 'Змін: {s} · ролей: {r}', ccLvlAll: 'Chränzli і Chilbi', ccLvlEvent: 'Захід', ccLvlDay: 'День', ccLvlShift: 'Зміна', ccLvlRole: 'Роль', ccActions: 'Дії', ccAddEvent: 'Додати захід', ccAddDay: 'Додати день', ccAddShift: 'Додати зміну', ccAddRole: 'Додати роль', ccChange: 'Змінити', ccCopy: 'Копіювати', ccClose: 'Закрити', ccNameOpt: 'Назва (необов’язково)', ccStart: 'Початок', ccEnd: 'Кінець', ccActive: 'Активний', ccPersons: 'Відповідальні', ccSearch: 'Пошук імен', ccOtherPerson: 'Інша особа (не в застосунку)', ccAdd: 'Додати', ccDidYouMean: 'Можливо, {name}?', ccNobody: 'Ще нікого', ccConfirmDel: 'Видалити «{name}»? Усе, що в ньому, також буде видалено.', ccConfirmDelRole: 'Видалити «{name}»?', ccCopyEventNote: 'Копія спочатку неактивна. Усі дні зсуваються на 52 тижні, щоб дні тижня збігалися.', ccCopyDayNote: 'Зміни й ролі копіюються разом із відповідальними.', ccSaved: 'Збережено', ccCopied: 'Скопійовано', ccDeleted: 'Видалено', ccNotInApp: '{name} ще немає в застосунку. За номером мобільного можна додати цю особу як гостя.', ccAsGuest: 'Додати як гостя', ccNeedName: 'Введіть ім’я.', ccSetup: 'Для C&C потрібно оновити схему бази даних (supabase/schema.sql).', ccCopySuffix: 'копія',
+      navCC: 'C&C', ccMembers: 'Члени клубу', ccGuests: 'Гості', ccOthers: 'Інші', ccEmpty: 'Заходів ще немає.', ccNoDays: 'Днів ще немає.', ccSummary: 'Змін: {s} · ролей: {r}', ccLvlAll: 'Chränzli і Chilbi', ccLvlEvent: 'Захід', ccLvlDay: 'День', ccLvlShift: 'Зміна', ccLvlRole: 'Роль', ccActions: 'Дії', ccAddEvent: 'Додати захід', ccAddDay: 'Додати день', ccAddShift: 'Додати зміну', ccAddRole: 'Додати роль', ccChange: 'Змінити', ccCopy: 'Копіювати', ccClose: 'Закрити', ccNameOpt: 'Назва (необов’язково)', ccStart: 'Початок', ccEnd: 'Кінець', ccActive: 'Активний', ccPersons: 'Відповідальні', ccSearch: 'Пошук імен', ccOtherPerson: 'Інша особа (не в застосунку)', ccAdd: 'Додати', ccDidYouMean: 'Можливо, {name}?', ccNobody: 'Ще нікого', ccConfirmDel: 'Видалити «{name}»? Усе, що в ньому, також буде видалено.', ccConfirmDelRole: 'Видалити «{name}»?', ccCopyEventNote: 'Копія спочатку неактивна. Усі дні зсуваються на 52 тижні, щоб дні тижня збігалися.', ccCopyDayNote: 'Зміни й ролі копіюються разом із відповідальними.', ccSaved: 'Збережено', ccCopied: 'Скопійовано', ccDeleted: 'Видалено', ccNotInApp: '{name} ще немає в застосунку. За номером мобільного можна додати цю особу як гостя.', ccAsGuest: 'Додати як гостя', ccNeedName: 'Введіть ім’я.', ccSetup: 'Для C&C потрібно оновити схему бази даних (supabase/schema.sql).', ccCopySuffix: 'копія', ccPrint: 'PDF teilen', ccPdfBuilding: 'PDF wird erstellt…', ccPdfFailed: 'PDF konnte nicht erstellt werden.',
       mMakeAdmin: 'Призначити адміністратором', mRevokeAdmin: 'Забрати права адміністратора', mMakeEm: 'Призначити менеджером подій', mRevokeEm: 'Забрати права менеджера подій', mMakeGuest: 'Зробити гостем', mMakeMember: 'Зробити членом клубу', mEdit: 'Змінити ім’я та номер мобільного', mEditNote: 'З новим номером знову діє PIN за замовчуванням: останні 6 цифр нового номера.', mSaved: 'Збережено', mDelete: 'Видалити учасника', mPhoneTaken: 'Цей номер мобільного вже належить іншій особі.',
-      navJass: 'Джас', jsParticipants: 'Учасники', jsSchedule: 'Розклад ігор', jsRanking: 'Рейтинг дня', jsRound: 'Раунд {n}', jsTable: 'Стіл {t}', jsTeam1: 'Команда I', jsTeam2: 'Команда II', jsPlayer: 'Гравець {n}', jsFree: 'вільно', jsEmpty: 'Jassmasters ще немає.', jsNoDays: 'Дати ще немає.', jsAddSeries: 'Додати Jassmasters', jsAddDay: 'Додати дату', jsLvlSeries: 'Jassmasters', jsLvlDay: 'День джасу', jsPick: 'Вибрати гравця {n}', jsClear: 'Звільнити місце', jsAlready: 'уже гравець {n}', jsPoints: 'Очки', jsGames: 'Ігор: {n}', jsGame: 'Ігор: {n}', jsNoPoints: 'Очок ще немає.', jsHint: 'Вкажіть очки команди-переможця. Інша команда автоматично отримує їх зі знаком мінус.', jsSetup: 'Для джасу потрібно оновити схему бази даних (supabase/schema.sql).',
-      jmTag: 'Джас-майстер', mMakeJm: 'Призначити джас-майстром', mRevokeJm: 'Забрати права джас-майстра', jmGranted: 'Призначено джас-майстром', jmRevoked: 'Права джас-майстра забрано', jsUpcoming: 'Майбутні Jassmasters', jsPast: 'Минулі Jassmasters'
+      navJass: 'Джас', jsParticipants: 'Учасники', jsSchedule: 'Розклад ігор', jsRanking: 'Рейтинг дня', jsRound: 'Раунд {n}', jsTable: 'Стіл {t}', jsTeam1: 'Команда I', jsTeam2: 'Команда II', jsPlayer: 'Гравець {n}', jsFree: 'вільно', jsEmpty: 'Jassmasters ще немає.', jsNoDays: 'Дати ще немає.', jsAddSeries: 'Додати Jassmasters', jsAddDay: 'Додати дату', jsLvlSeries: 'Jassmasters', jsLvlDay: 'День джасу', jsPick: 'Вибрати гравця {n}', jsClear: 'Звільнити місце', jsAlready: 'уже гравець {n}', jsPoints: 'Очки', jsGames: 'Ігор: {n}', jsPtsAbbr: 'очк.', jsGame: 'Ігор: {n}', jsNoPoints: 'Очок ще немає.', jsHint: 'Вкажіть очки команди-переможця. Інша команда автоматично отримує їх зі знаком мінус.', jsSetup: 'Для джасу потрібно оновити схему бази даних (supabase/schema.sql).',
+      jmTag: 'Jass Manager', mMakeJm: 'Zum Jass Manager machen', mRevokeJm: 'Jass Manager-Rechte entziehen', jmGranted: 'Als Jass Manager festgelegt', jmRevoked: 'Jass Manager-Rechte entzogen', cmTag: 'Chilbi Manager', crmTag: 'Chränzli Manager', mMakeCm: 'Zum Chilbi Manager machen', mRevokeCm: 'Chilbi Manager-Rechte entziehen', mMakeCrm: 'Zum Chränzli Manager machen', mRevokeCrm: 'Chränzli Manager-Rechte entziehen', cmGranted: 'Als Chilbi Manager festgelegt', cmRevoked: 'Chilbi Manager-Rechte entzogen', crmGranted: 'Als Chränzli Manager festgelegt', crmRevoked: 'Chränzli Manager-Rechte entzogen', grpActive: 'Aktivmitglieder', grpPassive: 'Passivmitglieder', mMakePassive: 'Zum Passivmitglied machen', mMakeActive: 'Zum Aktivmitglied machen', passiveSet: 'Als Passivmitglied festgelegt', activeSet: 'Als Aktivmitglied festgelegt', jsUpcoming: 'Майбутні Jassmasters', jsPast: 'Минулі Jassmasters'
     },
 
     bar: {
       wd0: 'Sunda', wd1: 'Mondog', wd2: 'Irda', wd3: 'Migga', wd4: 'Pfinzda', wd5: 'Freida', wd6: 'Samsda',
       navTrainings: 'Trainings', navEvents: 'Events', navAdmin: 'Admin', navProfile: 'Profil',
-      titleTrainings: 'FBRO Trainingsplan', titleEvents: 'FBRO Vereinsanlässe',
+      titleTrainings: 'Trainingsplan', titleEvents: 'Vereinsanlässe',
       subTrainings: 'De nächstn {n} Termine', subEvents: 'De Vereinsveranstoitungen, de gplant san', moreDates: 'Weitere Termine ({n})',
       emptyTrTitle: 'Es san no koane Trainings gplant.', emptyTrAdmin: 'Leg im Bereich «Verwoitn» an Trainingstag fest.', emptyTrMember: 'De Admins legn de Trainingstag fest.',
       emptyEvTitle: 'Im Moment san koane Events gplant.', emptyEvAdmin: 'Leg im Bereich «Verwoitn» an Event o.', emptyEvMember: 'De Admins legn neie Events o.',
@@ -564,9 +564,9 @@
       hYes: 'Dabei ({n})', hNo: 'Ned dabei ({n})', hOpen: 'No koa Antwort ({n})', hSolo: 'Alloa dabei ({n})', hDuo: 'Zu zweit dabei ({n} Mitglieder, {p} Leit)',
       nobody: 'Koaner', you: '(du)', cancelledTag: 'Abgsogt', cancelledLow: 'abgsogt', changedLow: 'gändert',
       timePlace: '{time} Uhr, {place}', atTime: '{time} Uhr', calAdd: 'Im Kalenda speichan', solo: 'Alloa', duo: 'Zu zweit',
-      secRules: 'Standard Training Setup', secExtra: 'Extra Training Setup', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Events', secMembers: 'Gruppen',
+      secRules: 'Standard Training', secExtra: 'Extra Training', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Events', secMembers: 'Gruppen',
       addNew: 'Neu erfassn', addClose: 'Erfassung zumachn',
-      adminTitle: 'FBRO Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'FBRO Jass-Masters', adminSub: 'Bloß für Admins sichtbar', rulesIntro: 'Standard-Trainings pro Woch',
+      adminTitle: 'Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'Jass-Masters', adminSub: 'Bloß für Admins sichtbar', rulesIntro: 'Standard-Trainings pro Woch',
       weekday: 'Wochentag', time: 'Uhrzeit', place: 'Ort', date: 'Datum', label: 'Bezeichnung',
       phPlaceTraining: 'z. B. Turnhalle Schulhaus Nord', addRule: 'Trainingstag dazuadoa',
       edit: 'Bearbeitn', remove: 'Wegdoa', cancel: 'Absagn', reactivate: 'Wieda aktivieren', del: 'Löschn', save: 'Speichan', dismiss: 'Abbrecha', reset: 'Zruckstelln',
@@ -617,19 +617,19 @@
       ruleChanged: 'Trainingstag gändert', trChanged: 'Training gändert', eventChanged: 'Event gändert', langSaved: 'Sprach gspeichert',
       guestTag: 'Gast', makeGuest: 'Als Gast festlegn: {name}', revokeGuest: 'Gast-Status entfernen: {name}', guestGranted: 'Als Gast festgelegt', guestRevoked: 'Gast-Status entfernt',
       guestCheck: 'Als Gast dazuadoa (sicht bloß Trainings und Profil)', guestInfo: 'Du hast an Gast-Zugang. Du siehst de Trainings und dei Profil.',
-      memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zum Event-Manager macha: {name}', revokeEm: 'Event-Manager-Rechte entziehn: {name}', emGranted: 'Als Event-Manager festgelegt', emRevoked: 'Event-Manager-Rechte entzogn', confirmGuestLoses: '{name} hod Admin-, Event-Manager- oder Jass-Master-Rechte. Als Gast festlegn entzieht de Rechte. Weiter?', selfMember: 'Du bist Mitglied. Du konnst di ned söiba zum Gast macha.', rolesTitle: 'Rollen', emSub: 'Do verwoitst du de Events.',
+      memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zum Event-Manager macha: {name}', revokeEm: 'Event-Manager-Rechte entziehn: {name}', emGranted: 'Als Event-Manager festgelegt', emRevoked: 'Event-Manager-Rechte entzogn', confirmGuestLoses: '{name} hat Admin-, Chilbi Manager-, Chränzli Manager- oder Jass Manager-Rechte. Als Gast festlegen entzieht diese Rechte. Fortfahren?', selfMember: 'Du bist Mitglied. Du konnst di ned söiba zum Gast macha.', rolesTitle: 'Rollen', emSub: 'Do verwoitst du de Events.',
       infoShow: 'Erklärung anzoagn', infoHide: 'Erklärung wegdoa',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäst', ccOthers: 'Andere', ccEmpty: 'No koane Veranstoitungen.', ccNoDays: 'No koane Tog.', ccSummary: '{s} Schichtn · {r} Rolln', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Veranstoitung', ccLvlDay: 'Tog', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktionen', ccAddEvent: 'Veranstoitung dazuadoa', ccAddDay: 'Tog dazuadoa', ccAddShift: 'Schicht dazuadoa', ccAddRole: 'Rolle dazuadoa', ccChange: 'Ändern', ccCopy: 'Kopiern', ccClose: 'Zumachn', ccNameOpt: 'Nama (freiwillig)', ccStart: 'Ofang', ccEnd: 'End', ccActive: 'Aktiv', ccPersons: 'Verantwortliche', ccSearch: 'Nama suacha', ccOtherPerson: 'Andere Person (ned in da App)', ccAdd: 'Dazuadoa', ccDidYouMean: 'Moanst du {name}?', ccNobody: 'No koana', ccConfirmDel: '«{name}» löschn? Ois, wos drunter erfasst is, werd aa glöscht.', ccConfirmDelRole: '«{name}» löschn?', ccCopyEventNote: 'De Kopie is zerst inaktiv. Olle Tog wern um 52 Wochn verschobn, damit de Wochentog gleich bleibn.', ccCopyDayNote: 'Schichtn und Rolln wern mit de Verantwortlichn kopiert.', ccSaved: 'Gspeichert', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} is no ned in da App. Mit da Handynummer konnst de Person ois Gast dazuadoa.', ccAsGuest: 'Ois Gast dazuadoa', ccNeedName: 'Gib an Nama ei.', ccSetup: 'Für C&C muass s Datenbank-Schema aktualisiert wern (supabase/schema.sql).', ccCopySuffix: 'Kopie',
+      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäst', ccOthers: 'Andere', ccEmpty: 'No koane Veranstoitungen.', ccNoDays: 'No koane Tog.', ccSummary: '{s} Schichtn · {r} Rolln', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Veranstoitung', ccLvlDay: 'Tog', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktionen', ccAddEvent: 'Veranstoitung dazuadoa', ccAddDay: 'Tog dazuadoa', ccAddShift: 'Schicht dazuadoa', ccAddRole: 'Rolle dazuadoa', ccChange: 'Ändern', ccCopy: 'Kopiern', ccClose: 'Zumachn', ccNameOpt: 'Nama (freiwillig)', ccStart: 'Ofang', ccEnd: 'End', ccActive: 'Aktiv', ccPersons: 'Verantwortliche', ccSearch: 'Nama suacha', ccOtherPerson: 'Andere Person (ned in da App)', ccAdd: 'Dazuadoa', ccDidYouMean: 'Moanst du {name}?', ccNobody: 'No koana', ccConfirmDel: '«{name}» löschn? Ois, wos drunter erfasst is, werd aa glöscht.', ccConfirmDelRole: '«{name}» löschn?', ccCopyEventNote: 'De Kopie is zerst inaktiv. Olle Tog wern um 52 Wochn verschobn, damit de Wochentog gleich bleibn.', ccCopyDayNote: 'Schichtn und Rolln wern mit de Verantwortlichn kopiert.', ccSaved: 'Gspeichert', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} is no ned in da App. Mit da Handynummer konnst de Person ois Gast dazuadoa.', ccAsGuest: 'Ois Gast dazuadoa', ccNeedName: 'Gib an Nama ei.', ccSetup: 'Für C&C muass s Datenbank-Schema aktualisiert wern (supabase/schema.sql).', ccCopySuffix: 'Kopie', ccPrint: 'PDF teilen', ccPdfBuilding: 'PDF wird erstellt…', ccPdfFailed: 'PDF konnte nicht erstellt werden.',
       mMakeAdmin: 'Zum Admin macha', mRevokeAdmin: 'Admin-Rechte entziehn', mMakeEm: 'Zum Event-Manager macha', mRevokeEm: 'Event-Manager-Rechte entziehn', mMakeGuest: 'Zum Gast macha', mMakeMember: 'Zum Mitglied macha', mEdit: 'Nama und Handynummer ändern', mEditNote: 'Mit ana neia Handynummer gilt wieda da Standard-PIN: de letztn 6 Ziffern vo da neia Nummer.', mSaved: 'Gspeichert', mDelete: 'Mitglied löschn', mPhoneTaken: 'De Handynummer ghört scho wem andern.',
-      navJass: 'Jass', jsParticipants: 'Teilnehmer', jsSchedule: 'Spuiplan', jsRanking: 'Tagesranglistn', jsRound: 'Rundn {n}', jsTable: 'Tisch {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Spuier {n}', jsFree: 'frei', jsEmpty: 'No koa Jassmasters.', jsNoDays: 'No koa Datum.', jsAddSeries: 'Jassmasters dazuadoa', jsAddDay: 'Datum dazuadoa', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jasstog', jsPick: 'Spuier {n} aussuacha', jsClear: 'Platz freigebn', jsAlready: 'scho Spuier {n}', jsPoints: 'Punkt', jsGames: '{n} Spuie', jsGame: '{n} Spui', jsNoPoints: 'No koane Punkt.', jsHint: 'Trag de Punkt beim Siegerteam ei. Des andere Team kriagt s automatisch negativ.', jsSetup: 'Für Jass muass s Datenbank-Schema aktualisiert wern (supabase/schema.sql).',
-      jmTag: 'Jass-Master', mMakeJm: 'Zum Jass-Master macha', mRevokeJm: 'Jass-Master-Rechte entziehn', jmGranted: 'Als Jass-Master festgelegt', jmRevoked: 'Jass-Master-Rechte entzogn', jsUpcoming: 'Kemmande Jassmasters', jsPast: 'Vergangane Jassmasters'
+      navJass: 'Jass', jsParticipants: 'Teilnehmer', jsSchedule: 'Spuiplan', jsRanking: 'Tagesranglistn', jsRound: 'Rundn {n}', jsTable: 'Tisch {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Spuier {n}', jsFree: 'frei', jsEmpty: 'No koa Jassmasters.', jsNoDays: 'No koa Datum.', jsAddSeries: 'Jassmasters dazuadoa', jsAddDay: 'Datum dazuadoa', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jasstog', jsPick: 'Spuier {n} aussuacha', jsClear: 'Platz freigebn', jsAlready: 'scho Spuier {n}', jsPoints: 'Punkt', jsGames: '{n} Spuie', jsPtsAbbr: 'Pkt.', jsGame: '{n} Spui', jsNoPoints: 'No koane Punkt.', jsHint: 'Trag de Punkt beim Siegerteam ei. Des andere Team kriagt s automatisch negativ.', jsSetup: 'Für Jass muass s Datenbank-Schema aktualisiert wern (supabase/schema.sql).',
+      jmTag: 'Jass Manager', mMakeJm: 'Zum Jass Manager machen', mRevokeJm: 'Jass Manager-Rechte entziehen', jmGranted: 'Als Jass Manager festgelegt', jmRevoked: 'Jass Manager-Rechte entzogen', cmTag: 'Chilbi Manager', crmTag: 'Chränzli Manager', mMakeCm: 'Zum Chilbi Manager machen', mRevokeCm: 'Chilbi Manager-Rechte entziehen', mMakeCrm: 'Zum Chränzli Manager machen', mRevokeCrm: 'Chränzli Manager-Rechte entziehen', cmGranted: 'Als Chilbi Manager festgelegt', cmRevoked: 'Chilbi Manager-Rechte entzogen', crmGranted: 'Als Chränzli Manager festgelegt', crmRevoked: 'Chränzli Manager-Rechte entzogen', grpActive: 'Aktivmitglieder', grpPassive: 'Passivmitglieder', mMakePassive: 'Zum Passivmitglied machen', mMakeActive: 'Zum Aktivmitglied machen', passiveSet: 'Als Passivmitglied festgelegt', activeSet: 'Als Aktivmitglied festgelegt', jsUpcoming: 'Kemmande Jassmasters', jsPast: 'Vergangane Jassmasters'
     },
 
     cs: {
       wd0: 'Neděle', wd1: 'Pondělí', wd2: 'Úterý', wd3: 'Středa', wd4: 'Čtvrtek', wd5: 'Pátek', wd6: 'Sobota',
       navTrainings: 'Tréninky', navEvents: 'Akce', navAdmin: 'Admin', navProfile: 'Profil',
-      titleTrainings: 'FBRO Trainingsplan', titleEvents: 'FBRO Vereinsanlässe',
+      titleTrainings: 'Trainingsplan', titleEvents: 'Vereinsanlässe',
       subTrainings: 'Následujících {n} termínů', subEvents: 'Plánované akce klubu', moreDates: 'Další termíny ({n})',
       emptyTrTitle: 'Zatím nejsou naplánovány žádné tréninky.', emptyTrAdmin: 'Nastav v části «Správa» tréninkový den.', emptyTrMember: 'Tréninkové dny určují správci.',
       emptyEvTitle: 'Momentálně nejsou naplánovány žádné akce.', emptyEvAdmin: 'Vytvoř v části «Správa» novou akci.', emptyEvMember: 'Nové akce vytvářejí správci.',
@@ -639,9 +639,9 @@
       hYes: 'Přijdou ({n})', hNo: 'Nepřijdou ({n})', hOpen: 'Zatím bez odpovědi ({n})', hSolo: 'Sám/sama ({n})', hDuo: 'Ve dvou ({n} členů, {p} osob)',
       nobody: 'Nikdo', you: '(ty)', cancelledTag: 'Zrušeno', cancelledLow: 'zrušeno', changedLow: 'změněno',
       timePlace: '{time}, {place}', atTime: '{time}', calAdd: 'Přidat do kalendáře', solo: 'Sám/sama', duo: 'Ve dvou',
-      secRules: 'Standard Training Setup', secExtra: 'Extra Training Setup', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Akce', secMembers: 'Gruppen',
+      secRules: 'Standard Training', secExtra: 'Extra Training', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Akce', secMembers: 'Gruppen',
       addNew: 'Přidat', addClose: 'Zavřít formulář',
-      adminTitle: 'FBRO Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'FBRO Jass-Masters', adminSub: 'Viditelné pouze pro správce', rulesIntro: 'Standardní tréninky každý týden',
+      adminTitle: 'Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'Jass-Masters', adminSub: 'Viditelné pouze pro správce', rulesIntro: 'Standardní tréninky každý týden',
       weekday: 'Den v týdnu', time: 'Čas', place: 'Místo', date: 'Datum', label: 'Název',
       phPlaceTraining: 'např. tělocvična školy Sever', addRule: 'Přidat tréninkový den',
       edit: 'Upravit', remove: 'Odebrat', cancel: 'Zrušit', reactivate: 'Obnovit', del: 'Smazat', save: 'Uložit', dismiss: 'Zahodit', reset: 'Vrátit zpět',
@@ -692,19 +692,19 @@
       ruleChanged: 'Tréninkový den změněn', trChanged: 'Trénink změněn', eventChanged: 'Akce změněna', langSaved: 'Jazyk uložen',
       guestTag: 'Host', makeGuest: 'Nastavit jako hosta: {name}', revokeGuest: 'Odebrat status hosta: {name}', guestGranted: 'Nastaveno jako host', guestRevoked: 'Status hosta odebrán',
       guestCheck: 'Přidat jako hosta (vidí jen tréninky a profil)', guestInfo: 'Máš přístup jako host. Vidíš tréninky a svůj profil.',
-      memberTag: 'Člen', emTag: 'Správce akcí', makeEm: 'Udělat správcem akcí: {name}', revokeEm: 'Odebrat práva správce akcí: {name}', emGranted: 'Nastaveno jako správce akcí', emRevoked: 'Práva správce akcí odebrána', confirmGuestLoses: '{name} má práva správce, správce akcí nebo jass mastera. Nastavení jako host tato práva odebere. Pokračovat?', selfMember: 'Jsi člen. Sám sebe hostem udělat nemůžeš.', rolesTitle: 'Role', emSub: 'Tady spravuješ akce.',
+      memberTag: 'Člen', emTag: 'Správce akcí', makeEm: 'Udělat správcem akcí: {name}', revokeEm: 'Odebrat práva správce akcí: {name}', emGranted: 'Nastaveno jako správce akcí', emRevoked: 'Práva správce akcí odebrána', confirmGuestLoses: '{name} hat Admin-, Chilbi Manager-, Chränzli Manager- oder Jass Manager-Rechte. Als Gast festlegen entzieht diese Rechte. Fortfahren?', selfMember: 'Jsi člen. Sám sebe hostem udělat nemůžeš.', rolesTitle: 'Role', emSub: 'Tady spravuješ akce.',
       infoShow: 'Zobrazit vysvětlení', infoHide: 'Skrýt vysvětlení',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Členové', ccGuests: 'Hosté', ccOthers: 'Ostatní', ccEmpty: 'Zatím žádné akce.', ccNoDays: 'Zatím žádné dny.', ccSummary: 'Směny: {s} · role: {r}', ccLvlAll: 'Chränzli a Chilbi', ccLvlEvent: 'Akce', ccLvlDay: 'Den', ccLvlShift: 'Směna', ccLvlRole: 'Role', ccActions: 'Možnosti', ccAddEvent: 'Přidat akci', ccAddDay: 'Přidat den', ccAddShift: 'Přidat směnu', ccAddRole: 'Přidat roli', ccChange: 'Upravit', ccCopy: 'Kopírovat', ccClose: 'Zavřít', ccNameOpt: 'Název (nepovinné)', ccStart: 'Začátek', ccEnd: 'Konec', ccActive: 'Aktivní', ccPersons: 'Odpovědné osoby', ccSearch: 'Hledat jména', ccOtherPerson: 'Jiná osoba (není v aplikaci)', ccAdd: 'Přidat', ccDidYouMean: 'Myslíš {name}?', ccNobody: 'Zatím nikdo', ccConfirmDel: 'Smazat «{name}»? Smaže se i vše, co je pod tím.', ccConfirmDelRole: 'Smazat «{name}»?', ccCopyEventNote: 'Kopie je nejprve neaktivní. Všechny dny se posunou o 52 týdnů, aby dny v týdnu zůstaly stejné.', ccCopyDayNote: 'Směny a role se kopírují i s odpovědnými osobami.', ccSaved: 'Uloženo', ccCopied: 'Zkopírováno', ccDeleted: 'Smazáno', ccNotInApp: '{name} zatím v aplikaci není. S číslem mobilu ji můžeš přidat jako hosta.', ccAsGuest: 'Přidat jako hosta', ccNeedName: 'Zadej jméno.', ccSetup: 'Pro C&C je potřeba aktualizovat schéma databáze (supabase/schema.sql).', ccCopySuffix: 'kopie',
+      navCC: 'C&C', ccMembers: 'Členové', ccGuests: 'Hosté', ccOthers: 'Ostatní', ccEmpty: 'Zatím žádné akce.', ccNoDays: 'Zatím žádné dny.', ccSummary: 'Směny: {s} · role: {r}', ccLvlAll: 'Chränzli a Chilbi', ccLvlEvent: 'Akce', ccLvlDay: 'Den', ccLvlShift: 'Směna', ccLvlRole: 'Role', ccActions: 'Možnosti', ccAddEvent: 'Přidat akci', ccAddDay: 'Přidat den', ccAddShift: 'Přidat směnu', ccAddRole: 'Přidat roli', ccChange: 'Upravit', ccCopy: 'Kopírovat', ccClose: 'Zavřít', ccNameOpt: 'Název (nepovinné)', ccStart: 'Začátek', ccEnd: 'Konec', ccActive: 'Aktivní', ccPersons: 'Odpovědné osoby', ccSearch: 'Hledat jména', ccOtherPerson: 'Jiná osoba (není v aplikaci)', ccAdd: 'Přidat', ccDidYouMean: 'Myslíš {name}?', ccNobody: 'Zatím nikdo', ccConfirmDel: 'Smazat «{name}»? Smaže se i vše, co je pod tím.', ccConfirmDelRole: 'Smazat «{name}»?', ccCopyEventNote: 'Kopie je nejprve neaktivní. Všechny dny se posunou o 52 týdnů, aby dny v týdnu zůstaly stejné.', ccCopyDayNote: 'Směny a role se kopírují i s odpovědnými osobami.', ccSaved: 'Uloženo', ccCopied: 'Zkopírováno', ccDeleted: 'Smazáno', ccNotInApp: '{name} zatím v aplikaci není. S číslem mobilu ji můžeš přidat jako hosta.', ccAsGuest: 'Přidat jako hosta', ccNeedName: 'Zadej jméno.', ccSetup: 'Pro C&C je potřeba aktualizovat schéma databáze (supabase/schema.sql).', ccCopySuffix: 'kopie', ccPrint: 'PDF teilen', ccPdfBuilding: 'PDF wird erstellt…', ccPdfFailed: 'PDF konnte nicht erstellt werden.',
       mMakeAdmin: 'Udělat správcem', mRevokeAdmin: 'Odebrat práva správce', mMakeEm: 'Udělat správcem akcí', mRevokeEm: 'Odebrat práva správce akcí', mMakeGuest: 'Nastavit jako hosta', mMakeMember: 'Nastavit jako člena', mEdit: 'Změnit jméno a číslo mobilu', mEditNote: 'S novým číslem opět platí výchozí PIN: posledních 6 číslic nového čísla.', mSaved: 'Uloženo', mDelete: 'Smazat člena', mPhoneTaken: 'Toto číslo mobilu už patří jiné osobě.',
-      navJass: 'Jass', jsParticipants: 'Hráči', jsSchedule: 'Rozpis her', jsRanking: 'Denní pořadí', jsRound: 'Kolo {n}', jsTable: 'Stůl {t}', jsTeam1: 'Tým I', jsTeam2: 'Tým II', jsPlayer: 'Hráč {n}', jsFree: 'volné', jsEmpty: 'Zatím žádný Jassmasters.', jsNoDays: 'Zatím žádné datum.', jsAddSeries: 'Přidat Jassmasters', jsAddDay: 'Přidat datum', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Den jassu', jsPick: 'Vybrat hráče {n}', jsClear: 'Uvolnit místo', jsAlready: 'už hráč {n}', jsPoints: 'Body', jsGames: 'Her: {n}', jsGame: 'Her: {n}', jsNoPoints: 'Zatím žádné body.', jsHint: 'Zadej body vítěznému týmu. Druhý tým je automaticky dostane záporně.', jsSetup: 'Pro jass je potřeba aktualizovat schéma databáze (supabase/schema.sql).',
-      jmTag: 'Jass master', mMakeJm: 'Udělat jass masterem', mRevokeJm: 'Odebrat práva jass mastera', jmGranted: 'Nastaveno jako jass master', jmRevoked: 'Práva jass mastera odebrána', jsUpcoming: 'Nadcházející Jassmasters', jsPast: 'Minulé Jassmasters'
+      navJass: 'Jass', jsParticipants: 'Hráči', jsSchedule: 'Rozpis her', jsRanking: 'Denní pořadí', jsRound: 'Kolo {n}', jsTable: 'Stůl {t}', jsTeam1: 'Tým I', jsTeam2: 'Tým II', jsPlayer: 'Hráč {n}', jsFree: 'volné', jsEmpty: 'Zatím žádný Jassmasters.', jsNoDays: 'Zatím žádné datum.', jsAddSeries: 'Přidat Jassmasters', jsAddDay: 'Přidat datum', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Den jassu', jsPick: 'Vybrat hráče {n}', jsClear: 'Uvolnit místo', jsAlready: 'už hráč {n}', jsPoints: 'Body', jsGames: 'Her: {n}', jsPtsAbbr: 'b.', jsGame: 'Her: {n}', jsNoPoints: 'Zatím žádné body.', jsHint: 'Zadej body vítěznému týmu. Druhý tým je automaticky dostane záporně.', jsSetup: 'Pro jass je potřeba aktualizovat schéma databáze (supabase/schema.sql).',
+      jmTag: 'Jass Manager', mMakeJm: 'Zum Jass Manager machen', mRevokeJm: 'Jass Manager-Rechte entziehen', jmGranted: 'Als Jass Manager festgelegt', jmRevoked: 'Jass Manager-Rechte entzogen', cmTag: 'Chilbi Manager', crmTag: 'Chränzli Manager', mMakeCm: 'Zum Chilbi Manager machen', mRevokeCm: 'Chilbi Manager-Rechte entziehen', mMakeCrm: 'Zum Chränzli Manager machen', mRevokeCrm: 'Chränzli Manager-Rechte entziehen', cmGranted: 'Als Chilbi Manager festgelegt', cmRevoked: 'Chilbi Manager-Rechte entzogen', crmGranted: 'Als Chränzli Manager festgelegt', crmRevoked: 'Chränzli Manager-Rechte entzogen', grpActive: 'Aktivmitglieder', grpPassive: 'Passivmitglieder', mMakePassive: 'Zum Passivmitglied machen', mMakeActive: 'Zum Aktivmitglied machen', passiveSet: 'Als Passivmitglied festgelegt', activeSet: 'Als Aktivmitglied festgelegt', jsUpcoming: 'Nadcházející Jassmasters', jsPast: 'Minulé Jassmasters'
     },
 
     nl: {
       wd0: 'Zondag', wd1: 'Maandag', wd2: 'Dinsdag', wd3: 'Woensdag', wd4: 'Donderdag', wd5: 'Vrijdag', wd6: 'Zaterdag',
       navTrainings: 'Trainingen', navEvents: 'Evenementen', navAdmin: 'Admin', navProfile: 'Profiel',
-      titleTrainings: 'FBRO Trainingsplan', titleEvents: 'FBRO Vereinsanlässe',
+      titleTrainings: 'Trainingsplan', titleEvents: 'Vereinsanlässe',
       subTrainings: 'De eerstvolgende {n} data', subEvents: 'De volgende clubevenementen staan gepland', moreDates: 'Meer data ({n})',
       emptyTrTitle: 'Er zijn nog geen trainingen gepland.', emptyTrAdmin: 'Stel bij «Beheer» een trainingsdag in.', emptyTrMember: 'De beheerders bepalen de trainingsdagen.',
       emptyEvTitle: 'Er zijn momenteel geen evenementen gepland.', emptyEvAdmin: 'Maak bij «Beheer» een evenement aan.', emptyEvMember: 'De beheerders maken nieuwe evenementen aan.',
@@ -714,9 +714,9 @@
       hYes: 'Aanwezig ({n})', hNo: 'Afwezig ({n})', hOpen: 'Nog geen antwoord ({n})', hSolo: 'Alleen ({n})', hDuo: 'Met z’n tweeën ({n} leden, {p} personen)',
       nobody: 'Niemand', you: '(jij)', cancelledTag: 'Geannuleerd', cancelledLow: 'geannuleerd', changedLow: 'gewijzigd',
       timePlace: '{time}, {place}', atTime: '{time}', calAdd: 'Toevoegen aan agenda', solo: 'Alleen', duo: 'Met z’n tweeën',
-      secRules: 'Standard Training Setup', secExtra: 'Extra Training Setup', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Evenementen', secMembers: 'Gruppen',
+      secRules: 'Standard Training', secExtra: 'Extra Training', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Evenementen', secMembers: 'Gruppen',
       addNew: 'Nieuw toevoegen', addClose: 'Formulier sluiten',
-      adminTitle: 'FBRO Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'FBRO Jass-Masters', adminSub: 'Alleen zichtbaar voor beheerders', rulesIntro: 'Standaardtrainingen per week',
+      adminTitle: 'Admin Console', titleCC: 'Chilbi & Chränzli Organisation', titleJass: 'Jass-Masters', adminSub: 'Alleen zichtbaar voor beheerders', rulesIntro: 'Standaardtrainingen per week',
       weekday: 'Weekdag', time: 'Tijd', place: 'Plaats', date: 'Datum', label: 'Naam',
       phPlaceTraining: 'bijv. gymzaal Schulhaus Nord', addRule: 'Trainingsdag toevoegen',
       edit: 'Bewerken', remove: 'Verwijderen', cancel: 'Annuleren', reactivate: 'Heractiveren', del: 'Verwijderen', save: 'Opslaan', dismiss: 'Verwerpen', reset: 'Herstellen',
@@ -767,13 +767,13 @@
       ruleChanged: 'Trainingsdag gewijzigd', trChanged: 'Training gewijzigd', eventChanged: 'Evenement gewijzigd', langSaved: 'Taal opgeslagen',
       guestTag: 'Gast', makeGuest: 'Als gast instellen: {name}', revokeGuest: 'Gaststatus intrekken: {name}', guestGranted: 'Als gast ingesteld', guestRevoked: 'Gaststatus ingetrokken',
       guestCheck: 'Als gast toevoegen (ziet alleen trainingen en profiel)', guestInfo: 'Je hebt gasttoegang. Je ziet de trainingen en je profiel.',
-      memberTag: 'Lid', emTag: 'Evenementmanager', makeEm: 'Evenementmanager maken: {name}', revokeEm: 'Rechten van evenementmanager intrekken: {name}', emGranted: 'Als evenementmanager ingesteld', emRevoked: 'Rechten van evenementmanager ingetrokken', confirmGuestLoses: '{name} heeft beheerders-, evenementmanager- of jass masterrechten. Als gast instellen trekt deze rechten in. Doorgaan?', selfMember: 'Je bent lid. Je kunt jezelf niet tot gast maken.', rolesTitle: 'Rollen', emSub: 'Hier beheer je de evenementen.',
+      memberTag: 'Lid', emTag: 'Evenementmanager', makeEm: 'Evenementmanager maken: {name}', revokeEm: 'Rechten van evenementmanager intrekken: {name}', emGranted: 'Als evenementmanager ingesteld', emRevoked: 'Rechten van evenementmanager ingetrokken', confirmGuestLoses: '{name} hat Admin-, Chilbi Manager-, Chränzli Manager- oder Jass Manager-Rechte. Als Gast festlegen entzieht diese Rechte. Fortfahren?', selfMember: 'Je bent lid. Je kunt jezelf niet tot gast maken.', rolesTitle: 'Rollen', emSub: 'Hier beheer je de evenementen.',
       infoShow: 'Uitleg tonen', infoHide: 'Uitleg verbergen',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Leden', ccGuests: 'Gasten', ccOthers: 'Anderen', ccEmpty: 'Nog geen evenementen.', ccNoDays: 'Nog geen dagen.', ccSummary: '{s} diensten · {r} rollen', ccLvlAll: 'Chränzli en Chilbi', ccLvlEvent: 'Evenement', ccLvlDay: 'Dag', ccLvlShift: 'Dienst', ccLvlRole: 'Rol', ccActions: 'Acties', ccAddEvent: 'Evenement toevoegen', ccAddDay: 'Dag toevoegen', ccAddShift: 'Dienst toevoegen', ccAddRole: 'Rol toevoegen', ccChange: 'Wijzigen', ccCopy: 'Kopiëren', ccClose: 'Sluiten', ccNameOpt: 'Naam (optioneel)', ccStart: 'Begin', ccEnd: 'Einde', ccActive: 'Actief', ccPersons: 'Verantwoordelijken', ccSearch: 'Namen zoeken', ccOtherPerson: 'Andere persoon (niet in de app)', ccAdd: 'Toevoegen', ccDidYouMean: 'Bedoel je {name}?', ccNobody: 'Nog niemand', ccConfirmDel: '«{name}» verwijderen? Alles wat eronder valt, wordt ook verwijderd.', ccConfirmDelRole: '«{name}» verwijderen?', ccCopyEventNote: 'De kopie is eerst inactief. Alle dagen worden 52 weken verschoven, zodat de weekdagen gelijk blijven.', ccCopyDayNote: 'Diensten en rollen worden met de verantwoordelijken gekopieerd.', ccSaved: 'Opgeslagen', ccCopied: 'Gekopieerd', ccDeleted: 'Verwijderd', ccNotInApp: '{name} staat nog niet in de app. Met een mobiel nummer kun je deze persoon als gast toevoegen.', ccAsGuest: 'Als gast toevoegen', ccNeedName: 'Vul een naam in.', ccSetup: 'Voor C&C moet het databaseschema worden bijgewerkt (supabase/schema.sql).', ccCopySuffix: 'kopie',
+      navCC: 'C&C', ccMembers: 'Leden', ccGuests: 'Gasten', ccOthers: 'Anderen', ccEmpty: 'Nog geen evenementen.', ccNoDays: 'Nog geen dagen.', ccSummary: '{s} diensten · {r} rollen', ccLvlAll: 'Chränzli en Chilbi', ccLvlEvent: 'Evenement', ccLvlDay: 'Dag', ccLvlShift: 'Dienst', ccLvlRole: 'Rol', ccActions: 'Acties', ccAddEvent: 'Evenement toevoegen', ccAddDay: 'Dag toevoegen', ccAddShift: 'Dienst toevoegen', ccAddRole: 'Rol toevoegen', ccChange: 'Wijzigen', ccCopy: 'Kopiëren', ccClose: 'Sluiten', ccNameOpt: 'Naam (optioneel)', ccStart: 'Begin', ccEnd: 'Einde', ccActive: 'Actief', ccPersons: 'Verantwoordelijken', ccSearch: 'Namen zoeken', ccOtherPerson: 'Andere persoon (niet in de app)', ccAdd: 'Toevoegen', ccDidYouMean: 'Bedoel je {name}?', ccNobody: 'Nog niemand', ccConfirmDel: '«{name}» verwijderen? Alles wat eronder valt, wordt ook verwijderd.', ccConfirmDelRole: '«{name}» verwijderen?', ccCopyEventNote: 'De kopie is eerst inactief. Alle dagen worden 52 weken verschoven, zodat de weekdagen gelijk blijven.', ccCopyDayNote: 'Diensten en rollen worden met de verantwoordelijken gekopieerd.', ccSaved: 'Opgeslagen', ccCopied: 'Gekopieerd', ccDeleted: 'Verwijderd', ccNotInApp: '{name} staat nog niet in de app. Met een mobiel nummer kun je deze persoon als gast toevoegen.', ccAsGuest: 'Als gast toevoegen', ccNeedName: 'Vul een naam in.', ccSetup: 'Voor C&C moet het databaseschema worden bijgewerkt (supabase/schema.sql).', ccCopySuffix: 'kopie', ccPrint: 'PDF teilen', ccPdfBuilding: 'PDF wird erstellt…', ccPdfFailed: 'PDF konnte nicht erstellt werden.',
       mMakeAdmin: 'Beheerder maken', mRevokeAdmin: 'Beheerdersrechten intrekken', mMakeEm: 'Evenementmanager maken', mRevokeEm: 'Rechten van evenementmanager intrekken', mMakeGuest: 'Als gast instellen', mMakeMember: 'Als lid instellen', mEdit: 'Naam en mobiel nummer wijzigen', mEditNote: 'Met een nieuw nummer geldt weer de standaard-PIN: de laatste 6 cijfers van het nieuwe nummer.', mSaved: 'Opgeslagen', mDelete: 'Lid verwijderen', mPhoneTaken: 'Dit mobiele nummer hoort al bij iemand anders.',
-      navJass: 'Jass', jsParticipants: 'Deelnemers', jsSchedule: 'Speelschema', jsRanking: 'Dagklassement', jsRound: 'Ronde {n}', jsTable: 'Tafel {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Speler {n}', jsFree: 'vrij', jsEmpty: 'Nog geen Jassmasters.', jsNoDays: 'Nog geen datum.', jsAddSeries: 'Jassmasters toevoegen', jsAddDay: 'Datum toevoegen', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jassdag', jsPick: 'Speler {n} kiezen', jsClear: 'Plaats vrijmaken', jsAlready: 'al speler {n}', jsPoints: 'Punten', jsGames: '{n} spellen', jsGame: '{n} spel', jsNoPoints: 'Nog geen punten ingevoerd.', jsHint: 'Vul de punten in bij het winnende team. Het andere team krijgt ze automatisch negatief.', jsSetup: 'Voor jass moet het databaseschema worden bijgewerkt (supabase/schema.sql).',
-      jmTag: 'Jass master', mMakeJm: 'Jass master maken', mRevokeJm: 'Rechten van jass master intrekken', jmGranted: 'Als jass master ingesteld', jmRevoked: 'Rechten van jass master ingetrokken', jsUpcoming: 'Komende Jassmasters', jsPast: 'Afgelopen Jassmasters'
+      navJass: 'Jass', jsParticipants: 'Deelnemers', jsSchedule: 'Speelschema', jsRanking: 'Dagklassement', jsRound: 'Ronde {n}', jsTable: 'Tafel {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Speler {n}', jsFree: 'vrij', jsEmpty: 'Nog geen Jassmasters.', jsNoDays: 'Nog geen datum.', jsAddSeries: 'Jassmasters toevoegen', jsAddDay: 'Datum toevoegen', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jassdag', jsPick: 'Speler {n} kiezen', jsClear: 'Plaats vrijmaken', jsAlready: 'al speler {n}', jsPoints: 'Punten', jsGames: '{n} spellen', jsPtsAbbr: 'pt', jsGame: '{n} spel', jsNoPoints: 'Nog geen punten ingevoerd.', jsHint: 'Vul de punten in bij het winnende team. Het andere team krijgt ze automatisch negatief.', jsSetup: 'Voor jass moet het databaseschema worden bijgewerkt (supabase/schema.sql).',
+      jmTag: 'Jass Manager', mMakeJm: 'Zum Jass Manager machen', mRevokeJm: 'Jass Manager-Rechte entziehen', jmGranted: 'Als Jass Manager festgelegt', jmRevoked: 'Jass Manager-Rechte entzogen', cmTag: 'Chilbi Manager', crmTag: 'Chränzli Manager', mMakeCm: 'Zum Chilbi Manager machen', mRevokeCm: 'Chilbi Manager-Rechte entziehen', mMakeCrm: 'Zum Chränzli Manager machen', mRevokeCrm: 'Chränzli Manager-Rechte entziehen', cmGranted: 'Als Chilbi Manager festgelegt', cmRevoked: 'Chilbi Manager-Rechte entzogen', crmGranted: 'Als Chränzli Manager festgelegt', crmRevoked: 'Chränzli Manager-Rechte entzogen', grpActive: 'Aktivmitglieder', grpPassive: 'Passivmitglieder', mMakePassive: 'Zum Passivmitglied machen', mMakeActive: 'Zum Aktivmitglied machen', passiveSet: 'Als Passivmitglied festgelegt', activeSet: 'Als Aktivmitglied festgelegt', jsUpcoming: 'Komende Jassmasters', jsPast: 'Afgelopen Jassmasters'
     }
   };
 
@@ -882,7 +882,7 @@
     if (bad) throw bad.error;
     var d = res.map(function (r) { return r.data || []; });
 
-    S.members = d[0].map(function (r) { return { id: r.id, name: r.name, phone: r.phone, isAdmin: r.is_admin, isGuest: r.is_guest === true, isEventManager: r.is_event_manager === true, isJassMaster: r.is_jass_master === true, language: r.language || null }; })
+    S.members = d[0].map(function (r) { return { id: r.id, name: r.name, phone: r.phone, isAdmin: r.is_admin, isGuest: r.is_guest === true, isPassive: r.is_passive === true, isEventManager: r.is_event_manager === true, isChilbiManager: r.is_chilbi_manager === true, isChraenzliManager: r.is_chraenzli_manager === true, isJassMaster: r.is_jass_master === true, language: r.language || null }; })
       .sort(function (a, b) { return a.name.localeCompare(b.name, 'de'); });
     S.rules = d[1].map(function (r) { return { id: r.id, wd: r.weekday, time: hhmm(r.start_time), place: r.place }; })
       .sort(function (a, b) { return ((a.wd + 6) % 7) - ((b.wd + 6) % 7) || (a.time < b.time ? -1 : 1); });
@@ -971,6 +971,7 @@
     gear: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 4.3c.4-1.8 2.9-1.8 3.4 0a1.7 1.7 0 0 0 2.6 1.1c1.5-.9 3.3.8 2.4 2.4a1.7 1.7 0 0 0 1 2.5c1.8.4 1.8 2.9 0 3.4a1.7 1.7 0 0 0-1 2.6c.9 1.5-.8 3.3-2.4 2.4a1.7 1.7 0 0 0-2.6 1c-.4 1.8-2.9 1.8-3.4 0a1.7 1.7 0 0 0-2.6-1c-1.5.9-3.3-.8-2.4-2.4a1.7 1.7 0 0 0-1-2.6c-1.8-.4-1.8-2.9 0-3.4a1.7 1.7 0 0 0 1-2.5c-.9-1.6.8-3.3 2.4-2.4c1 .6 2.3 0 2.6-1.1z"/><circle class="hole" cx="12" cy="12" r="3"/></svg>',
     laurel: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20.5C5.4 19.2 3.2 15.9 3.2 12c0-2.3.7-4.4 2-6.1"/><path d="M15 20.5c3.6-1.3 5.8-4.6 5.8-8.5 0-2.3-.7-4.4-2-6.1"/><path d="M5.2 5.9C4.9 4.5 5.6 3.2 6.9 2.8c.3 1.4-.4 2.7-1.7 3.1z"/><path d="M3.4 10.1C2.5 9 2.6 7.5 3.6 6.6c.9 1.1.8 2.6-.2 3.5z"/><path d="M3.6 14.6c-1.2-.5-1.9-1.9-1.5-3.2 1.3.4 2 1.8 1.5 3.2z"/><path d="M5.6 18.3c-1.3-.1-2.3-1.2-2.3-2.5 1.4 0 2.4 1.1 2.3 2.5z"/><path d="M18.8 5.9c.3-1.4-.4-2.7-1.7-3.1-.3 1.4.4 2.7 1.7 3.1z"/><path d="M20.6 10.1c.9-1.1.8-2.6-.2-3.5-.9 1.1-.8 2.6.2 3.5z"/><path d="M20.4 14.6c1.2-.5 1.9-1.9 1.5-3.2-1.3.4-2 1.8-1.5 3.2z"/><path d="M18.4 18.3c1.3-.1 2.3-1.2 2.3-2.5-1.4 0-2.4 1.1-2.3 2.5z"/></svg>',
     trophy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>',
+    print: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v5"/><rect x="4" y="9" width="16" height="8" rx="1.5"/><path d="M6 14h12v7H6z"/></svg>',
     pencil: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L18.5 9.5a2.8 2.8 0 0 0-4-4L4 16v4"/><path d="M13.5 6.5l4 4"/></svg>',
     copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>',
     plus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>',
@@ -1104,7 +1105,7 @@
     var list = getTrainings();
     var n = cfg.TRAININGS_VISIBLE || 20;
     var first = list.slice(0, n), rest = list.slice(n);
-    var html = '<div class="top"><div><h1 class="pagetitle">' + L('titleTrainings') + '</h1><p>' + L('subTrainings', { n: n }) + '</p></div></div>';
+    var html = '<div class="top"><div><h1 class="pagetitle">' + L('titleTrainings') + '</h1></div></div>';
     if (!list.length) {
       return html + '<div class="empty"><p><b>' + L('emptyTrTitle') + '</b></p><p>' + (S.me.isAdmin ? L('emptyTrAdmin') : L('emptyTrMember')) + '</p></div>';
     }
@@ -1124,27 +1125,36 @@
     var mine = r[S.me.id];
     var isOpen = !!S.open[t.key];
     var cls = yes.length < 8 ? 'low' : yes.length < 13 ? 'ok' : 'high';
-    return '<article class="ccel' + (off ? ' off' : '') + '" title="' + esc(t.title + ', ' + L('timePlace', { time: t.time, place: t.place })) + '">' +
-      '<div class="cceh"><b>' + shortDate(t.date) + '</b>' + (off ? '<span class="tag off">' + L('cancelledTag') + '</span>' : '') + '</div>' +
-      (off ? '<div class="ccbody"><p class="ccsum" style="padding:2px 0">' + L('trCancelled') + '</p></div>' :
-        '<div class="ccbody">' +
-          '<button class="cntpill ' + cls + (isOpen ? ' is-open' : '') + '" data-act="who" data-key="' + esc(t.key) + '" aria-expanded="' + isOpen + '" aria-label="' + esc(L('ariaTr', { yes: yes.length, no: no.length, action: isOpen ? L('listClose') : L('listOpen') })) + '"><b>' + yes.length + '</b> ' + L('participants') + ICON.chev + '</button>' +
-          '<div class="acts2">' +
-            '<button class="resp yes" data-act="resp" data-val="yes" data-key="' + esc(t.key) + '" aria-pressed="' + (mine === 'yes') + '">' + ICON.check + L('yes') + '</button>' +
-            '<button class="resp no" data-act="resp" data-val="no" data-key="' + esc(t.key) + '" aria-pressed="' + (mine === 'no') + '">' + ICON.x + L('no') + '</button>' +
-          '</div>' +
-          (isOpen ? whoBlock([
-            { label: L('hYes', { n: yes.length }), arr: yes },
-            { label: L('hNo', { n: no.length }), arr: no },
-            { label: L('hOpen', { n: open.length }), arr: open }
-          ]) : '') +
-        '</div>') +
+    if (off) {
+      return '<article class="ccel off" title="' + esc(t.title) + '">' +
+        '<div class="cceh grey"><b>' + fullDate(t.date) + ' (' + L('cancelledLow') + ')</b></div>' +
+      '</article>';
+    }
+    return '<article class="ccel" title="' + esc(t.title + ', ' + L('timePlace', { time: t.time, place: t.place })) + '">' +
+      '<div class="cceh"><b>' + fullDate(t.date) + '</b></div>' +
+      '<div class="ccbody">' +
+        '<div class="actrow3">' +
+          '<button class="resp yes" data-act="resp" data-val="yes" data-key="' + esc(t.key) + '" aria-pressed="' + (mine === 'yes') + '">' + ICON.check + L('yes') + '</button>' +
+          '<button class="resp no" data-act="resp" data-val="no" data-key="' + esc(t.key) + '" aria-pressed="' + (mine === 'no') + '">' + ICON.x + L('no') + '</button>' +
+          '<button class="resp cntbtn ' + cls + (isOpen ? ' is-open' : '') + '" data-act="who" data-key="' + esc(t.key) + '" aria-expanded="' + isOpen + '" aria-label="' + esc(L('ariaTr', { yes: yes.length, no: no.length, action: isOpen ? L('listClose') : L('listOpen') })) + '"><b>' + yes.length + '</b>&nbsp;' + L('participants') + ICON.chev + '</button>' +
+        '</div>' +
+        (isOpen ? whoBlock([
+          { label: L('hYes', { n: yes.length }), arr: yes },
+          { label: L('hNo', { n: no.length }), arr: no },
+          { label: L('hOpen', { n: open.length }), arr: open }
+        ]) : '') +
+      '</div>' +
     '</article>';
   }
 
   function shortDate(d) {
     return esc(fmt(d, { weekday: 'short' }).replace('.', '')) + ' ' + d.getDate() + '. ' + esc(fmt(d, { month: 'short' }).replace('.', ''));
   }
+  function z2(n) { return n < 10 ? '0' + n : '' + n; }
+  function fullDate(d) {
+    return esc(fmt(d, { weekday: 'long' })) + ', ' + z2(d.getDate()) + '.' + z2(d.getMonth() + 1) + '.' + d.getFullYear();
+  }
+  function fullDateIso(iso) { return fullDate(parseIso(iso)); }
   function whoBlock(items) {
     return '<div class="who">' + items.map(function (it) {
       return '<div><h4>' + it.label + '</h4><div class="chips">' + chips(it.arr, !!it.plus) + '</div></div>';
@@ -1187,7 +1197,7 @@
 
   function viewEvents() {
     var list = getEvents();
-    var html = '<div class="top"><div><h1 class="pagetitle">' + L('titleEvents') + '</h1><p>' + L('subEvents') + '</p></div></div>';
+    var html = '<div class="top"><div><h1 class="pagetitle">' + L('titleEvents') + '</h1></div></div>';
     if (!list.length) {
       return html + '<div class="empty"><p><b>' + L('emptyEvTitle') + '</b></p><p>' + (S.me.isAdmin ? L('emptyEvAdmin') : L('emptyEvMember')) + '</p></div>';
     }
@@ -1207,20 +1217,28 @@
     var btn = function (val, cls, icon, label) {
       return '<button class="resp ' + cls + '" data-act="resp-ev" data-val="' + val + '" data-id="' + e.id + '" aria-pressed="' + (mine === val) + '">' + icon + label + '</button>';
     };
+    if (e.cancelled) {
+      return '<article class="ccel off" title="' + esc(e.title) + '">' +
+        '<div class="cceh grey"><b>' + fullDate(parseIso(e.date)) + ' \u2013 ' + esc(e.title) + ' (' + L('cancelledLow') + ')</b></div>' +
+      '</article>';
+    }
     return '<article class="ccel">' +
-      '<div class="cceh"><b>' + shortDate(parseIso(e.date)) + '</b><span class="cceh-sub">' + esc(e.title) + '</span>' + (e.cancelled ? '<span class="tag off">' + L('cancelledTag') + '</span>' : '') + '</div>' +
+      '<div class="cceh"><b>' + fullDate(parseIso(e.date)) + ' \u2013 ' + esc(e.title) + '</b></div>' +
       '<div class="ccbody">' +
-      (e.cancelled ? '<p class="ccsum" style="padding:8px 0 2px">' + L('evCancelledMsg') + '</p>' :
-        '<p class="muted small" style="margin:0 0 10px">' + esc(L('timePlace', { time: e.time, place: e.place })) + '</p>' +
-        '<button class="calbtn" data-act="cal" data-id="' + e.id + '">' + ICON.calplus + L('calAdd') + '</button>' +
-        '<button class="cntpill' + (isOpen ? ' is-open' : '') + '" data-act="who-ev" data-id="' + e.id + '" aria-expanded="' + isOpen + '" aria-label="' + esc(L('ariaEv', { n: persons, action: isOpen ? L('listClose') : L('listOpen') })) + '"><b>' + persons + '</b> ' + L('participants') + ICON.chev + '</button>' +
-        '<div class="acts3">' + btn('solo', 'yes', ICON.one, L('solo')) + btn('duo', 'yes', ICON.two, L('duo')) + btn('no', 'no', '', L('no')) + '</div>' +
+        '<div class="evrow">' +
+          '<p class="muted small">' + esc(L('timePlace', { time: e.time, place: e.place })) + '</p>' +
+          '<button class="calbtn calinline" data-act="cal" data-id="' + e.id + '">' + ICON.calplus + L('calAdd') + '</button>' +
+        '</div>' +
+        '<div class="actrow4">' +
+          btn('solo', 'yes', ICON.one, L('solo')) + btn('duo', 'yes', ICON.two, L('duo')) + btn('no', 'no', '', L('no')) +
+          '<button class="resp cntbtn' + (isOpen ? ' is-open' : '') + '" data-act="who-ev" data-id="' + e.id + '" aria-expanded="' + isOpen + '" aria-label="' + esc(L('ariaEv', { n: persons, action: isOpen ? L('listClose') : L('listOpen') })) + '"><b>' + persons + '</b>&nbsp;' + L('participants') + ICON.chev + '</button>' +
+        '</div>' +
         (isOpen ? whoBlock([
           { label: L('hSolo', { n: solo.length }), arr: solo },
           { label: L('hDuo', { n: duo.length, p: duo.length * 2 }), arr: duo, plus: true },
           { label: L('hNo', { n: no.length }), arr: no },
           { label: L('hOpen', { n: open.length }), arr: open }
-        ]) : '')) +
+        ]) : '') +
       '</div>' +
     '</article>';
   }
@@ -1329,7 +1347,8 @@
       return '<li class="mbrow"><div class="l"><b>' + esc(m.name) + (self ? ' <span class="mbyou">' + L('you') + '</span>' : '') + '</b><span>' + esc(fmtPhone(m.phone)) + '</span></div>' +
         '<span class="mbicons">' +
           (m.isAdmin ? '<span class="mbic adm" title="' + esc(L('adminTag')) + '" aria-label="' + esc(L('adminTag')) + '">' + ICON.gear + '</span>' : '') +
-          (m.isEventManager ? '<span class="mbic em" title="' + esc(L('emTag')) + '" aria-label="' + esc(L('emTag')) + '">' + ICON.glass + '</span>' : '') +
+          (m.isChilbiManager ? '<span class="mbic em" title="' + esc(L('cmTag')) + '" aria-label="' + esc(L('cmTag')) + '">' + ICON.glass + '</span>' : '') +
+          (m.isChraenzliManager ? '<span class="mbic em" title="' + esc(L('crmTag')) + '" aria-label="' + esc(L('crmTag')) + '">' + ICON.glass + '</span>' : '') +
           (m.isJassMaster ? '<span class="mbic jm" title="' + esc(L('jmTag')) + '" aria-label="' + esc(L('jmTag')) + '">' + ICON.trophy + '</span>' : '') +
         '</span>' +
         '<button class="ccdots" data-act="mb-menu" data-id="' + esc(m.id) + '" aria-label="' + esc(L('ccActions') + ': ' + m.name) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button></li>';
@@ -1341,7 +1360,8 @@
         '<span class="sp"></span><span class="ccfold' + (open ? ' open' : '') + '">' + ICON.chev + '</span></button>' +
         (open ? (list.length ? '<ul class="list">' + list.map(mbRow).join('') + '</ul>' : '<p class="ccsum" style="padding:6px 0 10px">' + L('nobody') + '</p>') : '') + '</div>';
     };
-    b += mbGroup('mg-m', L('ccMembers'), S.members.filter(function (m) { return !m.isGuest; }), false) +
+    b += mbGroup('mg-a', L('grpActive'), S.members.filter(function (m) { return !m.isGuest && !m.isPassive; }), false) +
+         mbGroup('mg-p', L('grpPassive'), S.members.filter(function (m) { return !m.isGuest && m.isPassive; }), false) +
          mbGroup('mg-g', L('ccGuests'), S.members.filter(function (m) { return m.isGuest; }), true);
     if (isAdm) html += accordion('members', L('secMembers'), S.members.length, b, true, L('membersIntro'));
     return html;
@@ -1361,7 +1381,9 @@
       '<section class="panel"><h2>' + L('rolesTitle') + '</h2>' +
         '<div class="rolerow"><span class="rolebtn crown' + (S.me.isGuest ? '' : ' on') + '">' + ICON.crown + '</span><span>' + L(S.me.isGuest ? 'guestTag' : 'memberTag') + '</span></div>' +
         (S.me.isAdmin ? '<div class="rolerow"><span class="rolebtn star on">' + ICON.gear + '</span><span>' + L('adminTag') + '</span></div>' : '') +
-        (S.me.isEventManager ? '<div class="rolerow"><span class="rolebtn glass on">' + ICON.glass + '</span><span>' + L('emTag') + '</span></div>' : '') +
+        (S.me.isChilbiManager ? '<div class="rolerow"><span class="rolebtn glass on">' + ICON.glass + '</span><span>' + L('cmTag') + '</span></div>' : '') +
+        (S.me.isChraenzliManager ? '<div class="rolerow"><span class="rolebtn glass on">' + ICON.glass + '</span><span>' + L('crmTag') + '</span></div>' : '') +
+        (S.me.isJassMaster ? '<div class="rolerow"><span class="rolebtn glass on">' + ICON.trophy + '</span><span>' + L('jmTag') + '</span></div>' : '') +
         (S.me.isGuest ? '<p class="small muted" style="margin:10px 0 0">' + L('guestInfo') + '</p>' : '') +
       '</section>' +
       '<section class="panel"><h2>' + L('language') + '</h2><p>' + L('languageHint') + '</p>' + langSelect() + '</section>' +
@@ -1383,7 +1405,7 @@
     if (!S.me.isGuest) tabs.push({ id: 'events', label: L('navEvents'), icon: ICON.star });
     tabs.push({ id: 'jass', label: L('navJass'), icon: ICON.trophy });
     if (canCC()) tabs.push({ id: 'cc', label: L('navCC'), icon: ICON.laurel });
-    if (S.me.isAdmin || S.me.isEventManager) tabs.push({ id: 'admin', label: L('navAdmin'), icon: ICON.gear });
+    if (S.me.isAdmin || S.me.isChilbiManager || S.me.isChraenzliManager) tabs.push({ id: 'admin', label: L('navAdmin'), icon: ICON.gear });
     tabs.push({ id: 'profile', label: L('navProfile'), icon: ICON.user });
     nav.innerHTML = '<div class="in">' + tabs.map(function (t) {
       return '<button class="tab" data-act="tab" data-tab="' + t.id + '"' + (S.tab === t.id ? ' aria-current="page"' : '') + '>' + t.icon + '<span>' + t.label + '</span></button>';
@@ -1399,7 +1421,7 @@
     else if (S.step === 'loading') app.innerHTML = '<div class="login"><p class="muted">' + L('loading') + '</p></div>';
     else if (S.step === 'login') app.innerHTML = viewLogin();
     else {
-      if (S.tab === 'admin' && !(S.me.isAdmin || S.me.isEventManager)) S.tab = 'trainings';
+      if (S.tab === 'admin' && !(S.me.isAdmin || S.me.isChilbiManager || S.me.isChraenzliManager)) S.tab = 'trainings';
       if (S.tab === 'events' && S.me.isGuest) S.tab = 'trainings';
       if (S.tab === 'cc' && !canCC()) S.tab = 'trainings';
       app.innerHTML = S.tab === 'jass' ? viewJass() : S.tab === 'cc' ? viewCC() : S.tab === 'admin' ? viewAdmin() : S.tab === 'events' ? viewEvents() : S.tab === 'profile' ? viewProfile() : viewTrainings();
@@ -1443,7 +1465,7 @@
 
   /* ---------- C&C: Chränzli und Chilbi ---------- */
   // Anlass > Tag > Schicht > Rolle. Sichtbar für Admins und Event-Manager.
-  function canCC() { return !!(S.me && (S.me.isAdmin || S.me.isEventManager)); }
+  function canCC() { return !!(S.me && (S.me.isAdmin || S.me.isChilbiManager || S.me.isChraenzliManager)); }
   function ccNorm(n) { return String(n || '').normalize('NFC').toLowerCase().replace(/\s+/g, ' ').trim(); }
   function ccMap() { var m = {}; S.members.forEach(function (p) { m[ccNorm(p.name)] = p; }); return m; }
   function ccMember(id) { return S.members.filter(function (x) { return x.id === id; })[0] || null; }
@@ -1502,6 +1524,172 @@
       ' aria-label="' + esc(L('ccActions') + (label ? ': ' + label : '')) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>';
   }
 
+  /* ---------- C&C: Einsatzplan als PDF teilen ---------- */
+  var LOGO_DATAURL = null;
+  async function ensureLogoDataUrl() {
+    if (LOGO_DATAURL) return LOGO_DATAURL;
+    try {
+      var resp = await fetch('icons/logo.png');
+      var blob = await resp.blob();
+      LOGO_DATAURL = await new Promise(function (res, rej) {
+        var fr = new FileReader();
+        fr.onload = function () { res(fr.result); };
+        fr.onerror = rej;
+        fr.readAsDataURL(blob);
+      });
+    } catch (e) { LOGO_DATAURL = null; }
+    return LOGO_DATAURL;
+  }
+
+  async function ccExportPdf(eventId) {
+    var ev = S.cc.events.filter(function (x) { return x.id === eventId; })[0];
+    if (!ev || !window.jspdf) { toast(L('ccPdfFailed')); return; }
+    toast(L('ccPdfBuilding'));
+
+    var days = S.cc.days.filter(function (d) { return d.event_id === eventId; })
+      .sort(function (a, b) { return a.day < b.day ? -1 : a.day > b.day ? 1 : 0; });
+    var dayData = days.map(function (d) {
+      var shifts = S.cc.shifts.filter(function (s) { return s.day_id === d.id; })
+        .sort(function (a, b) { return a.start_time < b.start_time ? -1 : a.start_time > b.start_time ? 1 : 0; })
+        .map(function (s) {
+          var roles = S.cc.roles.filter(function (r) { return r.shift_id === s.id; })
+            .sort(function (a, b) { return (a.sort || 0) - (b.sort || 0); });
+          return { s: s, roles: roles };
+        });
+      return { d: d, shifts: shifts };
+    });
+
+    // Chilbi- bzw. Chränzli Manager ermitteln (ohne Admins)
+    var nameLower = (ev.name || '').toLowerCase();
+    var wantChilbi = nameLower.indexOf('chilbi') > -1;
+    var wantChraenzli = nameLower.indexOf('chränzli') > -1 || nameLower.indexOf('chraenzli') > -1;
+    var mgrs = S.members.filter(function (m) {
+      if (m.isAdmin) return false;
+      if (wantChilbi && m.isChilbiManager) return true;
+      if (wantChraenzli && m.isChraenzliManager) return true;
+      if (!wantChilbi && !wantChraenzli && (m.isChilbiManager || m.isChraenzliManager)) return true;
+      return false;
+    }).map(function (m) { return m.name; });
+    var mgrLabel = (wantChilbi ? L('cmTag') : wantChraenzli ? L('crmTag') : L('ccActions')) + ': ' + (mgrs.length ? mgrs.join(', ') : '\u2013');
+
+    var jsPDFCtor = window.jspdf.jsPDF;
+    var doc = new jsPDFCtor({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+    var PAGE_W = doc.internal.pageSize.getWidth(), PAGE_H = doc.internal.pageSize.getHeight();
+    var MARGIN = 12, GAP = 8, COLW = (PAGE_W - 2 * MARGIN - GAP) / 2;
+    var BLUE = [48, 124, 192], BLUE_DARK = [11, 47, 94], BLUE_SOFT = [227, 239, 249], GREY = [93, 103, 122], INK = [22, 35, 59], LINE = [218, 222, 214];
+
+    function wrap(text, size, maxW, style) {
+      doc.setFont('helvetica', style || 'normal'); doc.setFontSize(size);
+      return doc.splitTextToSize(String(text), maxW);
+    }
+    function dateLabel(isoDay, name) {
+      var d = parseIso(isoDay);
+      var wd = fmt(d, { weekday: 'long' });
+      var s = wd + ', ' + z2(d.getDate()) + '.' + z2(d.getMonth() + 1) + '.' + d.getFullYear();
+      return name ? s + ' (' + name + ')' : s;
+    }
+    function measureCard(day, w) {
+      var titleLines = wrap(dateLabel(day.d.day, day.d.name), 12.5, w - 10, 'bold');
+      var h = 9.5 + (titleLines.length - 1) * 5 + 3;
+      var valueW = w - 44;
+      day.shifts.forEach(function (sh) {
+        var t = sh.s.start_time + '\u2013' + sh.s.end_time + (sh.s.name ? '  \u2013  ' + sh.s.name : '');
+        h += wrap(t, 9.3, w - 8, 'bold').length * 4.8;
+        sh.roles.forEach(function (r) {
+          var nm = (r.persons || []).map(function (p) { return p.name; }).join(', ') || '\u2013';
+          h += Math.max(wrap(nm, 9.3, valueW, 'normal').length, 1) * 4.3;
+        });
+        h += 2;
+      });
+      return h + 3.5;
+    }
+    function drawCard(day, x, yTop, w) {
+      // jsPDF zählt Y nach unten (0 = oben); die Karte wächst daher von yTop aus nach unten.
+      var h = measureCard(day, w), yBottom = yTop + h;
+      doc.setFillColor(255, 255, 255); doc.setDrawColor(LINE[0], LINE[1], LINE[2]); doc.setLineWidth(0.3);
+      doc.roundedRect(x, yTop, w, h, 3, 3, 'FD');
+      var titleLines = wrap(dateLabel(day.d.day, day.d.name), 12.5, w - 10, 'bold');
+      var headH = 9.5 + (titleLines.length - 1) * 5;
+      doc.setFillColor(BLUE_SOFT[0], BLUE_SOFT[1], BLUE_SOFT[2]);
+      doc.roundedRect(x, yTop, w, headH, 3, 3, 'F');
+      doc.rect(x, yTop + headH / 2, w, headH / 2, 'F');
+      doc.setTextColor(BLUE[0], BLUE[1], BLUE[2]); doc.setFont('helvetica', 'bold'); doc.setFontSize(12.5);
+      var ty = yTop + 5.5;
+      titleLines.forEach(function (ln) { doc.text(ln, x + 5, ty); ty += 5; });
+      var cy = yTop + headH + 5, valueW = w - 44;
+      day.shifts.forEach(function (sh) {
+        var t = sh.s.start_time + '\u2013' + sh.s.end_time + (sh.s.name ? '  \u2013  ' + sh.s.name : '');
+        doc.setTextColor(INK[0], INK[1], INK[2]); doc.setFont('helvetica', 'bold'); doc.setFontSize(9.3);
+        wrap(t, 9.3, w - 8, 'bold').forEach(function (ln) { doc.text(ln, x + 5, cy); cy += 4.8; });
+        sh.roles.forEach(function (r) {
+          var nm = (r.persons || []).map(function (p) { return p.name; }).join(', ') || '\u2013';
+          doc.setTextColor(GREY[0], GREY[1], GREY[2]); doc.setFont('helvetica', 'bold'); doc.setFontSize(8.6);
+          doc.text(String(r.name) + ':', x + 8, cy);
+          doc.setTextColor(INK[0], INK[1], INK[2]); doc.setFont('helvetica', 'normal'); doc.setFontSize(9.3);
+          var ty2 = cy;
+          wrap(nm, 9.3, valueW, 'normal').forEach(function (ln) { doc.text(ln, x + 44, ty2); ty2 += 4.3; });
+          cy = ty2;
+        });
+        cy += 2;
+      });
+      return yBottom;
+    }
+
+    // Spalten chronologisch ausbalanciert befüllen
+    var heights = dayData.map(function (d) { return measureCard(d, COLW); });
+    var total = heights.reduce(function (a, b) { return a + b; }, 0) + dayData.length * 6;
+    var target = total / 2, cols = [[], []], curH = 0, curCol = 0;
+    dayData.forEach(function (d, i) {
+      if (curCol === 0 && curH > target && cols[0].length) { curCol = 1; curH = 0; }
+      cols[curCol].push(d); curH += heights[i] + 6;
+    });
+
+    var logo = await ensureLogoDataUrl();
+    function drawHeader() {
+      doc.setFillColor(BLUE_DARK[0], BLUE_DARK[1], BLUE_DARK[2]);
+      doc.rect(0, 0, PAGE_W, 24, 'F');
+      if (logo) { try { doc.addImage(logo, 'PNG', MARGIN, 4, 13.5, 15.5); } catch (e) { /* Logo optional */ } }
+      doc.setTextColor(255, 255, 255); doc.setFont('helvetica', 'bold'); doc.setFontSize(17);
+      doc.text('Einsatzplan \u00b7 ' + ev.name, MARGIN + 18, 11.5);
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(9.5); doc.setTextColor(207, 224, 242);
+      doc.text(mgrLabel, MARGIN + 18, 17);
+      doc.text('Version', PAGE_W - MARGIN, 9.5, { align: 'right' });
+      doc.text(fullDate(new Date()).split(', ')[1] || '', PAGE_W - MARGIN, 14, { align: 'right' });
+    }
+    function drawFooter() {
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.setTextColor(GREY[0], GREY[1], GREY[2]);
+      doc.text(ev.name, MARGIN, PAGE_H - 6);
+      doc.text('Seite 1', PAGE_W - MARGIN, PAGE_H - 6, { align: 'right' });
+    }
+
+    drawHeader();
+    if (!dayData.length) {
+      doc.setTextColor(GREY[0], GREY[1], GREY[2]); doc.setFont('helvetica', 'normal'); doc.setFontSize(11);
+      doc.text(L('ccNoDays'), MARGIN, PAGE_H / 2);
+    } else {
+      var colX = [MARGIN, MARGIN + COLW + GAP];
+      var colY = [30, 30];
+      for (var ci = 0; ci < 2; ci++) {
+        cols[ci].forEach(function (day) { colY[ci] = drawCard(day, colX[ci], colY[ci], COLW) + 6; });
+      }
+    }
+    drawFooter();
+
+    var fname = 'Einsatzplan_' + String(ev.name).replace(/[^\w\u00C0-\u017F]+/g, '_') + '.pdf';
+    var blob = doc.output('blob');
+    try {
+      var file = new File([blob], fname, { type: 'application/pdf' });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file], title: 'Einsatzplan ' + ev.name });
+        return;
+      }
+    } catch (e) { /* Teilen abgebrochen oder nicht verfügbar: als Download anbieten */ }
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a'); a.href = url; a.download = fname;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+  }
+
   function viewCC() {
     var map = ccMap();
     var html = '<div class="top"><div><h1 class="pagetitle">' + L('titleCC') + '</h1></div></div>';
@@ -1514,6 +1702,7 @@
         '<input type="checkbox" class="ccck" data-ccactive="' + esc(e.id) + '"' + (e.active ? ' checked' : '') + ' aria-label="' + esc(e.name + ': ' + L('ccActive')) + '" title="' + esc(L('ccActive')) + '">' +
         '<button class="cct" data-act="cc-fold" data-id="' + esc(e.id) + '" aria-expanded="' + !folded + '">' + esc(e.name) + '</button>' +
         ccDots('event', e.id, e.name) +
+        '<button class="ccdots" data-act="cc-print" data-id="' + esc(e.id) + '" aria-label="' + esc(L('ccPrint') + ': ' + e.name) + '" title="' + esc(L('ccPrint')) + '">' + ICON.print + '</button>' +
         '<button class="ccfold' + (folded ? '' : ' open') + '" data-act="cc-fold" data-id="' + esc(e.id) + '" aria-expanded="' + !folded + '" aria-label="' + esc(e.name) + '">' + ICON.chev + '</button></div>';
       if (!folded) {
         html += '<div class="ccbody">';
@@ -1903,19 +2092,21 @@
 
   // Tagesrangliste: jeder Spieler erhält die Punkte seines Teams aus jedem Spiel
   function jsRanking(d) {
-    var sc = jsScores(d), tot = [0, 0, 0, 0, 0, 0, 0, 0, 0], games = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    var sc = jsScores(d), tot = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     JS_PLAN.forEach(function (round, ri) {
       round.forEach(function (g) {
         var v = sc[(ri + 1) + g[0]];
         if (typeof v !== 'number') return;
-        g[1].forEach(function (s) { tot[s] += v; games[s]++; });
-        g[2].forEach(function (s) { tot[s] -= v; games[s]++; });
+        g[1].forEach(function (s) { tot[s] += v; });
+        g[2].forEach(function (s) { tot[s] -= v; });
       });
     });
-    var rows = [1, 2, 3, 4, 5, 6, 7, 8].map(function (s) { return { slot: s, pts: tot[s], games: games[s] }; });
+    var rows = [1, 2, 3, 4, 5, 6, 7, 8].map(function (s) { return { slot: s, pts: tot[s] }; });
     rows.sort(function (a, b) { return b.pts - a.pts || a.slot - b.slot; });
     var rank = 0, last = null;
     rows.forEach(function (r, i) { if (r.pts !== last) { rank = i + 1; last = r.pts; } r.rank = rank; });
+    // Rangpunkte: 1. Platz 32, danach je 4 weniger, mindestens 4
+    rows.forEach(function (r) { r.standing = Math.max(4, 32 - 4 * (r.rank - 1)); });
     return rows;
   }
 
@@ -1956,7 +2147,8 @@
   }
 
   function jsDayHtml(d, ed, map, isUpcoming) {
-    var df = !!S.jsFold[d.id], P = jsPlayers(d), sc = jsScores(d), label = ccDate(d.day);
+    var df = !!S.jsFold[d.id], P = jsPlayers(d), sc = jsScores(d);
+    var label = fullDateIso(d.day) + (d.name ? ' (' + esc(d.name) + ')' : '');
     var h = '<div class="ccday"><div class="ccdh"><button class="ccdt" data-act="js-fold" data-id="' + esc(d.id) + '" aria-expanded="' + !df + '"><b>' + esc(label) + '</b></button>' +
       (ed ? jsDots('day', d.id, label) : '') + jsFoldBtn(d.id, df, label, true) + '</div>';
     if (df) return h + '</div>';
@@ -1978,18 +2170,18 @@
         var team = function (nr, slots, val) {
           var names = slots.map(function (s) { return '<span class="jsnm">' + esc(jsName(P, s, map)) + '</span>'; }).join('<span class="jsamp">&amp;</span>');
           var cell = ed
-            ? '<input class="jspts' + jsCls(val) + '" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" data-jsscore="' + esc(d.id) + '" data-game="' + key + '" data-team="' + nr + '" value="' + (val == null ? '' : val) + '" aria-label="' + esc(L('jsTable', { t: g[0] }) + ', ' + L(nr === 1 ? 'jsTeam1' : 'jsTeam2') + ': ' + L('jsPoints')) + '">'
+            ? '<input class="jspts' + jsCls(val) + '" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" data-jsscore="' + esc(d.id) + '" data-game="' + key + '" data-team="' + nr + '" value="' + (val == null ? '' : val) + '" aria-label="' + esc(L('jsRound', { n: ri + 1 }) + ' ' + g[0] + ', ' + L('jsPoints')) + '">'
             : '<span class="jspv' + jsCls(val) + '">' + jsFmt(val) + '</span>';
-          return '<div class="jsteam"><span class="jstl">' + L(nr === 1 ? 'jsTeam1' : 'jsTeam2') + '</span><span class="jsnames">' + names + '</span>' + cell + '</div>';
+          return '<div class="jsteam"><span class="jsnames">' + names + '</span>' + cell + '</div>';
         };
-        sp += '<div class="jsgame"><div class="jsgh">' + L('jsTable', { t: g[0] }) + '</div>' + team(1, g[1], v) + team(2, g[2], v == null ? null : -v) + '</div>';
+        sp += '<div class="jsgame">' + team(1, g[1], v) + team(2, g[2], v == null ? null : -v) + '</div>';
       });
     });
 
     // Tagesrangliste
     var rows = jsRanking(d), any = Object.keys(sc).some(function (k) { return typeof sc[k] === 'number'; });
     var rk = any ? '<ol class="jsrank">' + rows.map(function (r) {
-      return '<li><span class="jsrk">' + r.rank + '.</span><span class="jsrn">' + esc(jsName(P, r.slot, map)) + '</span><span class="jsrg">' + L(r.games === 1 ? 'jsGame' : 'jsGames', { n: r.games }) + '</span><span class="jsrp' + jsCls(r.pts) + '">' + jsFmt(r.pts) + '</span></li>';
+      return '<li><span class="jsrk">' + r.rank + '.</span><span class="jsrn">' + esc(jsName(P, r.slot, map)) + '</span><span class="jsstp">' + r.standing + ' ' + L('jsPtsAbbr') + '</span><span class="jsrp' + jsCls(r.pts) + '">' + jsFmt(r.pts) + '</span></li>';
     }).join('') + '</ol>' : '<p class="ccsum">' + L('jsNoPoints') + '</p>';
 
     h += isUpcoming
@@ -2055,12 +2247,13 @@
     var btn = function (a, icon, label, cls) { return '<button type="button" class="ccact' + (cls ? ' ' + cls : '') + '" data-jsa="' + a + '">' + icon + '<span>' + label + '</span></button>'; };
     var formEnd = '<p class="err" data-jserr hidden></p><div class="dlgbtns"><button type="button" class="btn ghost inline" data-jsa="close">' + L('dismiss') + '</button><button type="submit" class="btn inline">' + L('save') + '</button></div></form>';
     if (st.mode === 'menu') {
-      body = '<p class="cck">' + L('jsLvlDay') + '</p><h3>' + esc(ccDate(o.day)) + '</h3>' +
+      body = '<p class="cck">' + L('jsLvlDay') + '</p><h3>' + esc(fullDateIso(o.day)) + (o.name ? ' (' + esc(o.name) + ')' : '') + '</h3>' +
         btn('edit', ICON.pencil, L('ccChange')) + btn('del', ICON.trash, L('del'), 'del') +
         '<button type="button" class="ccact close" data-jsa="close">' + L('ccClose') + '</button>';
     } else if (st.mode === 'day-form') {
-      body = '<p class="cck">' + L('jsLvlDay') + '</p><h3>' + esc(o ? ccDate(o.day) : L('jsAddDay')) + '</h3><form data-jsform="day" novalidate>' +
-        fld(L('date'), '<input class="input" type="date" name="date" value="' + esc(o ? o.day : '') + '" required>') + formEnd;
+      body = '<p class="cck">' + L('jsLvlDay') + '</p><h3>' + esc(o ? fullDateIso(o.day) : L('jsAddDay')) + '</h3><form data-jsform="day" novalidate>' +
+        fld(L('date'), '<input class="input" type="date" name="date" value="' + esc(o ? o.day : '') + '" required>') +
+        fld(L('ccNameOpt'), '<input class="input" name="name" value="' + esc(o && o.name ? o.name : '') + '" placeholder="32. Jassmasters">') + formEnd;
     } else if (st.mode === 'pick') {
       var P = jsPlayers(o), cur = P[st.slot - 1];
       body = '<p class="cck">' + L('jsParticipants') + '</p><h3>' + esc(L('jsPick', { n: st.slot })) + '</h3>' +
@@ -2135,12 +2328,12 @@
     var err = function (m) { var el = f.querySelector('[data-jserr]'); if (el) { el.textContent = m; el.hidden = false; } };
     if (f.dataset.jsform === 'day') {
       if (!g('date')) { err(L('date') + '?'); return; }
-      var dt = g('date'), isEdit = st.id != null, id = st.id;
+      var dt = g('date'), nm = g('name') || null, isEdit = st.id != null, id = st.id;
       jsClose();
-      if (isEdit) return act(function () { return sb.from('jass_days').update({ day: dt }).eq('id', id); }, L('ccSaved'));
+      if (isEdit) return act(function () { return sb.from('jass_days').update({ day: dt, name: nm }).eq('id', id); }, L('ccSaved'));
       return act(async function () {
         var sid = await jsEnsureSeries();
-        return sb.from('jass_days').insert({ series_id: sid, day: dt, players: [null, null, null, null, null, null, null, null], scores: {} });
+        return sb.from('jass_days').insert({ series_id: sid, day: dt, name: nm, players: [null, null, null, null, null, null, null, null], scores: {} });
       }, L('ccSaved'));
     }
   }
@@ -2165,8 +2358,10 @@
     if (mbSheet.mode === 'menu') {
       body = '<p class="cck">' + L(member ? 'memberTag' : 'guestTag') + ' · ' + esc(fmtPhone(m.phone)) + '</p><h3>' + esc(m.name) + '</h3>' +
         (member && !self ? mbBtn('set-admin', m.id, m.isAdmin ? '0' : '1', ICON.gear, L(m.isAdmin ? 'mRevokeAdmin' : 'mMakeAdmin')) : '') +
-        (member ? mbBtn('set-em', m.id, m.isEventManager ? '0' : '1', ICON.glass, L(m.isEventManager ? 'mRevokeEm' : 'mMakeEm')) : '') +
+        (member ? mbBtn('set-cm', m.id, m.isChilbiManager ? '0' : '1', ICON.glass, L(m.isChilbiManager ? 'mRevokeCm' : 'mMakeCm')) : '') +
+        (member ? mbBtn('set-crm', m.id, m.isChraenzliManager ? '0' : '1', ICON.glass, L(m.isChraenzliManager ? 'mRevokeCrm' : 'mMakeCrm')) : '') +
         (member ? mbBtn('set-jm', m.id, m.isJassMaster ? '0' : '1', ICON.trophy, L(m.isJassMaster ? 'mRevokeJm' : 'mMakeJm')) : '') +
+        (member ? mbBtn('set-passive', m.id, m.isPassive ? '0' : '1', ICON.crown, L(m.isPassive ? 'mMakeActive' : 'mMakePassive')) : '') +
         (!self ? mbBtn('set-guest', m.id, member ? '1' : '0', ICON.crown, L(member ? 'mMakeGuest' : 'mMakeMember')) : '') +
         (!self ? mbBtn('reset-pin', m.id, '', ICON.dialpad, L('resetPin')) : '') +
         '<button type="button" class="ccact" data-mb="edit">' + ICON.pencil + '<span>' + L('mEdit') + '</span></button>' +
@@ -2435,6 +2630,7 @@
     if (act_ === 'cc-addevent') { if (canCC()) ccOpen('root', null, 'add'); return; }
     if (act_ === 'cc-fold') { S.ccFold[D.id] = !ccIsFolded(D.id); render(); return; }
     if (act_ === 'cc-menu') { if (canCC()) ccOpen(D.lvl, D.id || null, 'menu'); return; }
+    if (act_ === 'cc-print') { ccExportPdf(D.id); return; }
     if (act_ === 'cc-guest') { if (S.me && S.me.isAdmin) ccOpen('guest', null, 'guest', { name: D.name }); return; }
     if (act_ === 'who-ev') { S.open['ev:' + D.id] = !S.open['ev:' + D.id]; render(); return; }
     if (act_ === 'sec') { S.sec[D.id] = !S.sec[D.id]; render(); return; }
@@ -2512,8 +2708,8 @@
       return;
     }
 
-    /* Event-Aktionen: Admins und Event-Manager */
-    if (S.me && (S.me.isAdmin || S.me.isEventManager)) {
+    /* Event-Aktionen: Admins, Chilbi- und Chränzli Manager */
+    if (S.me && (S.me.isAdmin || S.me.isChilbiManager || S.me.isChraenzliManager)) {
       if (act_ === 'del-ev') {
         if (!(await askConfirm(L('del'), L('confirmDelEvent'), true))) return;
         return act(function () { return sb.from('events').delete().eq('id', D.id); }, L('eventDeleted'));
@@ -2551,7 +2747,7 @@
     }
     if (act_ === 'set-guest') {
       var tg = S.members.filter(function (m) { return m.id === D.id; })[0];
-      if (D.val === '1' && tg && (tg.isAdmin || tg.isEventManager || tg.isJassMaster) && !(await askConfirm(L('guestTag'), L('confirmGuestLoses', { name: tg.name }), false))) return;
+      if (D.val === '1' && tg && (tg.isAdmin || tg.isChilbiManager || tg.isChraenzliManager || tg.isJassMaster) && !(await askConfirm(L('guestTag'), L('confirmGuestLoses', { name: tg.name }), false))) return;
       return act(function () { return sb.rpc('set_guest', { target: D.id, make_guest: D.val === '1' }); }, D.val === '1' ? L('guestGranted') : L('guestRevoked'));
     }
     if (act_ === 'set-em') {
@@ -2559,6 +2755,15 @@
     }
     if (act_ === 'set-jm') {
       return act(function () { return sb.rpc('set_jass_master', { target: D.id, make_master: D.val === '1' }); }, D.val === '1' ? L('jmGranted') : L('jmRevoked'));
+    }
+    if (act_ === 'set-cm') {
+      return act(function () { return sb.rpc('set_chilbi_manager', { target: D.id, make_manager: D.val === '1' }); }, D.val === '1' ? L('cmGranted') : L('cmRevoked'));
+    }
+    if (act_ === 'set-crm') {
+      return act(function () { return sb.rpc('set_chraenzli_manager', { target: D.id, make_manager: D.val === '1' }); }, D.val === '1' ? L('crmGranted') : L('crmRevoked'));
+    }
+    if (act_ === 'set-passive') {
+      return act(function () { return sb.rpc('set_passive', { target: D.id, make_passive: D.val === '1' }); }, D.val === '1' ? L('passiveSet') : L('activeSet'));
     }
     if (act_ === 'set-admin') {
       return act(function () { return sb.rpc('set_admin', { target: D.id, make_admin: D.val === '1' }); }, D.val === '1' ? L('adminGranted') : L('adminRevoked'));
@@ -2592,7 +2797,7 @@
       } catch (err) { console.error(err); toast(L('pinChangeFail')); }
       return;
     }
-    if (!S.me.isAdmin && !(S.me.isEventManager && (kind === 'event' || kind === 'edit-ev'))) return;
+    if (!S.me.isAdmin && !((S.me.isChilbiManager || S.me.isChraenzliManager) && (kind === 'event' || kind === 'edit-ev'))) return;
 
     if (kind === 'member-edit') {
       var nph = normPhone(g('phone'));
