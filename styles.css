@@ -443,3 +443,51 @@
   .mbic.em { color: var(--crown); }
   .mbic.em .liq { fill: var(--crown); }
   .ccact .liq { fill: none; }
+
+  /* ---------- Trainings: eigene Farben für Datum, Antwort-Knöpfe und Teilnehmerzahl ---------- */
+  .card:not(.ev) .date { background: #0B2F5E; color: #fff; }
+  .card:not(.ev) .resp.yes[aria-pressed="true"] { background: #8FC7F2; border-color: #8FC7F2; color: #0B2F5E; }
+  .card:not(.ev) .resp.yes:not([aria-pressed="true"]) { color: #2B7FC7; border-color: color-mix(in srgb, #2B7FC7 45%, var(--line)); }
+  .card:not(.ev) .resp.no[aria-pressed="true"] { background: #F4A9C6; border-color: #F4A9C6; color: #6B1540; }
+  .card:not(.ev) .resp.no:not([aria-pressed="true"]) { color: #C14F85; border-color: color-mix(in srgb, #C14F85 45%, var(--line)); }
+  .card:not(.ev) .count.low b { color: var(--no); }
+  .card:not(.ev) .count.ok b { color: var(--yes); }
+  .card:not(.ev) .count.high b { color: var(--no); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .card:not(.ev) .date { background: #0B2F5E; }
+    :root:not([data-theme="light"]) .card:not(.ev) .resp.yes[aria-pressed="true"] { color: #0B2F5E; }
+    :root:not([data-theme="light"]) .card:not(.ev) .resp.no[aria-pressed="true"] { color: #6B1540; }
+  }
+  :root[data-theme="dark"] .card:not(.ev) .date { background: #0B2F5E; }
+  :root[data-theme="dark"] .card:not(.ev) .resp.yes[aria-pressed="true"] { color: #0B2F5E; }
+  :root[data-theme="dark"] .card:not(.ev) .resp.no[aria-pressed="true"] { color: #6B1540; }
+
+  /* ---------- Jass ---------- */
+  .jssub { border-top: 1px solid var(--line); margin-top: 8px; }
+  .jssh { display: flex; align-items: center; gap: 6px; padding: 8px 0; }
+  .jsst { flex: 1; min-width: 0; text-align: left; background: none; border: 0; padding: 0; font-weight: 600; font-size: .98rem; color: var(--ink); }
+  .jssb { padding-bottom: 10px; }
+  .jsplist { display: flex; flex-direction: column; gap: 6px; }
+  .jsp { display: flex; align-items: center; gap: 8px; width: 100%; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; font: inherit; color: var(--ink); text-align: left; }
+  .jsp .sp { flex: 1; }
+  .jsp svg { width: 18px; height: 18px; color: var(--muted); flex: 0 0 auto; }
+  .jsnr { display: inline-flex; width: 22px; height: 22px; border-radius: 50%; background: var(--bg); color: var(--muted); align-items: center; justify-content: center; font-size: .8rem; font-weight: 600; flex: 0 0 auto; }
+  .jsround { font-weight: 700; font-family: var(--font-head); font-size: 1.05rem; color: var(--crown); margin: 14px 0 6px; }
+  .jsround:first-of-type { margin-top: 0; }
+  .jsgame { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 8px 10px; margin-bottom: 8px; }
+  .jsgh { font-size: .8rem; color: var(--muted); font-weight: 600; margin-bottom: 4px; }
+  .jsteam { display: flex; align-items: center; gap: 8px; padding: 4px 0; }
+  .jstl { flex: 0 0 3.2rem; font-size: .78rem; color: var(--muted); font-weight: 600; }
+  .jsnames { flex: 1; min-width: 0; font-size: .92rem; overflow-wrap: anywhere; }
+  .jsamp { color: var(--muted); margin: 0 3px; }
+  .jspts { width: 4.2rem; flex: 0 0 auto; text-align: center; border-radius: 8px; border: 1.5px solid var(--line); padding: 6px 4px; font: inherit; font-weight: 600; background: var(--bg); color: var(--ink); }
+  .jspts.pos, .jspv.pos { color: var(--yes); }
+  .jspts.neg, .jspv.neg { color: var(--no); }
+  .jspv { width: 4.2rem; flex: 0 0 auto; text-align: center; font-weight: 700; }
+  .jsrank { list-style: none; margin: 0; padding: 0; }
+  .jsrank li { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-top: 1px dashed var(--line); }
+  .jsrank li:first-child { border-top: 0; }
+  .jsrk { flex: 0 0 1.6rem; font-weight: 700; color: var(--muted); }
+  .jsrn { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+  .jsrg { color: var(--muted); font-size: .82rem; flex: 0 0 auto; }
+  .jsrp { flex: 0 0 3rem; text-align: right; font-weight: 700; }

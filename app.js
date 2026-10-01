@@ -96,7 +96,8 @@
       infoShow: 'Erklärung anzeigen', infoHide: 'Erklärung ausblenden',
       ok: 'OK',
       navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäste', ccOthers: 'Andere', ccEmpty: 'Noch keine Anlässe erfasst.', ccNoDays: 'Noch keine Tage erfasst.', ccSummary: '{s} Schichten · {r} Rollen', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Anlass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktionen', ccAddEvent: 'Anlass hinzufügen', ccAddDay: 'Tag hinzufügen', ccAddShift: 'Schicht hinzufügen', ccAddRole: 'Rolle hinzufügen', ccChange: 'Ändern', ccCopy: 'Kopieren', ccClose: 'Schliessen', ccNameOpt: 'Name (optional)', ccStart: 'Start', ccEnd: 'Ende', ccActive: 'Aktiv', ccPersons: 'Verantwortliche', ccSearch: 'Namen suchen', ccOtherPerson: 'Andere Person (nicht in der App)', ccAdd: 'Hinzufügen', ccDidYouMean: 'Meinst du {name}?', ccNobody: 'Noch niemand', ccConfirmDel: '«{name}» löschen? Alles, was darunter erfasst ist, wird ebenfalls gelöscht.', ccConfirmDelRole: '«{name}» löschen?', ccCopyEventNote: 'Die Kopie ist zuerst inaktiv. Alle Tage werden um 52 Wochen verschoben, damit die Wochentage gleich bleiben.', ccCopyDayNote: 'Schichten und Rollen werden mit den Verantwortlichen kopiert.', ccSaved: 'Gespeichert', ccCopied: 'Kopiert', ccDeleted: 'Gelöscht', ccNotInApp: '{name} ist noch nicht in der App. Mit der Handynummer kannst du die Person als Gast hinzufügen.', ccAsGuest: 'Als Gast hinzufügen', ccNeedName: 'Gib einen Namen ein.', ccSetup: 'Für C&C muss das Datenbank-Schema aktualisiert werden (supabase/schema.sql).', ccCopySuffix: 'Kopie',
-      mMakeAdmin: 'Zum Admin machen', mRevokeAdmin: 'Admin-Rechte entziehen', mMakeEm: 'Zum Event-Manager machen', mRevokeEm: 'Event-Manager-Rechte entziehen', mMakeGuest: 'Zum Gast machen', mMakeMember: 'Zum Mitglied machen', mEdit: 'Name und Handynummer ändern', mEditNote: 'Bei einer neuen Handynummer gilt wieder der Standard-PIN: die letzten 6 Ziffern der neuen Nummer.', mSaved: 'Gespeichert', mDelete: 'Mitglied löschen', mPhoneTaken: 'Diese Handynummer gehört bereits einer anderen Person.'
+      mMakeAdmin: 'Zum Admin machen', mRevokeAdmin: 'Admin-Rechte entziehen', mMakeEm: 'Zum Event-Manager machen', mRevokeEm: 'Event-Manager-Rechte entziehen', mMakeGuest: 'Zum Gast machen', mMakeMember: 'Zum Mitglied machen', mEdit: 'Name und Handynummer ändern', mEditNote: 'Bei einer neuen Handynummer gilt wieder der Standard-PIN: die letzten 6 Ziffern der neuen Nummer.', mSaved: 'Gespeichert', mDelete: 'Mitglied löschen', mPhoneTaken: 'Diese Handynummer gehört bereits einer anderen Person.',
+      navJass: 'Jass', jsParticipants: 'Teilnehmer', jsSchedule: 'Spielplan', jsRanking: 'Tagesrangliste', jsRound: 'Runde {n}', jsTable: 'Tisch {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Spieler {n}', jsFree: 'frei', jsEmpty: 'Noch kein Jassmasters erfasst.', jsNoDays: 'Noch kein Datum erfasst.', jsAddSeries: 'Jassmasters hinzufügen', jsAddDay: 'Datum hinzufügen', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jasstag', jsPick: 'Spieler {n} wählen', jsClear: 'Platz freigeben', jsAlready: 'bereits Spieler {n}', jsPoints: 'Punkte', jsGames: '{n} Spiele', jsGame: '{n} Spiel', jsNoPoints: 'Noch keine Punkte erfasst.', jsHint: 'Trage die Punkte beim Siegerteam ein. Das andere Team erhält sie automatisch negativ.', jsSetup: 'Für Jass muss das Datenbank-Schema aktualisiert werden (supabase/schema.sql).'
     },
 
     fr: {
@@ -169,7 +170,8 @@
       infoShow: 'Afficher l’explication', infoHide: 'Masquer l’explication',
       ok: 'OK',
       navCC: 'C&C', ccMembers: 'Membres', ccGuests: 'Invités', ccOthers: 'Autres', ccEmpty: 'Aucune manifestation pour l’instant.', ccNoDays: 'Aucun jour pour l’instant.', ccSummary: '{s} créneaux · {r} rôles', ccLvlAll: 'Chränzli et Chilbi', ccLvlEvent: 'Manifestation', ccLvlDay: 'Jour', ccLvlShift: 'Créneau', ccLvlRole: 'Rôle', ccActions: 'Actions', ccAddEvent: 'Ajouter une manifestation', ccAddDay: 'Ajouter un jour', ccAddShift: 'Ajouter un créneau', ccAddRole: 'Ajouter un rôle', ccChange: 'Modifier', ccCopy: 'Copier', ccClose: 'Fermer', ccNameOpt: 'Nom (facultatif)', ccStart: 'Début', ccEnd: 'Fin', ccActive: 'Actif', ccPersons: 'Responsables', ccSearch: 'Rechercher un nom', ccOtherPerson: 'Autre personne (pas dans l’application)', ccAdd: 'Ajouter', ccDidYouMean: 'Tu veux dire {name} ?', ccNobody: 'Personne pour l’instant', ccConfirmDel: 'Supprimer « {name} » ? Tout ce qui y est rattaché sera aussi supprimé.', ccConfirmDelRole: 'Supprimer « {name} » ?', ccCopyEventNote: 'La copie est d’abord inactive. Tous les jours sont décalés de 52 semaines pour garder les mêmes jours de la semaine.', ccCopyDayNote: 'Les créneaux et rôles sont copiés avec les responsables.', ccSaved: 'Enregistré', ccCopied: 'Copié', ccDeleted: 'Supprimé', ccNotInApp: '{name} n’est pas encore dans l’application. Avec son numéro de mobile, tu peux l’ajouter comme invité.', ccAsGuest: 'Ajouter comme invité', ccNeedName: 'Saisis un nom.', ccSetup: 'Pour C&C, le schéma de la base de données doit être mis à jour (supabase/schema.sql).', ccCopySuffix: 'copie',
-      mMakeAdmin: 'Nommer admin', mRevokeAdmin: 'Retirer les droits d’admin', mMakeEm: 'Nommer responsable des événements', mRevokeEm: 'Retirer les droits de responsable des événements', mMakeGuest: 'Définir comme invité', mMakeMember: 'Définir comme membre', mEdit: 'Modifier le nom et le numéro de mobile', mEditNote: 'Avec un nouveau numéro, le PIN par défaut s’applique à nouveau : les 6 derniers chiffres du nouveau numéro.', mSaved: 'Enregistré', mDelete: 'Supprimer le membre', mPhoneTaken: 'Ce numéro de mobile appartient déjà à une autre personne.'
+      mMakeAdmin: 'Nommer admin', mRevokeAdmin: 'Retirer les droits d’admin', mMakeEm: 'Nommer responsable des événements', mRevokeEm: 'Retirer les droits de responsable des événements', mMakeGuest: 'Définir comme invité', mMakeMember: 'Définir comme membre', mEdit: 'Modifier le nom et le numéro de mobile', mEditNote: 'Avec un nouveau numéro, le PIN par défaut s’applique à nouveau : les 6 derniers chiffres du nouveau numéro.', mSaved: 'Enregistré', mDelete: 'Supprimer le membre', mPhoneTaken: 'Ce numéro de mobile appartient déjà à une autre personne.',
+      navJass: 'Jass', jsParticipants: 'Participants', jsSchedule: 'Programme des parties', jsRanking: 'Classement du jour', jsRound: 'Manche {n}', jsTable: 'Table {t}', jsTeam1: 'Équipe I', jsTeam2: 'Équipe II', jsPlayer: 'Joueur {n}', jsFree: 'libre', jsEmpty: 'Aucun Jassmasters pour l’instant.', jsNoDays: 'Aucune date pour l’instant.', jsAddSeries: 'Ajouter un Jassmasters', jsAddDay: 'Ajouter une date', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Journée de jass', jsPick: 'Choisir le joueur {n}', jsClear: 'Libérer la place', jsAlready: 'déjà joueur {n}', jsPoints: 'Points', jsGames: '{n} parties', jsGame: '{n} partie', jsNoPoints: 'Aucun point saisi pour l’instant.', jsHint: 'Saisis les points pour l’équipe gagnante. L’autre équipe les reçoit automatiquement en négatif.', jsSetup: 'Pour le jass, le schéma de la base de données doit être mis à jour (supabase/schema.sql).'
     },
 
     en: {
@@ -242,7 +244,8 @@
       infoShow: 'Show explanation', infoHide: 'Hide explanation',
       ok: 'OK',
       navCC: 'C&C', ccMembers: 'Members', ccGuests: 'Guests', ccOthers: 'Others', ccEmpty: 'No occasions yet.', ccNoDays: 'No days yet.', ccSummary: '{s} shifts · {r} roles', ccLvlAll: 'Chränzli and Chilbi', ccLvlEvent: 'Occasion', ccLvlDay: 'Day', ccLvlShift: 'Shift', ccLvlRole: 'Role', ccActions: 'Actions', ccAddEvent: 'Add occasion', ccAddDay: 'Add day', ccAddShift: 'Add shift', ccAddRole: 'Add role', ccChange: 'Edit', ccCopy: 'Copy', ccClose: 'Close', ccNameOpt: 'Name (optional)', ccStart: 'Start', ccEnd: 'End', ccActive: 'Active', ccPersons: 'Responsible', ccSearch: 'Search names', ccOtherPerson: 'Other person (not in the app)', ccAdd: 'Add', ccDidYouMean: 'Did you mean {name}?', ccNobody: 'Nobody yet', ccConfirmDel: 'Delete “{name}”? Everything under it will be deleted too.', ccConfirmDelRole: 'Delete “{name}”?', ccCopyEventNote: 'The copy starts inactive. All days move by 52 weeks so the weekdays stay the same.', ccCopyDayNote: 'Shifts and roles are copied with the people responsible.', ccSaved: 'Saved', ccCopied: 'Copied', ccDeleted: 'Deleted', ccNotInApp: '{name} is not in the app yet. With a mobile number you can add them as a guest.', ccAsGuest: 'Add as guest', ccNeedName: 'Enter a name.', ccSetup: 'C&C needs an updated database schema (supabase/schema.sql).', ccCopySuffix: 'copy',
-      mMakeAdmin: 'Make admin', mRevokeAdmin: 'Remove admin rights', mMakeEm: 'Make event manager', mRevokeEm: 'Remove event manager rights', mMakeGuest: 'Set as guest', mMakeMember: 'Set as member', mEdit: 'Change name and mobile number', mEditNote: 'With a new number the default PIN applies again: the last 6 digits of the new number.', mSaved: 'Saved', mDelete: 'Delete member', mPhoneTaken: 'This mobile number already belongs to someone else.'
+      mMakeAdmin: 'Make admin', mRevokeAdmin: 'Remove admin rights', mMakeEm: 'Make event manager', mRevokeEm: 'Remove event manager rights', mMakeGuest: 'Set as guest', mMakeMember: 'Set as member', mEdit: 'Change name and mobile number', mEditNote: 'With a new number the default PIN applies again: the last 6 digits of the new number.', mSaved: 'Saved', mDelete: 'Delete member', mPhoneTaken: 'This mobile number already belongs to someone else.',
+      navJass: 'Jass', jsParticipants: 'Players', jsSchedule: 'Schedule', jsRanking: 'Daily ranking', jsRound: 'Round {n}', jsTable: 'Table {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Player {n}', jsFree: 'open', jsEmpty: 'No Jassmasters yet.', jsNoDays: 'No date yet.', jsAddSeries: 'Add Jassmasters', jsAddDay: 'Add date', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jass day', jsPick: 'Choose player {n}', jsClear: 'Clear seat', jsAlready: 'already player {n}', jsPoints: 'Points', jsGames: '{n} games', jsGame: '{n} game', jsNoPoints: 'No points entered yet.', jsHint: 'Enter the points for the winning team. The other team automatically gets them as negative points.', jsSetup: 'Jass needs an updated database schema (supabase/schema.sql).'
     },
 
     it: {
@@ -315,7 +318,8 @@
       infoShow: 'Mostra la spiegazione', infoHide: 'Nascondi la spiegazione',
       ok: 'OK',
       navCC: 'C&C', ccMembers: 'Soci', ccGuests: 'Ospiti', ccOthers: 'Altri', ccEmpty: 'Ancora nessuna manifestazione.', ccNoDays: 'Ancora nessun giorno.', ccSummary: '{s} turni · {r} ruoli', ccLvlAll: 'Chränzli e Chilbi', ccLvlEvent: 'Manifestazione', ccLvlDay: 'Giorno', ccLvlShift: 'Turno', ccLvlRole: 'Ruolo', ccActions: 'Azioni', ccAddEvent: 'Aggiungi manifestazione', ccAddDay: 'Aggiungi giorno', ccAddShift: 'Aggiungi turno', ccAddRole: 'Aggiungi ruolo', ccChange: 'Modifica', ccCopy: 'Copia', ccClose: 'Chiudi', ccNameOpt: 'Nome (facoltativo)', ccStart: 'Inizio', ccEnd: 'Fine', ccActive: 'Attivo', ccPersons: 'Responsabili', ccSearch: 'Cerca nomi', ccOtherPerson: 'Altra persona (non nell’app)', ccAdd: 'Aggiungi', ccDidYouMean: 'Intendi {name}?', ccNobody: 'Ancora nessuno', ccConfirmDel: 'Eliminare «{name}»? Verrà eliminato anche tutto ciò che contiene.', ccConfirmDelRole: 'Eliminare «{name}»?', ccCopyEventNote: 'La copia è inizialmente inattiva. Tutti i giorni vengono spostati di 52 settimane, così i giorni della settimana restano uguali.', ccCopyDayNote: 'Turni e ruoli vengono copiati con i responsabili.', ccSaved: 'Salvato', ccCopied: 'Copiato', ccDeleted: 'Eliminato', ccNotInApp: '{name} non è ancora nell’app. Con il numero di cellulare puoi aggiungere la persona come ospite.', ccAsGuest: 'Aggiungi come ospite', ccNeedName: 'Inserisci un nome.', ccSetup: 'Per C&C lo schema del database deve essere aggiornato (supabase/schema.sql).', ccCopySuffix: 'copia',
-      mMakeAdmin: 'Rendi admin', mRevokeAdmin: 'Revoca i diritti di admin', mMakeEm: 'Nomina responsabile eventi', mRevokeEm: 'Revoca i diritti di responsabile eventi', mMakeGuest: 'Imposta come ospite', mMakeMember: 'Imposta come socio', mEdit: 'Modifica nome e numero di cellulare', mEditNote: 'Con un nuovo numero vale di nuovo il PIN predefinito: le ultime 6 cifre del nuovo numero.', mSaved: 'Salvato', mDelete: 'Elimina socio', mPhoneTaken: 'Questo numero di cellulare appartiene già a un’altra persona.'
+      mMakeAdmin: 'Rendi admin', mRevokeAdmin: 'Revoca i diritti di admin', mMakeEm: 'Nomina responsabile eventi', mRevokeEm: 'Revoca i diritti di responsabile eventi', mMakeGuest: 'Imposta come ospite', mMakeMember: 'Imposta come socio', mEdit: 'Modifica nome e numero di cellulare', mEditNote: 'Con un nuovo numero vale di nuovo il PIN predefinito: le ultime 6 cifre del nuovo numero.', mSaved: 'Salvato', mDelete: 'Elimina socio', mPhoneTaken: 'Questo numero di cellulare appartiene già a un’altra persona.',
+      navJass: 'Jass', jsParticipants: 'Partecipanti', jsSchedule: 'Calendario delle partite', jsRanking: 'Classifica del giorno', jsRound: 'Turno {n}', jsTable: 'Tavolo {t}', jsTeam1: 'Squadra I', jsTeam2: 'Squadra II', jsPlayer: 'Giocatore {n}', jsFree: 'libero', jsEmpty: 'Ancora nessun Jassmasters.', jsNoDays: 'Ancora nessuna data.', jsAddSeries: 'Aggiungi Jassmasters', jsAddDay: 'Aggiungi data', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Giornata di jass', jsPick: 'Scegli il giocatore {n}', jsClear: 'Libera il posto', jsAlready: 'già giocatore {n}', jsPoints: 'Punti', jsGames: '{n} partite', jsGame: '{n} partita', jsNoPoints: 'Ancora nessun punto inserito.', jsHint: 'Inserisci i punti per la squadra vincente. L’altra squadra li riceve automaticamente in negativo.', jsSetup: 'Per il jass lo schema del database deve essere aggiornato (supabase/schema.sql).'
     },
 
     gsw: {
@@ -388,7 +392,8 @@
       infoShow: 'Erklärig aazeige', infoHide: 'Erklärig verstecke',
       ok: 'OK',
       navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäscht', ccOthers: 'Anderi', ccEmpty: 'No kei Aalässe erfasst.', ccNoDays: 'No kei Täg erfasst.', ccSummary: '{s} Schichte · {r} Rolle', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Aalass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktione', ccAddEvent: 'Aalass hinzuefüege', ccAddDay: 'Tag hinzuefüege', ccAddShift: 'Schicht hinzuefüege', ccAddRole: 'Rolle hinzuefüege', ccChange: 'Ändere', ccCopy: 'Kopiere', ccClose: 'Schliesse', ccNameOpt: 'Name (freiwillig)', ccStart: 'Start', ccEnd: 'Änd', ccActive: 'Aktiv', ccPersons: 'Verantwortlichi', ccSearch: 'Näme sueche', ccOtherPerson: 'Anderi Person (nöd i de App)', ccAdd: 'Hinzuefüege', ccDidYouMean: 'Meinsch {name}?', ccNobody: 'No niemer', ccConfirmDel: '«{name}» lösche? Alles, wo drunder erfasst isch, wird au glöscht.', ccConfirmDelRole: '«{name}» lösche?', ccCopyEventNote: 'D Kopie isch zerscht inaktiv. Alli Täg wärded um 52 Wuche verschobe, damit d Wuchetäg glich bliibed.', ccCopyDayNote: 'Schichte und Rolle wärded mit de Verantwortliche kopiert.', ccSaved: 'Gspeicheret', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} isch no nöd i de App. Mit de Handynummere chasch d Person als Gascht hinzuefüege.', ccAsGuest: 'Als Gascht hinzuefüege', ccNeedName: 'Gib en Name ii.', ccSetup: 'Für C&C muess s Datebank-Schema aktualisiert wärde (supabase/schema.sql).', ccCopySuffix: 'Kopie',
-      mMakeAdmin: 'Zum Admin mache', mRevokeAdmin: 'Admin-Rächt entzieh', mMakeEm: 'Zum Event-Manager mache', mRevokeEm: 'Event-Manager-Rächt entzieh', mMakeGuest: 'Zum Gascht mache', mMakeMember: 'Zum Mitglied mache', mEdit: 'Name und Handynummere ändere', mEditNote: 'Mit enere neue Handynummere gilt wieder de Standard-PIN: di letschte 6 Ziffere vo de neue Nummere.', mSaved: 'Gspeicheret', mDelete: 'Mitglied lösche', mPhoneTaken: 'Die Handynummere ghört scho öpper anderem.'
+      mMakeAdmin: 'Zum Admin mache', mRevokeAdmin: 'Admin-Rächt entzieh', mMakeEm: 'Zum Event-Manager mache', mRevokeEm: 'Event-Manager-Rächt entzieh', mMakeGuest: 'Zum Gascht mache', mMakeMember: 'Zum Mitglied mache', mEdit: 'Name und Handynummere ändere', mEditNote: 'Mit enere neue Handynummere gilt wieder de Standard-PIN: di letschte 6 Ziffere vo de neue Nummere.', mSaved: 'Gspeicheret', mDelete: 'Mitglied lösche', mPhoneTaken: 'Die Handynummere ghört scho öpper anderem.',
+      navJass: 'Jass', jsParticipants: 'Teilnehmer', jsSchedule: 'Spielplan', jsRanking: 'Tagesrangliste', jsRound: 'Rundi {n}', jsTable: 'Tisch {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Spieler {n}', jsFree: 'frei', jsEmpty: 'No kei Jassmasters erfasst.', jsNoDays: 'No kei Datum erfasst.', jsAddSeries: 'Jassmasters hinzuefüege', jsAddDay: 'Datum hinzuefüege', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jasstag', jsPick: 'Spieler {n} uswähle', jsClear: 'Platz freigäh', jsAlready: 'scho Spieler {n}', jsPoints: 'Pünkt', jsGames: '{n} Spiel', jsGame: '{n} Spiel', jsNoPoints: 'No kei Pünkt erfasst.', jsHint: 'Träg d Pünkt bim Siegerteam ii. S ander Team überchunnt si automatisch negativ.', jsSetup: 'Für Jass muess s Datebank-Schema aktualisiert wärde (supabase/schema.sql).'
     },
 
     apz: {
@@ -461,7 +466,8 @@
       infoShow: 'Erklärig aazeige', infoHide: 'Erklärig verstecke',
       ok: 'OK',
       navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäscht', ccOthers: 'Anderi', ccEmpty: 'No kei Aalässe erfasst.', ccNoDays: 'No kei Täg erfasst.', ccSummary: '{s} Schichte · {r} Rolle', ccLvlAll: 'Chränzli ond Chilbi', ccLvlEvent: 'Aalass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktione', ccAddEvent: 'Aalass hinzuefüege', ccAddDay: 'Tag hinzuefüege', ccAddShift: 'Schicht hinzuefüege', ccAddRole: 'Rolle hinzuefüege', ccChange: 'Ändere', ccCopy: 'Kopiere', ccClose: 'Schliesse', ccNameOpt: 'Name (freiwillig)', ccStart: 'Start', ccEnd: 'Änd', ccActive: 'Aktiv', ccPersons: 'Verantwortlichi', ccSearch: 'Näme sueche', ccOtherPerson: 'Anderi Person (nüd i de App)', ccAdd: 'Hinzuefüege', ccDidYouMean: 'Meinsch {name}?', ccNobody: 'No niemer', ccConfirmDel: '«{name}» lösche? Alles, wo drunder erfasst isch, wird au glöscht.', ccConfirmDelRole: '«{name}» lösche?', ccCopyEventNote: 'D Kopie isch zerscht inaktiv. Alli Täg werded um 52 Woche verschobe, damit d Wochetäg glich bliibed.', ccCopyDayNote: 'Schichte ond Rolle werded mit de Verantwortliche kopiert.', ccSaved: 'Gspeicheret', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} isch no nüd i de App. Mit de Handynummere chasch d Person als Gascht hinzuefüege.', ccAsGuest: 'Als Gascht hinzuefüege', ccNeedName: 'Gib en Name ii.', ccSetup: 'Für C&C muess s Datebank-Schema aktualisiert werde (supabase/schema.sql).', ccCopySuffix: 'Kopie',
-      mMakeAdmin: 'Zom Admin mache', mRevokeAdmin: 'Admin-Rächt entzieh', mMakeEm: 'Zom Event-Manager mache', mRevokeEm: 'Event-Manager-Rächt entzieh', mMakeGuest: 'Zom Gascht mache', mMakeMember: 'Zom Mitglied mache', mEdit: 'Name ond Handynummere ändere', mEditNote: 'Mit enere neue Handynummere gilt wieder de Standard-PIN: di letschte 6 Ziffere vo de neue Nummere.', mSaved: 'Gspeicheret', mDelete: 'Mitglied lösche', mPhoneTaken: 'Die Handynummere ghört scho öpper anderem.'
+      mMakeAdmin: 'Zom Admin mache', mRevokeAdmin: 'Admin-Rächt entzieh', mMakeEm: 'Zom Event-Manager mache', mRevokeEm: 'Event-Manager-Rächt entzieh', mMakeGuest: 'Zom Gascht mache', mMakeMember: 'Zom Mitglied mache', mEdit: 'Name ond Handynummere ändere', mEditNote: 'Mit enere neue Handynummere gilt wieder de Standard-PIN: di letschte 6 Ziffere vo de neue Nummere.', mSaved: 'Gspeicheret', mDelete: 'Mitglied lösche', mPhoneTaken: 'Die Handynummere ghört scho öpper anderem.',
+      navJass: 'Jass', jsParticipants: 'Teilnehmer', jsSchedule: 'Spielplan', jsRanking: 'Tagesrangliste', jsRound: 'Rundi {n}', jsTable: 'Tisch {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Spieler {n}', jsFree: 'frei', jsEmpty: 'No kei Jassmasters erfasst.', jsNoDays: 'No kei Datum erfasst.', jsAddSeries: 'Jassmasters hinzuefüege', jsAddDay: 'Datum hinzuefüege', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jasstag', jsPick: 'Spieler {n} uswähle', jsClear: 'Platz freigäh', jsAlready: 'scho Spieler {n}', jsPoints: 'Pünkt', jsGames: '{n} Spiel', jsGame: '{n} Spiel', jsNoPoints: 'No kei Pünkt erfasst.', jsHint: 'Träg d Pünkt bim Siegerteam ii. S ander Team überchunnt si automatisch negativ.', jsSetup: 'Für Jass muess s Datebank-Schema aktualisiert werde (supabase/schema.sql).'
     },
 
     uk: {
@@ -534,7 +540,8 @@
       infoShow: 'Показати пояснення', infoHide: 'Сховати пояснення',
       ok: 'OK',
       navCC: 'C&C', ccMembers: 'Члени клубу', ccGuests: 'Гості', ccOthers: 'Інші', ccEmpty: 'Заходів ще немає.', ccNoDays: 'Днів ще немає.', ccSummary: 'Змін: {s} · ролей: {r}', ccLvlAll: 'Chränzli і Chilbi', ccLvlEvent: 'Захід', ccLvlDay: 'День', ccLvlShift: 'Зміна', ccLvlRole: 'Роль', ccActions: 'Дії', ccAddEvent: 'Додати захід', ccAddDay: 'Додати день', ccAddShift: 'Додати зміну', ccAddRole: 'Додати роль', ccChange: 'Змінити', ccCopy: 'Копіювати', ccClose: 'Закрити', ccNameOpt: 'Назва (необов’язково)', ccStart: 'Початок', ccEnd: 'Кінець', ccActive: 'Активний', ccPersons: 'Відповідальні', ccSearch: 'Пошук імен', ccOtherPerson: 'Інша особа (не в застосунку)', ccAdd: 'Додати', ccDidYouMean: 'Можливо, {name}?', ccNobody: 'Ще нікого', ccConfirmDel: 'Видалити «{name}»? Усе, що в ньому, також буде видалено.', ccConfirmDelRole: 'Видалити «{name}»?', ccCopyEventNote: 'Копія спочатку неактивна. Усі дні зсуваються на 52 тижні, щоб дні тижня збігалися.', ccCopyDayNote: 'Зміни й ролі копіюються разом із відповідальними.', ccSaved: 'Збережено', ccCopied: 'Скопійовано', ccDeleted: 'Видалено', ccNotInApp: '{name} ще немає в застосунку. За номером мобільного можна додати цю особу як гостя.', ccAsGuest: 'Додати як гостя', ccNeedName: 'Введіть ім’я.', ccSetup: 'Для C&C потрібно оновити схему бази даних (supabase/schema.sql).', ccCopySuffix: 'копія',
-      mMakeAdmin: 'Призначити адміністратором', mRevokeAdmin: 'Забрати права адміністратора', mMakeEm: 'Призначити менеджером подій', mRevokeEm: 'Забрати права менеджера подій', mMakeGuest: 'Зробити гостем', mMakeMember: 'Зробити членом клубу', mEdit: 'Змінити ім’я та номер мобільного', mEditNote: 'З новим номером знову діє PIN за замовчуванням: останні 6 цифр нового номера.', mSaved: 'Збережено', mDelete: 'Видалити учасника', mPhoneTaken: 'Цей номер мобільного вже належить іншій особі.'
+      mMakeAdmin: 'Призначити адміністратором', mRevokeAdmin: 'Забрати права адміністратора', mMakeEm: 'Призначити менеджером подій', mRevokeEm: 'Забрати права менеджера подій', mMakeGuest: 'Зробити гостем', mMakeMember: 'Зробити членом клубу', mEdit: 'Змінити ім’я та номер мобільного', mEditNote: 'З новим номером знову діє PIN за замовчуванням: останні 6 цифр нового номера.', mSaved: 'Збережено', mDelete: 'Видалити учасника', mPhoneTaken: 'Цей номер мобільного вже належить іншій особі.',
+      navJass: 'Джас', jsParticipants: 'Учасники', jsSchedule: 'Розклад ігор', jsRanking: 'Рейтинг дня', jsRound: 'Раунд {n}', jsTable: 'Стіл {t}', jsTeam1: 'Команда I', jsTeam2: 'Команда II', jsPlayer: 'Гравець {n}', jsFree: 'вільно', jsEmpty: 'Jassmasters ще немає.', jsNoDays: 'Дати ще немає.', jsAddSeries: 'Додати Jassmasters', jsAddDay: 'Додати дату', jsLvlSeries: 'Jassmasters', jsLvlDay: 'День джасу', jsPick: 'Вибрати гравця {n}', jsClear: 'Звільнити місце', jsAlready: 'уже гравець {n}', jsPoints: 'Очки', jsGames: 'Ігор: {n}', jsGame: 'Ігор: {n}', jsNoPoints: 'Очок ще немає.', jsHint: 'Вкажіть очки команди-переможця. Інша команда автоматично отримує їх зі знаком мінус.', jsSetup: 'Для джасу потрібно оновити схему бази даних (supabase/schema.sql).'
     },
 
     bar: {
@@ -607,7 +614,8 @@
       infoShow: 'Erklärung anzoagn', infoHide: 'Erklärung wegdoa',
       ok: 'OK',
       navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäst', ccOthers: 'Andere', ccEmpty: 'No koane Veranstoitungen.', ccNoDays: 'No koane Tog.', ccSummary: '{s} Schichtn · {r} Rolln', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Veranstoitung', ccLvlDay: 'Tog', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktionen', ccAddEvent: 'Veranstoitung dazuadoa', ccAddDay: 'Tog dazuadoa', ccAddShift: 'Schicht dazuadoa', ccAddRole: 'Rolle dazuadoa', ccChange: 'Ändern', ccCopy: 'Kopiern', ccClose: 'Zumachn', ccNameOpt: 'Nama (freiwillig)', ccStart: 'Ofang', ccEnd: 'End', ccActive: 'Aktiv', ccPersons: 'Verantwortliche', ccSearch: 'Nama suacha', ccOtherPerson: 'Andere Person (ned in da App)', ccAdd: 'Dazuadoa', ccDidYouMean: 'Moanst du {name}?', ccNobody: 'No koana', ccConfirmDel: '«{name}» löschn? Ois, wos drunter erfasst is, werd aa glöscht.', ccConfirmDelRole: '«{name}» löschn?', ccCopyEventNote: 'De Kopie is zerst inaktiv. Olle Tog wern um 52 Wochn verschobn, damit de Wochentog gleich bleibn.', ccCopyDayNote: 'Schichtn und Rolln wern mit de Verantwortlichn kopiert.', ccSaved: 'Gspeichert', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} is no ned in da App. Mit da Handynummer konnst de Person ois Gast dazuadoa.', ccAsGuest: 'Ois Gast dazuadoa', ccNeedName: 'Gib an Nama ei.', ccSetup: 'Für C&C muass s Datenbank-Schema aktualisiert wern (supabase/schema.sql).', ccCopySuffix: 'Kopie',
-      mMakeAdmin: 'Zum Admin macha', mRevokeAdmin: 'Admin-Rechte entziehn', mMakeEm: 'Zum Event-Manager macha', mRevokeEm: 'Event-Manager-Rechte entziehn', mMakeGuest: 'Zum Gast macha', mMakeMember: 'Zum Mitglied macha', mEdit: 'Nama und Handynummer ändern', mEditNote: 'Mit ana neia Handynummer gilt wieda da Standard-PIN: de letztn 6 Ziffern vo da neia Nummer.', mSaved: 'Gspeichert', mDelete: 'Mitglied löschn', mPhoneTaken: 'De Handynummer ghört scho wem andern.'
+      mMakeAdmin: 'Zum Admin macha', mRevokeAdmin: 'Admin-Rechte entziehn', mMakeEm: 'Zum Event-Manager macha', mRevokeEm: 'Event-Manager-Rechte entziehn', mMakeGuest: 'Zum Gast macha', mMakeMember: 'Zum Mitglied macha', mEdit: 'Nama und Handynummer ändern', mEditNote: 'Mit ana neia Handynummer gilt wieda da Standard-PIN: de letztn 6 Ziffern vo da neia Nummer.', mSaved: 'Gspeichert', mDelete: 'Mitglied löschn', mPhoneTaken: 'De Handynummer ghört scho wem andern.',
+      navJass: 'Jass', jsParticipants: 'Teilnehmer', jsSchedule: 'Spuiplan', jsRanking: 'Tagesranglistn', jsRound: 'Rundn {n}', jsTable: 'Tisch {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Spuier {n}', jsFree: 'frei', jsEmpty: 'No koa Jassmasters.', jsNoDays: 'No koa Datum.', jsAddSeries: 'Jassmasters dazuadoa', jsAddDay: 'Datum dazuadoa', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jasstog', jsPick: 'Spuier {n} aussuacha', jsClear: 'Platz freigebn', jsAlready: 'scho Spuier {n}', jsPoints: 'Punkt', jsGames: '{n} Spuie', jsGame: '{n} Spui', jsNoPoints: 'No koane Punkt.', jsHint: 'Trag de Punkt beim Siegerteam ei. Des andere Team kriagt s automatisch negativ.', jsSetup: 'Für Jass muass s Datenbank-Schema aktualisiert wern (supabase/schema.sql).'
     },
 
     cs: {
@@ -680,7 +688,8 @@
       infoShow: 'Zobrazit vysvětlení', infoHide: 'Skrýt vysvětlení',
       ok: 'OK',
       navCC: 'C&C', ccMembers: 'Členové', ccGuests: 'Hosté', ccOthers: 'Ostatní', ccEmpty: 'Zatím žádné akce.', ccNoDays: 'Zatím žádné dny.', ccSummary: 'Směny: {s} · role: {r}', ccLvlAll: 'Chränzli a Chilbi', ccLvlEvent: 'Akce', ccLvlDay: 'Den', ccLvlShift: 'Směna', ccLvlRole: 'Role', ccActions: 'Možnosti', ccAddEvent: 'Přidat akci', ccAddDay: 'Přidat den', ccAddShift: 'Přidat směnu', ccAddRole: 'Přidat roli', ccChange: 'Upravit', ccCopy: 'Kopírovat', ccClose: 'Zavřít', ccNameOpt: 'Název (nepovinné)', ccStart: 'Začátek', ccEnd: 'Konec', ccActive: 'Aktivní', ccPersons: 'Odpovědné osoby', ccSearch: 'Hledat jména', ccOtherPerson: 'Jiná osoba (není v aplikaci)', ccAdd: 'Přidat', ccDidYouMean: 'Myslíš {name}?', ccNobody: 'Zatím nikdo', ccConfirmDel: 'Smazat «{name}»? Smaže se i vše, co je pod tím.', ccConfirmDelRole: 'Smazat «{name}»?', ccCopyEventNote: 'Kopie je nejprve neaktivní. Všechny dny se posunou o 52 týdnů, aby dny v týdnu zůstaly stejné.', ccCopyDayNote: 'Směny a role se kopírují i s odpovědnými osobami.', ccSaved: 'Uloženo', ccCopied: 'Zkopírováno', ccDeleted: 'Smazáno', ccNotInApp: '{name} zatím v aplikaci není. S číslem mobilu ji můžeš přidat jako hosta.', ccAsGuest: 'Přidat jako hosta', ccNeedName: 'Zadej jméno.', ccSetup: 'Pro C&C je potřeba aktualizovat schéma databáze (supabase/schema.sql).', ccCopySuffix: 'kopie',
-      mMakeAdmin: 'Udělat správcem', mRevokeAdmin: 'Odebrat práva správce', mMakeEm: 'Udělat správcem akcí', mRevokeEm: 'Odebrat práva správce akcí', mMakeGuest: 'Nastavit jako hosta', mMakeMember: 'Nastavit jako člena', mEdit: 'Změnit jméno a číslo mobilu', mEditNote: 'S novým číslem opět platí výchozí PIN: posledních 6 číslic nového čísla.', mSaved: 'Uloženo', mDelete: 'Smazat člena', mPhoneTaken: 'Toto číslo mobilu už patří jiné osobě.'
+      mMakeAdmin: 'Udělat správcem', mRevokeAdmin: 'Odebrat práva správce', mMakeEm: 'Udělat správcem akcí', mRevokeEm: 'Odebrat práva správce akcí', mMakeGuest: 'Nastavit jako hosta', mMakeMember: 'Nastavit jako člena', mEdit: 'Změnit jméno a číslo mobilu', mEditNote: 'S novým číslem opět platí výchozí PIN: posledních 6 číslic nového čísla.', mSaved: 'Uloženo', mDelete: 'Smazat člena', mPhoneTaken: 'Toto číslo mobilu už patří jiné osobě.',
+      navJass: 'Jass', jsParticipants: 'Hráči', jsSchedule: 'Rozpis her', jsRanking: 'Denní pořadí', jsRound: 'Kolo {n}', jsTable: 'Stůl {t}', jsTeam1: 'Tým I', jsTeam2: 'Tým II', jsPlayer: 'Hráč {n}', jsFree: 'volné', jsEmpty: 'Zatím žádný Jassmasters.', jsNoDays: 'Zatím žádné datum.', jsAddSeries: 'Přidat Jassmasters', jsAddDay: 'Přidat datum', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Den jassu', jsPick: 'Vybrat hráče {n}', jsClear: 'Uvolnit místo', jsAlready: 'už hráč {n}', jsPoints: 'Body', jsGames: 'Her: {n}', jsGame: 'Her: {n}', jsNoPoints: 'Zatím žádné body.', jsHint: 'Zadej body vítěznému týmu. Druhý tým je automaticky dostane záporně.', jsSetup: 'Pro jass je potřeba aktualizovat schéma databáze (supabase/schema.sql).'
     },
 
     nl: {
@@ -753,7 +762,8 @@
       infoShow: 'Uitleg tonen', infoHide: 'Uitleg verbergen',
       ok: 'OK',
       navCC: 'C&C', ccMembers: 'Leden', ccGuests: 'Gasten', ccOthers: 'Anderen', ccEmpty: 'Nog geen evenementen.', ccNoDays: 'Nog geen dagen.', ccSummary: '{s} diensten · {r} rollen', ccLvlAll: 'Chränzli en Chilbi', ccLvlEvent: 'Evenement', ccLvlDay: 'Dag', ccLvlShift: 'Dienst', ccLvlRole: 'Rol', ccActions: 'Acties', ccAddEvent: 'Evenement toevoegen', ccAddDay: 'Dag toevoegen', ccAddShift: 'Dienst toevoegen', ccAddRole: 'Rol toevoegen', ccChange: 'Wijzigen', ccCopy: 'Kopiëren', ccClose: 'Sluiten', ccNameOpt: 'Naam (optioneel)', ccStart: 'Begin', ccEnd: 'Einde', ccActive: 'Actief', ccPersons: 'Verantwoordelijken', ccSearch: 'Namen zoeken', ccOtherPerson: 'Andere persoon (niet in de app)', ccAdd: 'Toevoegen', ccDidYouMean: 'Bedoel je {name}?', ccNobody: 'Nog niemand', ccConfirmDel: '«{name}» verwijderen? Alles wat eronder valt, wordt ook verwijderd.', ccConfirmDelRole: '«{name}» verwijderen?', ccCopyEventNote: 'De kopie is eerst inactief. Alle dagen worden 52 weken verschoven, zodat de weekdagen gelijk blijven.', ccCopyDayNote: 'Diensten en rollen worden met de verantwoordelijken gekopieerd.', ccSaved: 'Opgeslagen', ccCopied: 'Gekopieerd', ccDeleted: 'Verwijderd', ccNotInApp: '{name} staat nog niet in de app. Met een mobiel nummer kun je deze persoon als gast toevoegen.', ccAsGuest: 'Als gast toevoegen', ccNeedName: 'Vul een naam in.', ccSetup: 'Voor C&C moet het databaseschema worden bijgewerkt (supabase/schema.sql).', ccCopySuffix: 'kopie',
-      mMakeAdmin: 'Beheerder maken', mRevokeAdmin: 'Beheerdersrechten intrekken', mMakeEm: 'Evenementmanager maken', mRevokeEm: 'Rechten van evenementmanager intrekken', mMakeGuest: 'Als gast instellen', mMakeMember: 'Als lid instellen', mEdit: 'Naam en mobiel nummer wijzigen', mEditNote: 'Met een nieuw nummer geldt weer de standaard-PIN: de laatste 6 cijfers van het nieuwe nummer.', mSaved: 'Opgeslagen', mDelete: 'Lid verwijderen', mPhoneTaken: 'Dit mobiele nummer hoort al bij iemand anders.'
+      mMakeAdmin: 'Beheerder maken', mRevokeAdmin: 'Beheerdersrechten intrekken', mMakeEm: 'Evenementmanager maken', mRevokeEm: 'Rechten van evenementmanager intrekken', mMakeGuest: 'Als gast instellen', mMakeMember: 'Als lid instellen', mEdit: 'Naam en mobiel nummer wijzigen', mEditNote: 'Met een nieuw nummer geldt weer de standaard-PIN: de laatste 6 cijfers van het nieuwe nummer.', mSaved: 'Opgeslagen', mDelete: 'Lid verwijderen', mPhoneTaken: 'Dit mobiele nummer hoort al bij iemand anders.',
+      navJass: 'Jass', jsParticipants: 'Deelnemers', jsSchedule: 'Speelschema', jsRanking: 'Dagklassement', jsRound: 'Ronde {n}', jsTable: 'Tafel {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Speler {n}', jsFree: 'vrij', jsEmpty: 'Nog geen Jassmasters.', jsNoDays: 'Nog geen datum.', jsAddSeries: 'Jassmasters toevoegen', jsAddDay: 'Datum toevoegen', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jassdag', jsPick: 'Speler {n} kiezen', jsClear: 'Plaats vrijmaken', jsAlready: 'al speler {n}', jsPoints: 'Punten', jsGames: '{n} spellen', jsGame: '{n} spel', jsNoPoints: 'Nog geen punten ingevoerd.', jsHint: 'Vul de punten in bij het winnende team. Het andere team krijgt ze automatisch negatief.', jsSetup: 'Voor jass moet het databaseschema worden bijgewerkt (supabase/schema.sql).'
     }
   };
 
@@ -847,7 +857,8 @@
       session: null, me: null, members: [],
       rules: [], extras: [], overrides: {}, cancelled: {}, events: [],
       tr: {}, ev: {}, open: {}, edit: null, busy: false, sec: {}, add: {}, info: {}, showMore: false,
-      cc: { events: [], days: [], shifts: [], roles: [] }, ccErr: false, ccFold: {}, ccLegend: false
+      cc: { events: [], days: [], shifts: [], roles: [] }, ccErr: false, ccFold: {}, ccLegend: false,
+      js: { series: [], days: [] }, jsErr: false, jsFold: {}
     };
   }
   var S = freshState();
@@ -876,6 +887,15 @@
     S.ev = {};
     d[7].forEach(function (r) { (S.ev[r.event_id] = S.ev[r.event_id] || {})[r.user_id] = r.status; });
     if (S.session) S.me = S.members.filter(function (m) { return m.id === S.session.user.id; })[0] || null;
+
+    // Jass separat laden (für alle angemeldeten Personen sichtbar)
+    S.js = { series: [], days: [] };
+    S.jsErr = false;
+    if (S.me) {
+      var jr = await Promise.all(['jass_series', 'jass_days'].map(function (t) { return sb.from(t).select('*'); }));
+      if (jr.some(function (r) { return r.error; })) S.jsErr = true;
+      else { S.js.series = jr[0].data || []; S.js.days = jr[1].data || []; }
+    }
 
     // C&C separat laden: ein fehlendes Schema soll den Rest der App nicht blockieren
     S.cc = { events: [], days: [], shifts: [], roles: [] };
@@ -939,6 +959,8 @@
   var ICON = {
     info: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01"/><path d="M11 12h1v4h1"/></svg>',
     gear: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 4.3c.4-1.8 2.9-1.8 3.4 0a1.7 1.7 0 0 0 2.6 1.1c1.5-.9 3.3.8 2.4 2.4a1.7 1.7 0 0 0 1 2.5c1.8.4 1.8 2.9 0 3.4a1.7 1.7 0 0 0-1 2.6c.9 1.5-.8 3.3-2.4 2.4a1.7 1.7 0 0 0-2.6 1c-.4 1.8-2.9 1.8-3.4 0a1.7 1.7 0 0 0-2.6-1c-1.5.9-3.3-.8-2.4-2.4a1.7 1.7 0 0 0-1-2.6c-1.8-.4-1.8-2.9 0-3.4a1.7 1.7 0 0 0 1-2.5c-.9-1.6.8-3.3 2.4-2.4c1 .6 2.3 0 2.6-1.1z"/><circle class="hole" cx="12" cy="12" r="3"/></svg>',
+    laurel: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20.5C5.4 19.2 3.2 15.9 3.2 12c0-2.3.7-4.4 2-6.1"/><path d="M15 20.5c3.6-1.3 5.8-4.6 5.8-8.5 0-2.3-.7-4.4-2-6.1"/><path d="M5.2 5.9C4.9 4.5 5.6 3.2 6.9 2.8c.3 1.4-.4 2.7-1.7 3.1z"/><path d="M3.4 10.1C2.5 9 2.6 7.5 3.6 6.6c.9 1.1.8 2.6-.2 3.5z"/><path d="M3.6 14.6c-1.2-.5-1.9-1.9-1.5-3.2 1.3.4 2 1.8 1.5 3.2z"/><path d="M5.6 18.3c-1.3-.1-2.3-1.2-2.3-2.5 1.4 0 2.4 1.1 2.3 2.5z"/><path d="M18.8 5.9c.3-1.4-.4-2.7-1.7-3.1-.3 1.4.4 2.7 1.7 3.1z"/><path d="M20.6 10.1c.9-1.1.8-2.6-.2-3.5-.9 1.1-.8 2.6.2 3.5z"/><path d="M20.4 14.6c1.2-.5 1.9-1.9 1.5-3.2-1.3.4-2 1.8-1.5 3.2z"/><path d="M18.4 18.3c1.3-.1 2.3-1.2 2.3-2.5-1.4 0-2.4 1.1-2.3 2.5z"/></svg>',
+    trophy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>',
     pencil: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L18.5 9.5a2.8 2.8 0 0 0-4-4L4 16v4"/><path d="M13.5 6.5l4 4"/></svg>',
     copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>',
     plus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>',
@@ -1098,7 +1120,7 @@
           '<button class="resp yes" data-act="resp" data-val="yes" data-key="' + esc(t.key) + '" aria-pressed="' + (mine === 'yes') + '">' + ICON.check + L('yes') + '</button>' +
           '<button class="resp no" data-act="resp" data-val="no" data-key="' + esc(t.key) + '" aria-pressed="' + (mine === 'no') + '">' + ICON.x + L('no') + '</button>' +
         '</div>' +
-        '<button class="count' + (isOpen ? ' is-open' : '') + '" data-act="who" data-key="' + esc(t.key) + '" aria-expanded="' + isOpen + '" aria-label="' + esc(L('ariaTr', { yes: yes.length, no: no.length, action: isOpen ? L('listClose') : L('listOpen') })) + '"><b>' + yes.length + '</b><small>' + L('participants') + '</small>' + ICON.chev + '</button>') +
+        '<button class="count' + (isOpen ? ' is-open' : '') + (yes.length < 8 ? ' low' : yes.length < 13 ? ' ok' : ' high') + '" data-act="who" data-key="' + esc(t.key) + '" aria-expanded="' + isOpen + '" aria-label="' + esc(L('ariaTr', { yes: yes.length, no: no.length, action: isOpen ? L('listClose') : L('listOpen') })) + '"><b>' + yes.length + '</b><small>' + L('participants') + '</small>' + ICON.chev + '</button>') +
       '</div>' +
       (!off && isOpen ? '<div class="who">' +
         '<div><h4>' + L('hYes', { n: yes.length }) + '</h4><div class="chips">' + chips(yes, false) + '</div></div>' +
@@ -1311,7 +1333,8 @@
     nav.hidden = false;
     var tabs = [{ id: 'trainings', label: L('navTrainings'), icon: ICON.cal }];
     if (!S.me.isGuest) tabs.push({ id: 'events', label: L('navEvents'), icon: ICON.star });
-    if (canCC()) tabs.push({ id: 'cc', label: L('navCC'), icon: ICON.glass });
+    tabs.push({ id: 'jass', label: L('navJass'), icon: ICON.trophy });
+    if (canCC()) tabs.push({ id: 'cc', label: L('navCC'), icon: ICON.laurel });
     if (S.me.isAdmin || S.me.isEventManager) tabs.push({ id: 'admin', label: L('navAdmin'), icon: ICON.gear });
     tabs.push({ id: 'profile', label: L('navProfile'), icon: ICON.user });
     nav.innerHTML = '<div class="in">' + tabs.map(function (t) {
@@ -1331,7 +1354,7 @@
       if (S.tab === 'admin' && !(S.me.isAdmin || S.me.isEventManager)) S.tab = 'trainings';
       if (S.tab === 'events' && S.me.isGuest) S.tab = 'trainings';
       if (S.tab === 'cc' && !canCC()) S.tab = 'trainings';
-      app.innerHTML = S.tab === 'cc' ? viewCC() : S.tab === 'admin' ? viewAdmin() : S.tab === 'events' ? viewEvents() : S.tab === 'profile' ? viewProfile() : viewTrainings();
+      app.innerHTML = S.tab === 'jass' ? viewJass() : S.tab === 'cc' ? viewCC() : S.tab === 'admin' ? viewAdmin() : S.tab === 'events' ? viewEvents() : S.tab === 'profile' ? viewProfile() : viewTrainings();
     }
     renderNav();
     window.scrollTo(0, y);
@@ -1787,6 +1810,275 @@
     return ok;
   }
 
+  /* ---------- Jass: Jassmasters mit Teilnehmern, Spielplan und Tagesrangliste ---------- */
+  // Fester Spielplan für 8 Spieler: 4 Runden, je 2 Tische. Zahlen = Platz in der Teilnehmerliste.
+  var JS_PLAN = [
+    [['A', [1, 2], [7, 8]], ['B', [3, 4], [5, 6]]],
+    [['A', [5, 7], [6, 8]], ['B', [1, 3], [2, 4]]],
+    [['A', [1, 6], [2, 5]], ['B', [3, 8], [4, 7]]],
+    [['A', [2, 7], [4, 5]], ['B', [1, 8], [3, 6]]]
+  ];
+  function jsEdit() { return canCC(); }   // Admins und Event-Manager bearbeiten
+  function jsPlayers(d) {
+    var a = Array.isArray(d.players) ? d.players.slice(0, 8) : [];
+    while (a.length < 8) a.push(null);
+    return a.map(function (p) { return p && (p.id || p.name) ? p : null; });
+  }
+  function jsScores(d) { return d.scores && typeof d.scores === 'object' ? d.scores : {}; }
+  function jsName(P, slot, map) {
+    var p = P[slot - 1];
+    return p ? ccResolve(p, map).name : L('jsPlayer', { n: slot });
+  }
+  function jsFmt(v) { return v == null ? '–' : (v > 0 ? '+' + v : String(v)); }
+  function jsCls(v) { return v == null || v === 0 ? '' : v > 0 ? ' pos' : ' neg'; }
+  function jsDots(lvl, id, label) {
+    return '<button class="ccdots" data-act="js-menu" data-lvl="' + lvl + '" data-id="' + esc(id) + '" aria-label="' + esc(L('ccActions') + ': ' + label) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>';
+  }
+  function jsFoldBtn(id, folded, label, small) {
+    return '<button class="ccfold' + (small ? ' ccfold-day' : '') + (folded ? '' : ' open') + '" data-act="js-fold" data-id="' + esc(id) + '" aria-expanded="' + !folded + '" aria-label="' + esc(label) + '">' + ICON.chev + '</button>';
+  }
+
+  // Tagesrangliste: jeder Spieler erhält die Punkte seines Teams aus jedem Spiel
+  function jsRanking(d) {
+    var sc = jsScores(d), tot = [0, 0, 0, 0, 0, 0, 0, 0, 0], games = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    JS_PLAN.forEach(function (round, ri) {
+      round.forEach(function (g) {
+        var v = sc[(ri + 1) + g[0]];
+        if (typeof v !== 'number') return;
+        g[1].forEach(function (s) { tot[s] += v; games[s]++; });
+        g[2].forEach(function (s) { tot[s] -= v; games[s]++; });
+      });
+    });
+    var rows = [1, 2, 3, 4, 5, 6, 7, 8].map(function (s) { return { slot: s, pts: tot[s], games: games[s] }; });
+    rows.sort(function (a, b) { return b.pts - a.pts || a.slot - b.slot; });
+    var rank = 0, last = null;
+    rows.forEach(function (r, i) { if (r.pts !== last) { rank = i + 1; last = r.pts; } r.rank = rank; });
+    return rows;
+  }
+
+  function viewJass() {
+    if (S.jsErr) return '<div class="empty"><p>' + L('jsSetup') + '</p></div>';
+    var ed = jsEdit(), map = ccMap(), html = '';
+    var series = S.js.series.slice().sort(ccByCreated);
+    if (!series.length) {
+      return '<div class="empty"><p>' + L('jsEmpty') + '</p>' + (ed ? '<button class="btn inline" data-act="js-addseries" style="margin-top:12px">' + L('jsAddSeries') + '</button>' : '') + '</div>';
+    }
+    series.forEach(function (se) {
+      var folded = !!S.jsFold[se.id];
+      html += '<section class="ccel"><div class="cceh">' +
+        '<button class="cct" data-act="js-fold" data-id="' + esc(se.id) + '" aria-expanded="' + !folded + '">' + esc(se.name) + '</button>' +
+        (ed ? jsDots('series', se.id, se.name) : '') + jsFoldBtn(se.id, folded, se.name) + '</div>';
+      if (!folded) {
+        html += '<div class="ccbody">';
+        var days = S.js.days.filter(function (d) { return d.series_id === se.id; })
+          .sort(function (a, b) { return a.day < b.day ? -1 : a.day > b.day ? 1 : ccByCreated(a, b); });
+        if (!days.length) html += '<p class="ccsum" style="padding-top:10px">' + L('jsNoDays') + '</p>';
+        days.forEach(function (d) { html += jsDayHtml(d, ed, map); });
+        html += '</div>';
+      }
+      html += '</section>';
+    });
+    return html;
+  }
+
+  function jsSub(key, title, body) {
+    var folded = !!S.jsFold[key];
+    return '<div class="jssub"><div class="jssh"><button class="jsst" data-act="js-fold" data-id="' + esc(key) + '" aria-expanded="' + !folded + '">' + title + '</button>' +
+      jsFoldBtn(key, folded, title, true) + '</div>' + (folded ? '' : '<div class="jssb">' + body + '</div>') + '</div>';
+  }
+
+  function jsDayHtml(d, ed, map) {
+    var df = !!S.jsFold[d.id], P = jsPlayers(d), sc = jsScores(d), label = ccDate(d.day);
+    var h = '<div class="ccday"><div class="ccdh"><button class="ccdt" data-act="js-fold" data-id="' + esc(d.id) + '" aria-expanded="' + !df + '"><b>' + esc(label) + '</b></button>' +
+      (ed ? jsDots('day', d.id, label) : '') + jsFoldBtn(d.id, df, label, true) + '</div>';
+    if (df) return h + '</div>';
+
+    // Teilnehmer 1–8
+    var tp = P.map(function (p, i) {
+      var inner = '<span class="jsnr">' + (i + 1) + '</span>' + (p ? ccChip(p, map) : '<span class="ccsum">' + L('jsFree') + '</span>');
+      return ed
+        ? '<button type="button" class="jsp" data-act="js-pick" data-id="' + esc(d.id) + '" data-slot="' + (i + 1) + '" aria-label="' + esc(L('jsPick', { n: i + 1 })) + '">' + inner + '<span class="sp"></span>' + ICON.pencil + '</button>'
+        : '<div class="jsp">' + inner + '</div>';
+    }).join('');
+
+    // Spielplan
+    var sp = ed ? '<p class="ccnote" style="margin:0 0 8px">' + L('jsHint') + '</p>' : '';
+    JS_PLAN.forEach(function (round, ri) {
+      sp += '<div class="jsround">' + L('jsRound', { n: ri + 1 }) + '</div>';
+      round.forEach(function (g) {
+        var key = (ri + 1) + g[0], v = typeof sc[key] === 'number' ? sc[key] : null;
+        var team = function (nr, slots, val) {
+          var names = slots.map(function (s) { return '<span class="jsnm">' + esc(jsName(P, s, map)) + '</span>'; }).join('<span class="jsamp">&amp;</span>');
+          var cell = ed
+            ? '<input class="jspts' + jsCls(val) + '" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" data-jsscore="' + esc(d.id) + '" data-game="' + key + '" data-team="' + nr + '" value="' + (val == null ? '' : val) + '" aria-label="' + esc(L('jsTable', { t: g[0] }) + ', ' + L(nr === 1 ? 'jsTeam1' : 'jsTeam2') + ': ' + L('jsPoints')) + '">'
+            : '<span class="jspv' + jsCls(val) + '">' + jsFmt(val) + '</span>';
+          return '<div class="jsteam"><span class="jstl">' + L(nr === 1 ? 'jsTeam1' : 'jsTeam2') + '</span><span class="jsnames">' + names + '</span>' + cell + '</div>';
+        };
+        sp += '<div class="jsgame"><div class="jsgh">' + L('jsTable', { t: g[0] }) + '</div>' + team(1, g[1], v) + team(2, g[2], v == null ? null : -v) + '</div>';
+      });
+    });
+
+    // Tagesrangliste
+    var rows = jsRanking(d), any = Object.keys(sc).some(function (k) { return typeof sc[k] === 'number'; });
+    var rk = any ? '<ol class="jsrank">' + rows.map(function (r) {
+      return '<li><span class="jsrk">' + r.rank + '.</span><span class="jsrn">' + esc(jsName(P, r.slot, map)) + '</span><span class="jsrg">' + L(r.games === 1 ? 'jsGame' : 'jsGames', { n: r.games }) + '</span><span class="jsrp' + jsCls(r.pts) + '">' + jsFmt(r.pts) + '</span></li>';
+    }).join('') + '</ol>' : '<p class="ccsum">' + L('jsNoPoints') + '</p>';
+
+    h += jsSub(d.id + ':p', L('jsParticipants'), '<div class="jsplist">' + tp + '</div>') +
+         jsSub(d.id + ':s', L('jsSchedule'), sp) +
+         jsSub(d.id + ':r', L('jsRanking'), rk);
+    return h + '</div>';
+  }
+
+  /* Punkte speichern: Team I erhält v, Team II −v */
+  async function jsSaveScore(inp) {
+    var raw = String(inp.value || '').trim().replace(/[^\d-]/g, '');
+    var n = raw === '' || raw === '-' ? null : parseInt(raw, 10);
+    if (n != null && isNaN(n)) n = null;
+    var v = n == null ? null : (inp.dataset.team === '2' ? -n : n);
+    var d = S.js.days.filter(function (x) { return x.id === inp.dataset.jsscore; })[0];
+    if (!d) return;
+    var sc = Object.assign({}, jsScores(d));
+    if (v == null) delete sc[inp.dataset.game]; else sc[inp.dataset.game] = v;
+    d.scores = sc;   // sofort anzeigen
+    render();
+    var r = await sb.rpc('jass_set_score', { p_day: d.id, p_game: inp.dataset.game, p_pts: v });
+    if (r.error) { console.error(r.error); toast(L('errFailed') + ': ' + String(r.error.message || '').slice(0, 100)); }
+    try { await loadAll(); softRender(); } catch (e) { console.error(e); }
+  }
+  document.addEventListener('change', function (e) {
+    var t = e.target;
+    if (t && t.dataset && t.dataset.jsscore && jsEdit()) jsSaveScore(t);
+  });
+  document.addEventListener('keydown', function (e) {
+    var t = e.target;
+    if (e.key === 'Enter' && t && t.dataset && t.dataset.jsscore) { e.preventDefault(); t.blur(); }
+  });
+
+  /* ---------- Jass: Aktionsfenster ---------- */
+  var jsSheet = null;   // { lvl, id, mode, slot, q }
+  function jsKey(e) { if (e.key === 'Escape' && !document.getElementById('dlg')) { e.preventDefault(); jsClose(); } }
+  function jsClose() {
+    var el = document.getElementById('jssheet');
+    if (el) el.remove();
+    jsSheet = null;
+    document.removeEventListener('keydown', jsKey, true);
+  }
+  function jsOpen(o) { jsSheet = o; jsDraw(); }
+  function jsFind(lvl, id) {
+    var list = lvl === 'series' ? S.js.series : S.js.days;
+    return list.filter(function (x) { return x.id === id; })[0] || null;
+  }
+  function jsDraw() {
+    var st = jsSheet;
+    if (!st) return;
+    var o = st.id ? jsFind(st.lvl, st.id) : null;
+    if (st.id && !o) { jsClose(); return; }
+    var body = '';
+    var btn = function (a, icon, label, cls) { return '<button type="button" class="ccact' + (cls ? ' ' + cls : '') + '" data-jsa="' + a + '">' + icon + '<span>' + label + '</span></button>'; };
+    var formEnd = '<p class="err" data-jserr hidden></p><div class="dlgbtns"><button type="button" class="btn ghost inline" data-jsa="close">' + L('dismiss') + '</button><button type="submit" class="btn inline">' + L('save') + '</button></div></form>';
+    if (st.mode === 'menu' && st.lvl === 'series') {
+      body = '<p class="cck">' + L('jsLvlSeries') + '</p><h3>' + esc(o.name) + '</h3>' +
+        btn('edit', ICON.pencil, L('ccChange')) + btn('addday', ICON.plus, L('jsAddDay')) + btn('addseries', ICON.plus, L('jsAddSeries')) +
+        btn('del', ICON.trash, L('del'), 'del') + '<button type="button" class="ccact close" data-jsa="close">' + L('ccClose') + '</button>';
+    } else if (st.mode === 'menu' && st.lvl === 'day') {
+      body = '<p class="cck">' + L('jsLvlDay') + '</p><h3>' + esc(ccDate(o.day)) + '</h3>' +
+        btn('edit', ICON.pencil, L('ccChange')) + btn('del', ICON.trash, L('del'), 'del') +
+        '<button type="button" class="ccact close" data-jsa="close">' + L('ccClose') + '</button>';
+    } else if (st.mode === 'series-form') {
+      body = '<p class="cck">' + L('jsLvlSeries') + '</p><h3>' + esc(o ? o.name : L('jsAddSeries')) + '</h3><form data-jsform="series" novalidate>' +
+        fld(L('nameLabel'), '<input class="input" name="name" value="' + esc(o ? o.name : '') + '" placeholder="Nächstes Jassmasters" required>') + formEnd;
+    } else if (st.mode === 'day-form') {
+      body = '<p class="cck">' + L('jsLvlDay') + '</p><h3>' + esc(st.lvl === 'day' ? ccDate(o.day) : L('jsAddDay')) + '</h3><form data-jsform="day" novalidate>' +
+        fld(L('date'), '<input class="input" type="date" name="date" value="' + esc(st.lvl === 'day' ? o.day : '') + '" required>') + formEnd;
+    } else if (st.mode === 'pick') {
+      var P = jsPlayers(o), cur = P[st.slot - 1];
+      body = '<p class="cck">' + L('jsParticipants') + '</p><h3>' + esc(L('jsPick', { n: st.slot })) + '</h3>' +
+        '<input class="input" name="q" placeholder="' + esc(L('ccSearch')) + '" autocomplete="off" value="' + esc(st.q || '') + '">' +
+        '<div class="ccplist" id="jsplist"></div>' +
+        (cur ? btn('clear', ICON.trash, L('jsClear'), 'del') : '') +
+        '<button type="button" class="ccact close" data-jsa="close">' + L('ccClose') + '</button>';
+    }
+    var wrap = document.getElementById('jssheet');
+    if (!wrap) {
+      wrap = document.createElement('div');
+      wrap.id = 'jssheet';
+      wrap.className = 'ccsheet';
+      wrap.addEventListener('click', jsClick);
+      wrap.addEventListener('submit', jsSubmit);
+      wrap.addEventListener('input', function (e) { if (e.target.name === 'q' && jsSheet) { jsSheet.q = e.target.value; jsDrawPick(); } });
+      document.body.appendChild(wrap);
+      document.addEventListener('keydown', jsKey, true);
+    }
+    wrap.innerHTML = '<div class="ccsheetcard" role="dialog" aria-modal="true" aria-label="' + esc(L('navJass')) + '">' + body + '</div>';
+    if (st.mode === 'pick') jsDrawPick();
+    var first = wrap.querySelector('.input') || wrap.querySelector('button');
+    if (first) { try { first.focus({ preventScroll: true }); } catch (x) { first.focus(); } }
+  }
+  function jsDrawPick() {
+    var box = document.getElementById('jsplist');
+    if (!box || !jsSheet) return;
+    var d = jsFind('day', jsSheet.id), P = jsPlayers(d), map = ccMap();
+    var used = {};
+    P.forEach(function (p, i) { if (p && i !== jsSheet.slot - 1) { var r = ccResolve(p, map); if (r.id) used[r.id] = i + 1; } });
+    var q = ccNorm(jsSheet.q || '');
+    var list = S.members.filter(function (m) { return !q || ccNorm(m.name).indexOf(q) > -1; });
+    box.innerHTML = list.length ? list.map(function (m) {
+      var k = m.isGuest ? 'g' : 'm', taken = used[m.id];
+      return '<button type="button" class="ccpick jspick" data-jsa="choose" data-pid="' + esc(m.id) + '"' + (taken ? ' disabled' : '') + '>' +
+        '<span class="ccp cc-' + k + '">' + ICON.crown + esc(m.name) + '</span>' + (taken ? '<span class="ccsum">' + L('jsAlready', { n: taken }) + '</span>' : '') + '</button>';
+    }).join('') : '<p class="ccsum" style="padding:10px 12px;margin:0">' + L('nobody') + '</p>';
+  }
+  async function jsSetPlayer(dayId, slot, person) {
+    var d = jsFind('day', dayId);
+    if (!d) return;
+    var P = jsPlayers(d);
+    P[slot - 1] = person;
+    jsClose();
+    await act(function () { return sb.from('jass_days').update({ players: P }).eq('id', dayId); }, L('ccSaved'));
+  }
+  async function jsClick(e) {
+    var wrap = document.getElementById('jssheet');
+    if (e.target === wrap) { jsClose(); return; }
+    var b = e.target.closest('[data-jsa]');
+    if (!b || !jsSheet) return;
+    var a = b.dataset.jsa, st = jsSheet, o = st.id ? jsFind(st.lvl, st.id) : null;
+    if (a === 'close') { jsClose(); return; }
+    if (a === 'edit') { st.mode = st.lvl === 'series' ? 'series-form' : 'day-form'; jsDraw(); return; }
+    if (a === 'addday') { st.mode = 'day-form'; jsDraw(); return; }   // lvl bleibt 'series' = neues Datum in dieser Serie
+    if (a === 'addseries') { jsOpen({ lvl: 'series', id: null, mode: 'series-form' }); return; }
+    if (a === 'del') {
+      var title = st.lvl === 'series' ? o.name : ccDate(o.day), table = st.lvl === 'series' ? 'jass_series' : 'jass_days', id = o.id;
+      jsClose();
+      if (!(await askConfirm(L('del'), L('ccConfirmDel', { name: title }), true))) return;
+      return act(function () { return sb.from(table).delete().eq('id', id); }, L('ccDeleted'));
+    }
+    if (a === 'clear') return jsSetPlayer(st.id, st.slot, null);
+    if (a === 'choose') {
+      var m = ccMember(b.dataset.pid);
+      if (m) return jsSetPlayer(st.id, st.slot, { id: m.id, name: m.name });
+    }
+  }
+  async function jsSubmit(e) {
+    e.preventDefault();
+    var f = e.target, st = jsSheet;
+    if (!st || !f.dataset.jsform) return;
+    var fd = new FormData(f), g = function (k) { return String(fd.get(k) || '').trim(); };
+    var err = function (m) { var el = f.querySelector('[data-jserr]'); if (el) { el.textContent = m; el.hidden = false; } };
+    if (f.dataset.jsform === 'series') {
+      if (!g('name')) { err(L('ccNeedName')); return; }
+      var nm = g('name'), sid = st.id;
+      jsClose();
+      return act(function () { return sid ? sb.from('jass_series').update({ name: nm }).eq('id', sid) : sb.from('jass_series').insert({ name: nm }); }, L('ccSaved'));
+    }
+    if (f.dataset.jsform === 'day') {
+      if (!g('date')) { err(L('date') + '?'); return; }
+      var dt = g('date'), isEdit = st.lvl === 'day', id = st.id;
+      jsClose();
+      return act(function () { return isEdit ? sb.from('jass_days').update({ day: dt }).eq('id', id) : sb.from('jass_days').insert({ series_id: id, day: dt, players: [null, null, null, null, null, null, null, null], scores: {} }); }, L('ccSaved'));
+    }
+  }
+
   /* ---------- Aktionsfenster Mitglied (Verwaltung) ---------- */
   var mbSheet = null;
   function mbKey(e) { if (e.key === 'Escape' && !document.getElementById('dlg')) { e.preventDefault(); mbClose(); } }
@@ -2067,6 +2359,10 @@
     if (act_ === 'mode') { S.mode = S.mode === 'login' ? 'register' : 'login'; S.err = ''; render(); return; }
     if (act_ === 'tab') { S.tab = D.tab; S.edit = null; render(); window.scrollTo(0, 0); return; }
     if (act_ === 'who') { S.open[D.key] = !S.open[D.key]; render(); return; }
+    if (act_ === 'js-fold') { S.jsFold[D.id] = !S.jsFold[D.id]; render(); return; }
+    if (act_ === 'js-menu') { if (jsEdit()) jsOpen({ lvl: D.lvl, id: D.id, mode: 'menu' }); return; }
+    if (act_ === 'js-pick') { if (jsEdit()) jsOpen({ lvl: 'day', id: D.id, mode: 'pick', slot: Number(D.slot), q: '' }); return; }
+    if (act_ === 'js-addseries') { if (jsEdit()) jsOpen({ lvl: 'series', id: null, mode: 'series-form' }); return; }
     if (act_ === 'mb-menu') { if (S.me && S.me.isAdmin) mbOpen(D.id); return; }
     if (act_ === 'mb-grp') { S.sec[D.id] = S.sec[D.id] === false; render(); return; }
     if (act_ === 'cc-addevent') { if (canCC()) ccOpen('root', null, 'add'); return; }
@@ -2106,6 +2402,7 @@
     if (act_ === 'logout') {
       ccCloseSheet();
       mbClose();
+      jsClose();
       try { await sb.auth.signOut(); } catch (err) { console.error(err); }
       if (channel) { try { sb.removeChannel(channel); } catch (err2) { /* ignorieren */ } channel = null; }
       S = freshState(); S.step = 'login'; render(); window.scrollTo(0, 0);
