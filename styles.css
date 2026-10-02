@@ -263,10 +263,10 @@
   .starbtn[aria-pressed="true"] svg { fill: #E0A100; }
   .starbtn[disabled] { cursor: default; opacity: .85; }
 
-  .calbtn { display: flex; width: max-content; max-width: 100%; align-items: center; gap: 6px; background: none; border: 0; padding: 0 0 10px; font-size: .85rem; font-weight: 600; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-align: left; }
+  .calbtn { display: flex; width: max-content; max-width: 100%; align-items: center; gap: 6px; background: none; border: 0; padding: 0 0 10px; font-size: .85rem; font-weight: 400; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-align: left; }
   .evrow { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
   .evrow .muted.small { margin: 0; }
-  .calbtn.calinline { padding: 0; width: auto; max-width: 55%; flex: 0 0 auto; font-size: .85rem; font-weight: 600; text-align: right; justify-content: flex-end; }
+  .calbtn.calinline { padding: 0; width: auto; max-width: 55%; flex: 0 0 auto; font-size: .85rem; font-weight: 400; text-align: right; justify-content: flex-end; }
   .actrow4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; align-items: stretch; }
   .actrow4 .resp { min-height: 44px; padding: 2px 3px; font-size: .82rem; }
 
@@ -442,6 +442,9 @@
   .mbcrown.g { background: var(--surface); color: var(--crown); border: 1.5px solid color-mix(in srgb, var(--crown) 50%, var(--line)); }
   .mbcrown.g svg { fill: none; }
   .list li.mbrow { flex-wrap: nowrap; gap: 8px; }
+  .pinlamp { display: inline-block; width: 10px; height: 10px; border-radius: 50%; vertical-align: middle; margin-bottom: 2px; }
+  .pinlamp.ok { background: var(--yes); }
+  .pinlamp.no { background: var(--no); }
   .mbrow .l { flex: 1 1 auto; min-width: 0; }
   .mbrow .l b { overflow-wrap: anywhere; }
   .mbyou { color: var(--muted); font-weight: 400; font-size: .85rem; }
@@ -538,3 +541,13 @@
   /* C&C: Sichtbarkeits-Umschalter für Admin/Chilbi Manager/Chränzli Manager */
   .ccpublic { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 14px; font-size: .95rem; cursor: pointer; }
   .ccpublic input { width: 20px; height: 20px; margin: 0; accent-color: var(--crown); flex: 0 0 auto; }
+
+  /* Events: Teilnehmer verwalten (Event-Manager/Admin) */
+  .evpeople { display: flex; flex-direction: column; gap: 8px; max-height: 50vh; overflow-y: auto; }
+  .evprow { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 0; border-top: 1px solid var(--line); }
+  .evprow:first-child { border-top: 0; }
+  .evpn { flex: 1; min-width: 0; font-size: .95rem; overflow-wrap: anywhere; }
+  .evpbtns { display: flex; gap: 4px; flex: 0 0 auto; }
+  .evpbtns .resp { min-height: 34px; padding: 0 8px; font-size: .8rem; border-radius: 8px; }
+  .evpbtns .resp.on.yes { background: #8FC7F2; border-color: #8FC7F2; color: #0B2F5E; }
+  .evpbtns .resp.on.no { background: #F4A9C6; border-color: #F4A9C6; color: #6B1540; }
