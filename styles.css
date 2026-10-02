@@ -409,6 +409,15 @@
   .ccsheetcard h3 { font-size: 1.35rem; margin: 2px 0 12px; overflow-wrap: anywhere; }
   .ccact { display: flex; align-items: center; gap: 14px; width: 100%; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: none; padding: 14px 2px; font-size: 1.02rem; text-align: left; color: var(--ink); }
   .ccact svg { width: 22px; height: 22px; color: var(--crown); flex: 0 0 auto; }
+  /* Mitglieder-Menü: Änderungsart farblich unterscheiden */
+  .ccact.cat-admin { color: var(--no); }
+  .ccact.cat-admin svg { color: var(--no); }
+  .ccact.cat-manager { color: var(--crown); }
+  .ccact.cat-manager svg { color: var(--crown); }
+  .ccact.cat-role { color: var(--ink); }
+  .ccact.cat-role svg { color: var(--ink); }
+  .ccact.cat-other { color: var(--muted); }
+  .ccact.cat-other svg { color: var(--muted); }
   .ccact.del, .ccact.del svg { color: var(--no); }
   .ccact.close { justify-content: center; color: var(--muted); }
   .cclabel { display: block; font-weight: 600; margin: 4px 0 6px; font-size: .95rem; }
