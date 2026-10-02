@@ -62,7 +62,7 @@
       nameChange: 'Name ändern', nameSave: 'Name speichern',
       pinChange: 'PIN ändern', pinIntro: 'Standardmässig sind es die letzten 6 Ziffern deiner Handynummer. Wenn du den PIN änderst, musst du ihn bei der Anmeldung eintragen.',
       pinNew: 'Neuer PIN (6 Ziffern)', pinSave: 'PIN speichern', pinDefault: 'Auf Standard-PIN zurücksetzen', logout: 'Abmelden',
-      language: 'Sprache', languageHint: 'Wähle die Sprache, in der du die App nutzen möchtest.',
+      language: 'Sprache', languageHint: 'Wähle die Sprache, in der du die App nutzen möchtest.', themeTitle: 'Darstellung', themeHint: 'Wähle, wie die App aussehen soll.', themeLight: 'Hell', themeDark: 'Dunkel', themeAuto: 'Automatisch',
       loginSub: 'App',
       loginLeadReg: 'Erstelle dein Konto mit Name, Handynummer und Vereinscode. Dein PIN sind die letzten 6 Ziffern deiner Handynummer.',
       loginLead: 'Melde dich mit deiner Handynummer an.', pinOptional: 'PIN (nur nötig, wenn du ihn geändert hast)', clubCode: 'Vereinscode',
@@ -137,7 +137,7 @@
       nameChange: 'Modifier le nom', nameSave: 'Enregistrer le nom',
       pinChange: 'Modifier le PIN', pinIntro: 'Par défaut, ce sont les 6 derniers chiffres de ton numéro de mobile. Si tu modifies le PIN, tu devras le saisir lors de la connexion.',
       pinNew: 'Nouveau PIN (6 chiffres)', pinSave: 'Enregistrer le PIN', pinDefault: 'Rétablir le PIN par défaut', logout: 'Se déconnecter',
-      language: 'Langue', languageHint: 'Choisis la langue dans laquelle tu souhaites utiliser l’application.',
+      language: 'Langue', languageHint: 'Choisis la langue dans laquelle tu souhaites utiliser l’application.', themeTitle: 'Apparence', themeHint: 'Choisis l’apparence de l’app.', themeLight: 'Clair', themeDark: 'Sombre', themeAuto: 'Automatique',
       loginSub: 'App',
       loginLeadReg: 'Crée ton compte avec ton nom, ton numéro de mobile et le code du club. Ton PIN correspond aux 6 derniers chiffres de ton numéro de mobile.',
       loginLead: 'Connecte-toi avec ton numéro de mobile.', pinOptional: 'PIN (uniquement si tu l’as modifié)', clubCode: 'Code du club',
@@ -212,7 +212,7 @@
       nameChange: 'Change name', nameSave: 'Save name',
       pinChange: 'Change PIN', pinIntro: 'By default it is the last 6 digits of your mobile number. If you change the PIN, you must enter it when signing in.',
       pinNew: 'New PIN (6 digits)', pinSave: 'Save PIN', pinDefault: 'Reset to default PIN', logout: 'Sign out',
-      language: 'Language', languageHint: 'Choose the language you would like to use the app in.',
+      language: 'Language', languageHint: 'Choose the language you would like to use the app in.', themeTitle: 'Appearance', themeHint: 'Choose how the app should look.', themeLight: 'Light', themeDark: 'Dark', themeAuto: 'Automatic',
       loginSub: 'App',
       loginLeadReg: 'Create your account with your name, mobile number and club code. Your PIN is the last 6 digits of your mobile number.',
       loginLead: 'Sign in with your mobile number.', pinOptional: 'PIN (only needed if you changed it)', clubCode: 'Club code',
@@ -287,7 +287,7 @@
       nameChange: 'Cambia nome', nameSave: 'Salva nome',
       pinChange: 'Cambia PIN', pinIntro: 'Per impostazione predefinita sono le ultime 6 cifre del tuo numero di cellulare. Se cambi il PIN, dovrai inserirlo al momento dell’accesso.',
       pinNew: 'Nuovo PIN (6 cifre)', pinSave: 'Salva PIN', pinDefault: 'Ripristina il PIN predefinito', logout: 'Esci',
-      language: 'Lingua', languageHint: 'Scegli la lingua in cui vuoi usare l’app.',
+      language: 'Lingua', languageHint: 'Scegli la lingua in cui vuoi usare l’app.', themeTitle: 'Aspetto', themeHint: 'Scegli come deve apparire l’app.', themeLight: 'Chiaro', themeDark: 'Scuro', themeAuto: 'Automatico',
       loginSub: 'App',
       loginLeadReg: 'Crea il tuo account con nome, numero di cellulare e codice del club. Il tuo PIN corrisponde alle ultime 6 cifre del tuo numero di cellulare.',
       loginLead: 'Accedi con il tuo numero di cellulare.', pinOptional: 'PIN (necessario solo se lo hai cambiato)', clubCode: 'Codice del club',
@@ -362,7 +362,7 @@
       nameChange: 'Name ändere', nameSave: 'Name spichere',
       pinChange: 'PIN ändere', pinIntro: 'Standardmässig sind es di letschte 6 Ziffere vo dinere Handynummere. Wenn du de PIN änderisch, muesch en bim Aamälde igäh.',
       pinNew: 'Neue PIN (6 Ziffere)', pinSave: 'PIN spichere', pinDefault: 'Uf Standard-PIN zruggsetze', logout: 'Abmälde',
-      language: 'Sprach', languageHint: 'Wähl d Sprach, i dere du d App bruuche wottsch.',
+      language: 'Sprach', languageHint: 'Wähl d Sprach, i dere du d App bruuche wottsch.', themeTitle: 'Dorstellig', themeHint: 'Wähl, wie d App usgseh söll.', themeLight: 'Häll', themeDark: 'Dunkel', themeAuto: 'Automatisch',
       loginSub: 'App',
       loginLeadReg: 'Erstell dis Konto mit Name, Handynummere und Vereinscode. Din PIN sind di letschte 6 Ziffere vo dinere Handynummere.',
       loginLead: 'Mäld di mit dinere Handynummere aa.', pinOptional: 'PIN (nur nötig, wenn du en gänderet hesch)', clubCode: 'Vereinscode',
@@ -438,7 +438,7 @@
       nameChange: 'Змінити ім’я', nameSave: 'Зберегти ім’я',
       pinChange: 'Змінити PIN', pinIntro: 'За замовчуванням це останні 6 цифр вашого номера мобільного. Якщо ви змінюєте PIN, його потрібно вводити під час входу.',
       pinNew: 'Новий PIN (6 цифр)', pinSave: 'Зберегти PIN', pinDefault: 'Повернути PIN за замовчуванням', logout: 'Вийти',
-      language: 'Мова', languageHint: 'Оберіть мову, якою ви хочете користуватися застосунком.',
+      language: 'Мова', languageHint: 'Оберіть мову, якою ви хочете користуватися застосунком.', themeTitle: 'Вигляд', themeHint: 'Вибери, як має виглядати застосунок.', themeLight: 'Світла', themeDark: 'Темна', themeAuto: 'Автоматично',
       loginSub: 'App',
       loginLeadReg: 'Створіть обліковий запис, вказавши ім’я, номер мобільного та код клубу. Ваш PIN — останні 6 цифр номера мобільного.',
       loginLead: 'Увійдіть за номером мобільного.', pinOptional: 'PIN (потрібен, лише якщо ви його змінювали)', clubCode: 'Код клубу',
@@ -513,7 +513,7 @@
       nameChange: 'Name ändern', nameSave: 'Name speichan',
       pinChange: 'PIN ändern', pinIntro: 'Standardmäßig san s de letztn 6 Ziffern vo deiner Handynummer. Wennst den PIN änderst, muasst eam beim Anmelden eigebn.',
       pinNew: 'Neier PIN (6 Ziffern)', pinSave: 'PIN speichan', pinDefault: 'Auf Standard-PIN zruckstelln', logout: 'Abmelden',
-      language: 'Sprach', languageHint: 'Such da d Sprach aus, in dera du d App benutzn mogst.',
+      language: 'Sprach', languageHint: 'Such da d Sprach aus, in dera du d App benutzn mogst.', themeTitle: 'Darstejlung', themeHint: 'Wähl aus, wia de App ausschaugn soi.', themeLight: 'Hej', themeDark: 'Dunkel', themeAuto: 'Automatisch',
       loginSub: 'App',
       loginLeadReg: 'Leg dein Konto o mit Name, Handynummer und Vereinscode. Dei PIN san de letztn 6 Ziffern vo deiner Handynummer.',
       loginLead: 'Meld di mit deiner Handynummer o.', pinOptional: 'PIN (bloß nötig, wennst n gändert host)', clubCode: 'Vereinscode',
@@ -570,6 +570,39 @@
     lang = l;
     try { localStorage.setItem('fbro-lang', l); } catch (e) { /* ignorieren */ }
     document.documentElement.lang = LANG_HTML[l];
+  }
+
+  /* ---------- Darstellung: Hell / Dunkel / Automatisch ---------- */
+  // '' bedeutet automatisch (folgt der Geräteeinstellung); so früh wie möglich angewendet,
+  // damit die Seite nicht kurz im falschen Modus aufblitzt.
+  function detectTheme() {
+    try { var t = localStorage.getItem('fbro-theme'); if (t === 'light' || t === 'dark') return t; } catch (e) { /* ignorieren */ }
+    return '';
+  }
+  function applyTheme(t) {
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    else document.documentElement.removeAttribute('data-theme');
+  }
+  var theme = detectTheme();
+  applyTheme(theme);
+  function setTheme(t) {
+    theme = (t === 'light' || t === 'dark') ? t : '';
+    try { if (theme) localStorage.setItem('fbro-theme', theme); else localStorage.removeItem('fbro-theme'); } catch (e) { /* ignorieren */ }
+    applyTheme(theme);
+  }
+  function saveTheme() {
+    if (!sb || !S.me) return;
+    try { sb.from('profiles').update({ theme: theme || null }).eq('id', S.me.id).then(function () {}, function () {}); } catch (e) { /* ignorieren */ }
+  }
+  function themeSelect() {
+    var opts = [
+      { v: 'light', label: L('themeLight'), icon: ICON.sun },
+      { v: 'dark', label: L('themeDark'), icon: ICON.moon },
+      { v: '', label: L('themeAuto'), icon: ICON.auto }
+    ];
+    return '<div class="segctl" role="group" aria-label="' + esc(L('themeTitle')) + '">' + opts.map(function (o) {
+      return '<button type="button" class="segbtn' + (theme === o.v ? ' on' : '') + '" data-act="set-theme" data-val="' + o.v + '">' + o.icon + '<span>' + o.label + '</span></button>';
+    }).join('') + '</div>';
   }
   function langSelect() {
     return '<select class="input langsel" data-lang aria-label="Sprache / Language">' + LANGS.map(function (l) {
@@ -653,7 +686,7 @@
     if (bad) throw bad.error;
     var d = res.map(function (r) { return r.data || []; });
 
-    S.members = d[0].map(function (r) { return { id: r.id, name: r.name, phone: r.phone, isAdmin: r.is_admin, isGuest: r.is_guest === true, isPassive: r.is_passive === true, isSupporter: r.is_supporter === true, isCandidate: r.is_candidate === true, isEventManager: r.is_event_manager === true, isChilbiManager: r.is_chilbi_manager === true, isChraenzliManager: r.is_chraenzli_manager === true, isJassMaster: r.is_jass_master === true, pinChanged: r.pin_changed === true, language: r.language || null }; })
+    S.members = d[0].map(function (r) { return { id: r.id, name: r.name, phone: r.phone, isAdmin: r.is_admin, isGuest: r.is_guest === true, isPassive: r.is_passive === true, isSupporter: r.is_supporter === true, isCandidate: r.is_candidate === true, isEventManager: r.is_event_manager === true, isChilbiManager: r.is_chilbi_manager === true, isChraenzliManager: r.is_chraenzli_manager === true, isJassMaster: r.is_jass_master === true, pinChanged: r.pin_changed === true, language: r.language || null, theme: r.theme || null }; })
       .sort(function (a, b) { return a.name.localeCompare(b.name, 'de'); });
     S.rules = d[1].map(function (r) { return { id: r.id, wd: r.weekday, time: hhmm(r.start_time), place: r.place }; })
       .sort(function (a, b) { return ((a.wd + 6) % 7) - ((b.wd + 6) % 7) || (a.time < b.time ? -1 : 1); });
@@ -760,6 +793,9 @@
     groupP: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-weight="700" font-family="sans-serif" fill="currentColor" stroke="none">P</text></svg>',
     groupG: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="2.2 2.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-weight="700" font-family="sans-serif" fill="currentColor" stroke="none" stroke-dasharray="0">G</text></svg>',
     heart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.6-9.5 9-9.5 9z"/></svg>',
+    sun: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2 12h2M20 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>',
+    moon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg>',
+    auto: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>',
     glass: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="liq" d="M6.3 10.6a5 5 0 0 1 5.7-.6a5 5 0 0 0 5.7.6c-.4 2.6-2.8 4.4-5.7 4.4s-5.3-1.8-5.7-4.4z" stroke="none"/><path d="M8 21h8"/><path d="M12 15v6"/><path d="M17 3l1 7c0 3-2.7 5-6 5s-6-2-6-5l1-7z"/><path d="M6.2 10a5 5 0 0 1 5.8 0a5 5 0 0 0 5.8 0"/></svg>',
     dialpad: '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><circle cx="6" cy="4" r="1.8"/><circle cx="12" cy="4" r="1.8"/><circle cx="18" cy="4" r="1.8"/><circle cx="6" cy="10" r="1.8"/><circle cx="12" cy="10" r="1.8"/><circle cx="18" cy="10" r="1.8"/><circle cx="6" cy="16" r="1.8"/><circle cx="12" cy="16" r="1.8"/><circle cx="18" cy="16" r="1.8"/><circle cx="12" cy="21.5" r="1.8"/></svg>',
     trash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-12"/><path d="M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/></svg>',
@@ -1201,6 +1237,7 @@
         (S.me.isSupporter ? '<p class="small muted" style="margin:10px 0 0">' + L('supporterInfo') + '</p>' : '') +
       '</section>' +
       '<section class="panel"><h2>' + L('language') + '</h2><p>' + L('languageHint') + '</p>' + langSelect() + '</section>' +
+      '<section class="panel"><h2>' + L('themeTitle') + '</h2><p>' + L('themeHint') + '</p>' + themeSelect() + '</section>' +
       install +
       '<section class="panel"><h2>' + L('nameChange') + '</h2><form data-form="name">' + fld(L('fullName'), '<input class="input" name="name" value="' + esc(S.me.name) + '" required>') +
       '<button class="btn" type="submit">' + L('nameSave') + '</button></form></section>' +
@@ -2655,6 +2692,8 @@
       if (!S.me) throw new Error('Kein Profil gefunden');
       if (S.me.language && LANGS.indexOf(S.me.language) > -1) setLang(S.me.language);
       else saveLang();   // Sprache dieses Geräts im Profil merken
+      if (S.me.theme === 'light' || S.me.theme === 'dark') setTheme(S.me.theme);
+      else if (theme) saveTheme();   // Darstellung dieses Geräts im Profil merken
       S.step = 'app'; S.tab = 'trainings'; S.err = '';
       subscribe();
       render();
@@ -2805,6 +2844,13 @@
     if (act_ === 'cal') {
       var ce = S.events.filter(function (x) { return x.id === D.id; })[0];
       if (ce) { try { await addToCalendar(ce); } catch (err) { console.error(err); toast(L('calFail')); } }
+      return;
+    }
+    if (act_ === 'set-theme') {
+      setTheme(D.val);
+      S.me.theme = theme || null;
+      saveTheme();
+      render();
       return;
     }
     if (act_ === 'pin-default') {

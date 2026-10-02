@@ -561,3 +561,10 @@
   .evpbtns .resp { min-height: 34px; padding: 0 8px; font-size: .8rem; border-radius: 8px; }
   .evpbtns .resp.on.yes { background: #8FC7F2; border-color: #8FC7F2; color: #0B2F5E; }
   .evpbtns .resp.on.no { background: #F4A9C6; border-color: #F4A9C6; color: #6B1540; }
+
+  /* Profil: Darstellung (Hell/Dunkel/Automatisch) */
+  .segctl { display: flex; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); }
+  .segbtn { flex: 1; padding: 10px 4px; font-size: .82rem; font-weight: 600; border: 0; background: none; color: var(--muted); display: flex; flex-direction: column; align-items: center; gap: 4px; border-right: 1px solid var(--line); }
+  .segbtn:last-child { border-right: 0; }
+  .segbtn svg { width: 18px; height: 18px; stroke: currentColor; fill: none; }
+  .segbtn.on { background: var(--crown); color: #fff; }
