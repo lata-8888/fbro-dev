@@ -985,6 +985,10 @@
     clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>',
     crown: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6l4 6l5-4l-2 10H5L3 8l5 4z"/><circle cx="12" cy="4" r="1"/><circle cx="3" cy="6" r="1"/><circle cx="21" cy="6" r="1"/></svg>',
     candidate: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 015 .5c0 1.5-2.5 2-2.5 3.5"/><path d="M12 17h.01"/></svg>',
+    groupA: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor" stroke="none"/><text x="12" y="16.5" text-anchor="middle" font-size="12" font-weight="700" font-family="sans-serif" fill="#fff" stroke="none">A</text></svg>',
+    groupP: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-weight="700" font-family="sans-serif" fill="currentColor" stroke="none">P</text></svg>',
+    groupG: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="2.2 2.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-weight="700" font-family="sans-serif" fill="currentColor" stroke="none" stroke-dasharray="0">G</text></svg>',
+    heart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.6-9.5 9-9.5 9z"/></svg>',
     glass: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="liq" d="M6.3 10.6a5 5 0 0 1 5.7-.6a5 5 0 0 0 5.7.6c-.4 2.6-2.8 4.4-5.7 4.4s-5.3-1.8-5.7-4.4z" stroke="none"/><path d="M8 21h8"/><path d="M12 15v6"/><path d="M17 3l1 7c0 3-2.7 5-6 5s-6-2-6-5l1-7z"/><path d="M6.2 10a5 5 0 0 1 5.8 0a5 5 0 0 0 5.8 0"/></svg>',
     dialpad: '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><circle cx="6" cy="4" r="1.8"/><circle cx="12" cy="4" r="1.8"/><circle cx="18" cy="4" r="1.8"/><circle cx="6" cy="10" r="1.8"/><circle cx="12" cy="10" r="1.8"/><circle cx="18" cy="10" r="1.8"/><circle cx="6" cy="16" r="1.8"/><circle cx="12" cy="16" r="1.8"/><circle cx="18" cy="16" r="1.8"/><circle cx="12" cy="21.5" r="1.8"/></svg>',
     trash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-12"/><path d="M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/></svg>',
@@ -1385,10 +1389,10 @@
         (open ? (list.length ? '<ul class="list">' + list.map(mbRow).join('') + '</ul>' : '<p class="ccsum" style="padding:6px 0 10px">' + L('nobody') + '</p>') : '') + '</div>';
     };
     // Fünf sich gegenseitig ausschliessende Gruppen; Reihenfolge der Prüfung = Priorität
-    b += mbGroup('mg-a', L('grpActive'), S.members.filter(function (m) { return !m.isGuest && !m.isCandidate && !m.isPassive && !m.isSupporter; }), false) +
-         mbGroup('mg-p', L('grpPassive'), S.members.filter(function (m) { return !m.isGuest && !m.isCandidate && m.isPassive && !m.isSupporter; }), false) +
-         mbGroup('mg-s', L('grpSupporter'), S.members.filter(function (m) { return !m.isGuest && !m.isCandidate && m.isSupporter; }), true) +
-         mbGroup('mg-g', L('ccGuests'), S.members.filter(function (m) { return m.isGuest && !m.isCandidate; }), true) +
+    b += mbGroup('mg-a', L('grpActive'), S.members.filter(function (m) { return !m.isGuest && !m.isCandidate && !m.isPassive && !m.isSupporter; }), false, ICON.groupA) +
+         mbGroup('mg-p', L('grpPassive'), S.members.filter(function (m) { return !m.isGuest && !m.isCandidate && m.isPassive && !m.isSupporter; }), false, ICON.groupP) +
+         mbGroup('mg-s', L('grpSupporter'), S.members.filter(function (m) { return !m.isGuest && !m.isCandidate && m.isSupporter; }), true, ICON.heart) +
+         mbGroup('mg-g', L('ccGuests'), S.members.filter(function (m) { return m.isGuest && !m.isCandidate; }), true, ICON.groupG) +
          mbGroup('mg-c', L('grpCandidate'), S.members.filter(function (m) { return m.isCandidate; }), true, ICON.candidate);
     if (isAdm) html += accordion('members', L('secMembers'), S.members.length, b, true, L('membersIntro'));
     return html;
@@ -1429,10 +1433,11 @@
     var nav = document.getElementById('nav');
     if (S.step !== 'app' || (S.me && S.me.isCandidate)) { nav.hidden = true; return; }
     nav.hidden = false;
-    var restricted = S.me.isGuest || S.me.isSupporter;   // sehen nur Trainings und Profil
+    var restricted = S.me.isGuest || S.me.isSupporter;   // Gast & Friends and Family: nur Trainings und Profil
+    var noJass = S.me.isGuest;   // Jass bleibt für Friends and Family zusätzlich sichtbar
     var tabs = [{ id: 'trainings', label: L('navTrainings'), icon: ICON.dumbbell }];
     if (!restricted) tabs.push({ id: 'events', label: L('navEvents'), icon: ICON.calcard });
-    if (!restricted) tabs.push({ id: 'jass', label: L('navJass'), icon: ICON.trophy });
+    if (!noJass) tabs.push({ id: 'jass', label: L('navJass'), icon: ICON.trophy });
     if (!restricted && (canCC() || S.ccPublic)) tabs.push({ id: 'cc', label: L('navCC'), icon: ICON.laurel });
     if (S.me.isAdmin || S.me.isChilbiManager || S.me.isChraenzliManager || S.me.isEventManager) tabs.push({ id: 'admin', label: L('navAdmin'), icon: ICON.gear });
     tabs.push({ id: 'profile', label: L('navProfile'), icon: ICON.user });
@@ -1457,7 +1462,8 @@
     }
     else {
       if (S.tab === 'admin' && !(S.me.isAdmin || S.me.isChilbiManager || S.me.isChraenzliManager || S.me.isEventManager)) S.tab = 'trainings';
-      if ((S.tab === 'events' || S.tab === 'jass' || S.tab === 'cc') && (S.me.isGuest || S.me.isSupporter)) S.tab = 'trainings';
+      if ((S.tab === 'events' || S.tab === 'cc') && (S.me.isGuest || S.me.isSupporter)) S.tab = 'trainings';
+      if (S.tab === 'jass' && S.me.isGuest) S.tab = 'trainings';
       if (S.tab === 'cc' && !(canCC() || S.ccPublic)) S.tab = 'trainings';
       app.innerHTML = S.tab === 'jass' ? viewJass() : S.tab === 'cc' ? viewCC() : S.tab === 'admin' ? viewAdmin() : S.tab === 'events' ? viewEvents() : S.tab === 'profile' ? viewProfile() : viewTrainings();
     }

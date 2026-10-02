@@ -440,10 +440,8 @@
   .mbgh .cnt { color: var(--muted); font-weight: 500; }
   .mbgh .sp { flex: 1; }
   .mbgh .ccfold { width: 28px; height: 28px; }
-  .mbcrown { display: inline-flex; width: 26px; height: 26px; border-radius: 8px; align-items: center; justify-content: center; background: var(--crown); color: #fff; flex: 0 0 auto; }
-  .mbcrown svg { width: 17px; height: 17px; fill: currentColor; }
-  .mbcrown.g { background: var(--surface); color: var(--crown); border: 1.5px solid color-mix(in srgb, var(--crown) 50%, var(--line)); }
-  .mbcrown.g svg { fill: none; }
+  .mbcrown { display: inline-flex; width: 26px; height: 26px; align-items: center; justify-content: center; color: var(--crown); flex: 0 0 auto; }
+  .mbcrown svg { width: 26px; height: 26px; }
   .list li.mbrow { flex-wrap: nowrap; gap: 8px; }
   .pinlamp { display: inline-block; width: 10px; height: 10px; border-radius: 50%; vertical-align: middle; margin-bottom: 2px; }
   .pinlamp.ok { background: var(--yes); }
