@@ -472,6 +472,7 @@
   .actrow3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-top: 10px; align-items: stretch; }
   .actrow3 .resp { min-height: 44px; padding: 2px 4px; }
   .cntbtn { border-radius: 10px; border: 1.5px solid var(--line); background: transparent; color: var(--ink); gap: 4px; flex-wrap: wrap; text-align: center; line-height: 1.15; }
+  .resp.cntbtn { background: var(--bg); }
   .cntbtn .chev { margin-left: 2px; color: var(--muted); transition: transform .2s; }
   .cntbtn.is-open .chev { transform: rotate(180deg); }
   .cntbtn.low b { color: var(--no); }
@@ -533,3 +534,7 @@
 
   /* Jass: feste Ordner (Anstehend/Vergangen) mit eigenem «+» */
   .jsempty { padding: 10px 0; color: var(--muted); }
+
+  /* C&C: Sichtbarkeits-Umschalter für Admin/Chilbi Manager/Chränzli Manager */
+  .ccpublic { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 14px; font-size: .95rem; cursor: pointer; }
+  .ccpublic input { width: 20px; height: 20px; margin: 0; accent-color: var(--crown); flex: 0 0 auto; }
