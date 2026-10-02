@@ -3,11 +3,17 @@
 // Der «anon public»-Schlüssel ist für den Einsatz im Browser gedacht und darf öffentlich sein.
 // Den «service_role»-Schlüssel darfst du hier NIE eintragen.
 window.APP_CONFIG = {
-  SUPABASE_URL: 'https://hshchitgcweewnantxbs.supabase.co',
-  SUPABASE_ANON_KEY: 'sb_publishable_ohykf3XmZGt86oykIe2Ujw_m9U-km8k',
+  SUPABASE_URL: 'https://DEIN-PROJEKT.supabase.co',
+  SUPABASE_ANON_KEY: 'DEIN-ANON-PUBLIC-KEY',
+
+  // Kurzname für die Titel «FBRO-Trainings» und «FBRO-Events»
+  CLUB_SHORT: 'FBRO',
+
+  // Anzahl Trainings, die direkt sichtbar sind (der Rest steht unter «Weitere Trainings»)
+  TRAININGS_VISIBLE: 20,
 
   // Name des Vereins auf der Anmeldeseite
-  CLUB_NAME: 'Training',
+  CLUB_NAME: 'FBRO',
 
   // true = bei der Registrierung wird ein Vereinscode verlangt (empfohlen)
   CLUB_CODE_REQUIRED: true,
