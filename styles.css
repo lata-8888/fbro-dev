@@ -355,6 +355,7 @@
   .dlgbtns { display: flex; justify-content: flex-end; gap: 10px; flex-wrap: wrap; }
   .dlgbtns .btn { min-width: 110px; }
   .btn.dangerbtn { background: var(--no); color: #fff; }
+  .btn.dangerbtn svg { width: 20px; height: 20px; }
 
   /* Mitgliederliste: Symbole rechtsbündig, damit die Krone immer ganz rechts steht */
   [data-sc="members"] .btnrow { margin-left: auto; justify-content: flex-end; }
