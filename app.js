@@ -2545,10 +2545,10 @@
     var member = grp === 'active' || grp === 'passive' || grp === 'other';   // nur diese drei dürfen Rollen tragen
     var grpTagKey = { active: 'grpActive', passive: 'grpPassive', other: 'grpSupporter', guest: 'ccGuests', candidate: 'grpCandidate' }[grp];
     var GROUPS = [
-      { key: 'active', label: 'mGroupActive', icon: ICON.crown },
-      { key: 'passive', label: 'mGroupPassive', icon: ICON.crown },
-      { key: 'other', label: 'mGroupOther', icon: ICON.crown },
-      { key: 'guest', label: 'mGroupGuest', icon: ICON.crown, noSelf: true },
+      { key: 'active', label: 'mGroupActive', icon: ICON.groupA },
+      { key: 'passive', label: 'mGroupPassive', icon: ICON.groupP },
+      { key: 'other', label: 'mGroupOther', icon: ICON.heart },
+      { key: 'guest', label: 'mGroupGuest', icon: ICON.groupG, noSelf: true },
       { key: 'candidate', label: 'mGroupCandidate', icon: ICON.candidate, noSelf: true },
     ];
     if (mbSheet.mode === 'menu') {
