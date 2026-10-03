@@ -3055,7 +3055,7 @@
     } else if (kind === 'extra') {
       ok = await act(function () { return sb.from('training_extras').insert({ title: g('title'), event_date: g('date'), start_time: g('time'), place: g('place') }); }, L('extraAdded'));
     } else if (kind === 'event') {
-      var rsvpNew = !!(af && af.querySelector('[name=rsvp]') && af.querySelector('[name=rsvp]').checked);
+      var rsvpNew = !!(form.querySelector('[name=rsvp]') && form.querySelector('[name=rsvp]').checked);
       ok = await act(function () { return sb.from('events').insert({ title: g('title'), event_date: g('date'), start_time: g('time'), place: g('place'), rsvp_required: rsvpNew }); }, L('eventAdded'));
     } else if (kind === 'edit-rule') {
       ok = await act(function () { return sb.from('training_rules').update({ weekday: Number(g('wd')), start_time: g('time'), place: g('place') }).eq('id', id); }, L('ruleChanged'));
@@ -3068,15 +3068,15 @@
       }
       if (ok) S.edit = null;
     } else if (kind === 'edit-ev') {
-      var rsvpEdit = !!(af && af.querySelector('[name=rsvp]') && af.querySelector('[name=rsvp]').checked);
+      var rsvpEdit = !!(form.querySelector('[name=rsvp]') && form.querySelector('[name=rsvp]').checked);
       ok = await act(function () { return sb.from('events').update({ title: g('title'), event_date: g('date'), start_time: g('time'), place: g('place'), rsvp_required: rsvpEdit }).eq('id', id); }, L('eventChanged'));
       if (ok) { S.edit = null; if (evSheet && evSheet.id === id) evClose(); }
     }
     if (ok && kind === 'rule') S.add.rules = false;
     if (ok && kind === 'event') S.add.events = false;
     if (ok) {
-      // Bei neuem Event: Daten neu laden damit rsvp_required sofort korrekt ist.
-      if (kind === 'event') {
+      // Nach Event anlegen/bearbeiten: Daten neu laden damit rsvp_required sofort korrekt ist.
+      if (kind === 'event' || kind === 'edit-ev') {
         try { await loadAll(); } catch (e2) { console.error(e2); }
       }
       render();
