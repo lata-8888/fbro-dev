@@ -3062,7 +3062,16 @@
     }
     if (ok && kind === 'rule') S.add.rules = false;
     if (ok && kind === 'event') S.add.events = false;
-    if (ok) { render(); if (/^(extra)$/.test(kind)) { var nf = document.querySelector('[data-form="' + kind + '"]'); if (nf) nf.reset(); } }
+    if (ok) {
+      // Bei Event-Änderungen: Daten neu laden damit rsvp_required und andere Felder
+      // sofort korrekt in S.events landen und die Karte direkt mit den richtigen
+      // Knöpfen (Allein/Zu zweit/Nicht dabei) erscheint.
+      if (kind === 'event' || kind === 'edit-ev') {
+        try { await loadAll(); } catch (e2) { console.error(e2); }
+      }
+      render();
+      if (/^(extra)$/.test(kind)) { var nf = document.querySelector('[data-form="' + kind + '"]'); if (nf) nf.reset(); }
+    }
   });
 
   document.addEventListener('input', function (e) {
