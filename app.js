@@ -49,7 +49,7 @@
       rulesEmpty: 'Noch kein fester Trainingstag. Tippe auf «+», um einen zu erfassen.',
       extraIntro: 'Folgende zusätzliche Trainings sind geplant', extraEmpty: 'Keine zusätzlichen Trainings geplant.', extraDefaultTitle: 'Zusatztraining',
       phPlaceExtra: 'z. B. Sportanlage Süd', addExtra: 'Weiteres Training hinzufügen', upcomingEmpty: 'Keine kommenden Trainings.',
-      phEventTitle: 'z. B. Fondue-Plausch', phEventPlace: 'z. B. Vereinshaus', addEvent: 'Event hinzufügen',
+      phEventTitle: 'z. B. Fondue-Plausch', phEventPlace: 'z. B. Vereinshaus', addEvent: 'Event hinzufügen', rsvpRequired: 'Anmeldung erforderlich',
       eventsEmpty: 'Noch keine Events. Tippe auf «+», um den ersten zu erfassen.',
       membersIntro: 'Tippe bei einer Person auf die drei Punkte, um Rollen, Gruppe, PIN, Name oder Handynummer zu ändern oder sie zu löschen. Zahnrad = Admin, Stern = Event-Manager, Glas = Chilbi/Chränzli Manager, Pokal = Jass Manager. Gäste und Friends & Family sehen nur eingeschränkt Inhalte (siehe Gruppen unten).',
       memberAdd: 'Mitglied hinzufügen', fullName: 'Vor- und Nachname', phone: 'Handynummer',
@@ -124,7 +124,7 @@
       rulesEmpty: 'Aucun jour d’entraînement fixe. Touche « + » pour en ajouter un.',
       extraIntro: 'Les entraînements supplémentaires suivants sont prévus', extraEmpty: 'Aucun entraînement supplémentaire prévu.', extraDefaultTitle: 'Entraînement supplémentaire',
       phPlaceExtra: 'p. ex. centre sportif Sud', addExtra: 'Ajouter un entraînement', upcomingEmpty: 'Aucun entraînement à venir.',
-      phEventTitle: 'p. ex. soirée fondue', phEventPlace: 'p. ex. maison du club', addEvent: 'Ajouter un événement',
+      phEventTitle: 'p. ex. soirée fondue', phEventPlace: 'p. ex. maison du club', addEvent: 'Ajouter un événement', rsvpRequired: 'Inscription obligatoire',
       eventsEmpty: 'Aucun événement pour l’instant. Touche « + » pour créer le premier.',
       membersIntro: 'Touche les trois points d’une personne pour modifier ses rôles, son groupe, son PIN, son nom ou son numéro, ou pour la supprimer. Roue dentée = admin, étoile = Event-Manager, verre = Chilbi/Chränzli Manager, coupe = Jass Manager. Les invités et Friends & Family ne voient que du contenu limité (voir les groupes ci-dessous).',
       memberAdd: 'Ajouter un membre', fullName: 'Prénom et nom', phone: 'Numéro de mobile',
@@ -199,7 +199,7 @@
       rulesEmpty: 'No fixed training day yet. Tap “+” to add one.',
       extraIntro: 'The following additional trainings are planned', extraEmpty: 'No additional trainings planned.', extraDefaultTitle: 'Extra training',
       phPlaceExtra: 'e.g. South sports ground', addExtra: 'Add another training', upcomingEmpty: 'No upcoming trainings.',
-      phEventTitle: 'e.g. Fondue evening', phEventPlace: 'e.g. Club house', addEvent: 'Add event',
+      phEventTitle: 'e.g. Fondue evening', phEventPlace: 'e.g. Club house', addEvent: 'Add event', rsvpRequired: 'Registration required',
       eventsEmpty: 'No events yet. Tap “+” to add the first one.',
       membersIntro: 'Tap the three dots next to a person to change roles, group, PIN, name or mobile number, or to delete them. Gear = admin, star = event manager, glass = Chilbi/Chränzli manager, trophy = Jass manager. Guests and Friends & Family only see limited content (see groups below).',
       memberAdd: 'Add member', fullName: 'First and last name', phone: 'Mobile number',
@@ -274,7 +274,7 @@
       rulesEmpty: 'Nessun giorno di allenamento fisso. Tocca «+» per aggiungerne uno.',
       extraIntro: 'Sono previsti i seguenti allenamenti aggiuntivi', extraEmpty: 'Nessun allenamento aggiuntivo in programma.', extraDefaultTitle: 'Allenamento aggiuntivo',
       phPlaceExtra: 'ad es. impianto sportivo Sud', addExtra: 'Aggiungi allenamento', upcomingEmpty: 'Nessun allenamento in arrivo.',
-      phEventTitle: 'ad es. serata fonduta', phEventPlace: 'ad es. sede del club', addEvent: 'Aggiungi evento',
+      phEventTitle: 'ad es. serata fonduta', phEventPlace: 'ad es. sede del club', addEvent: 'Aggiungi evento', rsvpRequired: 'Iscrizione obbligatoria',
       eventsEmpty: 'Ancora nessun evento. Tocca «+» per crearne uno.',
       membersIntro: 'Tocca i tre puntini accanto a una persona per modificare ruoli, gruppo, PIN, nome o numero di cellulare, oppure per eliminarla. Ingranaggio = admin, stella = Event-Manager, bicchiere = Chilbi/Chränzli Manager, coppa = Jass Manager. Ospiti e Friends & Family vedono solo contenuti limitati (vedi i gruppi qui sotto).',
       memberAdd: 'Aggiungi socio', fullName: 'Nome e cognome', phone: 'Numero di cellulare',
@@ -349,7 +349,7 @@
       rulesEmpty: 'No kein fester Trainingstag. Tipp uf «+», zum eine z erfasse.',
       extraIntro: 'Die zuesätzliche Trainings sind planet', extraEmpty: 'Kei zuesätzlichi Trainings planet.', extraDefaultTitle: 'Zuesatztraining',
       phPlaceExtra: 'z. B. Sportaalag Süd', addExtra: 'Es wiiters Training hinzuefüege', upcomingEmpty: 'Kei kommendi Trainings.',
-      phEventTitle: 'z. B. Fondue-Plausch', phEventPlace: 'z. B. Vereinshuus', addEvent: 'Event hinzuefüege',
+      phEventTitle: 'z. B. Fondue-Plausch', phEventPlace: 'z. B. Vereinshuus', addEvent: 'Event hinzuefüege', rsvpRequired: 'Aamäldig erforderlich',
       eventsEmpty: 'No kei Events. Tipp uf «+», zum de erscht z erfasse.',
       membersIntro: 'Tipp bi enere Person uf di drei Pünkt, zum Rolle, Gruppe, PIN, Name oder Handynummere z ändere oder si z lösche. Zahnrad = Admin, Stern = Event-Manager, Glas = Chilbi/Chränzli Manager, Pokal = Jass Manager. Gescht und Friends & Family gseehnd nur igschränkti Inhalt (lueg Gruppe unde).',
       memberAdd: 'Mitglied hinzuefüege', fullName: 'Vor- und Nachname', phone: 'Handynummere',
@@ -425,7 +425,7 @@
       rulesEmpty: 'Постійного дня тренування ще немає. Натисніть «+», щоб додати.',
       extraIntro: 'Заплановані додаткові тренування', extraEmpty: 'Додаткових тренувань не заплановано.', extraDefaultTitle: 'Додаткове тренування',
       phPlaceExtra: 'напр. спортивний комплекс «Південь»', addExtra: 'Додати тренування', upcomingEmpty: 'Найближчих тренувань немає.',
-      phEventTitle: 'напр. вечір фондю', phEventPlace: 'напр. клубний будинок', addEvent: 'Додати подію',
+      phEventTitle: 'напр. вечір фондю', phEventPlace: 'напр. клубний будинок', addEvent: 'Додати подію', rsvpRequired: 'Реєстрація обов\'язкова',
       eventsEmpty: 'Подій ще немає. Натисніть «+», щоб додати першу.',
       membersIntro: 'Натисніть три крапки біля людини, щоб змінити ролі, групу, PIN, ім’я чи номер, або видалити її. Шестерня = адмін, зірка = Event-Manager, келих = Chilbi/Chränzli Manager, кубок = Jass Manager. Гості та Friends & Family бачать лише обмежений вміст (див. групи нижче).',
       memberAdd: 'Додати учасника', fullName: 'Ім’я та прізвище', phone: 'Номер мобільного',
@@ -500,7 +500,7 @@
       rulesEmpty: 'No koa fester Trainingstag. Tipp auf «+», um oan z erfassn.',
       extraIntro: 'De zusätzlichn Trainings san gplant', extraEmpty: 'Koane zusätzlichn Trainings gplant.', extraDefaultTitle: 'Zusatztraining',
       phPlaceExtra: 'z. B. Sportanlage Süd', addExtra: 'A weiters Training dazuadoa', upcomingEmpty: 'Koane kemmandn Trainings.',
-      phEventTitle: 'z. B. Fondue-Abend', phEventPlace: 'z. B. Vereinsheim', addEvent: 'Event dazuadoa',
+      phEventTitle: 'z. B. Fondue-Abend', phEventPlace: 'z. B. Vereinsheim', addEvent: 'Event dazuadoa', rsvpRequired: 'Anmeldung erforderlich',
       eventsEmpty: 'No koane Events. Tipp auf «+», um den erstn z erfassn.',
       membersIntro: 'Tipp bei ana Person auf de drei Punkt, um Rolln, Gruppn, PIN, Nama oder Handynummer z ändern oder sie z löschn. Zahnradl = Admin, Stern = Event-Manager, Glasl = Chilbi/Chränzli Manager, Pokal = Jass Manager. Gäst und Friends & Family segn nur eigschränkte Inhoit (schau Gruppn untn).',
       memberAdd: 'Mitglied dazuadoa', fullName: 'Vor- und Nachname', phone: 'Handynummer',
@@ -695,7 +695,7 @@
     d[3].forEach(function (r) { S.overrides[r.training_key] = { date: r.new_date, time: hhmm(r.new_time), place: r.new_place }; });
     S.cancelled = {};
     d[4].forEach(function (r) { S.cancelled[r.training_key] = true; });
-    S.events = d[5].map(function (r) { return { id: r.id, title: r.title, date: r.event_date, time: hhmm(r.start_time), place: r.place, cancelled: r.cancelled }; });
+    S.events = d[5].map(function (r) { return { id: r.id, title: r.title, date: r.event_date, time: hhmm(r.start_time), place: r.place, cancelled: r.cancelled, rsvp: r.rsvp_required === true }; });
     S.tr = {};
     d[6].forEach(function (r) { (S.tr[r.training_key] = S.tr[r.training_key] || {})[r.user_id] = r.status; });
     S.ev = {};
@@ -1095,20 +1095,19 @@
       (canManageEvents() ? '<button class="ccdots" data-act="ev-menu" data-id="' + e.id + '" aria-label="' + esc(L('ccActions') + ': ' + e.title) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>' : '') +
       '</div>' +
       '<div class="ccbody">' +
-        '<div class="evrow">' +
-          '<p class="muted small">' + esc(L('timePlace', { time: e.time, place: e.place })) + '</p>' +
-          '<button class="calbtn calinline" data-act="cal" data-id="' + e.id + '">' + ICON.calplus + L('calAdd') + '</button>' +
-        '</div>' +
-        '<div class="actrow4">' +
-          btn('solo', 'yes', ICON.one, L('solo')) + btn('duo', 'yes', ICON.two, L('duo')) + btn('no', 'no', '', L('no')) +
-          '<button class="resp cntbtn' + (isOpen ? ' is-open' : '') + '" data-act="who-ev" data-id="' + e.id + '" aria-expanded="' + isOpen + '" aria-label="' + esc(L('ariaEv', { n: persons, action: isOpen ? L('listClose') : L('listOpen') })) + '"><b>' + persons + '</b>&nbsp;' + L('participants') + ICON.chev + '</button>' +
-        '</div>' +
-        (isOpen ? whoBlock([
-          { label: L('hSolo', { n: solo.length }), arr: solo },
-          { label: L('hDuo', { n: duo.length, p: duo.length * 2 }), arr: duo, plus: true },
-          { label: L('hNo', { n: no.length }), arr: no },
-          { label: L('hOpen', { n: open.length }), arr: open }
-        ]) : '') +
+        '<p class="muted small">' + esc(L('timePlace', { time: e.time, place: e.place })) + '</p>' +
+        (e.rsvp ? (
+          '<div class="actrow4">' +
+            btn('solo', 'yes', ICON.one, L('solo')) + btn('duo', 'yes', ICON.two, L('duo')) + btn('no', 'no', '', L('no')) +
+            '<button class="resp cntbtn' + (isOpen ? ' is-open' : '') + '" data-act="who-ev" data-id="' + e.id + '" aria-expanded="' + isOpen + '" aria-label="' + esc(L('ariaEv', { n: persons, action: isOpen ? L('listClose') : L('listOpen') })) + '"><b>' + persons + '</b>&nbsp;' + L('participants') + ICON.chev + '</button>' +
+          '</div>' +
+          (isOpen ? whoBlock([
+            { label: L('hSolo', { n: solo.length }), arr: solo },
+            { label: L('hDuo', { n: duo.length, p: duo.length * 2 }), arr: duo, plus: true },
+            { label: L('hNo', { n: no.length }), arr: no },
+            { label: L('hOpen', { n: open.length }), arr: open }
+          ]) : '')
+        ) : '') +
       '</div>' +
     '</article>';
   }
@@ -1190,11 +1189,12 @@
       b += '<form class="addform" data-form="event">' + fld(L('label'), inTitle('', L('phEventTitle'))) +
         grid(fld(L('date'), '<input class="input" type="date" name="date" required>'), fld(L('time'), inTime('18:00'))) +
         fld(L('place'), inPlace('', L('phEventPlace'))) +
+        fld('', '<label class="check"><input type="checkbox" name="rsvp"><span>' + L('rsvpRequired') + '</span></label>') +
         '<button class="btn" type="submit">' + L('addEvent') + '</button></form>';
     }
     b += evs.length ? '<ul class="list scroll" data-sc="events">' + evs.map(function (e) {
       if (S.edit === 'ev:' + e.id) {
-        return editRow('edit-ev', e.id, fld(L('label'), inTitle(e.title)) + grid(fld(L('date'), inDate(e.date)), fld(L('time'), inTime(e.time))) + fld(L('place'), inPlace(e.place)));
+        return editRow('edit-ev', e.id, fld(L('label'), inTitle(e.title)) + grid(fld(L('date'), inDate(e.date)), fld(L('time'), inTime(e.time))) + fld(L('place'), inPlace(e.place)) + fld('', '<label class="check"><input type="checkbox" name="rsvp"' + (e.rsvp ? ' checked' : '') + '><span>' + L('rsvpRequired') + '</span></label>'));
       }
       return '<li><div class="l"><b>' + esc(e.title) + '</b><span>' + esc(fmt(parseIso(e.date), { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })) + ', ' + esc(e.time) + ', ' + esc(e.place) + (e.cancelled ? ' · ' + L('cancelledLow') : '') + '</span></div>' +
         '<div class="btnrow"><button class="mini" data-act="edit" data-target="ev:' + e.id + '">' + L('edit') + '</button>' +
@@ -2606,6 +2606,7 @@
         fld(L('label'), inTitle(ev.title)) +
         grid(fld(L('date'), inDate(ev.date)), fld(L('time'), inTime(ev.time))) +
         fld(L('place'), inPlace(ev.place)) +
+        fld('', '<label class="check"><input type="checkbox" name="rsvp"' + (ev.rsvp ? ' checked' : '') + '><span>' + L('rsvpRequired') + '</span></label>') +
         '<div class="dlgbtns"><button type="button" class="btn ghost inline" data-eva="close">' + L('dismiss') + '</button><button type="submit" class="btn inline">' + L('save') + '</button></div></form>';
     } else if (st.mode === 'people') {
       body = '<p class="cck">' + L('evManagePeople') + '</p><h3>' + esc(ev.title) + '</h3>' +
@@ -3041,7 +3042,8 @@
     } else if (kind === 'extra') {
       ok = await act(function () { return sb.from('training_extras').insert({ title: g('title'), event_date: g('date'), start_time: g('time'), place: g('place') }); }, L('extraAdded'));
     } else if (kind === 'event') {
-      ok = await act(function () { return sb.from('events').insert({ title: g('title'), event_date: g('date'), start_time: g('time'), place: g('place') }); }, L('eventAdded'));
+      var rsvpNew = !!(af && af.querySelector('[name=rsvp]') && af.querySelector('[name=rsvp]').checked);
+      ok = await act(function () { return sb.from('events').insert({ title: g('title'), event_date: g('date'), start_time: g('time'), place: g('place'), rsvp_required: rsvpNew }); }, L('eventAdded'));
     } else if (kind === 'edit-rule') {
       ok = await act(function () { return sb.from('training_rules').update({ weekday: Number(g('wd')), start_time: g('time'), place: g('place') }).eq('id', id); }, L('ruleChanged'));
       if (ok) S.edit = null;
@@ -3053,7 +3055,8 @@
       }
       if (ok) S.edit = null;
     } else if (kind === 'edit-ev') {
-      ok = await act(function () { return sb.from('events').update({ title: g('title'), event_date: g('date'), start_time: g('time'), place: g('place') }).eq('id', id); }, L('eventChanged'));
+      var rsvpEdit = !!(af && af.querySelector('[name=rsvp]') && af.querySelector('[name=rsvp]').checked);
+      ok = await act(function () { return sb.from('events').update({ title: g('title'), event_date: g('date'), start_time: g('time'), place: g('place'), rsvp_required: rsvpEdit }).eq('id', id); }, L('eventChanged'));
       if (ok) S.edit = null;
       if (ok && evSheet && evSheet.id === id) evClose();
     }
