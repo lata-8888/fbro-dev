@@ -2607,7 +2607,7 @@
         grid(fld(L('date'), inDate(ev.date)), fld(L('time'), inTime(ev.time))) +
         fld(L('place'), inPlace(ev.place)) +
         fld('', '<label class="check"><input type="checkbox" name="rsvp"' + (ev.rsvp ? ' checked' : '') + '><span>' + L('rsvpRequired') + '</span></label>') +
-        '<div class="dlgbtns"><button type="button" class="btn ghost inline" data-eva="close">' + L('dismiss') + '</button><button type="submit" class="btn inline">' + L('save') + '</button></div></form>';
+        '<div class="dlgbtns"><button type="button" class="btn ghost inline" data-eva="close">' + L('dismiss') + '</button><button type="button" class="btn inline" data-eva="save-ev">' + L('save') + '</button></div></form>';
     } else if (st.mode === 'people') {
       body = '<p class="cck">' + L('evManagePeople') + '</p><h3>' + esc(ev.title) + '</h3>' +
         '<input class="input" name="q" placeholder="' + esc(L('ccSearch')) + '" autocomplete="off" value="' + esc(st.q || '') + '" style="margin-bottom:10px">' +
@@ -2645,6 +2645,19 @@
       if (a === 'edit') { st.mode = 'edit'; evDraw(); return; }
       if (a === 'people') { st.mode = 'people'; evDraw(); return; }
       if (a === 'setresp') { return setResponseFor(st.id, b.dataset.uid, b.dataset.val); }
+      // Speichern-Knopf im Edit-Sheet: Formular direkt hier abhandeln
+      if (a === 'save-ev') {
+        var form = wrap.querySelector('[data-form="edit-ev"]');
+        if (!form) return;
+        var g2 = function (n) { var el = form.elements[n]; return el ? el.value.trim() : ''; };
+        var rsvpV = !!(form.querySelector('[name=rsvp]') && form.querySelector('[name=rsvp]').checked);
+        var evId = form.dataset.id;
+        evClose();
+        await act(function () { return sb.from('events').update({ title: g2('title'), event_date: g2('date'), start_time: g2('time'), place: g2('place'), rsvp_required: rsvpV }).eq('id', evId); }, L('eventChanged'));
+        try { await loadAll(); } catch (e2) { console.error(e2); }
+        render();
+        return;
+      }
       if (a === 'addextra') {
         var inp = document.querySelector('#evsheet .evpextra');
         var nm = (inp ? inp.value : '').trim();
@@ -3057,16 +3070,13 @@
     } else if (kind === 'edit-ev') {
       var rsvpEdit = !!(af && af.querySelector('[name=rsvp]') && af.querySelector('[name=rsvp]').checked);
       ok = await act(function () { return sb.from('events').update({ title: g('title'), event_date: g('date'), start_time: g('time'), place: g('place'), rsvp_required: rsvpEdit }).eq('id', id); }, L('eventChanged'));
-      if (ok) S.edit = null;
-      if (ok && evSheet && evSheet.id === id) evClose();
+      if (ok) { S.edit = null; if (evSheet && evSheet.id === id) evClose(); }
     }
     if (ok && kind === 'rule') S.add.rules = false;
     if (ok && kind === 'event') S.add.events = false;
     if (ok) {
-      // Bei Event-Änderungen: Daten neu laden damit rsvp_required und andere Felder
-      // sofort korrekt in S.events landen und die Karte direkt mit den richtigen
-      // Knöpfen (Allein/Zu zweit/Nicht dabei) erscheint.
-      if (kind === 'event' || kind === 'edit-ev') {
+      // Bei neuem Event: Daten neu laden damit rsvp_required sofort korrekt ist.
+      if (kind === 'event') {
         try { await loadAll(); } catch (e2) { console.error(e2); }
       }
       render();
