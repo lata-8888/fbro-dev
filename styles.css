@@ -401,22 +401,21 @@
   .cc-x { background: var(--warn-bg); color: var(--warn-ink); }
   .ccp.ccme { font-weight: 700; box-shadow: inset 0 0 0 1.5px currentColor; }
   button.ccp { cursor: pointer; }
+  /* Events: Nicht-Mitglieder-Eingabe */
+  .evpaddrow { gap: 8px; align-items: center; }
+  .evpextra { flex: 1; font-size: .9rem; padding: 7px 10px; }
+  .evpn.evpext { color: var(--muted); font-style: italic; }
   /* Im Jass-Teilnehmer-Picker: kein Rahmen um die Zeile, kein Chip-Hintergrund */
   .jspick { border: 0; outline: 0; background: none; }
   .jspick .ccp { border-color: transparent; background: transparent; }
   .ccx { border: 0; background: none; color: inherit; padding: 0 0 0 4px; font-size: 1.05rem; line-height: 1; }
 
   /* Aktionsfenster von unten */
-  .ccsheet { position: fixed; inset: 0; z-index: 45; background: rgba(15, 22, 38, .45); display: flex; align-items: flex-end; justify-content: center; }
-  /* Wenn Tastatur offen: Sheet an den oberen Bildschirmrand schieben, damit das Suchfeld
-     sichtbar bleibt und nicht hinter der Tastatur verschwindet. iOS passt das Viewport-
-     Rechteck (dvh) bei offener Tastatur automatisch an; wir nutzen das, um das Sheet
-     nach oben zu schieben, sobald die verfügbare Höhe kleiner als 60% der Bildschirmhöhe wird. */
-  @media (max-height: 500px) {
-    .ccsheet { align-items: flex-start; }
-    .ccsheetcard { border-radius: 0 0 18px 18px; border-top: 0; border-bottom: 1px solid var(--line); max-height: 100dvh; }
-  }
-  .ccsheetcard { width: 100%; max-width: 520px; max-height: 90vh; max-height: 90dvh; overflow-y: auto; background: var(--surface); color: var(--ink); border-radius: 18px 18px 0 0; padding: 16px 16px calc(14px + env(safe-area-inset-bottom, 0px)); border: 1px solid var(--line); border-bottom: 0; }
+  /* Sheet: immer oben ausrichten, damit das Suchfeld bei offener iOS-Tastatur sichtbar bleibt.
+     Das sichtbare Viewport schrumpft auf iOS wenn die Tastatur öffnet (dvh passt sich an),
+     sodass das Sheet oben fixiert bleibt und das Eingabefeld direkt darunter erscheint. */
+  .ccsheet { position: fixed; inset: 0; z-index: 45; background: rgba(15, 22, 38, .45); display: flex; align-items: flex-start; justify-content: center; padding-top: env(safe-area-inset-top, 0px); }
+  .ccsheetcard { width: 100%; max-width: 520px; max-height: 100dvh; max-height: 100vh; overflow-y: auto; background: var(--surface); color: var(--ink); border-radius: 0 0 18px 18px; padding: 16px 16px calc(14px + env(safe-area-inset-bottom, 0px)); border: 1px solid var(--line); border-top: 0; }
   .cck { font-size: .8rem; color: var(--muted); margin: 0; }
   .ccsheetcard h3 { font-size: 1.35rem; margin: 2px 0 12px; overflow-wrap: anywhere; }
   .ccact { display: flex; align-items: center; gap: 14px; width: 100%; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: none; padding: 14px 2px; font-size: 1.02rem; text-align: left; color: var(--ink); }

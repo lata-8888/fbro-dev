@@ -2565,15 +2565,26 @@
     var pool = S.members.filter(function (m) { return !m.isGuest && !m.isSupporter && !m.isCandidate; });
     if (q) pool = pool.filter(function (m) { return ccNorm(m.name).indexOf(q) > -1; });
     var r = S.ev[ev.id] || {};
-    if (!pool.length) return '<p class="ccsum" style="padding:10px 0">' + L('nobody') + '</p>';
-    return '<div class="evpeople">' + pool.map(function (m) {
+    var rows = pool.map(function (m) {
       var val = r[m.id];
       var b = function (v, cls, label) {
         return '<button type="button" class="resp ' + cls + (val === v ? ' on' : '') + '" data-eva="setresp" data-uid="' + esc(m.id) + '" data-val="' + v + '">' + label + '</button>';
       };
       return '<div class="evprow"><span class="evpn">' + esc(m.name) + '</span><div class="evpbtns">' +
         b('solo', 'yes', L('solo')) + b('duo', 'yes', L('duo')) + b('no', 'no', L('no')) + '</div></div>';
-    }).join('') + '</div>';
+    }).join('');
+    // Nicht-Mitglieder: bestehende Freitext-Einträge + ein leeres Feld zum Hinzufügen
+    var extras = Object.keys(r).filter(function (k) { return k.startsWith('x:'); }).map(function (k) {
+      var nm = k.slice(2), val = r[k];
+      var b = function (v, cls, label) {
+        return '<button type="button" class="resp ' + cls + (val === v ? ' on' : '') + '" data-eva="setresp" data-uid="' + esc(k) + '" data-val="' + v + '">' + label + '</button>';
+      };
+      return '<div class="evprow"><span class="evpn evpext">' + esc(nm) + '</span><div class="evpbtns">' +
+        b('solo', 'yes', L('solo')) + b('duo', 'yes', L('duo')) + b('no', 'no', L('no')) + '</div></div>';
+    }).join('');
+    var addExtra = '<div class="evprow evpaddrow"><input class="input evpextra" name="evpextra" placeholder="' + esc(L('ccOtherPerson')) + '" autocomplete="off"><button type="button" class="btn inline" data-eva="addextra">' + L('ccAdd') + '</button></div>';
+    if (!rows && !extras) return '<p class="ccsum" style="padding:10px 0">' + L('nobody') + '</p>' + addExtra;
+    return '<div class="evpeople">' + rows + extras + '</div>' + addExtra;
   }
 
   function evDraw() {
@@ -2633,6 +2644,13 @@
       if (a === 'edit') { st.mode = 'edit'; evDraw(); return; }
       if (a === 'people') { st.mode = 'people'; evDraw(); return; }
       if (a === 'setresp') { return setResponseFor(st.id, b.dataset.uid, b.dataset.val); }
+      if (a === 'addextra') {
+        var inp = document.querySelector('#evsheet .evpextra');
+        var nm = (inp ? inp.value : '').trim();
+        if (!nm) { toast(L('ccNeedName')); return; }
+        var key = 'x:' + nm;
+        return setResponseFor(st.id, key, 'solo');
+      }
       if (a === 'cancel') {
         var ev1 = S.events.filter(function (x) { return x.id === st.id; })[0];
         evClose();
