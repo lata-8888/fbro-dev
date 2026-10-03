@@ -711,16 +711,12 @@
       else { S.js.series = jr[0].data || []; S.js.days = jr[1].data || []; }
     }
 
-    // Sichtbarkeits-Schalter für C&C: für alle lesbar, unabhängig von der Rolle
-    S.ccPublic = false;
-    if (S.me) {
-      try { var pr = await sb.rpc('cc_is_public'); if (!pr.error) S.ccPublic = pr.data === true; } catch (e) { /* älteres Schema: ignorieren */ }
-    }
-
     // C&C separat laden: ein fehlendes Schema soll den Rest der App nicht blockieren
     S.cc = { events: [], days: [], shifts: [], roles: [] };
     S.ccErr = false;
-    if (canCC() || S.ccPublic) {
+    S.ccPublic = false;   // wird nach dem Laden gesetzt: true wenn mind. 1 Anlass aktiv ist
+    if (canCC()) {
+      // Admins und Manager laden immer alle C&C-Daten (aktiv + inaktiv)
       var cr = await Promise.all(['cc_events', 'cc_days', 'cc_shifts', 'cc_roles'].map(function (t) { return sb.from(t).select('*'); }));
       if (cr.some(function (r) { return r.error; })) S.ccErr = true;
       else {
@@ -728,6 +724,21 @@
         S.cc.days = cr[1].data || [];
         S.cc.shifts = (cr[2].data || []).map(function (x) { x.start_time = hhmm(x.start_time); x.end_time = hhmm(x.end_time); return x; });
         S.cc.roles = cr[3].data || [];
+      }
+      // C&C-Tab für normale Mitglieder sichtbar, wenn mind. 1 Anlass aktiv ist
+      S.ccPublic = S.cc.events.some(function (e) { return e.active; });
+    } else {
+      // Normales Mitglied: nur laden wenn mind. 1 aktiver Anlass existiert (Lesezugriff via RLS)
+      var evR = await sb.from('cc_events').select('*').eq('active', true);
+      if (!evR.error && evR.data && evR.data.length > 0) {
+        S.ccPublic = true;
+        var cr2 = await Promise.all(['cc_days', 'cc_shifts', 'cc_roles'].map(function (t) { return sb.from(t).select('*'); }));
+        S.cc.events = evR.data;
+        if (!cr2.some(function (r) { return r.error; })) {
+          S.cc.days = cr2[0].data || [];
+          S.cc.shifts = (cr2[1].data || []).map(function (x) { x.start_time = hhmm(x.start_time); x.end_time = hhmm(x.end_time); return x; });
+          S.cc.roles = cr2[2].data || [];
+        }
       }
     }
   }
@@ -1582,7 +1593,7 @@
   function viewCC() {
     var map = ccMap(), ed = canCC();
     var html = '<div class="top"><div><h1 class="pagetitle">' + L('titleCC') + '</h1></div></div>';
-    if (ed) html += '<label class="ccpublic"><input type="checkbox" data-act="cc-toggle-public"' + (S.ccPublic ? ' checked' : '') + '><span>' + L('ccPublicLabel') + '</span></label>';
+    // ccPublic-Toggle entfernt auf Wunsch (war: «Für alle Aktiv- und Passivmitglieder sichtbar»)
     if (S.ccErr) return html + '<div class="empty"><p>' + L('ccSetup') + '</p></div>';
     var tree = ccTree();
     if (!tree.length) return html + '<div class="empty"><p>' + L('ccEmpty') + '</p>' + (ed ? '<button class="btn inline" data-act="cc-addevent" style="margin-top:12px">' + L('ccAddEvent') + '</button>' : '') + '</div>';
