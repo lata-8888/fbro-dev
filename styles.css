@@ -405,6 +405,10 @@
   .evpaddrow { gap: 8px; align-items: center; }
   .evpextra { flex: 1; font-size: .9rem; padding: 7px 10px; }
   .evpn.evpext { color: var(--muted); font-style: italic; }
+  /* PIN-Banner */
+  .pinbanner { display: flex; align-items: center; gap: 10px; justify-content: space-between; background: #FEF3C7; border: 1px solid #D97706; border-radius: 10px; padding: 10px 14px; margin: 12px 12px 0; font-size: .88rem; color: #78350F; }
+  .pinbanner span { flex: 1; line-height: 1.4; }
+  .pinbanner .btn { flex: 0 0 auto; font-size: .82rem; padding: 6px 12px; background: #D97706; color: #fff; border-radius: 8px; white-space: nowrap; }
   /* Im Jass-Teilnehmer-Picker: kein Rahmen um die Zeile, kein Chip-Hintergrund */
   .jspick { border: 0; outline: 0; background: none; }
   .jspick .ccp { border-color: transparent; background: transparent; }
@@ -553,9 +557,7 @@
   .jsstp { color: var(--muted); font-size: .82rem; flex: 0 0 auto; }
   .jsrp { flex: 0 0 3rem; text-align: right; font-weight: 400; margin-left: 14px; }
   /* Abgeschlossene Runden: Differenzpunkte (Spielpunkte) und Rangpunkte (4–32) */
-  .iconbtn { flex: 0 0 auto; border: 0; background: none; color: #fff; opacity: .85; padding: 4px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; }
-  .iconbtn:active { opacity: 1; }
-  .iconbtn svg { width: 20px; height: 20px; }
+  /* .iconbtn entfernt – wird nicht mehr verwendet (ersetzt durch .ccdots für alle Icon-Aktions-Buttons) */
   .jsdiff { color: var(--muted); font-size: .82rem; flex: 0 0 auto; }
   .jsdiff.pos { color: var(--yes); }
   .jsdiff.neg { color: var(--no); }
