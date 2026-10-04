@@ -2117,14 +2117,16 @@
       rows.forEach(function (r, i) { if (r.points !== last) { rank = i + 1; last = r.points; } r.rank = rank; });
       return '<ol class="jsrank">' + rows.map(function (r) {
         var nm = r.id ? (ccMember(r.id) ? ccMember(r.id).name : r.name) : r.name;
-        return '<li><span class="jsrk">' + r.rank + '.</span><span class="jsrn">' + esc(nm) + '</span><span class="jsrp">' + (r.points == null ? '\u2013' : r.points) + '</span></li>';
+        var diff = r.gamePts != null ? (r.gamePts >= 0 ? '(+' + r.gamePts + ')' : '(' + r.gamePts + ')') : '';
+      return '<li><span class="jsrk">' + r.rank + '.</span><span class="jsrn">' + esc(nm) + '</span>' + (diff ? '<span class="jsdiff">' + diff + '</span>' : '') + '<span class="jsrp">' + (r.points == null ? '\u2013' : r.points) + '</span></li>';
       }).join('') + '</ol>';
     }
     var sc = jsScores(d), any = Object.keys(sc).some(function (k) { return typeof sc[k] === 'number'; });
     if (!any) return '<p class="ccsum">' + L('jsNoPoints') + '</p>';
     var rows2 = jsRanking(d);
     return '<ol class="jsrank">' + rows2.map(function (r) {
-      return '<li><span class="jsrk">' + r.rank + '.</span><span class="jsrn">' + esc(jsName(P, r.slot, map)) + '</span><span class="jsstp">' + r.standing + ' ' + L('jsPtsAbbr') + '</span><span class="jsrp' + jsCls(r.pts) + '">' + jsFmt(r.pts) + '</span></li>';
+      var diff = jsFmt(r.pts);   // z. B. "+157" oder "-23"
+      return '<li><span class="jsrk">' + r.rank + '.</span><span class="jsrn">' + esc(jsName(P, r.slot, map)) + '</span><span class="jsdiff' + jsCls(r.pts) + '">(' + diff + ')</span><span class="jsrpn">' + r.standing + '</span></li>';
     }).join('') + '</ol>';
   }
 
@@ -2289,10 +2291,11 @@
     P.forEach(function (p, i) { if (p && i !== jsSheet.slot - 1) { var r = ccResolve(p, map); if (r.id) used[r.id] = i + 1; } });
     var q = ccNorm(jsSheet.q || '');
     var list = S.members.filter(function (m) { return !m.isCandidate && (!q || ccNorm(m.name).indexOf(q) > -1); });
-    box.innerHTML = list.length ? list.map(function (m) {
-      var k = m.isGuest ? 'g' : 'm', taken = used[m.id];
-      return '<button type="button" class="ccpick jspick" data-jsa="choose" data-pid="' + esc(m.id) + '"' + (taken ? ' disabled' : '') + '>' +
-        '<span class="ccp cc-' + k + '">' + esc(m.name) + '</span>' + (taken ? '<span class="ccsum">' + L('jsAlready', { n: taken }) + '</span>' : '') + '</button>';
+    var avail = list.filter(function (m) { return !used[m.id]; });
+    box.innerHTML = avail.length ? avail.map(function (m) {
+      var k = m.isGuest ? 'g' : 'm';
+      return '<button type="button" class="ccpick jspick" data-jsa="choose" data-pid="' + esc(m.id) + '">' +
+        '<span class="ccp cc-' + k + '">' + esc(m.name) + '</span></button>';
     }).join('') : '<p class="ccsum" style="padding:10px 12px;margin:0">' + L('nobody') + '</p>';
   }
   async function jsSetPlayer(dayId, slot, person) {

@@ -552,6 +552,11 @@
   .jsrn { flex: 1; min-width: 0; overflow-wrap: anywhere; }
   .jsstp { color: var(--muted); font-size: .82rem; flex: 0 0 auto; }
   .jsrp { flex: 0 0 3rem; text-align: right; font-weight: 700; margin-left: 14px; }
+  /* Abgeschlossene Runden: Differenzpunkte (Spielpunkte) und Rangpunkte (4–32) */
+  .jsdiff { color: var(--muted); font-size: .82rem; flex: 0 0 auto; }
+  .jsdiff.pos { color: var(--yes); }
+  .jsdiff.neg { color: var(--no); }
+  .jsrpn { flex: 0 0 2.4rem; text-align: right; font-weight: 400; color: var(--ink); }
 
   /* Jass-Master-Abzeichen (Mitgliederliste) */
   .mbic.jm { color: #8A5CC9; }
