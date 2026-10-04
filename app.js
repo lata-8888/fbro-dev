@@ -2111,32 +2111,36 @@
     var HDR_H1 = 5.5;  // erste Kopfzeile (Runde/Titel)
     var HDR_H2 = 5.5;  // zweite Kopfzeile (Nummer)
     var HDR_H = HDR_H1 + HDR_H2;
-    var R = 2.5;  // kleinerer Kreis-Radius
+    var R = 2.6;      // Kreis-Radius mittel (Variante C)
+    var FS = 6.5;     // Schriftgrösse in Zellen
+    // jsPDF positioniert Text an der Baseline; vertikales Zentrum = midY + FS*0.35
+    // damit die Zahl optisch genau im Kreismittelpunkt sitzt.
+    function cellTextY(midY) { return midY + FS * 0.35; }
 
-    // Zelle zeichnen
     function drawCell(cx, cy, pts2, rowBg) {
       var midY = cy + ROW_H / 2;
+      var ty = cellTextY(midY);
       if (pts2 === 32) {
         doc.setFillColor.apply(doc, GOLD_FILL);
         doc.setDrawColor.apply(doc, [160, 120, 10]);
         doc.setLineWidth(0.15); doc.circle(cx, midY, R, 'FD');
-        doc.setTextColor.apply(doc, WHITE); doc.setFont('helvetica', 'bold'); doc.setFontSize(6.5);
-        doc.text('32', cx, midY + 2.2, { align: 'center' });
+        doc.setTextColor.apply(doc, WHITE); doc.setFont('helvetica', 'bold'); doc.setFontSize(FS);
+        doc.text('32', cx, ty, { align: 'center' });
       } else if (pts2 === 28) {
         doc.setFillColor.apply(doc, SILVER);
         doc.setDrawColor.apply(doc, [90, 97, 105]);
         doc.setLineWidth(0.15); doc.circle(cx, midY, R, 'FD');
-        doc.setTextColor.apply(doc, WHITE); doc.setFont('helvetica', 'normal'); doc.setFontSize(6.5);
-        doc.text('28', cx, midY + 2.2, { align: 'center' });
+        doc.setTextColor.apply(doc, WHITE); doc.setFont('helvetica', 'normal'); doc.setFontSize(FS);
+        doc.text('28', cx, ty, { align: 'center' });
       } else if (pts2 === 24) {
         doc.setFillColor.apply(doc, rowBg);
         doc.setDrawColor.apply(doc, BLUE);
-        doc.setLineWidth(0.4); doc.circle(cx, midY, R, 'FD');
-        doc.setTextColor.apply(doc, BLUE); doc.setFont('helvetica', 'normal'); doc.setFontSize(6.5);
-        doc.text('24', cx, midY + 2.2, { align: 'center' });
+        doc.setLineWidth(0.3); doc.circle(cx, midY, R, 'FD');
+        doc.setTextColor.apply(doc, BLUE); doc.setFont('helvetica', 'normal'); doc.setFontSize(FS);
+        doc.text('24', cx, ty, { align: 'center' });
       } else {
-        doc.setTextColor.apply(doc, INK); doc.setFont('helvetica', 'normal'); doc.setFontSize(6.5);
-        doc.text(String(pts2), cx, midY + 2.2, { align: 'center' });
+        doc.setTextColor.apply(doc, INK); doc.setFont('helvetica', 'normal'); doc.setFontSize(FS);
+        doc.text(String(pts2), cx, ty, { align: 'center' });
       }
     }
 
@@ -2316,7 +2320,7 @@
     var html = '<section class="ccel"><div class="cceh">' +
       '<button class="cct" data-act="js-fold" data-id="' + key + '" aria-expanded="' + !folded + '">' + esc(title) + ' <span class="cnt">(' + days.length + ')</span></button>' +
       (isUpcoming && ed ? '<button class="plusbtn" data-act="js-addday" aria-label="' + esc(L('jsAddDay')) + '" title="' + esc(L('jsAddDay')) + '"><span>+</span></button>' : '') +
-      (!isUpcoming && days.length ? '<button class="iconbtn" data-act="js-print-past" title="' + esc(L('jsPrint')) + '" aria-label="' + esc(L('jsPrint')) + '">' + ICON.print + '</button>' : '') +
+      (!isUpcoming && days.length ? '<button class="ccdots" data-act="js-print-past" title="' + esc(L('jsPrint')) + '" aria-label="' + esc(L('jsPrint')) + '">' + ICON.print + '</button>' : '') +
       jsFoldBtn(key, folded, title, false) + '</div>';
     if (!folded) {
       html += '<div class="ccbody">';
