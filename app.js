@@ -1311,7 +1311,7 @@
     if (!restricted) tabs.push({ id: 'events', label: L('navEvents'), icon: ICON.star });
     if (!noJass) tabs.push({ id: 'jass', label: L('navJass'), icon: ICON.trophy });
     if (!restricted && (canCC() || S.ccPublic)) tabs.push({ id: 'cc', label: L('navCC'), icon: ICON.glass });
-    if (S.me.isAdmin || S.me.isChilbiManager || S.me.isChraenzliManager || S.me.isEventManager) tabs.push({ id: 'admin', label: L('navAdmin'), icon: ICON.gear });
+    if (S.me.isAdmin) tabs.push({ id: 'admin', label: L('navAdmin'), icon: ICON.gear });
     tabs.push({ id: 'profile', label: L('navProfile'), icon: ICON.user });
     nav.innerHTML = '<div class="in">' + tabs.map(function (t) {
       return '<button type="button" class="tab" data-act="tab" data-tab="' + t.id + '"' + (S.tab === t.id ? ' aria-current="page"' : '') + '>' + t.icon + '<span>' + t.label + '</span></button>';
@@ -1333,7 +1333,7 @@
       return;
     }
     else {
-      if (S.tab === 'admin' && !(S.me.isAdmin || S.me.isChilbiManager || S.me.isChraenzliManager || S.me.isEventManager)) S.tab = 'trainings';
+      if (S.tab === 'admin' && !S.me.isAdmin) S.tab = 'trainings';
       if ((S.tab === 'events' || S.tab === 'cc') && (S.me.isGuest || S.me.isSupporter) && !S.me.isAdmin) S.tab = 'trainings';
       if (S.tab === 'jass' && S.me.isGuest && !S.me.isAdmin) S.tab = 'trainings';
       if (S.tab === 'cc' && !(canCC() || S.ccPublic)) S.tab = 'trainings';
