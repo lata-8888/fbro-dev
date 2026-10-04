@@ -551,8 +551,11 @@
   .jsrk { flex: 0 0 1.6rem; font-weight: 700; color: var(--muted); }
   .jsrn { flex: 1; min-width: 0; overflow-wrap: anywhere; }
   .jsstp { color: var(--muted); font-size: .82rem; flex: 0 0 auto; }
-  .jsrp { flex: 0 0 3rem; text-align: right; font-weight: 700; margin-left: 14px; }
+  .jsrp { flex: 0 0 3rem; text-align: right; font-weight: 400; margin-left: 14px; }
   /* Abgeschlossene Runden: Differenzpunkte (Spielpunkte) und Rangpunkte (4–32) */
+  .iconbtn { flex: 0 0 auto; border: 0; background: none; color: #fff; opacity: .85; padding: 4px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; }
+  .iconbtn:active { opacity: 1; }
+  .iconbtn svg { width: 20px; height: 20px; }
   .jsdiff { color: var(--muted); font-size: .82rem; flex: 0 0 auto; }
   .jsdiff.pos { color: var(--yes); }
   .jsdiff.neg { color: var(--no); }
