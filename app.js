@@ -2069,137 +2069,222 @@
     var all = S.js.days.slice().sort(function (a, b) { return a.day < b.day ? -1 : a.day > b.day ? 1 : 0; });
     var past = all.filter(function (d) { return d.closed; });
     if (!past.length) { toast('Keine abgeschlossenen Runden.'); return; }
+    var rounds = past; // chronologisch älteste zuerst
 
-    // Ewige-Rangliste-Daten aufbauen (gleiche Logik wie jsEternalRows)
-    var last10 = past.slice().reverse().slice(0, 10); // neuste 10, chronologisch
+    // Spieler aus ALLEN Runden – «Uralt Spieler» (nur in Runde 20) herausfiltern:
+    // Einträge ohne echtes Profil (id = null, key beginnt mit 'n:') die NUR in einer
+    // einzigen Runde auftauchen und keiner App-Person zugeordnet sind, werden ausgeblendet.
     var totals = {};
-    last10.forEach(function (d) {
+    past.forEach(function (d) {
       jsEternalEntries(d, map).forEach(function (e) {
-        if (!totals[e.key]) totals[e.key] = { name: e.name, points: 0, rounds: 0 };
-        totals[e.key].points += e.points;
+        if (!totals[e.key]) totals[e.key] = { name: e.name, total: 0, rounds: 0, hasProfile: e.key.charAt(0) !== 'n' };
+        totals[e.key].total += e.points;
         totals[e.key].rounds += 1;
       });
     });
-    var players = Object.keys(totals).map(function (k) { return { key: k, name: totals[k].name, total: totals[k].points }; });
+    var players = Object.keys(totals)
+      .filter(function (k) {
+        // Einträge ohne App-Profil, die nur in einer Runde vorkommen: ausblenden
+        return totals[k].hasProfile || totals[k].rounds > 1;
+      })
+      .map(function (k) { return { key: k, name: totals[k].name, total: totals[k].total }; });
     players.sort(function (a, b) { return b.total - a.total; });
 
-    // Alle abgeschlossenen Runden (chronologisch, älteste zuerst)
-    var rounds = past.slice().reverse();
-
+    var logo = await ensureLogoDataUrl();
     var jsPDFCtor = window.jspdf.jsPDF;
     var doc = new jsPDFCtor({ orientation: 'landscape', unit: 'mm', format: 'a4' });
     var PW = doc.internal.pageSize.getWidth(), PH = doc.internal.pageSize.getHeight();
     var M = 12;
     var BLUE = [48, 124, 192], BLUE_DARK = [11, 47, 94], BLUE_SOFT = [227, 239, 249];
-    var INK = [22, 35, 59], MUTED = [93, 103, 122], LINE = [218, 222, 214], WHITE = [255, 255, 255];
-    var GOLD = [180, 140, 40];
+    var INK = [22, 35, 59], LINE = [218, 222, 214], WHITE = [255, 255, 255];
+    var GOLD_FILL = [212, 170, 40], SILVER = [130, 138, 148];
 
-    // Spaltenmasse
-    var ROUND_COL = 32;   // Rundenname (links)
-    var pts = players.length;
-    var available = PW - 2 * M - ROUND_COL;
-    var COL = Math.max(12, Math.min(22, available / Math.max(pts, 1)));
-    var TOTAL_COL = 16;
-    var tableW = ROUND_COL + pts * COL + TOTAL_COL;
-
-    // Header
-    doc.setFillColor.apply(doc, BLUE_DARK); doc.rect(0, 0, PW, 14, 'F');
-    doc.setTextColor.apply(doc, WHITE); doc.setFontSize(13); doc.setFont('helvetica', 'bold');
-    doc.text(L('jsPast') + ' – ' + L('jsEternal'), M, 9.5);
-    doc.setFontSize(8); doc.setFont('helvetica', 'normal');
-    doc.text(new Date().toLocaleDateString('de-CH'), PW - M, 9.5, { align: 'right' });
-
-    var y = 18;
+    // Layout
+    var RANK_COL = 8;    // Rang
+    var NAME_COL = 34;   // Spielername
+    var TOTAL_COL = 14;  // Total rechts
+    var nRounds = rounds.length;
+    var available = PW - 2 * M - RANK_COL - NAME_COL - TOTAL_COL;
+    var COL = Math.max(8, Math.min(18, available / Math.max(nRounds, 1)));
+    var tableW = RANK_COL + NAME_COL + nRounds * COL + TOTAL_COL;
     var ROW_H = 7;
+    var HDR_H1 = 5.5;  // erste Kopfzeile (Runde/Titel)
+    var HDR_H2 = 5.5;  // zweite Kopfzeile (Nummer)
+    var HDR_H = HDR_H1 + HDR_H2;
+    var R = 2.5;  // kleinerer Kreis-Radius
 
-    // Spieler-Kopfzeile
-    doc.setFillColor.apply(doc, BLUE); doc.rect(M, y, tableW, ROW_H, 'F');
-    doc.setTextColor.apply(doc, WHITE); doc.setFontSize(7); doc.setFont('helvetica', 'bold');
-    doc.text(L('jsPast'), M + 2, y + 4.8);
-    players.forEach(function (pl, ci) {
-      var cx = M + ROUND_COL + ci * COL;
-      var nm = pl.name.split(' ').pop(); // Nachname
-      doc.text(nm, cx + COL / 2, y + 4.8, { align: 'center', maxWidth: COL - 1 });
-    });
-    doc.text('Total', M + ROUND_COL + pts * COL + TOTAL_COL / 2, y + 4.8, { align: 'center' });
-    y += ROW_H;
-
-    // Runden-Zeilen
-    rounds.forEach(function (d, ri) {
-      if (y + ROW_H > PH - M) {
-        doc.addPage(); y = M;
-        // Mini-Header auf Folgeseiten
-        doc.setFillColor.apply(doc, BLUE);
-        doc.rect(M, y, tableW, ROW_H - 1, 'F');
-        doc.setTextColor.apply(doc, WHITE); doc.setFontSize(6); doc.setFont('helvetica', 'bold');
-        players.forEach(function (pl, ci) {
-          var nm = pl.name.split(' ').pop();
-          doc.text(nm, M + ROUND_COL + ci * COL + COL / 2, y + 3.8, { align: 'center', maxWidth: COL - 1 });
-        });
-        y += ROW_H - 1;
+    // Zelle zeichnen
+    function drawCell(cx, cy, pts2, rowBg) {
+      var midY = cy + ROW_H / 2;
+      if (pts2 === 32) {
+        doc.setFillColor.apply(doc, GOLD_FILL);
+        doc.setDrawColor.apply(doc, [160, 120, 10]);
+        doc.setLineWidth(0.15); doc.circle(cx, midY, R, 'FD');
+        doc.setTextColor.apply(doc, WHITE); doc.setFont('helvetica', 'bold'); doc.setFontSize(6.5);
+        doc.text('32', cx, midY + 2.2, { align: 'center' });
+      } else if (pts2 === 28) {
+        doc.setFillColor.apply(doc, SILVER);
+        doc.setDrawColor.apply(doc, [90, 97, 105]);
+        doc.setLineWidth(0.15); doc.circle(cx, midY, R, 'FD');
+        doc.setTextColor.apply(doc, WHITE); doc.setFont('helvetica', 'normal'); doc.setFontSize(6.5);
+        doc.text('28', cx, midY + 2.2, { align: 'center' });
+      } else if (pts2 === 24) {
+        doc.setFillColor.apply(doc, rowBg);
+        doc.setDrawColor.apply(doc, BLUE);
+        doc.setLineWidth(0.4); doc.circle(cx, midY, R, 'FD');
+        doc.setTextColor.apply(doc, BLUE); doc.setFont('helvetica', 'normal'); doc.setFontSize(6.5);
+        doc.text('24', cx, midY + 2.2, { align: 'center' });
+      } else {
+        doc.setTextColor.apply(doc, INK); doc.setFont('helvetica', 'normal'); doc.setFontSize(6.5);
+        doc.text(String(pts2), cx, midY + 2.2, { align: 'center' });
       }
-      var bg = ri % 2 === 0 ? WHITE : BLUE_SOFT;
-      doc.setFillColor.apply(doc, bg); doc.rect(M, y, tableW, ROW_H, 'F');
-      // Rahmen
-      doc.setDrawColor.apply(doc, LINE); doc.setLineWidth(0.2);
-      doc.rect(M, y, tableW, ROW_H, 'S');
+    }
 
-      // Rundenname
-      var label = d.name || monthYear(d.day);
-      doc.setTextColor.apply(doc, INK); doc.setFontSize(6.5); doc.setFont('helvetica', 'normal');
-      doc.text(label, M + 2, y + 4.6, { maxWidth: ROUND_COL - 3 });
+    // Seitenkopf (identisches Layout zum Chilbi-Plan)
+    var HDR_PAGE = 24;
+    function drawHeader() {
+      doc.setFillColor.apply(doc, BLUE_DARK); doc.rect(0, 0, PW, HDR_PAGE, 'F');
+      if (logo) { try { doc.addImage(logo, 'PNG', M, 4, 13.5, 15.5); } catch (e) {} }
+      doc.setTextColor.apply(doc, WHITE); doc.setFont('helvetica', 'bold'); doc.setFontSize(17);
+      doc.text('Jassmasters Übersicht', M + 18, 11.5);
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(9.5); doc.setTextColor(207, 224, 242);
+      doc.text(rounds.length + ' Runden · ' + players.length + ' Spieler', M + 18, 17);
+      doc.text(new Date().toLocaleDateString('de-CH'), PW - M, 14, { align: 'right' });
+    }
+    function drawFooter(page) {
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.setTextColor(93, 103, 122);
+      doc.text('Jassmasters Übersicht', M, PH - 6);
+      doc.text('Seite ' + page, PW - M, PH - 6, { align: 'right' });
+    }
 
-      // Punkte je Spieler
-      var entries = jsEternalEntries(d, map);
-      var byKey = {};
-      entries.forEach(function (e) { byKey[e.key] = e.points; });
-      var rowTotal = 0;
-      players.forEach(function (pl, ci) {
-        var pts2 = byKey[pl.key];
-        var cx = M + ROUND_COL + ci * COL;
-        if (pts2 != null) {
-          rowTotal += pts2;
-          // Farbe nach Rangpunkten
-          var fg = pts2 >= 28 ? GOLD : pts2 >= 20 ? BLUE : pts2 <= 8 ? MUTED : INK;
-          doc.setTextColor.apply(doc, fg);
-          doc.setFont('helvetica', pts2 >= 28 ? 'bold' : 'normal');
-          doc.text(String(pts2), cx + COL / 2, y + 4.6, { align: 'center' });
-        } else {
-          doc.setTextColor.apply(doc, LINE);
-          doc.setFont('helvetica', 'normal');
-          doc.text('–', cx + COL / 2, y + 4.6, { align: 'center' });
-        }
+    // Tabellen-Kopf: zweizeilig (Zeile 1: «Runde X», Zeile 2: Rundennummer/Jahr)
+    function drawTableHeader(yy) {
+      // Hintergrund
+      doc.setFillColor.apply(doc, BLUE_DARK); doc.rect(M, yy, tableW, HDR_H, 'F');
+      doc.setDrawColor.apply(doc, BLUE); doc.setLineWidth(0.1);
+
+      // Rang + Spieler-Header
+      doc.setTextColor.apply(doc, WHITE); doc.setFont('helvetica', 'bold'); doc.setFontSize(6);
+      doc.text('#', M + RANK_COL / 2, yy + HDR_H1 + HDR_H2 / 2 + 2, { align: 'center' });
+      doc.text('Spieler', M + RANK_COL + 2, yy + HDR_H1 + HDR_H2 / 2 + 2);
+
+      // Runden-Spalten: Zeile 1 = «Runde X», Zeile 2 = Jahr/Kurzname
+      rounds.forEach(function (d, ci) {
+        var cx = M + RANK_COL + NAME_COL + ci * COL + COL / 2;
+        // Zeile 1: Rundenname (z. B. «Runde 36»)
+        var lbl1 = d.name ? d.name.split(' ')[0] : 'Runde';
+        doc.setFontSize(5); doc.setFont('helvetica', 'normal');
+        doc.text(lbl1, cx, yy + HDR_H1 - 0.8, { align: 'center', maxWidth: COL - 0.5 });
+        // Zeile 2: Nummer oder Jahr
+        var lbl2 = d.name ? (d.name.split(' ')[1] || '') : monthYear(d.day).split(' ')[1] || '';
+        doc.setFontSize(6.5); doc.setFont('helvetica', 'bold');
+        doc.text(lbl2, cx, yy + HDR_H1 + HDR_H2 - 0.5, { align: 'center', maxWidth: COL - 0.5 });
+        // Trennlinie
+        doc.line(M + RANK_COL + NAME_COL + ci * COL, yy, M + RANK_COL + NAME_COL + ci * COL, yy + HDR_H);
       });
 
-      // Zeilen-Total
-      doc.setTextColor.apply(doc, INK); doc.setFont('helvetica', 'bold');
-      doc.text(String(rowTotal), M + ROUND_COL + pts * COL + TOTAL_COL / 2, y + 4.6, { align: 'center' });
+      // Total-Header
+      var tx = M + RANK_COL + NAME_COL + nRounds * COL + TOTAL_COL / 2;
+      doc.setFontSize(5.5); doc.setFont('helvetica', 'normal');
+      doc.text('Total', tx, yy + HDR_H1 - 0.8, { align: 'center' });
+      doc.setFontSize(6.5); doc.setFont('helvetica', 'bold');
+      doc.text('Pkt', tx, yy + HDR_H1 + HDR_H2 - 0.5, { align: 'center' });
+    }
+
+    drawHeader();
+    var y = HDR_PAGE + 2;
+    var page = 1;
+    drawTableHeader(y);
+    y += HDR_H;
+
+    // Rang berechnen (ex aequo)
+    var rank = 0, lastTotal = null;
+    players.forEach(function (pl, ri) { if (pl.total !== lastTotal) { rank = ri + 1; lastTotal = pl.total; } pl.rank = rank; });
+
+    // Spieler-Zeilen
+    players.forEach(function (pl, ri) {
+      if (y + ROW_H > PH - 14) {
+        drawFooter(page); doc.addPage(); page++;
+        drawHeader(); y = HDR_PAGE + 2;
+        drawTableHeader(y); y += HDR_H;
+      }
+      var bg = ri % 2 === 0 ? WHITE : BLUE_SOFT;
+      doc.setFillColor.apply(doc, bg); doc.setDrawColor.apply(doc, LINE); doc.setLineWidth(0.12);
+      doc.rect(M, y, tableW, ROW_H, 'FD');
+
+      var midY = y + ROW_H / 2;
+
+      // Rang
+      doc.setTextColor.apply(doc, [130, 138, 148]); doc.setFont('helvetica', 'normal'); doc.setFontSize(6);
+      doc.text(String(pl.rank), M + RANK_COL / 2, midY + 2, { align: 'center' });
+
+      // Trennlinie Rang/Name
+      doc.setDrawColor.apply(doc, LINE); doc.setLineWidth(0.2);
+      doc.line(M + RANK_COL, y, M + RANK_COL, y + ROW_H);
+
+      // Spielername
+      doc.setTextColor.apply(doc, INK);
+      doc.setFont('helvetica', pl.rank === 1 ? 'bold' : 'normal'); doc.setFontSize(7);
+      doc.text(pl.name, M + RANK_COL + 2, midY + 2.3, { maxWidth: NAME_COL - 3 });
+
+      // Trennlinie Name/Runden
+      doc.setLineWidth(0.2);
+      doc.line(M + RANK_COL + NAME_COL, y, M + RANK_COL + NAME_COL, y + ROW_H);
+
+      // Runden-Zellen
+      var rowTotal = 0;
+      rounds.forEach(function (d, ci) {
+        var entries = jsEternalEntries(d, map);
+        var byKey = {};
+        entries.forEach(function (e) { byKey[e.key] = e.points; });
+        var pts2 = byKey[pl.key];
+        var cx = M + RANK_COL + NAME_COL + ci * COL + COL / 2;
+        if (pts2 != null) {
+          rowTotal += pts2;
+          drawCell(cx, y, pts2, bg);
+        } else {
+          doc.setTextColor.apply(doc, LINE); doc.setFont('helvetica', 'normal'); doc.setFontSize(6);
+          doc.text('–', cx, midY + 2, { align: 'center' });
+        }
+        doc.setDrawColor.apply(doc, LINE); doc.setLineWidth(0.1);
+        doc.line(M + RANK_COL + NAME_COL + (ci + 1) * COL, y, M + RANK_COL + NAME_COL + (ci + 1) * COL, y + ROW_H);
+      });
+
+      // Total
+      doc.setFont('helvetica', 'bold'); doc.setFontSize(7.5); doc.setTextColor.apply(doc, BLUE);
+      doc.text(String(pl.total), M + RANK_COL + NAME_COL + nRounds * COL + TOTAL_COL / 2, midY + 2.5, { align: 'center' });
       y += ROW_H;
     });
 
     // Total-Zeile
-    y += 1;
+    y += 0.5;
     doc.setFillColor.apply(doc, BLUE_DARK); doc.rect(M, y, tableW, ROW_H, 'F');
     doc.setTextColor.apply(doc, WHITE); doc.setFontSize(7); doc.setFont('helvetica', 'bold');
-    doc.text('Total', M + 2, y + 4.8);
-    players.forEach(function (pl, ci) {
-      var cx = M + ROUND_COL + ci * COL;
-      doc.text(String(pl.total), cx + COL / 2, y + 4.8, { align: 'center' });
+    doc.text('Total', M + RANK_COL + 2, y + ROW_H / 2 + 2.2);
+    rounds.forEach(function (d, ci) {
+      var entries = jsEternalEntries(d, map);
+      // Nur Spieler die im PDF sind
+      var col_total = entries.filter(function (e) { return players.some(function (p) { return p.key === e.key; }); })
+                             .reduce(function (s, e) { return s + e.points; }, 0);
+      doc.text(String(col_total), M + RANK_COL + NAME_COL + ci * COL + COL / 2, y + ROW_H / 2 + 2.2, { align: 'center' });
     });
     var grandTotal = players.reduce(function (s, p) { return s + p.total; }, 0);
-    doc.text(String(grandTotal), M + ROUND_COL + pts * COL + TOTAL_COL / 2, y + 4.8, { align: 'center' });
+    doc.text(String(grandTotal), M + RANK_COL + NAME_COL + nRounds * COL + TOTAL_COL / 2, y + ROW_H / 2 + 2.2, { align: 'center' });
+    drawFooter(page);
 
     // Teilen/Speichern
     var blob = doc.output('blob');
     var fname = 'Jassmasters-' + new Date().getFullYear() + '.pdf';
-    if (navigator.canShare && navigator.canShare({ files: [new File([blob], fname, { type: 'application/pdf' })] })) {
-      await navigator.share({ files: [new File([blob], fname, { type: 'application/pdf' })] });
-    } else {
-      var url = URL.createObjectURL(blob);
-      var a = document.createElement('a'); a.href = url; a.download = fname;
-      document.body.appendChild(a); a.click(); a.remove();
-      setTimeout(function () { URL.revokeObjectURL(url); }, 10000);
-    }
+    try {
+      var file = new File([blob], fname, { type: 'application/pdf' });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file], title: 'Jassmasters Übersicht' }); return;
+      }
+    } catch (e) {}
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a'); a.href = url; a.download = fname;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 10000);
   }
 
   function jsEternalFolder(past) {
