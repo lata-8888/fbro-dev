@@ -613,14 +613,20 @@
   // Datumsformat: Für die Mundarten gibt es keine Intl-Sprache, daher eigene Namen
   var CUSTOM_DATES = {
     gsw: {
+      // Fix 2: longDays für fullDate (weekday:'long')
+      longDays: ['Sunntig', 'Mäntig', 'Zischtig', 'Mittwuch', 'Dunnschtig', 'Friitig', 'Samschtig'],
       days: ['Su', 'Mä', 'Zi', 'Mi', 'Du', 'Fr', 'Sa'],
+      // Fix 3: Monatskürzel mit Punkt (wie de: «Okt.»)
       months: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'Auguscht', 'Septämber', 'Oktober', 'Novämber', 'Dezämber'],
-      short: ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']
+      short: ['Jan.', 'Feb.', 'Mär.', 'Apr.', 'Mai', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Okt.', 'Nov.', 'Dez.']
     },
     bar: {
+      // Fix 2: longDays für fullDate (weekday:'long')
+      longDays: ['Sunntog', 'Montog', 'Irntog', 'Mittwoch', 'Pfinschtog', 'Freitog', 'Samstog'],
       days: ['Su', 'Mo', 'Ir', 'Mi', 'Pf', 'Fr', 'Sa'],
+      // Fix 3: Monatskürzel mit Punkt
       months: ['Jänner', 'Feber', 'März', 'April', 'Mai', 'Juni', 'Juli', 'Auggust', 'Septemba', 'Oktoba', 'Novemba', 'Dezemba'],
-      short: ['Jän', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']
+      short: ['Jän.', 'Feb.', 'Mär.', 'Apr.', 'Mai', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Okt.', 'Nov.', 'Dez.']
     }
   };
   function fmt(d, o) {
@@ -631,7 +637,9 @@
       if (o.month) dm.push(o.month === 'long' ? c.months[d.getMonth()] : c.short[d.getMonth()]);
       if (o.year) dm.push(d.getFullYear());
       var main = dm.join(' ');
-      return o.weekday ? c.days[d.getDay()] + (main ? ', ' + main : '') : main;
+      // Fix 2: weekday:'long' → Langname; weekday:'short' → Kurzname
+      var wd = o.weekday ? (o.weekday === 'long' ? c.longDays[d.getDay()] : c.days[d.getDay()]) : null;
+      return wd ? wd + (main ? ', ' + main : '') : main;
     }
     return d.toLocaleDateString(LANG_LOCALE[lang] || 'de-CH', o);
   }
@@ -952,7 +960,7 @@
       (S.err ? '<p class="err">' + esc(S.err) + '</p>' : '') +
       '<button class="btn" type="submit"' + (S.busy ? ' disabled' : '') + '>' + (reg ? L('register') : L('signIn')) + '</button>' +
       '</form>' +
-      '<button class="linkbtn" data-act="mode" style="margin-top:12px">' + (reg ? L('haveAccount') : L('firstTime')) + '</button>' +
+      '<button type="button" class="linkbtn" data-act="mode" style="margin-top:12px">' + (reg ? L('haveAccount') : L('firstTime')) + '</button>' +
       '</div>';
   }
 
@@ -976,7 +984,7 @@
     }
     html += monthList(first, cardHtml);
     if (rest.length) {
-      html += '<button class="morebtn" data-act="more-tr" aria-expanded="' + S.showMore + '"><span>' + L('moreDates', { n: rest.length }) + '</span>' + ICON.chev + '</button>';
+      html += '<button type="button" class="morebtn" data-act="more-tr" aria-expanded="' + S.showMore + '"><span>' + L('moreDates', { n: rest.length }) + '</span>' + ICON.chev + '</button>';
       if (S.showMore) html += monthList(rest, cardHtml);
     }
     return html;
@@ -999,9 +1007,9 @@
       '<div class="cceh"><b>' + fullDate(t.date) + '</b></div>' +
       '<div class="ccbody">' +
         '<div class="actrow3">' +
-          '<button class="resp yes" data-act="resp" data-val="yes" data-key="' + esc(t.key) + '" aria-pressed="' + (mine === 'yes') + '">' + ICON.check + L('yes') + '</button>' +
-          '<button class="resp no" data-act="resp" data-val="no" data-key="' + esc(t.key) + '" aria-pressed="' + (mine === 'no') + '">' + ICON.x + L('no') + '</button>' +
-          '<button class="resp cntbtn ' + cls + (isOpen ? ' is-open' : '') + '" data-act="who" data-key="' + esc(t.key) + '" aria-expanded="' + isOpen + '" aria-label="' + esc(L('ariaTr', { yes: yes.length, no: no.length, action: isOpen ? L('listClose') : L('listOpen') })) + '"><b>' + yes.length + '</b>&nbsp;' + L('participants') + ICON.chev + '</button>' +
+          '<button type="button" class="resp yes" data-act="resp" data-val="yes" data-key="' + esc(t.key) + '" aria-pressed="' + (mine === 'yes') + '">' + ICON.check + L('yes') + '</button>' +
+          '<button type="button" class="resp no" data-act="resp" data-val="no" data-key="' + esc(t.key) + '" aria-pressed="' + (mine === 'no') + '">' + ICON.x + L('no') + '</button>' +
+          '<button type="button" class="resp cntbtn ' + cls + (isOpen ? ' is-open' : '') + '" data-act="who" data-key="' + esc(t.key) + '" aria-expanded="' + isOpen + '" aria-label="' + esc(L('ariaTr', { yes: yes.length, no: no.length, action: isOpen ? L('listClose') : L('listOpen') })) + '"><b>' + yes.length + '</b>&nbsp;' + L('participants') + ICON.chev + '</button>' +
         '</div>' +
         (isOpen ? whoBlock([
           { label: L('hYes', { n: yes.length }), arr: yes },
@@ -1012,7 +1020,13 @@
   }
 
   function shortDate(d) {
-    return esc(fmt(d, { weekday: 'short' }).replace('.', '')) + ' ' + d.getDate() + '. ' + esc(fmt(d, { month: 'short' }).replace('.', ''));
+    // Punkt nach Tageszahl nur für Sprachen, die ihn grammatisch verwenden (de, gsw, bar)
+    var dayDot = (lang === 'de' || lang === 'gsw' || lang === 'bar') ? '. ' : ' ';
+    // Wochentag-Kurzname: trailing Punkt entfernen (de liefert «Mo.», custom-Sprachen brauchen keinen)
+    var wd = fmt(d, { weekday: 'short' }).replace(/\.$/, '');
+    // Monatsname: Punkt BEHALTEN für alle Sprachen (de=«Okt.», gsw/bar=«Okt.», fix 3)
+    var mo = fmt(d, { month: 'short' });
+    return esc(wd) + ' ' + d.getDate() + dayDot + esc(mo);
   }
   function z2(n) { return n < 10 ? '0' + n : '' + n; }
   function fullDate(d) {
@@ -1083,7 +1097,7 @@
     var mine = r[S.me.id];
     var isOpen = !!S.open['ev:' + e.id];
     var btn = function (val, cls, icon, label) {
-      return '<button class="resp ' + cls + '" data-act="resp-ev" data-val="' + val + '" data-id="' + e.id + '" aria-pressed="' + (mine === val) + '">' + icon + label + '</button>';
+      return '<button type="button" class="resp ' + cls + '" data-act="resp-ev" data-val="' + val + '" data-id="' + e.id + '" aria-pressed="' + (mine === val) + '">' + icon + label + '</button>';
     };
     if (e.cancelled) {
       return '<article class="ccel off" title="' + esc(e.title) + '">' +
@@ -1092,14 +1106,14 @@
     }
     return '<article class="ccel">' +
       '<div class="cceh"><b>' + fullDate(parseIso(e.date)) + ' \u2013 ' + esc(e.title) + '</b>' +
-      (canManageEvents() ? '<button class="ccdots" data-act="ev-menu" data-id="' + e.id + '" aria-label="' + esc(L('ccActions') + ': ' + e.title) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>' : '') +
+      (canManageEvents() ? '<button type="button" class="ccdots" data-act="ev-menu" data-id="' + e.id + '" aria-label="' + esc(L('ccActions') + ': ' + e.title) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>' : '') +
       '</div>' +
       '<div class="ccbody">' +
         '<p class="muted small">' + esc(L('timePlace', { time: e.time, place: e.place })) + '</p>' +
         (e.rsvp ? (
           '<div class="actrow4">' +
             btn('solo', 'yes', ICON.one, L('solo')) + btn('duo', 'yes', ICON.two, L('duo')) + btn('no', 'no', '', L('no')) +
-            '<button class="resp cntbtn' + (isOpen ? ' is-open' : '') + '" data-act="who-ev" data-id="' + e.id + '" aria-expanded="' + isOpen + '" aria-label="' + esc(L('ariaEv', { n: persons, action: isOpen ? L('listClose') : L('listOpen') })) + '"><b>' + persons + '</b>&nbsp;' + L('participants') + ICON.chev + '</button>' +
+            '<button type="button" class="resp cntbtn' + (isOpen ? ' is-open' : '') + '" data-act="who-ev" data-id="' + e.id + '" aria-expanded="' + isOpen + '" aria-label="' + esc(L('ariaEv', { n: persons, action: isOpen ? L('listClose') : L('listOpen') })) + '"><b>' + persons + '</b>&nbsp;' + L('participants') + ICON.chev + '</button>' +
           '</div>' +
           (isOpen ? whoBlock([
             { label: L('hSolo', { n: solo.length }), arr: solo },
@@ -1121,10 +1135,10 @@
     var hasMenu = canAdd || info;
     // Einheitlich wie bei C&C und Jass: Titel links (klappt auf/zu), Drei-Punkte-Menü, Pfeil ganz rechts
     return '<section class="ccel"><div class="cceh">' +
-      '<button class="cct" data-act="sec" data-id="' + id + '" aria-expanded="' + open + '">' +
+      '<button type="button" class="cct" data-act="sec" data-id="' + id + '" aria-expanded="' + open + '">' +
       title + (count != null ? ' <span class="cnt">(' + count + ')</span>' : '') + '</button>' +
-      (hasMenu ? '<button class="ccdots" data-act="acc-menu" data-id="' + id + '" aria-label="' + esc(L('ccActions')) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>' : '') +
-      '<button class="ccfold' + (open ? ' open' : '') + '" data-act="sec" data-id="' + id + '" aria-hidden="true" tabindex="-1">' + ICON.chev + '</button>' +
+      (hasMenu ? '<button type="button" class="ccdots" data-act="acc-menu" data-id="' + id + '" aria-label="' + esc(L('ccActions')) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>' : '') +
+      '<button type="button" class="ccfold' + (open ? ' open' : '') + '" data-act="sec" data-id="' + id + '" aria-hidden="true" tabindex="-1">' + ICON.chev + '</button>' +
       '</div>' + (open ? '<div class="ccbody">' + (info && showInfo ? '<p class="infotext">' + info + '</p>' : '') + body + '</div>' : '') + '</section>';
   }
 
@@ -1138,9 +1152,9 @@
     }
     return '<li><div class="l"><b>' + esc(fmt(t.date, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })) + ', ' + esc(t.time) + '</b>' +
       '<span>' + esc(t.title) + ', ' + esc(t.place) + (t.changed ? ' · ' + L('changedLow') : '') + (off ? ' · ' + L('cancelledLow') : '') + '</span></div>' +
-      '<div class="btnrow"><button class="mini" data-act="edit" data-target="tr:' + esc(t.key) + '">' + L('edit') + '</button>' +
-      '<button class="mini" data-act="cancel" data-key="' + esc(t.key) + '">' + (off ? L('reactivate') : L('cancel')) + '</button>' +
-      (t.extraId ? '<button class="mini del" data-act="del-extra" data-id="' + t.extraId + '">' + L('del') + '</button>' : '') + '</div></li>';
+      '<div class="btnrow"><button type="button" class="mini" data-act="edit" data-target="tr:' + esc(t.key) + '">' + L('edit') + '</button>' +
+      '<button type="button" class="mini" data-act="cancel" data-key="' + esc(t.key) + '">' + (off ? L('reactivate') : L('cancel')) + '</button>' +
+      (t.extraId ? '<button type="button" class="mini del" data-act="del-extra" data-id="' + t.extraId + '">' + L('del') + '</button>' : '') + '</div></li>';
   }
 
   function viewAdmin() {
@@ -1164,8 +1178,8 @@
         return editRow('edit-rule', r.id, grid(fld(L('weekday'), '<select class="input" name="wd">' + wdOptions(r.wd) + '</select>'), fld(L('time'), inTime(r.time))) + fld(L('place'), inPlace(r.place)));
       }
       return '<li><div class="l"><b>' + wdName(r.wd) + ', ' + esc(L('atTime', { time: r.time })) + '</b><span>' + esc(r.place) + '</span></div>' +
-        '<div class="btnrow"><button class="mini" data-act="edit" data-target="rule:' + r.id + '">' + L('edit') + '</button>' +
-        '<button class="mini del" data-act="del-rule" data-id="' + r.id + '">' + L('remove') + '</button></div></li>';
+        '<div class="btnrow"><button type="button" class="mini" data-act="edit" data-target="rule:' + r.id + '">' + L('edit') + '</button>' +
+        '<button type="button" class="mini del" data-act="del-rule" data-id="' + r.id + '">' + L('remove') + '</button></div></li>';
     }).join('') + '</ul>' : '<p class="muted">' + L('rulesEmpty') + '</p>';
     if (isAdm) html += accordion('rules', L('secRules'), S.rules.length, b, true, L('rulesIntro'));
 
@@ -1197,9 +1211,9 @@
         return editRow('edit-ev', e.id, fld(L('label'), inTitle(e.title)) + grid(fld(L('date'), inDate(e.date)), fld(L('time'), inTime(e.time))) + fld(L('place'), inPlace(e.place)) + fld('', '<label class="check"><input type="checkbox" name="rsvp"' + (e.rsvp ? ' checked' : '') + '><span>' + L('rsvpRequired') + '</span></label>'));
       }
       return '<li><div class="l"><b>' + esc(e.title) + '</b><span>' + esc(fmt(parseIso(e.date), { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })) + ', ' + esc(e.time) + ', ' + esc(e.place) + (e.cancelled ? ' · ' + L('cancelledLow') : '') + '</span></div>' +
-        '<div class="btnrow"><button class="mini" data-act="edit" data-target="ev:' + e.id + '">' + L('edit') + '</button>' +
-        '<button class="mini" data-act="cancel-ev" data-id="' + e.id + '">' + (e.cancelled ? L('reactivate') : L('cancel')) + '</button>' +
-        '<button class="mini del" data-act="del-ev" data-id="' + e.id + '">' + L('del') + '</button></div></li>';
+        '<div class="btnrow"><button type="button" class="mini" data-act="edit" data-target="ev:' + e.id + '">' + L('edit') + '</button>' +
+        '<button type="button" class="mini" data-act="cancel-ev" data-id="' + e.id + '">' + (e.cancelled ? L('reactivate') : L('cancel')) + '</button>' +
+        '<button type="button" class="mini del" data-act="del-ev" data-id="' + e.id + '">' + L('del') + '</button></div></li>';
     }).join('') + '</ul>' : '<p class="muted">' + L('eventsEmpty') + '</p>';
     if (isAdm || S.me.isEventManager) html += accordion('events', L('secEvents'), evs.length, b, true, L('subEvents'));
 
@@ -1224,11 +1238,11 @@
           (m.isChraenzliManager ? '<span class="mbic em" title="' + esc(L('crmTag')) + '" aria-label="' + esc(L('crmTag')) + '">' + ICON.glass + '</span>' : '') +
           (m.isJassMaster ? '<span class="mbic jm" title="' + esc(L('jmTag')) + '" aria-label="' + esc(L('jmTag')) + '">' + ICON.trophy + '</span>' : '') +
         '</span>' +
-        '<button class="ccdots" data-act="mb-menu" data-id="' + esc(m.id) + '" aria-label="' + esc(L('ccActions') + ': ' + m.name) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button></li>';
+        '<button type="button" class="ccdots" data-act="mb-menu" data-id="' + esc(m.id) + '" aria-label="' + esc(L('ccActions') + ': ' + m.name) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button></li>';
     };
     var mbGroup = function (key, label, list, guestStyle, icon) {
       var open = S.sec[key] === true;
-      return '<div class="mbgrp"><button class="mbgh" data-act="mb-grp" data-id="' + key + '" aria-expanded="' + open + '">' +
+      return '<div class="mbgrp"><button type="button" class="mbgh" data-act="mb-grp" data-id="' + key + '" aria-expanded="' + open + '">' +
         '<span class="mbcrown' + (guestStyle ? ' g' : '') + '">' + (icon || ICON.crown) + '</span><span>' + label + ' <span class="cnt">(' + list.length + ')</span></span>' +
         '<span class="sp"></span><span class="ccfold' + (open ? ' open' : '') + '">' + ICON.chev + '</span></button>' +
         (open ? (list.length ? '<ul class="list">' + list.map(mbRow).join('') + '</ul>' : '<p class="ccsum" style="padding:6px 0 10px">' + L('nobody') + '</p>') : '') + '</div>';
@@ -1257,7 +1271,7 @@
     var standalone = window.matchMedia && window.matchMedia('(display-mode: standalone)').matches;
     var install = '';
     if (!standalone) {
-      if (installPrompt) install = '<section class="panel"><h2>' + L('installTitle') + '</h2><p>' + L('installHint') + '</p><button class="btn" data-act="install">' + L('installBtn') + '</button></section>';
+      if (installPrompt) install = '<section class="panel"><h2>' + L('installTitle') + '</h2><p>' + L('installHint') + '</p><button type="button" class="btn" data-act="install">' + L('installBtn') + '</button></section>';
       else if (iosHint) install = '<section class="panel"><h2>' + L('installTitle') + '</h2><p>' + L('installIos') + '</p></section>';
     }
     return '<div class="top"><div><h1 class="pagetitle">' + L('profileTitle') + '</h1></div></div>' +
@@ -1281,8 +1295,8 @@
       '<section class="panel"><h2>' + L('pinChange') + '</h2><p>' + L('pinIntro') + '</p><form data-form="pin">' +
       fld(L('pinNew'), '<input class="input pin" name="pin" type="password" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="new-password" required>') +
       '<button class="btn" type="submit">' + L('pinSave') + '</button></form>' +
-      '<button class="linkbtn" data-act="pin-default" style="margin-top:10px">' + L('pinDefault') + '</button></section>' +
-      '<button class="btn dangerbtn" data-act="logout">' + ICON.logout + L('logout') + '</button>';
+      '<button type="button" class="linkbtn" data-act="pin-default" style="margin-top:10px">' + L('pinDefault') + '</button></section>' +
+      '<button type="button" class="btn dangerbtn" data-act="logout">' + ICON.logout + L('logout') + '</button>';
   }
 
   function renderNav() {
@@ -1300,7 +1314,7 @@
     if (S.me.isAdmin || S.me.isChilbiManager || S.me.isChraenzliManager || S.me.isEventManager) tabs.push({ id: 'admin', label: L('navAdmin'), icon: ICON.gear });
     tabs.push({ id: 'profile', label: L('navProfile'), icon: ICON.user });
     nav.innerHTML = '<div class="in">' + tabs.map(function (t) {
-      return '<button class="tab" data-act="tab" data-tab="' + t.id + '"' + (S.tab === t.id ? ' aria-current="page"' : '') + '>' + t.icon + '<span>' + t.label + '</span></button>';
+      return '<button type="button" class="tab" data-act="tab" data-tab="' + t.id + '"' + (S.tab === t.id ? ' aria-current="page"' : '') + '>' + t.icon + '<span>' + t.label + '</span></button>';
     }).join('') + '</div>';
   }
 
@@ -1420,7 +1434,7 @@
     return e ? !e.active : false;   // inaktive Anlässe starten eingeklappt
   }
   function ccDots(lvl, id, label) {
-    return '<button class="ccdots" data-act="cc-menu" data-lvl="' + lvl + '"' + (id ? ' data-id="' + esc(id) + '"' : '') +
+    return '<button type="button" class="ccdots" data-act="cc-menu" data-lvl="' + lvl + '"' + (id ? ' data-id="' + esc(id) + '"' : '') +
       ' aria-label="' + esc(L('ccActions') + (label ? ': ' + label : '')) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>';
   }
 
@@ -1596,15 +1610,15 @@
     // ccPublic-Toggle entfernt auf Wunsch (war: «Für alle Aktiv- und Passivmitglieder sichtbar»)
     if (S.ccErr) return html + '<div class="empty"><p>' + L('ccSetup') + '</p></div>';
     var tree = ccTree();
-    if (!tree.length) return html + '<div class="empty"><p>' + L('ccEmpty') + '</p>' + (ed ? '<button class="btn inline" data-act="cc-addevent" style="margin-top:12px">' + L('ccAddEvent') + '</button>' : '') + '</div>';
+    if (!tree.length) return html + '<div class="empty"><p>' + L('ccEmpty') + '</p>' + (ed ? '<button type="button" class="btn inline" data-act="cc-addevent" style="margin-top:12px">' + L('ccAddEvent') + '</button>' : '') + '</div>';
     tree.forEach(function (E) {
       var e = E.e, folded = ccIsFolded(e.id);
       html += '<section class="ccel' + (e.active ? '' : ' ccoff') + '"><div class="cceh">' +
         (ed ? '<input type="checkbox" class="ccck" data-ccactive="' + esc(e.id) + '"' + (e.active ? ' checked' : '') + ' aria-label="' + esc(e.name + ': ' + L('ccActive')) + '" title="' + esc(L('ccActive')) + '">' : '') +
-        '<button class="cct" data-act="cc-fold" data-id="' + esc(e.id) + '" aria-expanded="' + !folded + '">' + esc(e.name) + '</button>' +
+        '<button type="button" class="cct" data-act="cc-fold" data-id="' + esc(e.id) + '" aria-expanded="' + !folded + '">' + esc(e.name) + '</button>' +
         (ed ? ccDots('event', e.id, e.name) : '') +
-        '<button class="ccdots" data-act="cc-print" data-id="' + esc(e.id) + '" aria-label="' + esc(L('ccPrint') + ': ' + e.name) + '" title="' + esc(L('ccPrint')) + '">' + ICON.print + '</button>' +
-        '<button class="ccfold' + (folded ? '' : ' open') + '" data-act="cc-fold" data-id="' + esc(e.id) + '" aria-expanded="' + !folded + '" aria-label="' + esc(e.name) + '">' + ICON.chev + '</button></div>';
+        '<button type="button" class="ccdots" data-act="cc-print" data-id="' + esc(e.id) + '" aria-label="' + esc(L('ccPrint') + ': ' + e.name) + '" title="' + esc(L('ccPrint')) + '">' + ICON.print + '</button>' +
+        '<button type="button" class="ccfold' + (folded ? '' : ' open') + '" data-act="cc-fold" data-id="' + esc(e.id) + '" aria-expanded="' + !folded + '" aria-label="' + esc(e.name) + '">' + ICON.chev + '</button></div>';
       if (!folded) {
         html += '<div class="ccbody">';
         if (!E.days.length) html += '<p class="ccsum" style="padding-top:10px">' + L('ccNoDays') + '</p>';
@@ -1613,9 +1627,9 @@
           var nRoles = D.shifts.reduce(function (n, x) { return n + x.roles.length; }, 0);
           var dayLabel = ccDate(d.day) + (d.name ? ' – ' + d.name : '');
           html += '<div class="ccday"><div class="ccdh">' +
-            '<button class="ccdt" data-act="cc-fold" data-id="' + esc(d.id) + '" aria-expanded="' + !df + '"><b>' + esc(ccDate(d.day)) + (d.name ? ' - ' + esc(d.name) : '') + '</b></button>' +
+            '<button type="button" class="ccdt" data-act="cc-fold" data-id="' + esc(d.id) + '" aria-expanded="' + !df + '"><b>' + esc(ccDate(d.day)) + (d.name ? ' - ' + esc(d.name) : '') + '</b></button>' +
             (ed ? ccDots('day', d.id, dayLabel) : '') +
-            '<button class="ccfold ccfold-day' + (df ? '' : ' open') + '" data-act="cc-fold" data-id="' + esc(d.id) + '" aria-expanded="' + !df + '" aria-label="' + esc(dayLabel) + '">' + ICON.chev + '</button></div>';
+            '<button type="button" class="ccfold ccfold-day' + (df ? '' : ' open') + '" data-act="cc-fold" data-id="' + esc(d.id) + '" aria-expanded="' + !df + '" aria-label="' + esc(dayLabel) + '">' + ICON.chev + '</button></div>';
           if (df) {
             html += '<div class="ccsum">' + L('ccSummary', { s: D.shifts.length, r: nRoles }) + '</div>';
           } else {
@@ -1985,10 +1999,10 @@
   function jsFmt(v) { return v == null ? '–' : (v > 0 ? '+' + v : String(v)); }
   function jsCls(v) { return v == null || v === 0 ? '' : v > 0 ? ' pos' : ' neg'; }
   function jsDots(lvl, id, label) {
-    return '<button class="ccdots" data-act="js-menu" data-lvl="' + lvl + '" data-id="' + esc(id) + '" aria-label="' + esc(L('ccActions') + ': ' + label) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>';
+    return '<button type="button" class="ccdots" data-act="js-menu" data-lvl="' + lvl + '" data-id="' + esc(id) + '" aria-label="' + esc(L('ccActions') + ': ' + label) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>';
   }
   function jsFoldBtn(id, folded, label, small) {
-    return '<button class="ccfold' + (small ? ' ccfold-day' : '') + (folded ? '' : ' open') + '" data-act="js-fold" data-id="' + esc(id) + '" aria-expanded="' + !folded + '" aria-label="' + esc(label) + '">' + ICON.chev + '</button>';
+    return '<button type="button" class="ccfold' + (small ? ' ccfold-day' : '') + (folded ? '' : ' open') + '" data-act="js-fold" data-id="' + esc(id) + '" aria-expanded="' + !folded + '" aria-label="' + esc(label) + '">' + ICON.chev + '</button>';
   }
 
   // Tagesrangliste: jeder Spieler erhält die Punkte seines Teams aus jedem Spiel
@@ -2111,7 +2125,7 @@
     var HDR_H2 = 5.5;  // zweite Kopfzeile (Nummer)
     var HDR_H = HDR_H1 + HDR_H2;
     var FS = 6.5;     // Schriftgrösse in Zellen
-    function cellTextY(midY) { return midY + FS * 0.35; }
+    function cellTextY(midY) { return midY + FS * 0.264; }
 
     function drawCell(cx, cy, pts2) {
       var midY = cy + ROW_H / 2;
@@ -2160,8 +2174,8 @@
 
       // Rang + Spieler-Header
       doc.setTextColor.apply(doc, WHITE); doc.setFont('helvetica', 'bold'); doc.setFontSize(6);
-      doc.text('#', M + RANK_COL / 2, yy + HDR_H1 + HDR_H2 / 2 + 6 * 0.35, { align: 'center' });
-      doc.text('Spieler', M + RANK_COL + 2, yy + HDR_H1 + HDR_H2 / 2 + 6 * 0.35);
+      doc.text('#', M + RANK_COL / 2, yy + HDR_H1 + HDR_H2 / 2 + 6 * 0.264, { align: 'center' });
+      doc.text('Spieler', M + RANK_COL + 2, yy + HDR_H1 + HDR_H2 / 2 + 6 * 0.264);
 
       // Runden-Spalten: Zeile 1 = «Runde X», Zeile 2 = Jahr/Kurzname
       rounds.forEach(function (d, ci) {
@@ -2169,11 +2183,11 @@
         // Zeile 1: Rundenname (z. B. «Runde 36»)
         var lbl1 = d.name ? d.name.split(' ')[0] : 'Runde';
         doc.setFontSize(6.5); doc.setFont('helvetica', 'bold');
-        doc.text(lbl1, cx, yy + HDR_H1 / 2 + 6.5 * 0.35, { align: 'center', maxWidth: COL - 0.5 });
+        doc.text(lbl1, cx, yy + HDR_H1 / 2 + 6.5 * 0.264, { align: 'center', maxWidth: COL - 0.5 });
         // Zeile 2: Nummer oder Jahr
         var lbl2 = d.name ? (d.name.split(' ')[1] || '') : monthYear(d.day).split(' ')[1] || '';
         doc.setFontSize(6.5); doc.setFont('helvetica', 'bold');
-        doc.text(lbl2, cx, yy + HDR_H1 + HDR_H2 / 2 + 6.5 * 0.35, { align: 'center', maxWidth: COL - 0.5 });
+        doc.text(lbl2, cx, yy + HDR_H1 + HDR_H2 / 2 + 6.5 * 0.264, { align: 'center', maxWidth: COL - 0.5 });
         // Trennlinie
         doc.line(M + RANK_COL + NAME_COL + ci * COL, yy, M + RANK_COL + NAME_COL + ci * COL, yy + HDR_H);
       });
@@ -2181,9 +2195,9 @@
       // Total-Header
       var tx = M + RANK_COL + NAME_COL + nRounds * COL + TOTAL_COL / 2;
       doc.setFontSize(6.5); doc.setFont('helvetica', 'bold');
-      doc.text('Total', tx, yy + HDR_H1 / 2 + 6.5 * 0.35, { align: 'center' });
+      doc.text('Total', tx, yy + HDR_H1 / 2 + 6.5 * 0.264, { align: 'center' });
       doc.setFontSize(6.5); doc.setFont('helvetica', 'bold');
-      doc.text('Pkt', tx, yy + HDR_H1 + HDR_H2 / 2 + 6.5 * 0.35, { align: 'center' });
+      doc.text('Pkt', tx, yy + HDR_H1 + HDR_H2 / 2 + 6.5 * 0.264, { align: 'center' });
     }
 
     drawHeader();
@@ -2211,7 +2225,7 @@
 
       // Rang
       doc.setTextColor.apply(doc, [130, 138, 148]); doc.setFont('helvetica', 'normal'); doc.setFontSize(6);
-      doc.text(String(pl.rank), M + RANK_COL / 2, midY + 6 * 0.35, { align: 'center' });
+      doc.text(String(pl.rank), M + RANK_COL / 2, midY + 6 * 0.264, { align: 'center' });
 
       // Trennlinie Rang/Name
       doc.setDrawColor.apply(doc, LINE); doc.setLineWidth(0.2);
@@ -2220,7 +2234,7 @@
       // Spielername
       doc.setTextColor.apply(doc, INK);
       doc.setFont('helvetica', 'normal'); doc.setFontSize(7);
-      doc.text(pl.name, M + RANK_COL + 2, midY + 7 * 0.35, { maxWidth: NAME_COL - 3 });
+      doc.text(pl.name, M + RANK_COL + 2, midY + 7 * 0.264, { maxWidth: NAME_COL - 3 });
 
       // Trennlinie Name/Runden
       doc.setLineWidth(0.2);
@@ -2239,7 +2253,7 @@
           drawCell(cx, y, pts2);
         } else {
           doc.setTextColor.apply(doc, LINE); doc.setFont('helvetica', 'normal'); doc.setFontSize(6);
-          doc.text('–', cx, midY + FS * 0.35, { align: 'center' });
+          doc.text('–', cx, midY + FS * 0.264, { align: 'center' });
         }
         doc.setDrawColor.apply(doc, LINE); doc.setLineWidth(0.1);
         doc.line(M + RANK_COL + NAME_COL + (ci + 1) * COL, y, M + RANK_COL + NAME_COL + (ci + 1) * COL, y + ROW_H);
@@ -2247,7 +2261,7 @@
 
       // Total
       doc.setFont('helvetica', 'bold'); doc.setFontSize(7.5); doc.setTextColor.apply(doc, BLUE);
-      doc.text(String(pl.total), M + RANK_COL + NAME_COL + nRounds * COL + TOTAL_COL / 2, midY + 7.5 * 0.35, { align: 'center' });
+      doc.text(String(pl.total), M + RANK_COL + NAME_COL + nRounds * COL + TOTAL_COL / 2, midY + 7.5 * 0.264, { align: 'center' });
       y += ROW_H;
     });
 
@@ -2272,7 +2286,7 @@
     var key = 'jsEternal', folded = S.jsFold[key] !== true;   // Standard: zugeklappt
     var map = ccMap(), res = jsEternalRows(past, map);
     var html = '<section class="ccel"><div class="cceh">' +
-      '<button class="cct" data-act="js-fold" data-id="' + key + '" aria-expanded="' + !folded + '">' + esc(L('jsEternal')) + '</button>' +
+      '<button type="button" class="cct" data-act="js-fold" data-id="' + key + '" aria-expanded="' + !folded + '">' + esc(L('jsEternal')) + '</button>' +
       jsFoldBtn(key, folded, L('jsEternal'), false) + '</div>';
     if (!folded) {
       html += '<div class="ccbody">';
@@ -2295,9 +2309,9 @@
     // Anstehend ist standardmässig offen, Vergangen standardmässig zu.
     var folded = isUpcoming ? (S.jsFold[key] === true) : (S.jsFold[key] !== true);
     var html = '<section class="ccel"><div class="cceh">' +
-      '<button class="cct" data-act="js-fold" data-id="' + key + '" aria-expanded="' + !folded + '">' + esc(title) + ' <span class="cnt">(' + days.length + ')</span></button>' +
-      (isUpcoming && ed ? '<button class="plusbtn" data-act="js-addday" aria-label="' + esc(L('jsAddDay')) + '" title="' + esc(L('jsAddDay')) + '"><span>+</span></button>' : '') +
-      (!isUpcoming && days.length ? '<button class="ccdots" data-act="js-print-past" title="' + esc(L('jsPrint')) + '" aria-label="' + esc(L('jsPrint')) + '">' + ICON.print + '</button>' : '') +
+      '<button type="button" class="cct" data-act="js-fold" data-id="' + key + '" aria-expanded="' + !folded + '">' + esc(title) + ' <span class="cnt">(' + days.length + ')</span></button>' +
+      (isUpcoming && ed ? '<button type="button" class="plusbtn" data-act="js-addday" aria-label="' + esc(L('jsAddDay')) + '" title="' + esc(L('jsAddDay')) + '"><span>+</span></button>' : '') +
+      (!isUpcoming && days.length ? '<button type="button" class="ccdots" data-act="js-print-past" title="' + esc(L('jsPrint')) + '" aria-label="' + esc(L('jsPrint')) + '">' + ICON.print + '</button>' : '') +
       jsFoldBtn(key, folded, title, false) + '</div>';
     if (!folded) {
       html += '<div class="ccbody">';
@@ -2311,7 +2325,7 @@
 
   function jsSub(key, title, body) {
     var folded = !!S.jsFold[key];
-    return '<div class="jssub"><div class="jssh"><button class="jsst" data-act="js-fold" data-id="' + esc(key) + '" aria-expanded="' + !folded + '">' + title + '</button>' +
+    return '<div class="jssub"><div class="jssh"><button type="button" class="jsst" data-act="js-fold" data-id="' + esc(key) + '" aria-expanded="' + !folded + '">' + title + '</button>' +
       jsFoldBtn(key, folded, title, true) + '</div>' + (folded ? '' : '<div class="jssb">' + body + '</div>') + '</div>';
   }
 
@@ -2342,7 +2356,7 @@
     var label = (isUpcoming ? fullDateIso(d.day) : monthYear(d.day)) + (d.name ? ' (' + esc(d.name) + ')' : '');
     var h = '<div class="ccday"><div class="ccdh">' +
       (isUpcoming && ed ? '<input type="checkbox" class="ccck" data-jsactive="' + esc(d.id) + '"' + (d.active !== false ? ' checked' : '') + ' aria-label="' + esc(label + ': ' + L('ccActive')) + '" title="' + esc(L('jsVisibleHint')) + '">' : '') +
-      '<button class="ccdt" data-act="js-fold" data-id="' + esc(d.id) + '" aria-expanded="' + !df + '"><b>' + label + '</b></button>' +
+      '<button type="button" class="ccdt" data-act="js-fold" data-id="' + esc(d.id) + '" aria-expanded="' + !df + '"><b>' + label + '</b></button>' +
       (ed ? jsDots('day', d.id, label) : '') + jsFoldBtn(d.id, df, label, true) + '</div>';
     if (df) return h + '</div>';
 
@@ -2459,8 +2473,7 @@
       body = '<p class="cck">' + L('jsParticipants') + '</p><h3>' + esc(L('jsPick', { n: st.slot })) + '</h3>' +
         '<input class="input" name="q" placeholder="' + esc(L('ccSearch')) + '" autocomplete="off" value="' + esc(st.q || '') + '">' +
         '<div class="ccplist" id="jsplist"></div>' +
-        '<span class="cclabel">' + L('ccOtherPerson') + '</span>' +
-        '<div class="ccother"><input class="input" name="other" autocomplete="off" value="' + esc(curFree) + '"><button type="button" class="btn ghost inline" data-jsa="other">' + (curFree ? L('ccChange') : L('ccAdd')) + '</button></div>' +
+
         (cur ? btn('clear', ICON.trash, L('jsClear'), 'del') : '') +
         '<button type="button" class="ccact close" data-jsa="close">' + L('ccClose') + '</button>';
     }
@@ -2679,8 +2692,8 @@
           '<h3 id="dlgT">' + esc(title) + '</h3>' +
           '<p id="dlgM">' + esc(message) + '</p>' +
           '<div class="dlgbtns">' +
-            '<button class="btn ghost inline" data-dlg="0">' + L('dismiss') + '</button>' +
-            '<button class="btn inline' + (danger ? ' dangerbtn' : '') + '" data-dlg="1">' + L('ok') + '</button>' +
+            '<button type="button" class="btn ghost inline" data-dlg="0">' + L('dismiss') + '</button>' +
+            '<button type="button" class="btn inline' + (danger ? ' dangerbtn' : '') + '" data-dlg="1">' + L('ok') + '</button>' +
           '</div>' +
         '</div>';
       var done = function (v) {
