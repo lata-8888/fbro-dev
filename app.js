@@ -2125,7 +2125,7 @@
     var HDR_H2 = 5.5;  // zweite Kopfzeile (Nummer)
     var HDR_H = HDR_H1 + HDR_H2;
     var FS = 6.5;     // Schriftgrösse in Zellen
-    function cellTextY(midY) { return midY + FS * 0.264; }
+    function cellTextY(midY) { return midY + FS * 0.132; }
 
     function drawCell(cx, cy, pts2) {
       var midY = cy + ROW_H / 2;
@@ -2174,8 +2174,8 @@
 
       // Rang + Spieler-Header
       doc.setTextColor.apply(doc, WHITE); doc.setFont('helvetica', 'bold'); doc.setFontSize(6);
-      doc.text('#', M + RANK_COL / 2, yy + HDR_H1 + HDR_H2 / 2 + 6 * 0.264, { align: 'center' });
-      doc.text('Spieler', M + RANK_COL + 2, yy + HDR_H1 + HDR_H2 / 2 + 6 * 0.264);
+      doc.text('#', M + RANK_COL / 2, yy + HDR_H1 + HDR_H2 / 2 + 6 * 0.132, { align: 'center' });
+      doc.text('Spieler', M + RANK_COL + 2, yy + HDR_H1 + HDR_H2 / 2 + 6 * 0.132);
 
       // Runden-Spalten: Zeile 1 = «Runde X», Zeile 2 = Jahr/Kurzname
       rounds.forEach(function (d, ci) {
@@ -2183,11 +2183,11 @@
         // Zeile 1: Rundenname (z. B. «Runde 36»)
         var lbl1 = d.name ? d.name.split(' ')[0] : 'Runde';
         doc.setFontSize(6.5); doc.setFont('helvetica', 'bold');
-        doc.text(lbl1, cx, yy + HDR_H1 / 2 + 6.5 * 0.264, { align: 'center', maxWidth: COL - 0.5 });
+        doc.text(lbl1, cx, yy + HDR_H1 / 2 + 6.5 * 0.132, { align: 'center', maxWidth: COL - 0.5 });
         // Zeile 2: Nummer oder Jahr
         var lbl2 = d.name ? (d.name.split(' ')[1] || '') : monthYear(d.day).split(' ')[1] || '';
         doc.setFontSize(6.5); doc.setFont('helvetica', 'bold');
-        doc.text(lbl2, cx, yy + HDR_H1 + HDR_H2 / 2 + 6.5 * 0.264, { align: 'center', maxWidth: COL - 0.5 });
+        doc.text(lbl2, cx, yy + HDR_H1 + HDR_H2 / 2 + 6.5 * 0.132, { align: 'center', maxWidth: COL - 0.5 });
         // Trennlinie
         doc.line(M + RANK_COL + NAME_COL + ci * COL, yy, M + RANK_COL + NAME_COL + ci * COL, yy + HDR_H);
       });
@@ -2195,9 +2195,9 @@
       // Total-Header
       var tx = M + RANK_COL + NAME_COL + nRounds * COL + TOTAL_COL / 2;
       doc.setFontSize(6.5); doc.setFont('helvetica', 'bold');
-      doc.text('Total', tx, yy + HDR_H1 / 2 + 6.5 * 0.264, { align: 'center' });
+      doc.text('Total', tx, yy + HDR_H1 / 2 + 6.5 * 0.132, { align: 'center' });
       doc.setFontSize(6.5); doc.setFont('helvetica', 'bold');
-      doc.text('Pkt', tx, yy + HDR_H1 + HDR_H2 / 2 + 6.5 * 0.264, { align: 'center' });
+      doc.text('Pkt', tx, yy + HDR_H1 + HDR_H2 / 2 + 6.5 * 0.132, { align: 'center' });
     }
 
     drawHeader();
@@ -2225,7 +2225,7 @@
 
       // Rang
       doc.setTextColor.apply(doc, [130, 138, 148]); doc.setFont('helvetica', 'normal'); doc.setFontSize(6);
-      doc.text(String(pl.rank), M + RANK_COL / 2, midY + 6 * 0.264, { align: 'center' });
+      doc.text(String(pl.rank), M + RANK_COL / 2, midY + 6 * 0.132, { align: 'center' });
 
       // Trennlinie Rang/Name
       doc.setDrawColor.apply(doc, LINE); doc.setLineWidth(0.2);
@@ -2234,7 +2234,7 @@
       // Spielername
       doc.setTextColor.apply(doc, INK);
       doc.setFont('helvetica', 'normal'); doc.setFontSize(7);
-      doc.text(pl.name, M + RANK_COL + 2, midY + 7 * 0.264, { maxWidth: NAME_COL - 3 });
+      doc.text(pl.name, M + RANK_COL + 2, midY + 7 * 0.132, { maxWidth: NAME_COL - 3 });
 
       // Trennlinie Name/Runden
       doc.setLineWidth(0.2);
@@ -2253,7 +2253,7 @@
           drawCell(cx, y, pts2);
         } else {
           doc.setTextColor.apply(doc, LINE); doc.setFont('helvetica', 'normal'); doc.setFontSize(6);
-          doc.text('–', cx, midY + FS * 0.264, { align: 'center' });
+          doc.text('–', cx, midY + FS * 0.132, { align: 'center' });
         }
         doc.setDrawColor.apply(doc, LINE); doc.setLineWidth(0.1);
         doc.line(M + RANK_COL + NAME_COL + (ci + 1) * COL, y, M + RANK_COL + NAME_COL + (ci + 1) * COL, y + ROW_H);
@@ -2261,7 +2261,7 @@
 
       // Total
       doc.setFont('helvetica', 'bold'); doc.setFontSize(7.5); doc.setTextColor.apply(doc, BLUE);
-      doc.text(String(pl.total), M + RANK_COL + NAME_COL + nRounds * COL + TOTAL_COL / 2, midY + 7.5 * 0.264, { align: 'center' });
+      doc.text(String(pl.total), M + RANK_COL + NAME_COL + nRounds * COL + TOTAL_COL / 2, midY + 7.5 * 0.132, { align: 'center' });
       y += ROW_H;
     });
 
