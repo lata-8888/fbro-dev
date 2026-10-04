@@ -1005,9 +1005,8 @@
         '</div>' +
         (isOpen ? whoBlock([
           { label: L('hYes', { n: yes.length }), arr: yes },
-          { label: L('hNo', { n: no.length }), arr: no },
-          { label: L('hOpen', { n: open.length }), arr: open }
-        ]) : '') +
+          { label: L('hNo', { n: no.length }), arr: no }
+        ].concat(S.me.isGuest ? [] : [{ label: L('hOpen', { n: open.length }), arr: open }])) : '') +
       '</div>' +
     '</article>';
   }
@@ -2111,34 +2110,26 @@
     var HDR_H1 = 5.5;  // erste Kopfzeile (Runde/Titel)
     var HDR_H2 = 5.5;  // zweite Kopfzeile (Nummer)
     var HDR_H = HDR_H1 + HDR_H2;
-    var R = 2.6;      // Kreis-Radius mittel (Variante C)
     var FS = 6.5;     // Schriftgrösse in Zellen
-    // jsPDF positioniert Text an der Baseline; vertikales Zentrum = midY + FS*0.35
-    // damit die Zahl optisch genau im Kreismittelpunkt sitzt.
     function cellTextY(midY) { return midY + FS * 0.35; }
 
-    function drawCell(cx, cy, pts2, rowBg) {
+    function drawCell(cx, cy, pts2) {
       var midY = cy + ROW_H / 2;
       var ty = cellTextY(midY);
       if (pts2 === 32) {
-        doc.setFillColor.apply(doc, GOLD_FILL);
-        doc.setDrawColor.apply(doc, [160, 120, 10]);
-        doc.setLineWidth(0.15); doc.circle(cx, midY, R, 'FD');
-        doc.setTextColor.apply(doc, WHITE); doc.setFont('helvetica', 'bold'); doc.setFontSize(FS);
-        doc.text('32', cx, ty, { align: 'center' });
+        // Schwarz, fett, in Klammern
+        doc.setTextColor.apply(doc, [0, 0, 0]); doc.setFont('helvetica', 'bold'); doc.setFontSize(FS);
+        doc.text('(' + pts2 + ')', cx, ty, { align: 'center' });
       } else if (pts2 === 28) {
-        doc.setFillColor.apply(doc, SILVER);
-        doc.setDrawColor.apply(doc, [90, 97, 105]);
-        doc.setLineWidth(0.15); doc.circle(cx, midY, R, 'FD');
-        doc.setTextColor.apply(doc, WHITE); doc.setFont('helvetica', 'normal'); doc.setFontSize(FS);
-        doc.text('28', cx, ty, { align: 'center' });
+        // Schwarz, normal, in Klammern
+        doc.setTextColor.apply(doc, [0, 0, 0]); doc.setFont('helvetica', 'normal'); doc.setFontSize(FS);
+        doc.text('(' + pts2 + ')', cx, ty, { align: 'center' });
       } else if (pts2 === 24) {
-        doc.setFillColor.apply(doc, rowBg);
-        doc.setDrawColor.apply(doc, BLUE);
-        doc.setLineWidth(0.3); doc.circle(cx, midY, R, 'FD');
-        doc.setTextColor.apply(doc, BLUE); doc.setFont('helvetica', 'normal'); doc.setFontSize(FS);
-        doc.text('24', cx, ty, { align: 'center' });
+        // Dunkelblau, normal, in Klammern
+        doc.setTextColor.apply(doc, INK); doc.setFont('helvetica', 'normal'); doc.setFontSize(FS);
+        doc.text('(' + pts2 + ')', cx, ty, { align: 'center' });
       } else {
+        // 4–20: dunkelblau, normal, ohne Klammern
         doc.setTextColor.apply(doc, INK); doc.setFont('helvetica', 'normal'); doc.setFontSize(FS);
         doc.text(String(pts2), cx, ty, { align: 'center' });
       }
@@ -2245,7 +2236,7 @@
         var cx = M + RANK_COL + NAME_COL + ci * COL + COL / 2;
         if (pts2 != null) {
           rowTotal += pts2;
-          drawCell(cx, y, pts2, bg);
+          drawCell(cx, y, pts2);
         } else {
           doc.setTextColor.apply(doc, LINE); doc.setFont('helvetica', 'normal'); doc.setFontSize(6);
           doc.text('–', cx, midY + FS * 0.35, { align: 'center' });
@@ -2260,20 +2251,6 @@
       y += ROW_H;
     });
 
-    // Total-Zeile
-    y += 0.5;
-    doc.setFillColor.apply(doc, BLUE_DARK); doc.rect(M, y, tableW, ROW_H, 'F');
-    doc.setTextColor.apply(doc, WHITE); doc.setFontSize(7); doc.setFont('helvetica', 'bold');
-    doc.text('Total', M + RANK_COL + 2, y + ROW_H / 2 + 7 * 0.35);
-    rounds.forEach(function (d, ci) {
-      var entries = jsEternalEntries(d, map);
-      // Nur Spieler die im PDF sind
-      var col_total = entries.filter(function (e) { return players.some(function (p) { return p.key === e.key; }); })
-                             .reduce(function (s, e) { return s + e.points; }, 0);
-      doc.text(String(col_total), M + RANK_COL + NAME_COL + ci * COL + COL / 2, y + ROW_H / 2 + 7 * 0.35, { align: 'center' });
-    });
-    var grandTotal = players.reduce(function (s, p) { return s + p.total; }, 0);
-    doc.text(String(grandTotal), M + RANK_COL + NAME_COL + nRounds * COL + TOTAL_COL / 2, y + ROW_H / 2 + 7 * 0.35, { align: 'center' });
     drawFooter(page);
 
     // Teilen/Speichern
