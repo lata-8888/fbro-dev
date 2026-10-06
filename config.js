@@ -4,7 +4,7 @@
 // Den «service_role»-Schlüssel darfst du hier NIE eintragen.
 window.APP_CONFIG = {
   SUPABASE_URL: 'https://DEIN-PROJEKT.supabase.co',
-  SUPABASE_ANON_KEY: 'DEIN-ANON-PUBLIC-KEY',
+  SUPABASE_ANON_KEY: 'sb_publishable_jS6Y5gm1rWMUVawF_PyFSQ_U8Y8AAiX',
 
   // Kurzname für die Titel «FBRO-Trainings» und «FBRO-Events»
   CLUB_SHORT: 'FBRO',
