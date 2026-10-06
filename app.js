@@ -3181,6 +3181,17 @@
       }
     }
 
+    /* Training absagen / reaktivieren (nur Admin) */
+    if (act_ === 'cancel') {
+      if (!S.me || !S.me.isAdmin) return;
+      var off = !!S.cancelled[D.key];
+      if (off) {
+        return act(function () { return sb.from('training_cancellations').delete().eq('training_key', D.key); }, L('trReactivated'));
+      } else {
+        return act(function () { return sb.from('training_cancellations').insert({ training_key: D.key }); }, L('trCancelledMsg'));
+      }
+    }
+
     /* Admin-Aktionen */
     if (!S.me || !S.me.isAdmin) return;
     if (act_ === 'del-rule') {
