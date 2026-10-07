@@ -31,6 +31,13 @@ alter table public.profiles add constraint profiles_language_check
 -- Gast = false bedeutet Mitglied (Krone). Admin und Event-Manager können nur Mitglieder sein.
 alter table public.profiles add column if not exists is_guest boolean not null default false;
 alter table public.profiles add column if not exists is_event_manager boolean not null default false;
+alter table public.profiles add column if not exists is_passive boolean not null default false;
+alter table public.profiles add column if not exists is_supporter boolean not null default false;
+alter table public.profiles add column if not exists is_chilbi_manager boolean not null default false;
+alter table public.profiles add column if not exists is_chraenzli_manager boolean not null default false;
+alter table public.profiles add column if not exists is_jass_master boolean not null default false;
+alter table public.profiles add column if not exists is_candidate boolean not null default false;
+alter table public.profiles add column if not exists theme text;
 update public.profiles set is_admin = false, is_event_manager = false where is_guest;
 alter table public.profiles drop constraint if exists profiles_roles_check;
 alter table public.profiles add constraint profiles_roles_check
