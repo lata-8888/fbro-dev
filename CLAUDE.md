@@ -7,7 +7,7 @@
 | **GitHub** | `lata-8888/fbro-dev` | `fbro-8942/fbro-app` |
 | **Supabase** | `hshchitgcweewnantxbs` | `dpiewpccucadlrtogvhh` |
 | **Region** | eu-central-1 | eu-central-2 (Zürich) |
-| **Status** | ✅ läuft | ⚠️ Schema + Migration ausstehend |
+| **Status** | ✅ läuft | ⚠️ Login ✅, Daten (Trainings/Events/Jass) ausstehend |
 | **GitHub Pages** | `lata-8888.github.io/fbro-dev/` | `fbro-8942.github.io/fbro-app/` |
 
 **Regel:** Änderungen immer zuerst in DEV testen, dann in PRD deployen.
