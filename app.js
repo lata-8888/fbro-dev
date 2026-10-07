@@ -941,7 +941,7 @@
 
   function viewCandidate() {
     return '<div class="login candidatescreen">' +
-      '<img class="loginlogo" src="logo.png" alt="' + esc(cfg.CLUB_NAME || 'FBRO') + '">' +
+      '<img class="loginlogo" src="icons/logo.png" alt="' + esc(cfg.CLUB_NAME || 'FBRO') + '">' +
       '<p class="lead">' + L('candidateTitle') + '</p>' +
       '<p class="lead">' + L('candidateMsg') + '</p></div>';
   }
@@ -950,7 +950,7 @@
     var reg = S.mode === 'register';
     var needCode = reg && cfg.CLUB_CODE_REQUIRED !== false;
     return '<div class="login"><div class="loginhead"><h1>' + esc(cfg.CLUB_NAME || 'Training') + '<br>' + L('loginSub') + '</h1>' +
-      '<img class="loginlogo" src="logo.png" alt="' + esc(cfg.CLUB_NAME || 'FBRO') + '"></div>' +
+      '<img class="loginlogo" src="icons/logo.png" alt="' + esc(cfg.CLUB_NAME || 'FBRO') + '"></div>' +
       '<p class="lead">' + (reg ? L('loginLeadReg') : L('loginLead')) + '</p>' +
       '<form data-form="auth">' +
       (reg ? fld(L('fullName'), '<input class="input" name="name" autocomplete="name" required>') : '') +
@@ -1452,7 +1452,7 @@
   async function ensureLogoDataUrl() {
     if (LOGO_DATAURL) return LOGO_DATAURL;
     try {
-      var resp = await fetch('logo.png');
+      var resp = await fetch('icons/logo.png');
       var blob = await resp.blob();
       LOGO_DATAURL = await new Promise(function (res, rej) {
         var fr = new FileReader();
