@@ -5,7 +5,7 @@
 | | DEV | PRD |
 |---|---|---|
 | **GitHub** | `lata-8888/fbro-dev` | `fbro-8942/fbro-app` |
-| **Supabase** | `hshchitgcweewnantxbs` | `airdfxpnqjwffazrsgyy` |
+| **Supabase** | `hshchitgcweewnantxbs` | `nffukybibuanokdyeehc` |
 | **Region** | eu-central-1 | — |
 | **Status** | ✅ läuft | ⚠️ NULL-Fix ausstehend |
 | **GitHub Pages** | `lata-8888.github.io/fbro-dev/` | `fbro-8942.github.io/fbro-app/` |
@@ -63,7 +63,7 @@ Muss viele Zeilen zurückgeben. Nur 4 (uid, role, email, jwt) = NULL-Problem →
 | `supabase/schema.sql` | Aktuelles vollständiges Schema (898 Zeilen) |
 
 ## Migration
-- `fbro_migration_v4.sql`: Alle 44 Mitglieder mit `auth.users` + `auth.identities` + `profiles`
+- `fbro_migration_v4.sql`: Alle 45 Mitglieder mit `auth.users` + `auth.identities` + `profiles`
 
 ## Libraries
 - `@supabase/supabase-js@2.45.4` (via CDN)
@@ -73,6 +73,5 @@ Muss viele Zeilen zurückgeben. Nur 4 (uid, role, email, jwt) = NULL-Problem →
 - `ppnapfnsikwgkgvjcsdi` (eu-central-2, Zürich) — leer, bereit für Notfall
 
 ## Offene Aufgaben
-- [ ] NULL-Fix auf PRD Supabase `airdfxpnqjwffazrsgyy` anwenden
+- [ ] NULL-Fix auf PRD Supabase `nffukybibuanokdyeehc` anwenden
 - [ ] PRD Login testen
-- [ ] GitHub App Berechtigung für DEV (`lata-8888/fbro-dev`) aktualisieren → Claude kann dann direkt pushen
