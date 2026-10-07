@@ -72,7 +72,7 @@
       setupStep3: 'Lade die Seite neu.', setupNote: 'Die genaue Anleitung steht in der Datei README.md.',
       loading: 'Lade …',
       errFailed: 'Das hat nicht geklappt', respWithdrawn: 'Antwort zurückgezogen', youIn: 'Du bist dabei', youOut: 'Du bist nicht dabei', youSolo: 'Du kommst allein', youDuo: 'Du kommst zu zweit',
-      phoneInvalid: 'Bitte gib eine gültige Handynummer ein, z. B. 079 123 45 67.', alreadyReg: 'Diese Nummer ist schon registriert.',
+      phoneCountry: 'Land', phoneOther: 'Andere (+…)', phoneInvalid: 'Bitte gib eine gültige Handynummer ein, z. B. 079 123 45 67.', alreadyReg: 'Diese Nummer ist schon registriert.',
       memberAdded: '{name} wurde hinzugefügt.', addFailed: 'Hinzufügen nicht möglich: {reason}', unknownError: 'Unbekannter Fehler',
       authInvalid: 'Handynummer oder PIN stimmt nicht. Falls du deinen PIN geändert hast, trage ihn im Feld PIN ein.',
       authAlready: 'Diese Nummer ist bereits registriert. Bitte melde dich an.', authCode: 'Registrierung nicht möglich. Bitte prüfe den Vereinscode.',
@@ -147,7 +147,7 @@
       setupStep3: 'Recharge la page.', setupNote: 'Les instructions détaillées se trouvent dans le fichier README.md.',
       loading: 'Chargement …',
       errFailed: 'Cela n’a pas fonctionné', respWithdrawn: 'Réponse retirée', youIn: 'Tu es présent(e)', youOut: 'Tu es absent(e)', youSolo: 'Tu viens seul(e)', youDuo: 'Tu viens à deux',
-      phoneInvalid: 'Saisis un numéro de mobile valide, p. ex. 079 123 45 67.', alreadyReg: 'Ce numéro est déjà enregistré.',
+      phoneCountry: 'Pays', phoneOther: 'Autre (+…)', phoneInvalid: 'Saisis un numéro de mobile valide, p. ex. 079 123 45 67.', alreadyReg: 'Ce numéro est déjà enregistré.',
       memberAdded: '{name} a été ajouté(e).', addFailed: 'Ajout impossible : {reason}', unknownError: 'Erreur inconnue',
       authInvalid: 'Numéro de mobile ou PIN incorrect. Si tu as modifié ton PIN, saisis-le dans le champ PIN.',
       authAlready: 'Ce numéro est déjà enregistré. Connecte-toi.', authCode: 'Inscription impossible. Vérifie le code du club.',
@@ -222,7 +222,7 @@
       setupStep3: 'Reload the page.', setupNote: 'Detailed instructions are in the file README.md.',
       loading: 'Loading …',
       errFailed: 'That did not work', respWithdrawn: 'Reply withdrawn', youIn: 'You are attending', youOut: 'You are not attending', youSolo: 'You are coming alone', youDuo: 'You are coming as a pair',
-      phoneInvalid: 'Please enter a valid mobile number, e.g. 079 123 45 67.', alreadyReg: 'This number is already registered.',
+      phoneCountry: 'Country', phoneOther: 'Other (+…)', phoneInvalid: 'Please enter a valid mobile number, e.g. 079 123 45 67.', alreadyReg: 'This number is already registered.',
       memberAdded: '{name} has been added.', addFailed: 'Could not add: {reason}', unknownError: 'Unknown error',
       authInvalid: 'Mobile number or PIN is incorrect. If you changed your PIN, enter it in the PIN field.',
       authAlready: 'This number is already registered. Please sign in.', authCode: 'Registration not possible. Please check the club code.',
@@ -297,7 +297,7 @@
       setupStep3: 'Ricarica la pagina.', setupNote: 'Le istruzioni dettagliate si trovano nel file README.md.',
       loading: 'Caricamento …',
       errFailed: 'Non ha funzionato', respWithdrawn: 'Risposta ritirata', youIn: 'Sei presente', youOut: 'Sei assente', youSolo: 'Vieni da solo/a', youDuo: 'Vieni in due',
-      phoneInvalid: 'Inserisci un numero di cellulare valido, ad es. 079 123 45 67.', alreadyReg: 'Questo numero è già registrato.',
+      phoneCountry: 'Paese', phoneOther: 'Altro (+…)', phoneInvalid: 'Inserisci un numero di cellulare valido, ad es. 079 123 45 67.', alreadyReg: 'Questo numero è già registrato.',
       memberAdded: '{name} è stato aggiunto.', addFailed: 'Impossibile aggiungere: {reason}', unknownError: 'Errore sconosciuto',
       authInvalid: 'Numero di cellulare o PIN errato. Se hai cambiato il PIN, inseriscilo nel campo PIN.',
       authAlready: 'Questo numero è già registrato. Effettua l’accesso.', authCode: 'Registrazione non possibile. Controlla il codice del club.',
@@ -372,7 +372,7 @@
       setupStep3: 'Lad d Site neu.', setupNote: 'D genau Aaleitig staht i de Datei README.md.',
       loading: 'Am Lade …',
       errFailed: 'Das hät nöd klappt', respWithdrawn: 'Antwort zruggzoge', youIn: 'Du bisch debii', youOut: 'Du bisch nöd debii', youSolo: 'Du chunsch elei', youDuo: 'Du chunsch zu zwöit',
-      phoneInvalid: 'Bitte gib e gültigi Handynummere ii, z. B. 079 123 45 67.', alreadyReg: 'Die Nummere isch scho registriert.',
+      phoneCountry: 'Land', phoneOther: 'Anderi (+…)', phoneInvalid: 'Bitte gib e gültigi Handynummere ii, z. B. 079 123 45 67.', alreadyReg: 'Die Nummere isch scho registriert.',
       memberAdded: '{name} isch hinzuegfüegt worde.', addFailed: 'Hinzuefüege nöd möglich: {reason}', unknownError: 'Unbekannte Fähler',
       authInvalid: 'Handynummere oder PIN stimmt nöd. Wenn du din PIN gänderet hesch, träg en im Fäld PIN ii.',
       authAlready: 'Die Nummere isch scho registriert. Bitte mäld di aa.', authCode: 'Registrierig nöd möglich. Bitte prüef de Vereinscode.',
@@ -448,7 +448,7 @@
       setupStep3: 'Оновіть сторінку.', setupNote: 'Детальна інструкція є у файлі README.md.',
       loading: 'Завантаження …',
       errFailed: 'Не вдалося', respWithdrawn: 'Відповідь скасовано', youIn: 'Ви будете', youOut: 'Ви не будете', youSolo: 'Ви прийдете самі', youDuo: 'Ви прийдете удвох',
-      phoneInvalid: 'Введіть дійсний номер мобільного, напр. 079 123 45 67.', alreadyReg: 'Цей номер уже зареєстровано.',
+      phoneCountry: 'Країна', phoneOther: 'Інша (+…)', phoneInvalid: 'Введіть дійсний номер мобільного, напр. 079 123 45 67.', alreadyReg: 'Цей номер уже зареєстровано.',
       memberAdded: '{name} додано.', addFailed: 'Не вдалося додати: {reason}', unknownError: 'Невідома помилка',
       authInvalid: 'Номер мобільного або PIN неправильні. Якщо ви змінювали PIN, введіть його в полі PIN.',
       authAlready: 'Цей номер уже зареєстровано. Будь ласка, увійдіть.', authCode: 'Реєстрація неможлива. Перевірте код клубу.',
@@ -523,7 +523,7 @@
       setupStep3: 'Lad d Seitn neu.', setupNote: 'De genaue Anleitung steht in da Datei README.md.',
       loading: 'Lädt …',
       errFailed: 'Des hod ned gfunktioniert', respWithdrawn: 'Antwort zruckzogn', youIn: 'Du bist dabei', youOut: 'Du bist ned dabei', youSolo: 'Du kimmst alloa', youDuo: 'Du kimmst zu zweit',
-      phoneInvalid: 'Bitte gib a gültige Handynummer ei, z. B. 079 123 45 67.', alreadyReg: 'De Nummer is scho registriert.',
+      phoneCountry: 'Land', phoneOther: 'Andere (+…)', phoneInvalid: 'Bitte gib a gültige Handynummer ei, z. B. 079 123 45 67.', alreadyReg: 'De Nummer is scho registriert.',
       memberAdded: '{name} is dazuakemma.', addFailed: 'Dazuadoa ned möglich: {reason}', unknownError: 'Unbekannter Fehler',
       authInvalid: 'Handynummer oder PIN stimmt ned. Wennst dein PIN gändert host, trag eam im Feld PIN ei.',
       authAlready: 'De Nummer is scho registriert. Bitte meld di o.', authCode: 'Registrierung ned möglich. Bitte prüf den Vereinscode.',
@@ -656,20 +656,51 @@
   // Anzeige: Schweizer Nummern immer als 079 123 45 67
   function fmtPhone(p) {
     if (/^\+41\d{9}$/.test(p)) return '0' + p.slice(3, 5) + ' ' + p.slice(5, 8) + ' ' + p.slice(8, 10) + ' ' + p.slice(10);
+    if (/^\+49\d{10,11}$/.test(p)) return '+49 ' + p.slice(3, 6) + ' ' + p.slice(6);
     return p;
   }
-  // Formatierung während der Eingabe im Feld
-  function formatPhoneTyping(raw) {
-    var v = String(raw).replace(/\(0\)/g, '').replace(/[^\d+]/g, '');
-    if (v.indexOf('+41') === 0) v = '0' + v.slice(3);
-    else if (v.indexOf('0041') === 0) v = '0' + v.slice(4);
-    if (v.charAt(0) === '0' && v.charAt(1) !== '0') {
-      var d = v.replace(/\D/g, '').slice(0, 10);
-      return [d.slice(0, 3), d.slice(3, 6), d.slice(6, 8), d.slice(8, 10)].filter(Boolean).join(' ');
-    }
-    return v;
-  }
   function defaultPin(p) { return String(p).replace(/\D/g, '').slice(-6); }
+
+  /* Handynummer-Eingabe: Länderauswahl (CH/DE/Andere) + Nummer ohne führende Null.
+     Gespeichert wird weiterhin das internationale Format (+41791234567). */
+  var PHONE_CC = [{ c: '41', l: 'CH +41', ph: '79 123 45 67' }, { c: '49', l: 'DE +49', ph: '176 12345678' }];
+  function ccInfo(c) { return PHONE_CC.filter(function (x) { return x.c === c; })[0] || null; }
+  function fmtNational(cc, n) {
+    n = String(n).replace(/\D/g, '');
+    if (cc === '41') return [n.slice(0, 2), n.slice(2, 5), n.slice(5, 7), n.slice(7, 9)].filter(Boolean).join(' ');
+    if (cc === '49') return [n.slice(0, 3), n.slice(3)].filter(Boolean).join(' ');
+    return n;
+  }
+  // '+41796232345' → { cc: '41', nat: '79 623 23 45' }; unbekanntes Land → { cc: '', nat: '+43…' }
+  function phoneParts(intl) {
+    var raw = String(intl || '');
+    var d = raw.replace(/\D/g, '');
+    if (/^\+\d/.test(raw.replace(/\s/g, ''))) {
+      for (var i = 0; i < PHONE_CC.length; i++) {
+        if (d.indexOf(PHONE_CC[i].c) === 0) return { cc: PHONE_CC[i].c, nat: fmtNational(PHONE_CC[i].c, d.slice(PHONE_CC[i].c.length)) };
+      }
+      return { cc: '', nat: raw.replace(/\s/g, '') };
+    }
+    return { cc: '41', nat: fmtNational('41', d.replace(/^0+/, '')) };
+  }
+  // Länderwahl + Eingabe → Nummer für normPhone(). Eine vollständig internationale Eingabe (+… / 00…) gilt immer.
+  function composePhone(cc, raw) {
+    raw = String(raw || '').trim();
+    if (/^(\+|00)/.test(raw.replace(/\s/g, ''))) return raw;
+    if (!cc) return raw;
+    var d = raw.replace(/\(0\)/g, '').replace(/\D/g, '');
+    if (cc === '41' && d.length === 11 && d.indexOf('41') === 0) d = d.slice(2);   // «41 79 …» ohne +
+    d = d.replace(/^0+/, '');
+    return d ? '+' + cc + d : '';
+  }
+  function phoneField(intl, autoc) {
+    var pp = phoneParts(intl), info = ccInfo(pp.cc);
+    return '<div class="phonerow">' +
+      '<select class="input phonecc" name="phonecc" aria-label="' + esc(L('phoneCountry')) + '">' +
+      PHONE_CC.map(function (x) { return '<option value="' + x.c + '"' + (pp.cc === x.c ? ' selected' : '') + '>' + x.l + '</option>'; }).join('') +
+      '<option value=""' + (pp.cc === '' ? ' selected' : '') + '>' + esc(L('phoneOther')) + '</option></select>' +
+      '<input class="input" name="phone" type="tel" inputmode="tel" autocomplete="' + (autoc || 'off') + '" placeholder="' + esc(info ? info.ph : '+43 …') + '" value="' + esc(pp.nat) + '" required></div>';
+  }
   function phoneToEmail(p) { return p.replace('+', '') + '@' + (cfg.EMAIL_DOMAIN || 'phone-login.app'); }
 
   /* ---------- Zustand ---------- */
@@ -954,7 +985,7 @@
       '<p class="lead">' + (reg ? L('loginLeadReg') : L('loginLead')) + '</p>' +
       '<form data-form="auth">' +
       (reg ? fld(L('fullName'), '<input class="input" name="name" autocomplete="name" required>') : '') +
-      fld(L('phone'), '<input class="input" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="079 123 45 67" value="' + esc(S.phone) + '" required>') +
+      fld(L('phone'), phoneField(S.phone, 'tel')) +
       (reg ? '' : fld(L('pinOptional'), '<input class="input pin" name="pin" type="password" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="current-password" placeholder="······">')) +
       (needCode ? fld(L('clubCode'), '<input class="input" name="code" autocomplete="off" required>') : '') +
       (S.err ? '<p class="err">' + esc(S.err) + '</p>' : '') +
@@ -1222,7 +1253,7 @@
     if (S.add.members) {
       b += '<form class="addform" data-form="member"><h3 style="margin-bottom:10px">' + L('memberAdd') + '</h3>' +
         fld(L('fullName'), '<input class="input" name="name" autocomplete="off" required>') +
-        fld(L('phone'), '<input class="input" name="phone" type="tel" inputmode="tel" autocomplete="off" placeholder="079 123 45 67" required>') +
+        fld(L('phone'), phoneField('')) +
         '<p class="small muted" style="margin:-4px 0 12px">' + L('memberAddNote') + '</p>' +
         '<label class="check"><input type="checkbox" name="guest" value="1"><span>' + L('guestCheck') + '</span></label>' +
         '<button class="btn" type="submit">' + L('memberAdd') + '</button></form>';
@@ -1745,7 +1776,7 @@
     return '<p class="cck">' + L('ccOthers') + '</p><h3>' + esc(name) + '</h3><p class="ccnote" style="margin-top:0">' + L('ccNotInApp', { name: name }) + '</p>' +
       '<form data-ccform="guest" novalidate>' +
       fld(L('fullName'), '<input class="input" name="name" value="' + esc(name) + '" required>') +
-      fld(L('phone'), '<input class="input" name="phone" type="tel" inputmode="tel" autocomplete="off" placeholder="079 123 45 67" required>') +
+      fld(L('phone'), phoneField('')) +
       ccBtns(L('ccAsGuest')) + '</form>';
   }
 
@@ -1942,7 +1973,7 @@
     if (!st || !f.dataset.ccform) return;
     var kind = f.dataset.ccform;
     var fd = new FormData(f);
-    var g = function (k) { return String(fd.get(k) || '').trim(); };
+    var g = function (k) { if (k === 'phone' && fd.has('phonecc')) return composePhone(fd.get('phonecc'), fd.get('phone')); return String(fd.get(k) || '').trim(); };
     var o = ccObj(st.lvl, st.id);
     var isNew = st.mode === 'add';
     var ok = false;
@@ -2658,7 +2689,7 @@
       body = '<p class="cck">' + L('mEdit') + '</p><h3>' + esc(m.name) + '</h3>' +
         '<form data-form="member-edit" data-id="' + esc(m.id) + '" novalidate>' +
         fld(L('fullName'), '<input class="input" name="name" value="' + esc(m.name) + '" autocomplete="off" required>') +
-        fld(L('phone'), '<input class="input" name="phone" type="tel" inputmode="tel" autocomplete="off" value="' + esc(fmtPhone(m.phone)) + '" required>') +
+        fld(L('phone'), phoneField(m.phone)) +
         '<p class="ccnote">' + L('mEditNote') + '</p>' +
         '<div class="dlgbtns"><button type="button" class="btn ghost inline" data-mb="close">' + L('dismiss') + '</button><button type="submit" class="btn inline">' + L('save') + '</button></div></form>';
     }
@@ -3248,7 +3279,7 @@
     var f = new FormData(form);
     var kind = form.dataset.form;
     var id = form.dataset.id;
-    var g = function (k) { return String(f.get(k) || '').trim(); };
+    var g = function (k) { if (k === 'phone' && f.has('phonecc')) return composePhone(f.get('phonecc'), f.get('phone')); return String(f.get(k) || '').trim(); };
     var ok;
 
     if (kind === 'auth') return handleAuth(g);
@@ -3330,15 +3361,29 @@
 
   document.addEventListener('input', function (e) {
     var t = e.target;
-    if (!t || t.name !== 'phone' || !t.closest('[data-form="auth"],[data-form="member"],[data-ccform="guest"],[data-form="member-edit"]')) return;
-    var pos = t.selectionStart, atEnd = pos === t.value.length;
-    var before = t.value.slice(0, pos).replace(/\D/g, '').length;
-    var f = formatPhoneTyping(t.value);
-    if (f === t.value) return;
-    t.value = f;
-    if (atEnd) pos = f.length;
-    else { var c = 0; pos = 0; while (pos < f.length && c < before) { if (/\d/.test(f.charAt(pos))) c++; pos++; } }
-    try { t.setSelectionRange(pos, pos); } catch (x) { /* ignorieren */ }
+    if (!t || (t.name !== 'phone' && t.name !== 'phonecc') || !t.closest('[data-form="auth"],[data-form="member"],[data-ccform="guest"],[data-form="member-edit"]')) return;
+    var row = t.closest('.phonerow');
+    if (!row) return;
+    var sel = row.querySelector('select'), inp = row.querySelector('input');
+    var pos = inp.selectionStart, atEnd = pos === inp.value.length;
+    var before = inp.value.slice(0, pos).replace(/\D/g, '').length;
+    var v = inp.value;
+    // Vollständig internationale Eingabe (+49 … / 0041 …): Land automatisch wählen
+    var m = v.replace(/\s/g, '').match(/^(?:\+|00)(\d+)/);
+    if (m) {
+      var hit = PHONE_CC.filter(function (x) { return m[1].indexOf(x.c) === 0; })[0];
+      if (hit) { sel.value = hit.c; v = fmtNational(hit.c, m[1].slice(hit.c.length)); atEnd = true; }
+      else { sel.value = ''; v = '+' + m[1]; }
+    } else if (sel.value) {
+      v = fmtNational(sel.value, v.replace(/\D/g, '').replace(/^0+/, ''));
+    }
+    var info = ccInfo(sel.value);
+    inp.placeholder = info ? info.ph : '+43 …';
+    if (v === inp.value) return;
+    inp.value = v;
+    if (atEnd) pos = v.length;
+    else { var c = 0; pos = 0; while (pos < v.length && c < before) { if (/\d/.test(v.charAt(pos))) c++; pos++; } }
+    try { inp.setSelectionRange(pos, pos); } catch (x) { /* ignorieren */ }
   });
 
   /* ---------- Installation & Start ---------- */

@@ -24,6 +24,7 @@ Kein Build-Schritt — alle Dateien werden direkt ausgeliefert.
 - Synthetic Email: `<phone_digits_ohne_plus>@fbro.app`
   Beispiel: `+41791234567` → `41791234567@fbro.app`
 - PIN = letzte 6 Ziffern der Telefonnummer
+- Nummerneingabe: Länder-Dropdown (CH +41 / DE +49 / Andere) + Nummer ohne führende Null (`phoneField()`, `composePhone()`, `phoneParts()` in app.js). Eine führende 0 und vollständige Eingaben (`+49…`, `0049…`) werden weiterhin akzeptiert. Gespeichert wird immer das internationale Format (`+41…`, `+49…`); Anzeige CH als `079 …`, DE als `+49 176 …`. Neues Land: Eintrag in `PHONE_CC` ergänzen.
 - **`EMAIL_DOMAIN` muss in `config.js` aktiv gesetzt sein** (`EMAIL_DOMAIN: 'fbro.app'`). Die App baut die Login-Adresse in `phoneToEmail()` (app.js) als `<digits>@` + `EMAIL_DOMAIN`, **Fallback ohne Eintrag: `phone-login.app`**. Fehlt der Eintrag, sucht die App `…@phone-login.app`, findet den Migrations-User (`…@fbro.app`) nicht und meldet «Invalid login credentials».
 - Pro Umgebung muss die Domain zu den Adressen in `auth.users` passen. Prüfen: `select email from auth.users limit 5;`
 - Diagnose bei Login-Problem: DevTools → Network → `token?grant_type=password` → Payload → `email` mit `auth.users` vergleichen.
