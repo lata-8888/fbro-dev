@@ -5,9 +5,9 @@
 | | DEV | PRD |
 |---|---|---|
 | **GitHub** | `lata-8888/fbro-dev` | `fbro-8942/fbro-app` |
-| **Supabase** | `hshchitgcweewnantxbs` | `nffukybibuanokdyeehc` |
-| **Region** | eu-central-1 | — |
-| **Status** | ✅ läuft | ⚠️ NULL-Fix ausstehend |
+| **Supabase** | `hshchitgcweewnantxbs` | `dpiewpccucadlrtogvhh` |
+| **Region** | eu-central-1 | eu-central-2 (Zürich) |
+| **Status** | ✅ läuft | ⚠️ Schema + Migration ausstehend |
 | **GitHub Pages** | `lata-8888.github.io/fbro-dev/` | `fbro-8942.github.io/fbro-app/` |
 
 **Regel:** Änderungen immer zuerst in DEV testen, dann in PRD deployen.
@@ -73,5 +73,7 @@ Muss viele Zeilen zurückgeben. Nur 4 (uid, role, email, jwt) = NULL-Problem →
 - `ppnapfnsikwgkgvjcsdi` (eu-central-2, Zürich) — leer, bereit für Notfall
 
 ## Offene Aufgaben
-- [ ] NULL-Fix auf PRD Supabase `nffukybibuanokdyeehc` anwenden
+- [ ] Schema (`supabase/schema.sql`) auf PRD `dpiewpccucadlrtogvhh` ausführen
+- [ ] Migration (`fbro_migration_v4.sql`) auf PRD ausführen
+- [ ] `config.js` in `fbro-8942/fbro-app` mit neuer PRD URL + Anon-Key aktualisieren
 - [ ] PRD Login testen
