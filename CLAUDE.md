@@ -5,7 +5,7 @@ Vanilla JS Single-Page-App für den Verein FBRO. Gehostet auf GitHub Pages, Back
 Kein Build-Schritt — alle Dateien werden direkt ausgeliefert.
 
 ## GitHub Accounts
-- **Dev:** `lata-8888/fbro-app` (dieses Repo)
+- **Dev:** `lata-8888/fbro-dev` (dieses Repo)
 - **Prod:** `fbro-8942/fbro-app`
 
 ## Supabase Projekte
