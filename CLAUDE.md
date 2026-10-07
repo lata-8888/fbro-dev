@@ -7,7 +7,7 @@
 | **GitHub** | `lata-8888/fbro-dev` | `fbro-8942/fbro-app` |
 | **Supabase** | `hshchitgcweewnantxbs` | `dpiewpccucadlrtogvhh` |
 | **Region** | eu-central-1 | eu-central-2 (Zürich) |
-| **Status** | ✅ läuft | ✅ Login läuft, Schema vollständig, Daten werden nachgeladen |
+| **Status** | ✅ läuft | ✅ Login läuft, Schema vollständig; Trainings/Events von Hand, Jass/Chilbi per SQL |
 | **GitHub Pages** | `lata-8888.github.io/fbro-dev/` | `fbro-8942.github.io/fbro-app/` |
 
 **Regel:** Änderungen immer zuerst in DEV testen, dann in PRD deployen.
@@ -89,7 +89,7 @@ Muss viele Zeilen zurückgeben. Nur 4 (uid, role, email, jwt) = NULL-Problem →
 Stand 2026-10-08: `node --check` ok; SW-SHELL-Dateien vorhanden; Manifest ok; alle 13 Tabellen und 13 RPCs aus app.js existieren im vollen Schema; RLS auf allen Tabellen; Admin-RPCs prüfen serverseitig (`is_admin()`/`can_jass()`/`can_cc()`); Telefon/PIN/E-Mail-Logik 12/12 ok; Übersetzungen 348 Keys × 7 Sprachen vollständig.
 
 ## Offene Aufgaben
-- [ ] PRD: Trainings, Events nachladen (Export aus DEV), Jass-Historie, Chilbi 2027
+- [ ] PRD: Trainings und Events werden von Hand in der App erfasst (kein Export aus DEV); Jass-Historie und Chilbi 2027 per SQL
 - [ ] PRD: `fbro-8942/fbro-app` enthält noch Altlasten (doppelte Icons mit «(1)», `download`, `*.sql` im Root) → löschen
 - [ ] DEV: prüfen, welche Domain `auth.users` nutzt (`phone-login.app` vs `fbro.app`) und `EMAIL_DOMAIN` explizit setzen
 - [ ] Vereins-Supabase unter eigenem Vereins-Account führen (Trennung von persönlichem Account)
