@@ -3,8 +3,8 @@
 // Der «anon public»-Schlüssel ist für den Einsatz im Browser gedacht und darf öffentlich sein.
 // Den «service_role»-Schlüssel darfst du hier NIE eintragen.
 window.APP_CONFIG = {
-  SUPABASE_URL: 'https://nffukybibuanokdyeehc.supabase.co',
-  SUPABASE_ANON_KEY: 'sb_publishable_jS6Y5gm1rWMUVawF_PyFSQ_U8Y8AAiX',
+  SUPABASE_URL: 'https://hshchitgcweewnantxbs.supabase.co/rest/v1/',
+  SUPABASE_ANON_KEY: 'sb_publishable_ohykf3XmZGt86oykIe2Ujw_m9U-km8k',
 
   // Kurzname für die Titel «FBRO-Trainings» und «FBRO-Events»
   CLUB_SHORT: 'FBRO',
