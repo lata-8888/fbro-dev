@@ -1,25 +1,36 @@
 # FBRO Vereins-App – Projektkontext für Claude
 
+## Umgebungen — IMMER klar unterscheiden
+
+| | DEV | PRD |
+|---|---|---|
+| **GitHub** | `lata-8888/fbro-dev` | `fbro-8942/fbro-app` |
+| **Supabase** | `hshchitgcweewnantxbs` | `airdfxpnqjwffazrsgyy` |
+| **Region** | eu-central-1 | — |
+| **Status** | ✅ läuft | ⚠️ NULL-Fix ausstehend |
+| **GitHub Pages** | `lata-8888.github.io/fbro-dev/` | `fbro-8942.github.io/fbro-app/` |
+
+**Regel:** Änderungen immer zuerst in DEV testen, dann in PRD deployen.
+
 ## Übersicht
 Vanilla JS Single-Page-App für den Verein FBRO. Gehostet auf GitHub Pages, Backend auf Supabase.
 Kein Build-Schritt — alle Dateien werden direkt ausgeliefert.
 
-## GitHub Accounts
-- **Dev:** `lata-8888/fbro-dev` (dieses Repo)
-- **Prod:** `fbro-8942/fbro-app`
+## Sicherheit
+- Den `service_role`-Schlüssel **NIE** in `config.js` eintragen
+- Nur der `anon public`-Key kommt in `config.js`
 
-## Supabase Projekte
-| Umgebung | Projekt-ID | Region | Status |
-|---|---|---|---|
-| Dev | `hshchitgcweewnantxbs` | eu-central-1 | ✅ läuft |
-| Prod | `airdfxpnqjwffazrsgyy` | — | ⚠️ NULL-Fix noch ausstehend |
-| Backup | `ppnapfnsikwgkgvjcsdi` | eu-central-2 (Zürich) | leer |
+## Login-Logik
+- Synthetic Email: `<phone_digits_ohne_plus>@fbro.app`
+  Beispiel: `+41791234567` → `41791234567@fbro.app`
+- PIN = letzte 6 Ziffern der Telefonnummer
+- `EMAIL_DOMAIN` ist in `config.js` auskommentiert → App verwendet eigene Logik
 
 ## Bekannte Bugs & Fixes
 
 ### NULL-Fix für auth.users (WICHTIG)
 **Problem:** Supabase Auth gibt HTTP 500 «Database error querying schema» wenn Token-Spalten NULL sind.
-**Fix:** Im SQL Editor ausführen:
+**Fix:** Im SQL Editor des betroffenen Projekts ausführen:
 ```sql
 UPDATE auth.users SET confirmation_token = '' WHERE confirmation_token IS NULL;
 UPDATE auth.users SET recovery_token = '' WHERE recovery_token IS NULL;
@@ -34,17 +45,7 @@ UPDATE auth.users SET phone_change_token = '' WHERE phone_change_token IS NULL;
 ```sql
 SELECT routine_name FROM information_schema.routines WHERE routine_schema = 'auth';
 ```
-Muss viele Zeilen zurückgeben. Nur 4 (uid, role, email, jwt) = Provisioning-Bug oder NULL-Problem.
-
-## Login-Logik
-- Synthetic Email: `<phone_digits_ohne_plus>@<EMAIL_DOMAIN>`  
-  Beispiel: `+41791234567` → `41791234567@fbro.app`
-- PIN = letzte 6 Ziffern der Telefonnummer
-- `EMAIL_DOMAIN` ist in `config.js` auskommentiert → App verwendet eigene Logik
-
-## Sicherheit
-- Den `service_role`-Schlüssel **NIE** in `config.js` eintragen
-- Nur der `anon public`-Key kommt in `config.js`
+Muss viele Zeilen zurückgeben. Nur 4 (uid, role, email, jwt) = NULL-Problem → NULL-Fix anwenden.
 
 ## Deployment-Prozess
 1. Änderungen in `app.js`/`sw.js`: `CACHE`-Version in `sw.js` erhöhen (`training-vXX`)
@@ -58,18 +59,20 @@ Muss viele Zeilen zurückgeben. Nur 4 (uid, role, email, jwt) = Provisioning-Bug
 | `config.js` | Supabase URL + Anon-Key, App-Einstellungen |
 | `app.js` | Gesamte App-Logik |
 | `sw.js` | Service Worker (PWA, Cache-Version) |
-| `schema.sql` | Vollständiges DB-Schema (idempotent) — **ACHTUNG: alte Version (262 Zeilen)** |
+| `schema.sql` | **ACHTUNG: alte Version (262 Zeilen)** — nicht verwenden |
 | `supabase/schema.sql` | Aktuelles vollständiges Schema (898 Zeilen) |
 
 ## Migration
 - `fbro_migration_v4.sql`: Alle 44 Mitglieder mit `auth.users` + `auth.identities` + `profiles`
-- Datei liegt bei Claude unter `/mnt/user-data/outputs/fbro_migration_v4.sql`
 
 ## Libraries
 - `@supabase/supabase-js@2.45.4` (via CDN)
 - `jsPDF@2.5.1` (via CDN)
 
+## Backup Supabase Projekt
+- `ppnapfnsikwgkgvjcsdi` (eu-central-2, Zürich) — leer, bereit für Notfall
+
 ## Offene Aufgaben
-- [ ] NULL-Fix auf Prod `airdfxpnqjwffazrsgyy` anwenden
-- [ ] `config.js` für Prod aktualisieren (`fbro-8942/fbro-app`)
-- [ ] Prod testen
+- [ ] NULL-Fix auf PRD Supabase `airdfxpnqjwffazrsgyy` anwenden
+- [ ] PRD Login testen
+- [ ] GitHub App Berechtigung für DEV (`lata-8888/fbro-dev`) aktualisieren → Claude kann dann direkt pushen
