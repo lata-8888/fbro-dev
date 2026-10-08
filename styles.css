@@ -295,12 +295,8 @@
   .acctoggle .cnt { color: var(--muted); font-weight: 600; font-size: 1.2rem; }
   .acctoggle .chev { flex: 0 0 auto; width: 18px; height: 18px; transition: transform .2s; }
   .acctoggle[aria-expanded="true"] .chev { transform: rotate(180deg); }
-  .plusbtn { flex: 0 0 auto; width: 40px; height: 40px; border-radius: 10px; border: 1.5px solid var(--line); background: transparent; color: var(--ink); padding: 0; display: inline-flex; align-items: center; justify-content: center; }
-  .plusbtn span { font-size: 1.7rem; line-height: 1; font-weight: 600; transition: transform .2s; }
-  .plusbtn[aria-pressed="true"] { background: var(--ink); color: var(--onink); border-color: var(--ink); }
-  .plusbtn[aria-pressed="true"] span { transform: rotate(45deg); }
   .addform { border-bottom: 1px solid var(--line); padding-bottom: 14px; margin-bottom: 8px; }
-  @media (prefers-reduced-motion: reduce) { .acctoggle .chev, .plusbtn span { transition: none; } }
+  @media (prefers-reduced-motion: reduce) { .acctoggle .chev { transition: none; } }
 
   /* Sprachauswahl */
   .langbar { display: flex; justify-content: flex-end; margin-bottom: 18px; }
@@ -366,10 +362,15 @@
   :root[data-theme="dark"] { --crown-soft: #1B2E45; --warn-bg: #3D3310; --warn-ink: #F3D36B; }
 
   .cctop { display: flex; justify-content: flex-end; gap: 2px; margin: 0 0 8px; }
-  .ccinfo, .ccdots { width: 36px; height: 32px; border: 0; background: none; color: var(--muted); padding: 0; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; flex: 0 0 auto; }
-  .ccinfo svg { width: 22px; height: 22px; }
-  .ccdots svg { width: 20px; height: 20px; }
-  .ccinfo.on { color: var(--crown); background: var(--crown-soft); }
+  /* Ein Konzept für alle Icon-Buttons in Kopfzeilen: Info, «+», Drucken, Menü «…» (.hico), danach der Auf-/Zuklapp-Pfeil (.ccfold).
+     Gleiche Höhe wie der Pfeil, gleiche Grösse der Symbole; aktiv (.on) = Farbe wie der Pfeil mit weichem Hintergrund. */
+  .hico { width: 36px; height: 32px; border: 0; background: none; color: var(--muted); padding: 0; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; flex: 0 0 auto; }
+  .hico svg { width: 20px; height: 20px; }
+  .hico.on { color: var(--crown); background: var(--crown-soft); }
+  .hico.plus svg { transition: transform .2s; }
+  .hico.plus.on svg { transform: rotate(45deg); }
+  .ccdh .hico, .jssh .hico, .mbgh .hico { width: 32px; height: 30px; }
+  @media (prefers-reduced-motion: reduce) { .hico.plus svg { transition: none; } }
   .cclegend { display: flex; flex-wrap: wrap; gap: 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; margin-bottom: 12px; }
 
   .ccel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; margin-bottom: 12px; overflow: hidden; }
@@ -557,7 +558,7 @@
   .jsstp { color: var(--muted); font-size: .82rem; flex: 0 0 auto; }
   .jsrp { flex: 0 0 3rem; text-align: right; font-weight: 400; margin-left: 14px; }
   /* Abgeschlossene Runden: Differenzpunkte (Spielpunkte) und Rangpunkte (4–32) */
-  /* .iconbtn entfernt – wird nicht mehr verwendet (ersetzt durch .ccdots für alle Icon-Aktions-Buttons) */
+  /* .iconbtn entfernt – wird nicht mehr verwendet (ersetzt durch .hico für alle Icon-Aktions-Buttons) */
   .jsdiff { color: var(--muted); font-size: .82rem; flex: 0 0 auto; }
   .jsdiff.pos { color: var(--yes); }
   .jsdiff.neg { color: var(--no); }

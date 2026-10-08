@@ -831,7 +831,6 @@
     gear: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 4.3c.4-1.8 2.9-1.8 3.4 0a1.7 1.7 0 0 0 2.6 1.1c1.5-.9 3.3.8 2.4 2.4a1.7 1.7 0 0 0 1 2.5c1.8.4 1.8 2.9 0 3.4a1.7 1.7 0 0 0-1 2.6c.9 1.5-.8 3.3-2.4 2.4a1.7 1.7 0 0 0-2.6 1c-.4 1.8-2.9 1.8-3.4 0a1.7 1.7 0 0 0-2.6-1c-1.5.9-3.3-.8-2.4-2.4a1.7 1.7 0 0 0-1-2.6c-1.8-.4-1.8-2.9 0-3.4a1.7 1.7 0 0 0 1-2.5c-.9-1.6.8-3.3 2.4-2.4c1 .6 2.3 0 2.6-1.1z"/><circle class="hole" cx="12" cy="12" r="3"/></svg>',
     laurel: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20.5C5.4 19.2 3.2 15.9 3.2 12c0-2.3.7-4.4 2-6.1"/><path d="M15 20.5c3.6-1.3 5.8-4.6 5.8-8.5 0-2.3-.7-4.4-2-6.1"/><path d="M5.2 5.9C4.9 4.5 5.6 3.2 6.9 2.8c.3 1.4-.4 2.7-1.7 3.1z"/><path d="M3.4 10.1C2.5 9 2.6 7.5 3.6 6.6c.9 1.1.8 2.6-.2 3.5z"/><path d="M3.6 14.6c-1.2-.5-1.9-1.9-1.5-3.2 1.3.4 2 1.8 1.5 3.2z"/><path d="M5.6 18.3c-1.3-.1-2.3-1.2-2.3-2.5 1.4 0 2.4 1.1 2.3 2.5z"/><path d="M18.8 5.9c.3-1.4-.4-2.7-1.7-3.1-.3 1.4.4 2.7 1.7 3.1z"/><path d="M20.6 10.1c.9-1.1.8-2.6-.2-3.5-.9 1.1-.8 2.6.2 3.5z"/><path d="M20.4 14.6c1.2-.5 1.9-1.9 1.5-3.2-1.3.4-2 1.8-1.5 3.2z"/><path d="M18.4 18.3c1.3-.1 2.3-1.2 2.3-2.5-1.4 0-2.4 1.1-2.3 2.5z"/></svg>',
     trophy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>',
-    print: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v5"/><rect x="4" y="9" width="16" height="8" rx="1.5"/><path d="M6 14h12v7H6z"/></svg>',
     pencil: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L18.5 9.5a2.8 2.8 0 0 0-4-4L4 16v4"/><path d="M13.5 6.5l4 4"/></svg>',
     copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>',
     plus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>',
@@ -1137,7 +1136,7 @@
     }
     return '<article class="ccel">' +
       '<div class="cceh"><b>' + fullDate(parseIso(e.date)) + ' \u2013 ' + esc(e.title) + '</b>' +
-      (canManageEvents() ? '<button type="button" class="ccdots" data-act="ev-menu" data-id="' + e.id + '" aria-label="' + esc(L('ccActions') + ': ' + e.title) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>' : '') +
+      (canManageEvents() ? '<button type="button" class="hico" data-act="ev-menu" data-id="' + e.id + '" aria-label="' + esc(L('ccActions') + ': ' + e.title) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>' : '') +
       '</div>' +
       '<div class="ccbody">' +
         '<p class="muted small">' + esc(L('timePlace', { time: e.time, place: e.place })) + '</p>' +
@@ -1157,18 +1156,14 @@
     '</article>';
   }
 
-  // Merkt sich pro Abschnitt, ob ein «+»-Formular und/oder eine Erklärung verfügbar sind,
-  // damit das Drei-Punkte-Menü weiss, welche Einträge es anbieten soll.
-  var ACC_META = {};
   function accordion(id, title, count, body, canAdd, info) {
-    ACC_META[id] = { canAdd: !!canAdd, info: info || null };
-    var open = !!S.sec[id], showInfo = !!S.info[id];
-    var hasMenu = canAdd || info;
-    // Einheitlich wie bei C&C und Jass: Titel links (klappt auf/zu), Drei-Punkte-Menü, Pfeil ganz rechts
+    var open = !!S.sec[id], showInfo = !!S.info[id], showAdd = !!S.add[id];
+    // Einheitlich wie bei C&C und Jass: Titel links (klappt auf/zu), «+» und Info direkt als Icons, Pfeil ganz rechts
     return '<section class="ccel"><div class="cceh">' +
       '<button type="button" class="cct" data-act="sec" data-id="' + id + '" aria-expanded="' + open + '">' +
       title + (count != null ? ' <span class="cnt">(' + count + ')</span>' : '') + '</button>' +
-      (hasMenu ? '<button type="button" class="ccdots" data-act="acc-menu" data-id="' + id + '" aria-label="' + esc(L('ccActions')) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>' : '') +
+      (canAdd ? hico('add-toggle', ICON.plus, showAdd ? L('addClose') : L('addNew'), { on: showAdd, cls: 'plus', data: { id: id } }) : '') +
+      (info ? hico('info-toggle', ICON.info, showInfo ? L('infoHide') : L('infoShow'), { on: showInfo, data: { id: id } }) : '') +
       '<button type="button" class="ccfold' + (open ? ' open' : '') + '" data-act="sec" data-id="' + id + '" aria-hidden="true" tabindex="-1">' + ICON.chev + '</button>' +
       '</div>' + (open ? '<div class="ccbody">' + (info && showInfo ? '<p class="infotext">' + info + '</p>' : '') + body + '</div>' : '') + '</section>';
   }
@@ -1269,7 +1264,7 @@
           (m.isChraenzliManager ? '<span class="mbic em" title="' + esc(L('crmTag')) + '" aria-label="' + esc(L('crmTag')) + '">' + ICON.glass + '</span>' : '') +
           (m.isJassMaster ? '<span class="mbic jm" title="' + esc(L('jmTag')) + '" aria-label="' + esc(L('jmTag')) + '">' + ICON.trophy + '</span>' : '') +
         '</span>' +
-        '<button type="button" class="ccdots" data-act="mb-menu" data-id="' + esc(m.id) + '" aria-label="' + esc(L('ccActions') + ': ' + m.name) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button></li>';
+        '<button type="button" class="hico" data-act="mb-menu" data-id="' + esc(m.id) + '" aria-label="' + esc(L('ccActions') + ': ' + m.name) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button></li>';
     };
     var mbGroup = function (key, label, list, guestStyle, icon) {
       var open = S.sec[key] === true;
@@ -1474,7 +1469,7 @@
     return e ? !e.active : false;   // inaktive Anlässe starten eingeklappt
   }
   function ccDots(lvl, id, label) {
-    return '<button type="button" class="ccdots" data-act="cc-menu" data-lvl="' + lvl + '"' + (id ? ' data-id="' + esc(id) + '"' : '') +
+    return '<button type="button" class="hico" data-act="cc-menu" data-lvl="' + lvl + '"' + (id ? ' data-id="' + esc(id) + '"' : '') +
       ' aria-label="' + esc(L('ccActions') + (label ? ': ' + label : '')) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>';
   }
 
@@ -1657,7 +1652,7 @@
         (ed ? '<input type="checkbox" class="ccck" data-ccactive="' + esc(e.id) + '"' + (e.active ? ' checked' : '') + ' aria-label="' + esc(e.name + ': ' + L('ccActive')) + '" title="' + esc(L('ccActive')) + '">' : '') +
         '<button type="button" class="cct" data-act="cc-fold" data-id="' + esc(e.id) + '" aria-expanded="' + !folded + '">' + esc(e.name) + '</button>' +
         (ed ? ccDots('event', e.id, e.name) : '') +
-        '<button type="button" class="ccdots" data-act="cc-print" data-id="' + esc(e.id) + '" aria-label="' + esc(L('ccPrint') + ': ' + e.name) + '" title="' + esc(L('ccPrint')) + '">' + ICON.print + '</button>' +
+        '<button type="button" class="hico" data-act="cc-print" data-id="' + esc(e.id) + '" aria-label="' + esc(L('ccPrint') + ': ' + e.name) + '" title="' + esc(L('ccPrint')) + '">' + ICON.print + '</button>' +
         '<button type="button" class="ccfold' + (folded ? '' : ' open') + '" data-act="cc-fold" data-id="' + esc(e.id) + '" aria-expanded="' + !folded + '" aria-label="' + esc(e.name) + '">' + ICON.chev + '</button></div>';
       if (!folded) {
         html += '<div class="ccbody">';
@@ -2039,10 +2034,20 @@
   function jsFmt(v) { return v == null ? '–' : (v > 0 ? '+' + v : String(v)); }
   function jsCls(v) { return v == null || v === 0 ? '' : v > 0 ? ' pos' : ' neg'; }
   function jsDots(lvl, id, label) {
-    return '<button type="button" class="ccdots" data-act="js-menu" data-lvl="' + lvl + '" data-id="' + esc(id) + '" aria-label="' + esc(L('ccActions') + ': ' + label) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>';
+    return '<button type="button" class="hico" data-act="js-menu" data-lvl="' + lvl + '" data-id="' + esc(id) + '" aria-label="' + esc(L('ccActions') + ': ' + label) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>';
   }
   function jsFoldBtn(id, folded, label, small) {
     return '<button type="button" class="ccfold' + (small ? ' ccfold-day' : '') + (folded ? '' : ' open') + '" data-act="js-fold" data-id="' + esc(id) + '" aria-expanded="' + !folded + '" aria-label="' + esc(label) + '">' + ICON.chev + '</button>';
+  }
+
+  // Einheitlicher Icon-Button für Kopfzeilen (Info, Plus, Drucken, Menü «…»), steht links vom Auf-/Zuklapp-Pfeil
+  function hico(act, icon, label, o) {
+    o = o || {};
+    var attrs = ' data-act="' + act + '"';
+    Object.keys(o.data || {}).forEach(function (k) { attrs += ' data-' + k + '="' + esc(o.data[k]) + '"'; });
+    return '<button type="button" class="hico' + (o.cls ? ' ' + o.cls : '') + (o.on ? ' on' : '') + '"' + attrs +
+      (o.on != null ? ' aria-pressed="' + !!o.on + '"' : '') +
+      ' aria-label="' + esc(o.aria || label) + '" title="' + esc(label) + '">' + icon + '</button>';
   }
 
   // Tagesrangliste: jeder Spieler erhält die Punkte seines Teams aus jedem Spiel
@@ -2325,15 +2330,17 @@
   function jsEternalFolder(past) {
     var key = 'jsEternal', folded = S.jsFold[key] !== true;   // Standard: zugeklappt
     var map = ccMap(), res = jsEternalRows(past, map);
+    var showInfo = !!S.info['jsh:' + key], hasRows = res.rows.length > 0;
     var html = '<section class="ccel"><div class="cceh">' +
       '<button type="button" class="cct" data-act="js-fold" data-id="' + key + '" aria-expanded="' + !folded + '">' + esc(L('jsEternal')) + '</button>' +
+      (hasRows ? hico('js-hint', ICON.info, showInfo ? L('infoHide') : L('infoShow'), { on: showInfo, data: { id: key } }) : '') +
       jsFoldBtn(key, folded, L('jsEternal'), false) + '</div>';
     if (!folded) {
       html += '<div class="ccbody">';
       if (!res.rows.length) {
         html += '<p class="ccsum" style="padding-top:10px">' + L('jsNoPoints') + '</p>';
       } else {
-        html += '<p class="ccsum" style="padding:10px 0 4px">' + L('jsEternalHint', { n: res.n }) + '</p>' +
+        html += (showInfo ? '<p class="ccnote" style="margin:10px 0 4px">' + L('jsEternalHint', { n: res.n }) + '</p>' : '') +
           '<ol class="jsrank">' + res.rows.map(function (r) {
             return '<li><span class="jsrk">' + r.rank + '.</span><span class="jsrn">' + esc(r.name) + '</span><span class="jsstp">' + L(r.rounds === 1 ? 'jsEternalRound' : 'jsEternalRounds', { n: r.rounds }) + '</span><span class="jsrp">' + r.points + '</span></li>';
           }).join('') + '</ol>';
@@ -2350,8 +2357,8 @@
     var folded = isUpcoming ? (S.jsFold[key] === true) : (S.jsFold[key] !== true);
     var html = '<section class="ccel"><div class="cceh">' +
       '<button type="button" class="cct" data-act="js-fold" data-id="' + key + '" aria-expanded="' + !folded + '">' + esc(title) + ' <span class="cnt">(' + days.length + ')</span></button>' +
-      (isUpcoming && ed ? '<button type="button" class="plusbtn" data-act="js-addday" aria-label="' + esc(L('jsAddDay')) + '" title="' + esc(L('jsAddDay')) + '"><span>+</span></button>' : '') +
-      (!isUpcoming && days.length ? '<button type="button" class="ccdots" data-act="js-print-past" title="' + esc(L('jsPrint')) + '" aria-label="' + esc(L('jsPrint')) + '">' + ICON.print + '</button>' : '') +
+      (isUpcoming && ed ? hico('js-addday', ICON.plus, L('jsAddDay')) : '') +
+      (!isUpcoming && days.length && ed ? hico('js-print-past', ICON.print, L('jsPrint')) : '') +
       jsFoldBtn(key, folded, title, false) + '</div>';
     if (!folded) {
       html += '<div class="ccbody">';
@@ -2363,10 +2370,13 @@
     return html;
   }
 
-  function jsSub(key, title, body) {
-    var folded = !!S.jsFold[key];
+  // opts.info = { id, text }: Info-Icon in der Kopfzeile (links vom Pfeil), der Text steht erst nach dem Antippen im Abschnitt
+  function jsSub(key, title, body, opts) {
+    var folded = !!S.jsFold[key], inf = opts && opts.info, showInfo = inf && !!S.info['jsh:' + inf.id];
+    var infoBtn = inf ? hico('js-hint', ICON.info, showInfo ? L('infoHide') : L('infoShow'), { on: showInfo, data: { id: inf.id } }) : '';
     return '<div class="jssub"><div class="jssh"><button type="button" class="jsst" data-act="js-fold" data-id="' + esc(key) + '" aria-expanded="' + !folded + '">' + title + '</button>' +
-      jsFoldBtn(key, folded, title, true) + '</div>' + (folded ? '' : '<div class="jssb">' + body + '</div>') + '</div>';
+      infoBtn + jsFoldBtn(key, folded, title, true) + '</div>' +
+      (folded ? '' : '<div class="jssb">' + (showInfo ? '<p class="ccnote">' + inf.text + '</p>' : '') + body + '</div>') + '</div>';
   }
 
   // Rangliste darstellen: entweder die von Hand gepflegte (manual_ranking) oder die aus den
@@ -2406,10 +2416,8 @@
       return '<button type="button" class="jsp" data-act="js-pick" data-id="' + esc(d.id) + '" data-slot="' + (i + 1) + '" aria-label="' + esc(L('jsPick', { n: i + 1 })) + '">' + inner + '<span class="sp"></span>' + ICON.pencil + '</button>';
     }).join('') : '';
 
-    // Spielplan (der Hinweistext steckt hinter dem Info-Symbol)
-    var showHint = !!S.info['jsh:' + d.id];
-    var sp = ed ? '<button type="button" class="ccinfo' + (showHint ? ' on' : '') + '" data-act="js-hint" data-id="' + esc(d.id) + '" aria-pressed="' + showHint + '" aria-label="' + esc(showHint ? L('infoHide') : L('infoShow')) + '" title="' + esc(showHint ? L('infoHide') : L('infoShow')) + '">' + ICON.info + '</button>' +
-      (showHint ? '<p class="ccnote" style="margin:8px 0">' + L('jsHint') + '</p>' : '') : '';
+    // Spielplan (der Hinweistext steckt hinter dem Info-Symbol in der Kopfzeile)
+    var sp = '';
     JS_PLAN.forEach(function (round, ri) {
       sp += '<div class="jsround">' + L('jsRound', { n: ri + 1 }) + '</div>';
       round.forEach(function (g) {
@@ -2429,7 +2437,7 @@
 
     h += isUpcoming
       ? (ed ? jsSub(d.id + ':p', L('jsParticipants'), '<div class="jsplist">' + tp + '</div>') : '') +
-        jsSub(d.id + ':s', L('jsSchedule'), sp) +
+        jsSub(d.id + ':s', L('jsSchedule'), sp, ed ? { info: { id: d.id, text: L('jsHint') } } : null) +
         jsSub(d.id + ':r', L('jsRanking'), rk)
       : rk;   // Vergangene Jassmasters: nur die Tagesrangliste, direkt sichtbar
     return h + '</div>';
@@ -3100,8 +3108,12 @@
     if (act_ === 'tab') { S.tab = D.tab; S.edit = null; render(); window.scrollTo(0, 0); return; }
     if (act_ === 'who') { S.open[D.key] = !S.open[D.key]; render(); return; }
     if (act_ === 'js-fold') { S.jsFold[D.id] = !S.jsFold[D.id]; render(); return; }
-    if (act_ === 'js-print-past') { try { await jsPrintMatrix(); } catch (err) { console.error(err); toast(L('ccPdfFailed')); } return; }
-    if (act_ === 'js-hint') { S.info['jsh:' + D.id] = !S.info['jsh:' + D.id]; render(); return; }
+    if (act_ === 'js-print-past') { if (!jsEdit()) return; try { await jsPrintMatrix(); } catch (err) { console.error(err); toast(L('ccPdfFailed')); } return; }
+    if (act_ === 'js-hint') {
+      S.info['jsh:' + D.id] = !S.info['jsh:' + D.id];
+      if (S.info['jsh:' + D.id]) { if (D.id === 'jsEternal') S.jsFold.jsEternal = true; else S.jsFold[D.id + ':s'] = false; }   // Ewige Rangliste: true = offen, sonst true = zu
+      render(); return;
+    }
     if (act_ === 'js-menu') { if (jsEdit()) jsOpen({ lvl: D.lvl, id: D.id, mode: 'menu' }); return; }
     if (act_ === 'js-pick') { if (jsEdit()) jsOpen({ lvl: 'day', id: D.id, mode: 'pick', slot: Number(D.slot), q: '' }); return; }
     if (act_ === 'js-addday') { if (jsEdit()) jsOpen({ lvl: 'day', id: null, mode: 'day-form' }); return; }
@@ -3127,24 +3139,6 @@
       render();
       var af = document.querySelector('.addform');
       if (S.add[D.id] && af) af.scrollIntoView({ block: 'nearest' });
-      return;
-    }
-    if (act_ === 'acc-menu') {
-      var mid = D.id, meta = ACC_META[mid] || {};
-      var items = [];
-      if (meta.info) items.push({
-        icon: ICON.info, label: S.info[mid] ? L('infoHide') : L('infoShow'),
-        onClick: function () { S.info[mid] = !S.info[mid]; if (S.info[mid]) S.sec[mid] = true; render(); }
-      });
-      if (meta.canAdd) items.push({
-        icon: ICON.plus, label: S.add[mid] ? L('addClose') : L('addNew'),
-        onClick: function () {
-          S.add[mid] = !S.add[mid]; if (S.add[mid]) S.sec[mid] = true; render();
-          var af = document.querySelector('.addform');
-          if (S.add[mid] && af) af.scrollIntoView({ block: 'nearest' });
-        }
-      });
-      openSimpleMenu(items);
       return;
     }
     if (act_ === 'more-tr') { S.showMore = !S.showMore; render(); return; }
