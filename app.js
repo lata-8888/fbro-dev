@@ -1374,7 +1374,7 @@
       var pageHtml = S.tab === 'jass' ? viewJass() : S.tab === 'cc' ? viewCC() : S.tab === 'admin' ? viewAdmin() : S.tab === 'events' ? viewEvents() : S.tab === 'profile' ? viewProfile() : viewTrainings();
       // PIN-Banner: nur für Aktiv-/Passivmitglieder (nicht Gast, Supporter, Kandidat, Admin) ohne gesetzten PIN
       var pinBanner = '';
-      if (S.me && !S.me.pinChanged && !S.me.isAdmin && !S.me.isGuest && !S.me.isSupporter && !S.me.isCandidate) {
+      if (S.me && !S.me.pinChanged && !S.me.isAdmin && !S.me.isCandidate) {
         pinBanner = '<div class="pinbanner" role="alert">' +
           '<span>' + esc(L('pinBannerMsg')) + '</span>' +
           '<button type="button" class="btn inline" data-act="tab" data-tab="profile">' + esc(L('pinBannerBtn')) + '</button>' +
