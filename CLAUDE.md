@@ -7,7 +7,7 @@
 | **GitHub** | `lata-8888/fbro-dev` | `fbro-8942/fbro-app` |
 | **Supabase** | `hshchitgcweewnantxbs` | `dpiewpccucadlrtogvhh` |
 | **Region** | eu-central-1 | eu-central-2 (Zürich) |
-| **Status** | ✅ läuft | ✅ Login läuft, Schema vollständig; Trainings/Events von Hand, Jass/Chilbi per SQL |
+| **Status** | ✅ läuft | ✅ läuft (Stand 2026-10-08, Repo neu aufgesetzt, Login getestet); Trainings/Events von Hand, Jass/Chilbi per SQL |
 | **GitHub Pages** | `lata-8888.github.io/fbro-dev/` | `fbro-8942.github.io/fbro-app/` |
 
 **Regel:** Änderungen immer zuerst in DEV testen, dann in PRD deployen.
@@ -90,8 +90,17 @@ Muss viele Zeilen zurückgeben. Nur 4 (uid, role, email, jwt) = NULL-Problem →
 ## Regressionstest (statisch, ohne Live-DB)
 Stand 2026-10-08: `node --check` ok; SW-SHELL-Dateien vorhanden; Manifest ok; alle 13 Tabellen und 13 RPCs aus app.js existieren im vollen Schema; RLS auf allen Tabellen; Admin-RPCs prüfen serverseitig (`is_admin()`/`can_jass()`/`can_cc()`); Telefon/PIN/E-Mail-Logik 12/12 ok; Übersetzungen 348 Keys × 7 Sprachen vollständig.
 
+## PRD-Repo (`fbro-8942/fbro-app`) – Regeln
+- **Muss öffentlich sein.** GitHub Pages ist im kostenlosen Tarif nur für öffentliche Repos verfügbar. Wird das Repo privat gestellt, nimmt GitHub die Seite vom Netz (404 «There isn't a GitHub Pages site here»); beim Zurückstellen auf öffentlich muss Pages neu eingeschaltet werden (Settings → Pages → Deploy from a branch → `main` → `/(root)`).
+- **Keine Personendaten im Repo** (Migration, `neue_mitglieder.sql`, Telefonnummern, Namenslisten). Sie bleiben sonst in der Versionsgeschichte, auch nach dem Löschen der Datei. Am 2026-10-08 wurde das Repo deshalb gelöscht und mit sauberen Dateien neu angelegt.
+- `supabase/schema.sql` ist im PRD-Repo bewusst **nicht** enthalten (enthält Mitgliedernamen aus dem Beispiel-Einsatzplan). Das Schema wird nur im Supabase SQL Editor ausgeführt.
+- Upload per Weboberfläche löst Ordner beim Hineinziehen manchmal auf: danach in github.dev (Taste `.`) den Ordner `icons/` anlegen und `logo.png` + `favicon-48.png` hineinziehen.
+- Claude kann PRD aus der Sitzung nicht schreiben (kein Zugriff, Namenskonflikt mit `lata-8888/fbro-app`): Änderungen als ZIP liefern, von Hand einspielen.
+
 ## Offene Aufgaben
-- [ ] PRD: Trainings und Events werden von Hand in der App erfasst (kein Export aus DEV); Jass-Historie und Chilbi 2027 per SQL
-- [ ] PRD: `fbro-8942/fbro-app` enthält noch Altlasten (doppelte Icons mit «(1)», `download`, `*.sql` im Root) → löschen
-- [ ] DEV: prüfen, welche Domain `auth.users` nutzt (`phone-login.app` vs `fbro.app`) und `EMAIL_DOMAIN` explizit setzen
+- [ ] PRD: Trainings und Events werden von Hand in der App erfasst (kein Export aus DEV); Jass-Historie und Chilbi 2027 sind eingespielt
+- [ ] Optional: PRD-Login-Adressen von `@fbro.app` auf `@phone-login.app` umstellen (wie DEV), Skripte in `fbro-prd-umstellung.zip`; dann `EMAIL_DOMAIN` in der PRD-`config.js` auskommentieren
+- [ ] DEV: prüfen, welche Domain `auth.users` nutzt (`phone-login.app` vs `fbro.app`)
+- [ ] Länder-Dropdown für die Handynummer (Branch `feature/phone-dropdown`) in DEV übernehmen, sobald die Tester bereit sind (SW-Version über `v88` erhöhen)
+- [ ] DEV-Repo: `supabase/schema.sql` enthält Mitgliedernamen (ohne Telefonnummern); entscheiden, ob das Repo öffentlich bleiben soll
 - [ ] Vereins-Supabase unter eigenem Vereins-Account führen (Trennung von persönlichem Account)
