@@ -1652,7 +1652,7 @@
         (ed ? '<input type="checkbox" class="ccck" data-ccactive="' + esc(e.id) + '"' + (e.active ? ' checked' : '') + ' aria-label="' + esc(e.name + ': ' + L('ccActive')) + '" title="' + esc(L('ccActive')) + '">' : '') +
         '<button type="button" class="cct" data-act="cc-fold" data-id="' + esc(e.id) + '" aria-expanded="' + !folded + '">' + esc(e.name) + '</button>' +
         (ed ? ccDots('event', e.id, e.name) : '') +
-        '<button type="button" class="hico" data-act="cc-print" data-id="' + esc(e.id) + '" aria-label="' + esc(L('ccPrint') + ': ' + e.name) + '" title="' + esc(L('ccPrint')) + '">' + ICON.print + '</button>' +
+        (ed ? hico('cc-print', ICON.print, L('ccPrint'), { aria: L('ccPrint') + ': ' + e.name, data: { id: e.id } }) : '') +
         '<button type="button" class="ccfold' + (folded ? '' : ' open') + '" data-act="cc-fold" data-id="' + esc(e.id) + '" aria-expanded="' + !folded + '" aria-label="' + esc(e.name) + '">' + ICON.chev + '</button></div>';
       if (!folded) {
         html += '<div class="ccbody">';
@@ -3122,7 +3122,7 @@
     if (act_ === 'cc-addevent') { if (canCC()) ccOpen('root', null, 'add'); return; }
     if (act_ === 'cc-fold') { S.ccFold[D.id] = !ccIsFolded(D.id); render(); return; }
     if (act_ === 'cc-menu') { if (canCC()) ccOpen(D.lvl, D.id || null, 'menu'); return; }
-    if (act_ === 'cc-print') { ccExportPdf(D.id); return; }
+    if (act_ === 'cc-print') { if (canCC()) ccExportPdf(D.id); return; }
     if (act_ === 'ev-menu') { if (canManageEvents()) evOpen(D.id, 'menu'); return; }
     if (act_ === 'cc-guest') { if (S.me && S.me.isAdmin) ccOpen('guest', null, 'guest', { name: D.name }); return; }
     if (act_ === 'who-ev') { S.open['ev:' + D.id] = !S.open['ev:' + D.id]; render(); return; }
