@@ -36,8 +36,9 @@ Kein Build-Schritt — alle Dateien werden direkt ausgeliefert.
 - **Ein Baustein für Kopfzeilen-Icons:** `hico(act, icon, label, opts)` in app.js, CSS-Klasse `.hico` (ersetzt `.ccdots`, `.ccinfo`, `.plusbtn`). Reihenfolge in jeder Kopfzeile: Titel (klappt auf/zu) → Aktions-Icons (`+`, Info, Drucken, «…») → Auf-/Zuklapp-Pfeil (`.ccfold`). Gleiche Höhe wie der Pfeil, Symbolgrösse 20 px; aktiver Zustand `.on` (`aria-pressed`).
 - **Regel:** «…» (Menü) nur, wenn dahinter mehrere Aktionen stehen (Anlass, Tag, Mitglied, Jasstag). Gibt es nur «+» und/oder Info, stehen sie direkt als Icons da (Admin-Konsole, Spielplan, Ewige Rangliste).
 - **Info-Icons:** Text ist erst nach dem Antippen sichtbar und klappt den Abschnitt automatisch auf (`js-hint` für Jass, `info-toggle` für Admin). Spielplan-Info nur für Admin/Jass Manager; Info der Ewigen Rangliste für alle.
-- **Drucken vergangene Jassmasters:** nur Admin und Jass Manager (`jsEdit()`; Button und Handler geprüft). Der PDF-Druck bei C&C bleibt für alle sichtbar, die C&C sehen.
-- Der PRD-Stand liegt als Branch `prd/icon-konzept` im DEV-Repo (Basis `feature/phone-dropdown`); ZIP: `fbro-prd-icons.zip`. Browser-Test mit Testdaten (Playwright, Mitglied/Jass Manager/Admin): 34 Prüfungen ok.
+- **Drucken vergangene Jassmasters:** nur Admin und Jass Manager (`jsEdit()`; Button und Handler geprüft). Der PDF-Druck bei C&C (und sein Handler) nur für `canCC()`: Admin, Chilbi- und Chränzli-Manager.
+- Der PRD-Stand liegt als Branch `prd/icon-konzept` im DEV-Repo (Basis `feature/phone-dropdown`); ZIP: `FBRO-App_PRD_v88.zip`. Browser-Test mit Testdaten (Playwright, Mitglied/Jass Manager/Admin/Chilbi/Chränzli): alle ok.
+- **ZIP-Benennung:** `FBRO-App_<ENV>_v<SW-Version>.zip`, z. B. `FBRO-App_PRD_v88.zip` oder `FBRO-App_DEV_v88.zip`; Stammordner im ZIP bleibt `fbro-app/`.
 
 ## Bekannte Bugs & Fixes
 
@@ -106,7 +107,7 @@ Stand 2026-10-08: `node --check` ok; SW-SHELL-Dateien vorhanden; Manifest ok; al
 - Claude kann PRD aus der Sitzung nicht schreiben (kein Zugriff, Namenskonflikt mit `lata-8888/fbro-app`): Änderungen als ZIP liefern, von Hand einspielen.
 
 ## Offene Aufgaben
-- [ ] Icon-Konzept (Branch `prd/icon-konzept`) nach DEV übernehmen, sobald PRD bestätigt ist (SW-Version über `v88` erhöhen); C&C-Druck-Icon: bewusst für alle sichtbar, bei Bedarf auf `canCC()` beschränken
+- [ ] Icon-Konzept (Branch `prd/icon-konzept`) nach DEV übernehmen, sobald PRD bestätigt ist (SW-Version über `v88` erhöhen)
 - [ ] PRD: Trainings und Events werden von Hand in der App erfasst (kein Export aus DEV); Jass-Historie und Chilbi 2027 sind eingespielt
 - [ ] Optional: PRD-Login-Adressen von `@fbro.app` auf `@phone-login.app` umstellen (wie DEV), Skripte in `fbro-prd-umstellung.zip`; dann `EMAIL_DOMAIN` in der PRD-`config.js` auskommentieren
 - [ ] DEV: prüfen, welche Domain `auth.users` nutzt (`phone-login.app` vs `fbro.app`)
