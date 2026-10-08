@@ -26,7 +26,7 @@ Kein Build-Schritt — alle Dateien werden direkt ausgeliefert.
 - PIN = letzte 6 Ziffern der Telefonnummer
 - **Gelber PIN-Hinweisbalken** (`.pinbanner`, in der Render-Funktion von app.js): erscheint bei jedem Seitenaufruf und auf jedem Tab, bis das Mitglied im Profil einen eigenen PIN gesetzt hat (`profiles.pin_changed = true`). Kein Wegklicken. Bewusst **nur für Aktiv-/Passivmitglieder**: Admin, Gast, Friends & Family (Supporter) und Kandidaten sehen ihn nicht. Wer als Admin testen will, sieht ihn nicht; dafür ein Nicht-Admin-Konto mit `pin_changed = false` nehmen. «PIN zurücksetzen» (Admin, `reset_pin`) setzt `pin_changed` wieder auf `false`. Entscheid 2026-10-08: so lassen, keine Ausweitung auf Admin/F&F.
 - Nummerneingabe: **DEV** = ein Textfeld, Schweizer Format (`079 …`); eine deutsche Nummer geht nur mit `+49…`. **PRD** = Länder-Dropdown (CH +41 / DE +49 / Andere) + Nummer ohne führende Null (`phoneField()`, `composePhone()`, `phoneParts()` in app.js; neues Land: Eintrag in `PHONE_CC`). Gespeichert wird in beiden Umgebungen das internationale Format. Das Dropdown liegt für DEV bereit im Branch `feature/phone-dropdown` (Stand: SW `v87`), ist auf `main` aber bewusst **nicht** drin, weil alle Tester auf DEV sind.
-- **DEV und PRD weichen deshalb absichtlich ab** (`app.js`, `styles.css`, `sw.js`). SW-Versionen sind je Umgebung unabhängig (DEV `v88`, PRD `v88`). Beim späteren Einspielen des Dropdowns in DEV: SW-Version über den aktuellen DEV-Wert erhöhen.
+- **DEV und PRD weichen deshalb absichtlich ab** (`app.js`, `styles.css`, `sw.js`). SW-Versionen sind je Umgebung unabhängig (DEV `v88`, PRD `v89`). Beim späteren Einspielen des Dropdowns in DEV: SW-Version über den aktuellen DEV-Wert erhöhen.
 - **`EMAIL_DOMAIN` muss in `config.js` aktiv gesetzt sein** (`EMAIL_DOMAIN: 'fbro.app'`). Die App baut die Login-Adresse in `phoneToEmail()` (app.js) als `<digits>@` + `EMAIL_DOMAIN`, **Fallback ohne Eintrag: `phone-login.app`**. Fehlt der Eintrag, sucht die App `…@phone-login.app`, findet den Migrations-User (`…@fbro.app`) nicht und meldet «Invalid login credentials».
 - Pro Umgebung muss die Domain zu den Adressen in `auth.users` passen. Prüfen: `select email from auth.users limit 5;`
 - Diagnose bei Login-Problem: DevTools → Network → `token?grant_type=password` → Payload → `email` mit `auth.users` vergleichen.
@@ -35,10 +35,18 @@ Kein Build-Schritt — alle Dateien werden direkt ausgeliefert.
 ## Icon-Konzept (Stand 2026-10-08, nur PRD; DEV noch nicht)
 - **Ein Baustein für Kopfzeilen-Icons:** `hico(act, icon, label, opts)` in app.js, CSS-Klasse `.hico` (ersetzt `.ccdots`, `.ccinfo`, `.plusbtn`). Reihenfolge in jeder Kopfzeile: Titel (klappt auf/zu) → Aktions-Icons (`+`, Info, Drucken, «…») → Auf-/Zuklapp-Pfeil (`.ccfold`). Gleiche Höhe wie der Pfeil, Symbolgrösse 20 px; aktiver Zustand `.on` (`aria-pressed`).
 - **Regel:** «…» (Menü) nur, wenn dahinter mehrere Aktionen stehen (Anlass, Tag, Mitglied, Jasstag). Gibt es nur «+» und/oder Info, stehen sie direkt als Icons da (Admin-Konsole, Spielplan, Ewige Rangliste).
-- **Info-Icons:** Text ist erst nach dem Antippen sichtbar und klappt den Abschnitt automatisch auf (`js-hint` für Jass, `info-toggle` für Admin). Spielplan-Info nur für Admin/Jass Manager; Info der Ewigen Rangliste für alle.
-- **Drucken vergangene Jassmasters:** nur Admin und Jass Manager (`jsEdit()`; Button und Handler geprüft). Der PDF-Druck bei C&C (und sein Handler) nur für `canCC()`: Admin, Chilbi- und Chränzli-Manager.
-- Der PRD-Stand liegt als Branch `prd/icon-konzept` im DEV-Repo (Basis `feature/phone-dropdown`); ZIP: `FBRO-App_PRD_v88.zip`. Browser-Test mit Testdaten (Playwright, Mitglied/Jass Manager/Admin/Chilbi/Chränzli): alle ok.
+- **Info-Icons sind vom Auf-/Zuklappen entkoppelt:** Der Text (`.infobar`) steht direkt unter der Kopfzeile und erscheint/verschwindet nur durch das Info-Icon (`js-hint` für Jass, `info-toggle` für Admin); der Abschnitt bleibt dabei offen oder zu, wie er war. Spielplan-Info nur für Jass Manager; Info der Ewigen Rangliste für alle.
+- **Drucken vergangene Jassmasters:** nur Jass Manager (`jsEdit()`; Button und Handler geprüft). Der PDF-Druck bei C&C (und sein Handler) nur für `canCC()`: Chilbi- und Chränzli Manager.
+- Der PRD-Stand liegt als Branch `prd/icon-konzept` im DEV-Repo (Basis `feature/phone-dropdown`); ZIP: `FBRO-App_PRD_v89.zip`. Browser-Test mit Testdaten (Playwright; Mitglied, Jass Manager, Admin, Admin mit allen Rollen, Chilbi, Chränzli): 96 Prüfungen ok.
 - **ZIP-Benennung:** `FBRO-App_<ENV>_v<SW-Version>.zip`, z. B. `FBRO-App_PRD_v88.zip` oder `FBRO-App_DEV_v88.zip`; Stammordner im ZIP bleibt `fbro-app/`.
+
+## Rollen (Stand 2026-10-08, nur PRD; DEV noch nicht)
+- **Der Admin hat keine automatischen Rechte mehr** für Events, Chilbi/Chränzli (C&C) und Jass. Wer diese Rechte will, teilt sich die Rolle selbst zu (Admin → Rollen → eigene Person → «Zum … machen»; die RPCs `set_event_manager`, `set_chilbi_manager`, `set_chraenzli_manager`, `set_jass_master` sind weiterhin nur für Admins und erlauben die eigene Person).
+- **App:** `canCC()` = Chilbi- oder Chränzli Manager; `canManageEvents()` = Event Manager; `jsEdit()` = Jass Manager. Events-Abschnitt in der Admin-Konsole nur mit Rolle Event Manager. Event-Formulare nur für Event Manager, alle übrigen Admin-Formulare nur für Admins.
+- **Datenbank (PRD, SQL Editor):** `supabase/prd-rollen/PRD_rollen_strikt.sql` setzt `can_cc()`, `can_jass()` und die Event-Policies (`events_manage_write`, `event_responses_manager_write`) auf die reinen Rollen. Rückgängig: `PRD_rollen_strikt_RUECKGAENGIG.sql`. Optional: `PRD_admin_rollen_selbst_zuteilen.sql`. `supabase/schema.sql` auf dem Branch `prd/icon-konzept` enthält den neuen Stand (898 Zeilen), `main` (DEV) noch den alten.
+- **Reihenfolge beim Einspielen:** App-ZIP einspielen, SQL ausführen, danach Rolle(n) dem Admin in der App zuteilen. Zwischen SQL und Rollenzuteilung kann der Admin keine Events/C&C/Jass bearbeiten.
+- **Benennung:** «Event Manager» (ohne Bindestrich) in allen Sprachen; Admin-Abschnitt «Gruppen» heisst «Rollen» (`secMembers`).
+- **Bekannte Lücke:** Der Admin-Tab ist nur für Admins sichtbar. Ein Event Manager ohne Admin-Recht kann Events deshalb nur über das «…»-Menü an bestehenden Events bearbeiten, aber keinen neuen Event anlegen (war schon vorher so).
 
 ## Bekannte Bugs & Fixes
 
@@ -107,6 +115,8 @@ Stand 2026-10-08: `node --check` ok; SW-SHELL-Dateien vorhanden; Manifest ok; al
 - Claude kann PRD aus der Sitzung nicht schreiben (kein Zugriff, Namenskonflikt mit `lata-8888/fbro-app`): Änderungen als ZIP liefern, von Hand einspielen.
 
 ## Offene Aufgaben
+- [ ] PRD: `PRD_rollen_strikt.sql` ausführen und dem Admin die gewünschten Rollen zuteilen; danach Rollen-Logik nach DEV übernehmen (Branch `prd/icon-konzept`, SW über `v88` erhöhen)
+- [ ] Entscheiden: Admin-Tab (Events anlegen) auch für Event Manager ohne Admin-Recht sichtbar machen?
 - [ ] Icon-Konzept (Branch `prd/icon-konzept`) nach DEV übernehmen, sobald PRD bestätigt ist (SW-Version über `v88` erhöhen)
 - [ ] PRD: Trainings und Events werden von Hand in der App erfasst (kein Export aus DEV); Jass-Historie und Chilbi 2027 sind eingespielt
 - [ ] Optional: PRD-Login-Adressen von `@fbro.app` auf `@phone-login.app` umstellen (wie DEV), Skripte in `fbro-prd-umstellung.zip`; dann `EMAIL_DOMAIN` in der PRD-`config.js` auskommentieren
