@@ -91,7 +91,7 @@
       ruleAdded: 'Trainingstag hinzugefügt', extraAdded: 'Training hinzugefügt', eventAdded: 'Event hinzugefügt',
       ruleChanged: 'Trainingstag geändert', trChanged: 'Training geändert', eventChanged: 'Event geändert', langSaved: 'Sprache gespeichert',
       guestTag: 'Gast', makeGuest: 'Als Gast festlegen: {name}', revokeGuest: 'Gast-Status entfernen: {name}', guestGranted: 'Als Gast festgelegt', guestRevoked: 'Gast-Status entfernt',
-      guestCheck: 'Als Gast hinzufügen (sieht nur Trainings und Profil)', guestInfo: 'Du hast Gast-Zugang. Du siehst die Trainings und dein Profil.', supporterInfo: 'Du bist bei Friends & Family. Du siehst die Trainings, Jass und dein Profil.',
+      guestCheck: 'Als Gast hinzufügen (sieht nur Trainings und Profil)', guestInfo: 'Du hast Gast-Zugang. Du siehst die Trainings und dein Profil.', supporterInfo: 'Du bist bei Friends & Family. Du siehst die Trainings, Jass, C&C und dein Profil.',
       memberTag: 'Mitglied', emTag: 'Event Manager', makeEm: 'Zum Event Manager machen: {name}', revokeEm: 'Event Manager-Rechte entziehen: {name}', emGranted: 'Als Event Manager festgelegt', emRevoked: 'Event Manager-Rechte entzogen', confirmGuestLoses: '{name} hat Admin-, Event Manager-, Chilbi Manager-, Chränzli Manager- oder Jass Manager-Rechte. Diese Änderung entzieht diese Rechte. Fortfahren?', selfMember: 'Du bist Mitglied. Du kannst dich nicht selbst zum Gast machen.', rolesTitle: 'Rollen', emSub: 'Hier verwaltest du die Events.', ccManagerSub: 'C&C verwaltest du im Reiter «C&C».',
       infoShow: 'Erklärung anzeigen', infoHide: 'Erklärung ausblenden',
       ok: 'OK',
@@ -166,7 +166,7 @@
       ruleAdded: 'Jour d’entraînement ajouté', extraAdded: 'Entraînement ajouté', eventAdded: 'Événement ajouté',
       ruleChanged: 'Jour d’entraînement modifié', trChanged: 'Entraînement modifié', eventChanged: 'Événement modifié', langSaved: 'Langue enregistrée',
       guestTag: 'Invité', makeGuest: 'Définir comme invité : {name}', revokeGuest: 'Retirer le statut d’invité : {name}', guestGranted: 'Défini comme invité', guestRevoked: 'Statut d’invité retiré',
-      guestCheck: 'Ajouter comme invité (ne voit que les entraînements et le profil)', guestInfo: 'Tu as un accès invité. Tu vois les entraînements et ton profil.', supporterInfo: 'Tu fais partie de Friends & Family. Tu vois les entraînements, le Jass et ton profil.',
+      guestCheck: 'Ajouter comme invité (ne voit que les entraînements et le profil)', guestInfo: 'Tu as un accès invité. Tu vois les entraînements et ton profil.', supporterInfo: 'Tu fais partie de Friends & Family. Tu vois les entraînements, le Jass, C&C et ton profil.',
       memberTag: 'Membre', emTag: 'Responsable des événements', makeEm: 'Nommer responsable des événements : {name}', revokeEm: 'Retirer les droits de responsable des événements : {name}', emGranted: 'Défini comme responsable des événements', emRevoked: 'Droits de responsable des événements retirés', confirmGuestLoses: '{name} a des droits Admin, Event Manager, Chilbi Manager, Chränzli Manager ou Jass Manager. Ce changement retire ces droits. Continuer ?', selfMember: 'Tu es membre. Tu ne peux pas te définir toi-même comme invité.', rolesTitle: 'Rôles', emSub: 'Ici, tu gères les événements.', ccManagerSub: 'C&C se gère dans l’onglet « C&C ».',
       infoShow: 'Afficher l’explication', infoHide: 'Masquer l’explication',
       ok: 'OK',
@@ -241,7 +241,7 @@
       ruleAdded: 'Training day added', extraAdded: 'Training added', eventAdded: 'Event added',
       ruleChanged: 'Training day changed', trChanged: 'Training changed', eventChanged: 'Event changed', langSaved: 'Language saved',
       guestTag: 'Guest', makeGuest: 'Set as guest: {name}', revokeGuest: 'Remove guest status: {name}', guestGranted: 'Set as guest', guestRevoked: 'Guest status removed',
-      guestCheck: 'Add as guest (sees only trainings and profile)', guestInfo: 'You have guest access. You can see the trainings and your profile.', supporterInfo: 'You\'re part of Friends & Family. You see trainings, Jass and your profile.',
+      guestCheck: 'Add as guest (sees only trainings and profile)', guestInfo: 'You have guest access. You can see the trainings and your profile.', supporterInfo: 'You\'re part of Friends & Family. You see trainings, Jass, C&C and your profile.',
       memberTag: 'Member', emTag: 'Event manager', makeEm: 'Make event manager: {name}', revokeEm: 'Remove event manager rights: {name}', emGranted: 'Set as event manager', emRevoked: 'Event manager rights removed', confirmGuestLoses: '{name} has Admin, Event Manager, Chilbi Manager, Chränzli Manager or Jass Manager rights. This change removes those rights. Continue?', selfMember: 'You are a member. You cannot set yourself as a guest.', rolesTitle: 'Roles', emSub: 'Here you manage the events.', ccManagerSub: 'You manage C&C in the "C&C" tab.',
       infoShow: 'Show explanation', infoHide: 'Hide explanation',
       ok: 'OK',
@@ -316,7 +316,7 @@
       ruleAdded: 'Giorno di allenamento aggiunto', extraAdded: 'Allenamento aggiunto', eventAdded: 'Evento aggiunto',
       ruleChanged: 'Giorno di allenamento modificato', trChanged: 'Allenamento modificato', eventChanged: 'Evento modificato', langSaved: 'Lingua salvata',
       guestTag: 'Ospite', makeGuest: 'Imposta come ospite: {name}', revokeGuest: 'Rimuovi lo stato di ospite: {name}', guestGranted: 'Impostato come ospite', guestRevoked: 'Stato di ospite rimosso',
-      guestCheck: 'Aggiungi come ospite (vede solo allenamenti e profilo)', guestInfo: 'Hai un accesso come ospite. Vedi gli allenamenti e il tuo profilo.', supporterInfo: 'Fai parte di Friends & Family. Vedi gli allenamenti, il Jass e il tuo profilo.',
+      guestCheck: 'Aggiungi come ospite (vede solo allenamenti e profilo)', guestInfo: 'Hai un accesso come ospite. Vedi gli allenamenti e il tuo profilo.', supporterInfo: 'Fai parte di Friends & Family. Vedi gli allenamenti, il Jass, C&C e il tuo profilo.',
       memberTag: 'Socio', emTag: 'Responsabile eventi', makeEm: 'Nomina responsabile eventi: {name}', revokeEm: 'Revoca i diritti di responsabile eventi: {name}', emGranted: 'Impostato come responsabile eventi', emRevoked: 'Diritti di responsabile eventi revocati', confirmGuestLoses: '{name} ha diritti da Admin, Event Manager, Chilbi Manager, Chränzli Manager o Jass Manager. Questa modifica toglie questi diritti. Continuare?', selfMember: 'Sei socio. Non puoi impostarti da solo come ospite.', rolesTitle: 'Ruoli', emSub: 'Qui gestisci gli eventi.', ccManagerSub: 'C&C si gestisce nella scheda «C&C».',
       infoShow: 'Mostra la spiegazione', infoHide: 'Nascondi la spiegazione',
       ok: 'OK',
@@ -391,7 +391,7 @@
       ruleAdded: 'Trainingstag hinzuegfüegt', extraAdded: 'Training hinzuegfüegt', eventAdded: 'Event hinzuegfüegt',
       ruleChanged: 'Trainingstag gänderet', trChanged: 'Training gänderet', eventChanged: 'Event gänderet', langSaved: 'Sprach gspeicheret',
       guestTag: 'Gascht', makeGuest: 'Als Gascht festlege: {name}', revokeGuest: 'Gascht-Status entferne: {name}', guestGranted: 'Als Gascht festgleit', guestRevoked: 'Gascht-Status entfernt',
-      guestCheck: 'Als Gascht hinzuefüege (gseht nur Trainings und Profil)', guestInfo: 'Du hesch en Gascht-Zuegang. Du gsehsch d Trainings und dis Profil.', supporterInfo: 'Du bisch bi Friends & Family. Du gsehsch d Trainings, de Jass und dis Profil.',
+      guestCheck: 'Als Gascht hinzuefüege (gseht nur Trainings und Profil)', guestInfo: 'Du hesch en Gascht-Zuegang. Du gsehsch d Trainings und dis Profil.', supporterInfo: 'Du bisch bi Friends & Family. Du gsehsch d Trainings, de Jass, C&C und dis Profil.',
       memberTag: 'Mitglied', emTag: 'Event Manager', makeEm: 'Zum Event Manager mache: {name}', revokeEm: 'Event Manager-Rächt entzieh: {name}', emGranted: 'Als Event Manager festgleit', emRevoked: 'Event Manager-Rächt entzoge', confirmGuestLoses: '{name} het Admin-, Event Manager-, Chilbi Manager-, Chränzli Manager- oder Jass Manager-Rächt. Die Änderig nimmt die Rächt wäg. Wiitermache?', selfMember: 'Du bisch Mitglied. Du chasch di nöd säber zum Gascht mache.', rolesTitle: 'Rolle', emSub: 'Do verwaltisch du d Events.', ccManagerSub: 'C&C verwaltisch im Reiter «C&C».',
       infoShow: 'Erklärig aazeige', infoHide: 'Erklärig verstecke',
       ok: 'OK',
@@ -467,7 +467,7 @@
       ruleAdded: 'День тренування додано', extraAdded: 'Тренування додано', eventAdded: 'Подію додано',
       ruleChanged: 'День тренування змінено', trChanged: 'Тренування змінено', eventChanged: 'Подію змінено', langSaved: 'Мову збережено',
       guestTag: 'Гість', makeGuest: 'Призначити гостем: {name}', revokeGuest: 'Забрати статус гостя: {name}', guestGranted: 'Призначено гостем', guestRevoked: 'Статус гостя знято',
-      guestCheck: 'Додати як гостя (бачить лише тренування та профіль)', guestInfo: 'У вас гостьовий доступ. Ви бачите тренування та свій профіль.', supporterInfo: 'Ти в групі Friends & Family. Ти бачиш тренування, Джас і свій профіль.',
+      guestCheck: 'Додати як гостя (бачить лише тренування та профіль)', guestInfo: 'У вас гостьовий доступ. Ви бачите тренування та свій профіль.', supporterInfo: 'Ти в групі Friends & Family. Ти бачиш тренування, Джас, C&C і свій профіль.',
       memberTag: 'Член клубу', emTag: 'Менеджер подій', makeEm: 'Призначити менеджером подій: {name}', revokeEm: 'Забрати права менеджера подій: {name}', emGranted: 'Призначено менеджером подій', emRevoked: 'Права менеджера подій забрано', confirmGuestLoses: '{name} має права Admin, Event Manager, Chilbi Manager, Chränzli Manager або Jass Manager. Ця зміна забере ці права. Продовжити?', selfMember: 'Ви член клубу. Ви не можете призначити себе гостем.', rolesTitle: 'Ролі', emSub: 'Тут ви керуєте подіями.', ccManagerSub: 'C&C керуєш у вкладці «C&C».',
       infoShow: 'Показати пояснення', infoHide: 'Сховати пояснення',
       ok: 'OK',
@@ -542,7 +542,7 @@
       ruleAdded: 'Trainingstag dazuakemma', extraAdded: 'Training dazuakemma', eventAdded: 'Event dazuakemma',
       ruleChanged: 'Trainingstag gändert', trChanged: 'Training gändert', eventChanged: 'Event gändert', langSaved: 'Sprach gspeichert',
       guestTag: 'Gast', makeGuest: 'Als Gast festlegn: {name}', revokeGuest: 'Gast-Status entfernen: {name}', guestGranted: 'Als Gast festgelegt', guestRevoked: 'Gast-Status entfernt',
-      guestCheck: 'Als Gast dazuadoa (sicht bloß Trainings und Profil)', guestInfo: 'Du hast an Gast-Zugang. Du siehst de Trainings und dei Profil.', supporterInfo: 'Du bist bei Friends & Family. Du siehgst de Trainings, \'s Jass und dei Profil.',
+      guestCheck: 'Als Gast dazuadoa (sicht bloß Trainings und Profil)', guestInfo: 'Du hast an Gast-Zugang. Du siehst de Trainings und dei Profil.', supporterInfo: 'Du bist bei Friends & Family. Du siehgst de Trainings, \'s Jass, C&C und dei Profil.',
       memberTag: 'Mitglied', emTag: 'Event Manager', makeEm: 'Zum Event Manager macha: {name}', revokeEm: 'Event Manager-Rechte entziehn: {name}', emGranted: 'Als Event Manager festgelegt', emRevoked: 'Event Manager-Rechte entzogn', confirmGuestLoses: 'Da {name} hod Admin-, Event Manager-, Chilbi Manager-, Chränzli Manager- oda Jass Manager-Rechte. Dej Änderung nimmt eam de Rechte weg. Weitamacha?', selfMember: 'Du bist Mitglied. Du konnst di ned söiba zum Gast macha.', rolesTitle: 'Rollen', emSub: 'Do verwoitst du de Events.', ccManagerSub: 'C&C vawoitst in da Reitn «C&C».',
       infoShow: 'Erklärung anzoagn', infoHide: 'Erklärung wegdoa',
       ok: 'OK',
@@ -1020,6 +1020,12 @@
     return html;
   }
 
+  // «Noch nicht geantwortet» sehen nur Aktiv- und Passivmitglieder (nicht Gast, Friends & Family, Kandidat)
+  function seesOpen() { return !!(S.me && !S.me.isGuest && !S.me.isSupporter && !S.me.isCandidate); }
+  // Teilnehmer bei Trainings und Events bearbeiten: Admin (Events zusätzlich Event Manager)
+  function canEditPeople() { return !!(S.me && S.me.isAdmin); }
+  function canEditEvPeople() { return !!(S.me && (S.me.isEventManager || S.me.isAdmin)); }
+
   function cardHtml(t) {
     var r = S.tr[t.key] || {};
     var off = !!S.cancelled[t.key];
@@ -1034,7 +1040,9 @@
       '</article>';
     }
     return '<article class="ccel" title="' + esc(t.title + ', ' + L('timePlace', { time: t.time, place: t.place })) + '">' +
-      '<div class="cceh"><b>' + fullDate(t.date) + '</b></div>' +
+      '<div class="cceh"><b>' + fullDate(t.date) + '</b>' +
+      (canEditPeople() ? hico('tr-people', ICON.pencil, L('evManagePeople'), { data: { key: t.key } }) : '') +
+      '</div>' +
       '<div class="ccbody">' +
         '<div class="actrow3">' +
           '<button type="button" class="resp yes" data-act="resp" data-val="yes" data-key="' + esc(t.key) + '" aria-pressed="' + (mine === 'yes') + '">' + ICON.check + L('yes') + '</button>' +
@@ -1044,7 +1052,7 @@
         (isOpen ? whoBlock([
           { label: L('hYes', { n: yes.length }), arr: yes },
           { label: L('hNo', { n: no.length }), arr: no }
-        ].concat(S.me.isGuest ? [] : [{ label: L('hOpen', { n: open.length }), arr: open }])) : '') +
+        ].concat(seesOpen() ? [{ label: L('hOpen', { n: open.length }), arr: open }] : [])) : '') +
       '</div>' +
     '</article>';
   }
@@ -1136,7 +1144,7 @@
     }
     return '<article class="ccel">' +
       '<div class="cceh"><b>' + fullDate(parseIso(e.date)) + ' \u2013 ' + esc(e.title) + '</b>' +
-      (canManageEvents() ? '<button type="button" class="hico" data-act="ev-menu" data-id="' + e.id + '" aria-label="' + esc(L('ccActions') + ': ' + e.title) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>' : '') +
+      (canEditEvPeople() ? '<button type="button" class="hico" data-act="ev-menu" data-id="' + e.id + '" aria-label="' + esc(L('ccActions') + ': ' + e.title) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>' : '') +
       '</div>' +
       '<div class="ccbody">' +
         '<p class="muted small">' + esc(L('timePlace', { time: e.time, place: e.place })) + '</p>' +
@@ -1148,9 +1156,8 @@
           (isOpen ? whoBlock([
             { label: L('hSolo', { n: solo.length }), arr: solo },
             { label: L('hDuo', { n: duo.length, p: duo.length * 2 }), arr: duo, plus: true },
-            { label: L('hNo', { n: no.length }), arr: no },
-            { label: L('hOpen', { n: open.length }), arr: open }
-          ]) : '')
+            { label: L('hNo', { n: no.length }), arr: no }
+          ].concat(seesOpen() ? [{ label: L('hOpen', { n: open.length }), arr: open }] : [])) : '')
         ) : '') +
       '</div>' +
     '</article>';
@@ -1336,7 +1343,7 @@
     var tabs = [{ id: 'trainings', label: L('navTrainings'), icon: ICON.dumbbell }];
     if (!restricted) tabs.push({ id: 'events', label: L('navEvents'), icon: ICON.star });
     if (!noJass) tabs.push({ id: 'jass', label: L('navJass'), icon: ICON.trophy });
-    if (!restricted && (canCC() || S.ccPublic)) tabs.push({ id: 'cc', label: L('navCC'), icon: ICON.glass });
+    if ((canCC() || S.ccPublic) && !noJass) tabs.push({ id: 'cc', label: L('navCC'), icon: ICON.glass });
     if (S.me.isAdmin) tabs.push({ id: 'admin', label: L('navAdmin'), icon: ICON.gear });
     tabs.push({ id: 'profile', label: L('navProfile'), icon: ICON.user });
     nav.innerHTML = '<div class="in">' + tabs.map(function (t) {
@@ -1360,7 +1367,8 @@
     }
     else {
       if (S.tab === 'admin' && !S.me.isAdmin) S.tab = 'trainings';
-      if ((S.tab === 'events' || S.tab === 'cc') && (S.me.isGuest || S.me.isSupporter) && !S.me.isAdmin) S.tab = 'trainings';
+      if (S.tab === 'events' && (S.me.isGuest || S.me.isSupporter) && !S.me.isAdmin) S.tab = 'trainings';
+      if (S.tab === 'cc' && S.me.isGuest && !S.me.isAdmin) S.tab = 'trainings';
       if (S.tab === 'jass' && S.me.isGuest && !S.me.isAdmin) S.tab = 'trainings';
       if (S.tab === 'cc' && !(canCC() || S.ccPublic)) S.tab = 'trainings';
       var pageHtml = S.tab === 'jass' ? viewJass() : S.tab === 'cc' ? viewCC() : S.tab === 'admin' ? viewAdmin() : S.tab === 'events' ? viewEvents() : S.tab === 'profile' ? viewProfile() : viewTrainings();
@@ -2831,7 +2839,39 @@
     }, L('ccSaved'));
   }
 
+  // Training: Antwort einer beliebigen Person setzen (nur Admin; RLS: training_responses_admin_write)
+  async function setTrainingResponseFor(key, userId, val) {
+    var cur = (S.tr[key] || {})[userId];
+    S.tr[key] = S.tr[key] || {};
+    if (cur === val) {
+      delete S.tr[key][userId];
+      render(); if (evSheet) evDraw();
+      return act(function () { return sb.from('training_responses').delete().eq('training_key', key).eq('user_id', userId); }, L('ccSaved'));
+    }
+    S.tr[key][userId] = val;
+    render(); if (evSheet) evDraw();
+    return act(function () {
+      return sb.from('training_responses').upsert({ training_key: key, user_id: userId, status: val, updated_at: new Date().toISOString() });
+    }, L('ccSaved'));
+  }
+
+  function trPeopleList(tr) {
+    var q = ccNorm(evSheet.q || '');
+    var pool = S.members.filter(function (m) { return !m.isCandidate; });
+    if (q) pool = pool.filter(function (m) { return ccNorm(m.name).indexOf(q) > -1; });
+    var r = S.tr[tr.id] || {};
+    var rows = pool.map(function (m) {
+      var val = r[m.id];
+      var b = function (v, cls, label) {
+        return '<button type="button" class="resp ' + cls + (val === v ? ' on' : '') + '" data-eva="setresp" data-uid="' + esc(m.id) + '" data-val="' + v + '">' + label + '</button>';
+      };
+      return '<div class="evprow"><span class="evpn">' + esc(m.name) + '</span><div class="evpbtns">' + b('yes', 'yes', L('yes')) + b('no', 'no', L('no')) + '</div></div>';
+    }).join('');
+    return rows ? '<div class="evpeople">' + rows + '</div>' : '<p class="ccsum" style="padding:10px 0">' + L('nobody') + '</p>';
+  }
+
   function evPeopleList(ev) {
+    if (evSheet && evSheet.mode === 'trpeople') return trPeopleList(ev);
     var q = ccNorm(evSheet.q || '');
     var pool = S.members.filter(function (m) { return !m.isGuest && !m.isSupporter && !m.isCandidate; });
     if (q) pool = pool.filter(function (m) { return ccNorm(m.name).indexOf(q) > -1; });
@@ -2861,7 +2901,11 @@
   function evDraw() {
     var st = evSheet;
     if (!st) return;
-    var ev = S.events.filter(function (x) { return x.id === st.id; })[0];
+    var ev;
+    if (st.mode === 'trpeople') {
+      var trn = getTrainings().filter(function (x) { return x.key === st.id; })[0];
+      ev = trn ? { id: trn.key, title: fmt(trn.date, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' }) } : null;
+    } else ev = S.events.filter(function (x) { return x.id === st.id; })[0];
     if (!ev) { evClose(); return; }
     var body;
     if (st.mode === 'menu') {
@@ -2879,7 +2923,7 @@
         fld(L('place'), inPlace(ev.place)) +
         fld('', '<label class="check"><input type="checkbox" name="rsvp"' + (ev.rsvp ? ' checked' : '') + '><span>' + L('rsvpRequired') + '</span></label>') +
         '<div class="dlgbtns"><button type="button" class="btn ghost inline" data-eva="close">' + L('dismiss') + '</button><button type="button" class="btn inline" data-eva="save-ev">' + L('save') + '</button></div></form>';
-    } else if (st.mode === 'people') {
+    } else if (st.mode === 'people' || st.mode === 'trpeople') {
       body = '<p class="cck">' + L('evManagePeople') + '</p><h3>' + esc(ev.title) + '</h3>' +
         '<input class="input" name="q" placeholder="' + esc(L('ccSearch')) + '" autocomplete="off" value="' + esc(st.q || '') + '" style="margin-bottom:10px">' +
         '<div id="evpeoplebox">' + evPeopleList(ev) + '</div>' +
@@ -2913,9 +2957,11 @@
     if (b) {
       var a = b.dataset.eva, st = evSheet;
       if (a === 'close') { evClose(); return; }
+      if ((a === 'edit' || a === 'save-ev' || a === 'cancel' || a === 'del') && !canManageEvents()) return;
+      if ((a === 'setresp' || a === 'addextra' || a === 'people') && !canEditEvPeople() && !canEditPeople()) return;
       if (a === 'edit') { st.mode = 'edit'; evDraw(); return; }
       if (a === 'people') { st.mode = 'people'; evDraw(); return; }
-      if (a === 'setresp') { return setResponseFor(st.id, b.dataset.uid, b.dataset.val); }
+      if (a === 'setresp') { return st.mode === 'trpeople' ? setTrainingResponseFor(st.id, b.dataset.uid, b.dataset.val) : setResponseFor(st.id, b.dataset.uid, b.dataset.val); }
       // Speichern-Knopf im Edit-Sheet: Formular direkt hier abhandeln
       if (a === 'save-ev') {
         var form = wrap.querySelector('[data-form="edit-ev"]');
@@ -3119,7 +3165,8 @@
     if (act_ === 'cc-fold') { S.ccFold[D.id] = !ccIsFolded(D.id); render(); return; }
     if (act_ === 'cc-menu') { if (canCC()) ccOpen(D.lvl, D.id || null, 'menu'); return; }
     if (act_ === 'cc-print') { if (canCC()) ccExportPdf(D.id); return; }
-    if (act_ === 'ev-menu') { if (canManageEvents()) evOpen(D.id, 'menu'); return; }
+    if (act_ === 'ev-menu') { if (canManageEvents()) evOpen(D.id, 'menu'); else if (canEditEvPeople()) evOpen(D.id, 'people'); return; }
+    if (act_ === 'tr-people') { if (canEditPeople()) evOpen(D.key, 'trpeople'); return; }
     if (act_ === 'cc-guest') { if (S.me && S.me.isAdmin) ccOpen('guest', null, 'guest', { name: D.name }); return; }
     if (act_ === 'who-ev') { S.open['ev:' + D.id] = !S.open['ev:' + D.id]; render(); return; }
     if (act_ === 'sec') { S.sec[D.id] = !S.sec[D.id]; render(); return; }

@@ -573,7 +573,7 @@ create policy "events_manage_write" on public.events
   with check (public.is_event_manager());
 
 -- Antworten auf Events: Gäste sehen und ändern nichts, alle anderen ändern nur die eigenen.
--- Zusätzlich dürfen Event Manager die Antwort jeder Person setzen (Teilnehmer verwalten).
+-- Zusätzlich dürfen Event Manager und Admins die Antwort jeder Person setzen (Teilnehmer verwalten).
 drop policy if exists "event_responses_select" on public.event_responses;
 create policy "event_responses_select" on public.event_responses
   for select to authenticated using (not public.is_guest());
@@ -585,8 +585,8 @@ create policy "event_responses_own_write" on public.event_responses
 drop policy if exists "event_responses_manager_write" on public.event_responses;
 create policy "event_responses_manager_write" on public.event_responses
   for all to authenticated
-  using (public.is_event_manager())
-  with check (public.is_event_manager());
+  using (public.is_event_manager() or public.is_admin())
+  with check (public.is_event_manager() or public.is_admin());
 
 -- Antworten auf Trainings: alle lesen, jede Person ändert nur die eigenen
 do $$
@@ -602,6 +602,11 @@ begin
       t);
   end loop;
 end $$;
+
+-- Admin darf die Trainingsantworten aller Personen setzen (Teilnehmer bearbeiten)
+drop policy if exists "training_responses_admin_write" on public.training_responses;
+create policy "training_responses_admin_write" on public.training_responses
+  for all to authenticated using (public.is_admin()) with check (public.is_admin());
 
 -- ---------- Live-Aktualisierung (Realtime) ----------
 do $$
