@@ -26,11 +26,18 @@ Kein Build-Schritt — alle Dateien werden direkt ausgeliefert.
 - PIN = letzte 6 Ziffern der Telefonnummer
 - **Gelber PIN-Hinweisbalken** (`.pinbanner`, in der Render-Funktion von app.js): erscheint bei jedem Seitenaufruf und auf jedem Tab, bis das Mitglied im Profil einen eigenen PIN gesetzt hat (`profiles.pin_changed = true`). Kein Wegklicken. Bewusst **nur für Aktiv-/Passivmitglieder**: Admin, Gast, Friends & Family (Supporter) und Kandidaten sehen ihn nicht. Wer als Admin testen will, sieht ihn nicht; dafür ein Nicht-Admin-Konto mit `pin_changed = false` nehmen. «PIN zurücksetzen» (Admin, `reset_pin`) setzt `pin_changed` wieder auf `false`. Entscheid 2026-10-08: so lassen, keine Ausweitung auf Admin/F&F.
 - Nummerneingabe: **DEV** = ein Textfeld, Schweizer Format (`079 …`); eine deutsche Nummer geht nur mit `+49…`. **PRD** = Länder-Dropdown (CH +41 / DE +49 / Andere) + Nummer ohne führende Null (`phoneField()`, `composePhone()`, `phoneParts()` in app.js; neues Land: Eintrag in `PHONE_CC`). Gespeichert wird in beiden Umgebungen das internationale Format. Das Dropdown liegt für DEV bereit im Branch `feature/phone-dropdown` (Stand: SW `v87`), ist auf `main` aber bewusst **nicht** drin, weil alle Tester auf DEV sind.
-- **DEV und PRD weichen deshalb absichtlich ab** (`app.js`, `styles.css`, `sw.js`). SW-Versionen sind je Umgebung unabhängig (DEV `v88`, PRD `v87`). Beim späteren Einspielen des Dropdowns in DEV: SW-Version über den aktuellen DEV-Wert erhöhen.
+- **DEV und PRD weichen deshalb absichtlich ab** (`app.js`, `styles.css`, `sw.js`). SW-Versionen sind je Umgebung unabhängig (DEV `v88`, PRD `v88`). Beim späteren Einspielen des Dropdowns in DEV: SW-Version über den aktuellen DEV-Wert erhöhen.
 - **`EMAIL_DOMAIN` muss in `config.js` aktiv gesetzt sein** (`EMAIL_DOMAIN: 'fbro.app'`). Die App baut die Login-Adresse in `phoneToEmail()` (app.js) als `<digits>@` + `EMAIL_DOMAIN`, **Fallback ohne Eintrag: `phone-login.app`**. Fehlt der Eintrag, sucht die App `…@phone-login.app`, findet den Migrations-User (`…@fbro.app`) nicht und meldet «Invalid login credentials».
 - Pro Umgebung muss die Domain zu den Adressen in `auth.users` passen. Prüfen: `select email from auth.users limit 5;`
 - Diagnose bei Login-Problem: DevTools → Network → `token?grant_type=password` → Payload → `email` mit `auth.users` vergleichen.
 - Der Service Worker cached `config.js`: nach Änderung Seite hart neu laden bzw. unter Application → Service Workers «Unregister».
+
+## Icon-Konzept (Stand 2026-10-08, nur PRD; DEV noch nicht)
+- **Ein Baustein für Kopfzeilen-Icons:** `hico(act, icon, label, opts)` in app.js, CSS-Klasse `.hico` (ersetzt `.ccdots`, `.ccinfo`, `.plusbtn`). Reihenfolge in jeder Kopfzeile: Titel (klappt auf/zu) → Aktions-Icons (`+`, Info, Drucken, «…») → Auf-/Zuklapp-Pfeil (`.ccfold`). Gleiche Höhe wie der Pfeil, Symbolgrösse 20 px; aktiver Zustand `.on` (`aria-pressed`).
+- **Regel:** «…» (Menü) nur, wenn dahinter mehrere Aktionen stehen (Anlass, Tag, Mitglied, Jasstag). Gibt es nur «+» und/oder Info, stehen sie direkt als Icons da (Admin-Konsole, Spielplan, Ewige Rangliste).
+- **Info-Icons:** Text ist erst nach dem Antippen sichtbar und klappt den Abschnitt automatisch auf (`js-hint` für Jass, `info-toggle` für Admin). Spielplan-Info nur für Admin/Jass Manager; Info der Ewigen Rangliste für alle.
+- **Drucken vergangene Jassmasters:** nur Admin und Jass Manager (`jsEdit()`; Button und Handler geprüft). Der PDF-Druck bei C&C bleibt für alle sichtbar, die C&C sehen.
+- Der PRD-Stand liegt als Branch `prd/icon-konzept` im DEV-Repo (Basis `feature/phone-dropdown`); ZIP: `fbro-prd-icons.zip`. Browser-Test mit Testdaten (Playwright, Mitglied/Jass Manager/Admin): 34 Prüfungen ok.
 
 ## Bekannte Bugs & Fixes
 
@@ -99,6 +106,7 @@ Stand 2026-10-08: `node --check` ok; SW-SHELL-Dateien vorhanden; Manifest ok; al
 - Claude kann PRD aus der Sitzung nicht schreiben (kein Zugriff, Namenskonflikt mit `lata-8888/fbro-app`): Änderungen als ZIP liefern, von Hand einspielen.
 
 ## Offene Aufgaben
+- [ ] Icon-Konzept (Branch `prd/icon-konzept`) nach DEV übernehmen, sobald PRD bestätigt ist (SW-Version über `v88` erhöhen); C&C-Druck-Icon: bewusst für alle sichtbar, bei Bedarf auf `canCC()` beschränken
 - [ ] PRD: Trainings und Events werden von Hand in der App erfasst (kein Export aus DEV); Jass-Historie und Chilbi 2027 sind eingespielt
 - [ ] Optional: PRD-Login-Adressen von `@fbro.app` auf `@phone-login.app` umstellen (wie DEV), Skripte in `fbro-prd-umstellung.zip`; dann `EMAIL_DOMAIN` in der PRD-`config.js` auskommentieren
 - [ ] DEV: prüfen, welche Domain `auth.users` nutzt (`phone-login.app` vs `fbro.app`)
