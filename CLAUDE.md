@@ -24,7 +24,8 @@ Kein Build-Schritt — alle Dateien werden direkt ausgeliefert.
 - Synthetic Email: `<phone_digits_ohne_plus>@fbro.app`
   Beispiel: `+41791234567` → `41791234567@fbro.app`
 - PIN = letzte 6 Ziffern der Telefonnummer
-- Nummerneingabe: Länder-Dropdown (CH +41 / DE +49 / Andere) + Nummer ohne führende Null (`phoneField()`, `composePhone()`, `phoneParts()` in app.js). Eine führende 0 und vollständige Eingaben (`+49…`, `0049…`) werden weiterhin akzeptiert. Gespeichert wird immer das internationale Format (`+41…`, `+49…`); Anzeige CH als `079 …`, DE als `+49 176 …`. Neues Land: Eintrag in `PHONE_CC` ergänzen.
+- Nummerneingabe: **DEV** = ein Textfeld, Schweizer Format (`079 …`); eine deutsche Nummer geht nur mit `+49…`. **PRD** = Länder-Dropdown (CH +41 / DE +49 / Andere) + Nummer ohne führende Null (`phoneField()`, `composePhone()`, `phoneParts()` in app.js; neues Land: Eintrag in `PHONE_CC`). Gespeichert wird in beiden Umgebungen das internationale Format. Das Dropdown liegt für DEV bereit im Branch `feature/phone-dropdown` (Stand: SW `v87`), ist auf `main` aber bewusst **nicht** drin, weil alle Tester auf DEV sind.
+- **DEV und PRD weichen deshalb absichtlich ab** (`app.js`, `styles.css`, `sw.js`). SW-Versionen sind je Umgebung unabhängig (DEV `v88`, PRD `v87`). Beim späteren Einspielen des Dropdowns in DEV: SW-Version über den aktuellen DEV-Wert erhöhen.
 - **`EMAIL_DOMAIN` muss in `config.js` aktiv gesetzt sein** (`EMAIL_DOMAIN: 'fbro.app'`). Die App baut die Login-Adresse in `phoneToEmail()` (app.js) als `<digits>@` + `EMAIL_DOMAIN`, **Fallback ohne Eintrag: `phone-login.app`**. Fehlt der Eintrag, sucht die App `…@phone-login.app`, findet den Migrations-User (`…@fbro.app`) nicht und meldet «Invalid login credentials».
 - Pro Umgebung muss die Domain zu den Adressen in `auth.users` passen. Prüfen: `select email from auth.users limit 5;`
 - Diagnose bei Login-Problem: DevTools → Network → `token?grant_type=password` → Payload → `email` mit `auth.users` vergleichen.
@@ -61,7 +62,7 @@ Muss viele Zeilen zurückgeben. Nur 4 (uid, role, email, jwt) = NULL-Problem →
 2. Schema-Änderungen: `supabase/schema.sql` im SQL Editor ausführen (idempotent)
 3. Neue User: `fbro_migration_v4.sql` ausführen (setzt alle Rollen auf `false`: **Admin danach manuell setzen**: `update public.profiles set is_admin = true where phone = '+41…';`)
 4. `config.js` committen und pushen → GitHub Pages deployed automatisch
-5. PRD und DEV unterscheiden sich **nur** in `config.js` (URL, Anon-Key). Alles andere identisch halten.
+5. PRD und DEV unterscheiden sich in `config.js` (URL, Anon-Key). Ausnahme zur Zeit: Nummernfeld mit Länder-Dropdown nur auf PRD (siehe Login-Logik). Sonst alles identisch halten.
 
 ## Dateien
 | Datei | Beschreibung |

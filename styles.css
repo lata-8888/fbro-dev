@@ -593,8 +593,3 @@
   /* Kalender-Buttons: .ics + Google nebeneinander */
   .calbtns { display: flex; align-items: center; gap: 6px; flex: 0 0 auto; justify-content: flex-end; }
   .calbtn.calgoog { font-size: .8rem; padding: 2px 8px; border-radius: 6px; border: 1px solid var(--line); color: var(--muted); text-decoration: none; white-space: nowrap; }
-
-/* Handynummer: Länderauswahl + Nummer */
-.phonerow { display: flex; gap: 8px; }
-.phonerow .phonecc { flex: 0 0 auto; width: auto; max-width: 42%; }
-.phonerow input { flex: 1; min-width: 0; }
