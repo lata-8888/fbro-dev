@@ -316,7 +316,7 @@
   .accchev.open .chev { transform: rotate(180deg); }
   @media (prefers-reduced-motion: reduce) { .accchev .chev { transition: none; } }
 
-  /* Rollen-Symbole: Krone (Mitglied/Gast), Stern (Admin), Weinglas (Event-Manager) */
+  /* Rollen-Symbole: Krone (Mitglied/Gast), Stern (Admin), Weinglas (Event Manager) */
   .rolebtn { width: 40px; height: 40px; flex: 0 0 auto; border-radius: 10px; border: 1.5px solid var(--line); background: transparent; color: var(--muted); padding: 0; display: inline-flex; align-items: center; justify-content: center; }
   .rolebtn svg { width: 24px; height: 24px; fill: none; }
   .rolebtn.crown { color: var(--crown); border-color: color-mix(in srgb, var(--crown) 45%, var(--line)); }
@@ -446,6 +446,9 @@
   .ccother .input { flex: 1; min-width: 0; font-size: 1rem; padding: 11px 12px; }
   .ccsug { font-size: .9rem; color: var(--muted); }
   .ccsug > div { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; }
+  /* Info-Text unter der Kopfzeile: unabhängig vom Auf-/Zuklappen des Abschnitts */
+  .infobar { margin: 0; padding: 10px 12px; font-size: .9rem; color: var(--muted); border-bottom: 1px solid var(--line); }
+  .jssub .infobar { padding: 2px 0 10px; border-bottom: 0; }
   .ccnote { font-size: .88rem; color: var(--muted); margin: -4px 0 12px; }
   .ccsheetcard .input { font-size: 1rem; padding: 11px 12px; }
 
@@ -574,7 +577,7 @@
   .ccpublic { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 14px; font-size: .95rem; cursor: pointer; }
   .ccpublic input { width: 20px; height: 20px; margin: 0; accent-color: var(--crown); flex: 0 0 auto; }
 
-  /* Events: Teilnehmer verwalten (Event-Manager/Admin) */
+  /* Events: Teilnehmer verwalten (Event Manager/Admin) */
   .evpeople { display: flex; flex-direction: column; gap: 8px; max-height: 50vh; overflow-y: auto; }
   .evprow { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 0; border-top: 1px solid var(--line); }
   .evprow:first-child { border-top: 0; }

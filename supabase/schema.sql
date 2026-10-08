@@ -38,7 +38,7 @@ alter table public.profiles add constraint profiles_theme_check
   check (theme is null or theme in ('light', 'dark'));
 
 -- Rollen: Gast (sieht nur Trainings und Profil), Admin (Stern), Chilbi Manager und
--- Chränzli Manager (Weinglas, lösen den früheren Event-Manager ab), Jass Manager (Pokal)
+-- Chränzli Manager (Weinglas, lösen den früheren Event Manager ab), Jass Manager (Pokal)
 -- Gast = false bedeutet Mitglied (Krone). Admin und die Manager-Rollen können nur Mitglieder sein.
 -- is_passive unterscheidet Aktiv- von Passivmitgliedern (nur bei Nicht-Gästen von Bedeutung).
 alter table public.profiles add column if not exists is_guest boolean not null default false;
@@ -278,7 +278,7 @@ begin
 end;
 $$;
 
--- Event-Manager-Rechte vergeben oder entziehen (nur für Admins, nur für Mitglieder)
+-- Event Manager-Rechte vergeben oder entziehen (nur für Admins, nur für Mitglieder)
 -- Hinweis: abgelöst durch set_chilbi_manager/set_chraenzli_manager, Funktion bleibt für Altdaten erhalten
 create or replace function public.set_event_manager(target uuid, make_manager boolean)
 returns void
@@ -286,10 +286,10 @@ language plpgsql security definer set search_path = public
 as $$
 begin
   if not public.is_admin() then
-    raise exception 'Nur Admins dürfen Event-Manager festlegen';
+    raise exception 'Nur Admins dürfen Event Manager festlegen';
   end if;
   if make_manager and exists (select 1 from public.profiles where id = target and is_guest) then
-    raise exception 'Gäste können nicht Event-Manager sein. Mache die Person zuerst zum Mitglied.';
+    raise exception 'Gäste können nicht Event Manager sein. Mache die Person zuerst zum Mitglied.';
   end if;
   update public.profiles set is_event_manager = make_manager where id = target;
 end;
@@ -561,7 +561,7 @@ begin
   end loop;
 end $$;
 
--- Events: alle ausser Gästen lesen, Admins und Event-Manager ändern
+-- Events: alle ausser Gästen lesen, nur Event Manager ändern (Admin nur, wenn er sich die Rolle selbst gibt)
 drop policy if exists "events_select" on public.events;
 create policy "events_select" on public.events
   for select to authenticated using (not public.is_guest());
@@ -569,11 +569,11 @@ drop policy if exists "events_admin_write" on public.events;
 drop policy if exists "events_manage_write" on public.events;
 create policy "events_manage_write" on public.events
   for all to authenticated
-  using (public.is_admin() or public.is_event_manager())
-  with check (public.is_admin() or public.is_event_manager());
+  using (public.is_event_manager())
+  with check (public.is_event_manager());
 
 -- Antworten auf Events: Gäste sehen und ändern nichts, alle anderen ändern nur die eigenen.
--- Zusätzlich dürfen Admin und Event-Manager die Antwort jeder Person setzen (Teilnehmer verwalten).
+-- Zusätzlich dürfen Event Manager die Antwort jeder Person setzen (Teilnehmer verwalten).
 drop policy if exists "event_responses_select" on public.event_responses;
 create policy "event_responses_select" on public.event_responses
   for select to authenticated using (not public.is_guest());
@@ -585,8 +585,8 @@ create policy "event_responses_own_write" on public.event_responses
 drop policy if exists "event_responses_manager_write" on public.event_responses;
 create policy "event_responses_manager_write" on public.event_responses
   for all to authenticated
-  using (public.is_admin() or public.is_event_manager())
-  with check (public.is_admin() or public.is_event_manager());
+  using (public.is_event_manager())
+  with check (public.is_event_manager());
 
 -- Antworten auf Trainings: alle lesen, jede Person ändert nur die eigenen
 do $$
@@ -668,7 +668,7 @@ create or replace function public.can_cc()
 returns boolean
 language sql stable security definer set search_path = public
 as $$
-  select public.is_admin() or public.is_chilbi_manager() or public.is_chraenzli_manager()
+  select public.is_chilbi_manager() or public.is_chraenzli_manager()
 $$;
 
 -- Schaltet C&C für alle angemeldeten Personen lesbar (true) oder nur für
@@ -734,7 +734,7 @@ create or replace function public.can_jass()
 returns boolean
 language sql stable security definer set search_path = public
 as $$
-  select public.is_admin() or public.is_jass_master()
+  select public.is_jass_master()
 $$;
 
 do $$
@@ -794,7 +794,7 @@ end $$;
 -- =====================================================================
 -- Jass: Jassmasters-Serien mit Jasstagen, Teilnehmern und Punkten
 -- Sichtbar für alle angemeldeten Personen (Mitglieder, Gäste), damit jeder
--- die Tagesrangliste sieht. Bearbeiten dürfen nur Admins und Event-Manager.
+-- die Tagesrangliste sieht. Bearbeiten dürfen nur Admins und Event Manager.
 -- =====================================================================
 create table if not exists public.jass_series (
   id         uuid primary key default gen_random_uuid(),
@@ -849,7 +849,7 @@ begin
   end;
 end $$;
 
--- Eine einzelne Punktzahl setzen oder löschen (nur Admins und Event-Manager).
+-- Eine einzelne Punktzahl setzen oder löschen (nur Admins und Event Manager).
 -- p_game ist z. B. '1A' (Runde 1, Tisch A). p_pts ist die Punktzahl von Team I, oder null zum Löschen.
 create or replace function public.jass_set_score(p_day uuid, p_game text, p_pts integer)
 returns void
