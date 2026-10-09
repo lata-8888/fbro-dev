@@ -526,10 +526,10 @@
   .cntbtn.low b { color: var(--no); }
   .cntbtn.ok b { color: var(--yes); }
   .cntbtn.high b { color: var(--no); }
-  /* Abgesagte Trainings und Events: deutlich abgehoben (rot getönt, roter Balken links) */
-  .ccel.off { border-color: color-mix(in srgb, var(--no) 40%, var(--line)); border-left: 5px solid var(--no); }
-  .cceh.grey { background: var(--no-soft); }
-  .cceh.grey > b { color: var(--no); }
+  /* Abgesagte Trainings und Events: dezent grau abgehoben */
+  .ccel.off { background: color-mix(in srgb, var(--ink) 7%, var(--bg)); border-color: color-mix(in srgb, var(--ink) 18%, var(--bg)); }
+  .cceh.grey { background: transparent; }
+  .cceh.grey > b { color: var(--muted); }
   .resp.yes[aria-pressed="true"] { background: #8FC7F2; border-color: #8FC7F2; color: #0B2F5E; }
   .resp.yes:not([aria-pressed="true"]) { color: #2B7FC7; border-color: color-mix(in srgb, #2B7FC7 45%, var(--line)); }
   .resp.no[aria-pressed="true"] { background: #F4A9C6; border-color: #F4A9C6; color: #6B1540; }
