@@ -400,7 +400,22 @@
   .cc-g { background: var(--surface); color: var(--crown); border-color: color-mix(in srgb, var(--crown) 50%, var(--line)); }
   .cc-g svg { opacity: .5; }
   .cc-x { background: var(--warn-bg); color: var(--warn-ink); }
-  .ccp.ccme { font-weight: 700; box-shadow: inset 0 0 0 1.5px currentColor; }
+  .cc-a { background: var(--crown-soft); color: var(--crown); }
+  .cc-p { background: #DDF0E4; color: #1F6B3A; }
+  .cc-f { background: #F0E4F6; color: #7A3A96; }
+  :root[data-theme="dark"] .cc-p { background: #17301F; color: #7FD09A; }
+  :root[data-theme="dark"] .cc-f { background: #2B1D36; color: #C79BE0; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .cc-p { background: #17301F; color: #7FD09A; }
+    :root:not([data-theme="light"]) .cc-f { background: #2B1D36; color: #C79BE0; }
+  }
+  /* «Ich» immer rot und kräftig, unabhängig von der Gruppe */
+  .ccp.ccme { background: #FBDADA; color: #B3261E; font-weight: 700; box-shadow: inset 0 0 0 2px #B3261E; }
+  :root[data-theme="dark"] .ccp.ccme { background: #4A1B1B; color: #FF9A92; box-shadow: inset 0 0 0 2px #FF9A92; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .ccp.ccme { background: #4A1B1B; color: #FF9A92; box-shadow: inset 0 0 0 2px #FF9A92; }
+  }
+  .cclegend { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; }
   button.ccp { cursor: pointer; }
   /* Events: Nicht-Mitglieder-Eingabe */
   .evpaddrow { gap: 8px; align-items: center; }
