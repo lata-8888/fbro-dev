@@ -366,7 +366,7 @@
      Gleiche Höhe wie der Pfeil, gleiche Grösse der Symbole; aktiv (.on) = Farbe wie der Pfeil mit weichem Hintergrund. */
   .hico { width: 36px; height: 32px; border: 0; background: none; color: var(--muted); padding: 0; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; flex: 0 0 auto; }
   .hico svg { width: 20px; height: 20px; }
-  .hico.on { color: var(--crown); background: var(--crown-soft); }
+  .hico.on { color: var(--crown); }
   .hico.plus svg { transition: transform .2s; }
   .hico.plus.on svg { transform: rotate(45deg); }
   .ccdh .hico, .jssh .hico, .mbgh .hico { width: 32px; height: 30px; }
