@@ -1147,7 +1147,7 @@
       (canEditEvPeople() ? '<button type="button" class="hico" data-act="ev-menu" data-id="' + e.id + '" aria-label="' + esc(L('ccActions') + ': ' + e.title) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>' : '') +
       '</div>' +
       '<div class="ccbody">' +
-        '<p class="muted small">' + esc(L('timePlace', { time: e.time, place: e.place })) + '</p>' +
+        '<p class="muted small evinfo">' + esc(L('timePlace', { time: e.time, place: e.place })) + '</p>' +
         (e.rsvp ? (
           '<div class="actrow4">' +
             btn('solo', 'yes', ICON.one, L('solo')) + btn('duo', 'yes', ICON.two, L('duo')) + btn('no', 'no', '', L('no')) +
