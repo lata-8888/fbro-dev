@@ -3168,7 +3168,7 @@
     if (act_ === 'mode') { S.mode = S.mode === 'login' ? 'register' : 'login'; S.err = ''; render(); return; }
     if (act_ === 'tab') { S.tab = D.tab; S.edit = null; render(); window.scrollTo(0, 0); return; }
     if (act_ === 'who') { S.open[D.key] = !S.open[D.key]; render(); return; }
-    if (act_ === 'js-fold') { S.jsFold[D.id] = !S.jsFold[D.id]; render(); return; }
+    if (act_ === 'js-fold') { S.jsFold[D.id] = !S.jsFold[D.id]; delete S.info['jsh:' + D.id]; delete S.info['jsh:' + String(D.id).replace(/:s$/, '')]; render(); return; }   // Auf-/Zuklappen blendet den Infotext immer aus; Info nur über das Info-Icon
     if (act_ === 'js-print-past') { if (!jsEdit()) return; try { await jsPrintMatrix(); } catch (err) { console.error(err); toast(L('ccPdfFailed')); } return; }
     if (act_ === 'js-hint') { S.info['jsh:' + D.id] = !S.info['jsh:' + D.id]; render(); return; }   // nur den Text ein-/ausblenden
     if (act_ === 'js-menu') { if (jsEdit()) jsOpen({ lvl: D.lvl, id: D.id, mode: 'menu' }); return; }
