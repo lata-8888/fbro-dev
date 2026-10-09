@@ -1656,8 +1656,10 @@
 
   function viewCC() {
     var map = ccMap(), ed = canCC();
-    var html = '<div class="top"><div><h1 class="pagetitle">' + L('titleCC') + '</h1></div></div>';
-    html += ccLegend();
+    var legOn = !!S.info.cclegend;
+    var html = '<div class="top" style="align-items:center"><div><h1 class="pagetitle">' + L('titleCC') + '</h1></div>' +
+      hico('info-toggle', ICON.info, legOn ? L('infoHide') : L('infoShow'), { on: legOn, data: { id: 'cclegend' } }) + '</div>';
+    if (legOn) html += '<div class="infobar">' + ccLegend() + '</div>';
     // ccPublic-Toggle entfernt auf Wunsch (war: «Für alle Aktiv- und Passivmitglieder sichtbar»)
     if (S.ccErr) return html + '<div class="empty"><p>' + L('ccSetup') + '</p></div>';
     var tree = ccTree();
