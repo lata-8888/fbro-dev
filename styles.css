@@ -627,4 +627,5 @@ textarea.input { font: inherit; resize: vertical; }
 .shsp svg { width: 16px; height: 16px; }
 .shsp.off { background: var(--line); color: var(--muted); }
 .shml { color: var(--muted); }
-.shmn { font-weight: 600; min-width: 0; overflow-wrap: anywhere; }
+.shmn { font-weight: 600; min-width: 0; overflow-wrap: anywhere; flex: 1 1 auto; }
+.shsp { margin-left: auto; }

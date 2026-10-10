@@ -1777,7 +1777,12 @@
     var ok = a.music_url && shSpotifyOk(a.music_url);
     var ic = ok ? '<a class="shsp" href="' + esc(a.music_url) + '" target="_blank" rel="noopener noreferrer" aria-label="' + esc(L('shOpenSpotify')) + '" title="' + esc(L('shOpenSpotify')) + '">' + ICON.music + '</a>'
                 : '<span class="shsp off" aria-hidden="true">' + ICON.music + '</span>';
-    return '<div class="shmusic">' + ic + '<span class="shml">' + L('shMusic') + '</span>' + (a.music_name ? '<span class="shmn">' + esc(a.music_name) + '</span>' : '') + '</div>';
+    return '<div class="shmusic"><span class="shml">' + L('shMusic') + '</span><span class="shmn">' + (a.music_name ? esc(a.music_name) : '') + '</span>' + ic + '</div>';
+  }
+  // Vorgabe für die Beschreibung eines neuen Akts / einer neuen Szene: «1. Akt - …», «2. Szene - …» (nächste freie Nummer)
+  function shDefaultDesc(kind) {
+    var n = kind === 'act' ? S.cc.acts.length + 1 : S.cc.scenes.filter(function (x) { return ccSheet && x.act_id === ccSheet.id; }).length + 1;
+    return n + '. ' + (kind === 'act' ? 'Akt' : 'Szene') + ' - …';
   }
   function shInfoBtn(o) {
     if (!o.description) return '';
@@ -1892,7 +1897,7 @@
       h += fld(L('nameLabel'), '<input class="input" name="name" value="' + esc(o ? o.name : '') + '" placeholder="' + (kind === 'act' ? '1. Akt' : 'Szene 1') + '" required>') +
         (kind === 'act' ? fld(L('shMusic'), '<input class="input" name="music_name" value="' + esc(o && o.music_name ? o.music_name : '') + '" placeholder="Titel / Interpret">') +
           fld(L('shSpotify'), '<input class="input" type="url" name="music_url" inputmode="url" value="' + esc(o && o.music_url ? o.music_url : '') + '" placeholder="https://open.spotify.com/…">') : '') +
-        fld(L('shDesc'), '<textarea class="input" name="desc" rows="4">' + esc(o && o.description ? o.description : '') + '</textarea>') +
+        fld(L('shDesc'), '<textarea class="input" name="desc" rows="4">' + esc(o ? (o.description || '') : shDefaultDesc(kind)) + '</textarea>') +
         (kind === 'act' ? '<label class="check"><input type="checkbox" name="active"' + (o && o.active ? ' checked' : '') + '><span>' + L('shVisible') + '</span></label>' : '');
     } else if (ccIsPersonLvl(kind)) {
       h += fld(L('nameLabel'), '<input class="input" name="name" value="' + esc(o ? o.name : '') + '" placeholder="Bar" required>') +
