@@ -1784,13 +1784,9 @@
     var n = kind === 'act' ? S.cc.acts.length + 1 : S.cc.scenes.filter(function (x) { return ccSheet && x.act_id === ccSheet.id; }).length + 1;
     return n + '. ' + (kind === 'act' ? 'Akt' : 'Szene') + ' - …';
   }
-  function shInfoBtn(o) {
-    if (!o.description) return '';
-    var on = !!S.info['shh:' + o.id];
-    return hico('sh-hint', ICON.info, on ? L('infoHide') : L('infoShow'), { on: on, data: { id: o.id } });
-  }
-  function shInfoText(o) {
-    return o.description && S.info['shh:' + o.id] ? '<div class="infobar shdesc">' + esc(o.description) + '</div>' : '';
+  // Beschreibung von Akt/Szene: immer sichtbar, solange der Abschnitt aufgeklappt ist (kein Info-Icon)
+  function shDescText(o, open) {
+    return o.description && open ? '<div class="infobar shdesc">' + esc(o.description) + '</div>' : '';
   }
   function viewShow() {
     var map = ccMap(), ed = shEdit();
@@ -1803,9 +1799,9 @@
       html += '<section class="ccel' + (a.active ? '' : ' ccoff') + '"><div class="cceh">' +
         (ed ? '<input type="checkbox" class="ccck" data-shactive="' + esc(a.id) + '"' + (a.active ? ' checked' : '') + ' aria-label="' + esc(a.name + ': ' + L('shVisible')) + '" title="' + esc(L('shVisible')) + '">' : '') +
         '<button type="button" class="cct" data-act="sh-fold" data-id="' + esc(a.id) + '" aria-expanded="' + !folded + '">' + esc(a.name) + '</button>' +
-        shInfoBtn(a) + (ed ? shDots('act', a.id, a.name) : '') +
+        (ed ? shDots('act', a.id, a.name) : '') +
         '<button type="button" class="ccfold' + (folded ? '' : ' open') + '" data-act="sh-fold" data-id="' + esc(a.id) + '" aria-expanded="' + !folded + '" aria-label="' + esc(a.name) + '">' + ICON.chev + '</button></div>' +
-        shMusicRow(a) + shInfoText(a);
+        shMusicRow(a) + shDescText(a, !folded);
       if (!folded) {
         html += '<div class="ccbody">';
         if (!A.scenes.length) html += '<p class="ccsum" style="padding-top:10px">' + L('shNoScenes') + '</p>';
@@ -1813,9 +1809,9 @@
           var sc = Sc.s, sf = !!S.ccFold[sc.id];
           html += '<div class="ccday"><div class="ccdh">' +
             '<button type="button" class="ccdt" data-act="sh-fold" data-id="' + esc(sc.id) + '" aria-expanded="' + !sf + '"><b>' + esc(sc.name) + '</b></button>' +
-            shInfoBtn(sc) + (ed ? shDots('scene', sc.id, sc.name) : '') +
+            (ed ? shDots('scene', sc.id, sc.name) : '') +
             '<button type="button" class="ccfold ccfold-day' + (sf ? '' : ' open') + '" data-act="sh-fold" data-id="' + esc(sc.id) + '" aria-expanded="' + !sf + '" aria-label="' + esc(sc.name) + '">' + ICON.chev + '</button></div>' +
-            shInfoText(sc);
+            shDescText(sc, !sf);
           if (sf) html += '<div class="ccsum">' + L('shSummary', { r: Sc.parts.length }) + '</div>';
           else {
             html += '<div class="ccsh">';
@@ -3332,8 +3328,7 @@
     if (act_ === 'mb-menu') { if (S.me && S.me.isAdmin) mbOpen(D.id); return; }
     if (act_ === 'mb-grp') { S.sec[D.id] = S.sec[D.id] !== true; render(); return; }
     if (act_ === 'cc-addevent') { if (canCC()) ccOpen('root', null, 'add'); return; }
-    if (act_ === 'sh-fold') { S.ccFold[D.id] = !shIsFolded(D.id); delete S.info['shh:' + D.id]; S.cc.scenes.forEach(function (x) { if (x.act_id === D.id) delete S.info['shh:' + x.id]; }); render(); return; }
-    if (act_ === 'sh-hint') { S.info['shh:' + D.id] = !S.info['shh:' + D.id]; render(); return; }
+    if (act_ === 'sh-fold') { S.ccFold[D.id] = !shIsFolded(D.id); render(); return; }
     if (act_ === 'sh-addact') { if (shEdit()) ccOpen('shroot', null, 'add'); return; }
     if (act_ === 'sh-menu') { if (shEdit()) ccOpen(D.lvl, D.id || null, 'menu'); return; }
     if (act_ === 'cc-fold') { S.ccFold[D.id] = !ccIsFolded(D.id); render(); return; }
