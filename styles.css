@@ -622,3 +622,9 @@
 .phonerow .phonecc { flex: 0 0 auto; width: auto; max-width: 42%; }
 .phonerow input { flex: 1; min-width: 0; }
 textarea.input { font: inherit; resize: vertical; }
+.shmusic { display: flex; align-items: center; gap: 8px; padding: 6px 14px 8px; font-size: 14px; min-width: 0; }
+.shsp { display: inline-flex; width: 28px; height: 28px; align-items: center; justify-content: center; border-radius: 50%; color: #fff; background: #1db954; flex: 0 0 auto; }
+.shsp svg { width: 16px; height: 16px; }
+.shsp.off { background: var(--line); color: var(--muted); }
+.shml { color: var(--muted); }
+.shmn { font-weight: 600; min-width: 0; overflow-wrap: anywhere; }
