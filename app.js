@@ -1481,10 +1481,10 @@
   function ccKindLabel(k) { return k === 'a' ? L('grpActive') : k === 'p' ? L('grpPassive') : k === 'f' ? L('grpSupporter') : k === 'g' ? L('ccGuests') : L('ccOthers'); }
   // Legende der Farben (Gruppen) und «ich»
   // Seitentitel mit Info-Icon rechts; der Klick blendet die Farblegende darunter ein/aus
-  function pageTopLegend(titleKey, id) {
+  function pageTopLegend(titleKey, id, extra) {
     var on = !!S.info[id];
     return '<div class="top" style="align-items:center"><div><h1 class="pagetitle">' + L(titleKey) + '</h1></div>' +
-      hico('info-toggle', ICON.info, on ? L('infoHide') : L('infoShow'), { on: on, data: { id: id } }) + '</div>' +
+      hico('info-toggle', ICON.info, on ? L('infoHide') : L('infoShow'), { on: on, data: { id: id } }) + (extra || '') + '</div>' +
       (on ? '<div class="infobar">' + ccLegend() + '</div>' : '');
   }
   function ccLegend() {
@@ -1756,6 +1756,146 @@
     return html;
   }
 
+  /* ---------- Show: Einsatzplan als PDF (alle Akte, nur Regisseur) ---------- */
+  async function showExportPdf() {
+    if (!window.jspdf) { toast(L('ccPdfFailed')); return; }
+    toast(L('ccPdfBuilding'));
+    var tree = shTree(), map = ccMap();
+    var dirs = S.members.filter(function (m) { return m.isDirector; }).map(function (m) { return m.name; });
+    var dirLabel = L('dirTag') + ': ' + (dirs.length ? dirs.join(', ') : '–');
+
+    var doc = new window.jspdf.jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+    var PAGE_W = doc.internal.pageSize.getWidth(), PAGE_H = doc.internal.pageSize.getHeight();
+    var MARGIN = 12, GAP = 8, COLW = (PAGE_W - 2 * MARGIN - GAP) / 2, TOP = 30, BOTTOM = PAGE_H - 12;
+    var BLUE = [48, 124, 192], BLUE_DARK = [11, 47, 94], BLUE_SOFT = [227, 239, 249], GREY = [93, 103, 122], INK = [22, 35, 59], LINE = [218, 222, 214];
+    var logo = await ensureLogoDataUrl();
+
+    function wrap(text, size, maxW, style) {
+      doc.setFont('helvetica', style || 'normal'); doc.setFontSize(size);
+      return doc.splitTextToSize(String(text), maxW);
+    }
+    function drawHeader() {
+      doc.setFillColor(BLUE_DARK[0], BLUE_DARK[1], BLUE_DARK[2]);
+      doc.rect(0, 0, PAGE_W, 24, 'F');
+      if (logo) { try { doc.addImage(logo, 'PNG', MARGIN, 4, 13.5, 15.5); } catch (e) { /* Logo optional */ } }
+      doc.setTextColor(255, 255, 255); doc.setFont('helvetica', 'bold'); doc.setFontSize(17);
+      doc.text('Einsatzplan · ' + L('titleShow'), MARGIN + 18, 11.5);
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(9.5); doc.setTextColor(207, 224, 242);
+      doc.text(dirLabel, MARGIN + 18, 17);
+      doc.text('Version', PAGE_W - MARGIN, 9.5, { align: 'right' });
+      doc.text(fullDate(new Date()).split(', ')[1] || '', PAGE_W - MARGIN, 14, { align: 'right' });
+    }
+    var colY = [TOP, TOP];
+    function newPage() { doc.addPage(); drawHeader(); colY = [TOP, TOP]; }
+
+    // Zeilen einer Szene: Beschreibung, Musik, Video, Rollen mit Personen
+    function sceneLines(Sc, w) {
+      var sc = Sc.s, items = [], valueW = w - 44;
+      if (sc.description) items.push({ t: 'desc', lines: wrap(sc.description, 8.8, w - 10, 'normal') });
+      if (sc.music_name || sc.music_url) items.push({ t: 'media', label: L('shMusic'), text: sc.music_name || '', url: shSpotifyOk(sc.music_url) ? sc.music_url : '', lines: wrap(sc.music_name || '–', 9.3, valueW, 'normal') });
+      if (sc.video_desc || sc.video_url) items.push({ t: 'media', label: L('shVideo'), text: sc.video_desc || '', url: shYoutubeOk(sc.video_url) ? sc.video_url : '', lines: wrap(sc.video_desc || '–', 9.3, valueW, 'normal') });
+      Sc.parts.forEach(function (r) {
+        var nm = (Array.isArray(r.persons) ? r.persons : []).map(function (pe) { return ccResolve(pe, map).name; }).join(', ') || '–';
+        items.push({ t: 'part', label: String(r.name), lines: wrap(nm, 9.3, valueW, 'normal') });
+      });
+      return items;
+    }
+    function sceneHeight(Sc, w) {
+      var titleLines = wrap(Sc.s.name, 11.5, w - 10, 'bold');
+      var h = 9 + (titleLines.length - 1) * 4.8 + 3;
+      sceneLines(Sc, w).forEach(function (it) { h += Math.max(it.lines.length, 1) * (it.t === 'desc' ? 4 : 4.3) + (it.t === 'desc' ? 1.5 : 0); });
+      return h + 3;
+    }
+    function drawScene(Sc, x, yTop, w) {
+      var h = sceneHeight(Sc, w), valueW = w - 44;
+      doc.setFillColor(255, 255, 255); doc.setDrawColor(LINE[0], LINE[1], LINE[2]); doc.setLineWidth(0.3);
+      doc.roundedRect(x, yTop, w, h, 3, 3, 'FD');
+      var titleLines = wrap(Sc.s.name, 11.5, w - 10, 'bold');
+      var headH = 9 + (titleLines.length - 1) * 4.8;
+      doc.setFillColor(BLUE_SOFT[0], BLUE_SOFT[1], BLUE_SOFT[2]);
+      doc.roundedRect(x, yTop, w, headH, 3, 3, 'F'); doc.rect(x, yTop + headH / 2, w, headH / 2, 'F');
+      doc.setTextColor(BLUE[0], BLUE[1], BLUE[2]); doc.setFont('helvetica', 'bold'); doc.setFontSize(11.5);
+      var ty = yTop + 5.8;
+      titleLines.forEach(function (ln) { doc.text(ln, x + 5, ty); ty += 4.8; });
+      var cy = yTop + headH + 5;
+      sceneLines(Sc, w).forEach(function (it) {
+        if (it.t === 'desc') {
+          doc.setTextColor(GREY[0], GREY[1], GREY[2]); doc.setFont('helvetica', 'normal'); doc.setFontSize(8.8);
+          it.lines.forEach(function (ln) { doc.text(ln, x + 5, cy); cy += 4; });
+          cy += 1.5; return;
+        }
+        doc.setTextColor(GREY[0], GREY[1], GREY[2]); doc.setFont('helvetica', 'bold'); doc.setFontSize(8.6);
+        doc.text(it.label + ':', x + 5, cy);
+        doc.setFont('helvetica', 'normal'); doc.setFontSize(9.3);
+        var ly = cy;
+        it.lines.forEach(function (ln) {
+          if (it.t === 'media' && it.url) { doc.setTextColor(BLUE[0], BLUE[1], BLUE[2]); try { doc.textWithLink(ln, x + 31, ly, { url: it.url }); } catch (e) { doc.text(ln, x + 31, ly); } }
+          else { doc.setTextColor(INK[0], INK[1], INK[2]); doc.text(ln, x + 31, ly); }
+          ly += 4.3;
+        });
+        cy = ly;
+      });
+      return yTop + h;
+    }
+
+    drawHeader();
+    if (!tree.length) {
+      doc.setTextColor(GREY[0], GREY[1], GREY[2]); doc.setFont('helvetica', 'normal'); doc.setFontSize(11);
+      doc.text(L('shEmpty'), MARGIN, PAGE_H / 2);
+    }
+    tree.forEach(function (A) {
+      var a = A.a, fullW = PAGE_W - 2 * MARGIN;
+      var title = a.name + (a.active ? '' : '   (nicht sichtbar)');
+      var dLines = a.description ? wrap(a.description, 9, fullW - 10, 'normal') : [];
+      var bandH = 9.5 + dLines.length * 4 + (dLines.length ? 1.5 : 0);
+      var firstH = A.scenes.length ? sceneHeight(A.scenes[0], COLW) : 0;
+      var y0 = Math.max(colY[0], colY[1]);
+      if (y0 + bandH + 4 + Math.min(firstH, 60) > BOTTOM) { newPage(); y0 = TOP; }
+      doc.setFillColor(BLUE_DARK[0], BLUE_DARK[1], BLUE_DARK[2]);
+      doc.roundedRect(MARGIN, y0, fullW, bandH, 3, 3, 'F');
+      doc.setTextColor(255, 255, 255); doc.setFont('helvetica', 'bold'); doc.setFontSize(13);
+      doc.text(title, MARGIN + 5, y0 + 6.3);
+      if (dLines.length) {
+        doc.setFont('helvetica', 'normal'); doc.setFontSize(9); doc.setTextColor(207, 224, 242);
+        dLines.forEach(function (ln, i) { doc.text(ln, MARGIN + 5, y0 + 11.2 + i * 4); });
+      }
+      colY = [y0 + bandH + 4, y0 + bandH + 4];
+      A.scenes.forEach(function (Sc) {
+        var h = sceneHeight(Sc, COLW);
+        var c = colY[0] <= colY[1] ? 0 : 1;
+        if (colY[c] + h > BOTTOM) {
+          var o = 1 - c;
+          if (colY[o] + h <= BOTTOM) c = o; else { newPage(); c = 0; }
+        }
+        var x = c === 0 ? MARGIN : MARGIN + COLW + GAP;
+        colY[c] = drawScene(Sc, x, colY[c], COLW) + 5;
+      });
+      colY = [Math.max(colY[0], colY[1]) + 2, Math.max(colY[0], colY[1]) + 2];
+    });
+
+    var pages = doc.getNumberOfPages();
+    for (var pi = 1; pi <= pages; pi++) {
+      doc.setPage(pi);
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.setTextColor(GREY[0], GREY[1], GREY[2]);
+      doc.text(L('titleShow'), MARGIN, PAGE_H - 6);
+      doc.text('Seite ' + pi + ' / ' + pages, PAGE_W - MARGIN, PAGE_H - 6, { align: 'right' });
+    }
+
+    var fname = 'Einsatzplan_Buehnen-Einsatz.pdf';
+    var blob = doc.output('blob');
+    try {
+      var file = new File([blob], fname, { type: 'application/pdf' });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file], title: 'Einsatzplan ' + L('titleShow') });
+        return;
+      }
+    } catch (e) { /* Teilen abgebrochen oder nicht verfügbar: als Download anbieten */ }
+    var url = URL.createObjectURL(blob);
+    var a2 = document.createElement('a'); a2.href = url; a2.download = fname;
+    document.body.appendChild(a2); a2.click(); document.body.removeChild(a2);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+  }
+
   /* ---------- Show: Bühnen-Einsatz (Akt > Szene > Rolle) ---------- */
   function shTree() {
     var C = S.cc;
@@ -1807,7 +1947,7 @@
   }
   function viewShow() {
     var map = ccMap(), ed = shEdit();
-    var html = pageTopLegend('titleShow', 'shlegend');
+    var html = pageTopLegend('titleShow', 'shlegend', ed ? hico('sh-print', ICON.print, L('ccPrint'), { aria: L('ccPrint') + ': ' + L('titleShow') }) : '');
     if (S.showErr) return html + '<div class="empty"><p>' + L('shSetup') + '</p></div>';
     var tree = shTree();
     if (!tree.length) return html + '<div class="empty"><p>' + L('shEmpty') + '</p>' + (ed ? '<button type="button" class="btn inline" data-act="sh-addact" style="margin-top:12px">' + L('shAddAct') + '</button>' : '') + '</div>';
@@ -1818,7 +1958,7 @@
         '<button type="button" class="cct" data-act="sh-fold" data-id="' + esc(a.id) + '" aria-expanded="' + !folded + '">' + esc(a.name) + '</button>' +
         (ed ? shDots('act', a.id, a.name) : '') +
         '<button type="button" class="ccfold' + (folded ? '' : ' open') + '" data-act="sh-fold" data-id="' + esc(a.id) + '" aria-expanded="' + !folded + '" aria-label="' + esc(a.name) + '">' + ICON.chev + '</button></div>' +
-        shMusicRow(a) + shVideoRow(a) + shDescText(a, !folded);
+        shDescText(a, !folded);
       if (!folded) {
         html += '<div class="ccbody">';
         if (!A.scenes.length) html += '<p class="ccsum" style="padding-top:10px">' + L('shNoScenes') + '</p>';
@@ -1828,7 +1968,7 @@
             '<button type="button" class="ccdt" data-act="sh-fold" data-id="' + esc(sc.id) + '" aria-expanded="' + !sf + '"><b>' + esc(sc.name) + '</b></button>' +
             (ed ? shDots('scene', sc.id, sc.name) : '') +
             '<button type="button" class="ccfold ccfold-day' + (sf ? '' : ' open') + '" data-act="sh-fold" data-id="' + esc(sc.id) + '" aria-expanded="' + !sf + '" aria-label="' + esc(sc.name) + '">' + ICON.chev + '</button></div>' +
-            shDescText(sc, !sf);
+            (sf ? '' : shMusicRow(sc) + shVideoRow(sc)) + shDescText(sc, !sf);
           if (sf) html += '<div class="ccsum">' + L('shSummary', { r: Sc.parts.length }) + '</div>';
           else {
             html += '<div class="ccsh">';
@@ -1908,7 +2048,7 @@
         fld(L('ccNameOpt'), '<input class="input" name="name" value="' + esc(o && o.name ? o.name : '') + '" placeholder="Abendschicht">');
     } else if (kind === 'act' || kind === 'scene') {
       h += fld(L('nameLabel'), '<input class="input" name="name" value="' + esc(o ? o.name : shDefaultName(kind)) + '" required>') +
-        (kind === 'act' ? fld(L('shMusic'), '<input class="input" name="music_name" value="' + esc(o && o.music_name ? o.music_name : '') + '" placeholder="Titel / Interpret">') +
+        (kind === 'scene' ? fld(L('shMusic'), '<input class="input" name="music_name" value="' + esc(o && o.music_name ? o.music_name : '') + '" placeholder="Titel / Interpret">') +
           fld(L('shSpotify'), '<input class="input" type="url" name="music_url" inputmode="url" value="' + esc(o && o.music_url ? o.music_url : '') + '" placeholder="https://open.spotify.com/…">') +
           fld(L('shVideo'), '<input class="input" name="video_desc" value="' + esc(o && o.video_desc ? o.video_desc : '') + '" placeholder="Beschreibung">') +
           fld(L('shYoutube'), '<input class="input" type="url" name="video_url" inputmode="url" value="' + esc(o && o.video_url ? o.video_url : '') + '" placeholder="https://www.youtube.com/watch?v=…">') : '') +
@@ -2157,8 +2297,8 @@
     if ((kind === 'event' || kind === 'role' || kind === 'act' || kind === 'scene' || kind === 'part' || kind === 'copy-event') && !g('name')) { ccErr(L('ccNeedName')); return; }
     if ((kind === 'day' || kind === 'copy-day') && !g('date')) { ccErr(L('date') + '?'); return; }
     if (kind === 'shift' && (!g('start') || !g('end'))) { ccErr(L('time') + '?'); return; }
-    if (kind === 'act' && g('music_url') && !shSpotifyOk(g('music_url'))) { ccErr(L('shMusicBad')); return; }
-    if (kind === 'act' && g('video_url') && !shYoutubeOk(g('video_url'))) { ccErr(L('shVideoBad')); return; }
+    if (kind === 'scene' && g('music_url') && !shSpotifyOk(g('music_url'))) { ccErr(L('shMusicBad')); return; }
+    if (kind === 'scene' && g('video_url') && !shYoutubeOk(g('video_url'))) { ccErr(L('shVideoBad')); return; }
     ccCloseSheet();
 
     if (kind === 'event') {
@@ -2177,10 +2317,10 @@
       if (isNew) { ro.shift_id = st.id; ro.sort = ccNextSort(st.id); }
       ok = await act(function () { return isNew ? sb.from('cc_roles').insert(ro) : sb.from('cc_roles').update(ro).eq('id', o.id); }, L('ccSaved'));
     } else if (kind === 'act') {
-      var ac = { name: g('name'), description: g('desc') || null, music_name: g('music_name') || null, music_url: g('music_url') || null, video_desc: g('video_desc') || null, video_url: g('video_url') || null, active: !!fd.get('active') };
+      var ac = { name: g('name'), description: g('desc') || null, active: !!fd.get('active') };
       ok = await act(function () { return isNew ? sb.from('show_acts').insert(ac) : sb.from('show_acts').update(ac).eq('id', o.id); }, L('ccSaved'));
     } else if (kind === 'scene') {
-      var sc = { name: g('name'), description: g('desc') || null };
+      var sc = { name: g('name'), description: g('desc') || null, music_name: g('music_name') || null, music_url: g('music_url') || null, video_desc: g('video_desc') || null, video_url: g('video_url') || null };
       if (isNew) sc.act_id = st.id;
       ok = await act(function () { return isNew ? sb.from('show_scenes').insert(sc) : sb.from('show_scenes').update(sc).eq('id', o.id); }, L('ccSaved'));
     } else if (kind === 'part') {
@@ -3349,6 +3489,7 @@
     if (act_ === 'mb-grp') { S.sec[D.id] = S.sec[D.id] !== true; render(); return; }
     if (act_ === 'cc-addevent') { if (canCC()) ccOpen('root', null, 'add'); return; }
     if (act_ === 'sh-fold') { S.ccFold[D.id] = !shIsFolded(D.id); render(); return; }
+    if (act_ === 'sh-print') { if (shEdit()) { try { await showExportPdf(); } catch (err) { console.error(err); toast(L('ccPdfFailed')); } } return; }
     if (act_ === 'sh-addact') { if (shEdit()) ccOpen('shroot', null, 'add'); return; }
     if (act_ === 'sh-menu') { if (shEdit()) ccOpen(D.lvl, D.id || null, 'menu'); return; }
     if (act_ === 'cc-fold') { S.ccFold[D.id] = !ccIsFolded(D.id); render(); return; }
