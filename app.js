@@ -1771,9 +1771,9 @@
     var dirs = S.members.filter(function (m) { return m.isDirector; }).map(function (m) { return m.name; });
     var dirLabel = L('dirTag') + ': ' + (dirs.length ? dirs.join(', ') : '–');
 
-    var doc = new window.jspdf.jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+    var doc = new window.jspdf.jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
     var PAGE_W = doc.internal.pageSize.getWidth(), PAGE_H = doc.internal.pageSize.getHeight();
-    var MARGIN = 12, GAP = 8, COLW = (PAGE_W - 2 * MARGIN - GAP) / 2, TOP = 30, BOTTOM = PAGE_H - 12;
+    var MARGIN = 12, GAP = 6, COLW = (PAGE_W - 2 * MARGIN - GAP) / 2, TOP = 30, BOTTOM = PAGE_H - 12;
     var BLUE = [48, 124, 192], BLUE_DARK = [11, 47, 94], BLUE_SOFT = [227, 239, 249], GREY = [93, 103, 122], INK = [22, 35, 59], LINE = [218, 222, 214];
     var logo = await ensureLogoDataUrl();
 
@@ -1983,7 +1983,7 @@
           var sc = Sc.s, sf = !!S.ccFold[sc.id];
           html += '<div class="ccday"><div class="ccdh">' +
             '<button type="button" class="ccdt" data-act="sh-fold" data-id="' + esc(sc.id) + '" aria-expanded="' + !sf + '"><b>' + esc(sc.name) + '</b></button>' +
-            (ed ? shDots('scene', sc.id, sc.name) : '') +
+            (ed ? hico('sh-scene-add', ICON.plus, L('shAddPart'), { aria: L('shAddPart') + ': ' + sc.name, data: { id: sc.id } }) + hico('sh-scene-edit', ICON.pencil, L('ccChange'), { aria: L('ccChange') + ': ' + sc.name, data: { id: sc.id } }) : '') +
             '<button type="button" class="ccfold ccfold-day' + (sf ? '' : ' open') + '" data-act="sh-fold" data-id="' + esc(sc.id) + '" aria-expanded="' + !sf + '" aria-label="' + esc(sc.name) + '">' + ICON.chev + '</button></div>' +
             (sf ? '' : shMusicRow(sc) + shVideoRow(sc)) + shDescText(sc, !sf);
           if (sf) html += '<div class="ccsum">' + L('shSummary', { r: Sc.parts.length }) + '</div>';
@@ -2044,8 +2044,9 @@
   function ccActBtn(a, icon, label, cls) {
     return '<button type="button" class="ccact' + (cls ? ' ' + cls : '') + '" data-cca="' + a + '">' + icon + '<span>' + label + '</span></button>';
   }
-  function ccBtns(saveLabel) {
+  function ccBtns(saveLabel, withDel) {
     return '<p class="err" data-ccerr hidden></p><div class="dlgbtns">' +
+      (withDel ? '<button type="button" class="btn ghost inline" data-cca="del" style="margin-right:auto;color:var(--danger,#c0392b)">' + L('del') + '</button>' : '') +
       '<button type="button" class="btn ghost inline" data-cca="close">' + L('dismiss') + '</button>' +
       '<button type="submit" class="btn inline">' + (saveLabel || L('save')) + '</button></div>';
   }
@@ -2080,7 +2081,7 @@
         '<div class="ccother"><input class="input" name="other" autocomplete="off"><button type="button" class="btn ghost inline" data-cca="other">' + L('ccAdd') + '</button></div>' +
         '<div class="ccsug" id="ccsug"></div><div style="height:14px"></div>';
     }
-    return h + ccBtns() + '</form>';
+    return h + ccBtns(null, kind === 'scene' && !isNew ? 'del' : '') + '</form>';
   }
   function ccCopyForm(lvl, o) {
     var h = '<p class="cck">' + L(CC_LVL[lvl]) + '</p><h3>' + L('ccCopy') + ': ' + esc(ccTitle(lvl, o)) + '</h3><form data-ccform="copy-' + lvl + '" novalidate>';
@@ -3506,6 +3507,8 @@
     if (act_ === 'mb-grp') { S.sec[D.id] = S.sec[D.id] !== true; render(); return; }
     if (act_ === 'cc-addevent') { if (canCC()) ccOpen('root', null, 'add'); return; }
     if (act_ === 'sh-fold') { S.ccFold[D.id] = !shIsFolded(D.id); render(); return; }
+    if (act_ === 'sh-scene-add') { if (shEdit()) ccOpen('scene', D.id, 'add', { persons: [], q: '' }); return; }
+    if (act_ === 'sh-scene-edit') { if (shEdit()) ccOpen('scene', D.id, 'edit'); return; }
     if (act_ === 'sh-play') { S.play[D.id] = !S.play[D.id]; render(); return; }
     if (act_ === 'sh-print') { if (shEdit()) { try { await showExportPdf(); } catch (err) { console.error(err); toast(L('ccPdfFailed')); } } return; }
     if (act_ === 'sh-addact') { if (shEdit()) ccOpen('shroot', null, 'add'); return; }
