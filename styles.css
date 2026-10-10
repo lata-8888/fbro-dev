@@ -627,11 +627,10 @@ textarea.input { font: inherit; resize: vertical; }
 .shsp img { width: 21px; height: 21px; display: block; }
 .shsp.off { filter: grayscale(1); opacity: .45; }
 .shml { color: var(--muted); }
-.shmn { font-weight: 600; min-width: 0; overflow-wrap: anywhere; flex: 1 1 auto; }
-.shsp { margin-left: auto; }
-.shplaybtn { margin-left: auto; width: 26px; height: 26px; flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line, rgba(0,0,0,.18)); border-radius: 50%; background: transparent; color: var(--ink); cursor: pointer; padding: 0; }
-.shplaybtn + .shsp { margin-left: 0; }
-.shplaybtn.on { color: #1db954; border-color: #1db954; }
+.shmn { font-weight: 600; min-width: 0; flex: 1 1 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.shsp { margin-left: 0; }
+.shspbtn { border: 0; background: transparent; padding: 0; cursor: pointer; }
+.shspbtn.on { box-shadow: 0 0 0 2px #1db954; }
 .shplayer { flex: 1 0 100%; padding-top: 6px; }
 .shplayer iframe { display: block; width: 100%; border: 0; border-radius: 12px; }
 
