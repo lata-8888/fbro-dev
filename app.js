@@ -2046,9 +2046,9 @@
   }
   function ccBtns(saveLabel, withDel) {
     return '<p class="err" data-ccerr hidden></p><div class="dlgbtns">' +
-      (withDel ? '<button type="button" class="btn ghost inline" data-cca="del" style="margin-right:auto;color:var(--danger,#c0392b)">' + L('del') + '</button>' : '') +
       '<button type="button" class="btn ghost inline" data-cca="close">' + L('dismiss') + '</button>' +
-      '<button type="submit" class="btn inline">' + (saveLabel || L('save')) + '</button></div>';
+      '<button type="submit" class="btn inline">' + (saveLabel || L('save')) + '</button></div>' +
+      (withDel ? ccActBtn('del', ICON.trash, L('del'), 'del') : '');
   }
 
   function ccForm(kind, o, isNew) {
