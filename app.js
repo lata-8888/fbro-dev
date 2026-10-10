@@ -1773,7 +1773,7 @@
 
     var doc = new window.jspdf.jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
     var PAGE_W = doc.internal.pageSize.getWidth(), PAGE_H = doc.internal.pageSize.getHeight();
-    var MARGIN = 12, GAP = 6, COLW = (PAGE_W - 2 * MARGIN - GAP) / 2, TOP = 30, BOTTOM = PAGE_H - 12;
+    var MARGIN = 12, GAP = 6, COLW = PAGE_W - 2 * MARGIN, TOP = 30, BOTTOM = PAGE_H - 12;
     var BLUE = [48, 124, 192], BLUE_DARK = [11, 47, 94], BLUE_SOFT = [227, 239, 249], GREY = [93, 103, 122], INK = [22, 35, 59], LINE = [218, 222, 214];
     var logo = await ensureLogoDataUrl();
 
@@ -1869,12 +1869,9 @@
       colY = [y0 + bandH + 4, y0 + bandH + 4];
       A.scenes.forEach(function (Sc) {
         var h = sceneHeight(Sc, COLW);
-        var c = colY[0] <= colY[1] ? 0 : 1;
-        if (colY[c] + h > BOTTOM) {
-          var o = 1 - c;
-          if (colY[o] + h <= BOTTOM) c = o; else { newPage(); c = 0; }
-        }
-        var x = c === 0 ? MARGIN : MARGIN + COLW + GAP;
+        var c = 0;
+        if (colY[c] + h > BOTTOM) { newPage(); }
+        var x = MARGIN;
         colY[c] = drawScene(Sc, x, colY[c], COLW) + 5;
       });
       colY = [Math.max(colY[0], colY[1]) + 2, Math.max(colY[0], colY[1]) + 2];
