@@ -621,3 +621,4 @@
 .phonerow { display: flex; gap: 8px; }
 .phonerow .phonecc { flex: 0 0 auto; width: auto; max-width: 42%; }
 .phonerow input { flex: 1; min-width: 0; }
+textarea.input { font: inherit; resize: vertical; }
