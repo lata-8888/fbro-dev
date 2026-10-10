@@ -1775,8 +1775,8 @@
   function shMusicRow(a) {
     if (!a.music_name && !a.music_url) return '';
     var ok = a.music_url && shSpotifyOk(a.music_url);
-    var ic = ok ? '<a class="shsp" href="' + esc(a.music_url) + '" target="_blank" rel="noopener noreferrer" aria-label="' + esc(L('shOpenSpotify')) + '" title="' + esc(L('shOpenSpotify')) + '">' + ICON.music + '</a>'
-                : '<span class="shsp off" aria-hidden="true">' + ICON.music + '</span>';
+    var ic = ok ? '<a class="shsp" href="' + esc(a.music_url) + '" target="_blank" rel="noopener noreferrer" aria-label="' + esc(L('shOpenSpotify')) + '" title="' + esc(L('shOpenSpotify')) + '">' + '<img src="icons/spotify.png" alt="" width="28" height="28">' + '</a>'
+                : '<span class="shsp off" aria-hidden="true">' + '<img src="icons/spotify.png" alt="" width="28" height="28">' + '</span>';
     return '<div class="shmusic"><span class="shml">' + L('shMusic') + '</span><span class="shmn">' + (a.music_name ? esc(a.music_name) : '') + '</span>' + ic + '</div>';
   }
   // Vorgabe für die Beschreibung eines neuen Akts / einer neuen Szene: «1. Akt - …», «2. Szene - …» (nächste freie Nummer)

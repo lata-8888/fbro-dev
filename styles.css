@@ -623,9 +623,9 @@
 .phonerow input { flex: 1; min-width: 0; }
 textarea.input { font: inherit; resize: vertical; }
 .shmusic { display: flex; align-items: center; gap: 8px; padding: 6px 14px 8px; font-size: 14px; min-width: 0; }
-.shsp { display: inline-flex; width: 28px; height: 28px; align-items: center; justify-content: center; border-radius: 50%; color: #fff; background: #1db954; flex: 0 0 auto; }
-.shsp svg { width: 16px; height: 16px; }
-.shsp.off { background: var(--line); color: var(--muted); }
+.shsp { display: inline-flex; width: 28px; height: 28px; flex: 0 0 auto; border-radius: 50%; }
+.shsp img { width: 28px; height: 28px; display: block; }
+.shsp.off { filter: grayscale(1); opacity: .45; }
 .shml { color: var(--muted); }
 .shmn { font-weight: 600; min-width: 0; overflow-wrap: anywhere; flex: 1 1 auto; }
 .shsp { margin-left: auto; }
