@@ -622,10 +622,15 @@
 .phonerow .phonecc { flex: 0 0 auto; width: auto; max-width: 42%; }
 .phonerow input { flex: 1; min-width: 0; }
 textarea.input { font: inherit; resize: vertical; }
-.shmusic { display: flex; align-items: center; gap: 8px; padding: 6px 14px 8px; font-size: 14px; min-width: 0; }
+.shmusic { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 6px 14px 8px; font-size: 14px; min-width: 0; }
 .shsp { display: inline-flex; width: 21px; height: 21px; flex: 0 0 auto; border-radius: 50%; }
 .shsp img { width: 21px; height: 21px; display: block; }
 .shsp.off { filter: grayscale(1); opacity: .45; }
 .shml { color: var(--muted); }
 .shmn { font-weight: 600; min-width: 0; overflow-wrap: anywhere; flex: 1 1 auto; }
 .shsp { margin-left: auto; }
+.shplaybtn { margin-left: auto; width: 26px; height: 26px; flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line, rgba(0,0,0,.18)); border-radius: 50%; background: transparent; color: var(--ink); cursor: pointer; padding: 0; }
+.shplaybtn + .shsp { margin-left: 0; }
+.shplaybtn.on { color: #1db954; border-color: #1db954; }
+.shplayer { flex: 1 0 100%; padding-top: 6px; }
+.shplayer iframe { display: block; width: 100%; border: 0; border-radius: 12px; }
