@@ -1779,10 +1779,10 @@
                 : '<span class="shsp off" aria-hidden="true">' + '<img src="icons/spotify.png" alt="" width="21" height="21">' + '</span>';
     return '<div class="shmusic"><span class="shml">' + L('shMusic') + '</span><span class="shmn">' + (a.music_name ? esc(a.music_name) : '') + '</span>' + ic + '</div>';
   }
-  // Vorgabe für die Beschreibung eines neuen Akts / einer neuen Szene: «1. Akt - …», «2. Szene - …» (nächste freie Nummer)
-  function shDefaultDesc(kind) {
+  // Vorgabe für den Namen eines neuen Akts / einer neuen Szene: «1. Akt - ...», «2. Szene - ...» (nächste freie Nummer)
+  function shDefaultName(kind) {
     var n = kind === 'act' ? S.cc.acts.length + 1 : S.cc.scenes.filter(function (x) { return ccSheet && x.act_id === ccSheet.id; }).length + 1;
-    return n + '. ' + (kind === 'act' ? 'Akt' : 'Szene') + ' - …';
+    return n + '. ' + (kind === 'act' ? 'Akt' : 'Szene') + ' - ...';
   }
   // Beschreibung von Akt/Szene: immer sichtbar, solange der Abschnitt aufgeklappt ist (kein Info-Icon)
   function shDescText(o, open) {
@@ -1890,10 +1890,10 @@
                 fld(L('ccEnd'), '<input class="input" type="time" name="end" value="' + esc(o ? o.end_time : '') + '" required>')) +
         fld(L('ccNameOpt'), '<input class="input" name="name" value="' + esc(o && o.name ? o.name : '') + '" placeholder="Abendschicht">');
     } else if (kind === 'act' || kind === 'scene') {
-      h += fld(L('nameLabel'), '<input class="input" name="name" value="' + esc(o ? o.name : '') + '" placeholder="' + (kind === 'act' ? '1. Akt' : 'Szene 1') + '" required>') +
+      h += fld(L('nameLabel'), '<input class="input" name="name" value="' + esc(o ? o.name : shDefaultName(kind)) + '" required>') +
         (kind === 'act' ? fld(L('shMusic'), '<input class="input" name="music_name" value="' + esc(o && o.music_name ? o.music_name : '') + '" placeholder="Titel / Interpret">') +
           fld(L('shSpotify'), '<input class="input" type="url" name="music_url" inputmode="url" value="' + esc(o && o.music_url ? o.music_url : '') + '" placeholder="https://open.spotify.com/…">') : '') +
-        fld(L('shDesc'), '<textarea class="input" name="desc" rows="4">' + esc(o ? (o.description || '') : shDefaultDesc(kind)) + '</textarea>') +
+        fld(L('shDesc'), '<textarea class="input" name="desc" rows="4">' + esc(o && o.description ? o.description : '') + '</textarea>') +
         (kind === 'act' ? '<label class="check"><input type="checkbox" name="active"' + (o && o.active ? ' checked' : '') + '><span>' + L('shVisible') + '</span></label>' : '');
     } else if (ccIsPersonLvl(kind)) {
       h += fld(L('nameLabel'), '<input class="input" name="name" value="' + esc(o ? o.name : '') + '" placeholder="Bar" required>') +
