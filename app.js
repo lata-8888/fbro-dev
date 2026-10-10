@@ -1951,7 +1951,23 @@
     var ic = a.video_url && shYoutubeOk(a.video_url)
       ? '<a class="shsp" href="' + esc(a.video_url) + '" target="_blank" rel="noopener noreferrer" aria-label="' + esc(L('shOpenYoutube')) + '" title="' + esc(L('shOpenYoutube')) + '">' + img + '</a>'
       : '<span class="shsp off" aria-hidden="true">' + img + '</span>';
-    return '<div class="shmusic shvideo"><span class="shml">' + L('shVideo') + '</span><span class="shmn">' + (a.video_desc ? esc(a.video_desc) : '') + '</span>' + ic + '</div>';
+    // Player (YouTube-Einbettung): ausbaubar, indem shYoutubeEmbed()/Play-Button/Player-Block entfernt werden
+    var emb = a.video_url && shYoutubeOk(a.video_url) ? shYoutubeEmbed(a.video_url) : '', pid = 'v:' + a.id, playing = !!(emb && a.id && S.play[pid]);
+    var pb = emb && a.id ? '<button type="button" class="shplaybtn' + (playing ? ' on' : '') + '" data-act="sh-play" data-id="' + esc(pid) + '" aria-pressed="' + playing + '" aria-label="' + esc(L(playing ? 'shPlayStop' : 'shPlay')) + '" title="' + esc(L(playing ? 'shPlayStop' : 'shPlay')) + '">' +
+      (playing ? '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg>' : '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>') + '</button>' : '';
+    var pl = playing ? '<div class="shplayer shvplayer"><iframe src="' + esc(emb) + '" width="100%" frameborder="0" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="YouTube"></iframe></div>' : '';
+    return '<div class="shmusic shvideo"><span class="shml">' + L('shVideo') + '</span><span class="shmn">' + (a.video_desc ? esc(a.video_desc) : '') + '</span>' + pb + ic + pl + '</div>';
+  }
+  // Einbettungs-URL (datenschutzfreundlich: youtube-nocookie.com) für Video- oder Playlist-Links
+  function shYoutubeEmbed(u) {
+    var url; try { url = new URL(String(u).trim()); } catch (e) { return ''; }
+    var id = '', host = url.hostname.replace(/^www\./, '');
+    if (host === 'youtu.be') id = url.pathname.slice(1).split('/')[0];
+    else { id = url.searchParams.get('v') || ''; var m = url.pathname.match(/^\/(?:shorts|embed|live)\/([A-Za-z0-9_-]{6,})/); if (!id && m) id = m[1]; }
+    var list = url.searchParams.get('list') || '';
+    if (/^[A-Za-z0-9_-]{6,}$/.test(id)) return 'https://www.youtube-nocookie.com/embed/' + id + (/^[A-Za-z0-9_-]+$/.test(list) ? '?list=' + list : '');
+    if (/^[A-Za-z0-9_-]+$/.test(list) && url.pathname === '/playlist') return 'https://www.youtube-nocookie.com/embed/videoseries?list=' + list;
+    return '';
   }
   // Vorgabe für den Namen eines neuen Akts / einer neuen Szene: «1. Akt - ...», «2. Szene - ...» (nächste freie Nummer)
   function shDefaultName(kind) {

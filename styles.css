@@ -645,3 +645,5 @@ textarea.shgrow { resize: none; overflow: hidden; min-height: 44px; }
 .shficon[aria-pressed="true"] { background: var(--soft, rgba(48,124,192,.12)); }
 .shfmu { margin-top: 8px; }
 .shfmu[hidden] { display: none; }
+
+.shvplayer iframe { aspect-ratio: 16 / 9; height: auto; }
