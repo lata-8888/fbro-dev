@@ -77,7 +77,7 @@
       authInvalid: 'Handynummer oder PIN stimmt nicht. Falls du deinen PIN geändert hast, trage ihn im Feld PIN ein.',
       authAlready: 'Diese Nummer ist bereits registriert. Bitte melde dich an.', authCode: 'Registrierung nicht möglich. Bitte prüfe den Vereinscode.',
       authRate: 'Zu viele Versuche. Bitte warte einen Moment.', authPin: 'Der PIN muss aus 6 Ziffern bestehen.', authFail: 'Anmeldung fehlgeschlagen. Bitte versuche es erneut.',
-      pinExact: 'Der PIN muss aus genau 6 Ziffern bestehen.', confirmEmailOff: 'Bitte schalte in Supabase «Confirm email» aus (siehe README).',
+      pinExact: 'Der PIN muss aus genau 6 Ziffern bestehen.', pinWeak: 'Dieser PIN ist zu einfach (z. B. 111111 oder 123456) oder entspricht dem Standard-PIN. Bitte wähle einen anderen.', confirmEmailOff: 'Bitte schalte in Supabase «Confirm email» aus (siehe README).',
       loadFail: 'Die Daten konnten nicht geladen werden. Wurde das Datenbank-Schema ausgeführt?',
       calFile: 'Öffne die Datei «{name}», um den Termin im Kalender zu speichern.', calFail: 'Der Kalendereintrag konnte nicht erstellt werden.',
       pinResetOk: 'PIN auf Standard zurückgesetzt', pinResetFail: 'PIN konnte nicht zurückgesetzt werden.',
@@ -156,7 +156,7 @@
       authInvalid: 'Numéro de mobile ou PIN incorrect. Si tu as modifié ton PIN, saisis-le dans le champ PIN.',
       authAlready: 'Ce numéro est déjà enregistré. Connecte-toi.', authCode: 'Inscription impossible. Vérifie le code du club.',
       authRate: 'Trop de tentatives. Patiente un instant.', authPin: 'Le PIN doit comporter 6 chiffres.', authFail: 'Échec de la connexion. Réessaie.',
-      pinExact: 'Le PIN doit comporter exactement 6 chiffres.', confirmEmailOff: 'Désactive « Confirm email » dans Supabase (voir README).',
+      pinExact: 'Le PIN doit comporter exactement 6 chiffres.', pinWeak: 'Ce PIN est trop simple (p. ex. 111111 ou 123456) ou identique au PIN par défaut. Choisis-en un autre.', confirmEmailOff: 'Désactive « Confirm email » dans Supabase (voir README).',
       loadFail: 'Impossible de charger les données. Le schéma de la base de données a-t-il été exécuté ?',
       calFile: 'Ouvre le fichier « {name} » pour enregistrer le rendez-vous dans ton calendrier.', calFail: 'L’entrée de calendrier n’a pas pu être créée.',
       pinResetOk: 'PIN rétabli par défaut', pinResetFail: 'Le PIN n’a pas pu être rétabli.',
@@ -235,7 +235,7 @@
       authInvalid: 'Mobile number or PIN is incorrect. If you changed your PIN, enter it in the PIN field.',
       authAlready: 'This number is already registered. Please sign in.', authCode: 'Registration not possible. Please check the club code.',
       authRate: 'Too many attempts. Please wait a moment.', authPin: 'The PIN must consist of 6 digits.', authFail: 'Sign-in failed. Please try again.',
-      pinExact: 'The PIN must consist of exactly 6 digits.', confirmEmailOff: 'Please turn off “Confirm email” in Supabase (see README).',
+      pinExact: 'The PIN must consist of exactly 6 digits.', pinWeak: 'This PIN is too simple (e.g. 111111 or 123456) or the same as the default PIN. Please choose another one.', confirmEmailOff: 'Please turn off “Confirm email” in Supabase (see README).',
       loadFail: 'The data could not be loaded. Was the database schema executed?',
       calFile: 'Open the file “{name}” to save the event to your calendar.', calFail: 'The calendar entry could not be created.',
       pinResetOk: 'PIN reset to default', pinResetFail: 'The PIN could not be reset.',
@@ -314,7 +314,7 @@
       authInvalid: 'Numero di cellulare o PIN errato. Se hai cambiato il PIN, inseriscilo nel campo PIN.',
       authAlready: 'Questo numero è già registrato. Effettua l’accesso.', authCode: 'Registrazione non possibile. Controlla il codice del club.',
       authRate: 'Troppi tentativi. Attendi un momento.', authPin: 'Il PIN deve essere composto da 6 cifre.', authFail: 'Accesso non riuscito. Riprova.',
-      pinExact: 'Il PIN deve essere composto esattamente da 6 cifre.', confirmEmailOff: 'Disattiva «Confirm email» in Supabase (vedi README).',
+      pinExact: 'Il PIN deve essere composto esattamente da 6 cifre.', pinWeak: 'Questo PIN è troppo semplice (ad es. 111111 o 123456) o uguale al PIN predefinito. Scegline un altro.', confirmEmailOff: 'Disattiva «Confirm email» in Supabase (vedi README).',
       loadFail: 'Impossibile caricare i dati. Lo schema del database è stato eseguito?',
       calFile: 'Apri il file «{name}» per salvare l’appuntamento nel calendario.', calFail: 'Impossibile creare la voce di calendario.',
       pinResetOk: 'PIN ripristinato a quello predefinito', pinResetFail: 'Impossibile ripristinare il PIN.',
@@ -393,7 +393,7 @@
       authInvalid: 'Handynummere oder PIN stimmt nöd. Wenn du din PIN gänderet hesch, träg en im Fäld PIN ii.',
       authAlready: 'Die Nummere isch scho registriert. Bitte mäld di aa.', authCode: 'Registrierig nöd möglich. Bitte prüef de Vereinscode.',
       authRate: 'Zviel Versüech. Bitte wart en Momänt.', authPin: 'De PIN muess us 6 Ziffere bestah.', authFail: 'Aamäldig fählgschlage. Bitte probier s nomal.',
-      pinExact: 'De PIN muess us gnau 6 Ziffere bestah.', confirmEmailOff: 'Bitte schalt i Supabase «Confirm email» ab (gsehsch README).',
+      pinExact: 'De PIN muess us gnau 6 Ziffere bestah.', pinWeak: 'De PIN isch z eifach (z. B. 111111 oder 123456) oder gliich wie dr Standard-PIN. Bitte wähl en andere.', confirmEmailOff: 'Bitte schalt i Supabase «Confirm email» ab (gsehsch README).',
       loadFail: 'D Date hend nöd chöne glade werde. Isch s Datebank-Schema uusgfüehrt worde?',
       calFile: 'Öffne d Datei «{name}», zum de Termin im Kaländer z spichere.', calFail: 'De Kaländereintrag hät nöd chöne erstellt werde.',
       pinResetOk: 'PIN uf Standard zruggsetzt', pinResetFail: 'De PIN hät nöd chöne zruggsetzt werde.',
@@ -473,7 +473,7 @@
       authInvalid: 'Номер мобільного або PIN неправильні. Якщо ви змінювали PIN, введіть його в полі PIN.',
       authAlready: 'Цей номер уже зареєстровано. Будь ласка, увійдіть.', authCode: 'Реєстрація неможлива. Перевірте код клубу.',
       authRate: 'Забагато спроб. Зачекайте хвилинку.', authPin: 'PIN має складатися з 6 цифр.', authFail: 'Не вдалося увійти. Спробуйте ще раз.',
-      pinExact: 'PIN має складатися рівно з 6 цифр.', confirmEmailOff: 'Вимкніть у Supabase «Confirm email» (див. README).',
+      pinExact: 'PIN має складатися рівно з 6 цифр.', pinWeak: 'Цей PIN надто простий (наприклад, 111111 або 123456) або збігається зі стандартним. Оберіть інший.', confirmEmailOff: 'Вимкніть у Supabase «Confirm email» (див. README).',
       loadFail: 'Не вдалося завантажити дані. Чи було виконано схему бази даних?',
       calFile: 'Відкрийте файл «{name}», щоб зберегти подію в календарі.', calFail: 'Не вдалося створити запис у календарі.',
       pinResetOk: 'PIN повернено до значення за замовчуванням', pinResetFail: 'Не вдалося скинути PIN.',
@@ -552,7 +552,7 @@
       authInvalid: 'Handynummer oder PIN stimmt ned. Wennst dein PIN gändert host, trag eam im Feld PIN ei.',
       authAlready: 'De Nummer is scho registriert. Bitte meld di o.', authCode: 'Registrierung ned möglich. Bitte prüf den Vereinscode.',
       authRate: 'Zvui Versuche. Bitte wart an Moment.', authPin: 'Da PIN muass aus 6 Ziffern bestehn.', authFail: 'Anmeldung gscheitert. Bitte probier s no amoi.',
-      pinExact: 'Da PIN muass aus genau 6 Ziffern bestehn.', confirmEmailOff: 'Bitte schalt in Supabase «Confirm email» aus (siehe README).',
+      pinExact: 'Da PIN muass aus genau 6 Ziffern bestehn.', pinWeak: 'Da PIN is z einfach (z. B. 111111 oder 123456) oder glei wia da Standard-PIN. Bittschön wähl an andern.', confirmEmailOff: 'Bitte schalt in Supabase «Confirm email» aus (siehe README).',
       loadFail: 'D Daten hamma ned laden kinna. Is s Datenbank-Schema ausgführt worn?',
       calFile: 'Mach de Datei «{name}» auf, um den Termin im Kalenda z speichan.', calFail: 'Da Kalendereintrag hod ned erstellt werdn kinna.',
       pinResetOk: 'PIN auf Standard zruckgstellt', pinResetFail: 'Da PIN hod ned zruckgstellt werdn kinna.',
@@ -686,6 +686,15 @@
     if (/^\+41\d{9}$/.test(p)) return '0' + p.slice(3, 5) + ' ' + p.slice(5, 8) + ' ' + p.slice(8, 10) + ' ' + p.slice(10);
     if (/^\+49\d{10,11}$/.test(p)) return '+49 ' + p.slice(3, 6) + ' ' + p.slice(6);
     return p;
+  }
+  // Zu einfache PINs: gleiche Ziffern (111111), auf-/absteigende Folgen (123456, 654321) und der Standard-PIN
+  function pinWeak(pin, phone) {
+    if (!/^\d{6}$/.test(pin)) return false;
+    if (/^(\d)\1{5}$/.test(pin)) return true;
+    var d = pin.split('').map(Number), up = true, down = true;
+    for (var i = 1; i < 6; i++) { if (d[i] !== d[i - 1] + 1) up = false; if (d[i] !== d[i - 1] - 1) down = false; }
+    if (up || down) return true;
+    return !!phone && pin === defaultPin(phone);
   }
   function defaultPin(p) { return String(p).replace(/\D/g, '').slice(-6); }
 
@@ -3700,6 +3709,7 @@
     }
     if (kind === 'pin') {
       if (!/^\d{6}$/.test(g('pin'))) { toast(L('pinExact')); return; }
+      if (pinWeak(g('pin'), S.me.phone)) { toast(L('pinWeak')); return; }
       try {
         var r = await sb.auth.updateUser({ password: g('pin') });
         if (r.error) throw r.error;
