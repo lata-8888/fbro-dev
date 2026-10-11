@@ -99,6 +99,7 @@
       mMakeAdmin: 'Zum Admin machen', mRevokeAdmin: 'Admin-Rechte entziehen', mMakeEm: 'Zum Event Manager machen', mRevokeEm: 'Event Manager-Rechte entziehen', mMakeGuest: 'Zum Gast machen', mMakeMember: 'Zum Mitglied machen', mEdit: 'Name und Handynummer ändern', mEditNote: 'Bei einer neuen Handynummer gilt wieder der Standard-PIN: die letzten 6 Ziffern der neuen Nummer.', mSaved: 'Gespeichert', mDelete: 'Mitglied löschen', mPhoneTaken: 'Diese Handynummer gehört bereits einer anderen Person.',
       navJass: 'Jass', jsParticipants: 'Teilnehmer', jsSchedule: 'Spielplan', jsRanking: 'Tagesrangliste', jsRound: 'Runde {n}', jsTable: 'Tisch {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Spieler {n}', jsFree: 'frei', jsEmpty: 'Noch kein Jassmasters erfasst.', jsNoDays: 'Noch kein Datum erfasst.', jsAddSeries: 'Jassmasters hinzufügen', jsAddDay: 'Datum hinzufügen', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jasstag', jsPick: 'Spieler {n} wählen', jsClear: 'Platz freigeben', jsAlready: 'bereits Spieler {n}', jsPoints: 'Punkte', jsGames: '{n} Spiele', jsPtsAbbr: 'Pkt.', jsGame: '{n} Spiel', jsNoPoints: 'Noch keine Punkte erfasst.', jsHint: 'Trage die Punkte beim Siegerteam ein. Das andere Team erhält sie automatisch negativ.', jsSetup: 'Für Jass muss das Datenbank-Schema aktualisiert werden (supabase/schema.sql).', jsFinish: 'Jassmaster abschliessen', jsConfirmFinish: '«{name}» abschliessen? Es wird unter Vergangene Jassmasters verschoben und ist danach nur noch als Rangliste sichtbar. Fortfahren?', jsFinished: 'Als abgeschlossen markiert', jsEditRanking: 'Rangliste bearbeiten', jsRankName: 'Name', jsRankPoints: 'Punkte', jsAddRow: 'Zeile hinzufügen', jsNoRows: 'Noch niemand erfasst.',
       shPlay: 'Hier abspielen', shPlayStop: 'Player schliessen',
+      shHint: 'Hinweis', shHintCheck: 'Als Hinweis kennzeichnen (steht vor den Akten)',
       shVideo: 'Video', shYoutube: 'YouTube-Link', shOpenYoutube: 'Auf YouTube öffnen', shVideoBad: 'Bitte einen YouTube-Link angeben (https://www.youtube.com/… oder https://youtu.be/…).',
       shMusic: 'Musik', shSpotify: 'Spotify-Link', shOpenSpotify: 'In Spotify öffnen', shMusicBad: 'Bitte einen Spotify-Link angeben (https://open.spotify.com/…).',
       navShow: 'Show', titleShow: 'Chränzli Drehbuch', dirTag: 'Regisseur', actTag: 'Schauspieler', mMakeDir: 'Zum Regisseur machen', mRevokeDir: 'Regisseur-Rechte entziehen', mMakeActor: 'Zum Schauspieler machen', mRevokeActor: 'Schauspieler-Rolle entziehen', dirGranted: 'Als Regisseur festgelegt', dirRevoked: 'Regisseur-Rechte entzogen', actorGranted: 'Als Schauspieler festgelegt', actorRevoked: 'Schauspieler-Rolle entzogen', shEmpty: 'Noch kein Akt erfasst.', shSetup: 'Die Show-Tabellen fehlen. Bitte PRD_v97_show.sql im SQL Editor ausführen.', shAddAct: 'Akt hinzufügen', shAddScene: 'Szene hinzufügen', shAddPart: 'Rolle hinzufügen', shLvlAll: 'Show', shLvlAct: 'Akt', shLvlScene: 'Szene', shLvlPart: 'Rolle', shDesc: 'Beschreibung', shNoScenes: 'Noch keine Szenen erfasst.', shSummary: '{r} Rollen', shVisible: 'Planung für Schauspieler sichtbar',
@@ -178,6 +179,7 @@
       mMakeAdmin: 'Nommer admin', mRevokeAdmin: 'Retirer les droits d’admin', mMakeEm: 'Nommer responsable des événements', mRevokeEm: 'Retirer les droits de responsable des événements', mMakeGuest: 'Définir comme invité', mMakeMember: 'Définir comme membre', mEdit: 'Modifier le nom et le numéro de mobile', mEditNote: 'Avec un nouveau numéro, le PIN par défaut s’applique à nouveau : les 6 derniers chiffres du nouveau numéro.', mSaved: 'Enregistré', mDelete: 'Supprimer le membre', mPhoneTaken: 'Ce numéro de mobile appartient déjà à une autre personne.',
       navJass: 'Jass', jsParticipants: 'Participants', jsSchedule: 'Programme des parties', jsRanking: 'Classement du jour', jsRound: 'Manche {n}', jsTable: 'Table {t}', jsTeam1: 'Équipe I', jsTeam2: 'Équipe II', jsPlayer: 'Joueur {n}', jsFree: 'libre', jsEmpty: 'Aucun Jassmasters pour l’instant.', jsNoDays: 'Aucune date pour l’instant.', jsAddSeries: 'Ajouter un Jassmasters', jsAddDay: 'Ajouter une date', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Journée de jass', jsPick: 'Choisir le joueur {n}', jsClear: 'Libérer la place', jsAlready: 'déjà joueur {n}', jsPoints: 'Points', jsGames: '{n} parties', jsPtsAbbr: 'pts', jsGame: '{n} partie', jsNoPoints: 'Aucun point saisi pour l’instant.', jsHint: 'Saisis les points pour l’équipe gagnante. L’autre équipe les reçoit automatiquement en négatif.', jsSetup: 'Pour le jass, le schéma de la base de données doit être mis à jour (supabase/schema.sql).', jsFinish: 'Clôturer le Jassmaster', jsConfirmFinish: 'Clôturer « {name} » ? La manche sera déplacée sous Jassmasters passés et ne sera plus visible que comme classement. Continuer ?', jsFinished: 'Marqué comme terminé', jsEditRanking: 'Modifier le classement', jsRankName: 'Nom', jsRankPoints: 'Points', jsAddRow: 'Ajouter une ligne', jsNoRows: 'Personne n’a encore été saisi.',
       shPlay: 'Écouter ici', shPlayStop: 'Fermer le lecteur',
+      shHint: 'Remarque', shHintCheck: 'Marquer comme remarque (placée avant les actes)',
       shVideo: 'Vidéo', shYoutube: 'Lien YouTube', shOpenYoutube: 'Ouvrir sur YouTube', shVideoBad: 'Veuillez indiquer un lien YouTube (https://www.youtube.com/… ou https://youtu.be/…).',
       shMusic: 'Musique', shSpotify: 'Lien Spotify', shOpenSpotify: 'Ouvrir dans Spotify', shMusicBad: 'Veuillez indiquer un lien Spotify (https://open.spotify.com/…).',
       navShow: 'Show', titleShow: 'Chränzli Drehbuch', dirTag: 'Metteur en scène', actTag: 'Acteur', mMakeDir: 'Nommer metteur en scène', mRevokeDir: 'Retirer les droits de metteur en scène', mMakeActor: 'Nommer acteur', mRevokeActor: 'Retirer le rôle d’acteur', dirGranted: 'Défini comme metteur en scène', dirRevoked: 'Droits de metteur en scène retirés', actorGranted: 'Défini comme acteur', actorRevoked: 'Rôle d’acteur retiré', shEmpty: 'Aucun acte pour l’instant.', shSetup: 'Les tables Show manquent. Exécuter PRD_v97_show.sql dans le SQL Editor.', shAddAct: 'Ajouter un acte', shAddScene: 'Ajouter une scène', shAddPart: 'Ajouter un rôle', shLvlAll: 'Show', shLvlAct: 'Acte', shLvlScene: 'Scène', shLvlPart: 'Rôle', shDesc: 'Description', shNoScenes: 'Aucune scène pour l’instant.', shSummary: '{r} rôles', shVisible: 'Planification visible pour les acteurs',
@@ -257,6 +259,7 @@
       mMakeAdmin: 'Make admin', mRevokeAdmin: 'Remove admin rights', mMakeEm: 'Make event manager', mRevokeEm: 'Remove event manager rights', mMakeGuest: 'Set as guest', mMakeMember: 'Set as member', mEdit: 'Change name and mobile number', mEditNote: 'With a new number the default PIN applies again: the last 6 digits of the new number.', mSaved: 'Saved', mDelete: 'Delete member', mPhoneTaken: 'This mobile number already belongs to someone else.',
       navJass: 'Jass', jsParticipants: 'Players', jsSchedule: 'Schedule', jsRanking: 'Daily ranking', jsRound: 'Round {n}', jsTable: 'Table {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Player {n}', jsFree: 'open', jsEmpty: 'No Jassmasters yet.', jsNoDays: 'No date yet.', jsAddSeries: 'Add Jassmasters', jsAddDay: 'Add date', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jass day', jsPick: 'Choose player {n}', jsClear: 'Clear seat', jsAlready: 'already player {n}', jsPoints: 'Points', jsGames: '{n} games', jsPtsAbbr: 'pts', jsGame: '{n} game', jsNoPoints: 'No points entered yet.', jsHint: 'Enter the points for the winning team. The other team automatically gets them as negative points.', jsSetup: 'Jass needs an updated database schema (supabase/schema.sql).', jsFinish: 'Finish Jassmaster', jsConfirmFinish: 'Finish "{name}"? It will move to Past Jassmasters and will only be visible as a ranking afterwards. Continue?', jsFinished: 'Marked as finished', jsEditRanking: 'Edit ranking', jsRankName: 'Name', jsRankPoints: 'Points', jsAddRow: 'Add row', jsNoRows: 'Nobody entered yet.',
       shPlay: 'Play here', shPlayStop: 'Close player',
+      shHint: 'Note', shHintCheck: 'Mark as note (listed before the acts)',
       shVideo: 'Video', shYoutube: 'YouTube link', shOpenYoutube: 'Open on YouTube', shVideoBad: 'Please enter a YouTube link (https://www.youtube.com/… or https://youtu.be/…).',
       shMusic: 'Music', shSpotify: 'Spotify link', shOpenSpotify: 'Open in Spotify', shMusicBad: 'Please enter a Spotify link (https://open.spotify.com/…).',
       navShow: 'Show', titleShow: 'Chränzli Drehbuch', dirTag: 'Director', actTag: 'Actor', mMakeDir: 'Make director', mRevokeDir: 'Revoke director rights', mMakeActor: 'Make actor', mRevokeActor: 'Revoke actor role', dirGranted: 'Set as director', dirRevoked: 'Director rights revoked', actorGranted: 'Set as actor', actorRevoked: 'Actor role revoked', shEmpty: 'No acts yet.', shSetup: 'The Show tables are missing. Please run PRD_v97_show.sql in the SQL Editor.', shAddAct: 'Add act', shAddScene: 'Add scene', shAddPart: 'Add role', shLvlAll: 'Show', shLvlAct: 'Act', shLvlScene: 'Scene', shLvlPart: 'Role', shDesc: 'Description', shNoScenes: 'No scenes yet.', shSummary: '{r} roles', shVisible: 'Plan visible to actors',
@@ -336,6 +339,7 @@
       mMakeAdmin: 'Rendi admin', mRevokeAdmin: 'Revoca i diritti di admin', mMakeEm: 'Nomina responsabile eventi', mRevokeEm: 'Revoca i diritti di responsabile eventi', mMakeGuest: 'Imposta come ospite', mMakeMember: 'Imposta come socio', mEdit: 'Modifica nome e numero di cellulare', mEditNote: 'Con un nuovo numero vale di nuovo il PIN predefinito: le ultime 6 cifre del nuovo numero.', mSaved: 'Salvato', mDelete: 'Elimina socio', mPhoneTaken: 'Questo numero di cellulare appartiene già a un’altra persona.',
       navJass: 'Jass', jsParticipants: 'Partecipanti', jsSchedule: 'Calendario delle partite', jsRanking: 'Classifica del giorno', jsRound: 'Turno {n}', jsTable: 'Tavolo {t}', jsTeam1: 'Squadra I', jsTeam2: 'Squadra II', jsPlayer: 'Giocatore {n}', jsFree: 'libero', jsEmpty: 'Ancora nessun Jassmasters.', jsNoDays: 'Ancora nessuna data.', jsAddSeries: 'Aggiungi Jassmasters', jsAddDay: 'Aggiungi data', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Giornata di jass', jsPick: 'Scegli il giocatore {n}', jsClear: 'Libera il posto', jsAlready: 'già giocatore {n}', jsPoints: 'Punti', jsGames: '{n} partite', jsPtsAbbr: 'pt', jsGame: '{n} partita', jsNoPoints: 'Ancora nessun punto inserito.', jsHint: 'Inserisci i punti per la squadra vincente. L’altra squadra li riceve automaticamente in negativo.', jsSetup: 'Per il jass lo schema del database deve essere aggiornato (supabase/schema.sql).', jsFinish: 'Concludi il Jassmaster', jsConfirmFinish: 'Concludere «{name}»? Verrà spostato in Jassmasters passati e sarà visibile solo come classifica. Continuare?', jsFinished: 'Contrassegnato come concluso', jsEditRanking: 'Modifica classifica', jsRankName: 'Nome', jsRankPoints: 'Punti', jsAddRow: 'Aggiungi riga', jsNoRows: 'Nessuno ancora inserito.',
       shPlay: 'Riproduci qui', shPlayStop: 'Chiudi il lettore',
+      shHint: 'Nota', shHintCheck: 'Segna come nota (prima degli atti)',
       shVideo: 'Video', shYoutube: 'Link YouTube', shOpenYoutube: 'Apri su YouTube', shVideoBad: 'Inserire un link YouTube (https://www.youtube.com/… o https://youtu.be/…).',
       shMusic: 'Musica', shSpotify: 'Link Spotify', shOpenSpotify: 'Apri in Spotify', shMusicBad: 'Inserire un link Spotify (https://open.spotify.com/…).',
       navShow: 'Show', titleShow: 'Chränzli Drehbuch', dirTag: 'Regista', actTag: 'Attore', mMakeDir: 'Nomina regista', mRevokeDir: 'Revoca i diritti di regista', mMakeActor: 'Nomina attore', mRevokeActor: 'Revoca il ruolo di attore', dirGranted: 'Impostato come regista', dirRevoked: 'Diritti di regista revocati', actorGranted: 'Impostato come attore', actorRevoked: 'Ruolo di attore revocato', shEmpty: 'Ancora nessun atto.', shSetup: 'Mancano le tabelle Show. Eseguire PRD_v97_show.sql nel SQL Editor.', shAddAct: 'Aggiungi atto', shAddScene: 'Aggiungi scena', shAddPart: 'Aggiungi ruolo', shLvlAll: 'Show', shLvlAct: 'Atto', shLvlScene: 'Scena', shLvlPart: 'Ruolo', shDesc: 'Descrizione', shNoScenes: 'Ancora nessuna scena.', shSummary: '{r} ruoli', shVisible: 'Pianificazione visibile agli attori',
@@ -415,6 +419,7 @@
       mMakeAdmin: 'Zum Admin mache', mRevokeAdmin: 'Admin-Rächt entzieh', mMakeEm: 'Zum Event Manager mache', mRevokeEm: 'Event Manager-Rächt entzieh', mMakeGuest: 'Zum Gascht mache', mMakeMember: 'Zum Mitglied mache', mEdit: 'Name und Handynummere ändere', mEditNote: 'Mit enere neue Handynummere gilt wieder de Standard-PIN: di letschte 6 Ziffere vo de neue Nummere.', mSaved: 'Gspeicheret', mDelete: 'Mitglied lösche', mPhoneTaken: 'Die Handynummere ghört scho öpper anderem.',
       navJass: 'Jass', jsParticipants: 'Teilnehmer', jsSchedule: 'Spielplan', jsRanking: 'Tagesrangliste', jsRound: 'Rundi {n}', jsTable: 'Tisch {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Spieler {n}', jsFree: 'frei', jsEmpty: 'No kei Jassmasters erfasst.', jsNoDays: 'No kei Datum erfasst.', jsAddSeries: 'Jassmasters hinzuefüege', jsAddDay: 'Datum hinzuefüege', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jasstag', jsPick: 'Spieler {n} uswähle', jsClear: 'Platz freigäh', jsAlready: 'scho Spieler {n}', jsPoints: 'Pünkt', jsGames: '{n} Spiel', jsPtsAbbr: 'Pkt.', jsGame: '{n} Spiel', jsNoPoints: 'No kei Pünkt erfasst.', jsHint: 'Träg d Pünkt bim Siegerteam ii. S ander Team überchunnt si automatisch negativ.', jsSetup: 'Für Jass muess s Datebank-Schema aktualisiert wärde (supabase/schema.sql).', jsFinish: 'Jassmaster abschliesse', jsConfirmFinish: '«{name}» abschliesse? Chunt under Vergangeni Jassmasters und isch denn nur no als Rangliste sichtbar. Wiitermache?', jsFinished: 'Als abgschlosse markiert', jsEditRanking: 'Rangliste bearbeite', jsRankName: 'Name', jsRankPoints: 'Pünkt', jsAddRow: 'Zile dezuefüege', jsNoRows: 'No niemer erfasst.',
       shPlay: 'Do abspile', shPlayStop: 'Player zuemache',
+      shHint: 'Hiwis', shHintCheck: 'Als Hiwis markiere (staht vor de Akt)',
       shVideo: 'Video', shYoutube: 'YouTube-Link', shOpenYoutube: 'Uf YouTube uuftue', shVideoBad: 'Bitte en YouTube-Link aagäh (https://www.youtube.com/… oder https://youtu.be/…).',
       shMusic: 'Musig', shSpotify: 'Spotify-Link', shOpenSpotify: 'In Spotify uuftue', shMusicBad: 'Bitte en Spotify-Link aagäh (https://open.spotify.com/…).',
       navShow: 'Show', titleShow: 'Chränzli Drehbuch', dirTag: 'Regisseur', actTag: 'Schauspiler', mMakeDir: 'Zum Regisseur mache', mRevokeDir: 'Regisseur-Rächt wäg nää', mMakeActor: 'Zum Schauspiler mache', mRevokeActor: 'Schauspiler-Rolle wäg nää', dirGranted: 'Als Regisseur festgleit', dirRevoked: 'Regisseur-Rächt wäggnoh', actorGranted: 'Als Schauspiler festgleit', actorRevoked: 'Schauspiler-Rolle wäggnoh', shEmpty: 'No kei Akt erfasst.', shSetup: 'D Show-Tabälle fehle. Bitte PRD_v97_show.sql im SQL Editor usfüehre.', shAddAct: 'Akt hinzuefüege', shAddScene: 'Szene hinzuefüege', shAddPart: 'Rolle hinzuefüege', shLvlAll: 'Show', shLvlAct: 'Akt', shLvlScene: 'Szene', shLvlPart: 'Rolle', shDesc: 'Beschrybig', shNoScenes: 'No kei Szene erfasst.', shSummary: '{r} Rolle', shVisible: 'Planig für Schauspiler sichtbar',
@@ -495,6 +500,7 @@
       mMakeAdmin: 'Призначити адміністратором', mRevokeAdmin: 'Забрати права адміністратора', mMakeEm: 'Призначити менеджером подій', mRevokeEm: 'Забрати права менеджера подій', mMakeGuest: 'Зробити гостем', mMakeMember: 'Зробити членом клубу', mEdit: 'Змінити ім’я та номер мобільного', mEditNote: 'З новим номером знову діє PIN за замовчуванням: останні 6 цифр нового номера.', mSaved: 'Збережено', mDelete: 'Видалити учасника', mPhoneTaken: 'Цей номер мобільного вже належить іншій особі.',
       navJass: 'Джас', jsParticipants: 'Учасники', jsSchedule: 'Розклад ігор', jsRanking: 'Рейтинг дня', jsRound: 'Раунд {n}', jsTable: 'Стіл {t}', jsTeam1: 'Команда I', jsTeam2: 'Команда II', jsPlayer: 'Гравець {n}', jsFree: 'вільно', jsEmpty: 'Jassmasters ще немає.', jsNoDays: 'Дати ще немає.', jsAddSeries: 'Додати Jassmasters', jsAddDay: 'Додати дату', jsLvlSeries: 'Jassmasters', jsLvlDay: 'День джасу', jsPick: 'Вибрати гравця {n}', jsClear: 'Звільнити місце', jsAlready: 'уже гравець {n}', jsPoints: 'Очки', jsGames: 'Ігор: {n}', jsPtsAbbr: 'очк.', jsGame: 'Ігор: {n}', jsNoPoints: 'Очок ще немає.', jsHint: 'Вкажіть очки команди-переможця. Інша команда автоматично отримує їх зі знаком мінус.', jsSetup: 'Для джасу потрібно оновити схему бази даних (supabase/schema.sql).', jsFinish: 'Завершити Jassmaster', jsConfirmFinish: 'Завершити «{name}»? Його буде переміщено до минулих Jassmasters і надалі буде видно лише рейтинг. Продовжити?', jsFinished: 'Позначено як завершене', jsEditRanking: 'Редагувати рейтинг', jsRankName: 'Ім\'я', jsRankPoints: 'Очки', jsAddRow: 'Додати рядок', jsNoRows: 'Ще нікого не додано.',
       shPlay: 'Відтворити тут', shPlayStop: 'Закрити плеєр',
+      shHint: 'Примітка', shHintCheck: 'Позначити як примітку (перед діями)',
       shVideo: 'Відео', shYoutube: 'Посилання YouTube', shOpenYoutube: 'Відкрити на YouTube', shVideoBad: 'Вкажіть посилання YouTube (https://www.youtube.com/… або https://youtu.be/…).',
       shMusic: 'Музика', shSpotify: 'Посилання Spotify', shOpenSpotify: 'Відкрити в Spotify', shMusicBad: 'Вкажіть посилання Spotify (https://open.spotify.com/…).',
       navShow: 'Show', titleShow: 'Chränzli Drehbuch', dirTag: 'Режисер', actTag: 'Актор', mMakeDir: 'Призначити режисером', mRevokeDir: 'Скасувати права режисера', mMakeActor: 'Призначити актором', mRevokeActor: 'Скасувати роль актора', dirGranted: 'Призначено режисером', dirRevoked: 'Права режисера скасовано', actorGranted: 'Призначено актором', actorRevoked: 'Роль актора скасовано', shEmpty: 'Дій ще немає.', shSetup: 'Таблиці Show відсутні. Виконайте PRD_v97_show.sql у SQL Editor.', shAddAct: 'Додати дію', shAddScene: 'Додати сцену', shAddPart: 'Додати роль', shLvlAll: 'Show', shLvlAct: 'Дія', shLvlScene: 'Сцена', shLvlPart: 'Роль', shDesc: 'Опис', shNoScenes: 'Сцен ще немає.', shSummary: '{r} ролей', shVisible: 'План видимий для акторів',
@@ -574,6 +580,7 @@
       mMakeAdmin: 'Zum Admin macha', mRevokeAdmin: 'Admin-Rechte entziehn', mMakeEm: 'Zum Event Manager macha', mRevokeEm: 'Event Manager-Rechte entziehn', mMakeGuest: 'Zum Gast macha', mMakeMember: 'Zum Mitglied macha', mEdit: 'Nama und Handynummer ändern', mEditNote: 'Mit ana neia Handynummer gilt wieda da Standard-PIN: de letztn 6 Ziffern vo da neia Nummer.', mSaved: 'Gspeichert', mDelete: 'Mitglied löschn', mPhoneTaken: 'De Handynummer ghört scho wem andern.',
       navJass: 'Jass', jsParticipants: 'Teilnehmer', jsSchedule: 'Spuiplan', jsRanking: 'Tagesranglistn', jsRound: 'Rundn {n}', jsTable: 'Tisch {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Spuier {n}', jsFree: 'frei', jsEmpty: 'No koa Jassmasters.', jsNoDays: 'No koa Datum.', jsAddSeries: 'Jassmasters dazuadoa', jsAddDay: 'Datum dazuadoa', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jasstog', jsPick: 'Spuier {n} aussuacha', jsClear: 'Platz freigebn', jsAlready: 'scho Spuier {n}', jsPoints: 'Punkt', jsGames: '{n} Spuie', jsPtsAbbr: 'Pkt.', jsGame: '{n} Spui', jsNoPoints: 'No koane Punkt.', jsHint: 'Trag de Punkt beim Siegerteam ei. Des andere Team kriagt s automatisch negativ.', jsSetup: 'Für Jass muass s Datenbank-Schema aktualisiert wern (supabase/schema.sql).', jsFinish: 'Jassmaster åbschliassn', jsConfirmFinish: '«{name}» åbschliassn? Kummt unta Vergangene Jassmasters und is nacha nur no as Rangliste z\'sehgn. Weitamacha?', jsFinished: 'Als åbgschlossn markiat', jsEditRanking: 'Rangliste bearbeitn', jsRankName: 'Nam', jsRankPoints: 'Punkt', jsAddRow: 'Zein dazuafügn', jsNoRows: 'No niemand eigem.',
       shPlay: 'Do oschpuin', shPlayStop: 'Player zuamocha',
+      shHint: 'Hinweis', shHintCheck: 'Als Hinweis kennzeichna (steht vor de Akt)',
       shVideo: 'Video', shYoutube: 'YouTube-Link', shOpenYoutube: 'Af YouTube aufmacha', shVideoBad: 'Bittschön an YouTube-Link angebn (https://www.youtube.com/… oder https://youtu.be/…).',
       shMusic: 'Musi', shSpotify: 'Spotify-Link', shOpenSpotify: 'In Spotify aufmacha', shMusicBad: 'Bittschön an Spotify-Link angebn (https://open.spotify.com/…).',
       navShow: 'Show', titleShow: 'Chränzli Drehbuch', dirTag: 'Regisseur', actTag: 'Schauspuia', mMakeDir: 'Zum Regisseur macha', mRevokeDir: 'Regisseur-Rechte wegnehma', mMakeActor: 'Zum Schauspuia macha', mRevokeActor: 'Schauspuia-Roin wegnehma', dirGranted: 'Als Regisseur festgsetzt', dirRevoked: 'Regisseur-Rechte wegnumma', actorGranted: 'Als Schauspuia festgsetzt', actorRevoked: 'Schauspuia-Roin wegnumma', shEmpty: 'No koan Akt erfasst.', shSetup: 'De Show-Tabellen fehln. Bittschön PRD_v97_show.sql im SQL Editor ausführn.', shAddAct: 'Akt dazuadoa', shAddScene: 'Szene dazuadoa', shAddPart: 'Roin dazuadoa', shLvlAll: 'Show', shLvlAct: 'Akt', shLvlScene: 'Szene', shLvlPart: 'Roin', shDesc: 'Beschreibung', shNoScenes: 'No koane Szenen erfasst.', shSummary: '{r} Roin', shVisible: 'Planung für Schauspuia sichtbar',
@@ -1863,11 +1870,14 @@
       var a = A.a, fullW = PAGE_W - 2 * MARGIN;
       var title = a.name + (a.active ? '' : '   (nicht sichtbar)');
       var dLines = a.description ? wrap(a.description, 9, fullW - 10, 'normal') : [];
-      var bandH = 9.5 + dLines.length * 4 + (dLines.length ? 1.5 : 0);
+      var media = [];
+      if (a.music_name || a.music_url) media.push({ label: L('shMusic'), text: a.music_name || '–', url: shSpotifyOk(a.music_url) ? a.music_url : '' });
+      if (a.video_desc || a.video_url) media.push({ label: L('shVideo'), text: a.video_desc || '–', url: shYoutubeOk(a.video_url) ? a.video_url : '' });
+      var bandH = 9.5 + dLines.length * 4 + (dLines.length ? 1.5 : 0) + media.length * 4.6;
       var firstH = A.scenes.length ? sceneHeight(A.scenes[0], COLW) : 0;
       var y0 = Math.max(colY[0], colY[1]);
       if (y0 + bandH + 4 + Math.min(firstH, 60) > BOTTOM) { newPage(); y0 = TOP; }
-      doc.setFillColor(BLUE_DARK[0], BLUE_DARK[1], BLUE_DARK[2]);
+      if (a.is_hint) doc.setFillColor(84, 98, 120); else doc.setFillColor(BLUE_DARK[0], BLUE_DARK[1], BLUE_DARK[2]);
       doc.roundedRect(MARGIN, y0, fullW, bandH, 3, 3, 'F');
       doc.setTextColor(255, 255, 255); doc.setFont('helvetica', 'bold'); doc.setFontSize(13);
       doc.text(title, MARGIN + 5, y0 + 6.3);
@@ -1875,6 +1885,13 @@
         doc.setFont('helvetica', 'normal'); doc.setFontSize(9); doc.setTextColor(207, 224, 242);
         dLines.forEach(function (ln, i) { doc.text(ln, MARGIN + 5, y0 + 11.2 + i * 4); });
       }
+      media.forEach(function (m, i) {
+        var my = y0 + 11.2 + dLines.length * 4 + (dLines.length ? 1.5 : 0) + i * 4.6;
+        doc.setFont('helvetica', 'bold'); doc.setFontSize(8.6); doc.setTextColor(207, 224, 242);
+        doc.text(m.label + ':', MARGIN + 5, my);
+        doc.setFont('helvetica', 'normal'); doc.setFontSize(9.3); doc.setTextColor(255, 255, 255);
+        try { if (m.url) doc.textWithLink(m.text, MARGIN + 31, my, { url: m.url }); else doc.text(m.text, MARGIN + 31, my); } catch (e) { doc.text(m.text, MARGIN + 31, my); }
+      });
       colY = [y0 + bandH + 4, y0 + bandH + 4];
       A.scenes.forEach(function (Sc) {
         var h = sceneHeight(Sc, COLW);
@@ -1912,7 +1929,7 @@
   /* ---------- Show: Chränzli Drehbuch (Akt > Szene > Rolle) ---------- */
   function shTree() {
     var C = S.cc;
-    return C.acts.slice().sort(ccByCreated).map(function (a) {
+    return C.acts.slice().sort(function (x, y) { return ((y.is_hint ? 1 : 0) - (x.is_hint ? 1 : 0)) || ccByCreated(x, y); }).map(function (a) {
       return {
         a: a,
         scenes: C.scenes.filter(function (x) { return x.act_id === a.id; }).sort(function (x, y) { return String(x.name).localeCompare(String(y.name), 'de', { numeric: true, sensitivity: 'base' }) || ccByCreated(x, y); }).map(function (sc) {
@@ -1974,7 +1991,7 @@
   }
   // Vorgabe für den Namen eines neuen Akts / einer neuen Szene: «1. Akt - ...», «2. Szene - ...» (nächste freie Nummer)
   function shDefaultName(kind) {
-    var n = kind === 'act' ? S.cc.acts.length + 1 : S.cc.scenes.filter(function (x) { return ccSheet && x.act_id === ccSheet.id; }).length + 1;
+    var n = kind === 'act' ? S.cc.acts.filter(function (x) { return !x.is_hint; }).length + 1 : S.cc.scenes.filter(function (x) { return ccSheet && x.act_id === ccSheet.id; }).length + 1;
     return n + '. ' + (kind === 'act' ? 'Akt' : 'Szene') + ' - ...';
   }
   // Beschreibung von Akt/Szene: immer sichtbar, solange der Abschnitt aufgeklappt ist (kein Info-Icon)
@@ -1989,12 +2006,12 @@
     if (!tree.length) return html + '<div class="empty"><p>' + L('shEmpty') + '</p>' + (ed ? '<button type="button" class="btn inline" data-act="sh-addact" style="margin-top:12px">' + L('shAddAct') + '</button>' : '') + '</div>';
     tree.forEach(function (A) {
       var a = A.a, folded = shIsFolded(a.id);
-      html += '<section class="ccel' + (a.active ? '' : ' ccoff') + '"><div class="cceh">' +
+      html += '<section class="ccel' + (a.is_hint ? ' hint' : '') + (a.active ? '' : ' ccoff') + '"><div class="cceh">' +
         (ed ? '<input type="checkbox" class="ccck" data-shactive="' + esc(a.id) + '"' + (a.active ? ' checked' : '') + ' aria-label="' + esc(a.name + ': ' + L('shVisible')) + '" title="' + esc(L('shVisible')) + '">' : '') +
         '<button type="button" class="cct" data-act="sh-fold" data-id="' + esc(a.id) + '" aria-expanded="' + !folded + '">' + esc(a.name) + '</button>' +
         (ed ? shDots('act', a.id, a.name) : '') +
         '<button type="button" class="ccfold' + (folded ? '' : ' open') + '" data-act="sh-fold" data-id="' + esc(a.id) + '" aria-expanded="' + !folded + '" aria-label="' + esc(a.name) + '">' + ICON.chev + '</button></div>' +
-        shDescText(a, !folded);
+        shDescText(a, !folded) + (folded ? '' : shMusicRow(a) + shVideoRow(a));
       if (!folded) {
         html += '<div class="ccbody">';
         if (!A.scenes.length) html += '<p class="ccsum" style="padding-top:10px">' + L('shNoScenes') + '</p>';
@@ -2095,8 +2112,9 @@
     } else if (kind === 'act' || kind === 'scene') {
       h += fld(L('nameLabel'), '<input class="input" name="name" value="' + esc(o ? o.name : shDefaultName(kind)) + '" required>') +
         fld(L('shDesc'), '<textarea class="input shgrow" name="desc" rows="1">' + esc(o && o.description ? o.description : '') + '</textarea>') +
-        (kind === 'scene' ? shMediaField(L('shMusic'), 'music_name', o && o.music_name, 'Titel / Interpret', 'music_url', o && o.music_url, 'https://open.spotify.com/…', 'icons/spotify.png', L('shSpotify')) +
+        ((kind === 'scene' || kind === 'act') ? shMediaField(L('shMusic'), 'music_name', o && o.music_name, 'Titel / Interpret', 'music_url', o && o.music_url, 'https://open.spotify.com/…', 'icons/spotify.png', L('shSpotify')) +
           shMediaField(L('shVideo'), 'video_desc', o && o.video_desc, 'Beschreibung', 'video_url', o && o.video_url, 'https://www.youtube.com/watch?v=…', 'icons/youtube.png', L('shYoutube')) : '') +
+        (kind === 'act' ? '<label class="check"><input type="checkbox" name="is_hint"' + (o && o.is_hint ? ' checked' : '') + '><span>' + L('shHintCheck') + '</span></label>' : '') +
         (kind === 'act' ? '<label class="check"><input type="checkbox" name="active"' + (o && o.active ? ' checked' : '') + '><span>' + L('shVisible') + '</span></label>' : '');
     } else if (ccIsPersonLvl(kind)) {
       h += fld(L('nameLabel'), '<input class="input" name="name" value="' + esc(o ? o.name : '') + '" placeholder="Bar" required>') +
@@ -2345,8 +2363,8 @@
     if ((kind === 'event' || kind === 'role' || kind === 'act' || kind === 'scene' || kind === 'part' || kind === 'copy-event') && !g('name')) { ccErr(L('ccNeedName')); return; }
     if ((kind === 'day' || kind === 'copy-day') && !g('date')) { ccErr(L('date') + '?'); return; }
     if (kind === 'shift' && (!g('start') || !g('end'))) { ccErr(L('time') + '?'); return; }
-    if (kind === 'scene' && g('music_url') && !shSpotifyOk(g('music_url'))) { shReveal('music_url'); ccErr(L('shMusicBad')); return; }
-    if (kind === 'scene' && g('video_url') && !shYoutubeOk(g('video_url'))) { shReveal('video_url'); ccErr(L('shVideoBad')); return; }
+    if ((kind === 'scene' || kind === 'act') && g('music_url') && !shSpotifyOk(g('music_url'))) { shReveal('music_url'); ccErr(L('shMusicBad')); return; }
+    if ((kind === 'scene' || kind === 'act') && g('video_url') && !shYoutubeOk(g('video_url'))) { shReveal('video_url'); ccErr(L('shVideoBad')); return; }
     ccCloseSheet();
 
     if (kind === 'event') {
@@ -2365,7 +2383,7 @@
       if (isNew) { ro.shift_id = st.id; ro.sort = ccNextSort(st.id); }
       ok = await act(function () { return isNew ? sb.from('cc_roles').insert(ro) : sb.from('cc_roles').update(ro).eq('id', o.id); }, L('ccSaved'));
     } else if (kind === 'act') {
-      var ac = { name: g('name'), description: g('desc') || null, active: !!fd.get('active') };
+      var ac = { name: g('name'), description: g('desc') || null, active: !!fd.get('active'), is_hint: !!fd.get('is_hint'), music_name: g('music_name') || null, music_url: g('music_url') || null, video_desc: g('video_desc') || null, video_url: g('video_url') || null };
       ok = await act(function () { return isNew ? sb.from('show_acts').insert(ac) : sb.from('show_acts').update(ac).eq('id', o.id); }, L('ccSaved'));
     } else if (kind === 'scene') {
       var sc = { name: g('name'), description: g('desc') || null, music_name: g('music_name') || null, music_url: g('music_url') || null, video_desc: g('video_desc') || null, video_url: g('video_url') || null };

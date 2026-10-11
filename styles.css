@@ -375,6 +375,9 @@
 
   .ccel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; margin-bottom: 12px; overflow: hidden; }
   .ccel.ccoff { opacity: .6; }
+  .ccel.hint { background: color-mix(in srgb, var(--muted) 8%, var(--surface)); border-color: color-mix(in srgb, var(--muted) 40%, var(--line)); border-left: 4px solid var(--muted); }
+  .ccel.hint .cceh { background: color-mix(in srgb, var(--muted) 16%, var(--surface)); }
+  .ccel.hint .cct { color: var(--ink); }
   .cceh { display: flex; align-items: center; gap: 10px; padding: 8px 4px 8px 12px; background: var(--crown-soft); }
   .ccck { width: 22px; height: 22px; margin: 0; accent-color: var(--crown); flex: 0 0 auto; }
   .cct { flex: 1; min-width: 0; text-align: left; background: none; border: 0; padding: 4px 0; font-family: var(--font-head); font-weight: 700; font-size: 1.35rem; color: var(--crown); overflow-wrap: anywhere; }
