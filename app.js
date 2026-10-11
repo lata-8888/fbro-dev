@@ -1802,7 +1802,7 @@
       doc.rect(0, 0, PAGE_W, 24, 'F');
       if (logo) { try { doc.addImage(logo, 'PNG', MARGIN, 4, 13.5, 15.5); } catch (e) { /* Logo optional */ } }
       doc.setTextColor(255, 255, 255); doc.setFont('helvetica', 'bold'); doc.setFontSize(17);
-      doc.text('Einsatzplan · ' + L('titleShow'), MARGIN + 18, 11.5);
+      doc.text(L('titleShow'), MARGIN + 18, 11.5);
       doc.setFont('helvetica', 'normal'); doc.setFontSize(9.5); doc.setTextColor(207, 224, 242);
       doc.text(dirLabel, MARGIN + 18, 17);
       doc.text('Version', PAGE_W - MARGIN, 9.5, { align: 'right' });
@@ -1916,7 +1916,7 @@
     try {
       var file = new File([blob], fname, { type: 'application/pdf' });
       if (navigator.canShare && navigator.canShare({ files: [file] })) {
-        await navigator.share({ files: [file], title: 'Einsatzplan ' + L('titleShow') });
+        await navigator.share({ files: [file], title: L('titleShow') });
         return;
       }
     } catch (e) { /* Teilen abgebrochen oder nicht verfügbar: als Download anbieten */ }
