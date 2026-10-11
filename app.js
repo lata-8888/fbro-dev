@@ -1969,7 +1969,7 @@
     return m ? 'https://open.spotify.com/embed/' + m[1] + '/' + m[2] : '';
   }
   // Video-Zeile (YouTube): Beschriftung links, Text, rechts das YouTube-Icon als Link
-  function shYoutubeOk(u) { return /^https:\/\/((www|m|music)\.youtube\.com|youtu\.be)\/\S+$/i.test(String(u || '').trim()); }
+  function shYoutubeOk(u) { return /^https:\/\/\S+$/i.test(String(u || '').trim()); }   // bewusst locker: nur https (youtube.com, youtu.be, shorts …)
   function shVideoRow(a) {
     if (!a.video_desc && !a.video_url) return '';
     var img = '<img src="icons/youtube.png" alt="" width="21" height="21">';
