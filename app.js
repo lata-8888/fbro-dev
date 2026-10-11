@@ -1911,7 +1911,7 @@
       doc.text('Seite ' + pi + ' / ' + pages, PAGE_W - MARGIN, PAGE_H - 6, { align: 'right' });
     }
 
-    var fname = 'Einsatzplan_Chraenzli-Drehbuch.pdf';
+    var fname = 'Chraenzli-Drehbuch.pdf';
     var blob = doc.output('blob');
     try {
       var file = new File([blob], fname, { type: 'application/pdf' });
