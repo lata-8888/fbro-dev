@@ -466,6 +466,7 @@
   .infobar { margin: 0; padding: 10px 12px; font-size: .9rem; color: var(--muted); border-bottom: 1px solid var(--line); }
   .jssub .infobar { padding: 2px 0 10px; border-bottom: 0; }
   .top + .infobar { padding: 0; margin: -6px 0 14px; border-bottom: 0; }
+  .shdesc { white-space: pre-line; overflow-wrap: anywhere; }
   .ccnote { font-size: .88rem; color: var(--muted); margin: -4px 0 12px; }
   .ccsheetcard .input { font-size: 1rem; padding: 11px 12px; }
 
