@@ -56,6 +56,21 @@ function normPhone(input) {
   if (s.startsWith('+41') && s.length !== 12) return null;
   return s;
 }
+/* Länderwahl + Eingabe → Nummer für normPhone(). Eingaben mit + oder 00 gelten immer als international. */
+const PHONE_CC = [{ c: '41', l: 'CH +41', ph: '79 123 45 67' }, { c: '49', l: 'DE +49', ph: '176 12345678' }];
+function composePhone(cc, raw) {
+  raw = String(raw || '').trim();
+  if (/^(\+|00)/.test(raw.replace(/\s/g, ''))) return raw;
+  if (!cc) return raw;
+  let d = raw.replace(/\(0\)/g, '').replace(/\D/g, '');
+  if (cc === '41' && d.length === 11 && d.indexOf('41') === 0) d = d.slice(2);
+  d = d.replace(/^0+/, '');
+  return d ? '+' + cc + d : '';
+}
+function phoneField(idCc, idNum) {
+  return `<div class="phonerow"><select id="${idCc}" class="phonecc" aria-label="${t('Land')}">${PHONE_CC.map(x => `<option value="${x.c}">${x.l}</option>`).join('')}<option value="">${t('Andere')}</option></select>
+    <input id="${idNum}" type="tel" inputmode="tel" autocomplete="${idNum === 'ln' ? 'username' : 'off'}" required maxlength="30" placeholder="79 123 45 67"></div>`;
+}
 const defaultPin = phone => String(phone || '').replace(/\D/g, '').slice(-6);   // letzte 6 Ziffern
 const phoneToEmail = phone => {
   const n = normPhone(phone);
@@ -515,6 +530,9 @@ function download(name, text, type) {
   document.body.appendChild(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
+const monthLabel = iso => {
+  try { return new Date(iso).toLocaleDateString(LANG === 'en' ? 'en-GB' : 'de-CH', { month: 'long', year: 'numeric' }); } catch (e) { return ''; }
+};
 const fileSafe = s => String(s).replace(/[^\w\-]+/g, '_').slice(0, 60) || 'map';
 const fail = e => { console.error(e); toast(e && e.message ? e.message : String(e)); };
 
@@ -526,6 +544,7 @@ const ICON = {
   library: '<path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/>',
   admin: '<circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="6.5"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2 2M16.7 16.7l2 2M5.3 18.7l2-2M16.7 7.3l2-2"/>',
   chev: '<path d="M6 9l6 6 6-6"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/>',
   sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/>',
   moon: '<path d="M20 14.5A8 8 0 019.5 4a8 8 0 1010.5 10.5z"/>',
   monitor: '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',
@@ -580,21 +599,25 @@ function renderLogin() {
     <div class="lhead"><h1 class="brand2" aria-label="Wardley mAPP inspired by Andrea"><svg viewBox="0 0 240 86" role="img" aria-hidden="true">
         <text x="0" y="47" textLength="240" lengthAdjust="spacingAndGlyphs" class="l1">Wardley mAPP</text>
         <text x="0" y="78" textLength="240" lengthAdjust="spacingAndGlyphs" class="l2">inspired by Andrea</text></svg></h1><img class="logo-big" src="icons/logo.png" alt=""></div>
-    <p class="sub">${t('Anmelden mit Mobilnummer und PIN')}</p>
+    <p class="sub">${t('Melde dich mit deiner Mobilnummer an.')}</p>
     <form id="lf" autocomplete="off">
-      <label>${t('Mobilnummer')}<input id="ln" type="tel" inputmode="tel" autocomplete="username" placeholder="079 123 45 67" required maxlength="30" autofocus></label>
-      <label>${t('PIN')}<input id="lp" class="pin" type="password" inputmode="numeric" autocomplete="current-password" required maxlength="6" pattern="[0-9]{6}"></label>
+      <label>${t('Mobilnummer')}${phoneField('lcc', 'ln')}</label>
+      <label>${t('PIN (nur nötig, wenn ein Admin sie geändert hat)')}<input id="lp" class="pin" type="password" inputmode="numeric" autocomplete="current-password" maxlength="6" pattern="[0-9]{6}" placeholder="······"></label>
       <div class="error" id="le"></div>
       <button class="btn dark block">${t('Anmelden')}</button>
     </form>
-    <p class="hint">${t('Deine PIN sind die letzten 6 Ziffern deiner Mobilnummer, solange kein Admin sie geändert hat.')}</p>
+    <button type="button" class="linkbtn" id="first">${t('Zum ersten Mal hier?')}</button>
+    <p class="hint" id="firsthint" hidden>${t('Dein Konto legt ein Admin an. Deine PIN sind die letzten 6 Ziffern deiner Mobilnummer, solange kein Admin sie geändert hat.')}</p>
     ${CFG.BACKEND === 'supabase' ? '' : `<p class="hint">${t('Prototyp: Daten liegen nur in diesem Browser.')}<br>Demo: 079 111 11 11 (Admin) · 079 222 22 22 (Anna) · 079 333 33 33 (Ben), PIN 111111, 222222, 333333</p>`}
     <div class="center">${langSwitch()}</div>
   </div>`;
   bindLang(renderLogin);
+  $('#first').onclick = () => { $('#firsthint').hidden = !$('#firsthint').hidden; };
   $('#lf').addEventListener('submit', async e => {
     e.preventDefault();
-    try { await API.login($('#ln').value, $('#lp').value); route(); }
+    const phone = composePhone($('#lcc').value, $('#ln').value);
+    const pin = $('#lp').value.trim() || defaultPin(normPhone(phone));
+    try { await API.login(phone, pin); route(); }
     catch (err) { console.error(err); $('#le').textContent = err.message; }
   });
 }
@@ -610,7 +633,16 @@ function shell(u) {
 function setTop(title, o) {
   o = o || {};
   $('#top').innerHTML = `${o.back ? `<a class="ibtn" href="${o.back}" aria-label="${t('Zurück')}">${ic('back')}</a>` : ''}
-    <div class="grow">${o.titleHtml || `<h1>${esc(title)}</h1>`}${o.sub ? `<div class="sub">${esc(o.sub)}</div>` : ''}</div><div class="tact">${o.right || ''}</div>`;
+    <div class="grow">${o.titleHtml || `<h1 class="pagetitle">${esc(title)}</h1>`}${o.sub ? `<div class="sub">${esc(o.sub)}</div>` : ''}</div><div class="tact">${o.right || ''}</div>`;
+  fitTitles();
+}
+/* Seitentitel verkleinern, bis er auf eine Zeile passt (wie bei FBRO) */
+function fitTitles() {
+  document.querySelectorAll('.pagetitle').forEach(el => {
+    el.style.fontSize = '';
+    let size = parseFloat(getComputedStyle(el).fontSize) || 36;
+    while (el.scrollWidth > el.clientWidth + 1 && size > 15) { size -= 1; el.style.fontSize = size + 'px'; }
+  });
 }
 const iconBtn = (id, icon, label, extra) => `<button class="ibtn" id="${id}" aria-label="${esc(label)}" title="${esc(label)}" ${extra || ''}>${ic(icon)}</button>`;
 
@@ -619,6 +651,8 @@ let installPrompt = null;
 async function viewProfile() {
   const u = API.me();
   setTop(t('Mein Profil'));
+  const iosHint = /iphone|ipad|ipod/i.test(navigator.userAgent) && !navigator.standalone;
+  const standalone = !!(root.matchMedia && root.matchMedia('(display-mode: standalone)').matches);
   const themes = [['light', 'sun', t('Hell')], ['dark', 'moon', t('Dunkel')], ['auto', 'monitor', t('Automatisch')]];
   view().innerHTML = `<div class="stack narrow">
     <div class="card pad"><div class="kv"><span>${t('Name')}</span><b>${esc(u.name)}</b></div>
@@ -631,8 +665,8 @@ async function viewProfile() {
     <div class="card pad"><h2>${t('Darstellung')}</h2><p class="desc">${t('Wähle, wie die App aussehen soll.')}</p>
       <div class="seg3" id="seg-theme" role="radiogroup">${themes.map(([v, i, l]) =>
         `<button type="button" role="radio" aria-checked="${prefs.theme === v}" data-v="${v}" class="${prefs.theme === v ? 'on' : ''}">${ic(i)}<span>${l}</span></button>`).join('')}</div></div>
-    <div class="card pad"><h2>${t('App installieren')}</h2><p class="desc">${t('Lege die App auf deinen Startbildschirm, dann öffnet sie sich im Vollbild.')}</p>
-      ${installPrompt ? `<button class="btn out block" id="inst">${t('Installieren')}</button>` : `<p class="meta">${t('Im Browser-Menü: «Zum Startbildschirm hinzufügen» bzw. «App installieren».')}</p>`}</div>
+    ${standalone ? '' : `<div class="card pad"><h2>${t('App installieren')}</h2><p class="desc">${t('Lege die App auf deinen Startbildschirm, dann öffnet sie sich im Vollbild.')}</p>
+      ${installPrompt ? `<button class="btn out block" id="inst">${t('Installieren')}</button>` : `<p class="meta">${iosHint ? t('Tippe in Safari auf «Teilen» und dann auf «Zum Home-Bildschirm».') : t('Im Browser-Menü: «Zum Startbildschirm hinzufügen» bzw. «App installieren».')}</p>`}</div>`}
     <div class="card pad"><div class="kv"><span>${t('Daten')}</span><b>${CFG.BACKEND === 'supabase' ? 'Supabase' : t('Nur in diesem Browser')}</b></div>
       <p class="meta">${t('Deine PIN kann nur ein Admin zurücksetzen.')}</p></div>
     <button class="btn danger block" id="logout">${ic('logout')} ${t('Abmelden')}</button></div>`;
@@ -659,13 +693,19 @@ async function viewLibrary() {
     const q = $('#q').value.trim().toLowerCase();
     const list = maps.filter(m => !q || m.title.toLowerCase().includes(q) || m.ownerName.toLowerCase().includes(q));
     if (!list.length) { grid.innerHTML = `<div class="empty">${t('Keine Maps gefunden.')}</div>`; return; }
-    grid.innerHTML = list.map(m => `<div class="card mapcard">
+    let last = '';
+    grid.innerHTML = list.map(m => {
+      const label = monthLabel(m.updated);
+      const head = label !== last ? `<div class="week">${esc(label)}</div>` : '';
+      last = label;
+      return head + `<article class="card mapcard">
       <div class="chead" data-act="open" data-id="${esc(m.id)}"><span class="ctitle">${esc(m.title)}</span>
-        <span class="badge ${m.role === 'viewer' ? 'gray' : ''}">${t(ROLE_LABEL[m.role])}</span></div>
+        <span class="badge ${m.role === 'viewer' ? 'gray' : ''}">${t(ROLE_LABEL[m.role])}</span>
+        <button class="ibtn flat" data-act="menu" data-id="${esc(m.id)}" aria-label="${t('Weitere Aktionen')}: ${esc(m.title)}" title="${t('Weitere Aktionen')}">${ic('more')}</button></div>
       <div class="thumb" data-act="open" data-id="${esc(m.id)}">${mapSvg(m.data, { id: 't' + m.id })}</div>
       <div class="cbody"><div class="meta">${esc(m.ownerName)} · ${esc(fmtDate(m.updated))}</div>
-        <div class="crow"><button class="btn out" data-act="open" data-id="${esc(m.id)}">${ic(canEdit(m.role) ? 'open' : 'select')} ${canEdit(m.role) ? t('Öffnen') : t('Ansehen')}</button>
-        <button class="btn pill" data-act="menu" data-id="${esc(m.id)}" aria-label="${t('Weitere Aktionen')}">${ic('more')}</button></div></div></div>`).join('');
+        <div class="crow"><button class="btn out" data-act="open" data-id="${esc(m.id)}">${ic(canEdit(m.role) ? 'open' : 'select')} ${canEdit(m.role) ? t('Öffnen') : t('Ansehen')}</button></div></div></article>`;
+    }).join('');
   };
   draw();
   $('#q').addEventListener('input', draw);
@@ -756,8 +796,14 @@ async function viewAdmin() {
   setTop(t('Admin Console'), { sub: t('Nur für Admins sichtbar') });
   view().innerHTML = `<section class="acc open"><div class="chead acc-h" id="acc-h"><span class="ctitle">${t('Personen')} (${users.length})</span>
       <button class="ibtn flat" id="addu" aria-label="${t('Person anlegen')}" title="${t('Person anlegen')}">${ic('plus')}</button>
-      <span class="chev">${ic('chev')}</span></div><div class="list" id="ub"></div></section>`;
-  $('#acc-h').addEventListener('click', e => { if (!e.target.closest('#addu')) $('.acc').classList.toggle('open'); });
+      <button class="ibtn flat" id="infob" aria-label="${t('Erklärung anzeigen')}" title="${t('Erklärung anzeigen')}">${ic('info')}</button>
+      <span class="chev">${ic('chev')}</span></div>
+      <p class="infobar" id="infotxt" hidden>${t('Personen mit Mobilnummer anlegen. Die PIN sind die letzten 6 Ziffern der Nummer, solange du keine andere setzt. Über «…» pro Person änderst du Rolle, Status und PIN.')}</p>
+      <div class="list" id="ub"></div></section>`;
+  $('#acc-h').addEventListener('click', e => {
+    if (e.target.closest('#infob')) { $('#infotxt').hidden = !$('#infotxt').hidden; return; }
+    if (!e.target.closest('#addu')) $('.acc').classList.toggle('open');
+  });
   const body = $('#ub');
   const draw = () => {
     body.innerHTML = users.map(u => {
@@ -766,7 +812,7 @@ async function viewAdmin() {
       return `<div class="urow"><div class="avatar sm ${u.active ? '' : 'off'}">${esc((u.name || '?').trim().charAt(0).toUpperCase())}</div>
         <div class="grow"><div class="uname">${esc(u.name)}${self ? ` <span class="meta">(${t('du')})</span>` : ''}${u.isAdmin ? `<span class="badge">Admin</span>` : ''}${u.active ? '' : `<span class="badge gray">${t('deaktiviert')}</span>`}</div>
           <div class="meta">${esc(fmtPhone(u.phone))} · ${n} ${t('Maps')}</div></div>
-        <button class="btn pill sm" data-act="menu" data-id="${esc(u.id)}" aria-label="${t('Weitere Aktionen')}">${ic('more')}</button></div>`;
+        <button class="ibtn" data-act="menu" data-id="${esc(u.id)}" aria-label="${t('Weitere Aktionen')}: ${esc(u.name)}" title="${t('Weitere Aktionen')}">${ic('more')}</button></div>`;
     }).join('');
   };
   draw();
@@ -776,14 +822,14 @@ async function viewAdmin() {
     const md = modal(`<h2>${t('Person anlegen')}</h2>
       <form id="cf" autocomplete="off">
         <label>${t('Name')}<input id="cn" required maxlength="40"></label>
-        <label>${t('Mobilnummer')}<input id="cm" type="tel" inputmode="tel" required maxlength="30" placeholder="079 123 45 67"></label>
+        <label>${t('Mobilnummer')}${phoneField('cmcc', 'cm')}</label>
         <label>${t('PIN (leer = letzte 6 Ziffern)')}<input id="cp" maxlength="6" inputmode="numeric" pattern="[0-9]{6}"></label>
         <label class="chk"><input type="checkbox" id="ca"> ${t('Admin')}</label>
         <div class="foot"><button type="button" class="btn" data-close>${t('Abbrechen')}</button><button class="btn primary">${t('Anlegen')}</button></div></form>`);
     $('#cn', md.el).focus();
     $('#cf', md.el).addEventListener('submit', async e => {
       e.preventDefault();
-      try { await API.createUser({ name: $('#cn', md.el).value, phone: $('#cm', md.el).value, pin: $('#cp', md.el).value, isAdmin: $('#ca', md.el).checked }); md.close(); toast(t('Person angelegt')); reload(); }
+      try { await API.createUser({ name: $('#cn', md.el).value, phone: composePhone($('#cmcc', md.el).value, $('#cm', md.el).value), pin: $('#cp', md.el).value, isAdmin: $('#ca', md.el).checked }); md.close(); toast(t('Person angelegt')); reload(); }
       catch (err) { fail(err); }
     });
   };
