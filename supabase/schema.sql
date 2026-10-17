@@ -38,7 +38,7 @@ alter table public.profiles add constraint profiles_theme_check
   check (theme is null or theme in ('light', 'dark'));
 
 -- Rollen: Gast (sieht nur Trainings und Profil), Admin (Stern), Chilbi Manager und
--- Chränzli Manager (Weinglas, lösen den früheren Event-Manager ab), Jass Manager (Pokal)
+-- Chränzli Manager (Weinglas, lösen den früheren Event Manager ab), Jass Manager (Pokal)
 -- Gast = false bedeutet Mitglied (Krone). Admin und die Manager-Rollen können nur Mitglieder sein.
 -- is_passive unterscheidet Aktiv- von Passivmitgliedern (nur bei Nicht-Gästen von Bedeutung).
 alter table public.profiles add column if not exists is_guest boolean not null default false;
@@ -278,7 +278,7 @@ begin
 end;
 $$;
 
--- Event-Manager-Rechte vergeben oder entziehen (nur für Admins, nur für Mitglieder)
+-- Event Manager-Rechte vergeben oder entziehen (nur für Admins, nur für Mitglieder)
 -- Hinweis: abgelöst durch set_chilbi_manager/set_chraenzli_manager, Funktion bleibt für Altdaten erhalten
 create or replace function public.set_event_manager(target uuid, make_manager boolean)
 returns void
@@ -286,10 +286,10 @@ language plpgsql security definer set search_path = public
 as $$
 begin
   if not public.is_admin() then
-    raise exception 'Nur Admins dürfen Event-Manager festlegen';
+    raise exception 'Nur Admins dürfen Event Manager festlegen';
   end if;
   if make_manager and exists (select 1 from public.profiles where id = target and is_guest) then
-    raise exception 'Gäste können nicht Event-Manager sein. Mache die Person zuerst zum Mitglied.';
+    raise exception 'Gäste können nicht Event Manager sein. Mache die Person zuerst zum Mitglied.';
   end if;
   update public.profiles set is_event_manager = make_manager where id = target;
 end;
@@ -561,7 +561,7 @@ begin
   end loop;
 end $$;
 
--- Events: alle ausser Gästen lesen, Admins und Event-Manager ändern
+-- Events: alle ausser Gästen lesen, nur Event Manager ändern (Admin nur, wenn er sich die Rolle selbst gibt)
 drop policy if exists "events_select" on public.events;
 create policy "events_select" on public.events
   for select to authenticated using (not public.is_guest());
@@ -569,11 +569,11 @@ drop policy if exists "events_admin_write" on public.events;
 drop policy if exists "events_manage_write" on public.events;
 create policy "events_manage_write" on public.events
   for all to authenticated
-  using (public.is_admin() or public.is_event_manager())
-  with check (public.is_admin() or public.is_event_manager());
+  using (public.is_event_manager())
+  with check (public.is_event_manager());
 
 -- Antworten auf Events: Gäste sehen und ändern nichts, alle anderen ändern nur die eigenen.
--- Zusätzlich dürfen Admin und Event-Manager die Antwort jeder Person setzen (Teilnehmer verwalten).
+-- Zusätzlich dürfen Event Manager und Admins die Antwort jeder Person setzen (Teilnehmer verwalten).
 drop policy if exists "event_responses_select" on public.event_responses;
 create policy "event_responses_select" on public.event_responses
   for select to authenticated using (not public.is_guest());
@@ -585,8 +585,8 @@ create policy "event_responses_own_write" on public.event_responses
 drop policy if exists "event_responses_manager_write" on public.event_responses;
 create policy "event_responses_manager_write" on public.event_responses
   for all to authenticated
-  using (public.is_admin() or public.is_event_manager())
-  with check (public.is_admin() or public.is_event_manager());
+  using (public.is_event_manager() or public.is_admin())
+  with check (public.is_event_manager() or public.is_admin());
 
 -- Antworten auf Trainings: alle lesen, jede Person ändert nur die eigenen
 do $$
@@ -602,6 +602,11 @@ begin
       t);
   end loop;
 end $$;
+
+-- Admin darf die Trainingsantworten aller Personen setzen (Teilnehmer bearbeiten)
+drop policy if exists "training_responses_admin_write" on public.training_responses;
+create policy "training_responses_admin_write" on public.training_responses
+  for all to authenticated using (public.is_admin()) with check (public.is_admin());
 
 -- ---------- Live-Aktualisierung (Realtime) ----------
 do $$
@@ -668,7 +673,7 @@ create or replace function public.can_cc()
 returns boolean
 language sql stable security definer set search_path = public
 as $$
-  select public.is_admin() or public.is_chilbi_manager() or public.is_chraenzli_manager()
+  select public.is_chilbi_manager() or public.is_chraenzli_manager()
 $$;
 
 -- Schaltet C&C für alle angemeldeten Personen lesbar (true) oder nur für
@@ -734,7 +739,7 @@ create or replace function public.can_jass()
 returns boolean
 language sql stable security definer set search_path = public
 as $$
-  select public.is_admin() or public.is_jass_master()
+  select public.is_jass_master()
 $$;
 
 do $$
@@ -794,7 +799,7 @@ end $$;
 -- =====================================================================
 -- Jass: Jassmasters-Serien mit Jasstagen, Teilnehmern und Punkten
 -- Sichtbar für alle angemeldeten Personen (Mitglieder, Gäste), damit jeder
--- die Tagesrangliste sieht. Bearbeiten dürfen nur Admins und Event-Manager.
+-- die Tagesrangliste sieht. Bearbeiten dürfen nur Admins und Event Manager.
 -- =====================================================================
 create table if not exists public.jass_series (
   id         uuid primary key default gen_random_uuid(),
@@ -849,7 +854,7 @@ begin
   end;
 end $$;
 
--- Eine einzelne Punktzahl setzen oder löschen (nur Admins und Event-Manager).
+-- Eine einzelne Punktzahl setzen oder löschen (nur Admins und Event Manager).
 -- p_game ist z. B. '1A' (Runde 1, Tisch A). p_pts ist die Punktzahl von Team I, oder null zum Löschen.
 create or replace function public.jass_set_score(p_day uuid, p_game text, p_pts integer)
 returns void
@@ -896,3 +901,196 @@ grant  execute on function public.jass_set_score(uuid, text, integer) to authent
 -- 5) Kontrolle: Bei allen Tabellen muss rls_aktiv = true stehen.
 --    select tablename, rowsecurity as rls_aktiv from pg_tables where schemaname = 'public' order by tablename;
 -- =====================================================================
+-- =====================================================================
+-- PRD v97: Show (Bühnen-Einsatz) mit den Rollen Regisseur und Schauspieler
+-- Im SQL Editor von PRD ausführen (idempotent, mehrfach ausführbar).
+-- Rückgängig: PRD_v97_show_RUECKGAENGIG.sql
+-- Reihenfolge: App-ZIP einspielen, dieses SQL ausführen, danach in der App
+-- (Admin > Rollen) Regisseur und Schauspieler zuteilen.
+-- =====================================================================
+
+-- 1. Neue Rollen ------------------------------------------------------
+alter table public.profiles add column if not exists is_director boolean not null default false;
+alter table public.profiles add column if not exists is_actor    boolean not null default false;
+
+create or replace function public.is_director()
+returns boolean
+language sql stable security definer set search_path = public
+as $$
+  select coalesce((select is_director from public.profiles where id = auth.uid()), false)
+$$;
+
+create or replace function public.is_actor()
+returns boolean
+language sql stable security definer set search_path = public
+as $$
+  select coalesce((select is_actor from public.profiles where id = auth.uid()), false)
+$$;
+
+-- Gäste und Kandidaten behalten nie eine Show-Rolle (auch nicht beim Gruppenwechsel)
+create or replace function public.profiles_show_roles_guard()
+returns trigger
+language plpgsql
+as $$
+begin
+  if new.is_guest or new.is_candidate then
+    new.is_director := false;
+    new.is_actor := false;
+  end if;
+  return new;
+end;
+$$;
+drop trigger if exists profiles_show_roles_guard on public.profiles;
+create trigger profiles_show_roles_guard
+  before insert or update on public.profiles
+  for each row execute function public.profiles_show_roles_guard();
+
+-- Rollen vergeben oder entziehen (nur Admins, nur Mitglieder)
+create or replace function public.set_director(target uuid, make_director boolean)
+returns void
+language plpgsql security definer set search_path = public
+as $$
+begin
+  if not public.is_admin() then
+    raise exception 'Nur Admins dürfen den Regisseur festlegen';
+  end if;
+  if make_director and exists (select 1 from public.profiles where id = target and (is_guest or is_candidate)) then
+    raise exception 'Gäste und Kandidaten können nicht Regisseur sein. Mache die Person zuerst zum Mitglied.';
+  end if;
+  update public.profiles set is_director = make_director where id = target;
+end;
+$$;
+
+create or replace function public.set_actor(target uuid, make_actor boolean)
+returns void
+language plpgsql security definer set search_path = public
+as $$
+begin
+  if not public.is_admin() then
+    raise exception 'Nur Admins dürfen Schauspieler festlegen';
+  end if;
+  if make_actor and exists (select 1 from public.profiles where id = target and (is_guest or is_candidate)) then
+    raise exception 'Gäste und Kandidaten können nicht Schauspieler sein. Mache die Person zuerst zum Mitglied.';
+  end if;
+  update public.profiles set is_actor = make_actor where id = target;
+end;
+$$;
+
+revoke execute on function public.set_director(uuid, boolean) from public, anon;
+grant  execute on function public.set_director(uuid, boolean) to authenticated;
+revoke execute on function public.set_actor(uuid, boolean) from public, anon;
+grant  execute on function public.set_actor(uuid, boolean) to authenticated;
+
+-- 2. Tabellen: Akt > Szene > Rolle (mit Personen) ----------------------
+create table if not exists public.show_acts (
+  id          uuid primary key default gen_random_uuid(),
+  name        text not null,
+  description text,
+  active      boolean not null default false,   -- Häkchen: Planung für die Schauspieler sichtbar
+  created_at  timestamptz not null default now()
+);
+create table if not exists public.show_scenes (
+  id          uuid primary key default gen_random_uuid(),
+  act_id      uuid not null references public.show_acts(id) on delete cascade,
+  name        text not null,
+  description text,
+  created_at  timestamptz not null default now()
+);
+create table if not exists public.show_parts (
+  id          uuid primary key default gen_random_uuid(),
+  scene_id    uuid not null references public.show_scenes(id) on delete cascade,
+  name        text not null,
+  persons     jsonb not null default '[]'::jsonb,   -- [{"id": "<Profil-ID>", "name": "…"}] oder [{"name": "…"}]
+  sort        integer not null default 0,
+  created_at  timestamptz not null default now()
+);
+create index if not exists show_scenes_act_idx  on public.show_scenes (act_id);
+create index if not exists show_parts_scene_idx on public.show_parts (scene_id);
+
+alter table public.show_acts   enable row level security;
+alter table public.show_scenes enable row level security;
+alter table public.show_parts  enable row level security;
+
+-- 3. Zugriff: Regisseur liest und ändert alles; Schauspieler lesen nur sichtbare Akte.
+--    Admin, Gäste und Kandidaten haben ohne Rolle keinen Zugriff.
+drop policy if exists "show_acts_director"   on public.show_acts;
+drop policy if exists "show_scenes_director" on public.show_scenes;
+drop policy if exists "show_parts_director"  on public.show_parts;
+create policy "show_acts_director"   on public.show_acts   for all to authenticated using (public.is_director()) with check (public.is_director());
+create policy "show_scenes_director" on public.show_scenes for all to authenticated using (public.is_director()) with check (public.is_director());
+create policy "show_parts_director"  on public.show_parts  for all to authenticated using (public.is_director()) with check (public.is_director());
+
+drop policy if exists "show_acts_actor_read"   on public.show_acts;
+drop policy if exists "show_scenes_actor_read" on public.show_scenes;
+drop policy if exists "show_parts_actor_read"  on public.show_parts;
+create policy "show_acts_actor_read" on public.show_acts
+  for select to authenticated
+  using (public.is_actor() and active = true);
+create policy "show_scenes_actor_read" on public.show_scenes
+  for select to authenticated
+  using (public.is_actor()
+    and exists (select 1 from public.show_acts a where a.id = show_scenes.act_id and a.active = true));
+create policy "show_parts_actor_read" on public.show_parts
+  for select to authenticated
+  using (public.is_actor()
+    and exists (select 1 from public.show_scenes s
+                join public.show_acts a on a.id = s.act_id
+                where s.id = show_parts.scene_id and a.active = true));
+
+-- 4. Live-Aktualisierung
+do $$
+declare t text;
+begin
+  foreach t in array array['show_acts', 'show_scenes', 'show_parts'] loop
+    begin
+      execute format('alter publication supabase_realtime add table public.%I', t);
+    exception when duplicate_object then null;
+    end;
+  end loop;
+end $$;
+-- PRD v98: Feld «Musik» (Name + Spotify-Link) pro Akt. Im SQL Editor von PRD ausführen (idempotent).
+-- Voraussetzung: PRD_v97_show.sql wurde ausgeführt.
+alter table public.show_acts add column if not exists music_name text;
+alter table public.show_acts add column if not exists music_url  text;
+alter table public.show_acts drop constraint if exists show_acts_music_url_spotify;
+alter table public.show_acts add constraint show_acts_music_url_spotify
+  check (music_url is null or music_url ~* '^https://(open\.spotify\.com|play\.spotify\.com|spotify\.link)/\S+$');
+-- PRD v101: Zeile «Video» (Beschreibung + YouTube-Link) pro Akt. Im SQL Editor von PRD ausführen (idempotent).
+-- Voraussetzung: PRD_v97_show.sql wurde ausgeführt.
+alter table public.show_acts add column if not exists video_desc text;
+alter table public.show_acts add column if not exists video_url  text;
+alter table public.show_acts drop constraint if exists show_acts_video_url_youtube;
+alter table public.show_acts add constraint show_acts_video_url_youtube
+  check (video_url is null or video_url ~* '^https://((www|m|music)\.youtube\.com|youtu\.be)/\S+$');
+-- PRD v102: Musik (Name + Spotify-Link) und Video (Beschreibung + YouTube-Link) gehören jetzt zur SZENE statt zum Akt.
+-- Im SQL Editor von PRD ausführen (idempotent). Voraussetzung: PRD_v97_show.sql.
+-- Die Spalten music_*/video_* am Akt (aus v98/v101) bleiben bestehen, werden von der App aber nicht mehr angezeigt.
+alter table public.show_scenes add column if not exists music_name text;
+alter table public.show_scenes add column if not exists music_url  text;
+alter table public.show_scenes add column if not exists video_desc text;
+alter table public.show_scenes add column if not exists video_url  text;
+alter table public.show_scenes drop constraint if exists show_scenes_music_url_spotify;
+alter table public.show_scenes add constraint show_scenes_music_url_spotify
+  check (music_url is null or music_url ~* '^https://(open\.spotify\.com|play\.spotify\.com|spotify\.link)/\S+$');
+alter table public.show_scenes drop constraint if exists show_scenes_video_url_youtube;
+alter table public.show_scenes add constraint show_scenes_video_url_youtube
+  check (video_url is null or video_url ~* '^https://((www|m|music)\.youtube\.com|youtu\.be)/\S+$');
+-- PRD v109: Show – Akt kann als «Hinweis» gekennzeichnet werden (steht vor den Akten).
+-- Musik/Video der Akte nutzen die schon vorhandenen Spalten music_*/video_* von show_acts.
+-- Voraussetzung: PRD_v97_show.sql (und v98/v101 für die Medien-Spalten). Idempotent.
+alter table public.show_acts add column if not exists is_hint boolean not null default false;
+alter table public.show_acts add column if not exists music_name text;
+alter table public.show_acts add column if not exists music_url text;
+alter table public.show_acts add column if not exists video_desc text;
+alter table public.show_acts add column if not exists video_url text;
+alter table public.show_acts drop constraint if exists show_acts_music_url_spotify;
+alter table public.show_acts add constraint show_acts_music_url_spotify
+  check (music_url is null or music_url ~* '^https://(open\.spotify\.com|play\.spotify\.com|spotify\.link)/\S+$');
+alter table public.show_acts drop constraint if exists show_acts_video_url_youtube;
+alter table public.show_acts add constraint show_acts_video_url_youtube
+  check (video_url is null or video_url ~* '^https://((www|m|music)\.youtube\.com|youtu\.be)/\S+$');
+-- PRD v110: YouTube-Link-Prüfung gelockert (jede https-Adresse, z. B. youtube.com/shorts/…). Idempotent.
+alter table public.show_scenes drop constraint if exists show_scenes_video_url_youtube;
+alter table public.show_scenes add constraint show_scenes_video_url_youtube check (video_url is null or video_url ~* '^https://\S+$');
+alter table public.show_acts drop constraint if exists show_acts_video_url_youtube;
+alter table public.show_acts add constraint show_acts_video_url_youtube check (video_url is null or video_url ~* '^https://\S+$');

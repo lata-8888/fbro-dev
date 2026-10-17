@@ -26,11 +26,16 @@ Kein Build-Schritt — alle Dateien werden direkt ausgeliefert.
 - PIN = letzte 6 Ziffern der Telefonnummer
 - **Gelber PIN-Hinweisbalken** (`.pinbanner`, in der Render-Funktion von app.js): erscheint bei jedem Seitenaufruf und auf jedem Tab, bis das Mitglied im Profil einen eigenen PIN gesetzt hat (`profiles.pin_changed = true`). Kein Wegklicken. Seit PRD v91 für alle ausser **Admin und Kandidaten** (also Aktiv, Passiv, Friends & Family, Gast); in DEV noch nur Aktiv/Passiv. Wer als Admin testen will, sieht ihn nicht; dafür ein Nicht-Admin-Konto mit `pin_changed = false` nehmen. «PIN zurücksetzen» (Admin, `reset_pin`) setzt `pin_changed` wieder auf `false`. Admin bewusst ausgenommen.
 - Nummerneingabe: **DEV** = ein Textfeld, Schweizer Format (`079 …`); eine deutsche Nummer geht nur mit `+49…`. **PRD** = Länder-Dropdown (CH +41 / DE +49 / Andere) + Nummer ohne führende Null (`phoneField()`, `composePhone()`, `phoneParts()` in app.js; neues Land: Eintrag in `PHONE_CC`). Gespeichert wird in beiden Umgebungen das internationale Format. Das Dropdown liegt für DEV bereit im Branch `feature/phone-dropdown` (Stand: SW `v87`), ist auf `main` aber bewusst **nicht** drin, weil alle Tester auf DEV sind.
-- **DEV und PRD weichen deshalb absichtlich ab** (`app.js`, `styles.css`, `sw.js`). SW-Versionen sind je Umgebung unabhängig (DEV `v88`, PRD `v111`). Beim späteren Einspielen des Dropdowns in DEV: SW-Version über den aktuellen DEV-Wert erhöhen.
+- **DEV und PRD weichen deshalb absichtlich ab** (`app.js`, `styles.css`, `sw.js`). SW-Versionen sind je Umgebung unabhängig (DEV `v111`, PRD `v111`). Beim späteren Einspielen des Dropdowns in DEV: SW-Version über den aktuellen DEV-Wert erhöhen.
 - **`EMAIL_DOMAIN` muss in `config.js` aktiv gesetzt sein** (`EMAIL_DOMAIN: 'fbro.app'`). Die App baut die Login-Adresse in `phoneToEmail()` (app.js) als `<digits>@` + `EMAIL_DOMAIN`, **Fallback ohne Eintrag: `phone-login.app`**. Fehlt der Eintrag, sucht die App `…@phone-login.app`, findet den Migrations-User (`…@fbro.app`) nicht und meldet «Invalid login credentials».
 - Pro Umgebung muss die Domain zu den Adressen in `auth.users` passen. Prüfen: `select email from auth.users limit 5;`
 - Diagnose bei Login-Problem: DevTools → Network → `token?grant_type=password` → Payload → `email` mit `auth.users` vergleichen.
 - Der Service Worker cached `config.js`: nach Änderung Seite hart neu laden bzw. unter Application → Service Workers «Unregister».
+
+## Stand DEV (2026-10-17)
+- Wardley-Vorarbeiten aus `main` entfernt; DEV bekommt schrittweise den PRD-Stand.
+- **Schritt 1 ✅** FBRO-App (v88) wiederhergestellt. **Schritt 2 ✅** App-Code v111 (Länder-Dropdown, Icon-Konzept, strikte Rollen, Show, Jass-Schloss) in `main`; SQL `PRD_rollen_strikt.sql` + `PRD_v90_teilnehmer_admin.sql` in DEV ausgeführt (2026-10-17). **Schritt 3 offen:** Show-SQL (v97, v98, v101, v102, v109, v110) in DEV ausführen, dann Rollen Regisseur/Schauspieler vergeben.
+- Der Abschnitt «Rollen» unten und die Hinweise «nur PRD» gelten ab jetzt für beide Umgebungen, ausser Schema-Abgleich (DEV-`supabase/schema.sql` ist ab Schritt 2 der PRD-Stand).
 
 ## Icon-Konzept (Stand 2026-10-08, nur PRD; DEV noch nicht)
 - **Ein Baustein für Kopfzeilen-Icons:** `hico(act, icon, label, opts)` in app.js, CSS-Klasse `.hico` (ersetzt `.ccdots`, `.ccinfo`, `.plusbtn`). Reihenfolge in jeder Kopfzeile: Titel (klappt auf/zu) → Aktions-Icons (`+`, Info, Drucken, «…») → Auf-/Zuklapp-Pfeil (`.ccfold`). Gleiche Höhe wie der Pfeil, Symbolgrösse 20 px; aktiver Zustand `.on` (`aria-pressed`).

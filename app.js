@@ -32,14 +32,14 @@
       titleTrainings: 'Trainingsplan', titleEvents: 'Vereinsanlässe',
       subTrainings: 'Die nächsten {n} Termine', subEvents: 'Folgende Vereinsanlässe sind geplant', moreDates: 'Weitere Termine ({n})',
       emptyTrTitle: 'Noch keine Trainings geplant.', emptyTrAdmin: 'Lege im Bereich «Verwalten» einen Trainingstag fest.', emptyTrMember: 'Die Admins legen die Trainingstage fest.',
-      emptyEvTitle: 'Aktuell sind keine Events geplant.', emptyEvAdmin: 'Lege im Bereich «Verwalten» einen Event an.', emptyEvMember: 'Die Admins legen neue Events an.',
+      emptyEvTitle: 'Aktuell sind keine Events geplant.', emptyEvAdmin: 'Lege im Bereich «Verwalten» einen Event an.', emptyEvMember: 'Die Event Manager legen neue Events an.',
       trainingWord: 'Training', trCancelled: 'Training abgesagt', yes: 'Dabei', no: 'Nicht dabei', participants: 'Teilnehmer',
       ariaTr: '{yes} Teilnehmer, {no} nicht dabei. Teilnehmerliste {action}', ariaEv: '{n} Teilnehmer. Teilnehmerliste {action}',
       listOpen: 'öffnen', listClose: 'schliessen',
       hYes: 'Dabei ({n})', hNo: 'Nicht dabei ({n})', hOpen: 'Noch keine Antwort ({n})', hSolo: 'Allein dabei ({n})', hDuo: 'Zu zweit dabei ({n} Mitglieder, {p} Personen)',
       nobody: 'Niemand', you: '(du)', cancelledTag: 'Abgesagt', cancelledLow: 'abgesagt', changedLow: 'geändert',
       timePlace: '{time} Uhr, {place}', atTime: '{time} Uhr', calAdd: 'Im Kalender speichern', solo: 'Allein', duo: 'Zu zweit',
-      secRules: 'Standard Training', secExtra: 'Extra Training', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Events', secMembers: 'Gruppen',
+      secRules: 'Standard Training', secExtra: 'Extra Training', secUpcoming: 'Trainingsplan verwalten', secEvents: 'Events', secMembers: 'Rollen',
       addNew: 'Neu erfassen', addClose: 'Erfassung schliessen',
       adminTitle: 'Admin Console', titleCC: 'Chilbi & Chränzli', titleJass: 'Jass-Masters', adminSub: 'Nur für Admins sichtbar', rulesIntro: 'Standard-Trainings pro Woche',
       weekday: 'Wochentag', time: 'Uhrzeit', place: 'Ort', date: 'Datum', label: 'Bezeichnung',
@@ -51,7 +51,7 @@
       phPlaceExtra: 'z. B. Sportanlage Süd', addExtra: 'Weiteres Training hinzufügen', upcomingEmpty: 'Keine kommenden Trainings.',
       phEventTitle: 'z. B. Fondue-Plausch', phEventPlace: 'z. B. Vereinshaus', addEvent: 'Event hinzufügen', rsvpRequired: 'Anmeldung erforderlich',
       eventsEmpty: 'Noch keine Events. Tippe auf «+», um den ersten zu erfassen.',
-      membersIntro: 'Tippe bei einer Person auf die drei Punkte, um Rollen, Gruppe, PIN, Name oder Handynummer zu ändern oder sie zu löschen. Zahnrad = Admin, Stern = Event-Manager, Glas = Chilbi/Chränzli Manager, Pokal = Jass Manager. Gäste und Friends & Family sehen nur eingeschränkt Inhalte (siehe Gruppen unten).',
+      membersIntro: 'Tippe bei einer Person auf die drei Punkte, um Rollen, Gruppe, PIN, Name oder Handynummer zu ändern oder sie zu löschen. Zahnrad = Admin, Stern = Event Manager, Glas = Chilbi/Chränzli Manager, Pokal = Jass Manager. Gäste und Friends & Family sehen nur eingeschränkt Inhalte (siehe Gruppen unten).',
       memberAdd: 'Mitglied hinzufügen', fullName: 'Vor- und Nachname', phone: 'Handynummer',
       memberAddNote: 'Das Mitglied meldet sich nur mit der Handynummer an. Der PIN sind die letzten 6 Ziffern.',
       selfAdmin: 'Du bist Admin. Du kannst dir die Rechte nicht selbst entziehen.', revokeAdmin: 'Admin-Rechte entziehen: {name}', makeAdmin: 'Zum Admin machen: {name}',
@@ -72,12 +72,12 @@
       setupStep3: 'Lade die Seite neu.', setupNote: 'Die genaue Anleitung steht in der Datei README.md.',
       loading: 'Lade …',
       errFailed: 'Das hat nicht geklappt', respWithdrawn: 'Antwort zurückgezogen', youIn: 'Du bist dabei', youOut: 'Du bist nicht dabei', youSolo: 'Du kommst allein', youDuo: 'Du kommst zu zweit',
-      phoneInvalid: 'Bitte gib eine gültige Handynummer ein, z. B. 079 123 45 67.', alreadyReg: 'Diese Nummer ist schon registriert.',
+      phoneCountry: 'Land', phoneOther: 'Andere', phoneInvalid: 'Bitte gib eine gültige Handynummer ein, z. B. 079 123 45 67.', alreadyReg: 'Diese Nummer ist schon registriert.',
       memberAdded: '{name} wurde hinzugefügt.', addFailed: 'Hinzufügen nicht möglich: {reason}', unknownError: 'Unbekannter Fehler',
       authInvalid: 'Handynummer oder PIN stimmt nicht. Falls du deinen PIN geändert hast, trage ihn im Feld PIN ein.',
       authAlready: 'Diese Nummer ist bereits registriert. Bitte melde dich an.', authCode: 'Registrierung nicht möglich. Bitte prüfe den Vereinscode.',
       authRate: 'Zu viele Versuche. Bitte warte einen Moment.', authPin: 'Der PIN muss aus 6 Ziffern bestehen.', authFail: 'Anmeldung fehlgeschlagen. Bitte versuche es erneut.',
-      pinExact: 'Der PIN muss aus genau 6 Ziffern bestehen.', confirmEmailOff: 'Bitte schalte in Supabase «Confirm email» aus (siehe README).',
+      pinExact: 'Der PIN muss aus genau 6 Ziffern bestehen.', pinWeak: 'Dieser PIN ist zu einfach (z. B. 111111 oder 123456) oder entspricht dem Standard-PIN. Bitte wähle einen anderen.', confirmEmailOff: 'Bitte schalte in Supabase «Confirm email» aus (siehe README).',
       loadFail: 'Die Daten konnten nicht geladen werden. Wurde das Datenbank-Schema ausgeführt?',
       calFile: 'Öffne die Datei «{name}», um den Termin im Kalender zu speichern.', calFail: 'Der Kalendereintrag konnte nicht erstellt werden.',
       pinResetOk: 'PIN auf Standard zurückgesetzt', pinResetFail: 'PIN konnte nicht zurückgesetzt werden.',
@@ -91,13 +91,19 @@
       ruleAdded: 'Trainingstag hinzugefügt', extraAdded: 'Training hinzugefügt', eventAdded: 'Event hinzugefügt',
       ruleChanged: 'Trainingstag geändert', trChanged: 'Training geändert', eventChanged: 'Event geändert', langSaved: 'Sprache gespeichert',
       guestTag: 'Gast', makeGuest: 'Als Gast festlegen: {name}', revokeGuest: 'Gast-Status entfernen: {name}', guestGranted: 'Als Gast festgelegt', guestRevoked: 'Gast-Status entfernt',
-      guestCheck: 'Als Gast hinzufügen (sieht nur Trainings und Profil)', guestInfo: 'Du hast Gast-Zugang. Du siehst die Trainings und dein Profil.', supporterInfo: 'Du bist bei Friends & Family. Du siehst die Trainings, Jass und dein Profil.',
-      memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zum Event-Manager machen: {name}', revokeEm: 'Event-Manager-Rechte entziehen: {name}', emGranted: 'Als Event-Manager festgelegt', emRevoked: 'Event-Manager-Rechte entzogen', confirmGuestLoses: '{name} hat Admin-, Event-Manager-, Chilbi Manager-, Chränzli Manager- oder Jass Manager-Rechte. Diese Änderung entzieht diese Rechte. Fortfahren?', selfMember: 'Du bist Mitglied. Du kannst dich nicht selbst zum Gast machen.', rolesTitle: 'Rollen', emSub: 'Hier verwaltest du die Events.', ccManagerSub: 'C&C verwaltest du im Reiter «C&C».',
+      guestCheck: 'Als Gast hinzufügen (sieht nur Trainings und Profil)', guestInfo: 'Du hast Gast-Zugang. Du siehst die Trainings und dein Profil.', supporterInfo: 'Du bist bei Friends & Family. Du siehst die Trainings, Jass, C&C und dein Profil.',
+      memberTag: 'Mitglied', emTag: 'Event Manager', makeEm: 'Zum Event Manager machen: {name}', revokeEm: 'Event Manager-Rechte entziehen: {name}', emGranted: 'Als Event Manager festgelegt', emRevoked: 'Event Manager-Rechte entzogen', confirmGuestLoses: '{name} hat Admin-, Event Manager-, Chilbi Manager-, Chränzli Manager- oder Jass Manager-Rechte. Diese Änderung entzieht diese Rechte. Fortfahren?', selfMember: 'Du bist Mitglied. Du kannst dich nicht selbst zum Gast machen.', rolesTitle: 'Rollen', emSub: 'Hier verwaltest du die Events.', ccManagerSub: 'C&C verwaltest du im Reiter «C&C».',
       infoShow: 'Erklärung anzeigen', infoHide: 'Erklärung ausblenden',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäste', ccOthers: 'Andere', ccEmpty: 'Noch keine Anlässe erfasst.', ccNoDays: 'Noch keine Tage erfasst.', ccSummary: '{s} Schichten · {r} Rollen', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Anlass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktionen', ccAddEvent: 'Anlass hinzufügen', ccAddDay: 'Tag hinzufügen', ccAddShift: 'Schicht hinzufügen', ccAddRole: 'Rolle hinzufügen', ccChange: 'Ändern', ccCopy: 'Kopieren', ccClose: 'Schliessen', ccNameOpt: 'Name (optional)', ccStart: 'Start', ccEnd: 'Ende', ccActive: 'Aktiv', ccPersons: 'Verantwortliche', ccSearch: 'Namen suchen', ccOtherPerson: 'Andere Person (nicht in der App)', ccAdd: 'Hinzufügen', ccDidYouMean: 'Meinst du {name}?', ccNobody: 'Noch niemand', ccConfirmDel: '«{name}» löschen? Alles, was darunter erfasst ist, wird ebenfalls gelöscht.', ccConfirmDelRole: '«{name}» löschen?', ccCopyEventNote: 'Die Kopie ist zuerst inaktiv. Alle Tage werden um 52 Wochen verschoben, damit die Wochentage gleich bleiben.', ccCopyDayNote: 'Schichten und Rollen werden mit den Verantwortlichen kopiert.', ccSaved: 'Gespeichert', ccCopied: 'Kopiert', ccDeleted: 'Gelöscht', ccNotInApp: '{name} ist noch nicht in der App. Mit der Handynummer kannst du die Person als Gast hinzufügen.', ccAsGuest: 'Als Gast hinzufügen', ccNeedName: 'Gib einen Namen ein.', ccSetup: 'Für C&C muss das Datenbank-Schema aktualisiert werden (supabase/schema.sql).', grpCandidate: 'Kandidaten', candidateTitle: 'Besten Dank für Dein Interesse', candidateMsg: 'Deine Anfrage wird durch unsere Administratoren geprüft.', mGroupActive: 'Zu Aktivmitglied machen', mGroupPassive: 'Zu Passivmitglied machen', mGroupGuest: 'Zu Gast machen', mGroupOther: 'Zu Friends & Family machen', mGroupCandidate: 'Zu Kandidat machen', groupChanged: 'Gruppe geändert', jsEternal: 'Ewige Rangliste', jsEternalHint: 'Über die letzten {n} abgeschlossenen Runden', jsEternalRounds: '{n} Runden', jsEternalRound: '1 Runde', jsVisibleHint: 'Ohne Haken sehen nur Admin und Jass Manager diese Runde', evEdit: 'Event ändern', evManagePeople: 'Teilnehmer verwalten', grpSupporter: 'Friends & Family', mMakeSupporter: 'Zu Friends & Family machen', supporterSet: 'Als Friends & Family eingeordnet', pinLampOk: 'Hat den PIN schon geändert', pinLampNo: 'Nutzt noch den Standard-PIN', pinBannerMsg: 'Bitte setze deinen persönlichen PIN-Code, um alle Funktionen freizuschalten.', pinBannerBtn: 'PIN jetzt setzen', ccPublicLabel: 'Für alle Aktiv- und Passivmitglieder sichtbar', ccPublicOn: 'C&C ist jetzt für alle sichtbar (nur lesend)', ccPublicOff: 'C&C ist jetzt wieder nur für Admin, Chilbi Manager und Chränzli Manager sichtbar', ccCopySuffix: 'Kopie', ccPrint: 'PDF teilen', jsPrint: 'Jassmasters-Übersicht als PDF', ccPdfBuilding: 'PDF wird erstellt…', ccPdfFailed: 'PDF konnte nicht erstellt werden.',
-      mMakeAdmin: 'Zum Admin machen', mRevokeAdmin: 'Admin-Rechte entziehen', mMakeEm: 'Zum Event-Manager machen', mRevokeEm: 'Event-Manager-Rechte entziehen', mMakeGuest: 'Zum Gast machen', mMakeMember: 'Zum Mitglied machen', mEdit: 'Name und Handynummer ändern', mEditNote: 'Bei einer neuen Handynummer gilt wieder der Standard-PIN: die letzten 6 Ziffern der neuen Nummer.', mSaved: 'Gespeichert', mDelete: 'Mitglied löschen', mPhoneTaken: 'Diese Handynummer gehört bereits einer anderen Person.',
+      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäste', ccOthers: 'Andere', ccEmpty: 'Noch keine Anlässe erfasst.', ccNoDays: 'Noch keine Tage erfasst.', ccSummary: '{s} Schichten · {r} Rollen', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Anlass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktionen', ccAddEvent: 'Anlass hinzufügen', ccAddDay: 'Tag hinzufügen', ccAddShift: 'Schicht hinzufügen', ccAddRole: 'Rolle hinzufügen', ccChange: 'Ändern', ccCopy: 'Kopieren', ccClose: 'Schliessen', ccNameOpt: 'Name (optional)', ccStart: 'Start', ccEnd: 'Ende', ccActive: 'Aktiv', ccPersons: 'Verantwortliche', ccSearch: 'Namen suchen', ccOtherPerson: 'Andere Person (nicht in der App)', ccAdd: 'Hinzufügen', ccDidYouMean: 'Meinst du {name}?', ccNobody: 'Noch niemand', ccConfirmDel: '«{name}» löschen? Alles, was darunter erfasst ist, wird ebenfalls gelöscht.', ccConfirmDelRole: '«{name}» löschen?', ccCopyEventNote: 'Die Kopie ist zuerst inaktiv. Alle Tage werden um 52 Wochen verschoben, damit die Wochentage gleich bleiben.', ccCopyDayNote: 'Schichten und Rollen werden mit den Verantwortlichen kopiert.', ccSaved: 'Gespeichert', ccCopied: 'Kopiert', ccDeleted: 'Gelöscht', ccNotInApp: '{name} ist noch nicht in der App. Mit der Handynummer kannst du die Person als Gast hinzufügen.', ccAsGuest: 'Als Gast hinzufügen', ccNeedName: 'Gib einen Namen ein.', ccSetup: 'Für C&C muss das Datenbank-Schema aktualisiert werden (supabase/schema.sql).', grpCandidate: 'Kandidaten', candidateTitle: 'Besten Dank für Dein Interesse', candidateMsg: 'Deine Anfrage wird durch unsere Administratoren geprüft.', mGroupActive: 'Zu Aktivmitglied machen', mGroupPassive: 'Zu Passivmitglied machen', mGroupGuest: 'Zu Gast machen', mGroupOther: 'Zu Friends & Family machen', mGroupCandidate: 'Zu Kandidat machen', groupChanged: 'Gruppe geändert', jsEternal: 'Ewige Rangliste', jsEternalHint: 'Über die letzten {n} abgeschlossenen Runden', jsEternalRounds: '{n} Runden', jsEternalRound: '1 Runde', jsVisibleHint: 'Ohne Haken sehen nur Admin und Jass Manager diese Runde', evEdit: 'Event ändern', evManagePeople: 'Teilnehmer verwalten', grpSupporter: 'Friends & Family', mMakeSupporter: 'Zu Friends & Family machen', supporterSet: 'Als Friends & Family eingeordnet', pinLampOk: 'Hat den PIN schon geändert', pinLampNo: 'Nutzt noch den Standard-PIN', pinBannerMsg: 'Bitte setze deinen persönlichen PIN-Code, um alle Funktionen freizuschalten.', pinBannerBtn: 'PIN jetzt setzen', ccPublicLabel: 'Für alle Aktiv- und Passivmitglieder sichtbar', ccPublicOn: 'C&C ist jetzt für alle sichtbar (nur lesend)', ccPublicOff: 'C&C ist jetzt wieder nur für Admin, Chilbi Manager und Chränzli Manager sichtbar', ccCopySuffix: 'Kopie', ccLegendMe: 'Ich', ccPrint: 'PDF teilen', jsPrint: 'Jassmasters-Übersicht als PDF', ccPdfBuilding: 'PDF wird erstellt…', ccPdfFailed: 'PDF konnte nicht erstellt werden.',
+      mMakeAdmin: 'Zum Admin machen', mRevokeAdmin: 'Admin-Rechte entziehen', mMakeEm: 'Zum Event Manager machen', mRevokeEm: 'Event Manager-Rechte entziehen', mMakeGuest: 'Zum Gast machen', mMakeMember: 'Zum Mitglied machen', mEdit: 'Name und Handynummer ändern', mEditNote: 'Bei einer neuen Handynummer gilt wieder der Standard-PIN: die letzten 6 Ziffern der neuen Nummer.', mSaved: 'Gespeichert', mDelete: 'Mitglied löschen', mPhoneTaken: 'Diese Handynummer gehört bereits einer anderen Person.',
+      jsLocked: 'Gesperrt – tippen zum Entsperren', jsUnlocked: 'Entsperrt – tippen zum Sperren', jsEditRow: 'Eintrag bearbeiten', jsRankDiff: 'Differenz',
       navJass: 'Jass', jsParticipants: 'Teilnehmer', jsSchedule: 'Spielplan', jsRanking: 'Tagesrangliste', jsRound: 'Runde {n}', jsTable: 'Tisch {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Spieler {n}', jsFree: 'frei', jsEmpty: 'Noch kein Jassmasters erfasst.', jsNoDays: 'Noch kein Datum erfasst.', jsAddSeries: 'Jassmasters hinzufügen', jsAddDay: 'Datum hinzufügen', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jasstag', jsPick: 'Spieler {n} wählen', jsClear: 'Platz freigeben', jsAlready: 'bereits Spieler {n}', jsPoints: 'Punkte', jsGames: '{n} Spiele', jsPtsAbbr: 'Pkt.', jsGame: '{n} Spiel', jsNoPoints: 'Noch keine Punkte erfasst.', jsHint: 'Trage die Punkte beim Siegerteam ein. Das andere Team erhält sie automatisch negativ.', jsSetup: 'Für Jass muss das Datenbank-Schema aktualisiert werden (supabase/schema.sql).', jsFinish: 'Jassmaster abschliessen', jsConfirmFinish: '«{name}» abschliessen? Es wird unter Vergangene Jassmasters verschoben und ist danach nur noch als Rangliste sichtbar. Fortfahren?', jsFinished: 'Als abgeschlossen markiert', jsEditRanking: 'Rangliste bearbeiten', jsRankName: 'Name', jsRankPoints: 'Punkte', jsAddRow: 'Zeile hinzufügen', jsNoRows: 'Noch niemand erfasst.',
+      shPlay: 'Hier abspielen', shPlayStop: 'Player schliessen',
+      shHint: 'Hinweis', shHintCheck: 'Als Hinweis kennzeichnen (steht vor den Akten)',
+      shVideo: 'Video', shYoutube: 'YouTube-Link', shOpenYoutube: 'Auf YouTube öffnen', shVideoBad: 'Bitte einen YouTube-Link angeben (https://www.youtube.com/… oder https://youtu.be/…).',
+      shMusic: 'Musik', shSpotify: 'Spotify-Link', shOpenSpotify: 'In Spotify öffnen', shMusicBad: 'Bitte einen Spotify-Link angeben (https://open.spotify.com/…).',
+      navShow: 'Show', titleShow: 'Chränzli Drehbuch', dirTag: 'Regisseur', actTag: 'Schauspieler', mMakeDir: 'Zum Regisseur machen', mRevokeDir: 'Regisseur-Rechte entziehen', mMakeActor: 'Zum Schauspieler machen', mRevokeActor: 'Schauspieler-Rolle entziehen', dirGranted: 'Als Regisseur festgelegt', dirRevoked: 'Regisseur-Rechte entzogen', actorGranted: 'Als Schauspieler festgelegt', actorRevoked: 'Schauspieler-Rolle entzogen', shEmpty: 'Noch kein Akt erfasst.', shSetup: 'Die Show-Tabellen fehlen. Bitte PRD_v97_show.sql im SQL Editor ausführen.', shAddAct: 'Akt hinzufügen', shAddScene: 'Szene hinzufügen', shAddPart: 'Rolle hinzufügen', shLvlAll: 'Show', shLvlAct: 'Akt', shLvlScene: 'Szene', shLvlPart: 'Rolle', shDesc: 'Beschreibung', shNoScenes: 'Noch keine Szenen erfasst.', shSummary: '{r} Rollen', shVisible: 'Planung für Schauspieler sichtbar',
       jmTag: 'Jass Manager', mMakeJm: 'Zum Jass Manager machen', mRevokeJm: 'Jass Manager-Rechte entziehen', jmGranted: 'Als Jass Manager festgelegt', jmRevoked: 'Jass Manager-Rechte entzogen', cmTag: 'Chilbi Manager', crmTag: 'Chränzli Manager', mMakeCm: 'Zum Chilbi Manager machen', mRevokeCm: 'Chilbi Manager-Rechte entziehen', mMakeCrm: 'Zum Chränzli Manager machen', mRevokeCrm: 'Chränzli Manager-Rechte entziehen', cmGranted: 'Als Chilbi Manager festgelegt', cmRevoked: 'Chilbi Manager-Rechte entzogen', crmGranted: 'Als Chränzli Manager festgelegt', crmRevoked: 'Chränzli Manager-Rechte entzogen', grpActive: 'Aktivmitglieder', grpPassive: 'Passivmitglieder', mMakePassive: 'Zum Passivmitglied machen', mMakeActive: 'Zum Aktivmitglied machen', passiveSet: 'Als Passivmitglied festgelegt', activeSet: 'Als Aktivmitglied festgelegt', jsUpcoming: 'Anstehendes Jassmaster', jsPast: 'Vergangene Jassmasters'
     },
 
@@ -107,14 +113,14 @@
       titleTrainings: 'Trainingsplan', titleEvents: 'Vereinsanlässe',
       subTrainings: 'Les {n} prochaines séances', subEvents: 'Voici les événements du club prévus', moreDates: 'Autres dates ({n})',
       emptyTrTitle: 'Aucun entraînement prévu pour le moment.', emptyTrAdmin: 'Définis un jour d’entraînement dans la section « Gérer ».', emptyTrMember: 'Les admins définissent les jours d’entraînement.',
-      emptyEvTitle: 'Aucun événement prévu actuellement.', emptyEvAdmin: 'Crée un événement dans la section « Gérer ».', emptyEvMember: 'Les admins créent les nouveaux événements.',
+      emptyEvTitle: 'Aucun événement prévu actuellement.', emptyEvAdmin: 'Crée un événement dans la section « Gérer ».', emptyEvMember: 'Les Event Managers créent les nouveaux événements.',
       trainingWord: 'Entraînement', trCancelled: 'Entraînement annulé', yes: 'Présent', no: 'Absent', participants: 'Participants',
       ariaTr: '{yes} participants, {no} absents. {action} la liste des participants', ariaEv: '{n} participants. {action} la liste des participants',
       listOpen: 'Ouvrir', listClose: 'Fermer',
       hYes: 'Présents ({n})', hNo: 'Absents ({n})', hOpen: 'Pas encore de réponse ({n})', hSolo: 'Seul(e) ({n})', hDuo: 'À deux ({n} membres, {p} personnes)',
       nobody: 'Personne', you: '(toi)', cancelledTag: 'Annulé', cancelledLow: 'annulé', changedLow: 'modifié',
       timePlace: '{time}, {place}', atTime: '{time}', calAdd: 'Ajouter au calendrier', solo: 'Seul(e)', duo: 'À deux',
-      secRules: 'Entraînement standard', secExtra: 'Entraînement supplémentaire', secUpcoming: 'Gérer le plan d’entraînement', secEvents: 'Événements', secMembers: 'Groupes',
+      secRules: 'Entraînement standard', secExtra: 'Entraînement supplémentaire', secUpcoming: 'Gérer le plan d’entraînement', secEvents: 'Événements', secMembers: 'Rôles',
       addNew: 'Ajouter', addClose: 'Fermer le formulaire',
       adminTitle: 'Admin Console', titleCC: 'Chilbi & Chränzli', titleJass: 'Jass-Masters', adminSub: 'Visible uniquement pour les admins', rulesIntro: 'Entraînements standard par semaine',
       weekday: 'Jour de la semaine', time: 'Heure', place: 'Lieu', date: 'Date', label: 'Désignation',
@@ -126,7 +132,7 @@
       phPlaceExtra: 'p. ex. centre sportif Sud', addExtra: 'Ajouter un entraînement', upcomingEmpty: 'Aucun entraînement à venir.',
       phEventTitle: 'p. ex. soirée fondue', phEventPlace: 'p. ex. maison du club', addEvent: 'Ajouter un événement', rsvpRequired: 'Inscription obligatoire',
       eventsEmpty: 'Aucun événement pour l’instant. Touche « + » pour créer le premier.',
-      membersIntro: 'Touche les trois points d’une personne pour modifier ses rôles, son groupe, son PIN, son nom ou son numéro, ou pour la supprimer. Roue dentée = admin, étoile = Event-Manager, verre = Chilbi/Chränzli Manager, coupe = Jass Manager. Les invités et Friends & Family ne voient que du contenu limité (voir les groupes ci-dessous).',
+      membersIntro: 'Touche les trois points d’une personne pour modifier ses rôles, son groupe, son PIN, son nom ou son numéro, ou pour la supprimer. Roue dentée = admin, étoile = Event Manager, verre = Chilbi/Chränzli Manager, coupe = Jass Manager. Les invités et Friends & Family ne voient que du contenu limité (voir les groupes ci-dessous).',
       memberAdd: 'Ajouter un membre', fullName: 'Prénom et nom', phone: 'Numéro de mobile',
       memberAddNote: 'Le membre se connecte uniquement avec son numéro de mobile. Le PIN correspond aux 6 derniers chiffres.',
       selfAdmin: 'Tu es admin. Tu ne peux pas te retirer tes droits toi-même.', revokeAdmin: 'Retirer les droits d’admin : {name}', makeAdmin: 'Nommer admin : {name}',
@@ -147,12 +153,12 @@
       setupStep3: 'Recharge la page.', setupNote: 'Les instructions détaillées se trouvent dans le fichier README.md.',
       loading: 'Chargement …',
       errFailed: 'Cela n’a pas fonctionné', respWithdrawn: 'Réponse retirée', youIn: 'Tu es présent(e)', youOut: 'Tu es absent(e)', youSolo: 'Tu viens seul(e)', youDuo: 'Tu viens à deux',
-      phoneInvalid: 'Saisis un numéro de mobile valide, p. ex. 079 123 45 67.', alreadyReg: 'Ce numéro est déjà enregistré.',
+      phoneCountry: 'Pays', phoneOther: 'Autre', phoneInvalid: 'Saisis un numéro de mobile valide, p. ex. 079 123 45 67.', alreadyReg: 'Ce numéro est déjà enregistré.',
       memberAdded: '{name} a été ajouté(e).', addFailed: 'Ajout impossible : {reason}', unknownError: 'Erreur inconnue',
       authInvalid: 'Numéro de mobile ou PIN incorrect. Si tu as modifié ton PIN, saisis-le dans le champ PIN.',
       authAlready: 'Ce numéro est déjà enregistré. Connecte-toi.', authCode: 'Inscription impossible. Vérifie le code du club.',
       authRate: 'Trop de tentatives. Patiente un instant.', authPin: 'Le PIN doit comporter 6 chiffres.', authFail: 'Échec de la connexion. Réessaie.',
-      pinExact: 'Le PIN doit comporter exactement 6 chiffres.', confirmEmailOff: 'Désactive « Confirm email » dans Supabase (voir README).',
+      pinExact: 'Le PIN doit comporter exactement 6 chiffres.', pinWeak: 'Ce PIN est trop simple (p. ex. 111111 ou 123456) ou identique au PIN par défaut. Choisis-en un autre.', confirmEmailOff: 'Désactive « Confirm email » dans Supabase (voir README).',
       loadFail: 'Impossible de charger les données. Le schéma de la base de données a-t-il été exécuté ?',
       calFile: 'Ouvre le fichier « {name} » pour enregistrer le rendez-vous dans ton calendrier.', calFail: 'L’entrée de calendrier n’a pas pu être créée.',
       pinResetOk: 'PIN rétabli par défaut', pinResetFail: 'Le PIN n’a pas pu être rétabli.',
@@ -166,13 +172,19 @@
       ruleAdded: 'Jour d’entraînement ajouté', extraAdded: 'Entraînement ajouté', eventAdded: 'Événement ajouté',
       ruleChanged: 'Jour d’entraînement modifié', trChanged: 'Entraînement modifié', eventChanged: 'Événement modifié', langSaved: 'Langue enregistrée',
       guestTag: 'Invité', makeGuest: 'Définir comme invité : {name}', revokeGuest: 'Retirer le statut d’invité : {name}', guestGranted: 'Défini comme invité', guestRevoked: 'Statut d’invité retiré',
-      guestCheck: 'Ajouter comme invité (ne voit que les entraînements et le profil)', guestInfo: 'Tu as un accès invité. Tu vois les entraînements et ton profil.', supporterInfo: 'Tu fais partie de Friends & Family. Tu vois les entraînements, le Jass et ton profil.',
-      memberTag: 'Membre', emTag: 'Responsable des événements', makeEm: 'Nommer responsable des événements : {name}', revokeEm: 'Retirer les droits de responsable des événements : {name}', emGranted: 'Défini comme responsable des événements', emRevoked: 'Droits de responsable des événements retirés', confirmGuestLoses: '{name} a des droits Admin, Event-Manager, Chilbi Manager, Chränzli Manager ou Jass Manager. Ce changement retire ces droits. Continuer ?', selfMember: 'Tu es membre. Tu ne peux pas te définir toi-même comme invité.', rolesTitle: 'Rôles', emSub: 'Ici, tu gères les événements.', ccManagerSub: 'C&C se gère dans l’onglet « C&C ».',
+      guestCheck: 'Ajouter comme invité (ne voit que les entraînements et le profil)', guestInfo: 'Tu as un accès invité. Tu vois les entraînements et ton profil.', supporterInfo: 'Tu fais partie de Friends & Family. Tu vois les entraînements, le Jass, C&C et ton profil.',
+      memberTag: 'Membre', emTag: 'Responsable des événements', makeEm: 'Nommer responsable des événements : {name}', revokeEm: 'Retirer les droits de responsable des événements : {name}', emGranted: 'Défini comme responsable des événements', emRevoked: 'Droits de responsable des événements retirés', confirmGuestLoses: '{name} a des droits Admin, Event Manager, Chilbi Manager, Chränzli Manager ou Jass Manager. Ce changement retire ces droits. Continuer ?', selfMember: 'Tu es membre. Tu ne peux pas te définir toi-même comme invité.', rolesTitle: 'Rôles', emSub: 'Ici, tu gères les événements.', ccManagerSub: 'C&C se gère dans l’onglet « C&C ».',
       infoShow: 'Afficher l’explication', infoHide: 'Masquer l’explication',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Membres', ccGuests: 'Invités', ccOthers: 'Autres', ccEmpty: 'Aucune manifestation pour l’instant.', ccNoDays: 'Aucun jour pour l’instant.', ccSummary: '{s} créneaux · {r} rôles', ccLvlAll: 'Chränzli et Chilbi', ccLvlEvent: 'Manifestation', ccLvlDay: 'Jour', ccLvlShift: 'Créneau', ccLvlRole: 'Rôle', ccActions: 'Actions', ccAddEvent: 'Ajouter une manifestation', ccAddDay: 'Ajouter un jour', ccAddShift: 'Ajouter un créneau', ccAddRole: 'Ajouter un rôle', ccChange: 'Modifier', ccCopy: 'Copier', ccClose: 'Fermer', ccNameOpt: 'Nom (facultatif)', ccStart: 'Début', ccEnd: 'Fin', ccActive: 'Actif', ccPersons: 'Responsables', ccSearch: 'Rechercher un nom', ccOtherPerson: 'Autre personne (pas dans l’application)', ccAdd: 'Ajouter', ccDidYouMean: 'Tu veux dire {name} ?', ccNobody: 'Personne pour l’instant', ccConfirmDel: 'Supprimer « {name} » ? Tout ce qui y est rattaché sera aussi supprimé.', ccConfirmDelRole: 'Supprimer « {name} » ?', ccCopyEventNote: 'La copie est d’abord inactive. Tous les jours sont décalés de 52 semaines pour garder les mêmes jours de la semaine.', ccCopyDayNote: 'Les créneaux et rôles sont copiés avec les responsables.', ccSaved: 'Enregistré', ccCopied: 'Copié', ccDeleted: 'Supprimé', ccNotInApp: '{name} n’est pas encore dans l’application. Avec son numéro de mobile, tu peux l’ajouter comme invité.', ccAsGuest: 'Ajouter comme invité', ccNeedName: 'Saisis un nom.', ccSetup: 'Pour C&C, le schéma de la base de données doit être mis à jour (supabase/schema.sql).', grpCandidate: 'Candidats', candidateTitle: 'Merci beaucoup pour ton intérêt', candidateMsg: 'Ta demande est examinée par nos administrateurs.', mGroupActive: 'Passer en membre actif', mGroupPassive: 'Passer en membre passif', mGroupGuest: 'Passer en invité', mGroupOther: 'Passer en Friends & Family', mGroupCandidate: 'Passer en candidat', groupChanged: 'Groupe modifié', jsEternal: 'Classement perpétuel', jsEternalHint: 'Sur les {n} dernières manches terminées', jsEternalRounds: '{n} manches', jsEternalRound: '1 manche', jsVisibleHint: 'Sans coche, seuls Admin et Jass Manager voient cette manche', evEdit: 'Modifier l’événement', evManagePeople: 'Gérer les participants', grpSupporter: 'Friends & Family', mMakeSupporter: 'Passer en Friends & Family', supporterSet: 'Classé·e dans Friends & Family', pinLampOk: 'A déjà changé son code PIN', pinLampNo: 'Utilise encore le code PIN standard', pinBannerMsg: 'Définis ton code PIN personnel pour débloquer toutes les fonctions.', pinBannerBtn: 'Définir le PIN', ccPublicLabel: 'Visible pour tous les membres actifs et passifs', ccPublicOn: 'C&C est maintenant visible pour tout le monde (lecture seule)', ccPublicOff: 'C&C n’est de nouveau visible que pour Admin, Chilbi Manager et Chränzli Manager', ccCopySuffix: 'copie', ccPrint: 'Partager en PDF', jsPrint: 'Aperçu Jassmasters en PDF', ccPdfBuilding: 'Création du PDF…', ccPdfFailed: 'Le PDF n’a pas pu être créé.',
+      navCC: 'C&C', ccMembers: 'Membres', ccGuests: 'Invités', ccOthers: 'Autres', ccEmpty: 'Aucune manifestation pour l’instant.', ccNoDays: 'Aucun jour pour l’instant.', ccSummary: '{s} créneaux · {r} rôles', ccLvlAll: 'Chränzli et Chilbi', ccLvlEvent: 'Manifestation', ccLvlDay: 'Jour', ccLvlShift: 'Créneau', ccLvlRole: 'Rôle', ccActions: 'Actions', ccAddEvent: 'Ajouter une manifestation', ccAddDay: 'Ajouter un jour', ccAddShift: 'Ajouter un créneau', ccAddRole: 'Ajouter un rôle', ccChange: 'Modifier', ccCopy: 'Copier', ccClose: 'Fermer', ccNameOpt: 'Nom (facultatif)', ccStart: 'Début', ccEnd: 'Fin', ccActive: 'Actif', ccPersons: 'Responsables', ccSearch: 'Rechercher un nom', ccOtherPerson: 'Autre personne (pas dans l’application)', ccAdd: 'Ajouter', ccDidYouMean: 'Tu veux dire {name} ?', ccNobody: 'Personne pour l’instant', ccConfirmDel: 'Supprimer « {name} » ? Tout ce qui y est rattaché sera aussi supprimé.', ccConfirmDelRole: 'Supprimer « {name} » ?', ccCopyEventNote: 'La copie est d’abord inactive. Tous les jours sont décalés de 52 semaines pour garder les mêmes jours de la semaine.', ccCopyDayNote: 'Les créneaux et rôles sont copiés avec les responsables.', ccSaved: 'Enregistré', ccCopied: 'Copié', ccDeleted: 'Supprimé', ccNotInApp: '{name} n’est pas encore dans l’application. Avec son numéro de mobile, tu peux l’ajouter comme invité.', ccAsGuest: 'Ajouter comme invité', ccNeedName: 'Saisis un nom.', ccSetup: 'Pour C&C, le schéma de la base de données doit être mis à jour (supabase/schema.sql).', grpCandidate: 'Candidats', candidateTitle: 'Merci beaucoup pour ton intérêt', candidateMsg: 'Ta demande est examinée par nos administrateurs.', mGroupActive: 'Passer en membre actif', mGroupPassive: 'Passer en membre passif', mGroupGuest: 'Passer en invité', mGroupOther: 'Passer en Friends & Family', mGroupCandidate: 'Passer en candidat', groupChanged: 'Groupe modifié', jsEternal: 'Classement perpétuel', jsEternalHint: 'Sur les {n} dernières manches terminées', jsEternalRounds: '{n} manches', jsEternalRound: '1 manche', jsVisibleHint: 'Sans coche, seuls Admin et Jass Manager voient cette manche', evEdit: 'Modifier l’événement', evManagePeople: 'Gérer les participants', grpSupporter: 'Friends & Family', mMakeSupporter: 'Passer en Friends & Family', supporterSet: 'Classé·e dans Friends & Family', pinLampOk: 'A déjà changé son code PIN', pinLampNo: 'Utilise encore le code PIN standard', pinBannerMsg: 'Définis ton code PIN personnel pour débloquer toutes les fonctions.', pinBannerBtn: 'Définir le PIN', ccPublicLabel: 'Visible pour tous les membres actifs et passifs', ccPublicOn: 'C&C est maintenant visible pour tout le monde (lecture seule)', ccPublicOff: 'C&C n’est de nouveau visible que pour Admin, Chilbi Manager et Chränzli Manager', ccCopySuffix: 'copie', ccLegendMe: 'Moi', ccPrint: 'Partager en PDF', jsPrint: 'Aperçu Jassmasters en PDF', ccPdfBuilding: 'Création du PDF…', ccPdfFailed: 'Le PDF n’a pas pu être créé.',
       mMakeAdmin: 'Nommer admin', mRevokeAdmin: 'Retirer les droits d’admin', mMakeEm: 'Nommer responsable des événements', mRevokeEm: 'Retirer les droits de responsable des événements', mMakeGuest: 'Définir comme invité', mMakeMember: 'Définir comme membre', mEdit: 'Modifier le nom et le numéro de mobile', mEditNote: 'Avec un nouveau numéro, le PIN par défaut s’applique à nouveau : les 6 derniers chiffres du nouveau numéro.', mSaved: 'Enregistré', mDelete: 'Supprimer le membre', mPhoneTaken: 'Ce numéro de mobile appartient déjà à une autre personne.',
+      jsLocked: 'Verrouillé – toucher pour déverrouiller', jsUnlocked: 'Déverrouillé – toucher pour verrouiller', jsEditRow: 'Modifier l’entrée', jsRankDiff: 'Différence',
       navJass: 'Jass', jsParticipants: 'Participants', jsSchedule: 'Programme des parties', jsRanking: 'Classement du jour', jsRound: 'Manche {n}', jsTable: 'Table {t}', jsTeam1: 'Équipe I', jsTeam2: 'Équipe II', jsPlayer: 'Joueur {n}', jsFree: 'libre', jsEmpty: 'Aucun Jassmasters pour l’instant.', jsNoDays: 'Aucune date pour l’instant.', jsAddSeries: 'Ajouter un Jassmasters', jsAddDay: 'Ajouter une date', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Journée de jass', jsPick: 'Choisir le joueur {n}', jsClear: 'Libérer la place', jsAlready: 'déjà joueur {n}', jsPoints: 'Points', jsGames: '{n} parties', jsPtsAbbr: 'pts', jsGame: '{n} partie', jsNoPoints: 'Aucun point saisi pour l’instant.', jsHint: 'Saisis les points pour l’équipe gagnante. L’autre équipe les reçoit automatiquement en négatif.', jsSetup: 'Pour le jass, le schéma de la base de données doit être mis à jour (supabase/schema.sql).', jsFinish: 'Clôturer le Jassmaster', jsConfirmFinish: 'Clôturer « {name} » ? La manche sera déplacée sous Jassmasters passés et ne sera plus visible que comme classement. Continuer ?', jsFinished: 'Marqué comme terminé', jsEditRanking: 'Modifier le classement', jsRankName: 'Nom', jsRankPoints: 'Points', jsAddRow: 'Ajouter une ligne', jsNoRows: 'Personne n’a encore été saisi.',
+      shPlay: 'Écouter ici', shPlayStop: 'Fermer le lecteur',
+      shHint: 'Remarque', shHintCheck: 'Marquer comme remarque (placée avant les actes)',
+      shVideo: 'Vidéo', shYoutube: 'Lien YouTube', shOpenYoutube: 'Ouvrir sur YouTube', shVideoBad: 'Veuillez indiquer un lien YouTube (https://www.youtube.com/… ou https://youtu.be/…).',
+      shMusic: 'Musique', shSpotify: 'Lien Spotify', shOpenSpotify: 'Ouvrir dans Spotify', shMusicBad: 'Veuillez indiquer un lien Spotify (https://open.spotify.com/…).',
+      navShow: 'Show', titleShow: 'Chränzli Drehbuch', dirTag: 'Metteur en scène', actTag: 'Acteur', mMakeDir: 'Nommer metteur en scène', mRevokeDir: 'Retirer les droits de metteur en scène', mMakeActor: 'Nommer acteur', mRevokeActor: 'Retirer le rôle d’acteur', dirGranted: 'Défini comme metteur en scène', dirRevoked: 'Droits de metteur en scène retirés', actorGranted: 'Défini comme acteur', actorRevoked: 'Rôle d’acteur retiré', shEmpty: 'Aucun acte pour l’instant.', shSetup: 'Les tables Show manquent. Exécuter PRD_v97_show.sql dans le SQL Editor.', shAddAct: 'Ajouter un acte', shAddScene: 'Ajouter une scène', shAddPart: 'Ajouter un rôle', shLvlAll: 'Show', shLvlAct: 'Acte', shLvlScene: 'Scène', shLvlPart: 'Rôle', shDesc: 'Description', shNoScenes: 'Aucune scène pour l’instant.', shSummary: '{r} rôles', shVisible: 'Planification visible pour les acteurs',
       jmTag: 'Responsable Jass', mMakeJm: 'Nommer responsable Jass', mRevokeJm: 'Retirer les droits de responsable Jass', jmGranted: 'Défini comme responsable Jass', jmRevoked: 'Droits de responsable Jass retirés', cmTag: 'Responsable Chilbi', crmTag: 'Responsable Chränzli', mMakeCm: 'Nommer responsable Chilbi', mRevokeCm: 'Retirer les droits de responsable Chilbi', mMakeCrm: 'Nommer responsable Chränzli', mRevokeCrm: 'Retirer les droits de responsable Chränzli', cmGranted: 'Défini comme responsable Chilbi', cmRevoked: 'Droits de responsable Chilbi retirés', crmGranted: 'Défini comme responsable Chränzli', crmRevoked: 'Droits de responsable Chränzli retirés', grpActive: 'Membres actifs', grpPassive: 'Membres passifs', mMakePassive: 'Passer en membre passif', mMakeActive: 'Passer en membre actif', passiveSet: 'Défini comme membre passif', activeSet: 'Défini comme membre actif', jsUpcoming: 'Jassmaster à venir', jsPast: 'Jassmasters passés'
     },
 
@@ -182,14 +194,14 @@
       titleTrainings: 'Trainingsplan', titleEvents: 'Vereinsanlässe',
       subTrainings: 'The next {n} sessions', subEvents: 'The following club events are planned', moreDates: 'More dates ({n})',
       emptyTrTitle: 'No trainings planned yet.', emptyTrAdmin: 'Set a training day in the “Manage” section.', emptyTrMember: 'The admins set the training days.',
-      emptyEvTitle: 'No events planned at the moment.', emptyEvAdmin: 'Create an event in the “Manage” section.', emptyEvMember: 'The admins create new events.',
+      emptyEvTitle: 'No events planned at the moment.', emptyEvAdmin: 'Create an event in the “Manage” section.', emptyEvMember: 'The Event Managers create new events.',
       trainingWord: 'Training', trCancelled: 'Training cancelled', yes: 'Attending', no: 'Not attending', participants: 'Participants',
       ariaTr: '{yes} participants, {no} not attending. {action} participant list', ariaEv: '{n} participants. {action} participant list',
       listOpen: 'Open', listClose: 'Close',
       hYes: 'Attending ({n})', hNo: 'Not attending ({n})', hOpen: 'No reply yet ({n})', hSolo: 'Attending alone ({n})', hDuo: 'Attending as a pair ({n} members, {p} people)',
       nobody: 'Nobody', you: '(you)', cancelledTag: 'Cancelled', cancelledLow: 'cancelled', changedLow: 'changed',
       timePlace: '{time}, {place}', atTime: '{time}', calAdd: 'Add to calendar', solo: 'Alone', duo: 'As a pair',
-      secRules: 'Standard training', secExtra: 'Extra training', secUpcoming: 'Manage training schedule', secEvents: 'Events', secMembers: 'Groups',
+      secRules: 'Standard training', secExtra: 'Extra training', secUpcoming: 'Manage training schedule', secEvents: 'Events', secMembers: 'Roles',
       addNew: 'Add new', addClose: 'Close form',
       adminTitle: 'Admin Console', titleCC: 'Chilbi & Chränzli', titleJass: 'Jass-Masters', adminSub: 'Visible to admins only', rulesIntro: 'Standard trainings per week',
       weekday: 'Weekday', time: 'Time', place: 'Place', date: 'Date', label: 'Title',
@@ -222,12 +234,12 @@
       setupStep3: 'Reload the page.', setupNote: 'Detailed instructions are in the file README.md.',
       loading: 'Loading …',
       errFailed: 'That did not work', respWithdrawn: 'Reply withdrawn', youIn: 'You are attending', youOut: 'You are not attending', youSolo: 'You are coming alone', youDuo: 'You are coming as a pair',
-      phoneInvalid: 'Please enter a valid mobile number, e.g. 079 123 45 67.', alreadyReg: 'This number is already registered.',
+      phoneCountry: 'Country', phoneOther: 'Other', phoneInvalid: 'Please enter a valid mobile number, e.g. 079 123 45 67.', alreadyReg: 'This number is already registered.',
       memberAdded: '{name} has been added.', addFailed: 'Could not add: {reason}', unknownError: 'Unknown error',
       authInvalid: 'Mobile number or PIN is incorrect. If you changed your PIN, enter it in the PIN field.',
       authAlready: 'This number is already registered. Please sign in.', authCode: 'Registration not possible. Please check the club code.',
       authRate: 'Too many attempts. Please wait a moment.', authPin: 'The PIN must consist of 6 digits.', authFail: 'Sign-in failed. Please try again.',
-      pinExact: 'The PIN must consist of exactly 6 digits.', confirmEmailOff: 'Please turn off “Confirm email” in Supabase (see README).',
+      pinExact: 'The PIN must consist of exactly 6 digits.', pinWeak: 'This PIN is too simple (e.g. 111111 or 123456) or the same as the default PIN. Please choose another one.', confirmEmailOff: 'Please turn off “Confirm email” in Supabase (see README).',
       loadFail: 'The data could not be loaded. Was the database schema executed?',
       calFile: 'Open the file “{name}” to save the event to your calendar.', calFail: 'The calendar entry could not be created.',
       pinResetOk: 'PIN reset to default', pinResetFail: 'The PIN could not be reset.',
@@ -241,13 +253,19 @@
       ruleAdded: 'Training day added', extraAdded: 'Training added', eventAdded: 'Event added',
       ruleChanged: 'Training day changed', trChanged: 'Training changed', eventChanged: 'Event changed', langSaved: 'Language saved',
       guestTag: 'Guest', makeGuest: 'Set as guest: {name}', revokeGuest: 'Remove guest status: {name}', guestGranted: 'Set as guest', guestRevoked: 'Guest status removed',
-      guestCheck: 'Add as guest (sees only trainings and profile)', guestInfo: 'You have guest access. You can see the trainings and your profile.', supporterInfo: 'You\'re part of Friends & Family. You see trainings, Jass and your profile.',
-      memberTag: 'Member', emTag: 'Event manager', makeEm: 'Make event manager: {name}', revokeEm: 'Remove event manager rights: {name}', emGranted: 'Set as event manager', emRevoked: 'Event manager rights removed', confirmGuestLoses: '{name} has Admin, Event-Manager, Chilbi Manager, Chränzli Manager or Jass Manager rights. This change removes those rights. Continue?', selfMember: 'You are a member. You cannot set yourself as a guest.', rolesTitle: 'Roles', emSub: 'Here you manage the events.', ccManagerSub: 'You manage C&C in the "C&C" tab.',
+      guestCheck: 'Add as guest (sees only trainings and profile)', guestInfo: 'You have guest access. You can see the trainings and your profile.', supporterInfo: 'You\'re part of Friends & Family. You see trainings, Jass, C&C and your profile.',
+      memberTag: 'Member', emTag: 'Event manager', makeEm: 'Make event manager: {name}', revokeEm: 'Remove event manager rights: {name}', emGranted: 'Set as event manager', emRevoked: 'Event manager rights removed', confirmGuestLoses: '{name} has Admin, Event Manager, Chilbi Manager, Chränzli Manager or Jass Manager rights. This change removes those rights. Continue?', selfMember: 'You are a member. You cannot set yourself as a guest.', rolesTitle: 'Roles', emSub: 'Here you manage the events.', ccManagerSub: 'You manage C&C in the "C&C" tab.',
       infoShow: 'Show explanation', infoHide: 'Hide explanation',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Members', ccGuests: 'Guests', ccOthers: 'Others', ccEmpty: 'No occasions yet.', ccNoDays: 'No days yet.', ccSummary: '{s} shifts · {r} roles', ccLvlAll: 'Chränzli and Chilbi', ccLvlEvent: 'Occasion', ccLvlDay: 'Day', ccLvlShift: 'Shift', ccLvlRole: 'Role', ccActions: 'Actions', ccAddEvent: 'Add occasion', ccAddDay: 'Add day', ccAddShift: 'Add shift', ccAddRole: 'Add role', ccChange: 'Edit', ccCopy: 'Copy', ccClose: 'Close', ccNameOpt: 'Name (optional)', ccStart: 'Start', ccEnd: 'End', ccActive: 'Active', ccPersons: 'Responsible', ccSearch: 'Search names', ccOtherPerson: 'Other person (not in the app)', ccAdd: 'Add', ccDidYouMean: 'Did you mean {name}?', ccNobody: 'Nobody yet', ccConfirmDel: 'Delete “{name}”? Everything under it will be deleted too.', ccConfirmDelRole: 'Delete “{name}”?', ccCopyEventNote: 'The copy starts inactive. All days move by 52 weeks so the weekdays stay the same.', ccCopyDayNote: 'Shifts and roles are copied with the people responsible.', ccSaved: 'Saved', ccCopied: 'Copied', ccDeleted: 'Deleted', ccNotInApp: '{name} is not in the app yet. With a mobile number you can add them as a guest.', ccAsGuest: 'Add as guest', ccNeedName: 'Enter a name.', ccSetup: 'C&C needs an updated database schema (supabase/schema.sql).', grpCandidate: 'Candidates', candidateTitle: 'Thank you for your interest', candidateMsg: 'Your request is being reviewed by our administrators.', mGroupActive: 'Make active member', mGroupPassive: 'Make passive member', mGroupGuest: 'Make guest', mGroupOther: 'Make Friends & Family', mGroupCandidate: 'Make candidate', groupChanged: 'Group changed', jsEternal: 'All-time ranking', jsEternalHint: 'Over the last {n} completed rounds', jsEternalRounds: '{n} rounds', jsEternalRound: '1 round', jsVisibleHint: 'Without the tick, only Admin and Jass Manager see this round', evEdit: 'Edit event', evManagePeople: 'Manage participants', grpSupporter: 'Friends & Family', mMakeSupporter: 'Make Friends & Family', supporterSet: 'Set to Friends & Family', pinLampOk: 'Has already changed their PIN', pinLampNo: 'Still using the default PIN', pinBannerMsg: 'Please set your personal PIN code to unlock all features.', pinBannerBtn: 'Set PIN now', ccPublicLabel: 'Visible to all active and passive members', ccPublicOn: 'C&C is now visible to everyone (read-only)', ccPublicOff: 'C&C is now visible only to Admin, Chilbi Manager and Chränzli Manager again', ccCopySuffix: 'copy', ccPrint: 'Share as PDF', jsPrint: 'Jassmasters overview as PDF', ccPdfBuilding: 'Creating PDF…', ccPdfFailed: 'The PDF could not be created.',
+      navCC: 'C&C', ccMembers: 'Members', ccGuests: 'Guests', ccOthers: 'Others', ccEmpty: 'No occasions yet.', ccNoDays: 'No days yet.', ccSummary: '{s} shifts · {r} roles', ccLvlAll: 'Chränzli and Chilbi', ccLvlEvent: 'Occasion', ccLvlDay: 'Day', ccLvlShift: 'Shift', ccLvlRole: 'Role', ccActions: 'Actions', ccAddEvent: 'Add occasion', ccAddDay: 'Add day', ccAddShift: 'Add shift', ccAddRole: 'Add role', ccChange: 'Edit', ccCopy: 'Copy', ccClose: 'Close', ccNameOpt: 'Name (optional)', ccStart: 'Start', ccEnd: 'End', ccActive: 'Active', ccPersons: 'Responsible', ccSearch: 'Search names', ccOtherPerson: 'Other person (not in the app)', ccAdd: 'Add', ccDidYouMean: 'Did you mean {name}?', ccNobody: 'Nobody yet', ccConfirmDel: 'Delete “{name}”? Everything under it will be deleted too.', ccConfirmDelRole: 'Delete “{name}”?', ccCopyEventNote: 'The copy starts inactive. All days move by 52 weeks so the weekdays stay the same.', ccCopyDayNote: 'Shifts and roles are copied with the people responsible.', ccSaved: 'Saved', ccCopied: 'Copied', ccDeleted: 'Deleted', ccNotInApp: '{name} is not in the app yet. With a mobile number you can add them as a guest.', ccAsGuest: 'Add as guest', ccNeedName: 'Enter a name.', ccSetup: 'C&C needs an updated database schema (supabase/schema.sql).', grpCandidate: 'Candidates', candidateTitle: 'Thank you for your interest', candidateMsg: 'Your request is being reviewed by our administrators.', mGroupActive: 'Make active member', mGroupPassive: 'Make passive member', mGroupGuest: 'Make guest', mGroupOther: 'Make Friends & Family', mGroupCandidate: 'Make candidate', groupChanged: 'Group changed', jsEternal: 'All-time ranking', jsEternalHint: 'Over the last {n} completed rounds', jsEternalRounds: '{n} rounds', jsEternalRound: '1 round', jsVisibleHint: 'Without the tick, only Admin and Jass Manager see this round', evEdit: 'Edit event', evManagePeople: 'Manage participants', grpSupporter: 'Friends & Family', mMakeSupporter: 'Make Friends & Family', supporterSet: 'Set to Friends & Family', pinLampOk: 'Has already changed their PIN', pinLampNo: 'Still using the default PIN', pinBannerMsg: 'Please set your personal PIN code to unlock all features.', pinBannerBtn: 'Set PIN now', ccPublicLabel: 'Visible to all active and passive members', ccPublicOn: 'C&C is now visible to everyone (read-only)', ccPublicOff: 'C&C is now visible only to Admin, Chilbi Manager and Chränzli Manager again', ccCopySuffix: 'copy', ccLegendMe: 'Me', ccPrint: 'Share as PDF', jsPrint: 'Jassmasters overview as PDF', ccPdfBuilding: 'Creating PDF…', ccPdfFailed: 'The PDF could not be created.',
       mMakeAdmin: 'Make admin', mRevokeAdmin: 'Remove admin rights', mMakeEm: 'Make event manager', mRevokeEm: 'Remove event manager rights', mMakeGuest: 'Set as guest', mMakeMember: 'Set as member', mEdit: 'Change name and mobile number', mEditNote: 'With a new number the default PIN applies again: the last 6 digits of the new number.', mSaved: 'Saved', mDelete: 'Delete member', mPhoneTaken: 'This mobile number already belongs to someone else.',
+      jsLocked: 'Locked – tap to unlock', jsUnlocked: 'Unlocked – tap to lock', jsEditRow: 'Edit entry', jsRankDiff: 'Difference',
       navJass: 'Jass', jsParticipants: 'Players', jsSchedule: 'Schedule', jsRanking: 'Daily ranking', jsRound: 'Round {n}', jsTable: 'Table {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Player {n}', jsFree: 'open', jsEmpty: 'No Jassmasters yet.', jsNoDays: 'No date yet.', jsAddSeries: 'Add Jassmasters', jsAddDay: 'Add date', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jass day', jsPick: 'Choose player {n}', jsClear: 'Clear seat', jsAlready: 'already player {n}', jsPoints: 'Points', jsGames: '{n} games', jsPtsAbbr: 'pts', jsGame: '{n} game', jsNoPoints: 'No points entered yet.', jsHint: 'Enter the points for the winning team. The other team automatically gets them as negative points.', jsSetup: 'Jass needs an updated database schema (supabase/schema.sql).', jsFinish: 'Finish Jassmaster', jsConfirmFinish: 'Finish "{name}"? It will move to Past Jassmasters and will only be visible as a ranking afterwards. Continue?', jsFinished: 'Marked as finished', jsEditRanking: 'Edit ranking', jsRankName: 'Name', jsRankPoints: 'Points', jsAddRow: 'Add row', jsNoRows: 'Nobody entered yet.',
+      shPlay: 'Play here', shPlayStop: 'Close player',
+      shHint: 'Note', shHintCheck: 'Mark as note (listed before the acts)',
+      shVideo: 'Video', shYoutube: 'YouTube link', shOpenYoutube: 'Open on YouTube', shVideoBad: 'Please enter a YouTube link (https://www.youtube.com/… or https://youtu.be/…).',
+      shMusic: 'Music', shSpotify: 'Spotify link', shOpenSpotify: 'Open in Spotify', shMusicBad: 'Please enter a Spotify link (https://open.spotify.com/…).',
+      navShow: 'Show', titleShow: 'Chränzli Drehbuch', dirTag: 'Director', actTag: 'Actor', mMakeDir: 'Make director', mRevokeDir: 'Revoke director rights', mMakeActor: 'Make actor', mRevokeActor: 'Revoke actor role', dirGranted: 'Set as director', dirRevoked: 'Director rights revoked', actorGranted: 'Set as actor', actorRevoked: 'Actor role revoked', shEmpty: 'No acts yet.', shSetup: 'The Show tables are missing. Please run PRD_v97_show.sql in the SQL Editor.', shAddAct: 'Add act', shAddScene: 'Add scene', shAddPart: 'Add role', shLvlAll: 'Show', shLvlAct: 'Act', shLvlScene: 'Scene', shLvlPart: 'Role', shDesc: 'Description', shNoScenes: 'No scenes yet.', shSummary: '{r} roles', shVisible: 'Plan visible to actors',
       jmTag: 'Jass Manager', mMakeJm: 'Make Jass Manager', mRevokeJm: 'Revoke Jass Manager rights', jmGranted: 'Set as Jass Manager', jmRevoked: 'Jass Manager rights revoked', cmTag: 'Chilbi Manager', crmTag: 'Chränzli Manager', mMakeCm: 'Make Chilbi Manager', mRevokeCm: 'Revoke Chilbi Manager rights', mMakeCrm: 'Make Chränzli Manager', mRevokeCrm: 'Revoke Chränzli Manager rights', cmGranted: 'Set as Chilbi Manager', cmRevoked: 'Chilbi Manager rights revoked', crmGranted: 'Set as Chränzli Manager', crmRevoked: 'Chränzli Manager rights revoked', grpActive: 'Active members', grpPassive: 'Passive members', mMakePassive: 'Make passive member', mMakeActive: 'Make active member', passiveSet: 'Set as passive member', activeSet: 'Set as active member', jsUpcoming: 'Upcoming Jassmaster', jsPast: 'Past Jassmasters'
     },
 
@@ -257,14 +275,14 @@
       titleTrainings: 'Trainingsplan', titleEvents: 'Vereinsanlässe',
       subTrainings: 'I prossimi {n} appuntamenti', subEvents: 'Sono previsti i seguenti eventi del club', moreDates: 'Altri appuntamenti ({n})',
       emptyTrTitle: 'Nessun allenamento in programma.', emptyTrAdmin: 'Definisci un giorno di allenamento nella sezione «Gestione».', emptyTrMember: 'Gli admin definiscono i giorni di allenamento.',
-      emptyEvTitle: 'Al momento non ci sono eventi in programma.', emptyEvAdmin: 'Crea un evento nella sezione «Gestione».', emptyEvMember: 'Gli admin creano i nuovi eventi.',
+      emptyEvTitle: 'Al momento non ci sono eventi in programma.', emptyEvAdmin: 'Crea un evento nella sezione «Gestione».', emptyEvMember: 'Gli Event Manager creano i nuovi eventi.',
       trainingWord: 'Allenamento', trCancelled: 'Allenamento annullato', yes: 'Presente', no: 'Assente', participants: 'Partecipanti',
       ariaTr: '{yes} partecipanti, {no} assenti. {action} elenco partecipanti', ariaEv: '{n} partecipanti. {action} elenco partecipanti',
       listOpen: 'Apri', listClose: 'Chiudi',
       hYes: 'Presenti ({n})', hNo: 'Assenti ({n})', hOpen: 'Ancora nessuna risposta ({n})', hSolo: 'Da solo/a ({n})', hDuo: 'In due ({n} soci, {p} persone)',
       nobody: 'Nessuno', you: '(tu)', cancelledTag: 'Annullato', cancelledLow: 'annullato', changedLow: 'modificato',
       timePlace: 'ore {time}, {place}', atTime: 'ore {time}', calAdd: 'Aggiungi al calendario', solo: 'Da solo/a', duo: 'In due',
-      secRules: 'Allenamento standard', secExtra: 'Allenamento extra', secUpcoming: 'Gestisci il piano di allenamento', secEvents: 'Eventi', secMembers: 'Gruppi',
+      secRules: 'Allenamento standard', secExtra: 'Allenamento extra', secUpcoming: 'Gestisci il piano di allenamento', secEvents: 'Eventi', secMembers: 'Ruoli',
       addNew: 'Aggiungi', addClose: 'Chiudi il modulo',
       adminTitle: 'Admin Console', titleCC: 'Chilbi & Chränzli', titleJass: 'Jass-Masters', adminSub: 'Visibile solo agli admin', rulesIntro: 'Allenamenti standard settimanali',
       weekday: 'Giorno della settimana', time: 'Ora', place: 'Luogo', date: 'Data', label: 'Denominazione',
@@ -276,7 +294,7 @@
       phPlaceExtra: 'ad es. impianto sportivo Sud', addExtra: 'Aggiungi allenamento', upcomingEmpty: 'Nessun allenamento in arrivo.',
       phEventTitle: 'ad es. serata fonduta', phEventPlace: 'ad es. sede del club', addEvent: 'Aggiungi evento', rsvpRequired: 'Iscrizione obbligatoria',
       eventsEmpty: 'Ancora nessun evento. Tocca «+» per crearne uno.',
-      membersIntro: 'Tocca i tre puntini accanto a una persona per modificare ruoli, gruppo, PIN, nome o numero di cellulare, oppure per eliminarla. Ingranaggio = admin, stella = Event-Manager, bicchiere = Chilbi/Chränzli Manager, coppa = Jass Manager. Ospiti e Friends & Family vedono solo contenuti limitati (vedi i gruppi qui sotto).',
+      membersIntro: 'Tocca i tre puntini accanto a una persona per modificare ruoli, gruppo, PIN, nome o numero di cellulare, oppure per eliminarla. Ingranaggio = admin, stella = Event Manager, bicchiere = Chilbi/Chränzli Manager, coppa = Jass Manager. Ospiti e Friends & Family vedono solo contenuti limitati (vedi i gruppi qui sotto).',
       memberAdd: 'Aggiungi socio', fullName: 'Nome e cognome', phone: 'Numero di cellulare',
       memberAddNote: 'Il socio accede solo con il numero di cellulare. Il PIN corrisponde alle ultime 6 cifre.',
       selfAdmin: 'Sei admin. Non puoi revocarti i diritti da solo.', revokeAdmin: 'Revoca i diritti di admin: {name}', makeAdmin: 'Rendi admin: {name}',
@@ -297,12 +315,12 @@
       setupStep3: 'Ricarica la pagina.', setupNote: 'Le istruzioni dettagliate si trovano nel file README.md.',
       loading: 'Caricamento …',
       errFailed: 'Non ha funzionato', respWithdrawn: 'Risposta ritirata', youIn: 'Sei presente', youOut: 'Sei assente', youSolo: 'Vieni da solo/a', youDuo: 'Vieni in due',
-      phoneInvalid: 'Inserisci un numero di cellulare valido, ad es. 079 123 45 67.', alreadyReg: 'Questo numero è già registrato.',
+      phoneCountry: 'Paese', phoneOther: 'Altro', phoneInvalid: 'Inserisci un numero di cellulare valido, ad es. 079 123 45 67.', alreadyReg: 'Questo numero è già registrato.',
       memberAdded: '{name} è stato aggiunto.', addFailed: 'Impossibile aggiungere: {reason}', unknownError: 'Errore sconosciuto',
       authInvalid: 'Numero di cellulare o PIN errato. Se hai cambiato il PIN, inseriscilo nel campo PIN.',
       authAlready: 'Questo numero è già registrato. Effettua l’accesso.', authCode: 'Registrazione non possibile. Controlla il codice del club.',
       authRate: 'Troppi tentativi. Attendi un momento.', authPin: 'Il PIN deve essere composto da 6 cifre.', authFail: 'Accesso non riuscito. Riprova.',
-      pinExact: 'Il PIN deve essere composto esattamente da 6 cifre.', confirmEmailOff: 'Disattiva «Confirm email» in Supabase (vedi README).',
+      pinExact: 'Il PIN deve essere composto esattamente da 6 cifre.', pinWeak: 'Questo PIN è troppo semplice (ad es. 111111 o 123456) o uguale al PIN predefinito. Scegline un altro.', confirmEmailOff: 'Disattiva «Confirm email» in Supabase (vedi README).',
       loadFail: 'Impossibile caricare i dati. Lo schema del database è stato eseguito?',
       calFile: 'Apri il file «{name}» per salvare l’appuntamento nel calendario.', calFail: 'Impossibile creare la voce di calendario.',
       pinResetOk: 'PIN ripristinato a quello predefinito', pinResetFail: 'Impossibile ripristinare il PIN.',
@@ -316,13 +334,19 @@
       ruleAdded: 'Giorno di allenamento aggiunto', extraAdded: 'Allenamento aggiunto', eventAdded: 'Evento aggiunto',
       ruleChanged: 'Giorno di allenamento modificato', trChanged: 'Allenamento modificato', eventChanged: 'Evento modificato', langSaved: 'Lingua salvata',
       guestTag: 'Ospite', makeGuest: 'Imposta come ospite: {name}', revokeGuest: 'Rimuovi lo stato di ospite: {name}', guestGranted: 'Impostato come ospite', guestRevoked: 'Stato di ospite rimosso',
-      guestCheck: 'Aggiungi come ospite (vede solo allenamenti e profilo)', guestInfo: 'Hai un accesso come ospite. Vedi gli allenamenti e il tuo profilo.', supporterInfo: 'Fai parte di Friends & Family. Vedi gli allenamenti, il Jass e il tuo profilo.',
-      memberTag: 'Socio', emTag: 'Responsabile eventi', makeEm: 'Nomina responsabile eventi: {name}', revokeEm: 'Revoca i diritti di responsabile eventi: {name}', emGranted: 'Impostato come responsabile eventi', emRevoked: 'Diritti di responsabile eventi revocati', confirmGuestLoses: '{name} ha diritti da Admin, Event-Manager, Chilbi Manager, Chränzli Manager o Jass Manager. Questa modifica toglie questi diritti. Continuare?', selfMember: 'Sei socio. Non puoi impostarti da solo come ospite.', rolesTitle: 'Ruoli', emSub: 'Qui gestisci gli eventi.', ccManagerSub: 'C&C si gestisce nella scheda «C&C».',
+      guestCheck: 'Aggiungi come ospite (vede solo allenamenti e profilo)', guestInfo: 'Hai un accesso come ospite. Vedi gli allenamenti e il tuo profilo.', supporterInfo: 'Fai parte di Friends & Family. Vedi gli allenamenti, il Jass, C&C e il tuo profilo.',
+      memberTag: 'Socio', emTag: 'Responsabile eventi', makeEm: 'Nomina responsabile eventi: {name}', revokeEm: 'Revoca i diritti di responsabile eventi: {name}', emGranted: 'Impostato come responsabile eventi', emRevoked: 'Diritti di responsabile eventi revocati', confirmGuestLoses: '{name} ha diritti da Admin, Event Manager, Chilbi Manager, Chränzli Manager o Jass Manager. Questa modifica toglie questi diritti. Continuare?', selfMember: 'Sei socio. Non puoi impostarti da solo come ospite.', rolesTitle: 'Ruoli', emSub: 'Qui gestisci gli eventi.', ccManagerSub: 'C&C si gestisce nella scheda «C&C».',
       infoShow: 'Mostra la spiegazione', infoHide: 'Nascondi la spiegazione',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Soci', ccGuests: 'Ospiti', ccOthers: 'Altri', ccEmpty: 'Ancora nessuna manifestazione.', ccNoDays: 'Ancora nessun giorno.', ccSummary: '{s} turni · {r} ruoli', ccLvlAll: 'Chränzli e Chilbi', ccLvlEvent: 'Manifestazione', ccLvlDay: 'Giorno', ccLvlShift: 'Turno', ccLvlRole: 'Ruolo', ccActions: 'Azioni', ccAddEvent: 'Aggiungi manifestazione', ccAddDay: 'Aggiungi giorno', ccAddShift: 'Aggiungi turno', ccAddRole: 'Aggiungi ruolo', ccChange: 'Modifica', ccCopy: 'Copia', ccClose: 'Chiudi', ccNameOpt: 'Nome (facoltativo)', ccStart: 'Inizio', ccEnd: 'Fine', ccActive: 'Attivo', ccPersons: 'Responsabili', ccSearch: 'Cerca nomi', ccOtherPerson: 'Altra persona (non nell’app)', ccAdd: 'Aggiungi', ccDidYouMean: 'Intendi {name}?', ccNobody: 'Ancora nessuno', ccConfirmDel: 'Eliminare «{name}»? Verrà eliminato anche tutto ciò che contiene.', ccConfirmDelRole: 'Eliminare «{name}»?', ccCopyEventNote: 'La copia è inizialmente inattiva. Tutti i giorni vengono spostati di 52 settimane, così i giorni della settimana restano uguali.', ccCopyDayNote: 'Turni e ruoli vengono copiati con i responsabili.', ccSaved: 'Salvato', ccCopied: 'Copiato', ccDeleted: 'Eliminato', ccNotInApp: '{name} non è ancora nell’app. Con il numero di cellulare puoi aggiungere la persona come ospite.', ccAsGuest: 'Aggiungi come ospite', ccNeedName: 'Inserisci un nome.', ccSetup: 'Per C&C lo schema del database deve essere aggiornato (supabase/schema.sql).', grpCandidate: 'Candidati', candidateTitle: 'Grazie mille per il tuo interesse', candidateMsg: 'La tua richiesta viene esaminata dai nostri amministratori.', mGroupActive: 'Rendi membro attivo', mGroupPassive: 'Rendi membro passivo', mGroupGuest: 'Rendi ospite', mGroupOther: 'Rendi Friends & Family', mGroupCandidate: 'Rendi candidato', groupChanged: 'Gruppo modificato', jsEternal: 'Classifica perpetua', jsEternalHint: 'Sulle ultime {n} manche concluse', jsEternalRounds: '{n} manche', jsEternalRound: '1 turno', jsVisibleHint: 'Senza spunta, solo Admin e Jass Manager vedono questa manche', evEdit: 'Modifica evento', evManagePeople: 'Gestisci partecipanti', grpSupporter: 'Friends & Family', mMakeSupporter: 'Rendi Friends & Family', supporterSet: 'Assegnato a Friends & Family', pinLampOk: 'Ha già cambiato il PIN', pinLampNo: 'Usa ancora il PIN standard', pinBannerMsg: 'Imposta il tuo PIN personale per sbloccare tutte le funzioni.', pinBannerBtn: 'Imposta PIN', ccPublicLabel: 'Visibile a tutti i membri attivi e passivi', ccPublicOn: 'C&C è ora visibile a tutti (sola lettura)', ccPublicOff: 'C&C è di nuovo visibile solo ad Admin, Chilbi Manager e Chränzli Manager', ccCopySuffix: 'copia', ccPrint: 'Condividi come PDF', jsPrint: 'Panoramica Jassmasters come PDF', ccPdfBuilding: 'Creazione del PDF…', ccPdfFailed: 'Impossibile creare il PDF.',
+      navCC: 'C&C', ccMembers: 'Soci', ccGuests: 'Ospiti', ccOthers: 'Altri', ccEmpty: 'Ancora nessuna manifestazione.', ccNoDays: 'Ancora nessun giorno.', ccSummary: '{s} turni · {r} ruoli', ccLvlAll: 'Chränzli e Chilbi', ccLvlEvent: 'Manifestazione', ccLvlDay: 'Giorno', ccLvlShift: 'Turno', ccLvlRole: 'Ruolo', ccActions: 'Azioni', ccAddEvent: 'Aggiungi manifestazione', ccAddDay: 'Aggiungi giorno', ccAddShift: 'Aggiungi turno', ccAddRole: 'Aggiungi ruolo', ccChange: 'Modifica', ccCopy: 'Copia', ccClose: 'Chiudi', ccNameOpt: 'Nome (facoltativo)', ccStart: 'Inizio', ccEnd: 'Fine', ccActive: 'Attivo', ccPersons: 'Responsabili', ccSearch: 'Cerca nomi', ccOtherPerson: 'Altra persona (non nell’app)', ccAdd: 'Aggiungi', ccDidYouMean: 'Intendi {name}?', ccNobody: 'Ancora nessuno', ccConfirmDel: 'Eliminare «{name}»? Verrà eliminato anche tutto ciò che contiene.', ccConfirmDelRole: 'Eliminare «{name}»?', ccCopyEventNote: 'La copia è inizialmente inattiva. Tutti i giorni vengono spostati di 52 settimane, così i giorni della settimana restano uguali.', ccCopyDayNote: 'Turni e ruoli vengono copiati con i responsabili.', ccSaved: 'Salvato', ccCopied: 'Copiato', ccDeleted: 'Eliminato', ccNotInApp: '{name} non è ancora nell’app. Con il numero di cellulare puoi aggiungere la persona come ospite.', ccAsGuest: 'Aggiungi come ospite', ccNeedName: 'Inserisci un nome.', ccSetup: 'Per C&C lo schema del database deve essere aggiornato (supabase/schema.sql).', grpCandidate: 'Candidati', candidateTitle: 'Grazie mille per il tuo interesse', candidateMsg: 'La tua richiesta viene esaminata dai nostri amministratori.', mGroupActive: 'Rendi membro attivo', mGroupPassive: 'Rendi membro passivo', mGroupGuest: 'Rendi ospite', mGroupOther: 'Rendi Friends & Family', mGroupCandidate: 'Rendi candidato', groupChanged: 'Gruppo modificato', jsEternal: 'Classifica perpetua', jsEternalHint: 'Sulle ultime {n} manche concluse', jsEternalRounds: '{n} manche', jsEternalRound: '1 turno', jsVisibleHint: 'Senza spunta, solo Admin e Jass Manager vedono questa manche', evEdit: 'Modifica evento', evManagePeople: 'Gestisci partecipanti', grpSupporter: 'Friends & Family', mMakeSupporter: 'Rendi Friends & Family', supporterSet: 'Assegnato a Friends & Family', pinLampOk: 'Ha già cambiato il PIN', pinLampNo: 'Usa ancora il PIN standard', pinBannerMsg: 'Imposta il tuo PIN personale per sbloccare tutte le funzioni.', pinBannerBtn: 'Imposta PIN', ccPublicLabel: 'Visibile a tutti i membri attivi e passivi', ccPublicOn: 'C&C è ora visibile a tutti (sola lettura)', ccPublicOff: 'C&C è di nuovo visibile solo ad Admin, Chilbi Manager e Chränzli Manager', ccCopySuffix: 'copia', ccLegendMe: 'Io', ccPrint: 'Condividi come PDF', jsPrint: 'Panoramica Jassmasters come PDF', ccPdfBuilding: 'Creazione del PDF…', ccPdfFailed: 'Impossibile creare il PDF.',
       mMakeAdmin: 'Rendi admin', mRevokeAdmin: 'Revoca i diritti di admin', mMakeEm: 'Nomina responsabile eventi', mRevokeEm: 'Revoca i diritti di responsabile eventi', mMakeGuest: 'Imposta come ospite', mMakeMember: 'Imposta come socio', mEdit: 'Modifica nome e numero di cellulare', mEditNote: 'Con un nuovo numero vale di nuovo il PIN predefinito: le ultime 6 cifre del nuovo numero.', mSaved: 'Salvato', mDelete: 'Elimina socio', mPhoneTaken: 'Questo numero di cellulare appartiene già a un’altra persona.',
+      jsLocked: 'Bloccato – tocca per sbloccare', jsUnlocked: 'Sbloccato – tocca per bloccare', jsEditRow: 'Modifica voce', jsRankDiff: 'Differenza',
       navJass: 'Jass', jsParticipants: 'Partecipanti', jsSchedule: 'Calendario delle partite', jsRanking: 'Classifica del giorno', jsRound: 'Turno {n}', jsTable: 'Tavolo {t}', jsTeam1: 'Squadra I', jsTeam2: 'Squadra II', jsPlayer: 'Giocatore {n}', jsFree: 'libero', jsEmpty: 'Ancora nessun Jassmasters.', jsNoDays: 'Ancora nessuna data.', jsAddSeries: 'Aggiungi Jassmasters', jsAddDay: 'Aggiungi data', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Giornata di jass', jsPick: 'Scegli il giocatore {n}', jsClear: 'Libera il posto', jsAlready: 'già giocatore {n}', jsPoints: 'Punti', jsGames: '{n} partite', jsPtsAbbr: 'pt', jsGame: '{n} partita', jsNoPoints: 'Ancora nessun punto inserito.', jsHint: 'Inserisci i punti per la squadra vincente. L’altra squadra li riceve automaticamente in negativo.', jsSetup: 'Per il jass lo schema del database deve essere aggiornato (supabase/schema.sql).', jsFinish: 'Concludi il Jassmaster', jsConfirmFinish: 'Concludere «{name}»? Verrà spostato in Jassmasters passati e sarà visibile solo come classifica. Continuare?', jsFinished: 'Contrassegnato come concluso', jsEditRanking: 'Modifica classifica', jsRankName: 'Nome', jsRankPoints: 'Punti', jsAddRow: 'Aggiungi riga', jsNoRows: 'Nessuno ancora inserito.',
+      shPlay: 'Riproduci qui', shPlayStop: 'Chiudi il lettore',
+      shHint: 'Nota', shHintCheck: 'Segna come nota (prima degli atti)',
+      shVideo: 'Video', shYoutube: 'Link YouTube', shOpenYoutube: 'Apri su YouTube', shVideoBad: 'Inserire un link YouTube (https://www.youtube.com/… o https://youtu.be/…).',
+      shMusic: 'Musica', shSpotify: 'Link Spotify', shOpenSpotify: 'Apri in Spotify', shMusicBad: 'Inserire un link Spotify (https://open.spotify.com/…).',
+      navShow: 'Show', titleShow: 'Chränzli Drehbuch', dirTag: 'Regista', actTag: 'Attore', mMakeDir: 'Nomina regista', mRevokeDir: 'Revoca i diritti di regista', mMakeActor: 'Nomina attore', mRevokeActor: 'Revoca il ruolo di attore', dirGranted: 'Impostato come regista', dirRevoked: 'Diritti di regista revocati', actorGranted: 'Impostato come attore', actorRevoked: 'Ruolo di attore revocato', shEmpty: 'Ancora nessun atto.', shSetup: 'Mancano le tabelle Show. Eseguire PRD_v97_show.sql nel SQL Editor.', shAddAct: 'Aggiungi atto', shAddScene: 'Aggiungi scena', shAddPart: 'Aggiungi ruolo', shLvlAll: 'Show', shLvlAct: 'Atto', shLvlScene: 'Scena', shLvlPart: 'Ruolo', shDesc: 'Descrizione', shNoScenes: 'Ancora nessuna scena.', shSummary: '{r} ruoli', shVisible: 'Pianificazione visibile agli attori',
       jmTag: 'Responsabile Jass', mMakeJm: 'Nomina responsabile Jass', mRevokeJm: 'Revoca i diritti di responsabile Jass', jmGranted: 'Impostato come responsabile Jass', jmRevoked: 'Diritti di responsabile Jass revocati', cmTag: 'Responsabile Chilbi', crmTag: 'Responsabile Chränzli', mMakeCm: 'Nomina responsabile Chilbi', mRevokeCm: 'Revoca i diritti di responsabile Chilbi', mMakeCrm: 'Nomina responsabile Chränzli', mRevokeCrm: 'Revoca i diritti di responsabile Chränzli', cmGranted: 'Impostato come responsabile Chilbi', cmRevoked: 'Diritti di responsabile Chilbi revocati', crmGranted: 'Impostato come responsabile Chränzli', crmRevoked: 'Diritti di responsabile Chränzli revocati', grpActive: 'Membri attivi', grpPassive: 'Membri passivi', mMakePassive: 'Rendi membro passivo', mMakeActive: 'Rendi membro attivo', passiveSet: 'Impostato come membro passivo', activeSet: 'Impostato come membro attivo', jsUpcoming: 'Jassmaster in arrivo', jsPast: 'Jassmasters passati'
     },
 
@@ -332,14 +356,14 @@
       titleTrainings: 'Trainingsplan', titleEvents: 'Vereinsanlässe',
       subTrainings: 'Di nächschte {n} Termin', subEvents: 'Die Vereinsaalässe sind planet', moreDates: 'Wiitere Termin ({n})',
       emptyTrTitle: 'Es sind no kei Trainings planet.', emptyTrAdmin: 'Leg im Bereich «Verwalte» en Trainingstag fescht.', emptyTrMember: 'D Admins leged d Trainingstäg fescht.',
-      emptyEvTitle: 'Im Momänt sind kei Events planet.', emptyEvAdmin: 'Leg im Bereich «Verwalte» en Event aa.', emptyEvMember: 'D Admins leged neui Events aa.',
+      emptyEvTitle: 'Im Momänt sind kei Events planet.', emptyEvAdmin: 'Leg im Bereich «Verwalte» en Event aa.', emptyEvMember: 'D Event Manager leged neui Events aa.',
       trainingWord: 'Training', trCancelled: 'Training abgsait', yes: 'Debii', no: 'Nöd debii', participants: 'Teilnehmer',
       ariaTr: '{yes} Teilnehmer, {no} nöd debii. Teilnehmerlischte {action}', ariaEv: '{n} Teilnehmer. Teilnehmerlischte {action}',
       listOpen: 'ufmache', listClose: 'zuemache',
       hYes: 'Debii ({n})', hNo: 'Nöd debii ({n})', hOpen: 'No kei Antwort ({n})', hSolo: 'Elei debii ({n})', hDuo: 'Zu zwöit debii ({n} Mitglieder, {p} Persone)',
       nobody: 'Niemer', you: '(du)', cancelledTag: 'Abgsait', cancelledLow: 'abgsait', changedLow: 'gänderet',
       timePlace: '{time} Uhr, {place}', atTime: '{time} Uhr', calAdd: 'Im Kaländer spichere', solo: 'Elei', duo: 'Zu zwöit',
-      secRules: 'Standard Training', secExtra: 'Extra Training', secUpcoming: 'Trainingsplan verwalte', secEvents: 'Events', secMembers: 'Gruppe',
+      secRules: 'Standard Training', secExtra: 'Extra Training', secUpcoming: 'Trainingsplan verwalte', secEvents: 'Events', secMembers: 'Rolle',
       addNew: 'Neu erfasse', addClose: 'Erfassig zuemache',
       adminTitle: 'Admin Console', titleCC: 'Chilbi & Chränzli', titleJass: 'Jass-Masters', adminSub: 'Nur für Admins sichtbar', rulesIntro: 'Standard-Trainings pro Wuche',
       weekday: 'Wuchetag', time: 'Uhrziit', place: 'Ort', date: 'Datum', label: 'Bezeichnig',
@@ -351,7 +375,7 @@
       phPlaceExtra: 'z. B. Sportaalag Süd', addExtra: 'Es wiiters Training hinzuefüege', upcomingEmpty: 'Kei kommendi Trainings.',
       phEventTitle: 'z. B. Fondue-Plausch', phEventPlace: 'z. B. Vereinshuus', addEvent: 'Event hinzuefüege', rsvpRequired: 'Aamäldig erforderlich',
       eventsEmpty: 'No kei Events. Tipp uf «+», zum de erscht z erfasse.',
-      membersIntro: 'Tipp bi enere Person uf di drei Pünkt, zum Rolle, Gruppe, PIN, Name oder Handynummere z ändere oder si z lösche. Zahnrad = Admin, Stern = Event-Manager, Glas = Chilbi/Chränzli Manager, Pokal = Jass Manager. Gescht und Friends & Family gseehnd nur igschränkti Inhalt (lueg Gruppe unde).',
+      membersIntro: 'Tipp bi enere Person uf di drei Pünkt, zum Rolle, Gruppe, PIN, Name oder Handynummere z ändere oder si z lösche. Zahnrad = Admin, Stern = Event Manager, Glas = Chilbi/Chränzli Manager, Pokal = Jass Manager. Gescht und Friends & Family gseehnd nur igschränkti Inhalt (lueg Gruppe unde).',
       memberAdd: 'Mitglied hinzuefüege', fullName: 'Vor- und Nachname', phone: 'Handynummere',
       memberAddNote: 'S Mitglied meldet sich nur mit de Handynummere aa. De PIN sind di letschte 6 Ziffere.',
       selfAdmin: 'Du bisch Admin. Du chasch dir d Rächt nöd säber entzieh.', revokeAdmin: 'Admin-Rächt entzieh: {name}', makeAdmin: 'Zum Admin mache: {name}',
@@ -372,12 +396,12 @@
       setupStep3: 'Lad d Site neu.', setupNote: 'D genau Aaleitig staht i de Datei README.md.',
       loading: 'Am Lade …',
       errFailed: 'Das hät nöd klappt', respWithdrawn: 'Antwort zruggzoge', youIn: 'Du bisch debii', youOut: 'Du bisch nöd debii', youSolo: 'Du chunsch elei', youDuo: 'Du chunsch zu zwöit',
-      phoneInvalid: 'Bitte gib e gültigi Handynummere ii, z. B. 079 123 45 67.', alreadyReg: 'Die Nummere isch scho registriert.',
+      phoneCountry: 'Land', phoneOther: 'Anderi', phoneInvalid: 'Bitte gib e gültigi Handynummere ii, z. B. 079 123 45 67.', alreadyReg: 'Die Nummere isch scho registriert.',
       memberAdded: '{name} isch hinzuegfüegt worde.', addFailed: 'Hinzuefüege nöd möglich: {reason}', unknownError: 'Unbekannte Fähler',
       authInvalid: 'Handynummere oder PIN stimmt nöd. Wenn du din PIN gänderet hesch, träg en im Fäld PIN ii.',
       authAlready: 'Die Nummere isch scho registriert. Bitte mäld di aa.', authCode: 'Registrierig nöd möglich. Bitte prüef de Vereinscode.',
       authRate: 'Zviel Versüech. Bitte wart en Momänt.', authPin: 'De PIN muess us 6 Ziffere bestah.', authFail: 'Aamäldig fählgschlage. Bitte probier s nomal.',
-      pinExact: 'De PIN muess us gnau 6 Ziffere bestah.', confirmEmailOff: 'Bitte schalt i Supabase «Confirm email» ab (gsehsch README).',
+      pinExact: 'De PIN muess us gnau 6 Ziffere bestah.', pinWeak: 'De PIN isch z eifach (z. B. 111111 oder 123456) oder gliich wie dr Standard-PIN. Bitte wähl en andere.', confirmEmailOff: 'Bitte schalt i Supabase «Confirm email» ab (gsehsch README).',
       loadFail: 'D Date hend nöd chöne glade werde. Isch s Datebank-Schema uusgfüehrt worde?',
       calFile: 'Öffne d Datei «{name}», zum de Termin im Kaländer z spichere.', calFail: 'De Kaländereintrag hät nöd chöne erstellt werde.',
       pinResetOk: 'PIN uf Standard zruggsetzt', pinResetFail: 'De PIN hät nöd chöne zruggsetzt werde.',
@@ -391,13 +415,19 @@
       ruleAdded: 'Trainingstag hinzuegfüegt', extraAdded: 'Training hinzuegfüegt', eventAdded: 'Event hinzuegfüegt',
       ruleChanged: 'Trainingstag gänderet', trChanged: 'Training gänderet', eventChanged: 'Event gänderet', langSaved: 'Sprach gspeicheret',
       guestTag: 'Gascht', makeGuest: 'Als Gascht festlege: {name}', revokeGuest: 'Gascht-Status entferne: {name}', guestGranted: 'Als Gascht festgleit', guestRevoked: 'Gascht-Status entfernt',
-      guestCheck: 'Als Gascht hinzuefüege (gseht nur Trainings und Profil)', guestInfo: 'Du hesch en Gascht-Zuegang. Du gsehsch d Trainings und dis Profil.', supporterInfo: 'Du bisch bi Friends & Family. Du gsehsch d Trainings, de Jass und dis Profil.',
-      memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zum Event-Manager mache: {name}', revokeEm: 'Event-Manager-Rächt entzieh: {name}', emGranted: 'Als Event-Manager festgleit', emRevoked: 'Event-Manager-Rächt entzoge', confirmGuestLoses: '{name} het Admin-, Event-Manager-, Chilbi Manager-, Chränzli Manager- oder Jass Manager-Rächt. Die Änderig nimmt die Rächt wäg. Wiitermache?', selfMember: 'Du bisch Mitglied. Du chasch di nöd säber zum Gascht mache.', rolesTitle: 'Rolle', emSub: 'Do verwaltisch du d Events.', ccManagerSub: 'C&C verwaltisch im Reiter «C&C».',
+      guestCheck: 'Als Gascht hinzuefüege (gseht nur Trainings und Profil)', guestInfo: 'Du hesch en Gascht-Zuegang. Du gsehsch d Trainings und dis Profil.', supporterInfo: 'Du bisch bi Friends & Family. Du gsehsch d Trainings, de Jass, C&C und dis Profil.',
+      memberTag: 'Mitglied', emTag: 'Event Manager', makeEm: 'Zum Event Manager mache: {name}', revokeEm: 'Event Manager-Rächt entzieh: {name}', emGranted: 'Als Event Manager festgleit', emRevoked: 'Event Manager-Rächt entzoge', confirmGuestLoses: '{name} het Admin-, Event Manager-, Chilbi Manager-, Chränzli Manager- oder Jass Manager-Rächt. Die Änderig nimmt die Rächt wäg. Wiitermache?', selfMember: 'Du bisch Mitglied. Du chasch di nöd säber zum Gascht mache.', rolesTitle: 'Rolle', emSub: 'Do verwaltisch du d Events.', ccManagerSub: 'C&C verwaltisch im Reiter «C&C».',
       infoShow: 'Erklärig aazeige', infoHide: 'Erklärig verstecke',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäscht', ccOthers: 'Anderi', ccEmpty: 'No kei Aalässe erfasst.', ccNoDays: 'No kei Täg erfasst.', ccSummary: '{s} Schichte · {r} Rolle', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Aalass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktione', ccAddEvent: 'Aalass hinzuefüege', ccAddDay: 'Tag hinzuefüege', ccAddShift: 'Schicht hinzuefüege', ccAddRole: 'Rolle hinzuefüege', ccChange: 'Ändere', ccCopy: 'Kopiere', ccClose: 'Schliesse', ccNameOpt: 'Name (freiwillig)', ccStart: 'Start', ccEnd: 'Änd', ccActive: 'Aktiv', ccPersons: 'Verantwortlichi', ccSearch: 'Näme sueche', ccOtherPerson: 'Anderi Person (nöd i de App)', ccAdd: 'Hinzuefüege', ccDidYouMean: 'Meinsch {name}?', ccNobody: 'No niemer', ccConfirmDel: '«{name}» lösche? Alles, wo drunder erfasst isch, wird au glöscht.', ccConfirmDelRole: '«{name}» lösche?', ccCopyEventNote: 'D Kopie isch zerscht inaktiv. Alli Täg wärded um 52 Wuche verschobe, damit d Wuchetäg glich bliibed.', ccCopyDayNote: 'Schichte und Rolle wärded mit de Verantwortliche kopiert.', ccSaved: 'Gspeicheret', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} isch no nöd i de App. Mit de Handynummere chasch d Person als Gascht hinzuefüege.', ccAsGuest: 'Als Gascht hinzuefüege', ccNeedName: 'Gib en Name ii.', ccSetup: 'Für C&C muess s Datebank-Schema aktualisiert wärde (supabase/schema.sql).', grpCandidate: 'Kandidate', candidateTitle: 'Merci vielmal für dis Interässe', candidateMsg: 'Dini Afrog wird vo üsne Administratore gprüeft.', mGroupActive: 'Zum Aktivmitglied mache', mGroupPassive: 'Zum Passivmitglied mache', mGroupGuest: 'Zum Gascht mache', mGroupOther: 'Zu Friends & Family mache', mGroupCandidate: 'Zum Kandidat mache', groupChanged: 'Gruppe gänderet', jsEternal: 'Ewigi Rangliste', jsEternalHint: 'Über die letschte {n} fertige Runde', jsEternalRounds: '{n} Runde', jsEternalRound: '1 Rundi', jsVisibleHint: 'Ohni Häkli gseht nur de Admin und de Jass Manager die Rundi', evEdit: 'Event ändere', evManagePeople: 'Teilnehmer verwalte', grpSupporter: 'Friends & Family', mMakeSupporter: 'Zu Friends & Family mache', supporterSet: 'Als Friends & Family iigordnet', pinLampOk: 'Het de PIN scho gänderet', pinLampNo: 'Bruucht no de Standard-PIN', pinBannerMsg: 'Setz din persönliche PIN-Code, um alli Funktione freizschalte.', pinBannerBtn: 'PIN jetzt setze', ccPublicLabel: 'Sichtbar für alli Aktiv- und Passivmitglieder', ccPublicOn: 'C&C isch jetzt für alli sichtbar (nur zum Lääse)', ccPublicOff: 'C&C isch jetzt wieder nur für Admin, Chilbi Manager und Chränzli Manager sichtbar', ccCopySuffix: 'Kopie', ccPrint: 'PDF teile', jsPrint: 'Jassmasters-Überblick als PDF', ccPdfBuilding: 'PDF wird erstellt…', ccPdfFailed: 'PDF het nöd chönne erstellt werde.',
-      mMakeAdmin: 'Zum Admin mache', mRevokeAdmin: 'Admin-Rächt entzieh', mMakeEm: 'Zum Event-Manager mache', mRevokeEm: 'Event-Manager-Rächt entzieh', mMakeGuest: 'Zum Gascht mache', mMakeMember: 'Zum Mitglied mache', mEdit: 'Name und Handynummere ändere', mEditNote: 'Mit enere neue Handynummere gilt wieder de Standard-PIN: di letschte 6 Ziffere vo de neue Nummere.', mSaved: 'Gspeicheret', mDelete: 'Mitglied lösche', mPhoneTaken: 'Die Handynummere ghört scho öpper anderem.',
+      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäscht', ccOthers: 'Anderi', ccEmpty: 'No kei Aalässe erfasst.', ccNoDays: 'No kei Täg erfasst.', ccSummary: '{s} Schichte · {r} Rolle', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Aalass', ccLvlDay: 'Tag', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktione', ccAddEvent: 'Aalass hinzuefüege', ccAddDay: 'Tag hinzuefüege', ccAddShift: 'Schicht hinzuefüege', ccAddRole: 'Rolle hinzuefüege', ccChange: 'Ändere', ccCopy: 'Kopiere', ccClose: 'Schliesse', ccNameOpt: 'Name (freiwillig)', ccStart: 'Start', ccEnd: 'Änd', ccActive: 'Aktiv', ccPersons: 'Verantwortlichi', ccSearch: 'Näme sueche', ccOtherPerson: 'Anderi Person (nöd i de App)', ccAdd: 'Hinzuefüege', ccDidYouMean: 'Meinsch {name}?', ccNobody: 'No niemer', ccConfirmDel: '«{name}» lösche? Alles, wo drunder erfasst isch, wird au glöscht.', ccConfirmDelRole: '«{name}» lösche?', ccCopyEventNote: 'D Kopie isch zerscht inaktiv. Alli Täg wärded um 52 Wuche verschobe, damit d Wuchetäg glich bliibed.', ccCopyDayNote: 'Schichte und Rolle wärded mit de Verantwortliche kopiert.', ccSaved: 'Gspeicheret', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} isch no nöd i de App. Mit de Handynummere chasch d Person als Gascht hinzuefüege.', ccAsGuest: 'Als Gascht hinzuefüege', ccNeedName: 'Gib en Name ii.', ccSetup: 'Für C&C muess s Datebank-Schema aktualisiert wärde (supabase/schema.sql).', grpCandidate: 'Kandidate', candidateTitle: 'Merci vielmal für dis Interässe', candidateMsg: 'Dini Afrog wird vo üsne Administratore gprüeft.', mGroupActive: 'Zum Aktivmitglied mache', mGroupPassive: 'Zum Passivmitglied mache', mGroupGuest: 'Zum Gascht mache', mGroupOther: 'Zu Friends & Family mache', mGroupCandidate: 'Zum Kandidat mache', groupChanged: 'Gruppe gänderet', jsEternal: 'Ewigi Rangliste', jsEternalHint: 'Über die letschte {n} fertige Runde', jsEternalRounds: '{n} Runde', jsEternalRound: '1 Rundi', jsVisibleHint: 'Ohni Häkli gseht nur de Admin und de Jass Manager die Rundi', evEdit: 'Event ändere', evManagePeople: 'Teilnehmer verwalte', grpSupporter: 'Friends & Family', mMakeSupporter: 'Zu Friends & Family mache', supporterSet: 'Als Friends & Family iigordnet', pinLampOk: 'Het de PIN scho gänderet', pinLampNo: 'Bruucht no de Standard-PIN', pinBannerMsg: 'Setz din persönliche PIN-Code, um alli Funktione freizschalte.', pinBannerBtn: 'PIN jetzt setze', ccPublicLabel: 'Sichtbar für alli Aktiv- und Passivmitglieder', ccPublicOn: 'C&C isch jetzt für alli sichtbar (nur zum Lääse)', ccPublicOff: 'C&C isch jetzt wieder nur für Admin, Chilbi Manager und Chränzli Manager sichtbar', ccCopySuffix: 'Kopie', ccLegendMe: 'Ich', ccPrint: 'PDF teile', jsPrint: 'Jassmasters-Überblick als PDF', ccPdfBuilding: 'PDF wird erstellt…', ccPdfFailed: 'PDF het nöd chönne erstellt werde.',
+      mMakeAdmin: 'Zum Admin mache', mRevokeAdmin: 'Admin-Rächt entzieh', mMakeEm: 'Zum Event Manager mache', mRevokeEm: 'Event Manager-Rächt entzieh', mMakeGuest: 'Zum Gascht mache', mMakeMember: 'Zum Mitglied mache', mEdit: 'Name und Handynummere ändere', mEditNote: 'Mit enere neue Handynummere gilt wieder de Standard-PIN: di letschte 6 Ziffere vo de neue Nummere.', mSaved: 'Gspeicheret', mDelete: 'Mitglied lösche', mPhoneTaken: 'Die Handynummere ghört scho öpper anderem.',
+      jsLocked: 'Gsperrt – tippe zum Entsperre', jsUnlocked: 'Entsperrt – tippe zum Sperre', jsEditRow: 'Iitrag bearbeite', jsRankDiff: 'Differänz',
       navJass: 'Jass', jsParticipants: 'Teilnehmer', jsSchedule: 'Spielplan', jsRanking: 'Tagesrangliste', jsRound: 'Rundi {n}', jsTable: 'Tisch {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Spieler {n}', jsFree: 'frei', jsEmpty: 'No kei Jassmasters erfasst.', jsNoDays: 'No kei Datum erfasst.', jsAddSeries: 'Jassmasters hinzuefüege', jsAddDay: 'Datum hinzuefüege', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jasstag', jsPick: 'Spieler {n} uswähle', jsClear: 'Platz freigäh', jsAlready: 'scho Spieler {n}', jsPoints: 'Pünkt', jsGames: '{n} Spiel', jsPtsAbbr: 'Pkt.', jsGame: '{n} Spiel', jsNoPoints: 'No kei Pünkt erfasst.', jsHint: 'Träg d Pünkt bim Siegerteam ii. S ander Team überchunnt si automatisch negativ.', jsSetup: 'Für Jass muess s Datebank-Schema aktualisiert wärde (supabase/schema.sql).', jsFinish: 'Jassmaster abschliesse', jsConfirmFinish: '«{name}» abschliesse? Chunt under Vergangeni Jassmasters und isch denn nur no als Rangliste sichtbar. Wiitermache?', jsFinished: 'Als abgschlosse markiert', jsEditRanking: 'Rangliste bearbeite', jsRankName: 'Name', jsRankPoints: 'Pünkt', jsAddRow: 'Zile dezuefüege', jsNoRows: 'No niemer erfasst.',
+      shPlay: 'Do abspile', shPlayStop: 'Player zuemache',
+      shHint: 'Hiwis', shHintCheck: 'Als Hiwis markiere (staht vor de Akt)',
+      shVideo: 'Video', shYoutube: 'YouTube-Link', shOpenYoutube: 'Uf YouTube uuftue', shVideoBad: 'Bitte en YouTube-Link aagäh (https://www.youtube.com/… oder https://youtu.be/…).',
+      shMusic: 'Musig', shSpotify: 'Spotify-Link', shOpenSpotify: 'In Spotify uuftue', shMusicBad: 'Bitte en Spotify-Link aagäh (https://open.spotify.com/…).',
+      navShow: 'Show', titleShow: 'Chränzli Drehbuch', dirTag: 'Regisseur', actTag: 'Schauspiler', mMakeDir: 'Zum Regisseur mache', mRevokeDir: 'Regisseur-Rächt wäg nää', mMakeActor: 'Zum Schauspiler mache', mRevokeActor: 'Schauspiler-Rolle wäg nää', dirGranted: 'Als Regisseur festgleit', dirRevoked: 'Regisseur-Rächt wäggnoh', actorGranted: 'Als Schauspiler festgleit', actorRevoked: 'Schauspiler-Rolle wäggnoh', shEmpty: 'No kei Akt erfasst.', shSetup: 'D Show-Tabälle fehle. Bitte PRD_v97_show.sql im SQL Editor usfüehre.', shAddAct: 'Akt hinzuefüege', shAddScene: 'Szene hinzuefüege', shAddPart: 'Rolle hinzuefüege', shLvlAll: 'Show', shLvlAct: 'Akt', shLvlScene: 'Szene', shLvlPart: 'Rolle', shDesc: 'Beschrybig', shNoScenes: 'No kei Szene erfasst.', shSummary: '{r} Rolle', shVisible: 'Planig für Schauspiler sichtbar',
       jmTag: 'Jass Manager', mMakeJm: 'Zum Jass Manager mache', mRevokeJm: 'Jass Manager-Rächt wäg nää', jmGranted: 'Als Jass Manager festgleit', jmRevoked: 'Jass Manager-Rächt wäggnoh', cmTag: 'Chilbi Manager', crmTag: 'Chränzli Manager', mMakeCm: 'Zum Chilbi Manager mache', mRevokeCm: 'Chilbi Manager-Rächt wäg nää', mMakeCrm: 'Zum Chränzli Manager mache', mRevokeCrm: 'Chränzli Manager-Rächt wäg nää', cmGranted: 'Als Chilbi Manager festgleit', cmRevoked: 'Chilbi Manager-Rächt wäggnoh', crmGranted: 'Als Chränzli Manager festgleit', crmRevoked: 'Chränzli Manager-Rächt wäggnoh', grpActive: 'Aktivmitglieder', grpPassive: 'Passivmitglieder', mMakePassive: 'Zum Passivmitglied mache', mMakeActive: 'Zum Aktivmitglied mache', passiveSet: 'Als Passivmitglied festgleit', activeSet: 'Als Aktivmitglied festgleit', jsUpcoming: 'Aastaahts Jassmaster', jsPast: 'Vergangeni Jassmasters'
     },
 
@@ -408,14 +438,14 @@
       titleTrainings: 'Trainingsplan', titleEvents: 'Vereinsanlässe',
       subTrainings: 'Найближчі {n} занять', subEvents: 'Заплановані заходи клубу', moreDates: 'Інші дати ({n})',
       emptyTrTitle: 'Тренувань поки не заплановано.', emptyTrAdmin: 'Встановіть день тренування в розділі «Керування».', emptyTrMember: 'Дні тренувань визначають адміністратори.',
-      emptyEvTitle: 'Наразі подій не заплановано.', emptyEvAdmin: 'Створіть подію в розділі «Керування».', emptyEvMember: 'Нові події створюють адміністратори.',
+      emptyEvTitle: 'Наразі подій не заплановано.', emptyEvAdmin: 'Створіть подію в розділі «Керування».', emptyEvMember: 'Нові події створюють Event Manager.',
       trainingWord: 'Тренування', trCancelled: 'Тренування скасовано', yes: 'Буду', no: 'Не буду', participants: 'Учасники',
       ariaTr: '{yes} учасників, {no} не буде. {action} список учасників', ariaEv: '{n} учасників. {action} список учасників',
       listOpen: 'Відкрити', listClose: 'Закрити',
       hYes: 'Будуть ({n})', hNo: 'Не будуть ({n})', hOpen: 'Ще немає відповіді ({n})', hSolo: 'Самі ({n})', hDuo: 'Удвох ({n} учасників, {p} осіб)',
       nobody: 'Нікого', you: '(ви)', cancelledTag: 'Скасовано', cancelledLow: 'скасовано', changedLow: 'змінено',
       timePlace: '{time}, {place}', atTime: '{time}', calAdd: 'Додати до календаря', solo: 'Сам(а)', duo: 'Удвох',
-      secRules: 'Стандартне тренування', secExtra: 'Додаткове тренування', secUpcoming: 'Керувати розкладом тренувань', secEvents: 'Події', secMembers: 'Групи',
+      secRules: 'Стандартне тренування', secExtra: 'Додаткове тренування', secUpcoming: 'Керувати розкладом тренувань', secEvents: 'Події', secMembers: 'Ролі',
       addNew: 'Додати', addClose: 'Закрити форму',
       adminTitle: 'Admin Console', titleCC: 'Chilbi & Chränzli', titleJass: 'Jass-Masters', adminSub: 'Видно лише адміністраторам', rulesIntro: 'Стандартні тренування щотижня',
       weekday: 'День тижня', time: 'Час', place: 'Місце', date: 'Дата', label: 'Назва',
@@ -427,7 +457,7 @@
       phPlaceExtra: 'напр. спортивний комплекс «Південь»', addExtra: 'Додати тренування', upcomingEmpty: 'Найближчих тренувань немає.',
       phEventTitle: 'напр. вечір фондю', phEventPlace: 'напр. клубний будинок', addEvent: 'Додати подію', rsvpRequired: 'Реєстрація обов\'язкова',
       eventsEmpty: 'Подій ще немає. Натисніть «+», щоб додати першу.',
-      membersIntro: 'Натисніть три крапки біля людини, щоб змінити ролі, групу, PIN, ім’я чи номер, або видалити її. Шестерня = адмін, зірка = Event-Manager, келих = Chilbi/Chränzli Manager, кубок = Jass Manager. Гості та Friends & Family бачать лише обмежений вміст (див. групи нижче).',
+      membersIntro: 'Натисніть три крапки біля людини, щоб змінити ролі, групу, PIN, ім’я чи номер, або видалити її. Шестерня = адмін, зірка = Event Manager, келих = Chilbi/Chränzli Manager, кубок = Jass Manager. Гості та Friends & Family бачать лише обмежений вміст (див. групи нижче).',
       memberAdd: 'Додати учасника', fullName: 'Ім’я та прізвище', phone: 'Номер мобільного',
       memberAddNote: 'Учасник входить лише за номером мобільного. PIN — останні 6 цифр.',
       selfAdmin: 'Ви адміністратор. Ви не можете забрати права в себе самі.', revokeAdmin: 'Забрати права адміністратора: {name}', makeAdmin: 'Призначити адміністратором: {name}',
@@ -448,12 +478,12 @@
       setupStep3: 'Оновіть сторінку.', setupNote: 'Детальна інструкція є у файлі README.md.',
       loading: 'Завантаження …',
       errFailed: 'Не вдалося', respWithdrawn: 'Відповідь скасовано', youIn: 'Ви будете', youOut: 'Ви не будете', youSolo: 'Ви прийдете самі', youDuo: 'Ви прийдете удвох',
-      phoneInvalid: 'Введіть дійсний номер мобільного, напр. 079 123 45 67.', alreadyReg: 'Цей номер уже зареєстровано.',
+      phoneCountry: 'Країна', phoneOther: 'Інша', phoneInvalid: 'Введіть дійсний номер мобільного, напр. 079 123 45 67.', alreadyReg: 'Цей номер уже зареєстровано.',
       memberAdded: '{name} додано.', addFailed: 'Не вдалося додати: {reason}', unknownError: 'Невідома помилка',
       authInvalid: 'Номер мобільного або PIN неправильні. Якщо ви змінювали PIN, введіть його в полі PIN.',
       authAlready: 'Цей номер уже зареєстровано. Будь ласка, увійдіть.', authCode: 'Реєстрація неможлива. Перевірте код клубу.',
       authRate: 'Забагато спроб. Зачекайте хвилинку.', authPin: 'PIN має складатися з 6 цифр.', authFail: 'Не вдалося увійти. Спробуйте ще раз.',
-      pinExact: 'PIN має складатися рівно з 6 цифр.', confirmEmailOff: 'Вимкніть у Supabase «Confirm email» (див. README).',
+      pinExact: 'PIN має складатися рівно з 6 цифр.', pinWeak: 'Цей PIN надто простий (наприклад, 111111 або 123456) або збігається зі стандартним. Оберіть інший.', confirmEmailOff: 'Вимкніть у Supabase «Confirm email» (див. README).',
       loadFail: 'Не вдалося завантажити дані. Чи було виконано схему бази даних?',
       calFile: 'Відкрийте файл «{name}», щоб зберегти подію в календарі.', calFail: 'Не вдалося створити запис у календарі.',
       pinResetOk: 'PIN повернено до значення за замовчуванням', pinResetFail: 'Не вдалося скинути PIN.',
@@ -467,13 +497,19 @@
       ruleAdded: 'День тренування додано', extraAdded: 'Тренування додано', eventAdded: 'Подію додано',
       ruleChanged: 'День тренування змінено', trChanged: 'Тренування змінено', eventChanged: 'Подію змінено', langSaved: 'Мову збережено',
       guestTag: 'Гість', makeGuest: 'Призначити гостем: {name}', revokeGuest: 'Забрати статус гостя: {name}', guestGranted: 'Призначено гостем', guestRevoked: 'Статус гостя знято',
-      guestCheck: 'Додати як гостя (бачить лише тренування та профіль)', guestInfo: 'У вас гостьовий доступ. Ви бачите тренування та свій профіль.', supporterInfo: 'Ти в групі Friends & Family. Ти бачиш тренування, Джас і свій профіль.',
-      memberTag: 'Член клубу', emTag: 'Менеджер подій', makeEm: 'Призначити менеджером подій: {name}', revokeEm: 'Забрати права менеджера подій: {name}', emGranted: 'Призначено менеджером подій', emRevoked: 'Права менеджера подій забрано', confirmGuestLoses: '{name} має права Admin, Event-Manager, Chilbi Manager, Chränzli Manager або Jass Manager. Ця зміна забере ці права. Продовжити?', selfMember: 'Ви член клубу. Ви не можете призначити себе гостем.', rolesTitle: 'Ролі', emSub: 'Тут ви керуєте подіями.', ccManagerSub: 'C&C керуєш у вкладці «C&C».',
+      guestCheck: 'Додати як гостя (бачить лише тренування та профіль)', guestInfo: 'У вас гостьовий доступ. Ви бачите тренування та свій профіль.', supporterInfo: 'Ти в групі Friends & Family. Ти бачиш тренування, Джас, C&C і свій профіль.',
+      memberTag: 'Член клубу', emTag: 'Менеджер подій', makeEm: 'Призначити менеджером подій: {name}', revokeEm: 'Забрати права менеджера подій: {name}', emGranted: 'Призначено менеджером подій', emRevoked: 'Права менеджера подій забрано', confirmGuestLoses: '{name} має права Admin, Event Manager, Chilbi Manager, Chränzli Manager або Jass Manager. Ця зміна забере ці права. Продовжити?', selfMember: 'Ви член клубу. Ви не можете призначити себе гостем.', rolesTitle: 'Ролі', emSub: 'Тут ви керуєте подіями.', ccManagerSub: 'C&C керуєш у вкладці «C&C».',
       infoShow: 'Показати пояснення', infoHide: 'Сховати пояснення',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Члени клубу', ccGuests: 'Гості', ccOthers: 'Інші', ccEmpty: 'Заходів ще немає.', ccNoDays: 'Днів ще немає.', ccSummary: 'Змін: {s} · ролей: {r}', ccLvlAll: 'Chränzli і Chilbi', ccLvlEvent: 'Захід', ccLvlDay: 'День', ccLvlShift: 'Зміна', ccLvlRole: 'Роль', ccActions: 'Дії', ccAddEvent: 'Додати захід', ccAddDay: 'Додати день', ccAddShift: 'Додати зміну', ccAddRole: 'Додати роль', ccChange: 'Змінити', ccCopy: 'Копіювати', ccClose: 'Закрити', ccNameOpt: 'Назва (необов’язково)', ccStart: 'Початок', ccEnd: 'Кінець', ccActive: 'Активний', ccPersons: 'Відповідальні', ccSearch: 'Пошук імен', ccOtherPerson: 'Інша особа (не в застосунку)', ccAdd: 'Додати', ccDidYouMean: 'Можливо, {name}?', ccNobody: 'Ще нікого', ccConfirmDel: 'Видалити «{name}»? Усе, що в ньому, також буде видалено.', ccConfirmDelRole: 'Видалити «{name}»?', ccCopyEventNote: 'Копія спочатку неактивна. Усі дні зсуваються на 52 тижні, щоб дні тижня збігалися.', ccCopyDayNote: 'Зміни й ролі копіюються разом із відповідальними.', ccSaved: 'Збережено', ccCopied: 'Скопійовано', ccDeleted: 'Видалено', ccNotInApp: '{name} ще немає в застосунку. За номером мобільного можна додати цю особу як гостя.', ccAsGuest: 'Додати як гостя', ccNeedName: 'Введіть ім’я.', ccSetup: 'Для C&C потрібно оновити схему бази даних (supabase/schema.sql).', grpCandidate: 'Кандидати', candidateTitle: 'Щиро дякуємо за твій інтерес', candidateMsg: 'Твій запит розглядають наші адміністратори.', mGroupActive: 'Зробити активним членом', mGroupPassive: 'Зробити пасивним членом', mGroupGuest: 'Зробити гостем', mGroupOther: 'Перевести у Friends & Family', mGroupCandidate: 'Зробити кандидатом', groupChanged: 'Групу змінено', jsEternal: 'Вічний рейтинг', jsEternalHint: 'За останні {n} завершених раундів', jsEternalRounds: '{n} раундів', jsEternalRound: '1 раунд', jsVisibleHint: 'Без позначки цей раунд бачать лише Admin і Jass Manager', evEdit: 'Змінити подію', evManagePeople: 'Керувати учасниками', grpSupporter: 'Friends & Family', mMakeSupporter: 'Перевести у Friends & Family', supporterSet: 'Віднесено до Friends & Family', pinLampOk: 'Вже змінив(ла) PIN-код', pinLampNo: 'Ще користується стандартним PIN-кодом', pinBannerMsg: 'Будь ласка, встанови свій особистий PIN-код, щоб розблокувати всі функції.', pinBannerBtn: 'Встановити PIN', ccPublicLabel: 'Видно всім активним і пасивним членам', ccPublicOn: 'C&C тепер видно всім (лише перегляд)', ccPublicOff: 'C&C знову видно лише Admin, Chilbi Manager і Chränzli Manager', ccCopySuffix: 'копія', ccPrint: 'Поділитися PDF', jsPrint: 'Огляд Jassmasters як PDF', ccPdfBuilding: 'Створення PDF…', ccPdfFailed: 'Не вдалося створити PDF.',
+      navCC: 'C&C', ccMembers: 'Члени клубу', ccGuests: 'Гості', ccOthers: 'Інші', ccEmpty: 'Заходів ще немає.', ccNoDays: 'Днів ще немає.', ccSummary: 'Змін: {s} · ролей: {r}', ccLvlAll: 'Chränzli і Chilbi', ccLvlEvent: 'Захід', ccLvlDay: 'День', ccLvlShift: 'Зміна', ccLvlRole: 'Роль', ccActions: 'Дії', ccAddEvent: 'Додати захід', ccAddDay: 'Додати день', ccAddShift: 'Додати зміну', ccAddRole: 'Додати роль', ccChange: 'Змінити', ccCopy: 'Копіювати', ccClose: 'Закрити', ccNameOpt: 'Назва (необов’язково)', ccStart: 'Початок', ccEnd: 'Кінець', ccActive: 'Активний', ccPersons: 'Відповідальні', ccSearch: 'Пошук імен', ccOtherPerson: 'Інша особа (не в застосунку)', ccAdd: 'Додати', ccDidYouMean: 'Можливо, {name}?', ccNobody: 'Ще нікого', ccConfirmDel: 'Видалити «{name}»? Усе, що в ньому, також буде видалено.', ccConfirmDelRole: 'Видалити «{name}»?', ccCopyEventNote: 'Копія спочатку неактивна. Усі дні зсуваються на 52 тижні, щоб дні тижня збігалися.', ccCopyDayNote: 'Зміни й ролі копіюються разом із відповідальними.', ccSaved: 'Збережено', ccCopied: 'Скопійовано', ccDeleted: 'Видалено', ccNotInApp: '{name} ще немає в застосунку. За номером мобільного можна додати цю особу як гостя.', ccAsGuest: 'Додати як гостя', ccNeedName: 'Введіть ім’я.', ccSetup: 'Для C&C потрібно оновити схему бази даних (supabase/schema.sql).', grpCandidate: 'Кандидати', candidateTitle: 'Щиро дякуємо за твій інтерес', candidateMsg: 'Твій запит розглядають наші адміністратори.', mGroupActive: 'Зробити активним членом', mGroupPassive: 'Зробити пасивним членом', mGroupGuest: 'Зробити гостем', mGroupOther: 'Перевести у Friends & Family', mGroupCandidate: 'Зробити кандидатом', groupChanged: 'Групу змінено', jsEternal: 'Вічний рейтинг', jsEternalHint: 'За останні {n} завершених раундів', jsEternalRounds: '{n} раундів', jsEternalRound: '1 раунд', jsVisibleHint: 'Без позначки цей раунд бачать лише Admin і Jass Manager', evEdit: 'Змінити подію', evManagePeople: 'Керувати учасниками', grpSupporter: 'Friends & Family', mMakeSupporter: 'Перевести у Friends & Family', supporterSet: 'Віднесено до Friends & Family', pinLampOk: 'Вже змінив(ла) PIN-код', pinLampNo: 'Ще користується стандартним PIN-кодом', pinBannerMsg: 'Будь ласка, встанови свій особистий PIN-код, щоб розблокувати всі функції.', pinBannerBtn: 'Встановити PIN', ccPublicLabel: 'Видно всім активним і пасивним членам', ccPublicOn: 'C&C тепер видно всім (лише перегляд)', ccPublicOff: 'C&C знову видно лише Admin, Chilbi Manager і Chränzli Manager', ccCopySuffix: 'копія', ccLegendMe: 'Я', ccPrint: 'Поділитися PDF', jsPrint: 'Огляд Jassmasters як PDF', ccPdfBuilding: 'Створення PDF…', ccPdfFailed: 'Не вдалося створити PDF.',
       mMakeAdmin: 'Призначити адміністратором', mRevokeAdmin: 'Забрати права адміністратора', mMakeEm: 'Призначити менеджером подій', mRevokeEm: 'Забрати права менеджера подій', mMakeGuest: 'Зробити гостем', mMakeMember: 'Зробити членом клубу', mEdit: 'Змінити ім’я та номер мобільного', mEditNote: 'З новим номером знову діє PIN за замовчуванням: останні 6 цифр нового номера.', mSaved: 'Збережено', mDelete: 'Видалити учасника', mPhoneTaken: 'Цей номер мобільного вже належить іншій особі.',
+      jsLocked: 'Заблоковано – торкніться, щоб розблокувати', jsUnlocked: 'Розблоковано – торкніться, щоб заблокувати', jsEditRow: 'Редагувати запис', jsRankDiff: 'Різниця',
       navJass: 'Джас', jsParticipants: 'Учасники', jsSchedule: 'Розклад ігор', jsRanking: 'Рейтинг дня', jsRound: 'Раунд {n}', jsTable: 'Стіл {t}', jsTeam1: 'Команда I', jsTeam2: 'Команда II', jsPlayer: 'Гравець {n}', jsFree: 'вільно', jsEmpty: 'Jassmasters ще немає.', jsNoDays: 'Дати ще немає.', jsAddSeries: 'Додати Jassmasters', jsAddDay: 'Додати дату', jsLvlSeries: 'Jassmasters', jsLvlDay: 'День джасу', jsPick: 'Вибрати гравця {n}', jsClear: 'Звільнити місце', jsAlready: 'уже гравець {n}', jsPoints: 'Очки', jsGames: 'Ігор: {n}', jsPtsAbbr: 'очк.', jsGame: 'Ігор: {n}', jsNoPoints: 'Очок ще немає.', jsHint: 'Вкажіть очки команди-переможця. Інша команда автоматично отримує їх зі знаком мінус.', jsSetup: 'Для джасу потрібно оновити схему бази даних (supabase/schema.sql).', jsFinish: 'Завершити Jassmaster', jsConfirmFinish: 'Завершити «{name}»? Його буде переміщено до минулих Jassmasters і надалі буде видно лише рейтинг. Продовжити?', jsFinished: 'Позначено як завершене', jsEditRanking: 'Редагувати рейтинг', jsRankName: 'Ім\'я', jsRankPoints: 'Очки', jsAddRow: 'Додати рядок', jsNoRows: 'Ще нікого не додано.',
+      shPlay: 'Відтворити тут', shPlayStop: 'Закрити плеєр',
+      shHint: 'Примітка', shHintCheck: 'Позначити як примітку (перед діями)',
+      shVideo: 'Відео', shYoutube: 'Посилання YouTube', shOpenYoutube: 'Відкрити на YouTube', shVideoBad: 'Вкажіть посилання YouTube (https://www.youtube.com/… або https://youtu.be/…).',
+      shMusic: 'Музика', shSpotify: 'Посилання Spotify', shOpenSpotify: 'Відкрити в Spotify', shMusicBad: 'Вкажіть посилання Spotify (https://open.spotify.com/…).',
+      navShow: 'Show', titleShow: 'Chränzli Drehbuch', dirTag: 'Режисер', actTag: 'Актор', mMakeDir: 'Призначити режисером', mRevokeDir: 'Скасувати права режисера', mMakeActor: 'Призначити актором', mRevokeActor: 'Скасувати роль актора', dirGranted: 'Призначено режисером', dirRevoked: 'Права режисера скасовано', actorGranted: 'Призначено актором', actorRevoked: 'Роль актора скасовано', shEmpty: 'Дій ще немає.', shSetup: 'Таблиці Show відсутні. Виконайте PRD_v97_show.sql у SQL Editor.', shAddAct: 'Додати дію', shAddScene: 'Додати сцену', shAddPart: 'Додати роль', shLvlAll: 'Show', shLvlAct: 'Дія', shLvlScene: 'Сцена', shLvlPart: 'Роль', shDesc: 'Опис', shNoScenes: 'Сцен ще немає.', shSummary: '{r} ролей', shVisible: 'План видимий для акторів',
       jmTag: 'Менеджер Jass', mMakeJm: 'Призначити менеджером Jass', mRevokeJm: 'Скасувати права менеджера Jass', jmGranted: 'Призначено менеджером Jass', jmRevoked: 'Права менеджера Jass скасовано', cmTag: 'Менеджер Chilbi', crmTag: 'Менеджер Chränzli', mMakeCm: 'Призначити менеджером Chilbi', mRevokeCm: 'Скасувати права менеджера Chilbi', mMakeCrm: 'Призначити менеджером Chränzli', mRevokeCrm: 'Скасувати права менеджера Chränzli', cmGranted: 'Призначено менеджером Chilbi', cmRevoked: 'Права менеджера Chilbi скасовано', crmGranted: 'Призначено менеджером Chränzli', crmRevoked: 'Права менеджера Chränzli скасовано', grpActive: 'Активні члени', grpPassive: 'Пасивні члени', mMakePassive: 'Зробити пасивним членом', mMakeActive: 'Зробити активним членом', passiveSet: 'Призначено пасивним членом', activeSet: 'Призначено активним членом', jsUpcoming: 'Майбутній Jassmaster', jsPast: 'Минулі Jassmasters'
     },
 
@@ -483,14 +519,14 @@
       titleTrainings: 'Trainingsplan', titleEvents: 'Vereinsanlässe',
       subTrainings: 'De nächstn {n} Termine', subEvents: 'De Vereinsveranstoitungen, de gplant san', moreDates: 'Weitere Termine ({n})',
       emptyTrTitle: 'Es san no koane Trainings gplant.', emptyTrAdmin: 'Leg im Bereich «Verwoitn» an Trainingstag fest.', emptyTrMember: 'De Admins legn de Trainingstag fest.',
-      emptyEvTitle: 'Im Moment san koane Events gplant.', emptyEvAdmin: 'Leg im Bereich «Verwoitn» an Event o.', emptyEvMember: 'De Admins legn neie Events o.',
+      emptyEvTitle: 'Im Moment san koane Events gplant.', emptyEvAdmin: 'Leg im Bereich «Verwoitn» an Event o.', emptyEvMember: 'De Event Manager legn neie Events o.',
       trainingWord: 'Training', trCancelled: 'Training abgsogt', yes: 'Dabei', no: 'Ned dabei', participants: 'Teilnehmer',
       ariaTr: '{yes} Teilnehmer, {no} ned dabei. Teilnehmerlistn {action}', ariaEv: '{n} Teilnehmer. Teilnehmerlistn {action}',
       listOpen: 'aufmachn', listClose: 'zumachn',
       hYes: 'Dabei ({n})', hNo: 'Ned dabei ({n})', hOpen: 'No koa Antwort ({n})', hSolo: 'Alloa dabei ({n})', hDuo: 'Zu zweit dabei ({n} Mitglieder, {p} Leit)',
       nobody: 'Koaner', you: '(du)', cancelledTag: 'Abgsogt', cancelledLow: 'abgsogt', changedLow: 'gändert',
       timePlace: '{time} Uhr, {place}', atTime: '{time} Uhr', calAdd: 'Im Kalenda speichan', solo: 'Alloa', duo: 'Zu zweit',
-      secRules: 'Standard Training', secExtra: 'Extra Training', secUpcoming: 'Trainingsplan vawoitn', secEvents: 'Events', secMembers: 'Gruppn',
+      secRules: 'Standard Training', secExtra: 'Extra Training', secUpcoming: 'Trainingsplan vawoitn', secEvents: 'Events', secMembers: 'Rolln',
       addNew: 'Neu erfassn', addClose: 'Erfassung zumachn',
       adminTitle: 'Admin Console', titleCC: 'Chilbi & Chränzli', titleJass: 'Jass-Masters', adminSub: 'Bloß für Admins sichtbar', rulesIntro: 'Standard-Trainings pro Woch',
       weekday: 'Wochentag', time: 'Uhrzeit', place: 'Ort', date: 'Datum', label: 'Bezeichnung',
@@ -502,7 +538,7 @@
       phPlaceExtra: 'z. B. Sportanlage Süd', addExtra: 'A weiters Training dazuadoa', upcomingEmpty: 'Koane kemmandn Trainings.',
       phEventTitle: 'z. B. Fondue-Abend', phEventPlace: 'z. B. Vereinsheim', addEvent: 'Event dazuadoa', rsvpRequired: 'Anmeldung erforderlich',
       eventsEmpty: 'No koane Events. Tipp auf «+», um den erstn z erfassn.',
-      membersIntro: 'Tipp bei ana Person auf de drei Punkt, um Rolln, Gruppn, PIN, Nama oder Handynummer z ändern oder sie z löschn. Zahnradl = Admin, Stern = Event-Manager, Glasl = Chilbi/Chränzli Manager, Pokal = Jass Manager. Gäst und Friends & Family segn nur eigschränkte Inhoit (schau Gruppn untn).',
+      membersIntro: 'Tipp bei ana Person auf de drei Punkt, um Rolln, Gruppn, PIN, Nama oder Handynummer z ändern oder sie z löschn. Zahnradl = Admin, Stern = Event Manager, Glasl = Chilbi/Chränzli Manager, Pokal = Jass Manager. Gäst und Friends & Family segn nur eigschränkte Inhoit (schau Gruppn untn).',
       memberAdd: 'Mitglied dazuadoa', fullName: 'Vor- und Nachname', phone: 'Handynummer',
       memberAddNote: 'Des Mitglied meldt se bloß mit da Handynummer o. Da PIN san de letztn 6 Ziffern.',
       selfAdmin: 'Du bist Admin. Du konnst da d Rechte ned söiba entziehn.', revokeAdmin: 'Admin-Rechte entziehn: {name}', makeAdmin: 'Zum Admin macha: {name}',
@@ -523,12 +559,12 @@
       setupStep3: 'Lad d Seitn neu.', setupNote: 'De genaue Anleitung steht in da Datei README.md.',
       loading: 'Lädt …',
       errFailed: 'Des hod ned gfunktioniert', respWithdrawn: 'Antwort zruckzogn', youIn: 'Du bist dabei', youOut: 'Du bist ned dabei', youSolo: 'Du kimmst alloa', youDuo: 'Du kimmst zu zweit',
-      phoneInvalid: 'Bitte gib a gültige Handynummer ei, z. B. 079 123 45 67.', alreadyReg: 'De Nummer is scho registriert.',
+      phoneCountry: 'Land', phoneOther: 'Andere', phoneInvalid: 'Bitte gib a gültige Handynummer ei, z. B. 079 123 45 67.', alreadyReg: 'De Nummer is scho registriert.',
       memberAdded: '{name} is dazuakemma.', addFailed: 'Dazuadoa ned möglich: {reason}', unknownError: 'Unbekannter Fehler',
       authInvalid: 'Handynummer oder PIN stimmt ned. Wennst dein PIN gändert host, trag eam im Feld PIN ei.',
       authAlready: 'De Nummer is scho registriert. Bitte meld di o.', authCode: 'Registrierung ned möglich. Bitte prüf den Vereinscode.',
       authRate: 'Zvui Versuche. Bitte wart an Moment.', authPin: 'Da PIN muass aus 6 Ziffern bestehn.', authFail: 'Anmeldung gscheitert. Bitte probier s no amoi.',
-      pinExact: 'Da PIN muass aus genau 6 Ziffern bestehn.', confirmEmailOff: 'Bitte schalt in Supabase «Confirm email» aus (siehe README).',
+      pinExact: 'Da PIN muass aus genau 6 Ziffern bestehn.', pinWeak: 'Da PIN is z einfach (z. B. 111111 oder 123456) oder glei wia da Standard-PIN. Bittschön wähl an andern.', confirmEmailOff: 'Bitte schalt in Supabase «Confirm email» aus (siehe README).',
       loadFail: 'D Daten hamma ned laden kinna. Is s Datenbank-Schema ausgführt worn?',
       calFile: 'Mach de Datei «{name}» auf, um den Termin im Kalenda z speichan.', calFail: 'Da Kalendereintrag hod ned erstellt werdn kinna.',
       pinResetOk: 'PIN auf Standard zruckgstellt', pinResetFail: 'Da PIN hod ned zruckgstellt werdn kinna.',
@@ -542,13 +578,19 @@
       ruleAdded: 'Trainingstag dazuakemma', extraAdded: 'Training dazuakemma', eventAdded: 'Event dazuakemma',
       ruleChanged: 'Trainingstag gändert', trChanged: 'Training gändert', eventChanged: 'Event gändert', langSaved: 'Sprach gspeichert',
       guestTag: 'Gast', makeGuest: 'Als Gast festlegn: {name}', revokeGuest: 'Gast-Status entfernen: {name}', guestGranted: 'Als Gast festgelegt', guestRevoked: 'Gast-Status entfernt',
-      guestCheck: 'Als Gast dazuadoa (sicht bloß Trainings und Profil)', guestInfo: 'Du hast an Gast-Zugang. Du siehst de Trainings und dei Profil.', supporterInfo: 'Du bist bei Friends & Family. Du siehgst de Trainings, \'s Jass und dei Profil.',
-      memberTag: 'Mitglied', emTag: 'Event-Manager', makeEm: 'Zum Event-Manager macha: {name}', revokeEm: 'Event-Manager-Rechte entziehn: {name}', emGranted: 'Als Event-Manager festgelegt', emRevoked: 'Event-Manager-Rechte entzogn', confirmGuestLoses: 'Da {name} hod Admin-, Event-Manager-, Chilbi Manager-, Chränzli Manager- oda Jass Manager-Rechte. Dej Änderung nimmt eam de Rechte weg. Weitamacha?', selfMember: 'Du bist Mitglied. Du konnst di ned söiba zum Gast macha.', rolesTitle: 'Rollen', emSub: 'Do verwoitst du de Events.', ccManagerSub: 'C&C vawoitst in da Reitn «C&C».',
+      guestCheck: 'Als Gast dazuadoa (sicht bloß Trainings und Profil)', guestInfo: 'Du hast an Gast-Zugang. Du siehst de Trainings und dei Profil.', supporterInfo: 'Du bist bei Friends & Family. Du siehgst de Trainings, \'s Jass, C&C und dei Profil.',
+      memberTag: 'Mitglied', emTag: 'Event Manager', makeEm: 'Zum Event Manager macha: {name}', revokeEm: 'Event Manager-Rechte entziehn: {name}', emGranted: 'Als Event Manager festgelegt', emRevoked: 'Event Manager-Rechte entzogn', confirmGuestLoses: 'Da {name} hod Admin-, Event Manager-, Chilbi Manager-, Chränzli Manager- oda Jass Manager-Rechte. Dej Änderung nimmt eam de Rechte weg. Weitamacha?', selfMember: 'Du bist Mitglied. Du konnst di ned söiba zum Gast macha.', rolesTitle: 'Rollen', emSub: 'Do verwoitst du de Events.', ccManagerSub: 'C&C vawoitst in da Reitn «C&C».',
       infoShow: 'Erklärung anzoagn', infoHide: 'Erklärung wegdoa',
       ok: 'OK',
-      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäst', ccOthers: 'Andere', ccEmpty: 'No koane Veranstoitungen.', ccNoDays: 'No koane Tog.', ccSummary: '{s} Schichtn · {r} Rolln', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Veranstoitung', ccLvlDay: 'Tog', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktionen', ccAddEvent: 'Veranstoitung dazuadoa', ccAddDay: 'Tog dazuadoa', ccAddShift: 'Schicht dazuadoa', ccAddRole: 'Rolle dazuadoa', ccChange: 'Ändern', ccCopy: 'Kopiern', ccClose: 'Zumachn', ccNameOpt: 'Nama (freiwillig)', ccStart: 'Ofang', ccEnd: 'End', ccActive: 'Aktiv', ccPersons: 'Verantwortliche', ccSearch: 'Nama suacha', ccOtherPerson: 'Andere Person (ned in da App)', ccAdd: 'Dazuadoa', ccDidYouMean: 'Moanst du {name}?', ccNobody: 'No koana', ccConfirmDel: '«{name}» löschn? Ois, wos drunter erfasst is, werd aa glöscht.', ccConfirmDelRole: '«{name}» löschn?', ccCopyEventNote: 'De Kopie is zerst inaktiv. Olle Tog wern um 52 Wochn verschobn, damit de Wochentog gleich bleibn.', ccCopyDayNote: 'Schichtn und Rolln wern mit de Verantwortlichn kopiert.', ccSaved: 'Gspeichert', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} is no ned in da App. Mit da Handynummer konnst de Person ois Gast dazuadoa.', ccAsGuest: 'Ois Gast dazuadoa', ccNeedName: 'Gib an Nama ei.', ccSetup: 'Für C&C muass s Datenbank-Schema aktualisiert wern (supabase/schema.sql).', grpCandidate: 'Kandidaten', candidateTitle: 'Vergejt\'s Good fia dei Interesse', candidateMsg: 'Dei Åfroog werd vo unsane Administratorn gschaugt.', mGroupActive: 'Zum Aktivmitglied mocha', mGroupPassive: 'Zum Passivmitglied mocha', mGroupGuest: 'Zum Gost mocha', mGroupOther: 'Zu Friends & Family mocha', mGroupCandidate: 'Zum Kandidat mocha', groupChanged: 'Gruppn gändat', jsEternal: 'Ewige Rangliste', jsEternalHint: 'Übas de letztn {n} fertign Rundn', jsEternalRounds: '{n} Rundn', jsEternalRound: '1 Rund', jsVisibleHint: 'Ohne\'s Häkerl siehgt des nur da Admin und da Jass Manager', evEdit: 'Event ändan', evManagePeople: 'Teilnehma vawoitn', grpSupporter: 'Friends & Family', mMakeSupporter: 'Zu Friends & Family mocha', supporterSet: 'Als Friends & Family eigordnet', pinLampOk: 'Hod sein PIN scho gändat', pinLampNo: 'Nutzt no den Standard-PIN', pinBannerMsg: 'Bitte setz deinen persönlichn PIN-Code, um olle Funktionen freizschoitn.', pinBannerBtn: 'PIN jetzt setzn', ccPublicLabel: 'Sichtbar fia ale Aktiv- und Passivmitglieda', ccPublicOn: 'C&C is jetzt fia ale sichtbar (nur zum Lesn)', ccPublicOff: 'C&C is jetzt wieda nur fia Admin, Chilbi Manager und Chränzli Manager sichtbar', ccCopySuffix: 'Kopie', ccPrint: 'PDF teiln', jsPrint: 'Jassmasters-Überblick als PDF', ccPdfBuilding: 'PDF werd erstejt…', ccPdfFailed: 'PDF håt ned erstejt wean kinna.',
-      mMakeAdmin: 'Zum Admin macha', mRevokeAdmin: 'Admin-Rechte entziehn', mMakeEm: 'Zum Event-Manager macha', mRevokeEm: 'Event-Manager-Rechte entziehn', mMakeGuest: 'Zum Gast macha', mMakeMember: 'Zum Mitglied macha', mEdit: 'Nama und Handynummer ändern', mEditNote: 'Mit ana neia Handynummer gilt wieda da Standard-PIN: de letztn 6 Ziffern vo da neia Nummer.', mSaved: 'Gspeichert', mDelete: 'Mitglied löschn', mPhoneTaken: 'De Handynummer ghört scho wem andern.',
+      navCC: 'C&C', ccMembers: 'Mitglieder', ccGuests: 'Gäst', ccOthers: 'Andere', ccEmpty: 'No koane Veranstoitungen.', ccNoDays: 'No koane Tog.', ccSummary: '{s} Schichtn · {r} Rolln', ccLvlAll: 'Chränzli und Chilbi', ccLvlEvent: 'Veranstoitung', ccLvlDay: 'Tog', ccLvlShift: 'Schicht', ccLvlRole: 'Rolle', ccActions: 'Aktionen', ccAddEvent: 'Veranstoitung dazuadoa', ccAddDay: 'Tog dazuadoa', ccAddShift: 'Schicht dazuadoa', ccAddRole: 'Rolle dazuadoa', ccChange: 'Ändern', ccCopy: 'Kopiern', ccClose: 'Zumachn', ccNameOpt: 'Nama (freiwillig)', ccStart: 'Ofang', ccEnd: 'End', ccActive: 'Aktiv', ccPersons: 'Verantwortliche', ccSearch: 'Nama suacha', ccOtherPerson: 'Andere Person (ned in da App)', ccAdd: 'Dazuadoa', ccDidYouMean: 'Moanst du {name}?', ccNobody: 'No koana', ccConfirmDel: '«{name}» löschn? Ois, wos drunter erfasst is, werd aa glöscht.', ccConfirmDelRole: '«{name}» löschn?', ccCopyEventNote: 'De Kopie is zerst inaktiv. Olle Tog wern um 52 Wochn verschobn, damit de Wochentog gleich bleibn.', ccCopyDayNote: 'Schichtn und Rolln wern mit de Verantwortlichn kopiert.', ccSaved: 'Gspeichert', ccCopied: 'Kopiert', ccDeleted: 'Glöscht', ccNotInApp: '{name} is no ned in da App. Mit da Handynummer konnst de Person ois Gast dazuadoa.', ccAsGuest: 'Ois Gast dazuadoa', ccNeedName: 'Gib an Nama ei.', ccSetup: 'Für C&C muass s Datenbank-Schema aktualisiert wern (supabase/schema.sql).', grpCandidate: 'Kandidaten', candidateTitle: 'Vergejt\'s Good fia dei Interesse', candidateMsg: 'Dei Åfroog werd vo unsane Administratorn gschaugt.', mGroupActive: 'Zum Aktivmitglied mocha', mGroupPassive: 'Zum Passivmitglied mocha', mGroupGuest: 'Zum Gost mocha', mGroupOther: 'Zu Friends & Family mocha', mGroupCandidate: 'Zum Kandidat mocha', groupChanged: 'Gruppn gändat', jsEternal: 'Ewige Rangliste', jsEternalHint: 'Übas de letztn {n} fertign Rundn', jsEternalRounds: '{n} Rundn', jsEternalRound: '1 Rund', jsVisibleHint: 'Ohne\'s Häkerl siehgt des nur da Admin und da Jass Manager', evEdit: 'Event ändan', evManagePeople: 'Teilnehma vawoitn', grpSupporter: 'Friends & Family', mMakeSupporter: 'Zu Friends & Family mocha', supporterSet: 'Als Friends & Family eigordnet', pinLampOk: 'Hod sein PIN scho gändat', pinLampNo: 'Nutzt no den Standard-PIN', pinBannerMsg: 'Bitte setz deinen persönlichn PIN-Code, um olle Funktionen freizschoitn.', pinBannerBtn: 'PIN jetzt setzn', ccPublicLabel: 'Sichtbar fia ale Aktiv- und Passivmitglieda', ccPublicOn: 'C&C is jetzt fia ale sichtbar (nur zum Lesn)', ccPublicOff: 'C&C is jetzt wieda nur fia Admin, Chilbi Manager und Chränzli Manager sichtbar', ccCopySuffix: 'Kopie', ccLegendMe: 'I', ccPrint: 'PDF teiln', jsPrint: 'Jassmasters-Überblick als PDF', ccPdfBuilding: 'PDF werd erstejt…', ccPdfFailed: 'PDF håt ned erstejt wean kinna.',
+      mMakeAdmin: 'Zum Admin macha', mRevokeAdmin: 'Admin-Rechte entziehn', mMakeEm: 'Zum Event Manager macha', mRevokeEm: 'Event Manager-Rechte entziehn', mMakeGuest: 'Zum Gast macha', mMakeMember: 'Zum Mitglied macha', mEdit: 'Nama und Handynummer ändern', mEditNote: 'Mit ana neia Handynummer gilt wieda da Standard-PIN: de letztn 6 Ziffern vo da neia Nummer.', mSaved: 'Gspeichert', mDelete: 'Mitglied löschn', mPhoneTaken: 'De Handynummer ghört scho wem andern.',
+      jsLocked: 'Gsperrt – tippn zum Entsperrn', jsUnlocked: 'Entsperrt – tippn zum Sperrn', jsEditRow: 'Eintrag bearbeitn', jsRankDiff: 'Differenz',
       navJass: 'Jass', jsParticipants: 'Teilnehmer', jsSchedule: 'Spuiplan', jsRanking: 'Tagesranglistn', jsRound: 'Rundn {n}', jsTable: 'Tisch {t}', jsTeam1: 'Team I', jsTeam2: 'Team II', jsPlayer: 'Spuier {n}', jsFree: 'frei', jsEmpty: 'No koa Jassmasters.', jsNoDays: 'No koa Datum.', jsAddSeries: 'Jassmasters dazuadoa', jsAddDay: 'Datum dazuadoa', jsLvlSeries: 'Jassmasters', jsLvlDay: 'Jasstog', jsPick: 'Spuier {n} aussuacha', jsClear: 'Platz freigebn', jsAlready: 'scho Spuier {n}', jsPoints: 'Punkt', jsGames: '{n} Spuie', jsPtsAbbr: 'Pkt.', jsGame: '{n} Spui', jsNoPoints: 'No koane Punkt.', jsHint: 'Trag de Punkt beim Siegerteam ei. Des andere Team kriagt s automatisch negativ.', jsSetup: 'Für Jass muass s Datenbank-Schema aktualisiert wern (supabase/schema.sql).', jsFinish: 'Jassmaster åbschliassn', jsConfirmFinish: '«{name}» åbschliassn? Kummt unta Vergangene Jassmasters und is nacha nur no as Rangliste z\'sehgn. Weitamacha?', jsFinished: 'Als åbgschlossn markiat', jsEditRanking: 'Rangliste bearbeitn', jsRankName: 'Nam', jsRankPoints: 'Punkt', jsAddRow: 'Zein dazuafügn', jsNoRows: 'No niemand eigem.',
+      shPlay: 'Do oschpuin', shPlayStop: 'Player zuamocha',
+      shHint: 'Hinweis', shHintCheck: 'Als Hinweis kennzeichna (steht vor de Akt)',
+      shVideo: 'Video', shYoutube: 'YouTube-Link', shOpenYoutube: 'Af YouTube aufmacha', shVideoBad: 'Bittschön an YouTube-Link angebn (https://www.youtube.com/… oder https://youtu.be/…).',
+      shMusic: 'Musi', shSpotify: 'Spotify-Link', shOpenSpotify: 'In Spotify aufmacha', shMusicBad: 'Bittschön an Spotify-Link angebn (https://open.spotify.com/…).',
+      navShow: 'Show', titleShow: 'Chränzli Drehbuch', dirTag: 'Regisseur', actTag: 'Schauspuia', mMakeDir: 'Zum Regisseur macha', mRevokeDir: 'Regisseur-Rechte wegnehma', mMakeActor: 'Zum Schauspuia macha', mRevokeActor: 'Schauspuia-Roin wegnehma', dirGranted: 'Als Regisseur festgsetzt', dirRevoked: 'Regisseur-Rechte wegnumma', actorGranted: 'Als Schauspuia festgsetzt', actorRevoked: 'Schauspuia-Roin wegnumma', shEmpty: 'No koan Akt erfasst.', shSetup: 'De Show-Tabellen fehln. Bittschön PRD_v97_show.sql im SQL Editor ausführn.', shAddAct: 'Akt dazuadoa', shAddScene: 'Szene dazuadoa', shAddPart: 'Roin dazuadoa', shLvlAll: 'Show', shLvlAct: 'Akt', shLvlScene: 'Szene', shLvlPart: 'Roin', shDesc: 'Beschreibung', shNoScenes: 'No koane Szenen erfasst.', shSummary: '{r} Roin', shVisible: 'Planung für Schauspuia sichtbar',
       jmTag: 'Jass Manager', mMakeJm: 'Zum Jass Manager mocha', mRevokeJm: 'Jass Manager-Rechte wegnehma', jmGranted: 'Als Jass Manager festgsetzt', jmRevoked: 'Jass Manager-Rechte wegnumma', cmTag: 'Chilbi Manager', crmTag: 'Chränzli Manager', mMakeCm: 'Zum Chilbi Manager mocha', mRevokeCm: 'Chilbi Manager-Rechte wegnehma', mMakeCrm: 'Zum Chränzli Manager mocha', mRevokeCrm: 'Chränzli Manager-Rechte wegnehma', cmGranted: 'Als Chilbi Manager festgsetzt', cmRevoked: 'Chilbi Manager-Rechte wegnumma', crmGranted: 'Als Chränzli Manager festgsetzt', crmRevoked: 'Chränzli Manager-Rechte wegnumma', grpActive: 'Aktivmitglieda', grpPassive: 'Passivmitglieda', mMakePassive: 'Zum Passivmitglied mocha', mMakeActive: 'Zum Aktivmitglied mocha', passiveSet: 'Als Passivmitglied festgsetzt', activeSet: 'Als Aktivmitglied festgsetzt', jsUpcoming: 'Åstejads Jassmaster', jsPast: 'Vagangane Jassmasters'
     }
   };
@@ -656,20 +698,60 @@
   // Anzeige: Schweizer Nummern immer als 079 123 45 67
   function fmtPhone(p) {
     if (/^\+41\d{9}$/.test(p)) return '0' + p.slice(3, 5) + ' ' + p.slice(5, 8) + ' ' + p.slice(8, 10) + ' ' + p.slice(10);
+    if (/^\+49\d{10,11}$/.test(p)) return '+49 ' + p.slice(3, 6) + ' ' + p.slice(6);
     return p;
   }
-  // Formatierung während der Eingabe im Feld
-  function formatPhoneTyping(raw) {
-    var v = String(raw).replace(/\(0\)/g, '').replace(/[^\d+]/g, '');
-    if (v.indexOf('+41') === 0) v = '0' + v.slice(3);
-    else if (v.indexOf('0041') === 0) v = '0' + v.slice(4);
-    if (v.charAt(0) === '0' && v.charAt(1) !== '0') {
-      var d = v.replace(/\D/g, '').slice(0, 10);
-      return [d.slice(0, 3), d.slice(3, 6), d.slice(6, 8), d.slice(8, 10)].filter(Boolean).join(' ');
-    }
-    return v;
+  // Zu einfache PINs: gleiche Ziffern (111111), auf-/absteigende Folgen (123456, 654321) und der Standard-PIN
+  function pinWeak(pin, phone) {
+    if (!/^\d{6}$/.test(pin)) return false;
+    if (/^(\d)\1{5}$/.test(pin)) return true;
+    var d = pin.split('').map(Number), up = true, down = true;
+    for (var i = 1; i < 6; i++) { if (d[i] !== d[i - 1] + 1) up = false; if (d[i] !== d[i - 1] - 1) down = false; }
+    if (up || down) return true;
+    return !!phone && pin === defaultPin(phone);
   }
   function defaultPin(p) { return String(p).replace(/\D/g, '').slice(-6); }
+
+  /* Handynummer-Eingabe: Länderauswahl (CH/DE/Andere) + Nummer ohne führende Null.
+     Gespeichert wird weiterhin das internationale Format (+41791234567). */
+  var PHONE_CC = [{ c: '41', l: 'CH +41', ph: '79 123 45 67' }, { c: '49', l: 'DE +49', ph: '176 12345678' }];
+  function ccInfo(c) { return PHONE_CC.filter(function (x) { return x.c === c; })[0] || null; }
+  function fmtNational(cc, n) {
+    n = String(n).replace(/\D/g, '');
+    if (cc === '41') return [n.slice(0, 2), n.slice(2, 5), n.slice(5, 7), n.slice(7, 9)].filter(Boolean).join(' ');
+    if (cc === '49') return [n.slice(0, 3), n.slice(3)].filter(Boolean).join(' ');
+    return n;
+  }
+  // '+41796232345' → { cc: '41', nat: '79 623 23 45' }; unbekanntes Land → { cc: '', nat: '+43…' }
+  function phoneParts(intl) {
+    var raw = String(intl || '');
+    var d = raw.replace(/\D/g, '');
+    if (/^\+\d/.test(raw.replace(/\s/g, ''))) {
+      for (var i = 0; i < PHONE_CC.length; i++) {
+        if (d.indexOf(PHONE_CC[i].c) === 0) return { cc: PHONE_CC[i].c, nat: fmtNational(PHONE_CC[i].c, d.slice(PHONE_CC[i].c.length)) };
+      }
+      return { cc: '', nat: raw.replace(/\s/g, '') };
+    }
+    return { cc: '41', nat: fmtNational('41', d.replace(/^0+/, '')) };
+  }
+  // Länderwahl + Eingabe → Nummer für normPhone(). Eine vollständig internationale Eingabe (+… / 00…) gilt immer.
+  function composePhone(cc, raw) {
+    raw = String(raw || '').trim();
+    if (/^(\+|00)/.test(raw.replace(/\s/g, ''))) return raw;
+    if (!cc) return raw;
+    var d = raw.replace(/\(0\)/g, '').replace(/\D/g, '');
+    if (cc === '41' && d.length === 11 && d.indexOf('41') === 0) d = d.slice(2);   // «41 79 …» ohne +
+    d = d.replace(/^0+/, '');
+    return d ? '+' + cc + d : '';
+  }
+  function phoneField(intl, autoc) {
+    var pp = phoneParts(intl), info = ccInfo(pp.cc);
+    return '<div class="phonerow">' +
+      '<select class="input phonecc" name="phonecc" aria-label="' + esc(L('phoneCountry')) + '">' +
+      PHONE_CC.map(function (x) { return '<option value="' + x.c + '"' + (pp.cc === x.c ? ' selected' : '') + '>' + x.l + '</option>'; }).join('') +
+      '<option value=""' + (pp.cc === '' ? ' selected' : '') + '>' + esc(L('phoneOther')) + '</option></select>' +
+      '<input class="input" name="phone" type="tel" inputmode="tel" autocomplete="' + (autoc || 'off') + '" placeholder="' + esc(info ? info.ph : '+43 …') + '" value="' + esc(pp.nat) + '" required></div>';
+  }
   function phoneToEmail(p) { return p.replace('+', '') + '@' + (cfg.EMAIL_DOMAIN || 'phone-login.app'); }
 
   /* ---------- Zustand ---------- */
@@ -678,9 +760,9 @@
       step: 'loading', mode: 'login', tab: 'trainings', phone: '', err: '', info: '',
       session: null, me: null, members: [],
       rules: [], extras: [], overrides: {}, cancelled: {}, events: [],
-      tr: {}, ev: {}, open: {}, edit: null, busy: false, sec: {}, add: {}, info: {}, showMore: false,
+      tr: {}, ev: {}, open: {}, edit: null, busy: false, sec: {}, add: {}, info: {}, play: {}, showMore: false,
       cc: { events: [], days: [], shifts: [], roles: [] }, ccErr: false, ccFold: {}, ccLegend: false,
-      js: { series: [], days: [] }, jsErr: false, jsFold: {}
+      js: { series: [], days: [] }, jsErr: false, jsFold: {}, jsUnlock: {}
     };
   }
   var S = freshState();
@@ -694,7 +776,7 @@
     if (bad) throw bad.error;
     var d = res.map(function (r) { return r.data || []; });
 
-    S.members = d[0].map(function (r) { return { id: r.id, name: r.name, phone: r.phone, isAdmin: r.is_admin, isGuest: r.is_guest === true, isPassive: r.is_passive === true, isSupporter: r.is_supporter === true, isCandidate: r.is_candidate === true, isEventManager: r.is_event_manager === true, isChilbiManager: r.is_chilbi_manager === true, isChraenzliManager: r.is_chraenzli_manager === true, isJassMaster: r.is_jass_master === true, pinChanged: r.pin_changed === true, language: r.language || null, theme: r.theme || null }; })
+    S.members = d[0].map(function (r) { return { id: r.id, name: r.name, phone: r.phone, isAdmin: r.is_admin, isGuest: r.is_guest === true, isPassive: r.is_passive === true, isSupporter: r.is_supporter === true, isCandidate: r.is_candidate === true, isEventManager: r.is_event_manager === true, isChilbiManager: r.is_chilbi_manager === true, isChraenzliManager: r.is_chraenzli_manager === true, isJassMaster: r.is_jass_master === true, isDirector: r.is_director === true, isActor: r.is_actor === true, pinChanged: r.pin_changed === true, language: r.language || null, theme: r.theme || null }; })
       .sort(function (a, b) { return a.name.localeCompare(b.name, 'de'); });
     S.rules = d[1].map(function (r) { return { id: r.id, wd: r.weekday, time: hhmm(r.start_time), place: r.place }; })
       .sort(function (a, b) { return ((a.wd + 6) % 7) - ((b.wd + 6) % 7) || (a.time < b.time ? -1 : 1); });
@@ -720,7 +802,8 @@
     }
 
     // C&C separat laden: ein fehlendes Schema soll den Rest der App nicht blockieren
-    S.cc = { events: [], days: [], shifts: [], roles: [] };
+    S.cc = { events: [], days: [], shifts: [], roles: [], acts: [], scenes: [], parts: [] };
+    S.showErr = false;
     S.ccErr = false;
     S.ccPublic = false;   // wird nach dem Laden gesetzt: true wenn mind. 1 Anlass aktiv ist
     if (canCC()) {
@@ -749,6 +832,17 @@
         }
       }
     }
+    await loadShow();
+  }
+
+  /* ---------- Show: Akte, Szenen, Rollen laden (nur Regisseur und Schauspieler) ---------- */
+  async function loadShow() {
+    if (!canShow()) return;
+    var sr = await Promise.all(['show_acts', 'show_scenes', 'show_parts'].map(function (t) { return sb.from(t).select('*'); }));
+    if (sr.some(function (r) { return r.error; })) { S.showErr = true; return; }
+    S.cc.acts = sr[0].data || [];
+    S.cc.scenes = sr[1].data || [];
+    S.cc.parts = sr[2].data || [];
   }
 
   /* ---------- Trainings berechnen ---------- */
@@ -800,10 +894,11 @@
     gear: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 4.3c.4-1.8 2.9-1.8 3.4 0a1.7 1.7 0 0 0 2.6 1.1c1.5-.9 3.3.8 2.4 2.4a1.7 1.7 0 0 0 1 2.5c1.8.4 1.8 2.9 0 3.4a1.7 1.7 0 0 0-1 2.6c.9 1.5-.8 3.3-2.4 2.4a1.7 1.7 0 0 0-2.6 1c-.4 1.8-2.9 1.8-3.4 0a1.7 1.7 0 0 0-2.6-1c-1.5.9-3.3-.8-2.4-2.4a1.7 1.7 0 0 0-1-2.6c-1.8-.4-1.8-2.9 0-3.4a1.7 1.7 0 0 0 1-2.5c-.9-1.6.8-3.3 2.4-2.4c1 .6 2.3 0 2.6-1.1z"/><circle class="hole" cx="12" cy="12" r="3"/></svg>',
     laurel: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20.5C5.4 19.2 3.2 15.9 3.2 12c0-2.3.7-4.4 2-6.1"/><path d="M15 20.5c3.6-1.3 5.8-4.6 5.8-8.5 0-2.3-.7-4.4-2-6.1"/><path d="M5.2 5.9C4.9 4.5 5.6 3.2 6.9 2.8c.3 1.4-.4 2.7-1.7 3.1z"/><path d="M3.4 10.1C2.5 9 2.6 7.5 3.6 6.6c.9 1.1.8 2.6-.2 3.5z"/><path d="M3.6 14.6c-1.2-.5-1.9-1.9-1.5-3.2 1.3.4 2 1.8 1.5 3.2z"/><path d="M5.6 18.3c-1.3-.1-2.3-1.2-2.3-2.5 1.4 0 2.4 1.1 2.3 2.5z"/><path d="M18.8 5.9c.3-1.4-.4-2.7-1.7-3.1-.3 1.4.4 2.7 1.7 3.1z"/><path d="M20.6 10.1c.9-1.1.8-2.6-.2-3.5-.9 1.1-.8 2.6.2 3.5z"/><path d="M20.4 14.6c1.2-.5 1.9-1.9 1.5-3.2-1.3.4-2 1.8-1.5 3.2z"/><path d="M18.4 18.3c1.3-.1 2.3-1.2 2.3-2.5-1.4 0-2.4 1.1-2.3 2.5z"/></svg>',
     trophy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>',
-    print: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v5"/><rect x="4" y="9" width="16" height="8" rx="1.5"/><path d="M6 14h12v7H6z"/></svg>',
     pencil: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L18.5 9.5a2.8 2.8 0 0 0-4-4L4 16v4"/><path d="M13.5 6.5l4 4"/></svg>',
     copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>',
     plus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>',
+    lock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>',
+    unlock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 7.5-2"/></svg>',
     dots: '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/></svg>',
     clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>',
     crown: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6l4 6l5-4l-2 10H5L3 8l5 4z"/><circle cx="12" cy="4" r="1"/><circle cx="3" cy="6" r="1"/><circle cx="21" cy="6" r="1"/></svg>',
@@ -817,6 +912,8 @@
     auto: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>',
     print: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7"/><rect x="6" y="14" width="12" height="8"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><circle cx="18" cy="12" r="1" fill="currentColor" stroke="none"/></svg>',
     logout: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>',
+    music: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>',
+    stage: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M7.2 10c.8-1.6 2.4-1.6 3.2 0M13.6 10c.8-1.6 2.4-1.6 3.2 0"/><path d="M6.8 13.5h10.4a5.2 5.2 0 0 1-10.4 0z"/></svg>',
     glass: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="liq" d="M6.3 10.6a5 5 0 0 1 5.7-.6a5 5 0 0 0 5.7.6c-.4 2.6-2.8 4.4-5.7 4.4s-5.3-1.8-5.7-4.4z" stroke="none"/><path d="M8 21h8"/><path d="M12 15v6"/><path d="M17 3l1 7c0 3-2.7 5-6 5s-6-2-6-5l1-7z"/><path d="M6.2 10a5 5 0 0 1 5.8 0a5 5 0 0 0 5.8 0"/></svg>',
     dialpad: '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><circle cx="6" cy="4" r="1.8"/><circle cx="12" cy="4" r="1.8"/><circle cx="18" cy="4" r="1.8"/><circle cx="6" cy="10" r="1.8"/><circle cx="12" cy="10" r="1.8"/><circle cx="18" cy="10" r="1.8"/><circle cx="6" cy="16" r="1.8"/><circle cx="12" cy="16" r="1.8"/><circle cx="18" cy="16" r="1.8"/><circle cx="12" cy="21.5" r="1.8"/></svg>',
     trash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-12"/><path d="M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/></svg>',
@@ -954,7 +1051,7 @@
       '<p class="lead">' + (reg ? L('loginLeadReg') : L('loginLead')) + '</p>' +
       '<form data-form="auth">' +
       (reg ? fld(L('fullName'), '<input class="input" name="name" autocomplete="name" required>') : '') +
-      fld(L('phone'), '<input class="input" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="079 123 45 67" value="' + esc(S.phone) + '" required>') +
+      fld(L('phone'), phoneField(S.phone, 'tel')) +
       (reg ? '' : fld(L('pinOptional'), '<input class="input pin" name="pin" type="password" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="current-password" placeholder="······">')) +
       (needCode ? fld(L('clubCode'), '<input class="input" name="code" autocomplete="off" required>') : '') +
       (S.err ? '<p class="err">' + esc(S.err) + '</p>' : '') +
@@ -990,6 +1087,12 @@
     return html;
   }
 
+  // «Noch nicht geantwortet» sehen nur Aktiv- und Passivmitglieder (nicht Gast, Friends & Family, Kandidat)
+  function seesOpen() { return !!(S.me && !S.me.isGuest && !S.me.isSupporter && !S.me.isCandidate); }
+  // Teilnehmer bei Trainings und Events bearbeiten: Admin (Events zusätzlich Event Manager)
+  function canEditPeople() { return !!(S.me && S.me.isAdmin); }
+  function canEditEvPeople() { return !!(S.me && (S.me.isEventManager || S.me.isAdmin)); }
+
   function cardHtml(t) {
     var r = S.tr[t.key] || {};
     var off = !!S.cancelled[t.key];
@@ -1004,7 +1107,9 @@
       '</article>';
     }
     return '<article class="ccel" title="' + esc(t.title + ', ' + L('timePlace', { time: t.time, place: t.place })) + '">' +
-      '<div class="cceh"><b>' + fullDate(t.date) + '</b></div>' +
+      '<div class="cceh"><b>' + fullDate(t.date) + '</b>' +
+      (canEditPeople() ? hico('tr-people', ICON.pencil, L('evManagePeople'), { data: { key: t.key } }) : '') +
+      '</div>' +
       '<div class="ccbody">' +
         '<div class="actrow3">' +
           '<button type="button" class="resp yes" data-act="resp" data-val="yes" data-key="' + esc(t.key) + '" aria-pressed="' + (mine === 'yes') + '">' + ICON.check + L('yes') + '</button>' +
@@ -1014,7 +1119,7 @@
         (isOpen ? whoBlock([
           { label: L('hYes', { n: yes.length }), arr: yes },
           { label: L('hNo', { n: no.length }), arr: no }
-        ].concat(S.me.isGuest ? [] : [{ label: L('hOpen', { n: open.length }), arr: open }])) : '') +
+        ].concat(seesOpen() ? [{ label: L('hOpen', { n: open.length }), arr: open }] : [])) : '') +
       '</div>' +
     '</article>';
   }
@@ -1081,7 +1186,7 @@
     var list = getEvents();
     var html = '<div class="top"><div><h1 class="pagetitle">' + L('titleEvents') + '</h1></div></div>';
     if (!list.length) {
-      return html + '<div class="empty"><p><b>' + L('emptyEvTitle') + '</b></p><p>' + (S.me.isAdmin ? L('emptyEvAdmin') : L('emptyEvMember')) + '</p></div>';
+      return html + '<div class="empty"><p><b>' + L('emptyEvTitle') + '</b></p><p>' + (canManageEvents() ? L('emptyEvAdmin') : L('emptyEvMember')) + '</p></div>';
     }
     html += monthList(list.map(function (e) { return { e: e, date: parseIso(e.date) }; }), function (w) { return eventCardHtml(w.e); });
     return html;
@@ -1106,10 +1211,10 @@
     }
     return '<article class="ccel">' +
       '<div class="cceh"><b>' + fullDate(parseIso(e.date)) + ' \u2013 ' + esc(e.title) + '</b>' +
-      (canManageEvents() ? '<button type="button" class="ccdots" data-act="ev-menu" data-id="' + e.id + '" aria-label="' + esc(L('ccActions') + ': ' + e.title) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>' : '') +
+      (canEditEvPeople() ? '<button type="button" class="hico" data-act="ev-menu" data-id="' + e.id + '" aria-label="' + esc(L('ccActions') + ': ' + e.title) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>' : '') +
       '</div>' +
       '<div class="ccbody">' +
-        '<p class="muted small">' + esc(L('timePlace', { time: e.time, place: e.place })) + '</p>' +
+        '<p class="muted small evinfo">' + esc(L('timePlace', { time: e.time, place: e.place })) + '</p>' +
         (e.rsvp ? (
           '<div class="actrow4">' +
             btn('solo', 'yes', ICON.one, L('solo')) + btn('duo', 'yes', ICON.two, L('duo')) + btn('no', 'no', '', L('no')) +
@@ -1118,28 +1223,23 @@
           (isOpen ? whoBlock([
             { label: L('hSolo', { n: solo.length }), arr: solo },
             { label: L('hDuo', { n: duo.length, p: duo.length * 2 }), arr: duo, plus: true },
-            { label: L('hNo', { n: no.length }), arr: no },
-            { label: L('hOpen', { n: open.length }), arr: open }
-          ]) : '')
+            { label: L('hNo', { n: no.length }), arr: no }
+          ].concat(seesOpen() ? [{ label: L('hOpen', { n: open.length }), arr: open }] : [])) : '')
         ) : '') +
       '</div>' +
     '</article>';
   }
 
-  // Merkt sich pro Abschnitt, ob ein «+»-Formular und/oder eine Erklärung verfügbar sind,
-  // damit das Drei-Punkte-Menü weiss, welche Einträge es anbieten soll.
-  var ACC_META = {};
   function accordion(id, title, count, body, canAdd, info) {
-    ACC_META[id] = { canAdd: !!canAdd, info: info || null };
-    var open = !!S.sec[id], showInfo = !!S.info[id];
-    var hasMenu = canAdd || info;
-    // Einheitlich wie bei C&C und Jass: Titel links (klappt auf/zu), Drei-Punkte-Menü, Pfeil ganz rechts
+    var open = !!S.sec[id], showInfo = !!S.info[id], showAdd = !!S.add[id];
+    // Einheitlich wie bei C&C und Jass: Titel links (klappt auf/zu), «+» und Info direkt als Icons, Pfeil ganz rechts
     return '<section class="ccel"><div class="cceh">' +
       '<button type="button" class="cct" data-act="sec" data-id="' + id + '" aria-expanded="' + open + '">' +
       title + (count != null ? ' <span class="cnt">(' + count + ')</span>' : '') + '</button>' +
-      (hasMenu ? '<button type="button" class="ccdots" data-act="acc-menu" data-id="' + id + '" aria-label="' + esc(L('ccActions')) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>' : '') +
+      (canAdd ? hico('add-toggle', ICON.plus, showAdd ? L('addClose') : L('addNew'), { on: showAdd, cls: 'plus', data: { id: id } }) : '') +
+      (info ? hico('info-toggle', ICON.info, showInfo ? L('infoHide') : L('infoShow'), { on: showInfo, data: { id: id } }) : '') +
       '<button type="button" class="ccfold' + (open ? ' open' : '') + '" data-act="sec" data-id="' + id + '" aria-hidden="true" tabindex="-1">' + ICON.chev + '</button>' +
-      '</div>' + (open ? '<div class="ccbody">' + (info && showInfo ? '<p class="infotext">' + info + '</p>' : '') + body + '</div>' : '') + '</section>';
+      '</div>' + (info && showInfo ? '<p class="infobar">' + info + '</p>' : '') + (open ? '<div class="ccbody">' + body + '</div>' : '') + '</section>';
   }
 
   // Zeile (oder Bearbeiten-Formular) für einen einzelnen Trainingstermin
@@ -1150,10 +1250,10 @@
       var reset = S.overrides[t.key] ? '<button class="btn ghost inline" type="button" data-act="reset-tr" data-key="' + esc(t.key) + '">' + L('reset') + '</button>' : '';
       return editRow('edit-tr', t.key, body, t.extraId ? '' : L('editNote'), reset);
     }
-    return '<li><div class="l"><b>' + esc(fmt(t.date, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })) + ', ' + esc(t.time) + '</b>' +
-      '<span>' + esc(t.title) + ', ' + esc(t.place) + (t.changed ? ' · ' + L('changedLow') : '') + (off ? ' · ' + L('cancelledLow') : '') + '</span></div>' +
+    return '<li' + (off ? ' class="offrow"' : '') + '><div class="l"><b>' + esc(fmt(t.date, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })) + ', ' + esc(t.time) + '</b>' +
+      '<span>' + esc(t.title) + ', ' + esc(t.place) + (t.changed ? ' · ' + L('changedLow') : '') + '</span></div>' +
       '<div class="btnrow"><button type="button" class="mini" data-act="edit" data-target="tr:' + esc(t.key) + '">' + L('edit') + '</button>' +
-      '<button type="button" class="mini" data-act="cancel" data-key="' + esc(t.key) + '">' + (off ? L('reactivate') : L('cancel')) + '</button>' +
+      '<button type="button" class="mini ' + (off ? 'react' : 'cancelbtn') + '" data-act="cancel" data-key="' + esc(t.key) + '">' + (off ? L('reactivate') : L('cancel')) + '</button>' +
       (t.extraId ? '<button type="button" class="mini del" data-act="del-extra" data-id="' + t.extraId + '">' + L('del') + '</button>' : '') + '</div></li>';
   }
 
@@ -1215,14 +1315,14 @@
         '<button type="button" class="mini" data-act="cancel-ev" data-id="' + e.id + '">' + (e.cancelled ? L('reactivate') : L('cancel')) + '</button>' +
         '<button type="button" class="mini del" data-act="del-ev" data-id="' + e.id + '">' + L('del') + '</button></div></li>';
     }).join('') + '</ul>' : '<p class="muted">' + L('eventsEmpty') + '</p>';
-    if (isAdm || S.me.isEventManager) html += accordion('events', L('secEvents'), evs.length, b, true, L('subEvents'));
+    if (S.me.isEventManager) html += accordion('events', L('secEvents'), evs.length, b, true, L('subEvents'));
 
     /* Mitglieder */
     b = '';
     if (S.add.members) {
       b += '<form class="addform" data-form="member"><h3 style="margin-bottom:10px">' + L('memberAdd') + '</h3>' +
         fld(L('fullName'), '<input class="input" name="name" autocomplete="off" required>') +
-        fld(L('phone'), '<input class="input" name="phone" type="tel" inputmode="tel" autocomplete="off" placeholder="079 123 45 67" required>') +
+        fld(L('phone'), phoneField('')) +
         '<p class="small muted" style="margin:-4px 0 12px">' + L('memberAddNote') + '</p>' +
         '<label class="check"><input type="checkbox" name="guest" value="1"><span>' + L('guestCheck') + '</span></label>' +
         '<button class="btn" type="submit">' + L('memberAdd') + '</button></form>';
@@ -1236,9 +1336,11 @@
           (m.isEventManager ? '<span class="mbic em" title="' + esc(L('emTag')) + '" aria-label="' + esc(L('emTag')) + '">' + ICON.star + '</span>' : '') +
           (m.isChilbiManager ? '<span class="mbic em" title="' + esc(L('cmTag')) + '" aria-label="' + esc(L('cmTag')) + '">' + ICON.glass + '</span>' : '') +
           (m.isChraenzliManager ? '<span class="mbic em" title="' + esc(L('crmTag')) + '" aria-label="' + esc(L('crmTag')) + '">' + ICON.glass + '</span>' : '') +
+          (m.isDirector ? '<span class="mbic em" title="' + esc(L('dirTag')) + '" aria-label="' + esc(L('dirTag')) + '">' + ICON.stage + '</span>' : '') +
+          (m.isActor ? '<span class="mbic em" title="' + esc(L('actTag')) + '" aria-label="' + esc(L('actTag')) + '">' + ICON.stage + '</span>' : '') +
           (m.isJassMaster ? '<span class="mbic jm" title="' + esc(L('jmTag')) + '" aria-label="' + esc(L('jmTag')) + '">' + ICON.trophy + '</span>' : '') +
         '</span>' +
-        '<button type="button" class="ccdots" data-act="mb-menu" data-id="' + esc(m.id) + '" aria-label="' + esc(L('ccActions') + ': ' + m.name) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button></li>';
+        '<button type="button" class="hico" data-act="mb-menu" data-id="' + esc(m.id) + '" aria-label="' + esc(L('ccActions') + ': ' + m.name) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button></li>';
     };
     var mbGroup = function (key, label, list, guestStyle, icon) {
       var open = S.sec[key] === true;
@@ -1283,6 +1385,8 @@
         (S.me.isEventManager ? '<div class="rolerow"><span class="rolebtn glass on">' + ICON.star + '</span><span>' + L('emTag') + '</span></div>' : '') +
         (S.me.isChilbiManager ? '<div class="rolerow"><span class="rolebtn glass on">' + ICON.glass + '</span><span>' + L('cmTag') + '</span></div>' : '') +
         (S.me.isChraenzliManager ? '<div class="rolerow"><span class="rolebtn glass on">' + ICON.glass + '</span><span>' + L('crmTag') + '</span></div>' : '') +
+        (S.me.isDirector ? '<div class="rolerow"><span class="rolebtn glass on">' + ICON.stage + '</span><span>' + L('dirTag') + '</span></div>' : '') +
+        (S.me.isActor ? '<div class="rolerow"><span class="rolebtn glass on">' + ICON.stage + '</span><span>' + L('actTag') + '</span></div>' : '') +
         (S.me.isJassMaster ? '<div class="rolerow"><span class="rolebtn glass on">' + ICON.trophy + '</span><span>' + L('jmTag') + '</span></div>' : '') +
         (S.me.isGuest ? '<p class="small muted" style="margin:10px 0 0">' + L('guestInfo') + '</p>' : '') +
         (S.me.isSupporter ? '<p class="small muted" style="margin:10px 0 0">' + L('supporterInfo') + '</p>' : '') +
@@ -1310,7 +1414,8 @@
     var tabs = [{ id: 'trainings', label: L('navTrainings'), icon: ICON.dumbbell }];
     if (!restricted) tabs.push({ id: 'events', label: L('navEvents'), icon: ICON.star });
     if (!noJass) tabs.push({ id: 'jass', label: L('navJass'), icon: ICON.trophy });
-    if (!restricted && (canCC() || S.ccPublic)) tabs.push({ id: 'cc', label: L('navCC'), icon: ICON.glass });
+    if ((canCC() || S.ccPublic) && !noJass) tabs.push({ id: 'cc', label: L('navCC'), icon: ICON.glass });
+    if (canShow()) tabs.push({ id: 'show', label: L('navShow'), icon: ICON.stage });
     if (S.me.isAdmin) tabs.push({ id: 'admin', label: L('navAdmin'), icon: ICON.gear });
     tabs.push({ id: 'profile', label: L('navProfile'), icon: ICON.user });
     nav.innerHTML = '<div class="in">' + tabs.map(function (t) {
@@ -1334,13 +1439,15 @@
     }
     else {
       if (S.tab === 'admin' && !S.me.isAdmin) S.tab = 'trainings';
-      if ((S.tab === 'events' || S.tab === 'cc') && (S.me.isGuest || S.me.isSupporter) && !S.me.isAdmin) S.tab = 'trainings';
+      if (S.tab === 'events' && (S.me.isGuest || S.me.isSupporter) && !S.me.isAdmin) S.tab = 'trainings';
+      if (S.tab === 'cc' && S.me.isGuest && !S.me.isAdmin) S.tab = 'trainings';
       if (S.tab === 'jass' && S.me.isGuest && !S.me.isAdmin) S.tab = 'trainings';
       if (S.tab === 'cc' && !(canCC() || S.ccPublic)) S.tab = 'trainings';
-      var pageHtml = S.tab === 'jass' ? viewJass() : S.tab === 'cc' ? viewCC() : S.tab === 'admin' ? viewAdmin() : S.tab === 'events' ? viewEvents() : S.tab === 'profile' ? viewProfile() : viewTrainings();
+      if (S.tab === 'show' && !canShow()) S.tab = 'trainings';
+      var pageHtml = S.tab === 'show' ? viewShow() : S.tab === 'jass' ? viewJass() : S.tab === 'cc' ? viewCC() : S.tab === 'admin' ? viewAdmin() : S.tab === 'events' ? viewEvents() : S.tab === 'profile' ? viewProfile() : viewTrainings();
       // PIN-Banner: nur für Aktiv-/Passivmitglieder (nicht Gast, Supporter, Kandidat, Admin) ohne gesetzten PIN
       var pinBanner = '';
-      if (S.me && !S.me.pinChanged && !S.me.isAdmin && !S.me.isGuest && !S.me.isSupporter && !S.me.isCandidate) {
+      if (S.me && !S.me.pinChanged && !S.me.isAdmin && !S.me.isCandidate) {
         pinBanner = '<div class="pinbanner" role="alert">' +
           '<span>' + esc(L('pinBannerMsg')) + '</span>' +
           '<button type="button" class="btn inline" data-act="tab" data-tab="profile">' + esc(L('pinBannerBtn')) + '</button>' +
@@ -1386,9 +1493,11 @@
   }
 
   /* ---------- C&C: Chränzli und Chilbi ---------- */
-  // Anlass > Tag > Schicht > Rolle. Sichtbar für Admins und Event-Manager.
-  function canCC() { return !!(S.me && (S.me.isAdmin || S.me.isChilbiManager || S.me.isChraenzliManager)); }
-  function canManageEvents() { return !!(S.me && (S.me.isAdmin || S.me.isEventManager)); }
+  // Anlass > Tag > Schicht > Rolle. Sichtbar für Admins und Event Manager.
+  function canCC() { return !!(S.me && (S.me.isChilbiManager || S.me.isChraenzliManager)); }   // Admin nur, wenn er sich die Rolle selbst gibt
+  function canShow() { return !!(S.me && (S.me.isDirector || S.me.isActor)); }   // Tab «Show»: nur Regisseur und Schauspieler (Admin nur mit Rolle)
+  function shEdit() { return !!(S.me && S.me.isDirector); }   // bearbeiten: nur Regisseur
+  function canManageEvents() { return !!(S.me && S.me.isEventManager); }   // Admin nur, wenn er sich die Rolle selbst gibt
   function ccNorm(n) { return String(n || '').normalize('NFC').toLowerCase().replace(/\s+/g, ' ').trim(); }
   function ccMap() { var m = {}; S.members.forEach(function (p) { m[ccNorm(p.name)] = p; }); return m; }
   function ccMember(id) { return S.members.filter(function (x) { return x.id === id; })[0] || null; }
@@ -1397,18 +1506,33 @@
   function ccResolve(pe, map) {
     var p = pe.id ? ccMember(pe.id) : null;
     if (!p && pe.name) p = map[ccNorm(pe.name)] || null;
-    if (p) return { name: p.name, kind: p.isGuest ? 'g' : 'm', id: p.id };
+    // kind = aktuelle Gruppe: a Aktiv, p Passiv, f Friends & Family, g Gast/Kandidat, x nicht in der App
+    if (p) return { name: p.name, kind: (p.isGuest || p.isCandidate) ? 'g' : p.isSupporter ? 'f' : p.isPassive ? 'p' : 'a', id: p.id };
     return { name: pe.name || '?', kind: 'x', id: null };
   }
-  function ccKindLabel(k) { return k === 'm' ? L('ccMembers') : k === 'g' ? L('ccGuests') : L('ccOthers'); }
+  function ccKindLabel(k) { return k === 'a' ? L('grpActive') : k === 'p' ? L('grpPassive') : k === 'f' ? L('grpSupporter') : k === 'g' ? L('ccGuests') : L('ccOthers'); }
+  // Legende der Farben (Gruppen) und «ich»
+  // Seitentitel mit Info-Icon rechts; der Klick blendet die Farblegende darunter ein/aus
+  function pageTopLegend(titleKey, id, extra) {
+    var on = !!S.info[id];
+    return '<div class="top" style="align-items:center"><div><h1 class="pagetitle">' + L(titleKey) + '</h1></div>' +
+      hico('info-toggle', ICON.info, on ? L('infoHide') : L('infoShow'), { on: on, data: { id: id } }) + (extra || '') + '</div>' +
+      (on ? '<div class="infobar">' + ccLegend() + '</div>' : '');
+  }
+  function ccLegend() {
+    var chip = function (cls, label) { return '<span class="ccp ' + cls + '">' + esc(label) + '</span>'; };
+    return '<div class="cclegend">' + chip('cc-a', ccKindLabel('a')) + chip('cc-p', ccKindLabel('p')) + chip('cc-f', ccKindLabel('f')) +
+      chip('cc-g', ccKindLabel('g')) + chip('cc-x', ccKindLabel('x')) + chip('ccme', L('ccLegendMe')) + '</div>';
+  }
   function ccChip(pe, map) {
     var r = ccResolve(pe, map);
     var tap = r.kind === 'x' && S.me.isAdmin;   // Admins können «Andere» als Gast übernehmen
+    var me = !!(S.me && r.id && r.id === S.me.id);
     var inner = esc(r.name);
     var title = esc(r.name + ' · ' + ccKindLabel(r.kind));
     return tap
       ? '<button type="button" class="ccp cc-x" data-act="cc-guest" data-name="' + esc(r.name) + '" title="' + title + '">' + inner + '</button>'
-      : '<span class="ccp cc-' + r.kind + '" title="' + title + '">' + inner + '</span>';
+      : '<span class="ccp cc-' + r.kind + (me ? ' ccme' : '') + '" title="' + title + '">' + inner + '</span>';
   }
   function ccDate(isoDay) {
     var d = parseIso(isoDay);
@@ -1443,7 +1567,7 @@
     return e ? !e.active : false;   // inaktive Anlässe starten eingeklappt
   }
   function ccDots(lvl, id, label) {
-    return '<button type="button" class="ccdots" data-act="cc-menu" data-lvl="' + lvl + '"' + (id ? ' data-id="' + esc(id) + '"' : '') +
+    return '<button type="button" class="hico" data-act="cc-menu" data-lvl="' + lvl + '"' + (id ? ' data-id="' + esc(id) + '"' : '') +
       ' aria-label="' + esc(L('ccActions') + (label ? ': ' + label : '')) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>';
   }
 
@@ -1482,12 +1606,11 @@
       return { d: d, shifts: shifts };
     });
 
-    // Chilbi- bzw. Chränzli Manager ermitteln (ohne Admins)
+    // Chilbi- bzw. Chränzli Manager ermitteln
     var nameLower = (ev.name || '').toLowerCase();
     var wantChilbi = nameLower.indexOf('chilbi') > -1;
     var wantChraenzli = nameLower.indexOf('chränzli') > -1 || nameLower.indexOf('chraenzli') > -1;
     var mgrs = S.members.filter(function (m) {
-      if (m.isAdmin) return false;
       if (wantChilbi && m.isChilbiManager) return true;
       if (wantChraenzli && m.isChraenzliManager) return true;
       if (!wantChilbi && !wantChraenzli && (m.isChilbiManager || m.isChraenzliManager)) return true;
@@ -1615,7 +1738,7 @@
 
   function viewCC() {
     var map = ccMap(), ed = canCC();
-    var html = '<div class="top"><div><h1 class="pagetitle">' + L('titleCC') + '</h1></div></div>';
+    var html = pageTopLegend('titleCC', 'cclegend');
     // ccPublic-Toggle entfernt auf Wunsch (war: «Für alle Aktiv- und Passivmitglieder sichtbar»)
     if (S.ccErr) return html + '<div class="empty"><p>' + L('ccSetup') + '</p></div>';
     var tree = ccTree();
@@ -1626,7 +1749,7 @@
         (ed ? '<input type="checkbox" class="ccck" data-ccactive="' + esc(e.id) + '"' + (e.active ? ' checked' : '') + ' aria-label="' + esc(e.name + ': ' + L('ccActive')) + '" title="' + esc(L('ccActive')) + '">' : '') +
         '<button type="button" class="cct" data-act="cc-fold" data-id="' + esc(e.id) + '" aria-expanded="' + !folded + '">' + esc(e.name) + '</button>' +
         (ed ? ccDots('event', e.id, e.name) : '') +
-        '<button type="button" class="ccdots" data-act="cc-print" data-id="' + esc(e.id) + '" aria-label="' + esc(L('ccPrint') + ': ' + e.name) + '" title="' + esc(L('ccPrint')) + '">' + ICON.print + '</button>' +
+        (ed ? hico('cc-print', ICON.print, L('ccPrint'), { aria: L('ccPrint') + ': ' + e.name, data: { id: e.id } }) : '') +
         '<button type="button" class="ccfold' + (folded ? '' : ' open') + '" data-act="cc-fold" data-id="' + esc(e.id) + '" aria-expanded="' + !folded + '" aria-label="' + esc(e.name) + '">' + ICON.chev + '</button></div>';
       if (!folded) {
         html += '<div class="ccbody">';
@@ -1665,13 +1788,278 @@
     return html;
   }
 
+  /* ---------- Show: Einsatzplan als PDF (alle Akte, nur Regisseur) ---------- */
+  async function showExportPdf() {
+    if (!window.jspdf) { toast(L('ccPdfFailed')); return; }
+    toast(L('ccPdfBuilding'));
+    var tree = shTree(), map = ccMap();
+    var dirs = S.members.filter(function (m) { return m.isDirector; }).map(function (m) { return m.name; });
+    var dirLabel = L('dirTag') + ': ' + (dirs.length ? dirs.join(', ') : '–');
+
+    var doc = new window.jspdf.jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+    var PAGE_W = doc.internal.pageSize.getWidth(), PAGE_H = doc.internal.pageSize.getHeight();
+    var MARGIN = 12, GAP = 6, COLW = PAGE_W - 2 * MARGIN, TOP = 30, BOTTOM = PAGE_H - 12;
+    var BLUE = [48, 124, 192], BLUE_DARK = [11, 47, 94], BLUE_SOFT = [227, 239, 249], GREY = [93, 103, 122], INK = [22, 35, 59], LINE = [218, 222, 214];
+    var logo = await ensureLogoDataUrl();
+
+    function wrap(text, size, maxW, style) {
+      doc.setFont('helvetica', style || 'normal'); doc.setFontSize(size);
+      return doc.splitTextToSize(String(text), maxW);
+    }
+    function drawHeader() {
+      doc.setFillColor(BLUE_DARK[0], BLUE_DARK[1], BLUE_DARK[2]);
+      doc.rect(0, 0, PAGE_W, 24, 'F');
+      if (logo) { try { doc.addImage(logo, 'PNG', MARGIN, 4, 13.5, 15.5); } catch (e) { /* Logo optional */ } }
+      doc.setTextColor(255, 255, 255); doc.setFont('helvetica', 'bold'); doc.setFontSize(17);
+      doc.text(L('titleShow'), MARGIN + 18, 11.5);
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(9.5); doc.setTextColor(207, 224, 242);
+      doc.text(dirLabel, MARGIN + 18, 17);
+      doc.text('Version', PAGE_W - MARGIN, 9.5, { align: 'right' });
+      doc.text(fullDate(new Date()).split(', ')[1] || '', PAGE_W - MARGIN, 14, { align: 'right' });
+    }
+    var colY = [TOP, TOP];
+    function newPage() { doc.addPage(); drawHeader(); colY = [TOP, TOP]; }
+
+    // Zeilen einer Szene: Beschreibung, Musik, Video, Rollen mit Personen
+    function sceneLines(Sc, w) {
+      var sc = Sc.s, items = [], valueW = w - 44;
+      if (sc.description) items.push({ t: 'desc', lines: wrap(sc.description, 8.8, w - 10, 'normal') });
+      if (sc.music_name || sc.music_url) items.push({ t: 'media', label: L('shMusic'), text: sc.music_name || '', url: shSpotifyOk(sc.music_url) ? sc.music_url : '', lines: wrap(sc.music_name || '–', 9.3, valueW, 'normal') });
+      if (sc.video_desc || sc.video_url) items.push({ t: 'media', label: L('shVideo'), text: sc.video_desc || '', url: shYoutubeOk(sc.video_url) ? sc.video_url : '', lines: wrap(sc.video_desc || '–', 9.3, valueW, 'normal') });
+      Sc.parts.forEach(function (r) {
+        var nm = (Array.isArray(r.persons) ? r.persons : []).map(function (pe) { return ccResolve(pe, map).name; }).join(', ') || '–';
+        items.push({ t: 'part', label: String(r.name), lines: wrap(nm, 9.3, valueW, 'normal') });
+      });
+      return items;
+    }
+    function sceneHeight(Sc, w) {
+      var titleLines = wrap(Sc.s.name, 11.5, w - 10, 'bold');
+      var h = 9 + (titleLines.length - 1) * 4.8 + 3;
+      sceneLines(Sc, w).forEach(function (it) { h += Math.max(it.lines.length, 1) * (it.t === 'desc' ? 4 : 4.3) + (it.t === 'desc' ? 1.5 : 0); });
+      return h + 3;
+    }
+    function drawScene(Sc, x, yTop, w) {
+      var h = sceneHeight(Sc, w), valueW = w - 44;
+      doc.setFillColor(255, 255, 255); doc.setDrawColor(LINE[0], LINE[1], LINE[2]); doc.setLineWidth(0.3);
+      doc.roundedRect(x, yTop, w, h, 3, 3, 'FD');
+      var titleLines = wrap(Sc.s.name, 11.5, w - 10, 'bold');
+      var headH = 9 + (titleLines.length - 1) * 4.8;
+      doc.setFillColor(BLUE_SOFT[0], BLUE_SOFT[1], BLUE_SOFT[2]);
+      doc.roundedRect(x, yTop, w, headH, 3, 3, 'F'); doc.rect(x, yTop + headH / 2, w, headH / 2, 'F');
+      doc.setTextColor(BLUE[0], BLUE[1], BLUE[2]); doc.setFont('helvetica', 'bold'); doc.setFontSize(11.5);
+      var ty = yTop + 5.8;
+      titleLines.forEach(function (ln) { doc.text(ln, x + 5, ty); ty += 4.8; });
+      var cy = yTop + headH + 5;
+      sceneLines(Sc, w).forEach(function (it) {
+        if (it.t === 'desc') {
+          doc.setTextColor(GREY[0], GREY[1], GREY[2]); doc.setFont('helvetica', 'normal'); doc.setFontSize(8.8);
+          it.lines.forEach(function (ln) { doc.text(ln, x + 5, cy); cy += 4; });
+          cy += 1.5; return;
+        }
+        doc.setTextColor(GREY[0], GREY[1], GREY[2]); doc.setFont('helvetica', 'bold'); doc.setFontSize(8.6);
+        doc.text(it.label + ':', x + 5, cy);
+        doc.setFont('helvetica', 'normal'); doc.setFontSize(9.3);
+        var ly = cy;
+        it.lines.forEach(function (ln) {
+          if (it.t === 'media' && it.url) { doc.setTextColor(BLUE[0], BLUE[1], BLUE[2]); try { doc.textWithLink(ln, x + 31, ly, { url: it.url }); } catch (e) { doc.text(ln, x + 31, ly); } }
+          else { doc.setTextColor(INK[0], INK[1], INK[2]); doc.text(ln, x + 31, ly); }
+          ly += 4.3;
+        });
+        cy = ly;
+      });
+      return yTop + h;
+    }
+
+    drawHeader();
+    if (!tree.length) {
+      doc.setTextColor(GREY[0], GREY[1], GREY[2]); doc.setFont('helvetica', 'normal'); doc.setFontSize(11);
+      doc.text(L('shEmpty'), MARGIN, PAGE_H / 2);
+    }
+    tree.forEach(function (A) {
+      var a = A.a, fullW = PAGE_W - 2 * MARGIN;
+      var title = a.name + (a.active ? '' : '   (nicht sichtbar)');
+      var dLines = a.description ? wrap(a.description, 9, fullW - 10, 'normal') : [];
+      var media = [];
+      if (a.music_name || a.music_url) media.push({ label: L('shMusic'), text: a.music_name || '–', url: shSpotifyOk(a.music_url) ? a.music_url : '' });
+      if (a.video_desc || a.video_url) media.push({ label: L('shVideo'), text: a.video_desc || '–', url: shYoutubeOk(a.video_url) ? a.video_url : '' });
+      var bandH = 9.5 + dLines.length * 4 + (dLines.length ? 1.5 : 0) + media.length * 4.6;
+      var firstH = A.scenes.length ? sceneHeight(A.scenes[0], COLW) : 0;
+      var y0 = Math.max(colY[0], colY[1]);
+      if (y0 + bandH + 4 + Math.min(firstH, 60) > BOTTOM) { newPage(); y0 = TOP; }
+      if (a.is_hint) doc.setFillColor(84, 98, 120); else doc.setFillColor(BLUE_DARK[0], BLUE_DARK[1], BLUE_DARK[2]);
+      doc.roundedRect(MARGIN, y0, fullW, bandH, 3, 3, 'F');
+      doc.setTextColor(255, 255, 255); doc.setFont('helvetica', 'bold'); doc.setFontSize(13);
+      doc.text(title, MARGIN + 5, y0 + 6.3);
+      if (dLines.length) {
+        doc.setFont('helvetica', 'normal'); doc.setFontSize(9); doc.setTextColor(207, 224, 242);
+        dLines.forEach(function (ln, i) { doc.text(ln, MARGIN + 5, y0 + 11.2 + i * 4); });
+      }
+      media.forEach(function (m, i) {
+        var my = y0 + 11.2 + dLines.length * 4 + (dLines.length ? 1.5 : 0) + i * 4.6;
+        doc.setFont('helvetica', 'bold'); doc.setFontSize(8.6); doc.setTextColor(207, 224, 242);
+        doc.text(m.label + ':', MARGIN + 5, my);
+        doc.setFont('helvetica', 'normal'); doc.setFontSize(9.3); doc.setTextColor(255, 255, 255);
+        try { if (m.url) doc.textWithLink(m.text, MARGIN + 31, my, { url: m.url }); else doc.text(m.text, MARGIN + 31, my); } catch (e) { doc.text(m.text, MARGIN + 31, my); }
+      });
+      colY = [y0 + bandH + 4, y0 + bandH + 4];
+      A.scenes.forEach(function (Sc) {
+        var h = sceneHeight(Sc, COLW);
+        var c = 0;
+        if (colY[c] + h > BOTTOM) { newPage(); }
+        var x = MARGIN;
+        colY[c] = drawScene(Sc, x, colY[c], COLW) + 5;
+      });
+      colY = [Math.max(colY[0], colY[1]) + 2, Math.max(colY[0], colY[1]) + 2];
+    });
+
+    var pages = doc.getNumberOfPages();
+    for (var pi = 1; pi <= pages; pi++) {
+      doc.setPage(pi);
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5); doc.setTextColor(GREY[0], GREY[1], GREY[2]);
+      doc.text(L('titleShow'), MARGIN, PAGE_H - 6);
+      doc.text('Seite ' + pi + ' / ' + pages, PAGE_W - MARGIN, PAGE_H - 6, { align: 'right' });
+    }
+
+    var fname = 'Chraenzli-Drehbuch.pdf';
+    var blob = doc.output('blob');
+    try {
+      var file = new File([blob], fname, { type: 'application/pdf' });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file], title: L('titleShow') });
+        return;
+      }
+    } catch (e) { /* Teilen abgebrochen oder nicht verfügbar: als Download anbieten */ }
+    var url = URL.createObjectURL(blob);
+    var a2 = document.createElement('a'); a2.href = url; a2.download = fname;
+    document.body.appendChild(a2); a2.click(); document.body.removeChild(a2);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+  }
+
+  /* ---------- Show: Chränzli Drehbuch (Akt > Szene > Rolle) ---------- */
+  function shTree() {
+    var C = S.cc;
+    return C.acts.slice().sort(function (x, y) { return ((y.is_hint ? 1 : 0) - (x.is_hint ? 1 : 0)) || ccByCreated(x, y); }).map(function (a) {
+      return {
+        a: a,
+        scenes: C.scenes.filter(function (x) { return x.act_id === a.id; }).sort(function (x, y) { return String(x.name).localeCompare(String(y.name), 'de', { numeric: true, sensitivity: 'base' }) || ccByCreated(x, y); }).map(function (sc) {
+          return { s: sc, parts: C.parts.filter(function (r) { return r.scene_id === sc.id; }).sort(function (x, y) { return ((x.sort || 0) - (y.sort || 0)) || ccByCreated(x, y); }) };
+        })
+      };
+    });
+  }
+  function shIsFolded(id) {
+    if (S.ccFold[id] != null) return S.ccFold[id];
+    var a = S.cc.acts.filter(function (x) { return x.id === id; })[0];
+    return a ? !a.active : false;   // unsichtbare (in Planung befindliche) Akte starten eingeklappt
+  }
+  function shDots(lvl, id, label) {
+    return '<button type="button" class="hico" data-act="sh-menu" data-lvl="' + lvl + '"' + (id ? ' data-id="' + esc(id) + '"' : '') +
+      ' aria-label="' + esc(L('ccActions') + (label ? ': ' + label : '')) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>';
+  }
+  // Nur Spotify-Links zulassen (https), damit kein anderer Link oder Code eingeschleust werden kann
+  function shSpotifyOk(u) { return /^https:\/\/(open\.spotify\.com|play\.spotify\.com|spotify\.link)\/\S+$/i.test(String(u || '').trim()); }
+  // Icon als Play-Schalter: mit Einbettung ein Button (öffnet/schliesst den Player), sonst ausgegrautes Icon ohne Link
+  function shIconBtn(img, emb, id, playing) {
+    if (!emb || !id) return '<span class="shsp off" aria-hidden="true">' + img + '</span>';
+    var lbl = esc(L(playing ? 'shPlayStop' : 'shPlay'));
+    return '<button type="button" class="shsp shspbtn' + (playing ? ' on' : '') + '" data-act="sh-play" data-id="' + esc(id) + '" aria-pressed="' + playing + '" aria-label="' + lbl + '" title="' + lbl + '">' + img + '</button>';
+  }
+  function shMusicRow(a) {
+    if (!a.music_name && !a.music_url) return '';
+    var ok = a.music_url && shSpotifyOk(a.music_url);
+    var emb = ok ? shEmbedUrl(a.music_url) : '', playing = !!(emb && a.id && S.play[a.id]);
+    var ic = shIconBtn('<img src="icons/spotify.png" alt="" width="21" height="21">', emb, a.id, playing);
+    var pl = playing ? '<div class="shplayer"><iframe src="' + esc(emb) + '" width="100%" height="152" frameborder="0" loading="lazy" allow="encrypted-media" title="Spotify"></iframe></div>' : '';
+    return '<div class="shmusic"><span class="shml">' + L('shMusic') + '</span><span class="shmn">' + (a.music_name ? esc(a.music_name) : '') + '</span>' + ic + pl + '</div>';
+  }
+  // Einbettungs-URL nur für Spotify-Inhalte (Track, Album, Playlist, Episode, Show, Artist); spotify.link lässt sich nicht einbetten
+  function shEmbedUrl(u) {
+    var m = String(u || '').trim().match(/^https:\/\/(?:open|play)\.spotify\.com\/(?:intl-[a-z-]+\/)?(track|album|playlist|episode|show|artist)\/([A-Za-z0-9]+)/);
+    return m ? 'https://open.spotify.com/embed/' + m[1] + '/' + m[2] : '';
+  }
+  // Video-Zeile (YouTube): Beschriftung links, Text, rechts das YouTube-Icon als Link
+  function shYoutubeOk(u) { return /^https:\/\/\S+$/i.test(String(u || '').trim()); }   // bewusst locker: nur https (youtube.com, youtu.be, shorts …)
+  function shVideoRow(a) {
+    if (!a.video_desc && !a.video_url) return '';
+    var img = '<img src="icons/youtube.png" alt="" width="21" height="21">';
+    var emb = a.video_url && shYoutubeOk(a.video_url) ? shYoutubeEmbed(a.video_url) : '', pid = 'v:' + a.id, playing = !!(emb && a.id && S.play[pid]);
+    var ic = shIconBtn(img, emb, pid, playing);
+    var pl = playing ? '<div class="shplayer shvplayer"><iframe src="' + esc(emb) + '" width="100%" frameborder="0" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="YouTube"></iframe></div>' : '';
+    return '<div class="shmusic shvideo"><span class="shml">' + L('shVideo') + '</span><span class="shmn">' + (a.video_desc ? esc(a.video_desc) : '') + '</span>' + ic + pl + '</div>';
+  }
+  // Einbettungs-URL (datenschutzfreundlich: youtube-nocookie.com) für Video- oder Playlist-Links
+  function shYoutubeEmbed(u) {
+    var url; try { url = new URL(String(u).trim()); } catch (e) { return ''; }
+    var id = '', host = url.hostname.replace(/^www\./, '');
+    if (host === 'youtu.be') id = url.pathname.slice(1).split('/')[0];
+    else { id = url.searchParams.get('v') || ''; var m = url.pathname.match(/^\/(?:shorts|embed|live)\/([A-Za-z0-9_-]{6,})/); if (!id && m) id = m[1]; }
+    var list = url.searchParams.get('list') || '';
+    if (/^[A-Za-z0-9_-]{6,}$/.test(id)) return 'https://www.youtube-nocookie.com/embed/' + id + (/^[A-Za-z0-9_-]+$/.test(list) ? '?list=' + list : '');
+    if (/^[A-Za-z0-9_-]+$/.test(list) && url.pathname === '/playlist') return 'https://www.youtube-nocookie.com/embed/videoseries?list=' + list;
+    return '';
+  }
+  // Vorgabe für den Namen eines neuen Akts / einer neuen Szene: «1. Akt - ...», «2. Szene - ...» (nächste freie Nummer)
+  function shDefaultName(kind) {
+    var n = kind === 'act' ? S.cc.acts.filter(function (x) { return !x.is_hint; }).length + 1 : S.cc.scenes.filter(function (x) { return ccSheet && x.act_id === ccSheet.id; }).length + 1;
+    return n + '. ' + (kind === 'act' ? 'Akt' : 'Szene') + ' - ...';
+  }
+  // Beschreibung von Akt/Szene: immer sichtbar, solange der Abschnitt aufgeklappt ist (kein Info-Icon)
+  function shDescText(o, open) {
+    return o.description && open ? '<div class="infobar shdesc">' + esc(o.description) + '</div>' : '';
+  }
+  function viewShow() {
+    var map = ccMap(), ed = shEdit();
+    var html = pageTopLegend('titleShow', 'shlegend', ed ? hico('sh-print', ICON.print, L('ccPrint'), { aria: L('ccPrint') + ': ' + L('titleShow') }) : '');
+    if (S.showErr) return html + '<div class="empty"><p>' + L('shSetup') + '</p></div>';
+    var tree = shTree();
+    if (!tree.length) return html + '<div class="empty"><p>' + L('shEmpty') + '</p>' + (ed ? '<button type="button" class="btn inline" data-act="sh-addact" style="margin-top:12px">' + L('shAddAct') + '</button>' : '') + '</div>';
+    tree.forEach(function (A) {
+      var a = A.a, folded = shIsFolded(a.id);
+      html += '<section class="ccel' + (a.is_hint ? ' hint' : '') + (a.active ? '' : ' ccoff') + '"><div class="cceh">' +
+        (ed ? '<input type="checkbox" class="ccck" data-shactive="' + esc(a.id) + '"' + (a.active ? ' checked' : '') + ' aria-label="' + esc(a.name + ': ' + L('shVisible')) + '" title="' + esc(L('shVisible')) + '">' : '') +
+        '<button type="button" class="cct" data-act="sh-fold" data-id="' + esc(a.id) + '" aria-expanded="' + !folded + '">' + esc(a.name) + '</button>' +
+        (ed ? shDots('act', a.id, a.name) : '') +
+        '<button type="button" class="ccfold' + (folded ? '' : ' open') + '" data-act="sh-fold" data-id="' + esc(a.id) + '" aria-expanded="' + !folded + '" aria-label="' + esc(a.name) + '">' + ICON.chev + '</button></div>' +
+        shDescText(a, !folded) + (folded ? '' : shMusicRow(a) + shVideoRow(a));
+      if (!folded) {
+        html += '<div class="ccbody">';
+        if (!A.scenes.length) html += '<p class="ccsum" style="padding-top:10px">' + L('shNoScenes') + '</p>';
+        A.scenes.forEach(function (Sc) {
+          var sc = Sc.s, sf = !!S.ccFold[sc.id];
+          html += '<div class="ccday"><div class="ccdh">' +
+            '<button type="button" class="ccdt" data-act="sh-fold" data-id="' + esc(sc.id) + '" aria-expanded="' + !sf + '"><b>' + esc(sc.name) + '</b></button>' +
+            (ed ? hico('sh-scene-add', ICON.plus, L('shAddPart'), { aria: L('shAddPart') + ': ' + sc.name, data: { id: sc.id } }) + hico('sh-scene-edit', ICON.pencil, L('ccChange'), { aria: L('ccChange') + ': ' + sc.name, data: { id: sc.id } }) : '') +
+            '<button type="button" class="ccfold ccfold-day' + (sf ? '' : ' open') + '" data-act="sh-fold" data-id="' + esc(sc.id) + '" aria-expanded="' + !sf + '" aria-label="' + esc(sc.name) + '">' + ICON.chev + '</button></div>' +
+            (sf ? '' : shMusicRow(sc) + shVideoRow(sc)) + shDescText(sc, !sf);
+          if (sf) html += '<div class="ccsum">' + L('shSummary', { r: Sc.parts.length }) + '</div>';
+          else {
+            html += '<div class="ccsh">';
+            Sc.parts.forEach(function (r) {
+              var ps = Array.isArray(r.persons) ? r.persons : [];
+              html += '<div class="ccro"><span class="ccrn">' + esc(r.name) + '</span><span class="ccps">' +
+                (ps.length ? ps.map(function (p) { return ccChip(p, map); }).join('') : '<span class="ccsum">' + L('ccNobody') + '</span>') +
+                '</span>' + (ed ? shDots('part', r.id, r.name) : '') + '</div>';
+            });
+            html += '</div>';
+          }
+          html += '</div>';
+        });
+        html += '</div>';
+      }
+      html += '</section>';
+    });
+    return html;
+  }
+
   /* ---------- C&C: Aktionsfenster ---------- */
   var ccSheet = null;   // { lvl, id, mode, persons, name }
-  var CC_TABLE = { event: 'cc_events', day: 'cc_days', shift: 'cc_shifts', role: 'cc_roles' };
-  var CC_SUB = { root: 'event', event: 'day', day: 'shift', shift: 'role' };
-  var CC_LVL = { root: 'ccLvlAll', event: 'ccLvlEvent', day: 'ccLvlDay', shift: 'ccLvlShift', role: 'ccLvlRole' };
-  var CC_ADD = { event: 'ccAddEvent', day: 'ccAddDay', shift: 'ccAddShift', role: 'ccAddRole' };
-  var CC_LIST = { event: 'events', day: 'days', shift: 'shifts', role: 'roles' };
+  var CC_TABLE = { event: 'cc_events', day: 'cc_days', shift: 'cc_shifts', role: 'cc_roles', act: 'show_acts', scene: 'show_scenes', part: 'show_parts' };
+  var CC_SUB = { root: 'event', event: 'day', day: 'shift', shift: 'role', shroot: 'act', act: 'scene', scene: 'part' };
+  var CC_LVL = { root: 'ccLvlAll', event: 'ccLvlEvent', day: 'ccLvlDay', shift: 'ccLvlShift', role: 'ccLvlRole', shroot: 'shLvlAll', act: 'shLvlAct', scene: 'shLvlScene', part: 'shLvlPart' };
+  var CC_ADD = { event: 'ccAddEvent', day: 'ccAddDay', shift: 'ccAddShift', role: 'ccAddRole', act: 'shAddAct', scene: 'shAddScene', part: 'shAddPart' };
+  var CC_LIST = { event: 'events', day: 'days', shift: 'shifts', role: 'roles', act: 'acts', scene: 'scenes', part: 'parts' };
+  function ccIsPersonLvl(l) { return l === 'role' || l === 'part'; }   // Ebenen mit Personenauswahl
+  function ccIsRootLvl(l) { return l === 'root' || l === 'shroot'; }
 
   function ccObj(lvl, id) {
     var list = CC_LIST[lvl] ? S.cc[CC_LIST[lvl]] : null;
@@ -1679,8 +2067,9 @@
   }
   function ccTitle(lvl, o) {
     if (lvl === 'root') return L('ccLvlAll');
+    if (lvl === 'shroot') return L('shLvlAll');
     if (!o) return '';
-    if (lvl === 'event') return o.name;
+    if (lvl === 'event' || lvl === 'act' || lvl === 'scene') return o.name;
     if (lvl === 'day') return ccDate(o.day) + (o.name ? ' – ' + o.name : '');
     if (lvl === 'shift') return ccTimePlain(o) + (o.name ? ' – ' + o.name : '');
     return o.name;
@@ -1700,12 +2089,22 @@
   function ccActBtn(a, icon, label, cls) {
     return '<button type="button" class="ccact' + (cls ? ' ' + cls : '') + '" data-cca="' + a + '">' + icon + '<span>' + label + '</span></button>';
   }
-  function ccBtns(saveLabel) {
+  function ccBtns(saveLabel, withDel) {
     return '<p class="err" data-ccerr hidden></p><div class="dlgbtns">' +
+      (withDel ? '<button type="button" class="btn ghost inline" data-cca="del" style="margin-right:auto;color:var(--danger,#c0392b)">' + L('del') + '</button>' : '') +
       '<button type="button" class="btn ghost inline" data-cca="close">' + L('dismiss') + '</button>' +
       '<button type="submit" class="btn inline">' + (saveLabel || L('save')) + '</button></div>';
   }
 
+  // Zeile Musik/Video im Szenen-Formular: Textfeld mit Icon rechts; hinter dem Icon verbirgt sich das Link-Feld (leer lassen = löschen)
+  function shMediaField(label, nameF, nameV, namePh, urlF, urlV, urlPh, img, iconLabel) {
+    return '<div class="field"><span>' + label + '</span><div class="shfm">' +
+      '<input class="input" name="' + nameF + '" value="' + esc(nameV || '') + '" placeholder="' + esc(namePh) + '">' +
+      '<button type="button" class="shficon' + (urlV ? ' on' : '') + '" data-cca="tog" data-t="' + urlF + '" aria-pressed="false" aria-label="' + esc(iconLabel) + '" title="' + esc(iconLabel) + '"><img src="' + img + '" alt="" width="24" height="24"></button></div>' +
+      '<input class="input shfmu" name="' + urlF + '" inputmode="url" value="' + esc(urlV || '') + '" placeholder="' + esc(urlPh) + '" hidden></div>';
+  }
+  function shReveal(n) { var f = document.querySelector('#ccsheet [name="' + n + '"]'), bt = document.querySelector('#ccsheet [data-t="' + n + '"]'); if (f) { f.hidden = false; if (bt) bt.setAttribute('aria-pressed', 'true'); f.focus(); } }
+  function shGrow(t) { t.style.height = 'auto'; t.style.height = t.scrollHeight + 'px'; }
   function ccForm(kind, o, isNew) {
     var h = '<p class="cck">' + L(CC_LVL[kind]) + '</p><h3>' + esc(isNew ? L(CC_ADD[kind]) : ccTitle(kind, o)) + '</h3>' +
       '<form data-ccform="' + kind + '" novalidate>';
@@ -1719,7 +2118,14 @@
       h += grid(fld(L('ccStart'), '<input class="input" type="time" name="start" value="' + esc(o ? o.start_time : '') + '" required>'),
                 fld(L('ccEnd'), '<input class="input" type="time" name="end" value="' + esc(o ? o.end_time : '') + '" required>')) +
         fld(L('ccNameOpt'), '<input class="input" name="name" value="' + esc(o && o.name ? o.name : '') + '" placeholder="Abendschicht">');
-    } else if (kind === 'role') {
+    } else if (kind === 'act' || kind === 'scene') {
+      h += fld(L('nameLabel'), '<input class="input" name="name" value="' + esc(o ? o.name : shDefaultName(kind)) + '" required>') +
+        fld(L('shDesc'), '<textarea class="input shgrow" name="desc" rows="1">' + esc(o && o.description ? o.description : '') + '</textarea>') +
+        ((kind === 'scene' || kind === 'act') ? shMediaField(L('shMusic'), 'music_name', o && o.music_name, 'Titel / Interpret', 'music_url', o && o.music_url, 'https://open.spotify.com/…', 'icons/spotify.png', L('shSpotify')) +
+          shMediaField(L('shVideo'), 'video_desc', o && o.video_desc, 'Beschreibung', 'video_url', o && o.video_url, 'https://www.youtube.com/watch?v=…', 'icons/youtube.png', L('shYoutube')) : '') +
+        (kind === 'act' ? '<label class="check"><input type="checkbox" name="is_hint"' + (o && o.is_hint ? ' checked' : '') + '><span>' + L('shHintCheck') + '</span></label>' : '') +
+        (kind === 'act' ? '<label class="check"><input type="checkbox" name="active"' + (o && o.active ? ' checked' : '') + '><span>' + L('shVisible') + '</span></label>' : '');
+    } else if (ccIsPersonLvl(kind)) {
       h += fld(L('nameLabel'), '<input class="input" name="name" value="' + esc(o ? o.name : '') + '" placeholder="Bar" required>') +
         '<span class="cclabel">' + L('ccPersons') + '</span><div class="ccsel" id="ccsel"></div>' +
         '<input class="input" name="q" placeholder="' + esc(L('ccSearch')) + '" autocomplete="off">' +
@@ -1728,7 +2134,7 @@
         '<div class="ccother"><input class="input" name="other" autocomplete="off"><button type="button" class="btn ghost inline" data-cca="other">' + L('ccAdd') + '</button></div>' +
         '<div class="ccsug" id="ccsug"></div><div style="height:14px"></div>';
     }
-    return h + ccBtns() + '</form>';
+    return h + ccBtns(null, kind === 'scene' && !isNew ? 'del' : '') + '</form>';
   }
   function ccCopyForm(lvl, o) {
     var h = '<p class="cck">' + L(CC_LVL[lvl]) + '</p><h3>' + L('ccCopy') + ': ' + esc(ccTitle(lvl, o)) + '</h3><form data-ccform="copy-' + lvl + '" novalidate>';
@@ -1745,23 +2151,25 @@
     return '<p class="cck">' + L('ccOthers') + '</p><h3>' + esc(name) + '</h3><p class="ccnote" style="margin-top:0">' + L('ccNotInApp', { name: name }) + '</p>' +
       '<form data-ccform="guest" novalidate>' +
       fld(L('fullName'), '<input class="input" name="name" value="' + esc(name) + '" required>') +
-      fld(L('phone'), '<input class="input" name="phone" type="tel" inputmode="tel" autocomplete="off" placeholder="079 123 45 67" required>') +
+      fld(L('phone'), phoneField('')) +
       ccBtns(L('ccAsGuest')) + '</form>';
   }
 
   function ccDrawSheet() {
     var st = ccSheet;
     if (!st) return;
-    var o = st.lvl === 'root' || st.lvl === 'guest' ? null : ccObj(st.lvl, st.id);
-    if (st.lvl !== 'root' && st.lvl !== 'guest' && !o) { ccCloseSheet(); return; }   // inzwischen gelöscht
+    var o = ccIsRootLvl(st.lvl) || st.lvl === 'guest' ? null : ccObj(st.lvl, st.id);
+    if (!ccIsRootLvl(st.lvl) && st.lvl !== 'guest' && !o) { ccCloseSheet(); return; }   // inzwischen gelöscht
     var body;
     if (st.mode === 'menu') {
       var sub = CC_SUB[st.lvl];
       body = '<p class="cck">' + L(CC_LVL[st.lvl]) + '</p><h3>' + esc(ccTitle(st.lvl, o)) + '</h3>' +
-        (st.lvl !== 'root' ? ccActBtn('edit', ICON.pencil, L('ccChange')) + ccActBtn('copy', ICON.copy, L('ccCopy')) : '') +
+        (!ccIsRootLvl(st.lvl) ? ccActBtn('edit', ICON.pencil, L('ccChange')) : '') +
+        (!ccIsRootLvl(st.lvl) && CC_TABLE[st.lvl].indexOf('cc_') === 0 ? ccActBtn('copy', ICON.copy, L('ccCopy')) : '') +
         (sub ? ccActBtn('add', ICON.plus, L(CC_ADD[sub])) : '') +
         (st.lvl === 'event' ? ccActBtn('addevent', ICON.plus, L('ccAddEvent')) : '') +
-        (st.lvl !== 'root' ? ccActBtn('del', ICON.trash, L('del'), 'del') : '') +
+        (st.lvl === 'act' ? ccActBtn('addact', ICON.plus, L('shAddAct')) : '') +
+        (!ccIsRootLvl(st.lvl) ? ccActBtn('del', ICON.trash, L('del'), 'del') : '') +
         '<button type="button" class="ccact close" data-cca="close">' + L('ccClose') + '</button>';
     } else if (st.mode === 'edit') body = ccForm(st.lvl, o, false);
     else if (st.mode === 'add') body = ccForm(CC_SUB[st.lvl], null, true);
@@ -1781,7 +2189,8 @@
       document.addEventListener('keydown', ccKey, true);
     }
     wrap.innerHTML = '<div class="ccsheetcard" role="dialog" aria-modal="true" aria-label="' + esc(L(CC_LVL[st.lvl] || 'ccOthers')) + '">' + body + '</div>';
-    if (st.mode === 'edit' && st.lvl === 'role' || st.mode === 'add' && CC_SUB[st.lvl] === 'role') { ccDrawSel(); ccDrawList(); }
+    Array.prototype.forEach.call(wrap.querySelectorAll('textarea.shgrow'), shGrow);
+    if (st.mode === 'edit' && ccIsPersonLvl(st.lvl) || st.mode === 'add' && ccIsPersonLvl(CC_SUB[st.lvl])) { ccDrawSel(); ccDrawList(); }
     var first = wrap.querySelector('form .input');
     if (first) { try { first.focus({ preventScroll: true }); } catch (e) { first.focus(); } }
     else { var b = wrap.querySelector('button'); if (b) b.focus(); }
@@ -1841,6 +2250,8 @@
     var t = e.target;
     if (t.name === 'q') { ccSheet.q = t.value; ccDrawList(); }
     else if (t.name === 'other') ccDrawSug(t.value);
+    else if (t.name === 'desc') shGrow(t);
+    else if (t.name === 'music_url' || t.name === 'video_url') { var ib = document.querySelector('#ccsheet [data-t="' + t.name + '"]'); if (ib) ib.classList.toggle('on', !!t.value.trim()); }
   }
   function ccSheetChange(e) {
     var t = e.target;
@@ -1859,15 +2270,17 @@
     if (!st) return;
     var o = ccObj(st.lvl, st.id);
     if (a === 'close') { ccCloseSheet(); return; }
+    if (a === 'tog') { var tf = wrap.querySelector('[name="' + b.dataset.t + '"]'); if (tf) { tf.hidden = !tf.hidden; b.setAttribute('aria-pressed', String(!tf.hidden)); if (!tf.hidden) tf.focus(); } return; }
     if (a === 'edit') {
       st.mode = 'edit';
-      if (st.lvl === 'role') { st.persons = (o.persons || []).map(function (p) { return { id: p.id, name: p.name }; }); st.q = ''; }
+      if (ccIsPersonLvl(st.lvl)) { st.persons = (o.persons || []).map(function (p) { return { id: p.id, name: p.name }; }); st.q = ''; }
       ccDrawSheet(); return;
     }
     if (a === 'addevent') { st.lvl = 'root'; st.id = null; st.mode = 'add'; ccDrawSheet(); return; }
+    if (a === 'addact') { st.lvl = 'shroot'; st.id = null; st.mode = 'add'; ccDrawSheet(); return; }
     if (a === 'add') {
       st.mode = 'add';
-      if (CC_SUB[st.lvl] === 'role') { st.persons = []; st.q = ''; }
+      if (ccIsPersonLvl(CC_SUB[st.lvl])) { st.persons = []; st.q = ''; }
       ccDrawSheet(); return;
     }
     if (a === 'copy') {
@@ -1879,7 +2292,7 @@
     if (a === 'del') {
       var title = ccTitle(st.lvl, o), table = CC_TABLE[st.lvl], id = o.id;
       ccCloseSheet();
-      if (!(await askConfirm(L('del'), L(st.lvl === 'role' ? 'ccConfirmDelRole' : 'ccConfirmDel', { name: title }), true))) return;
+      if (!(await askConfirm(L('del'), L(ccIsPersonLvl(st.lvl) ? 'ccConfirmDelRole' : 'ccConfirmDel', { name: title }), true))) return;
       return act(function () { return sb.from(table).delete().eq('id', id); }, L('ccDeleted'));
     }
     if (a === 'rm') { st.persons.splice(Number(b.dataset.i), 1); ccDrawSel(); ccDrawList(); return; }
@@ -1942,7 +2355,7 @@
     if (!st || !f.dataset.ccform) return;
     var kind = f.dataset.ccform;
     var fd = new FormData(f);
-    var g = function (k) { return String(fd.get(k) || '').trim(); };
+    var g = function (k) { if (k === 'phone' && fd.has('phonecc')) return composePhone(fd.get('phonecc'), fd.get('phone')); return String(fd.get(k) || '').trim(); };
     var o = ccObj(st.lvl, st.id);
     var isNew = st.mode === 'add';
     var ok = false;
@@ -1956,9 +2369,11 @@
       if (ok) ccCloseSheet();
       return;
     }
-    if ((kind === 'event' || kind === 'role' || kind === 'copy-event') && !g('name')) { ccErr(L('ccNeedName')); return; }
+    if ((kind === 'event' || kind === 'role' || kind === 'act' || kind === 'scene' || kind === 'part' || kind === 'copy-event') && !g('name')) { ccErr(L('ccNeedName')); return; }
     if ((kind === 'day' || kind === 'copy-day') && !g('date')) { ccErr(L('date') + '?'); return; }
     if (kind === 'shift' && (!g('start') || !g('end'))) { ccErr(L('time') + '?'); return; }
+    if ((kind === 'scene' || kind === 'act') && g('music_url') && !shSpotifyOk(g('music_url'))) { shReveal('music_url'); ccErr(L('shMusicBad')); return; }
+    if ((kind === 'scene' || kind === 'act') && g('video_url') && !shYoutubeOk(g('video_url'))) { shReveal('video_url'); ccErr(L('shVideoBad')); return; }
     ccCloseSheet();
 
     if (kind === 'event') {
@@ -1976,6 +2391,17 @@
       var ro = { name: g('name'), persons: st.persons || [] };
       if (isNew) { ro.shift_id = st.id; ro.sort = ccNextSort(st.id); }
       ok = await act(function () { return isNew ? sb.from('cc_roles').insert(ro) : sb.from('cc_roles').update(ro).eq('id', o.id); }, L('ccSaved'));
+    } else if (kind === 'act') {
+      var ac = { name: g('name'), description: g('desc') || null, active: !!fd.get('active'), is_hint: !!fd.get('is_hint'), music_name: g('music_name') || null, music_url: g('music_url') || null, video_desc: g('video_desc') || null, video_url: g('video_url') || null };
+      ok = await act(function () { return isNew ? sb.from('show_acts').insert(ac) : sb.from('show_acts').update(ac).eq('id', o.id); }, L('ccSaved'));
+    } else if (kind === 'scene') {
+      var sc = { name: g('name'), description: g('desc') || null, music_name: g('music_name') || null, music_url: g('music_url') || null, video_desc: g('video_desc') || null, video_url: g('video_url') || null };
+      if (isNew) sc.act_id = st.id;
+      ok = await act(function () { return isNew ? sb.from('show_scenes').insert(sc) : sb.from('show_scenes').update(sc).eq('id', o.id); }, L('ccSaved'));
+    } else if (kind === 'part') {
+      var pa = { name: g('name'), persons: st.persons || [] };
+      if (isNew) { pa.scene_id = st.id; pa.sort = S.cc.parts.filter(function (x) { return x.scene_id === st.id; }).reduce(function (n, x) { return Math.max(n, x.sort || 0); }, -1) + 1; }
+      ok = await act(function () { return isNew ? sb.from('show_parts').insert(pa) : sb.from('show_parts').update(pa).eq('id', o.id); }, L('ccSaved'));
     } else if (kind === 'copy-event') {
       var nm = g('name');
       ok = await act(function () { return ccCopyEvent(o, nm); }, L('ccCopied'));
@@ -1994,7 +2420,7 @@
     [['A', [1, 6], [2, 5]], ['B', [3, 8], [4, 7]]],
     [['A', [2, 7], [4, 5]], ['B', [1, 8], [3, 6]]]
   ];
-  function jsEdit() { return !!(S.me && (S.me.isAdmin || S.me.isJassMaster)); }   // Admins und Jass-Master bearbeiten
+  function jsEdit() { return !!(S.me && S.me.isJassMaster); }   // nur Jass Manager (Admin nur, wenn er sich die Rolle selbst gibt)
   function jsPlayers(d) {
     var a = Array.isArray(d.players) ? d.players.slice(0, 8) : [];
     while (a.length < 8) a.push(null);
@@ -2008,10 +2434,20 @@
   function jsFmt(v) { return v == null ? '–' : (v > 0 ? '+' + v : String(v)); }
   function jsCls(v) { return v == null || v === 0 ? '' : v > 0 ? ' pos' : ' neg'; }
   function jsDots(lvl, id, label) {
-    return '<button type="button" class="ccdots" data-act="js-menu" data-lvl="' + lvl + '" data-id="' + esc(id) + '" aria-label="' + esc(L('ccActions') + ': ' + label) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>';
+    return '<button type="button" class="hico" data-act="js-menu" data-lvl="' + lvl + '" data-id="' + esc(id) + '" aria-label="' + esc(L('ccActions') + ': ' + label) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>';
   }
   function jsFoldBtn(id, folded, label, small) {
     return '<button type="button" class="ccfold' + (small ? ' ccfold-day' : '') + (folded ? '' : ' open') + '" data-act="js-fold" data-id="' + esc(id) + '" aria-expanded="' + !folded + '" aria-label="' + esc(label) + '">' + ICON.chev + '</button>';
+  }
+
+  // Einheitlicher Icon-Button für Kopfzeilen (Info, Plus, Drucken, Menü «…»), steht links vom Auf-/Zuklapp-Pfeil
+  function hico(act, icon, label, o) {
+    o = o || {};
+    var attrs = ' data-act="' + act + '"';
+    Object.keys(o.data || {}).forEach(function (k) { attrs += ' data-' + k + '="' + esc(o.data[k]) + '"'; });
+    return '<button type="button" class="hico' + (o.cls ? ' ' + o.cls : '') + (o.on ? ' on' : '') + '"' + attrs +
+      (o.on != null ? ' aria-pressed="' + !!o.on + '"' : '') +
+      ' aria-label="' + esc(o.aria || label) + '" title="' + esc(label) + '">' + icon + '</button>';
   }
 
   // Tagesrangliste: jeder Spieler erhält die Punkte seines Teams aus jedem Spiel
@@ -2035,7 +2471,7 @@
   }
 
   function viewJass() {
-    var topHtml = '<div class="top"><div><h1 class="pagetitle">' + L('titleJass') + '</h1></div></div>';
+    var topHtml = pageTopLegend('titleJass', 'jslegend');
     if (S.jsErr) return topHtml + '<div class="empty"><p>' + L('jsSetup') + '</p></div>';
     var ed = jsEdit(), map = ccMap(), html = topHtml;
     var all = S.js.days.slice().sort(function (a, b) { return a.day < b.day ? -1 : a.day > b.day ? 1 : ccByCreated(a, b); });
@@ -2294,16 +2730,18 @@
   function jsEternalFolder(past) {
     var key = 'jsEternal', folded = S.jsFold[key] !== true;   // Standard: zugeklappt
     var map = ccMap(), res = jsEternalRows(past, map);
+    var showInfo = !!S.info['jsh:' + key], hasRows = res.rows.length > 0;
     var html = '<section class="ccel"><div class="cceh">' +
       '<button type="button" class="cct" data-act="js-fold" data-id="' + key + '" aria-expanded="' + !folded + '">' + esc(L('jsEternal')) + '</button>' +
-      jsFoldBtn(key, folded, L('jsEternal'), false) + '</div>';
+      (hasRows ? hico('js-hint', ICON.info, showInfo ? L('infoHide') : L('infoShow'), { on: showInfo, data: { id: key } }) : '') +
+      jsFoldBtn(key, folded, L('jsEternal'), false) + '</div>' +
+      (showInfo && hasRows ? '<p class="infobar">' + L('jsEternalHint', { n: res.n }) + '</p>' : '');
     if (!folded) {
       html += '<div class="ccbody">';
       if (!res.rows.length) {
         html += '<p class="ccsum" style="padding-top:10px">' + L('jsNoPoints') + '</p>';
       } else {
-        html += '<p class="ccsum" style="padding:10px 0 4px">' + L('jsEternalHint', { n: res.n }) + '</p>' +
-          '<ol class="jsrank">' + res.rows.map(function (r) {
+        html += '<ol class="jsrank">' + res.rows.map(function (r) {
             return '<li><span class="jsrk">' + r.rank + '.</span><span class="jsrn">' + esc(r.name) + '</span><span class="jsstp">' + L(r.rounds === 1 ? 'jsEternalRound' : 'jsEternalRounds', { n: r.rounds }) + '</span><span class="jsrp">' + r.points + '</span></li>';
           }).join('') + '</ol>';
       }
@@ -2319,8 +2757,8 @@
     var folded = isUpcoming ? (S.jsFold[key] === true) : (S.jsFold[key] !== true);
     var html = '<section class="ccel"><div class="cceh">' +
       '<button type="button" class="cct" data-act="js-fold" data-id="' + key + '" aria-expanded="' + !folded + '">' + esc(title) + ' <span class="cnt">(' + days.length + ')</span></button>' +
-      (isUpcoming && ed ? '<button type="button" class="plusbtn" data-act="js-addday" aria-label="' + esc(L('jsAddDay')) + '" title="' + esc(L('jsAddDay')) + '"><span>+</span></button>' : '') +
-      (!isUpcoming && days.length ? '<button type="button" class="ccdots" data-act="js-print-past" title="' + esc(L('jsPrint')) + '" aria-label="' + esc(L('jsPrint')) + '">' + ICON.print + '</button>' : '') +
+      (isUpcoming && ed ? hico('js-addday', ICON.plus, L('jsAddDay')) : '') +
+      (!isUpcoming && days.length && ed ? hico('js-print-past', ICON.print, L('jsPrint')) : '') +
       jsFoldBtn(key, folded, title, false) + '</div>';
     if (!folded) {
       html += '<div class="ccbody">';
@@ -2332,31 +2770,48 @@
     return html;
   }
 
-  function jsSub(key, title, body) {
-    var folded = !!S.jsFold[key];
+  // opts.info = { id, text }: Info-Icon in der Kopfzeile (links vom Pfeil), der Text steht erst nach dem Antippen im Abschnitt
+  function jsSub(key, title, body, opts) {
+    var folded = !!S.jsFold[key], inf = opts && opts.info, showInfo = inf && !!S.info['jsh:' + inf.id];
+    var infoBtn = inf ? hico('js-hint', ICON.info, showInfo ? L('infoHide') : L('infoShow'), { on: showInfo, data: { id: inf.id } }) : '';
     return '<div class="jssub"><div class="jssh"><button type="button" class="jsst" data-act="js-fold" data-id="' + esc(key) + '" aria-expanded="' + !folded + '">' + title + '</button>' +
-      jsFoldBtn(key, folded, title, true) + '</div>' + (folded ? '' : '<div class="jssb">' + body + '</div>') + '</div>';
+      infoBtn + jsFoldBtn(key, folded, title, true) + '</div>' +
+      (showInfo ? '<p class="infobar">' + inf.text + '</p>' : '') +
+      (folded ? '' : '<div class="jssb">' + body + '</div>') + '</div>';
   }
 
   // Rangliste darstellen: entweder die von Hand gepflegte (manual_ranking) oder die aus den
   // Spiel-Punkten berechnete. Die von Hand gepflegte zeigt nur einen Punktewert pro Person.
-  function jsRankingHtml(d, P, map) {
+  function jsRowBtn(d, i, nm) {
+    return '<button type="button" class="hico jsrowedit" data-act="js-row-edit" data-id="' + esc(d.id) + '" data-idx="' + i + '" aria-label="' + esc(L('jsEditRow') + ': ' + nm) + '" title="' + esc(L('jsEditRow')) + '">' + ICON.dots + '</button>';
+  }
+  // Rangliste einer Runde als Zeilenliste {id, name, points, gamePts} in der angezeigten Reihenfolge (auch für berechnete Ranglisten)
+  function jsMaterialize(d) {
+    var map = ccMap();
+    if (Array.isArray(d.manual_ranking) && d.manual_ranking.length) {
+      return d.manual_ranking.map(function (r, i) { return { _i: i, id: r.id || null, name: r.name, points: r.points, gamePts: r.gamePts }; }).sort(function (a, b) { return (b.points || 0) - (a.points || 0) || a._i - b._i; })
+        .map(function (r) { return { id: r.id, name: r.id && ccMember(r.id) ? ccMember(r.id).name : r.name, points: r.points, gamePts: r.gamePts }; });
+    }
+    var P = jsPlayers(d);
+    return jsRanking(d).map(function (r) { var p = P[r.slot - 1]; return { id: p && p.id ? p.id : null, name: jsName(P, r.slot, map), points: r.standing, gamePts: r.pts }; });
+  }
+  function jsRankingHtml(d, P, map, editable) {
     if (Array.isArray(d.manual_ranking) && d.manual_ranking.length) {
       var rows = d.manual_ranking.slice().sort(function (a, b) { return (b.points || 0) - (a.points || 0); });
       var rank = 0, last = null;
       rows.forEach(function (r, i) { if (r.points !== last) { rank = i + 1; last = r.points; } r.rank = rank; });
-      return '<ol class="jsrank">' + rows.map(function (r) {
+      return '<ol class="jsrank">' + rows.map(function (r, mi) {
         var nm = r.id ? (ccMember(r.id) ? ccMember(r.id).name : r.name) : r.name;
         var diff = r.gamePts != null ? (r.gamePts >= 0 ? '(+' + r.gamePts + ')' : '(' + r.gamePts + ')') : '';
-      return '<li><span class="jsrk">' + r.rank + '.</span><span class="jsrn">' + esc(nm) + '</span>' + (diff ? '<span class="jsdiff">' + diff + '</span>' : '') + '<span class="jsrp">' + (r.points == null ? '\u2013' : r.points) + '</span></li>';
+      return '<li><span class="jsrk">' + r.rank + '.</span><span class="jsrn">' + esc(nm) + '</span>' + (diff ? '<span class="jsdiff">' + diff + '</span>' : '') + '<span class="jsrp">' + (r.points == null ? '\u2013' : r.points) + '</span>' + (editable ? jsRowBtn(d, mi, nm) : '') + '</li>';
       }).join('') + '</ol>';
     }
     var sc = jsScores(d), any = Object.keys(sc).some(function (k) { return typeof sc[k] === 'number'; });
     if (!any) return '<p class="ccsum">' + L('jsNoPoints') + '</p>';
     var rows2 = jsRanking(d);
-    return '<ol class="jsrank">' + rows2.map(function (r) {
+    return '<ol class="jsrank">' + rows2.map(function (r, ri) {
       var diff = jsFmt(r.pts);   // z. B. "+157" oder "-23"
-      return '<li><span class="jsrk">' + r.rank + '.</span><span class="jsrn">' + esc(jsName(P, r.slot, map)) + '</span><span class="jsdiff' + jsCls(r.pts) + '">(' + diff + ')</span><span class="jsrpn">' + r.standing + '</span></li>';
+      return '<li><span class="jsrk">' + r.rank + '.</span><span class="jsrn">' + esc(jsName(P, r.slot, map)) + '</span><span class="jsdiff' + jsCls(r.pts) + '">(' + diff + ')</span><span class="jsrpn">' + r.standing + '</span>' + (editable ? jsRowBtn(d, ri, jsName(P, r.slot, map)) : '') + '</li>';
     }).join('') + '</ol>';
   }
 
@@ -2366,7 +2821,7 @@
     var h = '<div class="ccday"><div class="ccdh">' +
       (isUpcoming && ed ? '<input type="checkbox" class="ccck" data-jsactive="' + esc(d.id) + '"' + (d.active !== false ? ' checked' : '') + ' aria-label="' + esc(label + ': ' + L('ccActive')) + '" title="' + esc(L('jsVisibleHint')) + '">' : '') +
       '<button type="button" class="ccdt" data-act="js-fold" data-id="' + esc(d.id) + '" aria-expanded="' + !df + '"><b>' + label + '</b></button>' +
-      (ed ? jsDots('day', d.id, label) : '') + jsFoldBtn(d.id, df, label, true) + '</div>';
+      (ed ? (d.closed ? hico('js-lock', d.id && S.jsUnlock[d.id] ? ICON.unlock : ICON.lock, S.jsUnlock[d.id] ? L('jsUnlocked') : L('jsLocked'), { on: !!S.jsUnlock[d.id], aria: (S.jsUnlock[d.id] ? L('jsUnlocked') : L('jsLocked')) + ': ' + label, data: { id: d.id } }) + (S.jsUnlock[d.id] ? jsDots('day', d.id, label) : '') : jsDots('day', d.id, label)) : '') + jsFoldBtn(d.id, df, label, true) + '</div>';
     if (df) return h + '</div>';
 
     // Teilnehmer 1–8: nur für Jass Manager und Admin sichtbar
@@ -2375,10 +2830,8 @@
       return '<button type="button" class="jsp" data-act="js-pick" data-id="' + esc(d.id) + '" data-slot="' + (i + 1) + '" aria-label="' + esc(L('jsPick', { n: i + 1 })) + '">' + inner + '<span class="sp"></span>' + ICON.pencil + '</button>';
     }).join('') : '';
 
-    // Spielplan (der Hinweistext steckt hinter dem Info-Symbol)
-    var showHint = !!S.info['jsh:' + d.id];
-    var sp = ed ? '<button type="button" class="ccinfo' + (showHint ? ' on' : '') + '" data-act="js-hint" data-id="' + esc(d.id) + '" aria-pressed="' + showHint + '" aria-label="' + esc(showHint ? L('infoHide') : L('infoShow')) + '" title="' + esc(showHint ? L('infoHide') : L('infoShow')) + '">' + ICON.info + '</button>' +
-      (showHint ? '<p class="ccnote" style="margin:8px 0">' + L('jsHint') + '</p>' : '') : '';
+    // Spielplan (der Hinweistext steckt hinter dem Info-Symbol in der Kopfzeile)
+    var sp = '';
     JS_PLAN.forEach(function (round, ri) {
       sp += '<div class="jsround">' + L('jsRound', { n: ri + 1 }) + '</div>';
       round.forEach(function (g) {
@@ -2394,11 +2847,11 @@
       });
     });
 
-    var rk = jsRankingHtml(d, P, map);
+    var rk = jsRankingHtml(d, P, map, !!(ed && d.closed && S.jsUnlock[d.id]));
 
     h += isUpcoming
       ? (ed ? jsSub(d.id + ':p', L('jsParticipants'), '<div class="jsplist">' + tp + '</div>') : '') +
-        jsSub(d.id + ':s', L('jsSchedule'), sp) +
+        jsSub(d.id + ':s', L('jsSchedule'), sp, ed ? { info: { id: d.id, text: L('jsHint') } } : null) +
         jsSub(d.id + ':r', L('jsRanking'), rk)
       : rk;   // Vergangene Jassmasters: nur die Tagesrangliste, direkt sichtbar
     return h + '</div>';
@@ -2471,11 +2924,20 @@
         fld(L('date'), '<input class="input" type="date" name="date" value="' + esc(o ? o.day : '') + '" required>') +
         fld(L('ccNameOpt'), '<input class="input" name="name" value="' + esc(o && o.name ? o.name : '') + '" placeholder="32. Jassmasters">') + formEnd;
     } else if (st.mode === 'rank-form') {
-      if (!st.rows) st.rows = (o.manual_ranking || []).map(function (r) { return { name: r.name, points: r.points, id: r.id || null }; });
+      if (!st.rows) st.rows = (o.manual_ranking || []).map(function (r) { return { name: r.name, points: r.points, id: r.id || null, gamePts: r.gamePts }; });
       body = '<p class="cck">' + L('jsRanking') + '</p><h3>' + esc((o.closed ? monthYear(o.day) : fullDateIso(o.day)) + (o.name ? ' (' + o.name + ')' : '')) + '</h3>' +
         '<form data-jsform="rank" novalidate><div id="jsrankrows">' + jsRankRowsHtml(st.rows) + '</div>' +
         '<button type="button" class="btn ghost inline" data-jsa="rank-add" style="margin:4px 0 10px">' + ICON.plus + ' ' + L('jsAddRow') + '</button>' +
         formEnd;
+    } else if (st.mode === 'row-form') {
+      if (!st.base) st.base = jsMaterialize(o);
+      var rw = st.base[st.idx] || { name: '', points: '', gamePts: '' };
+      body = '<p class="cck">' + L('jsRanking') + '</p><h3>' + esc(rw.name || L('jsEditRow')) + '</h3>' +
+        '<form data-jsform="row" novalidate>' +
+        fld(L('jsRankName'), '<input class="input" list="jsmemberlist" name="rn" value="' + esc(rw.name || '') + '">') +
+        grid(fld(L('jsRankPoints'), '<input class="input" type="text" inputmode="numeric" pattern="-?[0-9]*" name="rp" value="' + (rw.points == null ? '' : rw.points) + '">'),
+             fld(L('jsRankDiff'), '<input class="input" type="text" inputmode="numeric" pattern="-?[0-9]*" name="rg" value="' + (rw.gamePts == null ? '' : rw.gamePts) + '">')) +
+        '<datalist id="jsmemberlist">' + S.members.filter(function (m) { return !m.isGuest && !m.isCandidate; }).map(function (m) { return '<option value="' + esc(m.name) + '">'; }).join('') + '</datalist>' + formEnd;
     } else if (st.mode === 'pick') {
       var P = jsPlayers(o), cur = P[st.slot - 1];
       var curFree = cur && !cur.id ? cur.name : '';
@@ -2595,6 +3057,22 @@
         return sb.from('jass_days').insert({ series_id: sid, day: dt, name: nm, active: false, players: [null, null, null, null, null, null, null, null], scores: {} });
       }, L('ccSaved'));
     }
+    if (f.dataset.jsform === 'row') {
+      if (!jsEdit()) return;
+      var rn = g('rn'), rp = g('rp'), rg = g('rg');
+      if (!rn) { err(L('jsRankName') + '?'); return; }
+      if (rp !== '' && isNaN(parseInt(rp, 10))) { err(L('jsRankPoints') + '?'); return; }
+      if (rg !== '' && isNaN(parseInt(rg, 10))) { err(L('jsRankDiff') + '?'); return; }
+      var mem = S.members.filter(function (m) { return !m.isGuest && ccNorm(m.name) === ccNorm(rn); })[0];
+      var base = (st.base || []).map(function (r) { return { name: r.name, id: r.id || null, points: r.points, gamePts: r.gamePts }; });
+      var upd = { name: mem ? mem.name : rn, id: mem ? mem.id : null, points: rp === '' ? null : parseInt(rp, 10) };
+      if (rg !== '') upd.gamePts = parseInt(rg, 10);
+      base[st.idx] = upd;
+      base = base.map(function (r) { var o2 = { name: r.name, id: r.id, points: r.points }; if (r.gamePts != null && r.gamePts !== '') o2.gamePts = r.gamePts; return o2; });
+      var rdayId = st.id;
+      jsClose();
+      return act(function () { return sb.from('jass_days').update({ manual_ranking: base }).eq('id', rdayId); }, L('ccSaved'));
+    }
     if (f.dataset.jsform === 'rank') {
       var byName = {};
       S.members.forEach(function (m) { if (!m.isGuest) byName[ccNorm(m.name)] = m; });
@@ -2606,7 +3084,7 @@
         var pts = parseInt(ptsRaw, 10);
         if (isNaN(pts)) return;
         var match = byName[ccNorm(nm2)];
-        out.push({ name: match ? match.name : nm2, id: match ? match.id : null, points: pts });
+        var orow = { name: match ? match.name : nm2, id: match ? match.id : null, points: pts }; if (r.gamePts != null && r.gamePts !== '') orow.gamePts = r.gamePts; out.push(orow);
       });
       var dayId = st.id;
       jsClose();
@@ -2647,6 +3125,8 @@
         (member ? mbBtn('set-em', m.id, m.isEventManager ? '0' : '1', ICON.star, L(m.isEventManager ? 'mRevokeEm' : 'mMakeEm'), 'cat-manager') : '') +
         (member ? mbBtn('set-cm', m.id, m.isChilbiManager ? '0' : '1', ICON.glass, L(m.isChilbiManager ? 'mRevokeCm' : 'mMakeCm'), 'cat-manager') : '') +
         (member ? mbBtn('set-crm', m.id, m.isChraenzliManager ? '0' : '1', ICON.glass, L(m.isChraenzliManager ? 'mRevokeCrm' : 'mMakeCrm'), 'cat-manager') : '') +
+        (member ? mbBtn('set-dir', m.id, m.isDirector ? '0' : '1', ICON.stage, L(m.isDirector ? 'mRevokeDir' : 'mMakeDir'), 'cat-manager') : '') +
+        (member ? mbBtn('set-actor', m.id, m.isActor ? '0' : '1', ICON.stage, L(m.isActor ? 'mRevokeActor' : 'mMakeActor'), 'cat-manager') : '') +
         (member ? mbBtn('set-jm', m.id, m.isJassMaster ? '0' : '1', ICON.trophy, L(m.isJassMaster ? 'mRevokeJm' : 'mMakeJm'), 'cat-manager') : '') +
         GROUPS.filter(function (g) { return g.key !== grp && !(g.noSelf && self); })
           .map(function (g) { return mbBtn('set-group', m.id, g.key, g.icon, L(g.label), 'cat-role'); }).join('') +
@@ -2658,7 +3138,7 @@
       body = '<p class="cck">' + L('mEdit') + '</p><h3>' + esc(m.name) + '</h3>' +
         '<form data-form="member-edit" data-id="' + esc(m.id) + '" novalidate>' +
         fld(L('fullName'), '<input class="input" name="name" value="' + esc(m.name) + '" autocomplete="off" required>') +
-        fld(L('phone'), '<input class="input" name="phone" type="tel" inputmode="tel" autocomplete="off" value="' + esc(fmtPhone(m.phone)) + '" required>') +
+        fld(L('phone'), phoneField(m.phone)) +
         '<p class="ccnote">' + L('mEditNote') + '</p>' +
         '<div class="dlgbtns"><button type="button" class="btn ghost inline" data-mb="close">' + L('dismiss') + '</button><button type="submit" class="btn inline">' + L('save') + '</button></div></form>';
     }
@@ -2764,7 +3244,7 @@
     }
   }
 
-  /* ---------- Events: Bearbeiten im Drei-Punkte-Menü (nur Event-Manager/Admin) ---------- */
+  /* ---------- Events: Bearbeiten im Drei-Punkte-Menü (nur Event Manager/Admin) ---------- */
   var evSheet = null;   // { id, mode: 'menu' | 'edit' | 'people', q }
   function evKey(e) { if (e.key === 'Escape' && !document.getElementById('dlg')) { e.preventDefault(); evClose(); } }
   function evClose() {
@@ -2775,7 +3255,7 @@
   }
   function evOpen(id, mode) { evSheet = { id: id, mode: mode || 'menu', q: '' }; evDraw(); }
 
-  // Antwort einer beliebigen Person setzen (für Event-Manager/Admin). Im Unterschied zu
+  // Antwort einer beliebigen Person setzen (für Event Manager/Admin). Im Unterschied zu
   // setResponse() betrifft dies nicht zwingend die eigene Antwort.
   async function setResponseFor(eventId, userId, val) {
     var cur = (S.ev[eventId] || {})[userId];
@@ -2792,7 +3272,39 @@
     }, L('ccSaved'));
   }
 
+  // Training: Antwort einer beliebigen Person setzen (nur Admin; RLS: training_responses_admin_write)
+  async function setTrainingResponseFor(key, userId, val) {
+    var cur = (S.tr[key] || {})[userId];
+    S.tr[key] = S.tr[key] || {};
+    if (cur === val) {
+      delete S.tr[key][userId];
+      render(); if (evSheet) evDraw();
+      return act(function () { return sb.from('training_responses').delete().eq('training_key', key).eq('user_id', userId); }, L('ccSaved'));
+    }
+    S.tr[key][userId] = val;
+    render(); if (evSheet) evDraw();
+    return act(function () {
+      return sb.from('training_responses').upsert({ training_key: key, user_id: userId, status: val, updated_at: new Date().toISOString() });
+    }, L('ccSaved'));
+  }
+
+  function trPeopleList(tr) {
+    var q = ccNorm(evSheet.q || '');
+    var pool = S.members.filter(function (m) { return !m.isCandidate; });
+    if (q) pool = pool.filter(function (m) { return ccNorm(m.name).indexOf(q) > -1; });
+    var r = S.tr[tr.id] || {};
+    var rows = pool.map(function (m) {
+      var val = r[m.id];
+      var b = function (v, cls, label) {
+        return '<button type="button" class="resp ' + cls + (val === v ? ' on' : '') + '" data-eva="setresp" data-uid="' + esc(m.id) + '" data-val="' + v + '">' + label + '</button>';
+      };
+      return '<div class="evprow"><span class="evpn">' + esc(m.name) + '</span><div class="evpbtns">' + b('yes', 'yes', L('yes')) + b('no', 'no', L('no')) + '</div></div>';
+    }).join('');
+    return rows ? '<div class="evpeople">' + rows + '</div>' : '<p class="ccsum" style="padding:10px 0">' + L('nobody') + '</p>';
+  }
+
   function evPeopleList(ev) {
+    if (evSheet && evSheet.mode === 'trpeople') return trPeopleList(ev);
     var q = ccNorm(evSheet.q || '');
     var pool = S.members.filter(function (m) { return !m.isGuest && !m.isSupporter && !m.isCandidate; });
     if (q) pool = pool.filter(function (m) { return ccNorm(m.name).indexOf(q) > -1; });
@@ -2822,7 +3334,11 @@
   function evDraw() {
     var st = evSheet;
     if (!st) return;
-    var ev = S.events.filter(function (x) { return x.id === st.id; })[0];
+    var ev;
+    if (st.mode === 'trpeople') {
+      var trn = getTrainings().filter(function (x) { return x.key === st.id; })[0];
+      ev = trn ? { id: trn.key, title: fmt(trn.date, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' }) } : null;
+    } else ev = S.events.filter(function (x) { return x.id === st.id; })[0];
     if (!ev) { evClose(); return; }
     var body;
     if (st.mode === 'menu') {
@@ -2840,7 +3356,7 @@
         fld(L('place'), inPlace(ev.place)) +
         fld('', '<label class="check"><input type="checkbox" name="rsvp"' + (ev.rsvp ? ' checked' : '') + '><span>' + L('rsvpRequired') + '</span></label>') +
         '<div class="dlgbtns"><button type="button" class="btn ghost inline" data-eva="close">' + L('dismiss') + '</button><button type="button" class="btn inline" data-eva="save-ev">' + L('save') + '</button></div></form>';
-    } else if (st.mode === 'people') {
+    } else if (st.mode === 'people' || st.mode === 'trpeople') {
       body = '<p class="cck">' + L('evManagePeople') + '</p><h3>' + esc(ev.title) + '</h3>' +
         '<input class="input" name="q" placeholder="' + esc(L('ccSearch')) + '" autocomplete="off" value="' + esc(st.q || '') + '" style="margin-bottom:10px">' +
         '<div id="evpeoplebox">' + evPeopleList(ev) + '</div>' +
@@ -2874,9 +3390,11 @@
     if (b) {
       var a = b.dataset.eva, st = evSheet;
       if (a === 'close') { evClose(); return; }
+      if ((a === 'edit' || a === 'save-ev' || a === 'cancel' || a === 'del') && !canManageEvents()) return;
+      if ((a === 'setresp' || a === 'addextra' || a === 'people') && !canEditEvPeople() && !canEditPeople()) return;
       if (a === 'edit') { st.mode = 'edit'; evDraw(); return; }
       if (a === 'people') { st.mode = 'people'; evDraw(); return; }
-      if (a === 'setresp') { return setResponseFor(st.id, b.dataset.uid, b.dataset.val); }
+      if (a === 'setresp') { return st.mode === 'trpeople' ? setTrainingResponseFor(st.id, b.dataset.uid, b.dataset.val) : setResponseFor(st.id, b.dataset.uid, b.dataset.val); }
       // Speichern-Knopf im Edit-Sheet: Formular direkt hier abhandeln
       if (a === 'save-ev') {
         var form = wrap.querySelector('[data-form="edit-ev"]');
@@ -3027,6 +3545,12 @@
       act(function () { return sb.rpc('set_cc_public', { make_public: pub }); }, pub ? L('ccPublicOn') : L('ccPublicOff'));
       return;
     }
+    if (cb && cb.dataset && cb.dataset.shactive) {
+      var sid = cb.dataset.shactive, son = cb.checked;
+      delete S.ccFold[sid];
+      act(function () { return sb.from('show_acts').update({ active: son }).eq('id', sid); }, L('ccSaved'));
+      return;
+    }
     if (cb && cb.dataset && cb.dataset.jsactive) {
       var jid = cb.dataset.jsactive, jon = cb.checked;
       act(function () { return sb.from('jass_days').update({ active: jon }).eq('id', jid); }, L('ccSaved'));
@@ -3068,52 +3592,39 @@
     if (act_ === 'mode') { S.mode = S.mode === 'login' ? 'register' : 'login'; S.err = ''; render(); return; }
     if (act_ === 'tab') { S.tab = D.tab; S.edit = null; render(); window.scrollTo(0, 0); return; }
     if (act_ === 'who') { S.open[D.key] = !S.open[D.key]; render(); return; }
-    if (act_ === 'js-fold') { S.jsFold[D.id] = !S.jsFold[D.id]; render(); return; }
-    if (act_ === 'js-print-past') { try { await jsPrintMatrix(); } catch (err) { console.error(err); toast(L('ccPdfFailed')); } return; }
-    if (act_ === 'js-hint') { S.info['jsh:' + D.id] = !S.info['jsh:' + D.id]; render(); return; }
+    if (act_ === 'js-fold') { S.jsFold[D.id] = !S.jsFold[D.id]; delete S.info['jsh:' + D.id]; delete S.info['jsh:' + String(D.id).replace(/:s$/, '')]; render(); return; }   // Auf-/Zuklappen blendet den Infotext immer aus; Info nur über das Info-Icon
+    if (act_ === 'js-print-past') { if (!jsEdit()) return; try { await jsPrintMatrix(); } catch (err) { console.error(err); toast(L('ccPdfFailed')); } return; }
+    if (act_ === 'js-hint') { S.info['jsh:' + D.id] = !S.info['jsh:' + D.id]; render(); return; }   // nur den Text ein-/ausblenden
+    if (act_ === 'js-lock') { if (!jsEdit()) return; S.jsUnlock[D.id] = !S.jsUnlock[D.id]; render(); return; }
+    if (act_ === 'js-row-edit') { if (jsEdit() && S.jsUnlock[D.id]) jsOpen({ lvl: 'day', id: D.id, mode: 'row-form', idx: Number(D.idx) }); return; }
     if (act_ === 'js-menu') { if (jsEdit()) jsOpen({ lvl: D.lvl, id: D.id, mode: 'menu' }); return; }
     if (act_ === 'js-pick') { if (jsEdit()) jsOpen({ lvl: 'day', id: D.id, mode: 'pick', slot: Number(D.slot), q: '' }); return; }
     if (act_ === 'js-addday') { if (jsEdit()) jsOpen({ lvl: 'day', id: null, mode: 'day-form' }); return; }
     if (act_ === 'mb-menu') { if (S.me && S.me.isAdmin) mbOpen(D.id); return; }
     if (act_ === 'mb-grp') { S.sec[D.id] = S.sec[D.id] !== true; render(); return; }
     if (act_ === 'cc-addevent') { if (canCC()) ccOpen('root', null, 'add'); return; }
+    if (act_ === 'sh-fold') { S.ccFold[D.id] = !shIsFolded(D.id); render(); return; }
+    if (act_ === 'sh-scene-add') { if (shEdit()) ccOpen('scene', D.id, 'add', { persons: [], q: '' }); return; }
+    if (act_ === 'sh-scene-edit') { if (shEdit()) ccOpen('scene', D.id, 'edit'); return; }
+    if (act_ === 'sh-play') { S.play[D.id] = !S.play[D.id]; render(); return; }
+    if (act_ === 'sh-print') { if (shEdit()) { try { await showExportPdf(); } catch (err) { console.error(err); toast(L('ccPdfFailed')); } } return; }
+    if (act_ === 'sh-addact') { if (shEdit()) ccOpen('shroot', null, 'add'); return; }
+    if (act_ === 'sh-menu') { if (shEdit()) ccOpen(D.lvl, D.id || null, 'menu'); return; }
     if (act_ === 'cc-fold') { S.ccFold[D.id] = !ccIsFolded(D.id); render(); return; }
     if (act_ === 'cc-menu') { if (canCC()) ccOpen(D.lvl, D.id || null, 'menu'); return; }
-    if (act_ === 'cc-print') { ccExportPdf(D.id); return; }
-    if (act_ === 'ev-menu') { if (canManageEvents()) evOpen(D.id, 'menu'); return; }
+    if (act_ === 'cc-print') { if (canCC()) ccExportPdf(D.id); return; }
+    if (act_ === 'ev-menu') { if (canManageEvents()) evOpen(D.id, 'menu'); else if (canEditEvPeople()) evOpen(D.id, 'people'); return; }
+    if (act_ === 'tr-people') { if (canEditPeople()) evOpen(D.key, 'trpeople'); return; }
     if (act_ === 'cc-guest') { if (S.me && S.me.isAdmin) ccOpen('guest', null, 'guest', { name: D.name }); return; }
     if (act_ === 'who-ev') { S.open['ev:' + D.id] = !S.open['ev:' + D.id]; render(); return; }
     if (act_ === 'sec') { S.sec[D.id] = !S.sec[D.id]; render(); return; }
-    if (act_ === 'info-toggle') {
-      S.info[D.id] = !S.info[D.id];
-      if (S.info[D.id]) S.sec[D.id] = true;
-      render();
-      return;
-    }
+    if (act_ === 'info-toggle') { S.info[D.id] = !S.info[D.id]; render(); return; }   // nur den Text ein-/ausblenden, Auf-/Zuklappen bleibt unabhängig
     if (act_ === 'add-toggle') {
       S.add[D.id] = !S.add[D.id];
       if (S.add[D.id]) S.sec[D.id] = true;
       render();
       var af = document.querySelector('.addform');
       if (S.add[D.id] && af) af.scrollIntoView({ block: 'nearest' });
-      return;
-    }
-    if (act_ === 'acc-menu') {
-      var mid = D.id, meta = ACC_META[mid] || {};
-      var items = [];
-      if (meta.info) items.push({
-        icon: ICON.info, label: S.info[mid] ? L('infoHide') : L('infoShow'),
-        onClick: function () { S.info[mid] = !S.info[mid]; if (S.info[mid]) S.sec[mid] = true; render(); }
-      });
-      if (meta.canAdd) items.push({
-        icon: ICON.plus, label: S.add[mid] ? L('addClose') : L('addNew'),
-        onClick: function () {
-          S.add[mid] = !S.add[mid]; if (S.add[mid]) S.sec[mid] = true; render();
-          var af = document.querySelector('.addform');
-          if (S.add[mid] && af) af.scrollIntoView({ block: 'nearest' });
-        }
-      });
-      openSimpleMenu(items);
       return;
     }
     if (act_ === 'more-tr') { S.showMore = !S.showMore; render(); return; }
@@ -3168,7 +3679,7 @@
       return;
     }
 
-    /* Event-Aktionen: Admins und Event-Manager */
+    /* Event-Aktionen: Admins und Event Manager */
     if (canManageEvents()) {
       if (act_ === 'del-ev') {
         if (!(await askConfirm(L('del'), L('confirmDelEvent'), true))) return;
@@ -3218,12 +3729,18 @@
     }
     if (act_ === 'set-group') {
       var tg = S.members.filter(function (m) { return m.id === D.id; })[0];
-      if ((D.val === 'guest' || D.val === 'candidate') && tg && (tg.isAdmin || tg.isEventManager || tg.isChilbiManager || tg.isChraenzliManager || tg.isJassMaster) &&
+      if ((D.val === 'guest' || D.val === 'candidate') && tg && (tg.isAdmin || tg.isEventManager || tg.isChilbiManager || tg.isChraenzliManager || tg.isJassMaster || tg.isDirector || tg.isActor) &&
           !(await askConfirm(L(D.val === 'guest' ? 'guestTag' : 'grpCandidate'), L('confirmGuestLoses', { name: tg.name }), false))) return;
       return act(function () { return sb.rpc('set_member_group', { target: D.id, grp: D.val }); }, L('groupChanged'));
     }
     if (act_ === 'set-em') {
       return act(function () { return sb.rpc('set_event_manager', { target: D.id, make_manager: D.val === '1' }); }, D.val === '1' ? L('emGranted') : L('emRevoked'));
+    }
+    if (act_ === 'set-dir') {
+      return act(function () { return sb.rpc('set_director', { target: D.id, make_director: D.val === '1' }); }, D.val === '1' ? L('dirGranted') : L('dirRevoked'));
+    }
+    if (act_ === 'set-actor') {
+      return act(function () { return sb.rpc('set_actor', { target: D.id, make_actor: D.val === '1' }); }, D.val === '1' ? L('actorGranted') : L('actorRevoked'));
     }
     if (act_ === 'set-jm') {
       return act(function () { return sb.rpc('set_jass_master', { target: D.id, make_master: D.val === '1' }); }, D.val === '1' ? L('jmGranted') : L('jmRevoked'));
@@ -3248,7 +3765,7 @@
     var f = new FormData(form);
     var kind = form.dataset.form;
     var id = form.dataset.id;
-    var g = function (k) { return String(f.get(k) || '').trim(); };
+    var g = function (k) { if (k === 'phone' && f.has('phonecc')) return composePhone(f.get('phonecc'), f.get('phone')); return String(f.get(k) || '').trim(); };
     var ok;
 
     if (kind === 'auth') return handleAuth(g);
@@ -3259,6 +3776,7 @@
     }
     if (kind === 'pin') {
       if (!/^\d{6}$/.test(g('pin'))) { toast(L('pinExact')); return; }
+      if (pinWeak(g('pin'), S.me.phone)) { toast(L('pinWeak')); return; }
       try {
         var r = await sb.auth.updateUser({ password: g('pin') });
         if (r.error) throw r.error;
@@ -3268,7 +3786,8 @@
       } catch (err) { console.error(err); toast(L('pinChangeFail')); }
       return;
     }
-    if (!S.me.isAdmin && !(S.me.isEventManager && (kind === 'event' || kind === 'edit-ev' || kind === 'ev-resp'))) return;
+    // Event-Formulare nur für Event Manager, alle anderen Formulare nur für Admins
+    if ((kind === 'event' || kind === 'edit-ev' || kind === 'ev-resp') ? !S.me.isEventManager : !S.me.isAdmin) return;
 
     if (kind === 'member-edit') {
       var nph = normPhone(g('phone'));
@@ -3330,15 +3849,29 @@
 
   document.addEventListener('input', function (e) {
     var t = e.target;
-    if (!t || t.name !== 'phone' || !t.closest('[data-form="auth"],[data-form="member"],[data-ccform="guest"],[data-form="member-edit"]')) return;
-    var pos = t.selectionStart, atEnd = pos === t.value.length;
-    var before = t.value.slice(0, pos).replace(/\D/g, '').length;
-    var f = formatPhoneTyping(t.value);
-    if (f === t.value) return;
-    t.value = f;
-    if (atEnd) pos = f.length;
-    else { var c = 0; pos = 0; while (pos < f.length && c < before) { if (/\d/.test(f.charAt(pos))) c++; pos++; } }
-    try { t.setSelectionRange(pos, pos); } catch (x) { /* ignorieren */ }
+    if (!t || (t.name !== 'phone' && t.name !== 'phonecc') || !t.closest('[data-form="auth"],[data-form="member"],[data-ccform="guest"],[data-form="member-edit"]')) return;
+    var row = t.closest('.phonerow');
+    if (!row) return;
+    var sel = row.querySelector('select'), inp = row.querySelector('input');
+    var pos = inp.selectionStart, atEnd = pos === inp.value.length;
+    var before = inp.value.slice(0, pos).replace(/\D/g, '').length;
+    var v = inp.value;
+    // Vollständig internationale Eingabe (+49 … / 0041 …): Land automatisch wählen
+    var m = v.replace(/\s/g, '').match(/^(?:\+|00)(\d+)/);
+    if (m) {
+      var hit = PHONE_CC.filter(function (x) { return m[1].indexOf(x.c) === 0; })[0];
+      if (hit) { sel.value = hit.c; v = fmtNational(hit.c, m[1].slice(hit.c.length)); atEnd = true; }
+      else { sel.value = ''; v = '+' + m[1]; }
+    } else if (sel.value) {
+      v = fmtNational(sel.value, v.replace(/\D/g, '').replace(/^0+/, ''));
+    }
+    var info = ccInfo(sel.value);
+    inp.placeholder = info ? info.ph : '+43 …';
+    if (v === inp.value) return;
+    inp.value = v;
+    if (atEnd) pos = v.length;
+    else { var c = 0; pos = 0; while (pos < v.length && c < before) { if (/\d/.test(v.charAt(pos))) c++; pos++; } }
+    try { inp.setSelectionRange(pos, pos); } catch (x) { /* ignorieren */ }
   });
 
   /* ---------- Installation & Start ---------- */
