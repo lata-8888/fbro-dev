@@ -24,9 +24,9 @@ Kein Build-Schritt — alle Dateien werden direkt ausgeliefert.
 - Synthetic Email: `<phone_digits_ohne_plus>@fbro.app`
   Beispiel: `+41791234567` → `41791234567@fbro.app`
 - PIN = letzte 6 Ziffern der Telefonnummer
-- **Gelber PIN-Hinweisbalken** (`.pinbanner`, in der Render-Funktion von app.js): erscheint bei jedem Seitenaufruf und auf jedem Tab, bis das Mitglied im Profil einen eigenen PIN gesetzt hat (`profiles.pin_changed = true`). Kein Wegklicken. Seit PRD v91 für alle ausser **Admin und Kandidaten** (also Aktiv, Passiv, Friends & Family, Gast); in DEV noch nur Aktiv/Passiv. Wer als Admin testen will, sieht ihn nicht; dafür ein Nicht-Admin-Konto mit `pin_changed = false` nehmen. «PIN zurücksetzen» (Admin, `reset_pin`) setzt `pin_changed` wieder auf `false`. Admin bewusst ausgenommen.
-- Nummerneingabe: **DEV** = ein Textfeld, Schweizer Format (`079 …`); eine deutsche Nummer geht nur mit `+49…`. **PRD** = Länder-Dropdown (CH +41 / DE +49 / Andere) + Nummer ohne führende Null (`phoneField()`, `composePhone()`, `phoneParts()` in app.js; neues Land: Eintrag in `PHONE_CC`). Gespeichert wird in beiden Umgebungen das internationale Format. Das Dropdown liegt für DEV bereit im Branch `feature/phone-dropdown` (Stand: SW `v87`), ist auf `main` aber bewusst **nicht** drin, weil alle Tester auf DEV sind.
-- **DEV und PRD weichen deshalb absichtlich ab** (`app.js`, `styles.css`, `sw.js`). SW-Versionen sind je Umgebung unabhängig (DEV `v111`, PRD `v111`). Beim späteren Einspielen des Dropdowns in DEV: SW-Version über den aktuellen DEV-Wert erhöhen.
+- **Gelber PIN-Hinweisbalken** (`.pinbanner`, in der Render-Funktion von app.js): erscheint bei jedem Seitenaufruf und auf jedem Tab, bis das Mitglied im Profil einen eigenen PIN gesetzt hat (`profiles.pin_changed = true`). Kein Wegklicken. Seit PRD v91 für alle ausser **Admin und Kandidaten** (also Aktiv, Passiv, Friends & Family, Gast); Wer als Admin testen will, sieht ihn nicht; dafür ein Nicht-Admin-Konto mit `pin_changed = false` nehmen. «PIN zurücksetzen» (Admin, `reset_pin`) setzt `pin_changed` wieder auf `false`. Admin bewusst ausgenommen.
+- Nummerneingabe: **DEV und PRD** (seit 2026-10-17): Länder-Dropdown (CH +41 / DE +49 / Andere) + Nummer ohne führende Null (`phoneField()`, `composePhone()`, `phoneParts()` in app.js; neues Land: Eintrag in `PHONE_CC`). Gespeichert wird in beiden Umgebungen das internationale Format.
+- **DEV und PRD haben seit 2026-10-17 denselben App-Code** (SW DEV `v111`, PRD `v111`; SW-Versionen bleiben je Umgebung unabhängig, nur `config.js` unterscheidet sich).
 - **`EMAIL_DOMAIN` muss in `config.js` aktiv gesetzt sein** (`EMAIL_DOMAIN: 'fbro.app'`). Die App baut die Login-Adresse in `phoneToEmail()` (app.js) als `<digits>@` + `EMAIL_DOMAIN`, **Fallback ohne Eintrag: `phone-login.app`**. Fehlt der Eintrag, sucht die App `…@phone-login.app`, findet den Migrations-User (`…@fbro.app`) nicht und meldet «Invalid login credentials».
 - Pro Umgebung muss die Domain zu den Adressen in `auth.users` passen. Prüfen: `select email from auth.users limit 5;`
 - Diagnose bei Login-Problem: DevTools → Network → `token?grant_type=password` → Payload → `email` mit `auth.users` vergleichen.
@@ -35,9 +35,9 @@ Kein Build-Schritt — alle Dateien werden direkt ausgeliefert.
 ## Stand DEV (2026-10-17)
 - Wardley-Vorarbeiten aus `main` entfernt; DEV bekommt schrittweise den PRD-Stand.
 - **Schritt 1 ✅** FBRO-App (v88) wiederhergestellt. **Schritt 2 ✅** App-Code v111 (Länder-Dropdown, Icon-Konzept, strikte Rollen, Show, Jass-Schloss) in `main`; SQL `PRD_rollen_strikt.sql` + `PRD_v90_teilnehmer_admin.sql` in DEV ausgeführt (2026-10-17). **Schritt 3 ✅** Show-SQL (v97, v98, v101, v102, v109, v110; Datei `DEV_Schritt3_show_komplett.sql`) in DEV ausgeführt und geprüft (3 Tabellen, RLS, RPCs `set_director`/`set_actor`, Hinweis-Spalte, YouTube-Lockerung). DEV = PRD-Stand v111. Offen: Rollen Regisseur/Schauspieler in DEV vergeben.
-- Der Abschnitt «Rollen» unten und die Hinweise «nur PRD» gelten ab jetzt für beide Umgebungen, ausser Schema-Abgleich (DEV-`supabase/schema.sql` ist ab Schritt 2 der PRD-Stand).
+- Die Hinweise «nur PRD» in den Versionsnotizen unten gelten ab jetzt für beide Umgebungen.
 
-## Icon-Konzept (Stand 2026-10-08, nur PRD; DEV noch nicht)
+## Icon-Konzept (Stand 2026-10-08; DEV und PRD)
 - **Ein Baustein für Kopfzeilen-Icons:** `hico(act, icon, label, opts)` in app.js, CSS-Klasse `.hico` (ersetzt `.ccdots`, `.ccinfo`, `.plusbtn`). Reihenfolge in jeder Kopfzeile: Titel (klappt auf/zu) → Aktions-Icons (`+`, Info, Drucken, «…») → Auf-/Zuklapp-Pfeil (`.ccfold`). Gleiche Höhe wie der Pfeil, Symbolgrösse 20 px; aktiver Zustand `.on` (`aria-pressed`).
 - **Regel:** «…» (Menü) nur, wenn dahinter mehrere Aktionen stehen (Anlass, Tag, Mitglied, Jasstag). Gibt es nur «+» und/oder Info, stehen sie direkt als Icons da (Admin-Konsole, Spielplan, Ewige Rangliste).
 - **Info-Icons sind vom Auf-/Zuklappen entkoppelt:** Der Text (`.infobar`) steht direkt unter der Kopfzeile und erscheint/verschwindet nur durch das Info-Icon (`js-hint` für Jass, `info-toggle` für Admin); der Abschnitt bleibt dabei offen oder zu, wie er war. Spielplan-Info nur für Jass Manager; Info der Ewigen Rangliste für alle.
@@ -45,10 +45,10 @@ Kein Build-Schritt — alle Dateien werden direkt ausgeliefert.
 - Der PRD-Stand liegt als Branch `prd/icon-konzept` im DEV-Repo (Basis `feature/phone-dropdown`); ZIP: `FBRO-App_PRD_v101.zip`. Browser-Test mit Testdaten (Playwright; Mitglied, Jass Manager, Admin, Admin mit allen Rollen, Chilbi, Chränzli): 96 Prüfungen ok.
 - **ZIP-Benennung:** `FBRO-App_<ENV>_v<SW-Version>.zip`, z. B. `FBRO-App_PRD_v88.zip` oder `FBRO-App_DEV_v88.zip`; Stammordner im ZIP bleibt `fbro-app/`.
 
-## Rollen (Stand 2026-10-08, nur PRD; DEV noch nicht)
+## Rollen (Stand 2026-10-08; DEV und PRD)
 - **Der Admin hat keine automatischen Rechte mehr** für Events, Chilbi/Chränzli (C&C) und Jass. Wer diese Rechte will, teilt sich die Rolle selbst zu (Admin → Rollen → eigene Person → «Zum … machen»; die RPCs `set_event_manager`, `set_chilbi_manager`, `set_chraenzli_manager`, `set_jass_master` sind weiterhin nur für Admins und erlauben die eigene Person).
 - **App:** `canCC()` = Chilbi- oder Chränzli Manager; `canManageEvents()` = Event Manager; `jsEdit()` = Jass Manager. Events-Abschnitt in der Admin-Konsole nur mit Rolle Event Manager. Event-Formulare nur für Event Manager, alle übrigen Admin-Formulare nur für Admins.
-- **Datenbank (PRD, SQL Editor):** `supabase/prd-rollen/PRD_rollen_strikt.sql` setzt `can_cc()`, `can_jass()` und die Event-Policies (`events_manage_write`, `event_responses_manager_write`) auf die reinen Rollen. Rückgängig: `PRD_rollen_strikt_RUECKGAENGIG.sql`. Optional: `PRD_admin_rollen_selbst_zuteilen.sql`. `supabase/schema.sql` auf dem Branch `prd/icon-konzept` enthält den neuen Stand (1096 Zeilen, Stand v110), `main` (DEV) noch den alten.
+- **Datenbank (PRD, SQL Editor):** `supabase/prd-rollen/PRD_rollen_strikt.sql` setzt `can_cc()`, `can_jass()` und die Event-Policies (`events_manage_write`, `event_responses_manager_write`) auf die reinen Rollen. Rückgängig: `PRD_rollen_strikt_RUECKGAENGIG.sql`. Optional: `PRD_admin_rollen_selbst_zuteilen.sql`. `supabase/schema.sql` auf dem Branch `prd/icon-konzept` enthält den neuen Stand (1096 Zeilen); `main` (DEV) hat seit Schritt 2 denselben.
 - **v90 (nur PRD, 2026-10-08):** Friends & Family sehen den C&C-Tab und lesen den Schichtplan (Tab nur bei aktivem Anlass; DB-Policies liessen sie schon zu). Der Admin darf Teilnehmer bei Trainings (Stift-Icon, `canEditPeople()`) und Events («…»-Menü, `canEditEvPeople()`; ohne Event-Manager-Rolle nur die Teilnehmerliste) bearbeiten. «Noch nicht geantwortet» sehen nur Aktiv/Passiv (`seesOpen()`). SQL: `supabase/prd-rollen/PRD_v90_teilnehmer_admin.sql` (Rückgängig: `..._RUECKGAENGIG.sql`). Rollenmatrix: `FBRO_Rollenkonzept_PRD_v107.xlsx` (bearbeiten, zurückschicken, Claude setzt um).
 - **v92 (nur PRD):** Personen-Chips (`.ccp`) zeigen die aktuelle Gruppe: Aktiv blau (`cc-a`), Passiv grün (`cc-p`), Friends & Family violett (`cc-f`), Gast blau mit Rahmen (`cc-g`), nicht in der App gelb (`cc-x`; Name stimmt mit keinem Profil überein). Die eigene Person ist überall rot (nicht fett, `.ccme`). Legende hinter dem Info-Icon rechts neben dem C&C-Titel (`ccLegend()`, `info-toggle` mit id `cclegend`). `ccResolve()` liefert `kind` a/p/f/g/x.
 - **v94 (nur PRD):** Abgesagte Trainings/Events (`.ccel.off`) dezent grau abgehoben (Hintergrund 7 % Ink auf `--bg`); Rahmen des «Ich»-Chips 1 px.
@@ -104,7 +104,7 @@ Muss viele Zeilen zurückgeben. Nur 4 (uid, role, email, jwt) = NULL-Problem →
 2. Schema-Änderungen: `supabase/schema.sql` im SQL Editor ausführen (idempotent)
 3. Neue User: `fbro_migration_v4.sql` ausführen (setzt alle Rollen auf `false`: **Admin danach manuell setzen**: `update public.profiles set is_admin = true where phone = '+41…';`)
 4. `config.js` committen und pushen → GitHub Pages deployed automatisch
-5. PRD und DEV unterscheiden sich in `config.js` (URL, Anon-Key). Ausnahme zur Zeit: Nummernfeld mit Länder-Dropdown nur auf PRD (siehe Login-Logik). Sonst alles identisch halten.
+5. PRD und DEV unterscheiden sich in `config.js` (URL, Anon-Key). Sonst alles identisch halten.
 
 ## Dateien
 | Datei | Beschreibung |
@@ -113,7 +113,7 @@ Muss viele Zeilen zurückgeben. Nur 4 (uid, role, email, jwt) = NULL-Problem →
 | `app.js` | Gesamte App-Logik |
 | `sw.js` | Service Worker (PWA, Cache-Version) |
 | `schema.sql` (Root) | **ACHTUNG: alte Version (262 Zeilen)** — nicht verwenden, nicht hochladen |
-| `supabase/schema.sql` | Aktuelles vollständiges Schema (**PRD-Stand, Branch `prd/icon-konzept`: 1096 Zeilen**, inkl. `cc_*`, `jass_*`, `show_*`, Rollen, v109/v110; DEV-`main` noch älter, 898 Zeilen). **Vor jedem Setup `wc -l` prüfen: 1096 für PRD erwartet.** Eine 393/400-Zeilen-Version fehlt `cc_*`/`jass_*` und viele RPCs |
+| `supabase/schema.sql` | Aktuelles vollständiges Schema (**PRD-Stand, Branch `prd/icon-konzept`: 1096 Zeilen**, inkl. `cc_*`, `jass_*`, `show_*`, Rollen, v109/v110). **Vor jedem Setup `wc -l` prüfen: 1096 für PRD erwartet.** Eine 393/400-Zeilen-Version fehlt `cc_*`/`jass_*` und viele RPCs |
 | `fbro_migration_v4.sql` | Enthält Namen und Telefonnummern → **bewusst nicht im Repo**, nur lokal/als ZIP |
 | `icons/` + Root-Icons | `icons/logo.png` + `icons/favicon-48.png` werden von app.js/index.html genutzt; `icon-*.png`, `apple-touch-icon.png` im Root (Manifest) |
 
@@ -140,12 +140,10 @@ Stand 2026-10-08: `node --check` ok; SW-SHELL-Dateien vorhanden; Manifest ok; al
 - Claude kann PRD aus der Sitzung nicht schreiben (kein Zugriff, Namenskonflikt mit `lata-8888/fbro-app`): Änderungen als ZIP liefern, von Hand einspielen.
 
 ## Offene Aufgaben
-- [ ] PRD: `PRD_rollen_strikt.sql` ausführen und dem Admin die gewünschten Rollen zuteilen; danach Rollen-Logik nach DEV übernehmen (Branch `prd/icon-konzept`, SW über `v88` erhöhen)
+- [ ] PRD: `PRD_rollen_strikt.sql` ausführen (v90, v97–v110 ebenfalls) und dem Admin die gewünschten Rollen zuteilen; DEV ist bereits umgestellt
 - [ ] Entscheiden: Admin-Tab (Events anlegen) auch für Event Manager ohne Admin-Recht sichtbar machen?
-- [ ] Icon-Konzept (Branch `prd/icon-konzept`) nach DEV übernehmen, sobald PRD bestätigt ist (SW-Version über `v88` erhöhen)
 - [ ] PRD: Trainings und Events werden von Hand in der App erfasst (kein Export aus DEV); Jass-Historie und Chilbi 2027 sind eingespielt
 - [ ] Optional: PRD-Login-Adressen von `@fbro.app` auf `@phone-login.app` umstellen (wie DEV), Skripte in `fbro-prd-umstellung.zip`; dann `EMAIL_DOMAIN` in der PRD-`config.js` auskommentieren
 - [ ] DEV: prüfen, welche Domain `auth.users` nutzt (`phone-login.app` vs `fbro.app`)
-- [ ] Länder-Dropdown für die Handynummer (Branch `feature/phone-dropdown`) in DEV übernehmen, sobald die Tester bereit sind (SW-Version über `v88` erhöhen)
 - [ ] DEV-Repo: `supabase/schema.sql` enthält Mitgliedernamen (ohne Telefonnummern); entscheiden, ob das Repo öffentlich bleiben soll
 - [ ] Vereins-Supabase unter eigenem Vereins-Account führen (Trennung von persönlichem Account)
