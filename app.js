@@ -1416,7 +1416,7 @@
     if (!noJass) tabs.push({ id: 'jass', label: L('navJass'), icon: ICON.trophy });
     if ((canCC() || S.ccPublic) && !noJass) tabs.push({ id: 'cc', label: L('navCC'), icon: ICON.glass });
     if (canShow()) tabs.push({ id: 'show', label: L('navShow'), icon: ICON.stage });
-    if (S.me.isAdmin) tabs.push({ id: 'admin', label: L('navAdmin'), icon: ICON.gear });
+    if (S.me.isAdmin || canManageEvents()) tabs.push({ id: 'admin', label: L('navAdmin'), icon: ICON.gear });
     tabs.push({ id: 'profile', label: L('navProfile'), icon: ICON.user });
     nav.innerHTML = '<div class="in">' + tabs.map(function (t) {
       return '<button type="button" class="tab" data-act="tab" data-tab="' + t.id + '"' + (S.tab === t.id ? ' aria-current="page"' : '') + '>' + t.icon + '<span>' + t.label + '</span></button>';
@@ -1438,7 +1438,7 @@
       return;
     }
     else {
-      if (S.tab === 'admin' && !S.me.isAdmin) S.tab = 'trainings';
+      if (S.tab === 'admin' && !S.me.isAdmin && !canManageEvents()) S.tab = 'trainings';
       if (S.tab === 'events' && (S.me.isGuest || S.me.isSupporter) && !S.me.isAdmin) S.tab = 'trainings';
       if (S.tab === 'cc' && S.me.isGuest && !S.me.isAdmin) S.tab = 'trainings';
       if (S.tab === 'jass' && S.me.isGuest && !S.me.isAdmin) S.tab = 'trainings';

@@ -26,7 +26,7 @@ Kein Build-Schritt — alle Dateien werden direkt ausgeliefert.
 - PIN = letzte 6 Ziffern der Telefonnummer
 - **Gelber PIN-Hinweisbalken** (`.pinbanner`, in der Render-Funktion von app.js): erscheint bei jedem Seitenaufruf und auf jedem Tab, bis das Mitglied im Profil einen eigenen PIN gesetzt hat (`profiles.pin_changed = true`). Kein Wegklicken. Seit PRD v91 für alle ausser **Admin und Kandidaten** (also Aktiv, Passiv, Friends & Family, Gast); Wer als Admin testen will, sieht ihn nicht; dafür ein Nicht-Admin-Konto mit `pin_changed = false` nehmen. «PIN zurücksetzen» (Admin, `reset_pin`) setzt `pin_changed` wieder auf `false`. Admin bewusst ausgenommen.
 - Nummerneingabe: **DEV und PRD** (seit 2026-10-17): Länder-Dropdown (CH +41 / DE +49 / Andere) + Nummer ohne führende Null (`phoneField()`, `composePhone()`, `phoneParts()` in app.js; neues Land: Eintrag in `PHONE_CC`). Gespeichert wird in beiden Umgebungen das internationale Format.
-- **DEV und PRD haben seit 2026-10-17 denselben App-Code** (SW DEV `v111`, PRD `v111`; SW-Versionen bleiben je Umgebung unabhängig, nur `config.js` unterscheidet sich).
+- **DEV und PRD haben seit 2026-10-17 denselben App-Code** (SW DEV `v112`, PRD `v111`→`v112` nach Einspielen; SW-Versionen bleiben je Umgebung unabhängig, nur `config.js` unterscheidet sich).
 - **`EMAIL_DOMAIN` muss in `config.js` aktiv gesetzt sein** (`EMAIL_DOMAIN: 'fbro.app'`). Die App baut die Login-Adresse in `phoneToEmail()` (app.js) als `<digits>@` + `EMAIL_DOMAIN`, **Fallback ohne Eintrag: `phone-login.app`**. Fehlt der Eintrag, sucht die App `…@phone-login.app`, findet den Migrations-User (`…@fbro.app`) nicht und meldet «Invalid login credentials».
 - Pro Umgebung muss die Domain zu den Adressen in `auth.users` passen. Prüfen: `select email from auth.users limit 5;`
 - Diagnose bei Login-Problem: DevTools → Network → `token?grant_type=password` → Payload → `email` mit `auth.users` vergleichen.
@@ -71,7 +71,7 @@ Kein Build-Schritt — alle Dateien werden direkt ausgeliefert.
 - **v111 (nur PRD):** Jass, vergangene Runden: statt «…» im Tageskopf ein **Schloss** (`js-lock`, `S.jsUnlock[id]`, nur Jass Manager). Standard = gesperrt (keine Bearbeitung). Entsperrt (offenes Schloss) erscheinen das «…»-Tagesmenü (Ändern/Rangliste/Löschen) und pro Ranglisten-Zeile ein «…» (`js-row-edit`, `jsRowBtn()`), das ein Zeilenformular (Name, Punkte, Differenz; `row-form`, `jsMaterialize()`) öffnet; Speichern schreibt die ganze Rangliste als `manual_ranking` (auch bei berechneten Ranglisten). Sperre gilt nur bis zum Neuladen. Das Rangliste-Formular behält jetzt `gamePts`. Trainingsplan verwalten: Absagen rot, Reaktivieren kräftig grün (`.mini.cancelbtn`/`.mini.react`), abgesagte Termine grau durchgestrichen (`li.offrow`), Suffix «abgesagt» entfernt. Kein SQL.
 - **Reihenfolge beim Einspielen:** App-ZIP einspielen, SQL ausführen, danach Rolle(n) dem Admin in der App zuteilen. Zwischen SQL und Rollenzuteilung kann der Admin keine Events/C&C/Jass bearbeiten.
 - **Benennung:** «Event Manager» (ohne Bindestrich) in allen Sprachen; Admin-Abschnitt «Gruppen» heisst «Rollen» (`secMembers`).
-- **Bekannte Lücke:** Der Admin-Tab ist nur für Admins sichtbar. Ein Event Manager ohne Admin-Recht kann Events deshalb nur über das «…»-Menü an bestehenden Events bearbeiten, aber keinen neuen Event anlegen (war schon vorher so).
+- **v112:** Der Admin-Tab ist auch für Event Manager ohne Admin-Recht sichtbar (`S.me.isAdmin || canManageEvents()`); sie sehen dort nur den Events-Abschnitt (Neuanlegen, Ändern, Absagen, Löschen). Alle übrigen Abschnitte bleiben Admins vorbehalten. Kein SQL.
 
 ## Bekannte Bugs & Fixes
 
@@ -141,9 +141,9 @@ Stand 2026-10-08: `node --check` ok; SW-SHELL-Dateien vorhanden; Manifest ok; al
 
 ## Offene Aufgaben
 - [x] PRD und DEV auf v111 (App + SQL v90, v97–v110, Rollen strikt) – erledigt 2026-10-17
-- [ ] Entscheiden: Admin-Tab (Events anlegen) auch für Event Manager ohne Admin-Recht sichtbar machen?
+- [x] Admin-Tab für Event Manager: umgesetzt in v112 (2026-10-17)
 - [ ] PRD: Trainings und Events werden von Hand in der App erfasst (kein Export aus DEV); Jass-Historie und Chilbi 2027 sind eingespielt
-- [ ] Optional: PRD-Login-Adressen von `@fbro.app` auf `@phone-login.app` umstellen (wie DEV), Skripte in `fbro-prd-umstellung.zip`; dann `EMAIL_DOMAIN` in der PRD-`config.js` auskommentieren
+- [x] PRD-Login-Adressen bleiben `@fbro.app` (Entscheid 2026-10-17, keine Umstellung)
 - [ ] DEV: prüfen, welche Domain `auth.users` nutzt (`phone-login.app` vs `fbro.app`)
 - [ ] DEV-Repo: `supabase/schema.sql` enthält Mitgliedernamen (ohne Telefonnummern); entscheiden, ob das Repo öffentlich bleiben soll
 - [ ] Vereins-Supabase unter eigenem Vereins-Account führen (Trennung von persönlichem Account)
