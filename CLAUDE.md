@@ -7,7 +7,7 @@
 | **GitHub** | `lata-8888/fbro-dev` | `fbro-8942/fbro-app` |
 | **Supabase** | `hshchitgcweewnantxbs` | `dpiewpccucadlrtogvhh` |
 | **Region** | eu-central-1 | eu-central-2 (Zürich) |
-| **Status** | ✅ läuft | ✅ läuft (Stand 2026-10-08, Repo neu aufgesetzt, Login getestet); Trainings/Events von Hand, Jass/Chilbi per SQL |
+| **Status** | ✅ läuft, v111 (Stand 2026-10-17) | ✅ läuft, v111 (eingespielt 2026-10-17, vom Verein bestätigt); Trainings/Events von Hand, Jass/Chilbi per SQL |
 | **GitHub Pages** | `lata-8888.github.io/fbro-dev/` | `fbro-8942.github.io/fbro-app/` |
 
 **Regel:** Änderungen immer zuerst in DEV testen, dann in PRD deployen.
@@ -140,7 +140,7 @@ Stand 2026-10-08: `node --check` ok; SW-SHELL-Dateien vorhanden; Manifest ok; al
 - Claude kann PRD aus der Sitzung nicht schreiben (kein Zugriff, Namenskonflikt mit `lata-8888/fbro-app`): Änderungen als ZIP liefern, von Hand einspielen.
 
 ## Offene Aufgaben
-- [ ] PRD: `PRD_rollen_strikt.sql` ausführen (v90, v97–v110 ebenfalls) und dem Admin die gewünschten Rollen zuteilen; DEV ist bereits umgestellt
+- [x] PRD und DEV auf v111 (App + SQL v90, v97–v110, Rollen strikt) – erledigt 2026-10-17
 - [ ] Entscheiden: Admin-Tab (Events anlegen) auch für Event Manager ohne Admin-Recht sichtbar machen?
 - [ ] PRD: Trainings und Events werden von Hand in der App erfasst (kein Export aus DEV); Jass-Historie und Chilbi 2027 sind eingespielt
 - [ ] Optional: PRD-Login-Adressen von `@fbro.app` auf `@phone-login.app` umstellen (wie DEV), Skripte in `fbro-prd-umstellung.zip`; dann `EMAIL_DOMAIN` in der PRD-`config.js` auskommentieren
