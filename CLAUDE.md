@@ -34,7 +34,7 @@ Kein Build-Schritt — alle Dateien werden direkt ausgeliefert.
 
 ## Stand DEV (2026-10-17)
 - Wardley-Vorarbeiten aus `main` entfernt; DEV bekommt schrittweise den PRD-Stand.
-- **Schritt 1 ✅** FBRO-App (v88) wiederhergestellt. **Schritt 2 ✅** App-Code v111 (Länder-Dropdown, Icon-Konzept, strikte Rollen, Show, Jass-Schloss) in `main`; SQL `PRD_rollen_strikt.sql` + `PRD_v90_teilnehmer_admin.sql` in DEV ausgeführt (2026-10-17). **Schritt 3 offen:** Show-SQL (v97, v98, v101, v102, v109, v110) in DEV ausführen, dann Rollen Regisseur/Schauspieler vergeben.
+- **Schritt 1 ✅** FBRO-App (v88) wiederhergestellt. **Schritt 2 ✅** App-Code v111 (Länder-Dropdown, Icon-Konzept, strikte Rollen, Show, Jass-Schloss) in `main`; SQL `PRD_rollen_strikt.sql` + `PRD_v90_teilnehmer_admin.sql` in DEV ausgeführt (2026-10-17). **Schritt 3 ✅** Show-SQL (v97, v98, v101, v102, v109, v110; Datei `DEV_Schritt3_show_komplett.sql`) in DEV ausgeführt und geprüft (3 Tabellen, RLS, RPCs `set_director`/`set_actor`, Hinweis-Spalte, YouTube-Lockerung). DEV = PRD-Stand v111. Offen: Rollen Regisseur/Schauspieler in DEV vergeben.
 - Der Abschnitt «Rollen» unten und die Hinweise «nur PRD» gelten ab jetzt für beide Umgebungen, ausser Schema-Abgleich (DEV-`supabase/schema.sql` ist ab Schritt 2 der PRD-Stand).
 
 ## Icon-Konzept (Stand 2026-10-08, nur PRD; DEV noch nicht)
