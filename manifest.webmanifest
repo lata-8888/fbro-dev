@@ -1,14 +1,35 @@
 {
-  "name": "Wardley Maps",
-  "short_name": "Wardley",
+  "name": "FBRO Training",
+  "short_name": "FBRO",
+  "description": "Teilnahme an Trainings und Events des Vereins",
+  "lang": "de-CH",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f3f3ee",
-  "theme_color": "#f3f3ee",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#0F1626",
+  "theme_color": "#307CC0",
+  "prefer_related_applications": false,
+  "categories": ["sports", "social"],
   "icons": [
-    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ]
 }
