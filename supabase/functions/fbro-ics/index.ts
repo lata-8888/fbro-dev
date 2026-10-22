@@ -1,6 +1,6 @@
 // fbro-ics: liefert einen einzelnen Kalendereintrag als .ics (text/calendar), damit iPhone/iPad «Zum Kalender hinzufügen» anbietet.
 // Ohne Login erreichbar (verify_jwt aus), liest nichts aus der Datenbank: alles steht in der Adresse.
-// Parameter: t Titel, s Start, e Ende (je YYYYMMDDTHHMMSS ohne Zeitzone = Ortszeit des Handys, oder mit Z = UTC, oder YYYYMMDD ganztägig), l Ort, d Kommentar, u UID
+// Parameter: t Titel, s Start, e Ende (je YYYYMMDDTHHMMSSZ = UTC, oder YYYYMMDD ganztägig), l Ort, d Kommentar, u UID
 const esc = (s: string) => s.replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n');
 const enc = new TextEncoder();
 // Zeilen auf höchstens 75 Bytes kürzen (Fortsetzung mit Leerzeichen), Zeichen nicht zerschneiden

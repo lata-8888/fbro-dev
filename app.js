@@ -956,6 +956,10 @@
   function icsLocal(d) {
     return d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate()) + 'T' + pad(d.getHours()) + pad(d.getMinutes()) + '00';
   }
+  // UTC-Zeit (YYYYMMDDTHHMMSSZ): Start/Ende sind Ortszeit des Geräts, so stimmt die Zeit in jedem Kalender (auch iPhone)
+  function icsUtc(d) {
+    return d.getUTCFullYear() + pad(d.getUTCMonth() + 1) + pad(d.getUTCDate()) + 'T' + pad(d.getUTCHours()) + pad(d.getUTCMinutes()) + pad(d.getUTCSeconds()) + 'Z';
+  }
   function buildGoogleCalUrl(e) {
     var p = e.date.split('-').map(Number), tm = e.time.split(':').map(Number);
     var start = new Date(p[0], p[1] - 1, p[2], tm[0], tm[1]);
@@ -984,8 +988,8 @@
       'BEGIN:VEVENT',
       'UID:' + e.id + '@vereins-training',
       'DTSTAMP:' + stamp,
-      'DTSTART:' + icsLocal(start),   // ohne Zeitzone: gilt in der Zeitzone des Handys
-      'DTEND:' + icsLocal(end),
+      'DTSTART:' + icsUtc(start),
+      'DTEND:' + icsUtc(end),
       'SUMMARY:' + icsText(e.title),
       'LOCATION:' + icsText(e.place),
       'DESCRIPTION:' + icsText((cfg.CLUB_NAME ? cfg.CLUB_NAME + ': ' : '') + e.title),
@@ -998,12 +1002,12 @@
       'END:VCALENDAR'
     ].join('\r\n') + '\r\n';
   }
-  // Adresse der Edge-Function fbro-ics: Zeiten ohne Zeitzone (Ortszeit des Handys), wie in buildIcs
+  // Adresse der Edge-Function fbro-ics: Zeiten in UTC (aus der Ortszeit des Geräts berechnet)
   function icsUrl(e) {
     var p = e.date.split('-').map(Number), tm = e.time.split(':').map(Number);
     var start = new Date(p[0], p[1] - 1, p[2], tm[0], tm[1]);
     var end = new Date(start.getTime() + (cfg.EVENT_DURATION_MIN || 120) * 60000);
-    var q = { t: e.title, s: icsLocal(start), e: icsLocal(end), u: e.id, d: (cfg.CLUB_NAME ? cfg.CLUB_NAME + ': ' : '') + e.title };
+    var q = { t: e.title, s: icsUtc(start), e: icsUtc(end), u: e.id, d: (cfg.CLUB_NAME ? cfg.CLUB_NAME + ': ' : '') + e.title };
     if (e.place) q.l = e.place;
     return cfg.SUPABASE_URL.replace(/\/$/, '') + '/functions/v1/fbro-ics?' + Object.keys(q).map(function (k) { return k + '=' + encodeURIComponent(q[k]); }).join('&');
   }
