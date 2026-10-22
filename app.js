@@ -998,21 +998,36 @@
       'END:VCALENDAR'
     ].join('\r\n') + '\r\n';
   }
+  // Adresse der Edge-Function fbro-ics: Zeiten ohne Zeitzone (Ortszeit des Handys), wie in buildIcs
+  function icsUrl(e) {
+    var p = e.date.split('-').map(Number), tm = e.time.split(':').map(Number);
+    var start = new Date(p[0], p[1] - 1, p[2], tm[0], tm[1]);
+    var end = new Date(start.getTime() + (cfg.EVENT_DURATION_MIN || 120) * 60000);
+    var q = { t: e.title, s: icsLocal(start), e: icsLocal(end), u: e.id, d: (cfg.CLUB_NAME ? cfg.CLUB_NAME + ': ' : '') + e.title };
+    if (e.place) q.l = e.place;
+    return cfg.SUPABASE_URL.replace(/\/$/, '') + '/functions/v1/fbro-ics?' + Object.keys(q).map(function (k) { return k + '=' + encodeURIComponent(q[k]); }).join('&');
+  }
   async function addToCalendar(e) {
     var ics = buildIcs(e);
     var name = (e.title.replace(/[^\w\-äöüÄÖÜéèà ]+/g, '').trim().replace(/\s+/g, '-') || 'Event') + '.ics';
     var isIos = /iphone|ipad|ipod/i.test(navigator.userAgent) ||
                 (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
-    // iPhone / iPad: data:-URI direkt öffnen — iOS erkennt text/calendar und bietet
-    // «Zum Kalender hinzufügen» an, ohne dass Web Share API oder File System nötig ist.
+    // iPhone / iPad: data:-, Blob- und Teilen-Links führen nicht in den Kalender – eine https-Adresse mit text/calendar
+    // (Edge-Function fbro-ics, liest nichts aus der DB, alles steht in der Adresse) öffnet «Zum Kalender hinzufügen»
     if (isIos) {
-      var uri = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
-      var a = document.createElement('a');
-      a.href = uri;
-      // Kein «download»-Attribut: iOS öffnet den Link direkt im Kalender-Dialog.
-      document.body.appendChild(a); a.click(); a.remove();
+      var da = document.createElement('a');
+      da.href = icsUrl(e); da.target = '_blank'; da.rel = 'noopener';
+      document.body.appendChild(da); da.click(); da.remove();
       return;
+    }
+
+    // Installierte Android-App: Teilen-Dialog (dort «Kalender»)
+    var file = new File([ics], name, { type: 'text/calendar' });
+    var standalone = (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone;
+    if (standalone && navigator.canShare && navigator.canShare({ files: [file] })) {
+      try { await navigator.share({ files: [file], title: e.title }); return; }
+      catch (err) { if (err && err.name === 'AbortError') return; console.error(err); }
     }
 
     // Chrome / Firefox / Edge und alle anderen: Blob-URL + download-Attribut.
@@ -1214,7 +1229,8 @@
       (canEditEvPeople() ? '<button type="button" class="hico" data-act="ev-menu" data-id="' + e.id + '" aria-label="' + esc(L('ccActions') + ': ' + e.title) + '" title="' + esc(L('ccActions')) + '">' + ICON.dots + '</button>' : '') +
       '</div>' +
       '<div class="ccbody">' +
-        '<p class="muted small evinfo">' + esc(L('timePlace', { time: e.time, place: e.place })) + '</p>' +
+        '<div class="evline"><p class="muted small evinfo">' + esc(L('timePlace', { time: e.time, place: e.place })) + '</p>' +
+        '<button type="button" class="hico calbtn" data-act="cal" data-id="' + e.id + '" aria-label="' + esc(L('calAdd')) + '" title="' + esc(L('calAdd')) + '">' + ICON.calplus + '</button></div>' +
         (e.rsvp ? (
           '<div class="actrow4">' +
             btn('solo', 'yes', ICON.one, L('solo')) + btn('duo', 'yes', ICON.two, L('duo')) + btn('no', 'no', '', L('no')) +

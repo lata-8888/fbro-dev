@@ -386,6 +386,9 @@
   .cct { flex: 1; min-width: 0; text-align: left; background: none; border: 0; padding: 4px 0; font-family: var(--font-head); font-weight: 700; font-size: 1.35rem; color: var(--crown); overflow-wrap: anywhere; }
   .ccbody { padding: 0 6px 10px 12px; }
   .ccbody > .evinfo { margin-top: 12px; }
+  .ccbody > .evline { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 12px; }
+  .evline .evinfo { margin: 0; }
+  .evline .calbtn { margin-right: -6px; }
   .ccday { border-left: 3px solid var(--crown); margin: 12px 0 0; padding: 0 0 2px 10px; }
   .ccdh { display: flex; align-items: center; gap: 6px; }
   .ccdt { flex: 1; min-width: 0; text-align: left; background: none; border: 0; padding: 4px 0; font-size: 1rem; color: var(--ink); }
