@@ -657,3 +657,32 @@ textarea.shgrow { resize: none; overflow: hidden; min-height: 44px; }
 .shfmu[hidden] { display: none; }
 
 .shvplayer iframe { aspect-ratio: 16 / 9; height: auto; }
+
+/* Event-Dialog (wie Family-App): Labels links, Datum | Zeit nebeneinander */
+.irow { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; }
+.irow .irl { flex: 0 0 3.6em; font-weight: 600; font-size: .95rem; }
+.irow .input { flex: 1 1 0; min-width: 0; width: auto; }
+.irow .input[type="time"] { flex: 0 0 7.4em; }
+.ccsheetcard form > .check { margin: 4px 0 12px; }
+
+/* ===== Designs pro Person (profiles.design): data-design am <html>. «standard» = Blue = die Tokens oben. Wie Family-App. ===== */
+/* Orange (Holland): durchgehend Oranje, warme Töne, runde Formen */
+:root[data-design="holland"] { --bg: #FFF7ED; --surface: #fff; --ink: #431407; --muted: #7C4A2D; --line: #F3D9BF; --crown: #EA580C; --crown-soft: #FFEDD5; --yes: #2E7D32; --yes-soft: #E1F2E2; --no: #B3261E; --no-soft: #FBE4E1; --focus: #EA580C; --font-head: "Fredoka", "Arial Rounded MT Bold", Arial, sans-serif; --font-body: "Nunito", "Helvetica Neue", Arial, sans-serif; }
+@media (prefers-color-scheme: dark) { :root[data-design="holland"]:not([data-theme="light"]) { --bg: #1F0F05; --surface: #2B1708; --ink: #FFEDD5; --muted: #E0B48C; --line: #4A2A12; --crown: #FDBA74; --crown-soft: #3A1D0A; --yes: #5CD08A; --yes-soft: #17382A; --no: #FF8A80; --no-soft: #43211F; --focus: #FDBA74; } }
+:root[data-design="holland"][data-theme="dark"] { --bg: #1F0F05; --surface: #2B1708; --ink: #FFEDD5; --muted: #E0B48C; --line: #4A2A12; --crown: #FDBA74; --crown-soft: #3A1D0A; --yes: #5CD08A; --yes-soft: #17382A; --no: #FF8A80; --no-soft: #43211F; --focus: #FDBA74; }
+:root[data-design="holland"] body::before { content: ""; display: block; height: 8px; background: #F97316; }
+:root[data-design="holland"] .resp, :root[data-design="holland"] .chip, :root[data-design="holland"] .ccp { border-radius: 999px; }
+
+/* White (Light): weiss, feine Linien, Inter, zurückhaltend */
+:root[data-design="light"] { --bg: #FDFDFE; --surface: #fff; --ink: #3C4452; --muted: #8C94A1; --line: #F1F2F5; --crown: #69737F; --crown-soft: #F8F9FA; --yes: #047857; --yes-soft: #ECFDF5; --no: #B42318; --no-soft: #FEF3F2; --focus: #5B7FD6; --font-head: "Inter", "Helvetica Neue", Arial, sans-serif; --font-body: "Inter", "Helvetica Neue", Arial, sans-serif; }
+@media (prefers-color-scheme: dark) { :root[data-design="light"]:not([data-theme="light"]) { --bg: #141519; --surface: #1A1C21; --ink: #D2D6DD; --muted: #98A0AE; --line: #24272D; --crown: #B1B7C2; --crown-soft: #1B1D22; --yes: #34D399; --yes-soft: #0F2A22; --no: #F97066; --no-soft: #2E1513; --focus: #7FA4E8; } }
+:root[data-design="light"][data-theme="dark"] { --bg: #141519; --surface: #1A1C21; --ink: #D2D6DD; --muted: #98A0AE; --line: #24272D; --crown: #B1B7C2; --crown-soft: #1B1D22; --yes: #34D399; --yes-soft: #0F2A22; --no: #F97066; --no-soft: #2E1513; --focus: #7FA4E8; }
+:root[data-design="light"] h1 { font-size: 2rem; font-weight: 500; }
+:root[data-design="light"] h2 { font-size: 1.25rem; font-weight: 500; }
+:root[data-design="light"] .cct { font-weight: 500; font-size: 1.15rem; }
+
+/* Petrol: tiefes Blaugrün, kühle Flächen */
+:root[data-design="petrol"] { --bg: #EEF5F6; --surface: #fff; --ink: #0A2A32; --muted: #4C6F78; --line: #CBDFE3; --crown: #0E5F6F; --crown-soft: #D9ECEF; --yes: #2E7D32; --yes-soft: #E1F2E2; --no: #B3261E; --no-soft: #FBE4E1; --focus: #0E8FA6; }
+@media (prefers-color-scheme: dark) { :root[data-design="petrol"]:not([data-theme="light"]) { --bg: #061519; --surface: #0C262D; --ink: #E2F3F6; --muted: #8FB6BF; --line: #17404A; --crown: #5CCADB; --crown-soft: #0E2F37; --yes: #5CD08A; --yes-soft: #17382A; --no: #FF8A80; --no-soft: #43211F; --focus: #5CCADB; } }
+:root[data-design="petrol"][data-theme="dark"] { --bg: #061519; --surface: #0C262D; --ink: #E2F3F6; --muted: #8FB6BF; --line: #17404A; --crown: #5CCADB; --crown-soft: #0E2F37; --yes: #5CD08A; --yes-soft: #17382A; --no: #FF8A80; --no-soft: #43211F; --focus: #5CCADB; }
+:root[data-design="petrol"] body::before { content: ""; display: block; height: 6px; background: linear-gradient(90deg, #0E5F6F, #2BAFC4); }

@@ -33,6 +33,7 @@ alter table public.profiles add constraint profiles_language_check
 
 -- Darstellung (Hell/Dunkel/Automatisch) pro Person. null = automatisch (folgt der Geräteeinstellung).
 alter table public.profiles add column if not exists theme text;
+alter table public.profiles add column if not exists design text check (design is null or design in ('standard', 'light', 'petrol', 'holland'));   -- v115: Design pro Person
 alter table public.profiles drop constraint if exists profiles_theme_check;
 alter table public.profiles add constraint profiles_theme_check
   check (theme is null or theme in ('light', 'dark'));
@@ -108,6 +109,8 @@ create table if not exists public.events (
   rsvp_required boolean not null default false
 );
 alter table public.events add column if not exists rsvp_required boolean not null default false;
+alter table public.events add column if not exists end_date date;   -- v115: Ende (Datum/Zeit), optional
+alter table public.events add column if not exists end_time time;
 
 create table if not exists public.event_responses (
   event_id   uuid not null references public.events(id) on delete cascade,
@@ -540,7 +543,7 @@ create policy "profiles_update_own" on public.profiles
   for update to authenticated using (id = auth.uid()) with check (id = auth.uid());
 
 revoke update on public.profiles from authenticated, anon;
-grant  update (name, language, pin_changed, theme) on public.profiles to authenticated;
+grant  update (name, language, pin_changed, theme, design) on public.profiles to authenticated;
 
 -- Trainingstage, Sondertermine, Änderungen, Absagen:
 -- alle lesen, nur Admins ändern
