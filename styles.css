@@ -686,4 +686,3 @@ textarea.shgrow { resize: none; overflow: hidden; min-height: 44px; }
 @media (prefers-color-scheme: dark) { :root[data-design="petrol"]:not([data-theme="light"]) { --bg: #061519; --surface: #0C262D; --ink: #E2F3F6; --muted: #8FB6BF; --line: #17404A; --crown: #5CCADB; --crown-soft: #0E2F37; --yes: #5CD08A; --yes-soft: #17382A; --no: #FF8A80; --no-soft: #43211F; --focus: #5CCADB; } }
 :root[data-design="petrol"][data-theme="dark"] { --bg: #061519; --surface: #0C262D; --ink: #E2F3F6; --muted: #8FB6BF; --line: #17404A; --crown: #5CCADB; --crown-soft: #0E2F37; --yes: #5CD08A; --yes-soft: #17382A; --no: #FF8A80; --no-soft: #43211F; --focus: #5CCADB; }
 :root[data-design="petrol"] body::before { content: ""; display: block; height: 6px; background: linear-gradient(90deg, #0E5F6F, #2BAFC4); }
-.ccsheetcard > .cck + form { margin-top: 14px; }

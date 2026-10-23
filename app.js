@@ -3424,14 +3424,14 @@
     if (!ev && st.mode !== 'new') { evClose(); return; }
     var body;
     if (st.mode === 'menu') {
-      body = '<p class="cck">' + L('navEvents') + '</p><h3>' + esc(ev.title) + '</h3>' +
+      body = '<h3>' + esc(ev.title) + '</h3>' +
         '<button type="button" class="ccact" data-eva="edit">' + ICON.pencil + '<span>' + L('evEdit') + '</span></button>' +
-        '<button type="button" class="ccact" data-eva="people">' + ICON.pencil + '<span>' + L('evManagePeople') + '</span></button>' +
+        '<button type="button" class="ccact" data-eva="people">' + ICON.two + '<span>' + L('evManagePeople') + '</span></button>' +
         '<button type="button" class="ccact" data-eva="cancel">' + ICON.trash + '<span>' + (ev.cancelled ? L('reactivate') : L('cancel')) + '</span></button>' +
         '<button type="button" class="ccact del" data-eva="del">' + ICON.trash + '<span>' + L('del') + '</span></button>' +
         '<button type="button" class="ccact close" data-eva="close">' + L('ccClose') + '</button>';
     } else if (st.mode === 'edit' || st.mode === 'new') {
-      body = '<p class="cck">' + L(ev ? 'evEdit' : 'addEvent') + '</p>' + evFormHtml(ev);
+      body = evFormHtml(ev);
     } else if (st.mode === 'people' || st.mode === 'trpeople') {
       body = '<p class="cck">' + L('evManagePeople') + '</p><h3>' + esc(ev.title) + '</h3>' +
         '<input class="input" name="q" placeholder="' + esc(L('ccSearch')) + '" autocomplete="off" value="' + esc(st.q || '') + '" style="margin-bottom:10px">' +
